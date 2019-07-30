@@ -9,7 +9,7 @@
 - fastboot
 
 #Установка переменных окружения
-
+```bash
 `stalker@stalkerPC:~$ cat <<'EOF' > $HOME/.hadk.env`
 `export PLATFORM_SDK_ROOT="/srv/mer"`
 `export ANDROID_ROOT="$HOME/hadk"`
@@ -18,7 +18,7 @@
 `# Set arch to armv7hl even if you are porting a 64bit device`
 `export PORT_ARCH="armv7hl"`
 `EOF`
-
+```
 На выходе получаем скрытый файл .hadk.env в вашей домашней директории
 
 `stalker@stalkerPC:~$ cat <<'EOF' >> $HOME/.mersdkubu.profile`
