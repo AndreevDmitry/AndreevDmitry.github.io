@@ -1,23 +1,23 @@
-###Вольный перевод Sailfish OS HADK версии 3.0.1.0 (https://sailfishos.org/content/uploads/2019/03/SailfishOS-HardwareAdaptationDevelopmentKit-3.0.1.0.pdf) от 15 марта 2019 с примером портирования на Xiaomi Mido (а также проблемами, решениями и выводами вводимых команд)
+### Вольный перевод Sailfish OS HADK версии 3.0.1.0 (https://sailfishos.org/content/uploads/2019/03/SailfishOS-HardwareAdaptationDevelopmentKit-3.0.1.0.pdf) от 15 марта 2019 с примером портирования на Xiaomi Mido (а также проблемами, решениями и выводами вводимых команд)
 
-**Любые действия Вы делаете на свой страх и риск, помните, что при неумелом обращении с некоторыми командами (например `sudo rm -rf / srv`) вы можете удалить корень системы, лучше делайте копипаст и проверяйте, а не перепечатывайте.**
+** Любые действия Вы делаете на свой страх и риск, помните, что при неумелом обращении с некоторыми командами (например `sudo rm -rf / srv`) вы можете удалить корень системы, лучше делайте копипаст и проверяйте, а не перепечатывайте. **
 
-**Пожалуйста, прежде чем делать что-либо дочитайте руководство до конца, чтобы не повторять описанных ошибок.**
+** Пожалуйста, прежде чем делать что-либо дочитайте руководство до конца, чтобы не повторять описанных ошибок. **
 
 Портирование производилось на Ubuntu 18.04 x64 cо следующими предустановленными программами:
 - adb
 - fastboot
 
-#Установка переменных окружения
+# Установка переменных окружения
 ```bash
-`stalker@stalkerPC:~$ cat <<'EOF' > $HOME/.hadk.env`
-`export PLATFORM_SDK_ROOT="/srv/mer"`
-`export ANDROID_ROOT="$HOME/hadk"`
-`export VENDOR="xiaomi"`
-`export DEVICE="mido"`
-`# Set arch to armv7hl even if you are porting a 64bit device`
-`export PORT_ARCH="armv7hl"`
-`EOF`
+stalker@stalkerPC:~$ cat <<'EOF' > $HOME/.hadk.env
+export PLATFORM_SDK_ROOT="/srv/mer"
+export ANDROID_ROOT="$HOME/hadk"
+export VENDOR="xiaomi"
+export DEVICE="mido"
+# Set arch to armv7hl even if you are porting a 64bit device
+export PORT_ARCH="armv7hl"
+EOF
 ```
 На выходе получаем скрытый файл .hadk.env в вашей домашней директории
 
