@@ -101,13 +101,14 @@ HOST:~$ echo '[ -d /etc/bash_completion.d ] && for i in /etc/bash_completion.d/*
 ```bash
 HOST:~$ cat .mersdk.profile
 ```
-```bash
-<details>
 
+<details>
+```bash
 PS1="PlatformSDK $PS1"
 [ -d /etc/bash_completion.d ] && for i in /etc/bash_completion.d/*;do . $i;done
-</details>
 ```
+</details>
+
 
 Заходим в песочницу,
 ```bash
@@ -115,6 +116,7 @@ HOST:~$ sfossdk
 ```
 
 <details>
+<body>
 SDK targets location '/srv/mer/targets' does not exist - about to create it.
 Continue, abort? [c/a] (c)
 SDK toolings location '/srv/mer/toolings' does not exist - about to create it.
@@ -129,6 +131,7 @@ Mounting home directory: /home/stalker
 Initializing machine ID from random generator.
 Entering chroot as stalker
 PlatformSDK:~$
+</body>
 </details>
 
 Соответственно видим, что все вводимые команды выполнятся из окружения Platform SDK (и как следствие имеем набор команд и параметров который предустановлен в данной песочнице), но находимся мы в домашнем каталоге.
