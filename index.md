@@ -36,9 +36,9 @@ EOF
 HOST:~$ curl -k -O http://releases.sailfishos.org/sdk/installers/latest/Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 ;
 ```
 <details>
->% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
->                               Dload  Upload   Total   Spent    Left  Speed<br>
-> 100  137M  100  137M    0     0  14.4M      0  0:00:09  0:00:09 --:--:-- 17.9M<br>
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
+                               Dload  Upload   Total   Spent    Left  Speed<br>
+ 100  137M  100  137M    0     0  14.4M      0  0:00:09  0:00:09 --:--:-- 17.9M<br>
 </details><br>
 
 Распаковываем скачанный архив
@@ -88,7 +88,6 @@ HOST:~$ echo 'alias sfossdk=$PLATFORM_SDK_ROOT/sdks/sfossdk/mer-sdk-chroot' >> ~
 HOST:~$ tail -n2 .bashrc
 ```
 <details>
-```console
 export PLATFORM_SDK_ROOT=/srv/mer<br>
 alias sfossdk=$PLATFORM_SDK_ROOT/sdks/sfossdk/mer-sdk-chroot<br>
 </details><br>
@@ -465,3 +464,41 @@ including vendor/cm/vendorsetup.sh<br>
 including vendor/cm/bash_completion/git.bash<br>
 including vendor/cm/bash_completion/repo.bash
 </details><br>
+
+Запустим конфигурацию сборки под mido (более подробно можно прочитать http://www.trcompu.com/MySmartPhone/AndroidKitchen/Breakfast-Brunch-Lunch.html)
+```bash
+HABUILD_SDK [mido]:~/hadk$ breakfast $DEVICE
+```
+<details>
+including vendor/cm/vendorsetup.sh
+build/core/product_config.mk:254: *** _nic.PRODUCTS.[[device/xiaomi/mido/lineage.mk]]: "vendor/xiaomi/mido/mido-vendor.mk" does not exist.  Stop.
+build/core/product_config.mk:254: *** _nic.PRODUCTS.[[device/xiaomi/mido/lineage.mk]]: "vendor/xiaomi/mido/mido-vendor.mk" does not exist.  Stop.
+build/core/product_config.mk:254: *** _nic.PRODUCTS.[[device/xiaomi/mido/lineage.mk]]: "vendor/xiaomi/mido/mido-vendor.mk" does not exist.  Stop.
+Device mido not found. Attempting to retrieve device repository from LineageOS Github (http://github.com/LineageOS).
+Found repository: android_device_xiaomi_mido
+Default revision: cm-14.1
+Checking branch info
+Checking if device/xiaomi/mido is fetched from android_device_xiaomi_mido
+Adding dependency: LineageOS/android_device_xiaomi_mido -> device/xiaomi/mido
+Using default branch for android_device_xiaomi_mido
+Syncing repository to retrieve project.
+fatal: duplicate path device/xiaomi/mido in /home/stalker/hadk/.repo/manifest.xml
+Repository synced!
+Looking for dependencies in device/xiaomi/mido
+Adding dependencies to manifest
+Checking if kernel/xiaomi/msm8953 is fetched from android_kernel_xiaomi_msm8953
+Adding dependency: LineageOS/android_kernel_xiaomi_msm8953 -> kernel/xiaomi/msm8953
+Using default branch for android_kernel_xiaomi_msm8953
+Syncing dependencies
+fatal: duplicate path device/xiaomi/mido in /home/stalker/hadk/.repo/manifest.xml
+Looking for dependencies in device/qcom/common
+Dependencies file not found, bailing out.
+Looking for dependencies in kernel/xiaomi/msm8953
+Dependencies file not found, bailing out.
+Done
+build/core/product_config.mk:254: *** _nic.PRODUCTS.[[device/xiaomi/mido/lineage.mk]]: "vendor/xiaomi/mido/mido-vendor.mk" does not exist.  Stop.
+build/core/product_config.mk:254: *** _nic.PRODUCTS.[[device/xiaomi/mido/lineage.mk]]: "vendor/xiaomi/mido/mido-vendor.mk" does not exist.  Stop.
+
+** Don't have a product spec for: 'lineage_mido'
+** Do you have the right repo manifest?
+</details>
