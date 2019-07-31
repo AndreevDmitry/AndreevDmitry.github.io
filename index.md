@@ -470,35 +470,91 @@ including vendor/cm/bash_completion/repo.bash
 HABUILD_SDK [mido]:~/hadk$ breakfast $DEVICE
 ```
 <details>
-including vendor/cm/vendorsetup.sh
-build/core/product_config.mk:254: *** _nic.PRODUCTS.[[device/xiaomi/mido/lineage.mk]]: "vendor/xiaomi/mido/mido-vendor.mk" does not exist.  Stop.
-build/core/product_config.mk:254: *** _nic.PRODUCTS.[[device/xiaomi/mido/lineage.mk]]: "vendor/xiaomi/mido/mido-vendor.mk" does not exist.  Stop.
-build/core/product_config.mk:254: *** _nic.PRODUCTS.[[device/xiaomi/mido/lineage.mk]]: "vendor/xiaomi/mido/mido-vendor.mk" does not exist.  Stop.
-Device mido not found. Attempting to retrieve device repository from LineageOS Github (http://github.com/LineageOS).
-Found repository: android_device_xiaomi_mido
-Default revision: cm-14.1
-Checking branch info
-Checking if device/xiaomi/mido is fetched from android_device_xiaomi_mido
-Adding dependency: LineageOS/android_device_xiaomi_mido -> device/xiaomi/mido
-Using default branch for android_device_xiaomi_mido
-Syncing repository to retrieve project.
-fatal: duplicate path device/xiaomi/mido in /home/stalker/hadk/.repo/manifest.xml
-Repository synced!
-Looking for dependencies in device/xiaomi/mido
-Adding dependencies to manifest
-Checking if kernel/xiaomi/msm8953 is fetched from android_kernel_xiaomi_msm8953
-Adding dependency: LineageOS/android_kernel_xiaomi_msm8953 -> kernel/xiaomi/msm8953
-Using default branch for android_kernel_xiaomi_msm8953
-Syncing dependencies
-fatal: duplicate path device/xiaomi/mido in /home/stalker/hadk/.repo/manifest.xml
-Looking for dependencies in device/qcom/common
-Dependencies file not found, bailing out.
-Looking for dependencies in kernel/xiaomi/msm8953
-Dependencies file not found, bailing out.
-Done
-build/core/product_config.mk:254: *** _nic.PRODUCTS.[[device/xiaomi/mido/lineage.mk]]: "vendor/xiaomi/mido/mido-vendor.mk" does not exist.  Stop.
-build/core/product_config.mk:254: *** _nic.PRODUCTS.[[device/xiaomi/mido/lineage.mk]]: "vendor/xiaomi/mido/mido-vendor.mk" does not exist.  Stop.
-
-** Don't have a product spec for: 'lineage_mido'
+including vendor/cm/vendorsetup.sh<br>
+build/core/product_config.mk:254: *** _nic.PRODUCTS.[[device/xiaomi/mido/lineage.mk]]: "vendor/xiaomi/mido/mido-vendor.mk" does not exist.  Stop.<br>
+build/core/product_config.mk:254: *** _nic.PRODUCTS.[[device/xiaomi/mido/lineage.mk]]: "vendor/xiaomi/mido/mido-vendor.mk" does not exist.  Stop.<br>
+build/core/product_config.mk:254: *** _nic.PRODUCTS.[[device/xiaomi/mido/lineage.mk]]: "vendor/xiaomi/mido/mido-vendor.mk" does not exist.  Stop.<br>
+Device mido not found. Attempting to retrieve device repository from LineageOS Github (http://github.com/LineageOS).<br>
+Found repository: android_device_xiaomi_mido<br>
+Default revision: cm-14.1<br>
+Checking branch info<br>
+Checking if device/xiaomi/mido is fetched from android_device_xiaomi_mido<br>
+Adding dependency: LineageOS/android_device_xiaomi_mido -> device/xiaomi/mido<br>
+Using default branch for android_device_xiaomi_mido<br>
+Syncing repository to retrieve project.<br>
+fatal: duplicate path device/xiaomi/mido in /home/stalker/hadk/.repo/manifest.xml<br>
+Repository synced!<br>
+Looking for dependencies in device/xiaomi/mido<br>
+Adding dependencies to manifest<br>
+Checking if kernel/xiaomi/msm8953 is fetched from android_kernel_xiaomi_msm8953<br>
+Adding dependency: LineageOS/android_kernel_xiaomi_msm8953 -> kernel/xiaomi/msm8953<br>
+Using default branch for android_kernel_xiaomi_msm8953<br>
+Syncing dependencies<br>
+fatal: duplicate path device/xiaomi/mido in /home/stalker/hadk/.repo/manifest.xml<br>
+Looking for dependencies in device/qcom/common<br>
+Dependencies file not found, bailing out.<br>
+Looking for dependencies in kernel/xiaomi/msm8953<br>
+Dependencies file not found, bailing out.<br>
+Done<br>
+build/core/product_config.mk:254: *** _nic.PRODUCTS.[[device/xiaomi/mido/lineage.mk]]: "vendor/xiaomi/mido/mido-vendor.mk" does not exist.  Stop.<br>
+build/core/product_config.mk:254: *** _nic.PRODUCTS.[[device/xiaomi/mido/lineage.mk]]: "vendor/xiaomi/mido/mido-vendor.mk" does not exist.  Stop.<br>
+<br>
+** Don't have a product spec for: 'lineage_mido'<br>
 ** Do you have the right repo manifest?
+</details><br>
+
+Похоже не хватает блобов (blobs - binary large objects) решение описано здесь https://4pda.ru/forum/lofiversion/index.php?t209610-22980.html
+
+Клонируем необходимые файлы
+HABUILD_SDK [mido]:~/hadk$ git clone -b cm-14.1 https://github.com/TheMuppets/proprietary_vendor_xiaomi.git vendor/xiaomi
+<details>
+Cloning into 'vendor/xiaomi'...
+remote: Enumerating objects: 28, done.
+remote: Counting objects: 100% (28/28), done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 35780 (delta 20), reused 18 (delta 18), pack-reused 35752
+Receiving objects: 100% (35780/35780), 3.22 GiB | 4.50 MiB/s, done.
+Resolving deltas: 100% (19055/19055), done.
+Checking out files: 100% (8528/8528), done.
 </details>
+
+
+Чтобы при синхронизации с нуля такой ошибки не было нужно обновить файл `$ANDROID_ROOT/.repo/local_manifests/$DEVICE.xml` и добавить туда строку
+`<project path="vendor/xiaomi" name="TheMuppets/proprietary_vendor_xiaomi" revision="cm-14.1" />`
+
+Повторно приготовим завтрак)))
+```bash
+HABUILD_SDK [mido] stalker@stalkerPC:~/hadk$ breakfast $DEVICE
+```
+<details>
+including vendor/cm/vendorsetup.sh<br>
+Looking for dependencies in device/xiaomi/mido<br>
+Looking for dependencies in device/qcom/common<br>
+Dependencies file not found, bailing out.<br>
+<br>
+============================================<br>
+PLATFORM_VERSION_CODENAME=REL<br>
+PLATFORM_VERSION=7.1.2<br>
+LINEAGE_VERSION=14.1-20190625-UNOFFICIAL-mido<br>
+TARGET_PRODUCT=lineage_mido<br>
+TARGET_BUILD_VARIANT=userdebug<br>
+TARGET_BUILD_TYPE=release<br>
+TARGET_BUILD_APPS=<br>
+TARGET_ARCH=arm64<br>
+TARGET_ARCH_VARIANT=armv8-a<br>
+TARGET_CPU_VARIANT=generic<br>
+TARGET_2ND_ARCH=arm<br>
+TARGET_2ND_ARCH_VARIANT=armv7-a-neon<br>
+TARGET_2ND_CPU_VARIANT=cortex-a53<br>
+HOST_ARCH=x86_64<br>
+HOST_2ND_ARCH=x86<br>
+HOST_OS=linux<br>
+HOST_OS_EXTRA=Linux-4.15.0-52-generic-x86_64-with-Ubuntu-14.04-trusty<br>
+HOST_CROSS_OS=windows<br>
+HOST_CROSS_ARCH=x86<br>
+HOST_CROSS_2ND_ARCH=x86_64<br>
+HOST_BUILD_TYPE=release<br>
+BUILD_ID=NJH47F<br>
+OUT_DIR=/home/stalker/hadk/out<br>
+============================================<br>
+</details><br>
