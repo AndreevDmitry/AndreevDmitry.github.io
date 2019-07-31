@@ -15161,3 +15161,56 @@ Kernel Modules not enabled<br>
 <br>
 #### make completed successfully (02:40 (mm:ss)) ####<br>
 </details><br>
+
+Далее необходимо установить цель "mido" для Scratchbox2, которая будет использоваться для упаковки адаптационных пакетов аппаратного обеспечения mido.
+```console
+PlatformSDK:~/hadk$ sdk-assistant create $VENDOR-$DEVICE http://releases.sailfishos.org/sdk/latest/Jolla-latest-Sailfish_SDK_Tooling-i486.tar.bz2
+```
+<details>
+Creating tooling [xiaomi-mido]<br>
+Using tarball [http://releases.sailfishos.org/sdk/latest/Jolla-latest-Sailfish_SDK_Tooling-i486.tar.bz2]<br>
+Do you want to continue? (y/n) y<br>
+Downloading 'Jolla-latest-Sailfish_SDK_Tooling-i486.tar.bz2'<br>
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
+                                 Dload  Upload   Total   Spent    Left  Speed<br>
+100  223M  100  223M    0     0  15.7M      0  0:00:14  0:00:14 --:--:-- 18.0M<br>
+INFO: md5sum matches - download ok<br>
+Unpacking tooling ...<br>
+Initializing machine ID for tooling 'xiaomi-mido'<br>
+NOTICE: removing unexpected non-empty /etc/machine-id in the 'xiaomi-mido' tooling<br>
+Initializing machine ID from random generator.<br>
+Tooling 'xiaomi-mido' now setup<br>
+</details><br>
+
+```console
+PlatformSDK:~/hadk$ sdk-assistant create $VENDOR-$DEVICE-$PORT_ARCH http://releases.sailfishos.org/sdk/latest/Jolla-latest-Sailfish_SDK_Target-$PORT_ARCH.tar.bz2
+```
+<details>
+Creating target [xiaomi-mido-armv7hl]<br>
+Using tarball [http://releases.sailfishos.org/sdk/latest/Jolla-latest-Sailfish_SDK_Target-armv7hl.tar.bz2]<br>
+Do you want to continue? (y/n) y<br>
+Downloading 'Jolla-latest-Sailfish_SDK_Target-armv7hl.tar.bz2'<br>
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
+                                 Dload  Upload   Total   Spent    Left  Speed<br>
+100  198M  100  198M    0     0  11.1M      0  0:00:17  0:00:17 --:--:-- 11.8M<br>
+INFO: md5sum matches - download ok<br>
+<br>
+Unpacking target ...<br>
+Using 'xiaomi-mido' tooling for this target<br>
+Making sure the right toolchain exists in 'xiaomi-mido' tooling<br>
+Setting up SB2<br>
+Using /srv/mer/toolings/xiaomi-mido//opt/cross/bin/armv7hl-meego-linux-gnueabi-gcc to detect target architecture:<br>
+Finished writing sb2.gcc.config<br>
+gcc configured.<br>
+sb2-init: Target architecture is 'armv7hl'<br>
+sb2-init: Host architecture is 'i[3456]86'<br>
+which: no gcc in (/home/stalker/bin:/home/stalker/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin)<br>
+sb2-init: no host-gcc.<br>
+Finished writing sb2.config<br>
+sb2-init: Creating Debian build system settings for this target:<br>
+Initializing machine ID for target 'xiaomi-mido-armv7hl'<br>
+NOTICE: removing unexpected non-empty /etc/machine-id in the 'xiaomi-mido-armv7hl' target<br>
+qemu: Unsupported syscall: 384<br>
+Initializing machine ID from random generator.<br>
+Target 'xiaomi-mido-armv7hl' now setup<br>
+</details><br>
