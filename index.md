@@ -5343,3 +5343,275 @@ Kernel Modules not enabled<br>
 <br>
 #### make completed successfully (02:30 (mm:ss)) ####<br>
 </details><br>
+
+
+Проверим, что наше ядро сконфигурировано корректно для работы с Sailfish
+```bash
+HABUILD_SDK [mido]:~/hadk$ hybris/mer-kernel-check/mer_verify_kernel_config ./out/target/product/mido/obj/KERNEL_OBJ/.config
+```
+<details>
+perl: warning: Setting locale failed.<br>
+perl: warning: Please check that your locale settings:<br>
+	LANGUAGE = (unset),<br>
+	LC_ALL = (unset),<br>
+	LC_MESSAGES = "en_US.UTF-8",<br>
+	LC_CTYPE = "en_US.UTF-8",<br>
+	LANG = (unset)<br>
+    are supported and installed on your system.<br>
+perl: warning: Falling back to the standard locale ("C").<br>
+WARNING: CONFIG_LOCKD is invalid<br>
+It is unset<br>
+Allowed values : y, m, !<br>
+Comment says: optional, for NFS support<br>
+<br>
+ERROR: CONFIG_DEVTMPFS_MOUNT is invalid<br>
+It is unset<br>
+Allowed values : y<br>
+Comment says: Required by hybris-boot init-script<br>
+<br>
+WARNING: CONFIG_NET_CLS_CGROUP is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: systemd (optional): http://0pointer.de/blog/projects/cgroups-vs-cgroups.html<br>
+<br>
+WARNING: CONFIG_PID_NS is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: optional, enables kernel namespaces for systemd-nspawn containers<br>
+<br>
+WARNING: CONFIG_NFS_FS is invalid<br>
+It is unset<br>
+Allowed values : y, m, !<br>
+Comment says: optional, for NFS support<br>
+<br>
+WARNING: CONFIG_UTS_NS is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: optional, enables kernel namespaces for systemd-nspawn containers<br>
+<br>
+ERROR: CONFIG_FHANDLE is invalid<br>
+It is unset<br>
+Allowed values : y<br>
+Comment says: systemd: http://cgit.freedesktop.org/systemd/systemd/commit/README?id=001809282918f273d372f1ee09d10b783c18a474<br>
+<br>
+WARNING: CONFIG_WATCHDOG_NOWAYOUT is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: If device uses watchdogs with dsme (https://github.com/nemomobile/dsme), this option should be enabled or watchdog does not protect the device in case dsme crashes.<br>
+<br>
+WARNING: CONFIG_NETPRIO_CGROUP is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: systemd (optional): http://0pointer.de/blog/projects/cgroups-vs-cgroups.html<br>
+<br>
+WARNING: CONFIG_CGROUP_PERF is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: systemd (optional): http://0pointer.de/blog/projects/cgroups-vs-cgroups.html<br>
+<br>
+WARNING: CONFIG_LOCKD_V4 is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: optional, for NFS support<br>
+<br>
+WARNING: CONFIG_SECURITY_SELINUX_BOOTPARAM is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: Required by hybris, SELinux needs to be disabled. Leave as not set, if you have unset AUDIT (read more about the CONFIG_AUDIT flag)<br>
+<br>
+WARNING: CONFIG_NFS_V3 is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: optional, for NFS support<br>
+<br>
+WARNING: CONFIG_CGROUP_MEM_RES_CTLR_KMEM is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: systemd (optional): http://0pointer.de/blog/projects/cgroups-vs-cgroups.html, ignore if kernel version >= 3.10<br>
+<br>
+WARNING: CONFIG_SECURITY_YAMA is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: optional, prevents user's processes from ptracing each other<br>
+<br>
+WARNING: CONFIG_LBDAF is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: ext4 filesystem requires this in order to support filesysetms with huge_file feature, which is enabled by default by mke2fs.ext4<br>
+<br>
+WARNING: CONFIG_NETFILTER_XT_MATCH_NFACCT is invalid<br>
+It is unset<br>
+Allowed values : y, m, !<br>
+Comment says: connman (optional): for routing and statistic support in sessions, http://git.kernel.org/cgit/network/connman/connman.git/commit/README?id=41f37125887cb9208da2441e350e1e3324c17ee6<br>
+<br>
+WARNING: CONFIG_MEMCG_KMEM is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: systemd (optional, but recommended): http://0pointer.de/blog/projects/cgroups-vs-cgroups.html, ignore if kernel version < 3.10<br>
+<br>
+WARNING: CONFIG_NFS_COMMON is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: optional, for NFS support<br>
+<br>
+WARNING: CONFIG_BT_HCIUART_H4 is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: Bluez (optional): Needed if bluez used as bluetooth stack<br>
+<br>
+WARNING: CONFIG_SECURITY_YAMA_STACKED is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: optional, ignore for kernel version >= 4.3<br>
+<br>
+WARNING: CONFIG_FW_LOADER_USER_HELPER is invalid<br>
+Value is: y<br>
+Allowed values : n, !<br>
+Comment says: it's actually needed by some Lollipop based devices; systemd(optional): http://cgit.freedesktop.org/systemd/systemd/commit/README?id=713bc0cfa477ca1df8769041cb3dbc83c10eace2<br>
+<br>
+WARNING: CONFIG_NFS_V4_1 is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: optional, for NFS support<br>
+<br>
+WARNING: CONFIG_NFS_V4 is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: optional, for NFS support<br>
+<br>
+WARNING: CONFIG_SUNRPC is invalid<br>
+It is unset<br>
+Allowed values : y, m, !<br>
+Comment says: optional, for NFS support<br>
+<br>
+WARNING: CONFIG_CHECKPOINT_RESTORE is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: rich-core-dumper (https://github.com/mer-tools/sp-rich-core/) needs this to collect all data for environment recreation.<br>
+<br>
+WARNING: CONFIG_SCHED_DEBUG is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: systemd-bootchart (optional): http://cgit.freedesktop.org/systemd/systemd/commit/README?id=f1c24fea94e19cf2108abbeed1d36ded7102ab98<br>
+<br>
+WARNING: CONFIG_UDF_FS is invalid<br>
+It is unset<br>
+Allowed values : y, m, !<br>
+Comment says: optional extra filesystem (DVD & portable USB)<br>
+<br>
+ERROR: CONFIG_IKCONFIG_PROC is invalid<br>
+It is unset<br>
+Allowed values : y<br>
+Comment says: Required by hybris-boot init-script<br>
+<br>
+WARNING: CONFIG_BLK_DEV_NBD is invalid<br>
+It is unset<br>
+Allowed values : y, m, !<br>
+Comment says: optional, for NFS & CIFS support<br>
+<br>
+WARNING: CONFIG_CGROUP_MEM_RES_CTLR_SWAP is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: systemd (optional): http://0pointer.de/blog/projects/cgroups-vs-cgroups.html, ignore if kernel version >= 3.10<br>
+<br>
+WARNING: CONFIG_AUDIT is invalid<br>
+Value is: y<br>
+Allowed values : n, !<br>
+Comment says: This will disable SELinux! That's ok, because hybris adaptations must not have SELinux, but if your device needs its support in kernel, set AUDIT=y and SELINUX_BOOTPARAM=y. Then disable them via kernel cmdline: audit=0 selinux=0. You can also leave audit enabled, if you don't plan to use systemd's containers: http://cgit.freedesktop.org/systemd/systemd/commit/README?id=77b6e19458f37cfde127ec6aa9494c0ac45ad890<br>
+<br>
+WARNING: CONFIG_SUNRPC_GSS is invalid<br>
+It is unset<br>
+Allowed values : y, m, !<br>
+Comment says: optional, for NFS support<br>
+<br>
+WARNING: CONFIG_FANOTIFY is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: optional, required for systemd readahead.<br>
+<br>
+WARNING: CONFIG_NFS_ACL_SUPPORT is invalid<br>
+It is unset<br>
+Allowed values : y, m, !<br>
+Comment says: optional, for NFS support<br>
+<br>
+ERROR: CONFIG_DUMMY is invalid<br>
+Value is: y<br>
+Allowed values : n<br>
+Use of uninitialized value in concatenation (.) or string at hybris/mer-kernel-check/mer_verify_kernel_config line 111, <> line 4545.<br>
+Comment says:<br>
+<br>
+WARNING: CONFIG_NETFILTER_NETLINK_ACCT is invalid<br>
+It is unset<br>
+Allowed values : y, m, !<br>
+Comment says: connman (optional): for routing and statistic support in sessions, http://git.kernel.org/cgit/network/connman/connman.git/commit/README?id=41f37125887cb9208da2441e350e1e3324c17ee6<br>
+<br>
+WARNING: CONFIG_ISO9660_FS is invalid<br>
+It is unset<br>
+Allowed values : y, m, !<br>
+Comment says: optional extra filesystem (CD-ROM)<br>
+<br>
+WARNING: CONFIG_BTRFS_FS is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: optional extra filesystem (BTRFS)<br>
+<br>
+ERROR: CONFIG_VT is invalid<br>
+It is unset<br>
+Allowed values : y<br>
+Comment says: Required for virtual consoles<br>
+<br>
+WARNING: CONFIG_BLK_CGROUP is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: systemd (optional): http://0pointer.de/blog/projects/cgroups-vs-cgroups.html<br>
+<br>
+WARNING: CONFIG_IPC_NS is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: optional, enables kernel namespaces for systemd-nspawn containers<br>
+<br>
+ERROR: CONFIG_DEVTMPFS is invalid<br>
+It is unset<br>
+Allowed values : y<br>
+Comment says: systemd: http://cgit.freedesktop.org/systemd/systemd/commit/README?id=713bc0cfa477ca1df8769041cb3dbc83c10eace2<br>
+<br>
+ERROR: CONFIG_SYSVIPC is invalid<br>
+It is unset<br>
+Allowed values : y<br>
+Comment says: Inter Process Communication option is required to run Mer<br>
+<br>
+WARNING: CONFIG_BT_HCIUART is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: Bluez (optional): Needed if bluez used as bluetooth stack<br>
+<br>
+WARNING: CONFIG_RTC_DRV_CMOS is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: optional, but highly recommended<br>
+<br>
+WARNING: CONFIG_NFS_USE_KERNEL_DNS is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: optional, for NFS support<br>
+<br>
+WARNING: CONFIG_CGROUP_MEM_RES_CTLR is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: systemd (optional): http://0pointer.de/blog/projects/cgroups-vs-cgroups.html, ignore if kernel version >= 3.10<br>
+<br>
+WARNING: CONFIG_CGROUP_DEVICE is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: systemd (optional): http://0pointer.de/blog/projects/cgroups-vs-cgroups.html<br>
+<br>
+WARNING: CONFIG_NFS_V3_ACL is invalid<br>
+It is unset<br>
+Allowed values : y, !<br>
+Comment says: optional, for NFS support<br>
+<br>
+WARNING: CONFIG_AUTOFS4_FS is invalid<br>
+It is unset<br>
+Allowed values : y, m, !<br>
+Comment says: systemd (optional): http://cgit.freedesktop.org/systemd/systemd/commit/README?id=713bc0cfa477ca1df8769041cb3dbc83c10eace2<br>
+</details><br>
