@@ -52,6 +52,7 @@ HOST:~$ ls -lah /srv/mer/sdks/sfossdk/
 ```
 
 <details>
+<br />
 итого 96K
 drwxr-xr-x 20 root root 4,0K мая  6 17:49 .
 drwxr-xr-x  3 root root 4,0K июн 20 22:13 ..
@@ -75,6 +76,7 @@ drwxr-xr-x  2 root root 4,0K мая  6 17:48 sys
 drwxrwxrwt  2 root root 4,0K мая  6 17:49 tmp
 drwxr-xr-x 12 root root 4,0K мая  6 17:49 usr
 drwxr-xr-x 17 root root 4,0K мая  6 17:49 var
+</br />
 </details>
 
 Создаем короткое имя (alias) для входа в песочницу Sailfish OS SDK (она же Platform SDK, она же Mer SDK)
