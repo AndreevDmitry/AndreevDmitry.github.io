@@ -35,14 +35,16 @@ EOF
 ```bash
 HOST:~$ curl -k -O http://releases.sailfishos.org/sdk/installers/latest/Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 ;
 ```
-<details><summary>CLICK ME</summary>
-<p>
-```python
-% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                               Dload  Upload   Total   Spent    Left  Speed
-100  137M  100  137M    0     0  14.4M      0  0:00:09  0:00:09 --:--:-- 17.9M
-```
-</p>
+# A collapsible section with code
+<details>
+  <summary>Click to expand!</summary>
+
+  ```javascript
+    function whatIsLove() {
+      console.log('Baby Don't hurt me. Don't hurt me');
+      return 'No more';
+    }
+  ```
 </details>
 
 <details>
