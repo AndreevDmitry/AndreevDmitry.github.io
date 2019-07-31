@@ -506,20 +506,22 @@ build/core/product_config.mk:254: *** _nic.PRODUCTS.[[device/xiaomi/mido/lineage
 Похоже не хватает блобов (blobs - binary large objects) решение описано здесь https://4pda.ru/forum/lofiversion/index.php?t209610-22980.html
 
 Клонируем необходимые файлы
+```bash
 HABUILD_SDK [mido]:~/hadk$ git clone -b cm-14.1 https://github.com/TheMuppets/proprietary_vendor_xiaomi.git vendor/xiaomi
+```
 <details>
-Cloning into 'vendor/xiaomi'...
-remote: Enumerating objects: 28, done.
-remote: Counting objects: 100% (28/28), done.
-remote: Compressing objects: 100% (10/10), done.
-remote: Total 35780 (delta 20), reused 18 (delta 18), pack-reused 35752
-Receiving objects: 100% (35780/35780), 3.22 GiB | 4.50 MiB/s, done.
-Resolving deltas: 100% (19055/19055), done.
-Checking out files: 100% (8528/8528), done.
-</details>
+Cloning into 'vendor/xiaomi'...<br>
+remote: Enumerating objects: 28, done.<br>
+remote: Counting objects: 100% (28/28), done.<br>
+remote: Compressing objects: 100% (10/10), done.<br>
+remote: Total 35780 (delta 20), reused 18 (delta 18), pack-reused 35752<br>
+Receiving objects: 100% (35780/35780), 3.22 GiB | 4.50 MiB/s, done.<br>
+Resolving deltas: 100% (19055/19055), done.<br>
+Checking out files: 100% (8528/8528), done.<br>
+</details><br>
 
 
-Чтобы при синхронизации с нуля такой ошибки не было нужно обновить файл `$ANDROID_ROOT/.repo/local_manifests/$DEVICE.xml` и добавить туда строку
+Чтобы при синхронизации с нуля такой ошибки не было нужно обновить файл `$ANDROID_ROOT/.repo/local_manifests/$DEVICE.xml` и добавить туда строку<br>
 `<project path="vendor/xiaomi" name="TheMuppets/proprietary_vendor_xiaomi" revision="cm-14.1" />`
 
 Повторно приготовим завтрак)))
