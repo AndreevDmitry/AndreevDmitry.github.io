@@ -35,17 +35,6 @@ EOF
 ```console
 HOST:~$ curl -k -O http://releases.sailfishos.org/sdk/installers/latest/Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 ;
 ```
-# A collapsible section with code
-<details>
-  <summary>Click to expand!</summary>
-
-  ```javascript
-    function whatIsLove() {
-      console.log('Baby Don't hurt me. Don't hurt me');
-      return 'No more';
-    }
-  ```
-</details>
 
 <details>
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
