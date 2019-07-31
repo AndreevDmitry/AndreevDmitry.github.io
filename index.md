@@ -689,10 +689,12 @@ make: *** [/home/stalker/hadk/out/build-lineage_mido.ninja] Error 1<br>
 <br>
 #### make failed to build some targets (12 seconds) ####<br>
 </details><br>
-<br>
-Пишет что не хватает ImageMagic, обновим репозитории<br>
-HABUILD_SDK [mido] stalker@stalkerPC:~/hadk$ sudo apt-get update<br>
-<details><br>
+
+Пишет что не хватает ImageMagic, обновим репозитории
+```bash
+HABUILD_SDK [mido]:~/hadk$ sudo apt-get update
+```
+<details>
 Ign http://archive.ubuntu.com trusty InRelease<br>
 Get:1 http://ppa.launchpad.net trusty InRelease [20.8 kB]<br>
 Get:2 http://archive.ubuntu.com trusty-security InRelease [65.9 kB]<br>
@@ -748,4 +750,222 @@ Hit http://archive.ubuntu.com trusty/universe Translation-en<br>
 Fetched 7237 kB in 8s (848 kB/s)<br>
 Reading package lists... Done<br>
 W: GPG error: http://ppa.launchpad.net trusty InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY A1715D88E1DF1F24<br>
+</details><br>
+
+и установим ImageMagick
+```bash
+HABUILD_SDK [mido]:~/hadk$ sudo apt-get install imagemagick
+```
+<details>
+Reading package lists... Done<br>
+Building dependency tree<br>
+Reading state information... Done<br>
+The following extra packages will be installed:<br>
+ ghostscript gsfonts imagemagick-common libcroco3 libcups2 libcupsfilters1<br>
+ libcupsimage2 libdjvulibre-text libdjvulibre21 libfftw3-double3 libgs9<br>
+ libgs9-common libijs-0.35 libilmbase6 libjbig2dec0 liblqr-1-0 libmagickcore5<br>
+ libmagickcore5-extra libmagickwand5 libnetpbm10 libopenexr6 libpaper-utils<br>
+ libpaper1 librsvg2-2 librsvg2-common libwmf0.2-7 netpbm poppler-data<br>
+Suggested packages:<br>
+ ghostscript-x hpijs imagemagick-doc autotrace cups-bsd lpr lprng enscript<br>
+ ffmpeg gimp gnuplot grads groff-base hp2xx html2ps libwmf-bin mplayer povray<br>
+ radiance sane-utils texlive-base-bin transfig xdg-utils ufraw-batch<br>
+ cups-common libfftw3-bin libfftw3-dev fonts-droid librsvg2-bin<br>
+ libwmf0.2-7-gtk poppler-utils fonts-japanese-mincho fonts-ipafont-mincho<br>
+ fonts-japanese-gothic fonts-ipafont-gothic fonts-arphic-ukai<br>
+ fonts-arphic-uming fonts-unfonts-core<br>
+The following NEW packages will be installed:<br>
+ ghostscript gsfonts imagemagick imagemagick-common libcroco3 libcupsfilters1<br>
+ libcupsimage2 libdjvulibre-text libdjvulibre21 libfftw3-double3 libgs9<br>
+ libgs9-common libijs-0.35 libilmbase6 libjbig2dec0 liblqr-1-0 libmagickcore5<br>
+ libmagickcore5-extra libmagickwand5 libnetpbm10 libopenexr6 libpaper-utils<br>
+ libpaper1 librsvg2-2 librsvg2-common libwmf0.2-7 netpbm poppler-data<br>
+The following packages will be upgraded:<br>
+ libcups2<br>
+1 upgraded, 28 newly installed, 0 to remove and 109 not upgraded.<br>
+Need to get 18.0 MB of archives.<br>
+After this operation, 62.4 MB of additional disk space will be used.<br>
+Do you want to continue? [Y/n] y<br>
+Get:1 http://archive.ubuntu.com/ubuntu/ trusty-security/main imagemagick-common all 8:6.7.7.10-6ubuntu3.13 [38.4 kB]<br>
+Get:2 http://archive.ubuntu.com/ubuntu/ trusty/main libcroco3 amd64 0.6.8-2ubuntu1 [82.4 kB]<br>
+Get:3 http://archive.ubuntu.com/ubuntu/ trusty-security/main libcups2 amd64 1.7.2-0ubuntu1.11 [178 kB]<br>
+Get:4 http://archive.ubuntu.com/ubuntu/ trusty-security/main libcupsfilters1 amd64 1.0.52-0ubuntu1.8 [73.7 kB]<br>
+Get:5 http://archive.ubuntu.com/ubuntu/ trusty-security/main libcupsimage2 amd64 1.7.2-0ubuntu1.11 [15.4 kB]<br>
+Get:6 http://archive.ubuntu.com/ubuntu/ trusty/main libdjvulibre-text all 3.5.25.4-3 [48.8 kB]<br>
+Get:7 http://archive.ubuntu.com/ubuntu/ trusty/main libdjvulibre21 amd64 3.5.25.4-3 [553 kB]<br>
+Get:8 http://archive.ubuntu.com/ubuntu/ trusty/main libfftw3-double3 amd64 3.3.3-7ubuntu3 [702 kB]<br>
+Get:9 http://archive.ubuntu.com/ubuntu/ trusty/main libilmbase6 amd64 1.0.1-6ubuntu1 [53.6 kB]<br>
+Get:10 http://archive.ubuntu.com/ubuntu/ trusty/main liblqr-1-0 amd64 0.4.1-2ubuntu1 [23.4 kB]<br>
+Get:11 http://archive.ubuntu.com/ubuntu/ trusty-security/main libmagickcore5 amd64 8:6.7.7.10-6ubuntu3.13 [1480 kB]<br>
+Get:12 http://archive.ubuntu.com/ubuntu/ trusty-security/main libmagickwand5 amd64 8:6.7.7.10-6ubuntu3.13 [267 kB]<br>
+Get:13 http://archive.ubuntu.com/ubuntu/ trusty/main libopenexr6 amd64 1.6.1-7ubuntu1 [164 kB]<br>
+Get:14 http://archive.ubuntu.com/ubuntu/ trusty/main librsvg2-2 amd64 2.40.2-1 [88.3 kB]<br>
+Get:15 http://archive.ubuntu.com/ubuntu/ trusty-security/main libwmf0.2-7 amd64 0.2.8.4-10.3ubuntu1.14.04.1 [143 kB]<br>
+Get:16 http://archive.ubuntu.com/ubuntu/ trusty-security/main libmagickcore5-extra amd64 8:6.7.7.10-6ubuntu3.13 [58.4 kB]<br>
+Get:17 http://archive.ubuntu.com/ubuntu/ trusty/main libpaper1 amd64 1.1.24+nmu2ubuntu3 [13.4 kB]<br>
+Get:18 http://archive.ubuntu.com/ubuntu/ trusty/main poppler-data all 0.4.6-4 [1479 kB]<br>
+Get:19 http://archive.ubuntu.com/ubuntu/ trusty/main libijs-0.35 amd64 0.35-8build1 [16.8 kB]<br>
+Get:20 http://archive.ubuntu.com/ubuntu/ trusty-security/main libjbig2dec0 amd64 0.11+20120125-1ubuntu1.1 [43.0 kB]<br>
+Get:21 http://archive.ubuntu.com/ubuntu/ trusty-security/main libgs9-common all 9.26~dfsg+0-0ubuntu0.14.04.8 [5098 kB]<br>
+Get:22 http://archive.ubuntu.com/ubuntu/ trusty-security/main libgs9 amd64 9.26~dfsg+0-0ubuntu0.14.04.8 [2355 kB]<br>
+Get:23 http://archive.ubuntu.com/ubuntu/ trusty/main gsfonts all 1:8.11+urwcyr1.0.7~pre44-4.2ubuntu1 [3374 kB]<br>
+Get:24 http://archive.ubuntu.com/ubuntu/ trusty-security/main ghostscript amd64 9.26~dfsg+0-0ubuntu0.14.04.8 [47.1 kB]<br>
+Get:25 http://archive.ubuntu.com/ubuntu/ trusty-security/main imagemagick amd64 8:6.7.7.10-6ubuntu3.13 [189 kB]<br>
+Get:26 http://archive.ubuntu.com/ubuntu/ trusty/main libnetpbm10 amd64 2:10.0-15ubuntu2 [69.0 kB]<br>
+Get:27 http://archive.ubuntu.com/ubuntu/ trusty/main libpaper-utils amd64 1.1.24+nmu2ubuntu3 [8244 B]<br>
+Get:28 http://archive.ubuntu.com/ubuntu/ trusty/main librsvg2-common amd64 2.40.2-1 [4990 B]<br>
+Get:29 http://archive.ubuntu.com/ubuntu/ trusty/main netpbm amd64 2:10.0-15ubuntu2 [1341 kB]<br>
+Fetched 18.0 MB in 6s (2712 kB/s)<br>
+perl: warning: Setting locale failed.<br>
+perl: warning: Please check that your locale settings:<br>
+ LANGUAGE = (unset),<br>
+ LC_ALL = (unset),<br>
+ LC_CTYPE = "en_US.UTF-8",<br>
+ LC_MESSAGES = "en_US.UTF-8",<br>
+ LANG = (unset)<br>
+   are supported and installed on your system.<br>
+perl: warning: Falling back to the standard locale ("C").<br>
+locale: Cannot set LC_CTYPE to default locale: No such file or directory<br>
+locale: Cannot set LC_MESSAGES to default locale: No such file or directory<br>
+locale: Cannot set LC_ALL to default locale: No such file or directory<br>
+Preconfiguring packages ...<br>
+Selecting previously unselected package imagemagick-common.<br>
+(Reading database ... 30574 files and directories currently installed.)<br>
+Preparing to unpack .../imagemagick-common_8%3a6.7.7.10-6ubuntu3.13_all.deb ...<br>
+Unpacking imagemagick-common (8:6.7.7.10-6ubuntu3.13) ...<br>
+Selecting previously unselected package libcroco3:amd64.<br>
+Preparing to unpack .../libcroco3_0.6.8-2ubuntu1_amd64.deb ...<br>
+Unpacking libcroco3:amd64 (0.6.8-2ubuntu1) ...<br>
+Preparing to unpack .../libcups2_1.7.2-0ubuntu1.11_amd64.deb ...<br>
+Unpacking libcups2:amd64 (1.7.2-0ubuntu1.11) over (1.7.2-0ubuntu1.9) ...<br>
+Selecting previously unselected package libcupsfilters1:amd64.<br>
+Preparing to unpack .../libcupsfilters1_1.0.52-0ubuntu1.8_amd64.deb ...<br>
+Unpacking libcupsfilters1:amd64 (1.0.52-0ubuntu1.8) ...<br>
+Selecting previously unselected package libcupsimage2:amd64.<br>
+Preparing to unpack .../libcupsimage2_1.7.2-0ubuntu1.11_amd64.deb ...<br>
+Unpacking libcupsimage2:amd64 (1.7.2-0ubuntu1.11) ...<br>
+Selecting previously unselected package libdjvulibre-text.<br>
+Preparing to unpack .../libdjvulibre-text_3.5.25.4-3_all.deb ...<br>
+Unpacking libdjvulibre-text (3.5.25.4-3) ...<br>
+Selecting previously unselected package libdjvulibre21:amd64.<br>
+Preparing to unpack .../libdjvulibre21_3.5.25.4-3_amd64.deb ...<br>
+Unpacking libdjvulibre21:amd64 (3.5.25.4-3) ...<br>
+Selecting previously unselected package libfftw3-double3:amd64.<br>
+Preparing to unpack .../libfftw3-double3_3.3.3-7ubuntu3_amd64.deb ...<br>
+Unpacking libfftw3-double3:amd64 (3.3.3-7ubuntu3) ...<br>
+Selecting previously unselected package libilmbase6:amd64.<br>
+Preparing to unpack .../libilmbase6_1.0.1-6ubuntu1_amd64.deb ...<br>
+Unpacking libilmbase6:amd64 (1.0.1-6ubuntu1) ...<br>
+Selecting previously unselected package liblqr-1-0:amd64.<br>
+Preparing to unpack .../liblqr-1-0_0.4.1-2ubuntu1_amd64.deb ...<br>
+Unpacking liblqr-1-0:amd64 (0.4.1-2ubuntu1) ...<br>
+Selecting previously unselected package libmagickcore5:amd64.<br>
+Preparing to unpack .../libmagickcore5_8%3a6.7.7.10-6ubuntu3.13_amd64.deb ...<br>
+Unpacking libmagickcore5:amd64 (8:6.7.7.10-6ubuntu3.13) ...<br>
+Selecting previously unselected package libmagickwand5:amd64.<br>
+Preparing to unpack .../libmagickwand5_8%3a6.7.7.10-6ubuntu3.13_amd64.deb ...<br>
+Unpacking libmagickwand5:amd64 (8:6.7.7.10-6ubuntu3.13) ...<br>
+Selecting previously unselected package libopenexr6:amd64.<br>
+Preparing to unpack .../libopenexr6_1.6.1-7ubuntu1_amd64.deb ...<br>
+Unpacking libopenexr6:amd64 (1.6.1-7ubuntu1) ...<br>
+Selecting previously unselected package librsvg2-2:amd64.<br>
+Preparing to unpack .../librsvg2-2_2.40.2-1_amd64.deb ...<br>
+Unpacking librsvg2-2:amd64 (2.40.2-1) ...<br>
+Selecting previously unselected package libwmf0.2-7:amd64.<br>
+Preparing to unpack .../libwmf0.2-7_0.2.8.4-10.3ubuntu1.14.04.1_amd64.deb ...<br>
+Unpacking libwmf0.2-7:amd64 (0.2.8.4-10.3ubuntu1.14.04.1) ...<br>
+Selecting previously unselected package libmagickcore5-extra:amd64.<br>
+Preparing to unpack .../libmagickcore5-extra_8%3a6.7.7.10-6ubuntu3.13_amd64.deb ...<br>
+Unpacking libmagickcore5-extra:amd64 (8:6.7.7.10-6ubuntu3.13) ...<br>
+Selecting previously unselected package libpaper1:amd64.<br>
+Preparing to unpack .../libpaper1_1.1.24+nmu2ubuntu3_amd64.deb ...<br>
+Unpacking libpaper1:amd64 (1.1.24+nmu2ubuntu3) ...<br>
+Selecting previously unselected package poppler-data.<br>
+Preparing to unpack .../poppler-data_0.4.6-4_all.deb ...<br>
+Unpacking poppler-data (0.4.6-4) ...<br>
+Selecting previously unselected package libijs-0.35.<br>
+Preparing to unpack .../libijs-0.35_0.35-8build1_amd64.deb ...<br>
+Unpacking libijs-0.35 (0.35-8build1) ...<br>
+Selecting previously unselected package libjbig2dec0.<br>
+Preparing to unpack .../libjbig2dec0_0.11+20120125-1ubuntu1.1_amd64.deb ...<br>
+Unpacking libjbig2dec0 (0.11+20120125-1ubuntu1.1) ...<br>
+Selecting previously unselected package libgs9-common.<br>
+Preparing to unpack .../libgs9-common_9.26~dfsg+0-0ubuntu0.14.04.8_all.deb ...<br>
+Unpacking libgs9-common (9.26~dfsg+0-0ubuntu0.14.04.8) ...<br>
+Selecting previously unselected package libgs9.<br>
+Preparing to unpack .../libgs9_9.26~dfsg+0-0ubuntu0.14.04.8_amd64.deb ...<br>
+Unpacking libgs9 (9.26~dfsg+0-0ubuntu0.14.04.8) ...<br>
+Selecting previously unselected package gsfonts.<br>
+Preparing to unpack .../gsfonts_1%3a8.11+urwcyr1.0.7~pre44-4.2ubuntu1_all.deb ...<br>
+Unpacking gsfonts (1:8.11+urwcyr1.0.7~pre44-4.2ubuntu1) ...<br>
+Selecting previously unselected package ghostscript.<br>
+Preparing to unpack .../ghostscript_9.26~dfsg+0-0ubuntu0.14.04.8_amd64.deb ...<br>
+Unpacking ghostscript (9.26~dfsg+0-0ubuntu0.14.04.8) ...<br>
+Selecting previously unselected package imagemagick.<br>
+Preparing to unpack .../imagemagick_8%3a6.7.7.10-6ubuntu3.13_amd64.deb ...<br>
+Unpacking imagemagick (8:6.7.7.10-6ubuntu3.13) ...<br>
+Selecting previously unselected package libnetpbm10.<br>
+Preparing to unpack .../libnetpbm10_2%3a10.0-15ubuntu2_amd64.deb ...<br>
+Unpacking libnetpbm10 (2:10.0-15ubuntu2) ...<br>
+Selecting previously unselected package libpaper-utils.<br>
+Preparing to unpack .../libpaper-utils_1.1.24+nmu2ubuntu3_amd64.deb ...<br>
+Unpacking libpaper-utils (1.1.24+nmu2ubuntu3) ...<br>
+Selecting previously unselected package librsvg2-common:amd64.<br>
+Preparing to unpack .../librsvg2-common_2.40.2-1_amd64.deb ...<br>
+Unpacking librsvg2-common:amd64 (2.40.2-1) ...<br>
+Selecting previously unselected package netpbm.<br>
+Preparing to unpack .../netpbm_2%3a10.0-15ubuntu2_amd64.deb ...<br>
+Unpacking netpbm (2:10.0-15ubuntu2) ...<br>
+Processing triggers for fontconfig (2.11.0-0ubuntu4.2) ...<br>
+Processing triggers for mime-support (3.54ubuntu1.1) ...<br>
+Processing triggers for hicolor-icon-theme (0.13-1) ...<br>
+Processing triggers for libgdk-pixbuf2.0-0:amd64 (2.30.7-0ubuntu1.8) ...<br>
+Setting up imagemagick-common (8:6.7.7.10-6ubuntu3.13) ...<br>
+Setting up libcroco3:amd64 (0.6.8-2ubuntu1) ...<br>
+Setting up libcups2:amd64 (1.7.2-0ubuntu1.11) ...<br>
+Setting up libcupsfilters1:amd64 (1.0.52-0ubuntu1.8) ...<br>
+Setting up libcupsimage2:amd64 (1.7.2-0ubuntu1.11) ...<br>
+Setting up libdjvulibre-text (3.5.25.4-3) ...<br>
+Setting up libdjvulibre21:amd64 (3.5.25.4-3) ...<br>
+Setting up libfftw3-double3:amd64 (3.3.3-7ubuntu3) ...<br>
+Setting up libilmbase6:amd64 (1.0.1-6ubuntu1) ...<br>
+Setting up liblqr-1-0:amd64 (0.4.1-2ubuntu1) ...<br>
+Setting up libmagickcore5:amd64 (8:6.7.7.10-6ubuntu3.13) ...<br>
+Setting up libmagickwand5:amd64 (8:6.7.7.10-6ubuntu3.13) ...<br>
+Setting up libopenexr6:amd64 (1.6.1-7ubuntu1) ...<br>
+Setting up librsvg2-2:amd64 (2.40.2-1) ...<br>
+Setting up libwmf0.2-7:amd64 (0.2.8.4-10.3ubuntu1.14.04.1) ...<br>
+Setting up libmagickcore5-extra:amd64 (8:6.7.7.10-6ubuntu3.13) ...<br>
+Setting up libpaper1:amd64 (1.1.24+nmu2ubuntu3) ...<br>
+locale: Cannot set LC_CTYPE to default locale: No such file or directory<br>
+locale: Cannot set LC_MESSAGES to default locale: No such file or directory<br>
+locale: Cannot set LC_ALL to default locale: No such file or directory<br>
+<br>
+Creating config file /etc/papersize with new version<br>
+Setting up poppler-data (0.4.6-4) ...<br>
+Setting up libijs-0.35 (0.35-8build1) ...<br>
+Setting up libjbig2dec0 (0.11+20120125-1ubuntu1.1) ...<br>
+Setting up libgs9-common (9.26~dfsg+0-0ubuntu0.14.04.8) ...<br>
+update-alternatives: using /usr/share/ghostscript/9.26 to provide /usr/share/ghostscript/current (ghostscript-current) in auto mode<br>
+Setting up libgs9 (9.26~dfsg+0-0ubuntu0.14.04.8) ...<br>
+Setting up gsfonts (1:8.11+urwcyr1.0.7~pre44-4.2ubuntu1) ...<br>
+Setting up ghostscript (9.26~dfsg+0-0ubuntu0.14.04.8) ...<br>
+Setting up imagemagick (8:6.7.7.10-6ubuntu3.13) ...<br>
+update-alternatives: using /usr/bin/compare.im6 to provide /usr/bin/compare (compare) in auto mode<br>
+update-alternatives: using /usr/bin/animate.im6 to provide /usr/bin/animate (animate) in auto mode<br>
+update-alternatives: using /usr/bin/convert.im6 to provide /usr/bin/convert (convert) in auto mode<br>
+update-alternatives: using /usr/bin/composite.im6 to provide /usr/bin/composite (composite) in auto mode<br>
+update-alternatives: using /usr/bin/conjure.im6 to provide /usr/bin/conjure (conjure) in auto mode<br>
+update-alternatives: using /usr/bin/import.im6 to provide /usr/bin/import (import) in auto mode<br>
+update-alternatives: using /usr/bin/identify.im6 to provide /usr/bin/identify (identify) in auto mode<br>
+update-alternatives: using /usr/bin/stream.im6 to provide /usr/bin/stream (stream) in auto mode<br>
+update-alternatives: using /usr/bin/display.im6 to provide /usr/bin/display (display) in auto mode<br>
+update-alternatives: using /usr/bin/montage.im6 to provide /usr/bin/montage (montage) in auto mode<br>
+update-alternatives: using /usr/bin/mogrify.im6 to provide /usr/bin/mogrify (mogrify) in auto mode<br>
+Setting up libnetpbm10 (2:10.0-15ubuntu2) ...<br>
+Setting up libpaper-utils (1.1.24+nmu2ubuntu3) ...<br>
+Setting up librsvg2-common:amd64 (2.40.2-1) ...<br>
+Setting up netpbm (2:10.0-15ubuntu2) ...<br>
+Processing triggers for libc-bin (2.19-0ubuntu6.14) ...<br>
+Processing triggers for libgdk-pixbuf2.0-0:amd64 (2.30.7-0ubuntu1.8) ...<br>
 </details><br>
