@@ -5625,8 +5625,7 @@ Comment says: systemd (optional): http://cgit.freedesktop.org/systemd/systemd/co
 </details><br>
 
 
-Как видим, присутствует несколько ошибок и много предупреждений, желательно все это исправить. Как это сделать описано в блоке neochapay (https://neochapay.ru/blogs/zapiski-utkonosa-programmista/konfiguracija-jadra-dlja-sailfish-os.html)
-Воспользуемся этой инструкцией
+Как видим, присутствует несколько ошибок и много предупреждений, желательно все это исправить. Как это сделать описано в блоге neochapay (https://neochapay.ru/blogs/zapiski-utkonosa-programmista/konfiguracija-jadra-dlja-sailfish-os.html). Воспользуемся этой инструкцией
 
 Сперва открываем файл `~/hadk/device/xiaomi/mido/BoardConfig.mk`
 И видим что
@@ -5654,7 +5653,7 @@ HOSTLD  scripts/kconfig/conf<br>
 # configuration written to .config<br>
 #<br>
 </details><br>
-```console
+```bash
 HABUILD_SDK [mido]:~/hadk/kernel/xiaomi/msm8953$ ARCH=arm64 make menuconfig
 ```
 <details>
@@ -5674,7 +5673,7 @@ HOSTLD  scripts/kconfig/mconf<br>
 scripts/kconfig/mconf Kconfig<br>
 </details><br>
 
-Производить поиск параметра можно с помощью символа "/", в поле ввода вносим имя конфига, но без префикса "CONFIG_". Для того чтобы перейти на требуемый пункт меню из режима поиска можно воспользовать соответствующими цифровыми клавишами (1) (2) и т.д.  и ставим "Y". Помните, что удовлетворить нужно все зависимости, например
+Производить поиск параметра можно с помощью символа "/", в поле ввода вставляем имя конфига, но без префикса "CONFIG_". Для того чтобы перейти на требуемый пункт меню из режима поиска можно воспользовать соответствующими цифровыми клавишами (1) (2) и т.д.  и ставим "Y". Помните, что удовлетворить нужно все зависимости, например
 ```console
 │ Symbol: WATCHDOG_NOWAYOUT [=n]
 │ Type  : boolean
