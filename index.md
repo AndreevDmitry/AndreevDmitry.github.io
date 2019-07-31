@@ -5673,7 +5673,7 @@ HOSTLD  scripts/kconfig/mconf<br>
 scripts/kconfig/mconf Kconfig<br>
 </details><br>
 
-Производить поиск параметра можно с помощью символа "/", в поле ввода вставляем имя конфига, но без префикса "CONFIG_". Для того чтобы перейти на требуемый пункт меню из режима поиска можно воспользовать соответствующими цифровыми клавишами (1) (2) и т.д.  и ставим "Y". Помните, что удовлетворить нужно все зависимости, например
+Производить поиск параметра можно с помощью символа "/", в поле ввода вставляем имя конфига, но без префикса "CONFIG_". Для того чтобы перейти на требуемый пункт меню из режима поиска можно воспользоваться соответствующими цифровыми клавишами (1) (2) и т.д.  и ставим "Y". Помните, что удовлетворить нужно все зависимости, например
 ```console
 │ Symbol: WATCHDOG_NOWAYOUT [=n]
 │ Type  : boolean
@@ -5684,7 +5684,7 @@ scripts/kconfig/mconf Kconfig<br>
 │   Defined at drivers/watchdog/Kconfig:39
 │   Depends on: WATCHDOG [=n]
 ```
-Т.е. нужно также включить WATCHDOG, если нажать 1, то перейдем собственно к параметру WATCHDOG где его можно активировать, ну а затем нужно будет войти в подменю и соответственно включить "Disable watchdog shutdown on close"
+Т.е. нужно также включить WATCHDOG, если нажать 1, то перейдем собственно к параметру WATCHDOG, где его можно активировать, ну а затем нужно будет войти в подменю и соответственно включить "Disable watchdog shutdown on close"
 
 Или другой пример
 ```console
@@ -5694,7 +5694,8 @@ scripts/kconfig/mconf Kconfig<br>
 │   Depends on: NETWORK_FILESYSTEMS [=y]
 │   Selects: FS_POSIX_ACL [=y]
 │   Selected by: NFS_FS [=y] && NETWORK_FILESYSTEMS [=y] && INET [=y] && FILE_LOCKING [=y] && NFS_V3_ACL [=n] || NFSD [=n] && NETWORK_FILESYSTEMS [=y] && INET [=y] && FILE_LOCKING [=y] && NFSD_V2_ACL [=n]
-NFS_ACL_SUPPORT активируестя если выполнены условия из Selected by. Соответственно активируем NFS_V3_ACL (т.к он тоже фигурирует в нашем списке)
 ```
+NFS_ACL_SUPPORT активируестя если выполнены условия из Selected by. Соответственно активируем NFS_V3_ACL (т.к он тоже фигурирует в нашем списке)
+
 
 И так в том же духе...
