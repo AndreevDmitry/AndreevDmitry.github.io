@@ -79,43 +79,35 @@ drwxr-xr-x 17 root root 4,0K мая  6 17:49 var
 Создаем короткое имя (alias) для входа в песочницу Sailfish OS SDK (она же Platform SDK, она же Mer SDK)
 ```bash
 HOST:~$ echo "export PLATFORM_SDK_ROOT=$PLATFORM_SDK_ROOT" >> ~/.bashrc
-```
-
-```bash
 HOST:~$ echo 'alias sfossdk=$PLATFORM_SDK_ROOT/sdks/sfossdk/mer-sdk-chroot' >> ~/.bashrc ; exec bash ;
 ```
-
 
 Соответственно в конец файла .bashrc должны были добавиться 2 строки, проверяем
 ```bash
 HOST:~$ tail -n2 .bashrc
 ```
-
 <details>
 export PLATFORM_SDK_ROOT=/srv/mer
 alias sfossdk=$PLATFORM_SDK_ROOT/sdks/sfossdk/mer-sdk-chroot
 </details>
 
 Создаем вспомогательный файл для идентификации работы в песочнице
-```bash
+```console
 HOST:~$ echo 'PS1="PlatformSDK $PS1"' > ~/.mersdk.profile ;
-```
-
-```bash
 HOST:~$ echo '[ -d /etc/bash_completion.d ] && for i in /etc/bash_completion.d/*;do . $i;done'  >> ~/.mersdk.profile ;
 ```
-
 
 Проверяем
 ```bash
 HOST:~$ cat .mersdk.profile
 ```
-<details>
 ```bash
+<details>
+
 PS1="PlatformSDK $PS1"
 [ -d /etc/bash_completion.d ] && for i in /etc/bash_completion.d/*;do . $i;done
-```
 </details>
+```
 
 Заходим в песочницу,
 ```bash
