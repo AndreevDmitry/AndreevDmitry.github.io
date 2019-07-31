@@ -5653,9 +5653,11 @@ HOSTLD  scripts/kconfig/conf<br>
 # configuration written to .config<br>
 #<br>
 </details><br>
+
 ```bash
 HABUILD_SDK [mido]:~/hadk/kernel/xiaomi/msm8953$ ARCH=arm64 make menuconfig
 ```
+
 <details>
 HOSTCC  scripts/basic/fixdep<br>
 HOSTCC  scripts/kconfig/mconf.o<br>
