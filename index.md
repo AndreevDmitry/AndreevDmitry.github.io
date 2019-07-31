@@ -426,7 +426,8 @@ HABUILD_SDK [mido]:~$ curl https://storage.googleapis.com/git-repo-downloads/rep
                                Dload  Upload   Total   Spent    Left  Speed<br>
 100 29142  100 29142    0     0  47424      0 --:--:-- --:--:-- --:--:-- 47462
 </details><br>
-```console
+
+```bash
 HABUILD_SDK [mido]:~$ chmod a+x ~/bin/repo
 ```
 
