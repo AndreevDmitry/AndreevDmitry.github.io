@@ -15214,3 +15214,30 @@ qemu: Unsupported syscall: 384<br>
 Initializing machine ID from random generator.<br>
 Target 'xiaomi-mido-armv7hl' now setup<br>
 </details><br>
+
+
+Проверим, все ли установлось корректно на примере Hello World
+```console
+PlatformSDK:~/hadk$ cd $HOME
+PlatformSDK:~$ cat > main.c << EOF
+#include <stdlib.h>
+#include <stdio.h>
+
+int main(void) {
+  printf("Hello, world!\n");
+  return EXIT_SUCCESS;
+}
+EOF
+```
+
+Скомпилируем нашу программу под mido
+```console
+PlatformSDK:~$ sb2 -t $VENDOR-$DEVICE-$PORT_ARCH gcc main.c -o test
+```
+И проверим, что она работает
+```console
+PlatformSDK:~$ sb2 -t $VENDOR-$DEVICE-$PORT_ARCH ./test
+```
+<details>
+Hello, world!<br>
+</details><br>
