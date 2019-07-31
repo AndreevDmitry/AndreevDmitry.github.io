@@ -5644,6 +5644,7 @@ TARGET_KERNEL_CONFIG := mido_defconfig
 HABUILD_SDK [mido]:~/hadk/kernel/xiaomi/msm8953$ ARCH=arm64 make mido_defconfig
 ```
 <details>
+```console
 HOSTCC  scripts/basic/fixdep<br>
 HOSTCC  scripts/kconfig/conf.o<br>
 SHIPPED scripts/kconfig/zconf.tab.c<br>
@@ -5654,6 +5655,7 @@ HOSTLD  scripts/kconfig/conf<br>
 #<br>
 # configuration written to .config<br>
 #<br>
+```
 </details><br>
 
 ```bash
