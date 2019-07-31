@@ -1,6 +1,6 @@
 ### Вольный перевод Sailfish OS HADK версии 3.0.1.0 (https://sailfishos.org/content/uploads/2019/03/SailfishOS-HardwareAdaptationDevelopmentKit-3.0.1.0.pdf) от 15 марта 2019 с примером портирования на Xiaomi Mido (а также проблемами, решениями и выводами вводимых команд)
 
-** Любые действия Вы делаете на свой страх и риск, помните, что при неумелом обращении с некоторыми командами (например `sudo rm -rf / srv`) вы можете удалить корень системы, лучше делайте копипаст и проверяйте, а не перепечатывайте. **
+** Любые действия Вы делаете на свой страх и риск, помните, что при неумелом обращении с некоторыми командами (например ```bash sudo rm -rf / srv```) вы можете удалить корень системы, лучше делайте копипаст и проверяйте, а не перепечатывайте. **
 
 ** Пожалуйста, прежде чем делать что-либо дочитайте руководство до конца, чтобы не повторять описанных ошибок. **
 
@@ -10,7 +10,7 @@
 
 # Установка переменных окружения
 ```bash
-stalker@stalkerPC:~$ cat <<'EOF' > $HOME/.hadk.env
+HOST:~$ cat <<'EOF' > $HOME/.hadk.env
 export PLATFORM_SDK_ROOT="/srv/mer"
 export ANDROID_ROOT="$HOME/hadk"
 export VENDOR="xiaomi"
@@ -20,18 +20,19 @@ export PORT_ARCH="armv7hl"
 EOF
 ```
 На выходе получаем скрытый файл .hadk.env в вашей домашней директории
-
-`stalker@stalkerPC:~$ cat <<'EOF' >> $HOME/.mersdkubu.profile`
-`function hadk() { source $HOME/.hadk.env; echo "Env setup for $DEVICE"; }`
-`export PS1="HABUILD_SDK [\${DEVICE}] $PS1"`
-`hadk`
-`EOF`
+```bash
+HOST:~$ cat <<'EOF' >> $HOME/.mersdkubu.profile
+function hadk() { source $HOME/.hadk.env; echo "Env setup for $DEVICE"; }
+export PS1="HABUILD_SDK [\${DEVICE}] $PS1"
+hadk
+EOF
+```
 
 На выходе получаем скрытый файл .mersdkubu.profile в вашей домашней директории
 
 #Устанавливаем Platform SDK 2.1.1
 Скачиваем архив песочницы крайней на момент написания перевода версии 2.1.1 в которой в дальшейшем будем собирать Sailfish
-`stalker@stalkerPC:~$ curl -k -O http://releases.sailfishos.org/sdk/installers/latest/Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 ;`
+```bash HOST:~$ curl -k -O http://releases.sailfishos.org/sdk/installers/latest/Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 ; ```
 <details>
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                Dload  Upload   Total   Spent    Left  Speed
