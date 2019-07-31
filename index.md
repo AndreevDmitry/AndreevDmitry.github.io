@@ -427,6 +427,7 @@ HABUILD_SDK [mido]:~$ curl https://storage.googleapis.com/git-repo-downloads/rep
 100 29142  100 29142    0     0  47424      0 --:--:-- --:--:-- --:--:-- 47462
 </details><br>
 
+Сделаем ее исполняемой
 ```bash
 HABUILD_SDK [mido]:~$ chmod a+x ~/bin/repo
 ```
