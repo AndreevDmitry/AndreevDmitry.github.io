@@ -400,7 +400,9 @@ drwxr-xr-x 11 root root 4.0K Jun 13  2018 var
 </details><br>
 
 Заходим в среду
+```console
 PlatformSDK:~$ ubu-chroot -r $PLATFORM_SDK_ROOT/sdks/ubuntu
+```
 <details>
 Env setup for mido<br>
 HABUILD_SDK [mido]:~$
