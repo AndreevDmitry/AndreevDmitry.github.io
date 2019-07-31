@@ -460,8 +460,9 @@ From git://github.com/mer-hybris/android<br>
 ...<br>
 Syncing work tree: 100% (172/172), done.
 </details><br>
+
 Подготовим среду для сборки
-```console
+```bash
 HABUILD_SDK [mido]:~/hadk$ source build/envsetup.sh
 ```
 <details>
