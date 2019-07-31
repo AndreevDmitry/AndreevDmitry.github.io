@@ -976,6 +976,7 @@ Processing triggers for libgdk-pixbuf2.0-0:amd64 (2.30.7-0ubuntu1.8) ...<br>
 HABUILD_SDK [mido]:~/hadk$ make -j$(nproc --all) hybris-hal
 ```
 <details>
+```bash
 ============================================<br>
 PLATFORM_VERSION_CODENAME=REL<br>
 PLATFORM_VERSION=7.1.2<br>
@@ -5342,6 +5343,7 @@ Kernel Modules not enabled<br>
 [100% 5859/5859] Install: /home/stalker/hadk/out/target/product/mido/hybris-recovery.img<br>
 <br>
 #### make completed successfully (02:30 (mm:ss)) ####<br>
+```
 </details><br>
 
 
