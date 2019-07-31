@@ -35,12 +35,11 @@ EOF
 ```bash
 HOST:~$ curl -k -O http://releases.sailfishos.org/sdk/installers/latest/Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 ;
 ```
-
 <details>
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
                                Dload  Upload   Total   Spent    Left  Speed<br>
 100  137M  100  137M    0     0  14.4M      0  0:00:09  0:00:09 --:--:-- 17.9M<br>
-</details>
+</details><br>
 
 Распаковываем скачанный архив
 ```bash
@@ -75,7 +74,7 @@ drwxr-xr-x  2 root root 4,0K мая  6 17:48 sys<br>
 drwxrwxrwt  2 root root 4,0K мая  6 17:49 tmp<br>
 drwxr-xr-x 12 root root 4,0K мая  6 17:49 usr<br>
 drwxr-xr-x 17 root root 4,0K мая  6 17:49 var<br>
-</details>
+</details><br>
 
 
 Создаем короткое имя (alias) для входа в песочницу Sailfish OS SDK (она же Platform SDK, она же Mer SDK)
@@ -92,7 +91,7 @@ HOST:~$ tail -n2 .bashrc
 ```console
 export PLATFORM_SDK_ROOT=/srv/mer<br>
 alias sfossdk=$PLATFORM_SDK_ROOT/sdks/sfossdk/mer-sdk-chroot<br>
-</details>
+</details><br>
 
 Создаем вспомогательный файл для идентификации работы в песочнице
 ```console
@@ -110,7 +109,7 @@ HOST:~$ cat .mersdk.profile
 PS1="PlatformSDK $PS1"
 [ -d /etc/bash_completion.d ] && for i in /etc/bash_completion.d/*;do . $i;done
 ```
-</details>
+</details><br>
 
 
 Заходим в песочницу,
@@ -133,7 +132,7 @@ Mounting home directory: /home/stalker<br>
 Initializing machine ID from random generator.<br>
 Entering chroot as stalker<br>
 PlatformSDK:~$<br>
-</details>
+</details><br>
 
 Соответственно видим, что все вводимые команды выполнятся из окружения Platform SDK (и как следствие имеем набор команд и параметров который предустановлен в данной песочнице), но находимся мы в домашнем каталоге.
 
@@ -158,7 +157,7 @@ HOST:~$ tail -n2 .mersdk.profile
 <details>
 function hadk() { source $HOME/.hadk.env; echo "Env setup for $DEVICE"; }<br>
 hadk<br>
-</details>
+</details><br>
 
 Заходим снова в PlatformSDK
 ```bash
@@ -174,7 +173,7 @@ Mounting home directory: /home/stalker<br>
 Entering chroot as stalker<br>
 Last login: Thu Jun 20 17:39:38 UTC 2019 on pts/0<br>
 Env setup for mido<br>
-</details>
+</details><br>
 
 Пытаемся обновить репозитории нашей песочницы
 ```bash
@@ -196,7 +195,7 @@ Building repository 'jolla' cache ..............................................
 Retrieving repository 'sdk' metadata ..............................................................................................[done]<br>
 Building repository 'sdk' cache ...................................................................................................[done]<br>
 Some of the repositories have not been refreshed because of an error.<br>
-</details>
+</details><br>
 
 Выходим из sdk
 ```bash
@@ -218,7 +217,7 @@ HOST:~$ curl -k -O  http://releases.sailfishos.org/sdk/installers/2.0/Sailfish_O
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
                                Dload  Upload   Total   Spent    Left  Speed<br>
 100  135M  100  135M    0     0  10.2M      0  0:00:13  0:00:13 --:--:-- 11.6M
-</details>
+</details><br>
 
 Создаем папку для установки песочницы
 ```bash
@@ -258,7 +257,7 @@ drwxr-xr-x  2 root root 4,0K мар 19 17:33 sys<br>
 drwxrwxrwt  2 root root 4,0K мар 19 17:34 tmp<br>
 drwxr-xr-x 12 root root 4,0K мар 19 17:33 usr<br>
 drwxr-xr-x 17 root root 4,0K мар 19 17:33 var
-</details>
+</details><br>
 
 Заходим в sdk
 ```bash
@@ -277,7 +276,7 @@ Mounting home directory: /home/stalker<br>
 Initializing machine ID from random generator.<br>
 Entering chroot as stalker<br>
 Env setup for mido<br>
-</details>
+</details><br>
 
 Пытаемся обновить репозитории нашей песочницы
 ```bash
@@ -295,7 +294,7 @@ Building repository 'jolla' cache ..............................................
 Retrieving repository 'sdk' metadata ..............................................................................................[done]<br>
 Building repository 'sdk' cache ...................................................................................................[done]<br>
 All repositories have been refreshed.
-</details>
+</details><br>
 
 Обновляем компоненты SDK
 ```bash
@@ -306,7 +305,7 @@ Loading repository data...<br>
 Reading installed packages...<br>
 <br>
 Nothing to do.
-</details>
+</details><br>
 
 Проверяем, что используем версию 3.0.3.10 Platform SDK
 ```bash
@@ -321,7 +320,7 @@ PRETTY_NAME="Sailfish OS 3.0.3.10 (Hossa)"<br>
 SAILFISH_BUILD=10<br>
 SAILFISH_FLAVOUR=release<br>
 HOME_URL="https://sailfishos.org/"
-</details>
+</details><br>
 
 Устанавливаем необходимые утилиты для работы с Android SDK (далее):
 ```bash
@@ -346,7 +345,7 @@ Checking for file conflicts: ...................................................
 (1/1) Installing: android-tools-hadk-5.1.1+git2-1.2.3.jolla.i486 ..................................................................[done]<br>
 Additional rpm output:<br>
 warning: /var/cache/zypp/packages/jolla/tools/i486/android-tools-hadk-5.1.1+git2-1.2.3.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY
-</details>
+</details><br>
 
 Насколько я понял на warning'и можно не обращать внимание, т.к. у нас не установен ключ для проверки подлинности устанавливаемых пакетов (см. http://www.rhd.ru/docs/manuals/enterprise/RHEL-4-Manual/sysadmin-guide/s1-rpm-using.html)
 
@@ -359,7 +358,7 @@ PlatformSDK:~$ curl -O https://releases.sailfishos.org/ubu/$TARBALL
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
                                Dload  Upload   Total   Spent    Left  Speed<br>
 100  440M  100  440M    0     0  16.7M      0  0:00:26  0:00:26 --:--:-- 17.2M
-</details>
+</details><br>
 
 ```bash
 PlatformSDK:~$ UBUNTU_CHROOT=$PLATFORM_SDK_ROOT/sdks/ubuntu
@@ -396,14 +395,14 @@ drwxr-xr-x  2 root root 4.0K Mar 13  2014 sys<br>
 drwxrwxrwt  5 root root 4.0K Jun 13  2018 tmp<br>
 drwxr-xr-x 15 root root 4.0K Jun 13  2018 usr<br>
 drwxr-xr-x 11 root root 4.0K Jun 13  2018 var
-</details>
+</details><br>
 
 Заходим в среду
 PlatformSDK:~$ ubu-chroot -r $PLATFORM_SDK_ROOT/sdks/ubuntu
 <details>
 Env setup for mido<br>
 HABUILD_SDK [mido]:~$
-</details>
+</details><br>
 
 Позволю себе напомнить, что находясь в среде сборки ядра мы также имеем в распоряжении только те инструменты и параметры, которые установлены в этой среде
 
@@ -424,7 +423,7 @@ HABUILD_SDK [mido]:~$ curl https://storage.googleapis.com/git-repo-downloads/rep
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
                                Dload  Upload   Total   Spent    Left  Speed<br>
 100 29142  100 29142    0     0  47424      0 --:--:-- --:--:-- --:--:-- 47462
-</details>
+</details><br>
 ```bash
 HABUILD_SDK [mido]:~$ chmod a+x ~/bin/repo
 ```
@@ -456,7 +455,7 @@ Resolving deltas: 100% (2009/2009), done.<br>
 From git://github.com/mer-hybris/android<br>
 ...<br>
 Syncing work tree: 100% (172/172), done.
-</details>
+</details><br>
 Подготовим среду для сборки
 ```bash
 HABUILD_SDK [mido]:~/hadk$ source build/envsetup.sh
@@ -465,4 +464,4 @@ HABUILD_SDK [mido]:~/hadk$ source build/envsetup.sh
 including vendor/cm/vendorsetup.sh<br>
 including vendor/cm/bash_completion/git.bash<br>
 including vendor/cm/bash_completion/repo.bash
-</details>
+</details><br>
