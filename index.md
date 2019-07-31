@@ -89,6 +89,7 @@ HOST:~$ echo 'alias sfossdk=$PLATFORM_SDK_ROOT/sdks/sfossdk/mer-sdk-chroot' >> ~
 HOST:~$ tail -n2 .bashrc
 ```
 <details>
+```console
 export PLATFORM_SDK_ROOT=/srv/mer<br>
 alias sfossdk=$PLATFORM_SDK_ROOT/sdks/sfossdk/mer-sdk-chroot<br>
 </details>
@@ -283,7 +284,8 @@ Deploying with `rpm -Uvh --force` can hide bugs. `mb2` produces evergrowing<br>
 version numbers unless told otherwise, so `zypper -p <rpms-dir> -v dup`<br>
 usually works well and obeys the dependencies.<br>
 <br>
-Learn more on <https://sailfishos.org/wiki/SDK_Tips#Deploying_without_force>.
+Learn more on <https://sailfishos.org/wiki/SDK_Tips#Deploying_without_force>.<br>
+
 </details>
 
 Пытаемся обновить репозитории нашей песочницы
