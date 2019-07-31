@@ -37,11 +37,9 @@ HOST:~$ curl -k -O http://releases.sailfishos.org/sdk/installers/latest/Jolla-la
 ```
 
 <details>
-```python
-% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                               Dload  Upload   Total   Spent    Left  Speed
-100  137M  100  137M    0     0  14.4M      0  0:00:09  0:00:09 --:--:-- 17.9M
-```
+% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
+                               Dload  Upload   Total   Spent    Left  Speed<br>
+100  137M  100  137M    0     0  14.4M      0  0:00:09  0:00:09 --:--:-- 17.9M<br>
 </details>
 
 Распаковываем скачанный архив
