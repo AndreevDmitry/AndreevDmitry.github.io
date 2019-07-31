@@ -74,7 +74,7 @@ drwxr-xr-x  3 root root 4,0K мая  6 17:49 srv
 drwxr-xr-x  2 root root 4,0K мая  6 17:48 sys
 drwxrwxrwt  2 root root 4,0K мая  6 17:49 tmp
 drwxr-xr-x 12 root root 4,0K мая  6 17:49 usr
-drwxr-xr-x 17 root root 4,0K мая  6 17:49 var
+drwxr-xr-x 17 root root 4,0K мая  6 17:49 varasdf
 </details>
 </p>
 
