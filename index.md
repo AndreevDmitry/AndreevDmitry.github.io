@@ -277,15 +277,6 @@ Mounting home directory: /home/stalker<br>
 Initializing machine ID from random generator.<br>
 Entering chroot as stalker<br>
 Env setup for mido<br>
-<br>
-Did you know…?<br>
-<br>
-Deploying with `rpm -Uvh --force` can hide bugs. `mb2` produces evergrowing<br>
-version numbers unless told otherwise, so `zypper -p <rpms-dir> -v dup`<br>
-usually works well and obeys the dependencies.<br>
-<br>
-Learn more on https://sailfishos.org/wiki/SDK_Tips#Deploying_without_force <br>
-
 </details>
 
 Пытаемся обновить репозитории нашей песочницы
