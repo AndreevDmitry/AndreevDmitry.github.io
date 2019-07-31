@@ -9,7 +9,7 @@
 - fastboot
 
 # Установка переменных окружения
-```bash
+```console
 HOST:~$ cat <<'EOF' > $HOME/.hadk.env
 export PLATFORM_SDK_ROOT="/srv/mer"
 export ANDROID_ROOT="$HOME/hadk"
@@ -20,7 +20,7 @@ export PORT_ARCH="armv7hl"
 EOF
 ```
 На выходе получаем скрытый файл .hadk.env в вашей домашней директории
-```bash
+```console
 HOST:~$ cat <<'EOF' >> $HOME/.mersdkubu.profile
 function hadk() { source $HOME/.hadk.env; echo "Env setup for $DEVICE"; }
 export PS1="HABUILD_SDK [\${DEVICE}] $PS1"
@@ -32,7 +32,7 @@ EOF
 
 # Устанавливаем Platform SDK 2.1.1
 Скачиваем архив песочницы крайней на момент написания перевода версии 2.1.1 в которой в дальшейшем будем собирать Sailfish
-```bash
+```console
 HOST:~$ curl -k -O http://releases.sailfishos.org/sdk/installers/latest/Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 ;
 ```
 # A collapsible section with code
@@ -54,11 +54,11 @@ HOST:~$ curl -k -O http://releases.sailfishos.org/sdk/installers/latest/Jolla-la
 </details><br>
 
 Распаковываем скачанный архив
-```bash
+```console
 HOST:~$ sudo tar --numeric-owner -p -xjf Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 -C $PLATFORM_SDK_ROOT/sdks/sfossdk;
 ```
 Проверяем, что все распаковалось
-```bash
+```console
 HOST:~$ ls -lah /srv/mer/sdks/sfossdk/
 ```
 
@@ -90,13 +90,13 @@ drwxr-xr-x 17 root root 4,0K мая  6 17:49 var<br>
 
 
 Создаем короткое имя (alias) для входа в песочницу Sailfish OS SDK (она же Platform SDK, она же Mer SDK)
-```bash
+```console
 HOST:~$ echo "export PLATFORM_SDK_ROOT=$PLATFORM_SDK_ROOT" >> ~/.bashrc
 HOST:~$ echo 'alias sfossdk=$PLATFORM_SDK_ROOT/sdks/sfossdk/mer-sdk-chroot' >> ~/.bashrc ; exec bash ;
 ```
 
 Соответственно в конец файла .bashrc должны были добавиться 2 строки, проверяем
-```bash
+```console
 HOST:~$ tail -n2 .bashrc
 ```
 <details>
@@ -111,12 +111,12 @@ HOST:~$ echo '[ -d /etc/bash_completion.d ] && for i in /etc/bash_completion.d/*
 ```
 
 Проверяем
-```bash
+```console
 HOST:~$ cat .mersdk.profile
 ```
 
 <details>
-```bash
+```console
 PS1="PlatformSDK $PS1"
 [ -d /etc/bash_completion.d ] && for i in /etc/bash_completion.d/*;do . $i;done
 ```
@@ -124,7 +124,7 @@ PS1="PlatformSDK $PS1"
 
 
 Заходим в песочницу,
-```bash
+```console
 HOST:~$ sfossdk
 ```
 
@@ -148,11 +148,11 @@ PlatformSDK:~$<br>
 Соответственно видим, что все вводимые команды выполнятся из окружения Platform SDK (и как следствие имеем набор команд и параметров который предустановлен в данной песочнице), но находимся мы в домашнем каталоге.
 
 Выходим из песочницы
-```bash
+```console
 PlatformSDK:~$ exit
 ```
 Добавляем идентификацию устройства на которое будем портировать Sailfish
-```bash
+```console
 HOST:~$ cat <<'EOF' >> $HOME/.mersdk.profile
 function hadk() { source $HOME/.hadk.env; echo "Env setup for $DEVICE"; }
 hadk
@@ -161,7 +161,7 @@ EOF
 
 
 Соответственно в конце файла .mersdk.profile добавились 2 строки, проверяем
-```bash
+```console
 HOST:~$ tail -n2 .mersdk.profile
 ```
 
@@ -171,7 +171,7 @@ hadk<br>
 </details><br>
 
 Заходим снова в PlatformSDK
-```bash
+```console
 HOST:~$ sfossdk
 ```
 
@@ -187,7 +187,7 @@ Env setup for mido<br>
 </details><br>
 
 Пытаемся обновить репозитории нашей песочницы
-```bash
+```console
 PlatformSDK:~$ sudo zypper ref
 ```
 
@@ -209,18 +209,18 @@ Some of the repositories have not been refreshed because of an error.<br>
 </details><br>
 
 Выходим из sdk
-```bash
+```console
 PlatformSDK:~$ exit
 ```
 
 Удаляем ее
-```bash
+```console
 HOST:~$ sudo rm -rf /srv
 ```
 
 Скачиваем версию 2.0 для сборки Sailfish 3.0.2.8
 
-```bash
+```console
 HOST:~$ curl -k -O  http://releases.sailfishos.org/sdk/installers/2.0/Sailfish_OS-3.0.2.8-Platform_SDK_Chroot-i486.tar.bz2
 ```
 
@@ -231,17 +231,17 @@ HOST:~$ curl -k -O  http://releases.sailfishos.org/sdk/installers/2.0/Sailfish_O
 </details><br>
 
 Создаем папку для установки песочницы
-```bash
+```console
 HOST:~$ sudo mkdir -p $PLATFORM_SDK_ROOT/sdks/sfossdk ;
 ```
 
 Распаковываем скачанный архив
-```bash
+```console
 HOST:~$ sudo tar --numeric-owner -p -xjf Sailfish_OS-3.0.2.8-Platform_SDK_Chroot-i486.tar.bz2 -C $PLATFORM_SDK_ROOT/sdks/sfossdk  ;
 ```
 
 Проверяем что все распаковалось, должно быть примерно так
-```bash
+```console
 HOST:~$ ls -lah /srv/mer/sdks/sfossdk/
 ```
 <details>
@@ -271,7 +271,7 @@ drwxr-xr-x 17 root root 4,0K мар 19 17:33 var
 </details><br>
 
 Заходим в sdk
-```bash
+```console
 HOST:~$ sfossdk
 ```
 <details>
@@ -290,7 +290,7 @@ Env setup for mido<br>
 </details><br>
 
 Пытаемся обновить репозитории нашей песочницы
-```bash
+```console
 PlatformSDK:~$ sudo zypper ref
 ```
 <details>
@@ -308,7 +308,7 @@ All repositories have been refreshed.
 </details><br>
 
 Обновляем компоненты SDK
-```bash
+```console
 PlatformSDK:~$ sudo zypper up
 ```
 <details>
@@ -319,7 +319,7 @@ Nothing to do.
 </details><br>
 
 Проверяем, что используем версию 3.0.3.10 Platform SDK
-```bash
+```console
 PlatformSDK:~$** cat /etc/os-release
 ```
 <details>
@@ -334,7 +334,7 @@ HOME_URL="https://sailfishos.org/"
 </details><br>
 
 Устанавливаем необходимые утилиты для работы с Android SDK (далее):
-```bash
+```console
 PlatformSDK:~$ sudo zypper in android-tools-hadk tar
 ```
 <details>
@@ -361,7 +361,7 @@ warning: /var/cache/zypp/packages/jolla/tools/i486/android-tools-hadk-5.1.1+git2
 Насколько я понял на warning'и можно не обращать внимание, т.к. у нас не установен ключ для проверки подлинности устанавливаемых пакетов (см. http://www.rhd.ru/docs/manuals/enterprise/RHEL-4-Manual/sysadmin-guide/s1-rpm-using.html)
 
 Далее устанавливаем среду для сборки ядра Android.
-```bash
+```console
 PlatformSDK:~$ TARBALL=ubuntu-trusty-20180613-android-rootfs.tar.bz2
 PlatformSDK:~$ curl -O https://releases.sailfishos.org/ubu/$TARBALL
 ```
@@ -371,13 +371,13 @@ PlatformSDK:~$ curl -O https://releases.sailfishos.org/ubu/$TARBALL
 100  440M  100  440M    0     0  16.7M      0  0:00:26  0:00:26 --:--:-- 17.2M
 </details><br>
 
-```bash
+```console
 PlatformSDK:~$ UBUNTU_CHROOT=$PLATFORM_SDK_ROOT/sdks/ubuntu
 PlatformSDK:~$ sudo mkdir -p $UBUNTU_CHROOT
 ```
 
 Проверяем, комплектацию среды
-```bash
+```console
 PlatformSDK:~$ ls -lah /srv/mer/sdks/ubuntu/
 ```
 <details>
@@ -419,13 +419,13 @@ HABUILD_SDK [mido]:~$
 
 Если вы еще не зарегистрировались на github.com, то сделаейте это, т.к. в дальнейшем будем использовать git.
 Установим имя и электронную почту для git
-```bash
+```console
 HABUILD_SDK [mido]:~$ git config --global user.name "Your Name"
 HABUILD_SDK [mido]:~$ git config --global user.email "you@example.com"
 ```
 
 Далее установим программу для синхронизации локального хранилища с глобальным
-```bash
+```console
 HABUILD_SDK [mido]:~$ mkdir ~/bin
 HABUILD_SDK [mido]:~$ PATH=~/bin:$PATH
 HABUILD_SDK [mido]:~$ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
@@ -435,7 +435,7 @@ HABUILD_SDK [mido]:~$ curl https://storage.googleapis.com/git-repo-downloads/rep
                                Dload  Upload   Total   Spent    Left  Speed<br>
 100 29142  100 29142    0     0  47424      0 --:--:-- --:--:-- --:--:-- 47462
 </details><br>
-```bash
+```console
 HABUILD_SDK [mido]:~$ chmod a+x ~/bin/repo
 ```
 
@@ -444,13 +444,13 @@ HABUILD_SDK [mido]:~$ chmod a+x ~/bin/repo
 Дальнейшее описание будет выполнено для версии 14.1
 
 Создаем папку, где будет располагаться все, что нам нужно для сборки
-```bash
+```console
 HABUILD_SDK [mido]:~$ sudo mkdir -p $ANDROID_ROOT
 HABUILD_SDK [mido]:~$ sudo chown -R $USER $ANDROID_ROOT
 HABUILD_SDK [mido]:~$ cd $ANDROID_ROOT
 ```
 Синхронизируемся с  репозиторием
-```bash
+```console
 HABUILD_SDK [mido]:~/hadk$ repo init -u git://github.com/mer-hybris/android.git -b hybris-14.1
 ```
 <details>
@@ -468,7 +468,7 @@ From git://github.com/mer-hybris/android<br>
 Syncing work tree: 100% (172/172), done.
 </details><br>
 Подготовим среду для сборки
-```bash
+```console
 HABUILD_SDK [mido]:~/hadk$ source build/envsetup.sh
 ```
 <details>
@@ -478,7 +478,7 @@ including vendor/cm/bash_completion/repo.bash
 </details><br>
 
 Запустим конфигурацию сборки под mido (более подробно можно прочитать http://www.trcompu.com/MySmartPhone/AndroidKitchen/Breakfast-Brunch-Lunch.html)
-```bash
+```console
 HABUILD_SDK [mido]:~/hadk$ breakfast $DEVICE
 ```
 <details>
@@ -518,7 +518,7 @@ build/core/product_config.mk:254: *** _nic.PRODUCTS.[[device/xiaomi/mido/lineage
 Похоже не хватает блобов (blobs - binary large objects) решение описано здесь https://4pda.ru/forum/lofiversion/index.php?t209610-22980.html
 
 Клонируем необходимые файлы
-```bash
+```console
 HABUILD_SDK [mido]:~/hadk$ git clone -b cm-14.1 https://github.com/TheMuppets/proprietary_vendor_xiaomi.git vendor/xiaomi
 ```
 <details>
@@ -537,7 +537,7 @@ Checking out files: 100% (8528/8528), done.<br>
 `<project path="vendor/xiaomi" name="TheMuppets/proprietary_vendor_xiaomi" revision="cm-14.1" />`
 
 Повторно приготовим завтрак)))
-```bash
+```console
 HABUILD_SDK [mido]:~/hadk$ breakfast $DEVICE
 ```
 <details>
@@ -574,7 +574,7 @@ OUT_DIR=/home/stalker/hadk/out<br>
 </details><br>
 
 Пытаемся собрать ядро
-```bash
+```console
 HABUILD_SDK [mido]:~/hadk$ make -j$(nproc --all) hybris-hal
 ```
 <details>
@@ -703,7 +703,7 @@ make: *** [/home/stalker/hadk/out/build-lineage_mido.ninja] Error 1<br>
 </details><br>
 
 Пишет что не хватает ImageMagic, обновим репозитории
-```bash
+```console
 HABUILD_SDK [mido]:~/hadk$ sudo apt-get update
 ```
 <details>
@@ -765,7 +765,7 @@ W: GPG error: http://ppa.launchpad.net trusty InRelease: The following signature
 </details><br>
 
 и установим ImageMagick
-```bash
+```console
 HABUILD_SDK [mido]:~/hadk$ sudo apt-get install imagemagick
 ```
 <details>
@@ -984,11 +984,11 @@ Processing triggers for libgdk-pixbuf2.0-0:amd64 (2.30.7-0ubuntu1.8) ...<br>
 
 Соберем ядро
 
-```bash
+```console
 HABUILD_SDK [mido]:~/hadk$ make -j$(nproc --all) hybris-hal
 ```
 <details>
-```bash
+```console
 ============================================<br>
 PLATFORM_VERSION_CODENAME=REL<br>
 PLATFORM_VERSION=7.1.2<br>
@@ -5360,7 +5360,7 @@ Kernel Modules not enabled<br>
 
 
 Проверим, что наше ядро сконфигурировано корректно для работы с Sailfish
-```bash
+```console
 HABUILD_SDK [mido]:~/hadk$ hybris/mer-kernel-check/mer_verify_kernel_config ./out/target/product/mido/obj/KERNEL_OBJ/.config
 ```
 <details>
@@ -5636,7 +5636,7 @@ Comment says: systemd (optional): http://cgit.freedesktop.org/systemd/systemd/co
 
 Сперва открываем файл `~/hadk/device/xiaomi/mido/BoardConfig.mk`
 И видим что
-```bash
+```console
 ...
 TARGET_ARCH := arm64
 ...
@@ -5645,7 +5645,7 @@ TARGET_KERNEL_CONFIG := mido_defconfig
 ```
 
 Соответственно создаем конфиг ядра
-```bash
+```console
 HABUILD_SDK [mido]:~/hadk/kernel/xiaomi/msm8953$ ARCH=arm64 make mido_defconfig
 ```
 <details>
@@ -5660,7 +5660,7 @@ HOSTLD  scripts/kconfig/conf<br>
 # configuration written to .config<br>
 #<br>
 </details><br>
-```bash
+```console
 HABUILD_SDK [mido]:~/hadk/kernel/xiaomi/msm8953$ ARCH=arm64 make menuconfig
 ```
 <details>
@@ -5681,7 +5681,7 @@ scripts/kconfig/mconf Kconfig<br>
 </details><br>
 
 Производить поиск параметра можно с помощью символа "/", в поле ввода вносим имя конфига, но без префикса "CONFIG_". Для того чтобы перейти на требуемый пункт меню из режима поиска можно воспользовать соответствующими цифровыми клавишами (1) (2) и т.д.  и ставим "Y". Помните, что удовлетворить нужно все зависимости, например
-```bash
+```console
 │ Symbol: WATCHDOG_NOWAYOUT [=n]
 │ Type  : boolean
 │ Prompt: Disable watchdog shutdown on close
@@ -5695,7 +5695,7 @@ scripts/kconfig/mconf Kconfig<br>
 Видим, что не хватает WATCHDOG, а также видим что если нажать 1, то перейдем собственно к WATCHDOG и активируем его, ну а затем нужно будет войти в подменю и соответственно включить "Disable watchdog shutdown on close"
 
 Или другой пример
-```bash
+```console
 │ Symbol: NFS_ACL_SUPPORT [=n]
 │ Type  : tristate
 │   Defined at fs/Kconfig:254
