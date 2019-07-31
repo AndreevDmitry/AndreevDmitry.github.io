@@ -36,9 +36,9 @@ EOF
 HOST:~$ curl -k -O http://releases.sailfishos.org/sdk/installers/latest/Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 ;
 ```
 <details>
-% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
-                               Dload  Upload   Total   Spent    Left  Speed<br>
-100  137M  100  137M    0     0  14.4M      0  0:00:09  0:00:09 --:--:-- 17.9M<br>
+>% Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
+>                               Dload  Upload   Total   Spent    Left  Speed<br>
+> 100  137M  100  137M    0     0  14.4M      0  0:00:09  0:00:09 --:--:-- 17.9M<br>
 </details><br>
 
 Распаковываем скачанный архив
@@ -55,7 +55,7 @@ HOST:~$ ls -lah /srv/mer/sdks/sfossdk/
 drwxr-xr-x 20 root root 4,0K мая  6 17:49 .<br>
 drwxr-xr-x  3 root root 4,0K июн 20 22:13 ..<br>
 drwxr-xr-x  2 root root 4,0K мая  6 17:49 bin<br>
-drwxr-xr-x  2 root root 4,0K мар 28 07:35 boot<br><br>
+drwxr-xr-x  2 root root 4,0K мар 28 07:35 boot<br>
 drwxr-xr-x  3 root root 4,0K мар 28 07:35 dev<br>
 drwxr-xr-x 51 root root 4,0K мая  6 17:49 etc<br>
 drwxr-xr-x  3 root root 4,0K мая  6 17:49 home<br>
