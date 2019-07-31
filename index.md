@@ -10424,3 +10424,78 @@ CONFIG_QMI_ENCDEC=y<br>
 # CONFIG_QMI_ENCDEC_DEBUG is not set<br>
 # CONFIG_STRICT_MEMORY_RWX is not set<br>
 </details><br>
+
+
+Далее очистим все сгенерированные файлы, конфиги, и бекапы c помощью Мистера Пропера)))
+```console
+HABUILD_SDK [mido]:~/hadk/kernel/xiaomi/msm8953$ ARCH=arm64 make mrproper
+```
+<details>
+  CLEAN   scripts/basic<br>
+  CLEAN   scripts/kconfig<br>
+  CLEAN   .config .config.old<br>
+</details><br>
+
+А также предыдущие скомпилированные файлы
+```console
+HABUILD_SDK [mido]:~/hadk$ make clean
+```
+<details>
+============================================<br>
+PLATFORM_VERSION_CODENAME=REL<br>
+PLATFORM_VERSION=7.1.2<br>
+LINEAGE_VERSION=14.1-20190629-UNOFFICIAL-mido<br>
+TARGET_PRODUCT=lineage_mido<br>
+TARGET_BUILD_VARIANT=userdebug<br>
+TARGET_BUILD_TYPE=release<br>
+TARGET_BUILD_APPS=<br>
+TARGET_ARCH=arm64<br>
+TARGET_ARCH_VARIANT=armv8-a<br>
+TARGET_CPU_VARIANT=generic<br>
+TARGET_2ND_ARCH=arm<br>
+TARGET_2ND_ARCH_VARIANT=armv7-a-neon<br>
+TARGET_2ND_CPU_VARIANT=cortex-a53<br>
+HOST_ARCH=x86_64<br>
+HOST_2ND_ARCH=x86<br>
+HOST_OS=linux<br>
+HOST_OS_EXTRA=Linux-4.15.0-52-generic-x86_64-with-Ubuntu-14.04-trusty<br>
+HOST_CROSS_OS=windows<br>
+HOST_CROSS_ARCH=x86<br>
+HOST_CROSS_2ND_ARCH=x86_64<br>
+HOST_BUILD_TYPE=release<br>
+BUILD_ID=NJH47F<br>
+OUT_DIR=/home/stalker/hadk/out<br>
+============================================<br>
+Running kati to generate build-lineage_mido-clean.ninja...<br>
+/home/stalker/hadk/out/build-lineage_mido-clean.ninja is missing, regenerating...<br>
+============================================<br>
+PLATFORM_VERSION_CODENAME=REL<br>
+PLATFORM_VERSION=7.1.2<br>
+LINEAGE_VERSION=14.1-20190629-UNOFFICIAL-mido<br>
+TARGET_PRODUCT=lineage_mido<br>
+TARGET_BUILD_VARIANT=userdebug<br>
+TARGET_BUILD_TYPE=release<br>
+TARGET_BUILD_APPS=<br>
+TARGET_ARCH=arm64<br>
+TARGET_ARCH_VARIANT=armv8-a<br>
+TARGET_CPU_VARIANT=generic<br>
+TARGET_2ND_ARCH=arm<br>
+TARGET_2ND_ARCH_VARIANT=armv7-a-neon<br>
+TARGET_2ND_CPU_VARIANT=cortex-a53<br>
+HOST_ARCH=x86_64<br>
+HOST_2ND_ARCH=x86<br>
+HOST_OS=linux<br>
+HOST_OS_EXTRA=Linux-4.15.0-52-generic-x86_64-with-Ubuntu-14.04-trusty<br>
+HOST_CROSS_OS=windows<br>
+HOST_CROSS_ARCH=x86<br>
+HOST_CROSS_2ND_ARCH=x86_64<br>
+HOST_BUILD_TYPE=release<br>
+BUILD_ID=NJH47F<br>
+OUT_DIR=/home/stalker/hadk/out<br>
+============================================<br>
+Starting build with ninja<br>
+ninja: Entering directory `.'<br>
+[100% 1/1] Entire build directory removed.<br>
+<br>
+#### make completed successfully (2 seconds) ####<br>
+</details><br>
