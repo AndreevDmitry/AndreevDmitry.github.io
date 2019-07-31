@@ -5615,3 +5615,80 @@ It is unset<br>
 Allowed values : y, m, !<br>
 Comment says: systemd (optional): http://cgit.freedesktop.org/systemd/systemd/commit/README?id=713bc0cfa477ca1df8769041cb3dbc83c10eace2<br>
 </details><br>
+
+
+Как видим, присутствует несколько ошибок и много предупреждений, желательно все это исправить. Как это сделать описано в блоке neochapay (https://neochapay.ru/blogs/zapiski-utkonosa-programmista/konfiguracija-jadra-dlja-sailfish-os.html)
+Воспользуемся этой инструкцией
+
+Сперва открываем файл `~/hadk/device/xiaomi/mido/BoardConfig.mk`
+И видим что
+```bash
+...
+TARGET_ARCH := arm64
+...
+TARGET_KERNEL_CONFIG := mido_defconfig
+...
+```
+
+Соответственно создаем конфиг ядра
+```bash
+HABUILD_SDK [mido]:~/hadk/kernel/xiaomi/msm8953$ ARCH=arm64 make mido_defconfig
+```
+<details>
+HOSTCC  scripts/basic/fixdep<br>
+HOSTCC  scripts/kconfig/conf.o<br>
+SHIPPED scripts/kconfig/zconf.tab.c<br>
+SHIPPED scripts/kconfig/zconf.lex.c<br>
+SHIPPED scripts/kconfig/zconf.hash.c<br>
+HOSTCC  scripts/kconfig/zconf.tab.o<br>
+HOSTLD  scripts/kconfig/conf<br>
+#<br>
+# configuration written to .config<br>
+#<br>
+</details><br>
+```bash
+HABUILD_SDK [mido]:~/hadk/kernel/xiaomi/msm8953$ ARCH=arm64 make menuconfig
+```
+<details>
+HOSTCC  scripts/basic/fixdep<br>
+HOSTCC  scripts/kconfig/mconf.o<br>
+SHIPPED scripts/kconfig/zconf.tab.c<br>
+SHIPPED scripts/kconfig/zconf.lex.c<br>
+SHIPPED scripts/kconfig/zconf.hash.c<br>
+HOSTCC  scripts/kconfig/zconf.tab.o<br>
+HOSTCC  scripts/kconfig/lxdialog/checklist.o<br>
+HOSTCC  scripts/kconfig/lxdialog/util.o<br>
+HOSTCC  scripts/kconfig/lxdialog/inputbox.o<br>
+HOSTCC  scripts/kconfig/lxdialog/textbox.o<br>
+HOSTCC  scripts/kconfig/lxdialog/yesno.o<br>
+HOSTCC  scripts/kconfig/lxdialog/menubox.o<br>
+HOSTLD  scripts/kconfig/mconf<br>
+scripts/kconfig/mconf Kconfig<br>
+</details><br>
+
+Производить поиск параметра можно с помощью символа "/", в поле ввода вносим имя конфига, но без префикса "CONFIG_". Для того чтобы перейти на требуемый пункт меню из режима поиска можно воспользовать соответствующими цифровыми клавишами (1) (2) и т.д.  и ставим "Y". Помните, что удовлетворить нужно все зависимости, например
+```bash
+│ Symbol: WATCHDOG_NOWAYOUT [=n]
+│ Type  : boolean
+│ Prompt: Disable watchdog shutdown on close
+│   Location:
+│     -> Device Drivers
+│ (1)   -> Watchdog Timer Support (WATCHDOG [=n])
+│   Defined at drivers/watchdog/Kconfig:39
+│   Depends on: WATCHDOG [=n]
+```
+Т.е. нужно также включить WATCHDOG
+Видим, что не хватает WATCHDOG, а также видим что если нажать 1, то перейдем собственно к WATCHDOG и активируем его, ну а затем нужно будет войти в подменю и соответственно включить "Disable watchdog shutdown on close"
+
+Или другой пример
+```bash
+│ Symbol: NFS_ACL_SUPPORT [=n]
+│ Type  : tristate
+│   Defined at fs/Kconfig:254
+│   Depends on: NETWORK_FILESYSTEMS [=y]
+│   Selects: FS_POSIX_ACL [=y]
+│   Selected by: NFS_FS [=y] && NETWORK_FILESYSTEMS [=y] && INET [=y] && FILE_LOCKING [=y] && NFS_V3_ACL [=n] || NFSD [=n] && NETWORK_FILESYSTEMS [=y] && INET [=y] && FILE_LOCKING [=y] && NFSD_V2_ACL [=n]
+NFS_ACL_SUPPORT активируестя если выполнены условия из Selected by. Соответственно активируем NFS_V3_ACL (т.к он тоже фигурирует в нашем списке)
+```
+
+И так в том же духе...
