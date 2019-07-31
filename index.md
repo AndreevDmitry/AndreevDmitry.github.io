@@ -5639,7 +5639,7 @@ TARGET_KERNEL_CONFIG := mido_defconfig
 ```
 
 Соответственно создаем конфиг ядра
-```console
+```bash
 HABUILD_SDK [mido]:~/hadk/kernel/xiaomi/msm8953$ ARCH=arm64 make mido_defconfig
 ```
 <details>
@@ -5685,8 +5685,7 @@ scripts/kconfig/mconf Kconfig<br>
 │   Defined at drivers/watchdog/Kconfig:39
 │   Depends on: WATCHDOG [=n]
 ```
-Т.е. нужно также включить WATCHDOG
-Видим, что не хватает WATCHDOG, а также видим что если нажать 1, то перейдем собственно к WATCHDOG и активируем его, ну а затем нужно будет войти в подменю и соответственно включить "Disable watchdog shutdown on close"
+Т.е. нужно также включить WATCHDOG, если нажать 1, то перейдем собственно к параметру WATCHDOG где его можно активировать, ну а затем нужно будет войти в подменю и соответственно включить "Disable watchdog shutdown on close"
 
 Или другой пример
 ```console
