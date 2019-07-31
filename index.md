@@ -5769,9 +5769,9 @@ Comment says: optional, but highly recommended<br>
 2. Из-за архитектуры (CONFIG_RTC_DRV_CMOS, CONFIG_LBDAF)<br>
 3. чтобы отключить selinux (CONFIG_AUDIT, CONFIG_SECURITY_SELINUX_BOOTPARAM)<br>
 
-Далее открываем $ANDROID_ROOT/device/xiaomi/mido/BoardConfig.mk и правим параметр BOARD_KERNEL_CMDLINE добавляя " selinux=0 audit=0" должно получиться так:<br>
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78af000 selinux=0 audit=0<br>
-а также правим параметр TARGET_KERNEL_CONFIG := mido_sf_defconfig. Сохраняем изменения. Теперь копируем наш исправленный конфиг, чтобы он не затерся при повторных сборках
+Далее открываем `$ANDROID_ROOT/device/xiaomi/mido/BoardConfig.mk` и правим параметр `BOARD_KERNEL_CMDLINE` добавляя `" selinux=0 audit=0"` должно получиться так:<br>
+`BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_hsl_uart,0x78af000 selinux=0 audit=0`<br>
+а также правим параметр `TARGET_KERNEL_CONFIG := mido_sf_defconfig`. Сохраняем изменения. Теперь копируем наш исправленный конфиг, чтобы он не затерся при повторных сборках
 ```console
 HABUILD_SDK [mido]:~/hadk$ cp kernel/xiaomi/msm8953/.config kernel/xiaomi/msm8953/arch/arm64/configs/mido_sf_defconfig
 ```
@@ -5781,7 +5781,6 @@ HABUILD_SDK [mido]:~/hadk$ cp kernel/xiaomi/msm8953/.config kernel/xiaomi/msm895
 HABUILD_SDK [mido]:~/hadk$ cat kernel/xiaomi/msm8953/arch/arm64/configs/mido_sf_defconfig
 ```
 <details>
-<details><br>
 #<br>
 # Automatically generated file; DO NOT EDIT.<br>
 # Linux/arm64 3.18.31 Kernel Configuration<br>
