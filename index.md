@@ -129,6 +129,7 @@ HOST:~$ sfossdk
 ```
 
 <details>
+```console
 SDK targets location '/srv/mer/targets' does not exist - about to create it.<br>
 Continue, abort? [c/a] (c)<br>
 SDK toolings location '/srv/mer/toolings' does not exist - about to create it.<br>
@@ -143,6 +144,7 @@ Mounting home directory: /home/stalker<br>
 Initializing machine ID from random generator.<br>
 Entering chroot as stalker<br>
 PlatformSDK:~$<br>
+```
 </details><br>
 
 Соответственно видим, что все вводимые команды выполнятся из окружения Platform SDK (и как следствие имеем набор команд и параметров который предустановлен в данной песочнице), но находимся мы в домашнем каталоге.
