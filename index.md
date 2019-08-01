@@ -15774,3 +15774,37 @@ Enter host password for user 'AndreevDmitry':<br>
   "subscribers_count": 0<br>
 }<br>
 </details><br>
+
+```console
+PlatformSDK:~/hadk/hybris/droid-hal-version-mido$ git remote add dhvm https://github.com/AndreevDmitry/droid-hal-version-mido.git
+PlatformSDK:~/hadk/hybris/droid-hal-version-mido$ git push dhvm master
+```
+<details>
+Username for 'https://github.com': AndreevDmitry<br>
+Password for 'https://AndreevDmitry@github.com':<br>
+Counting objects: 5, done.<br>
+Delta compression using up to 16 threads.<br>
+Compressing objects: 100% (5/5), done.<br>
+Writing objects: 100% (5/5), 819 bytes | 0 bytes/s, done.<br>
+Total 5 (delta 0), reused 0 (delta 0)<br>
+To https://github.com/AndreevDmitry/droid-hal-version-mido.git<br>
+ * [new branch]      master -> master<br>
+</details><br>
+
+
+Обновим манифест и добавим наши репозитории. В файл должен быть следующим
+```console
+PlatformSDK:~/hadk/hybris/droid-hal-version-mido$ cd -
+PlatformSDK:~/hadk$ cat .repo/local_manifests/mido.xml
+```
+<details>
+<?xml version="1.0" encoding="UTF-8"?><br>
+<manifest><br>
+  <project path="device/xiaomi/mido" name="LineageOS/android_device_xiaomi_mido" revision="cm-14.1" /><br>
+  <project path="kernel/xiaomi/msm8953" name="LineageOS/android_kernel_xiaomi_msm8953" revision="cm-14.1" /><br>
+  <project path="vendor/xiaomi" name="TheMuppets/proprietary_vendor_xiaomi" revision="cm-14.1" /><br>
+  <project path="rpm/"name="AndreevDmitry/droid-hal-mido" revision="master" /><br>
+  <project path="hybris/droid-configs"name="AndreevDmitry/droid-config-mido" revision="master" /><br>
+  <project path="hybris/droid-hal-version-mido"name="AndreevDmitry/droid-hal-version-mido" revision="master" /><br>
+</manifest><br>
+</details><br>
