@@ -15644,3 +15644,133 @@ remote: Enumerating objects: 81, done.<br>
 remote: Total 81 (delta 0), reused 0 (delta 0), pack-reused 81<br>
 Unpacking objects: 100% (81/81), done.<br>
 </details><br>
+
+```console
+PlatformSDK:~/hadk/hybris/droid-hal-version-mido$ mkdir rpm
+PlatformSDK:~/hadk/hybris/droid-hal-version-mido$ sed -e "s/@DEVICE@/mido/" \
+-e "s/@VENDOR@/xiaomi/" \
+-e "s/@DEVICE_PRETTY@/Redmi Note 4/" \
+-e "s/@VENDOR_PRETTY@/Xiaomi/" \
+droid-hal-version/droid-hal-version-@DEVICE@.spec.template > \
+rpm/droid-hal-version-mido.spec
+PlatformSDK:~/hadk/hybris/droid-hal-version-mido$ git add .
+PlatformSDK:~/hadk/hybris/droid-hal-version-mido$ git commit -m "[dvd] Initial content"
+```
+<details>
+[master (root-commit) a9825d4] [dvd] Initial content<br>
+ 3 files changed, 23 insertions(+)<br>
+ create mode 100644 .gitmodules<br>
+ create mode 160000 droid-hal-version<br>
+ create mode 100644 rpm/droid-hal-version-mido.spec<br>
+</details><br>
+
+```console
+PlatformSDK:~/hadk/hybris/droid-hal-version-mido$ curl -u 'AndreevDmitry' https://api.github.com/user/repos -d'{"name":"droid-hal-version-mido"}'
+```
+<details>
+Enter host password for user 'AndreevDmitry':<br>
+{<br>
+  "id": 194713090,<br>
+  "node_id": "MDEwOlJlcG9zaXRvcnkxOTQ3MTMwOTA=",<br>
+  "name": "droid-hal-version-mido",<br>
+  "full_name": "AndreevDmitry/droid-hal-version-mido",<br>
+  "private": false,<br>
+  "owner": {<br>
+    "login": "AndreevDmitry",<br>
+    "id": 46165782,<br>
+    "node_id": "MDQ6VXNlcjQ2MTY1Nzgy",<br>
+    "avatar_url": "https://avatars3.githubusercontent.com/u/46165782?v=4",<br>
+    "gravatar_id": "",<br>
+    "url": "https://api.github.com/users/AndreevDmitry",<br>
+    "html_url": "https://github.com/AndreevDmitry",<br>
+    "followers_url": "https://api.github.com/users/AndreevDmitry/followers",<br>
+    "following_url": "https://api.github.com/users/AndreevDmitry/following{/other_user}",<br>
+    "gists_url": "https://api.github.com/users/AndreevDmitry/gists{/gist_id}",<br>
+    "starred_url": "https://api.github.com/users/AndreevDmitry/starred{/owner}{/repo}",<br>
+    "subscriptions_url": "https://api.github.com/users/AndreevDmitry/subscriptions",<br>
+    "organizations_url": "https://api.github.com/users/AndreevDmitry/orgs",<br>
+    "repos_url": "https://api.github.com/users/AndreevDmitry/repos",<br>
+    "events_url": "https://api.github.com/users/AndreevDmitry/events{/privacy}",<br>
+    "received_events_url": "https://api.github.com/users/AndreevDmitry/received_events",<br>
+    "type": "User",<br>
+    "site_admin": false<br>
+  },<br>
+  "html_url": "https://github.com/AndreevDmitry/droid-hal-version-mido",<br>
+  "description": null,<br>
+  "fork": false,<br>
+  "url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido",<br>
+  "forks_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/forks",<br>
+  "keys_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/keys{/key_id}",<br>
+  "collaborators_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/collaborators{/collaborator}",<br>
+  "teams_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/teams",<br>
+  "hooks_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/hooks",<br>
+  "issue_events_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/issues/events{/number}",<br>
+  "events_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/events",<br>
+  "assignees_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/assignees{/user}",<br>
+  "branches_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/branches{/branch}",<br>
+  "tags_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/tags",<br>
+  "blobs_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/git/blobs{/sha}",<br>
+  "git_tags_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/git/tags{/sha}",<br>
+  "git_refs_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/git/refs{/sha}",<br>
+  "trees_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/git/trees{/sha}",<br>
+  "statuses_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/statuses/{sha}",<br>
+  "languages_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/languages",<br>
+  "stargazers_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/stargazers",<br>
+  "contributors_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/contributors",<br>
+  "subscribers_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/subscribers",<br>
+  "subscription_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/subscription",<br>
+  "commits_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/commits{/sha}",<br>
+  "git_commits_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/git/commits{/sha}",<br>
+  "comments_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/comments{/number}",<br>
+  "issue_comment_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/issues/comments{/number}",<br>
+  "contents_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/contents/{+path}",<br>
+  "compare_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/compare/{base}...{head}",<br>
+  "merges_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/merges",<br>
+  "archive_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/{archive_format}{/ref}",<br>
+  "downloads_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/downloads",<br>
+  "issues_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/issues{/number}",<br>
+  "pulls_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/pulls{/number}",<br>
+  "milestones_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/milestones{/number}",<br>
+  "notifications_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/notifications{?since,all,participating}",<br>
+  "labels_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/labels{/name}",<br>
+  "releases_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/releases{/id}",<br>
+  "deployments_url": "https://api.github.com/repos/AndreevDmitry/droid-hal-version-mido/deployments",<br>
+  "created_at": "2019-07-01T17:07:35Z",<br>
+  "updated_at": "2019-07-01T17:07:35Z",<br>
+  "pushed_at": "2019-07-01T17:07:36Z",<br>
+  "git_url": "git://github.com/AndreevDmitry/droid-hal-version-mido.git",<br>
+  "ssh_url": "git@github.com:AndreevDmitry/droid-hal-version-mido.git",<br>
+  "clone_url": "https://github.com/AndreevDmitry/droid-hal-version-mido.git",<br>
+  "svn_url": "https://github.com/AndreevDmitry/droid-hal-version-mido",<br>
+  "homepage": null,<br>
+  "size": 0,<br>
+  "stargazers_count": 0,<br>
+  "watchers_count": 0,<br>
+  "language": null,<br>
+  "has_issues": true,<br>
+  "has_projects": true,<br>
+  "has_downloads": true,<br>
+  "has_wiki": true,<br>
+  "has_pages": false,<br>
+  "forks_count": 0,<br>
+  "mirror_url": null,<br>
+  "archived": false,<br>
+  "disabled": false,<br>
+  "open_issues_count": 0,<br>
+  "license": null,<br>
+  "forks": 0,<br>
+  "open_issues": 0,<br>
+  "watchers": 0,<br>
+  "default_branch": "master",<br>
+  "permissions": {<br>
+    "admin": true,<br>
+    "push": true,<br>
+    "pull": true<br>
+  },<br>
+  "allow_squash_merge": true,<br>
+  "allow_merge_commit": true,<br>
+  "allow_rebase_merge": true,<br>
+  "network_count": 0,<br>
+  "subscribers_count": 0<br>
+}<br>
+</details><br>
