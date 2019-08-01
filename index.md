@@ -15278,6 +15278,7 @@ PlatformSDK:~/hadk/rpm$ git commit -m "[dhd] Initial content"
  create mode 160000 dhd<br>
  create mode 100644 droid-hal-mido.spec<br>
  </details><br>
+ 
  ```console
 PlatformSDK:~/hadk/rpm$ git remote add droid-hal-mido https://github.com/AndreevDmitry/droid-hal-mido.git
 PlatformSDK:~/hadk/rpm$ git push dhm master
