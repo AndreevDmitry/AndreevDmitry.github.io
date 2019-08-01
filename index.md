@@ -15809,3 +15809,66 @@ PlatformSDK:~/hadk$ cat .repo/local_manifests/mido.xml
 `  <project path="hybris/droid-hal-version-mido"name="AndreevDmitry/droid-hal-version-mido" revision="master" />`<br>
 `</manifest>`<br>
 </details><br>
+
+```console
+PlatformSDK:~/hadk$ rpm/dhd/helpers/build_packages.sh
+```
+<details>
+* Installing required Platform SDK packages<br>
+Loading repository data...<br>
+Reading installed packages...<br>
+'tar' is already installed.<br>
+No update candidate for 'tar-1.17-1.3.1.jolla.i486'. The highest available version is already installed.<br>
+'rpm-python' is already installed.<br>
+No update candidate for 'rpm-python-4.14.1+git7-1.5.1.jolla.i486'. The highest available version is already installed.<br>
+'zip' is already installed.<br>
+No update candidate for 'zip-3.0-1.2.1.jolla.i486'. The highest available version is already installed.<br>
+'android-tools-hadk' is already installed.<br>
+No update candidate for 'android-tools-hadk-5.1.1+git2-1.2.3.jolla.i486'. The highest available version is already installed.<br>
+Resolving package dependencies...<br>
+<br>
+The following 2 NEW packages are going to be installed:<br>
+  createrepo_c createrepo_c-libs<br>
+<br>
+2 new packages to install.<br>
+Overall download size: 116.2 KiB. Already cached: 0 B. After the operation, additional 299.9 KiB will be used.<br>
+Continue? [y/n/...? shows all options] (y): y<br>
+Retrieving package createrepo_c-libs-0.10.0+git1-1.2.8.jolla.i486                                  (1/2),  73.9 KiB (194.6 KiB unpacked)<br>
+Retrieving: createrepo_c-libs-0.10.0+git1-1.2.8.jolla.i486.rpm .........................................................[done (586 B/s)]<br>
+Retrieving package createrepo_c-0.10.0+git1-1.2.8.jolla.i486                                       (2/2),  42.3 KiB (105.3 KiB unpacked)<br>
+Retrieving: createrepo_c-0.10.0+git1-1.2.8.jolla.i486.rpm ........................................................................[done]<br>
+Checking for file conflicts: .....................................................................................................[done]<br>
+(1/2) Installing: createrepo_c-libs-0.10.0+git1-1.2.8.jolla.i486 .................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/i486/createrepo_c-libs-0.10.0+git1-1.2.8.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(2/2) Installing: createrepo_c-0.10.0+git1-1.2.8.jolla.i486 ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/i486/createrepo_c-0.10.0+git1-1.2.8.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+* Building rpm/droid-hal-mido.spec<br>
++ export CXXFLAGS<br>
++ FFLAGS='-O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -Wformat -Wformat-security -fmessage-length=0 -march=armv7-a -mfloat-abi=hard -mfpu=neon -mthumb -Wno-psabi -I/usr/lib/gfortran/modules'<br>
++ export FFLAGS<br>
++ LD_AS_NEEDED=1<br>
++ export LD_AS_NEEDED<br>
++ echo _target_cpu is armv7hl<br>
+_target_cpu is armv7hl<br>
++ grep -q '^TARGET_ARCH := arm64' ./device/xiaomi/mido/BoardConfig.mk<br>
++ echo -e '\n' 'IMPORTANT: some devices in your Android tree are 64bit targets. If your device is aarch64,\n' '           please define droid_target_aarch64 in your .spec, otherwise define droid_target_armv7hl\n' 'NOTE: Currently there is no Sailfish OS ARM 64bit target, so leave PORT_ARCH as armv7hl\n' '      Mixed builds of 64bit Android+Linux Kernel and 32bit Sailfish OS work just fine.'<br>
+<br>
+ IMPORTANT: some devices in your Android tree are 64bit targets. If your device is aarch64,<br>
+            please define droid_target_aarch64 in your .spec, otherwise define droid_target_armv7hl<br>
+ NOTE: Currently there is no Sailfish OS ARM 64bit target, so leave PORT_ARCH as armv7hl<br>
+       Mixed builds of 64bit Android+Linux Kernel and 32bit Sailfish OS work just fine.<br>
++ exit 1<br>
+error: Bad exit status from /var/tmp/rpm-tmp.KP6D3J (%build)<br>
+<br>
+<br>
+RPM build errors:<br>
+    Bad exit status from /var/tmp/rpm-tmp.KP6D3J (%build)<br>
+* Check /home/stalker/hadk/droid-hal-mido.log for full log.<br>
+!! building of package failed<br>
+</details><br>
