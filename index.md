@@ -13654,6 +13654,62 @@ PlatformSDK:~/hadk$ sudo mic create fs --arch=$PORT_ARCH --tokenmap=ARCH:$PORT_A
 ```
 <details>
 
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-ofono - job saved OK<br>
+Info[07/08 10:16:39] : Installing: signon-qt5           ++++++++++++++++++                 [395/711]add-oneshot: /etc/oneshot.d/0/signon-storage-perm - job saved OK<br>
+Info[07/08 10:16:40] : Installing: statefs-provider-pow ++++++++++++++++++                 [398/711]Register power_udev<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-power_udev - job saved OK<br>
+Info[07/08 10:16:41] : Installing: sensorfw-qt5         +++++++++++++++++++                [404/711]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:16:41] : Installing: sailfish-content-gra +++++++++++++++++++                [405/711]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+Info[07/08 10:16:41] : Installing: jolla-ambient-sound- +++++++++++++++++++                [406/711]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+Info[07/08 10:16:42] : Installing: contactsd            +++++++++++++++++++                [409/711]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:16:52] : Installing: connman              ++++++++++++++++++++               [426/711]Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:16:53] : Installing: connectionagent-qt5  ++++++++++++++++++++               [430/711]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:16:55] : Installing: vault                ++++++++++++++++++++               [440/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:16:56] : Installing: ssu-vendor-data-joll +++++++++++++++++++++              [444/711]add-oneshot: /etc/oneshot.d/0/ssu-update-repos - job saved OK<br>
+Info[07/08 10:16:57] : Installing: statefs-provider-con +++++++++++++++++++++              [455/711]Register connman<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-connman - job saved OK<br>
+Info[07/08 10:16:58] : Installing: statefs-provider-mce ++++++++++++++++++++++             [472/711]Register mce<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-mce - job saved OK<br>
+Info[07/08 10:16:58] : Installing: bluez5-obexd         ++++++++++++++++++++++             [477/711]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:16:59] : Installing: bluez5               ++++++++++++++++++++++             [478/711]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:17:00] : Installing: statefs-provider-blu ++++++++++++++++++++++             [482/711]Register bluez<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-bluez - job saved OK<br>
+Info[07/08 10:17:00] : Installing: mms-engine           +++++++++++++++++++++++            [485/711]Warning: Schema ?org.freedesktop.Geoclue? has path ?/apps/geoclue/?.  Paths starting with ?/apps/?, ?/desktop/? or ?/system/? are deprecated.<br>
+<br>
+Info[07/08 10:17:00] : Installing: thumbnaild           +++++++++++++++++++++++            [488/711]add-oneshot: /etc/oneshot.d/0/remove-obsolete-tumbler-cache-dir - job saved OK<br>
+Info[07/08 10:17:01] : Installing: ngfd                 +++++++++++++++++++++++            [496/711]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:05] : Installing: jolla-common-configu ++++++++++++++++++++++++           [513/711]add-oneshot: /etc/oneshot.d/0/preload-privileged - job saved OK<br>
+add-oneshot: /etc/oneshot.d/0/remove-swap-from-fstab - job saved OK<br>
+Info[07/08 10:17:05] : Installing: dsme                 ++++++++++++++++++++++++           [514/711]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:17:05] : Installing: mce                  ++++++++++++++++++++++++           [515/711]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:17:06] : Installing: buteo-syncfw-qt5-msy ++++++++++++++++++++++++           [517/711]Warning: Schema ?org.freedesktop.Geoclue? has path ?/apps/geoclue/?.  Paths starting with ?/apps/?, ?/desktop/? or ?/system/? are deprecated.<br>
+<br>
+Info[07/08 10:17:06] : Installing: sociald              ++++++++++++++++++++++++           [518/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:06] : Installing: buteo-sync-plugin-ca ++++++++++++++++++++++++           [519/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:07] : Installing: buteo-sync-plugin-ca ++++++++++++++++++++++++           [520/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:08] : Installing: libsailfishkeyprovid +++++++++++++++++++++++++          [530/711]add-oneshot: /etc/oneshot.d/0/libsailfishkeyprovider-data-jolla-privileges - job saved OK<br>
 Info[07/08 10:17:08] : Installing: sociald-vk-posts     +++++++++++++++++++++++++          [533/711]su: user 1000 does not exist<br>
 <br>
 Info[07/08 10:17:08] : Installing: sociald-vk-notificat +++++++++++++++++++++++++          [534/711]su: user 1000 does not exist<br>
