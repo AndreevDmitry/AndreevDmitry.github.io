@@ -16015,3 +16015,151 @@ PlatformSDK:~/hadk$ cat rpm/droid-hal-mido.spec
 # sign, otherwise they will remain defined! E.g.:<br>
 #define some_macro "I'll not be defined because I don't have % in front"<br>
 </details><br>
+
+
+Заливаем изменения на github
+```console
+PlatformSDK:~/hadk$ cd rpm
+PlatformSDK:~/hadk/rpm$ git add .
+PlatformSDK:~/hadk/rpm$ git commit -m "Add straggler files"
+```
+<details>
+[master 8be11af] Add straggler files<br>
+ 1 file changed, 13 insertions(+)<br>
+</details><br>
+PlatformSDK:~/hadk/rpm$ git push droid-hal-mido master<br>
+<details><br>
+Username for 'https://github.com': AndreevDmitry<br>
+Password for 'https://AndreevDmitry@github.com':<br>
+Counting objects: 5, done.<br>
+Delta compression using up to 16 threads.<br>
+Compressing objects: 100% (3/3), done.<br>
+Writing objects: 100% (3/3), 424 bytes | 0 bytes/s, done.<br>
+Total 3 (delta 2), reused 0 (delta 0)<br>
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.<br>
+To https://github.com/AndreevDmitry/droid-hal-mido.git<br>
+   3453226..8be11af  master -> master<br>
+</details><br>
+
+Также согласно HADK добавим<br>
+`- droid-hal-mido-detritus`<br>
+в `$ANDROID_ROOT/hybris/droid-configs/patterns/jolla-hw-adaptation-mido.yaml`
+
+Получим следующее
+```console
+PlatformSDK:~/hadk$ cat hybris/droid-configs/patterns/jolla-hw-adaptation-mido.yaml
+```
+<details>
+# Feel free to disable non-critical HA parts during devel by commenting lines out<br>
+# Generated in hadk by executing: rpm/dhd/helpers/add_new_device.sh<br>
+<br>
+Description: Pattern with packages for mido HW Adaptation<br>
+Name: jolla-hw-adaptation-mido<br>
+Requires:<br>
+- droid-hal-mido<br>
+- droid-hal-mido-img-boot<br>
+- droid-hal-mido-kernel-modules<br>
+- droid-config-mido-sailfish<br>
+- droid-config-mido-pulseaudio-settings<br>
+- droid-config-mido-policy-settings<br>
+- droid-config-mido-preinit-plugin<br>
+- droid-config-mido-flashing<br>
+- droid-config-mido-bluez5<br>
+- droid-hal-version-mido<br>
+- droid-hal-mido-detritus<br>
+<br>
+# Hybris packages<br>
+- libhybris-libEGL<br>
+- libhybris-libGLESv2<br>
+- libhybris-libwayland-egl<br>
+<br>
+# Sensors<br>
+- hybris-libsensorfw-qt5<br>
+<br>
+# Vibra<br>
+- ngfd-plugin-native-vibrator<br>
+- qt5-feedback-haptics-native-vibrator<br>
+<br>
+# Needed for /dev/touchscreen symlink<br>
+- qt5-plugin-generic-evdev<br>
+<br>
+- pulseaudio-modules-droid<br>
+# for audio recording to work:<br>
+- qt5-qtmultimedia-plugin-mediaservice-gstmediacapture<br>
+<br>
+# These need to be per-device due to differing backends (fbdev, eglfs, hwc, ..?)<br>
+- qt5-qtwayland-wayland_egl<br>
+- qt5-qpa-hwcomposer-plugin<br>
+- qtscenegraph-adaptation<br>
+<br>
+# Add GStreamer v1.0 as standard<br>
+- gstreamer1.0<br>
+- gstreamer1.0-plugins-good<br>
+- gstreamer1.0-plugins-base<br>
+- gstreamer1.0-plugins-bad<br>
+- nemo-gstreamer1.0-interfaces<br>
+# For devices with droidmedia and gst-droid built, see HADK pdf for more information<br>
+#- gstreamer1.0-droid<br>
+<br>
+# This is needed for notification LEDs<br>
+- mce-plugin-libhybris<br>
+<br>
+## USB mode controller<br>
+# Enables mode selector upon plugging USB cable:<br>
+- usb-moded<br>
+- usb-moded-defaults-android<br>
+- usb-moded-developer-mode-android<br>
+<br>
+# Extra useful modes not officially supported:<br>
+# might need some configuration to get working<br>
+#- usb-moded-mass-storage-android-config<br>
+# working but careful with roaming!<br>
+- usb-moded-connection-sharing-android-config<br>
+# android diag mode only usable for certain android tools<br>
+#- usb-moded-diag-mode-android<br>
+<br>
+# hammerhead, grouper, and maguro use this in scripts, so include for all<br>
+- rfkill<br>
+<br>
+# enable device lock and allow to select untrusted software<br>
+- jolla-devicelock-daemon-encsfa<br>
+<br>
+# For GPS<br>
+- geoclue-provider-hybris<br>
+<br>
+# For FM radio on some QCOM devices<br>
+#- qt5-qtmultimedia-plugin-mediaservice-irisradio<br>
+#- jolla-mediaplayer-radio<br>
+<br>
+# For devices with SD Card<br>
+#- sd-utils<br>
+<br>
+Summary: Jolla HW Adaptation mido<br>
+</details><br>
+
+Добавим изменения в наш репозиторий
+```console
+PlatformSDK:~/hadk$ cd hybris/droid-configs/
+PlatformSDK:~/hadk/hybris/droid-configs$ git add .
+PlatformSDK:~/hadk/hybris/droid-configs$ git commit -m "Add droid-hal-mido-detritus"
+```
+<details>
+[master b6fd7ed] Add droid-hal-mido-detritus<br>
+ 1 file changed, 1 insertion(+)<br>
+</details><br>
+
+```console
+PlatformSDK:~/hadk/hybris/droid-configs$ git push dcm master
+```
+<details>
+Username for 'https://github.com': AndreevDmitry<br>
+Password for 'https://AndreevDmitry@github.com':<br>
+Counting objects: 7, done.<br>
+Delta compression using up to 16 threads.<br>
+Compressing objects: 100% (4/4), done.<br>
+Writing objects: 100% (4/4), 389 bytes | 0 bytes/s, done.<br>
+Total 4 (delta 3), reused 0 (delta 0)<br>
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.<br>
+To https://github.com/AndreevDmitry/droid-config-mido.git<br>
+   395a722..b6fd7ed  master -> master<br>
+</details><br>
