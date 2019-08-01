@@ -10504,10 +10504,6 @@ ninja: Entering directory `.'<br>
 ```console
 HABUILD_SDK [mido]:~/hadk$ make -j$(nproc --all) hybris-hal
 ```
-<details>
-
-#### make completed successfully (02:40 (mm:ss)) ####<br>
-</details><br>
 
 Далее необходимо установить цель "mido" для Scratchbox2, которая будет использоваться для упаковки адаптационных пакетов аппаратного обеспечения mido.
 ```console
