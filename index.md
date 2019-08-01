@@ -16455,3 +16455,31 @@ error: Failed build dependencies:<br>
 Building target platforms: armv7hl-meego-linux<br>
 Building for target armv7hl-meego-linux<br>
 </details><br>
+
+
+Также почитав http://www.merproject.org/logs/%23sailfishos-porters/%23sailfishos-porters.2019-05-10.log.html возникла мысль:<br>
+конфиг ждет, что пакет pulseaudio-modules-nemo будет больше версии 11.1.24, найдем какой версии Sailfish соответствует текущая версия в истории изменений
+https://together.jolla.com/question/184470/changelog-220-mouhijoki-released/#184470-pulseaudio-modules-nemo
+Получается текущие пакеты для версии Sailfish 2.2
+
+Проверим версию песочницы
+```console
+PlatformSDK:~/hadk$ sudo ssu re
+Device release is currently: 3.0.2.8
+```
+
+Проверим версию песочнницы для xiaomi-mido-armv7hl
+```console
+PlatformSDK:~/hadk$ sb2 -t $VENDOR-$DEVICE-$PORT_ARCH -m sdk-install -R ssu re
+Device release is currently: 2.2.1.18
+```console
+
+Видим, что версии не совпадают, обновим все до последней (на момент написания перевода) версии 3.0.3.10
+```console
+PlatformSDK:~/hadk$ sudo ssu re 3.0.3.10
+```
+<details>
+Changing release from 3.0.2.8 to 3.0.3.10<br>
+Your device is now in release mode!<br>
+DBus unavailable, falling back to libssu<br>
+</details><br>
