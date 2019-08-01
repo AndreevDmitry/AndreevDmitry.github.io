@@ -15792,7 +15792,7 @@ To https://github.com/AndreevDmitry/droid-hal-version-mido.git<br>
 </details><br>
 
 
-Обновим манифест и добавим наши репозитории. В файл должен быть следующим
+Обновим манифест и добавим наши репозитории, он должен быть следующим
 ```console
 PlatformSDK:~/hadk/hybris/droid-hal-version-mido$ cd -
 PlatformSDK:~/hadk$ cat .repo/local_manifests/mido.xml
@@ -15871,4 +15871,34 @@ RPM build errors:<br>
     Bad exit status from /var/tmp/rpm-tmp.KP6D3J (%build)<br>
 * Check /home/stalker/hadk/droid-hal-mido.log for full log.<br>
 !! building of package failed<br>
+</details><br>
+
+
+Похоже имеет место несовместимость архитектуры процессора в конфигурации ядра и конфигурации droid-hal.Исправим это добавив строку
+` %define droid_target_aarch64 1`
+в `$ANDROID_ROOT/rpm/droid-hal-mido.spec`
+
+В итоге получим следующее
+```console
+PlatformSDK:~/hadk$ cat rpm/droid-hal-mido.spec
+```
+<details>
+# These and other macros are documented in dhd/droid-hal-device.inc<br>
+# Feel free to cleanup this file by removing comments, once you have memorised them ;)<br>
+<br>
+%define device mido<br>
+%define vendor xiaomi<br>
+<br>
+%define vendor_pretty Xiaomi<br>
+%define device_pretty Redmi Note 4<br>
+<br>
+%define droid_target_aarch64 1<br>
+<br>
+%define installable_zip 1<br>
+<br>
+%include rpm/dhd/droid-hal-device.inc<br>
+<br>
+# IMPORTANT if you want to comment out any macros in your .spec, delete the %<br>
+# sign, otherwise they will remain defined! E.g.:<br>
+#define some_macro "I'll not be defined because I don't have % in front"<br>
 </details><br>
