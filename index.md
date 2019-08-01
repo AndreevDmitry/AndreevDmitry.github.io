@@ -15960,3 +15960,58 @@ RPM build errors:<br>
 * Check /home/stalker/hadk/droid-hal-mido.log for full log.<br>
 !! building of package failed<br>
 </details><br>
+
+
+В HADK это ситуация описана в пункте 7.2.2, решается добавлением
+```c
+%define straggler_files \
+/init.qcom.sh \
+/init.qcom.usb.sh \
+/bugreports \
+/d \
+/file_contexts.bin \
+/property_contexts \
+/sdcard \
+/selinux_version \
+/service_contexts \
+/vendor \
+%{nil}
+```
+в тот же `$ANDROID_ROOT/rpm/droid-hal-mido.spec`
+
+```console
+PlatformSDK:~/hadk$ cat rpm/droid-hal-mido.spec
+```
+<details>
+# These and other macros are documented in dhd/droid-hal-device.inc<br>
+# Feel free to cleanup this file by removing comments, once you have memorised them ;)<br>
+<br>
+%define device mido<br>
+%define vendor xiaomi<br>
+<br>
+%define vendor_pretty Xiaomi<br>
+%define device_pretty Redmi Note 4<br>
+<br>
+%define droid_target_aarch64 1<br>
+<br>
+%define installable_zip 1<br>
+<br>
+%define straggler_files \<br>
+/init.qcom.sh \<br>
+/init.qcom.usb.sh \<br>
+/bugreports \<br>
+/d \<br>
+/file_contexts.bin \<br>
+/property_contexts \<br>
+/sdcard \<br>
+/selinux_version \<br>
+/service_contexts \<br>
+/vendor \<br>
+%{nil}<br>
+<br>
+%include rpm/dhd/droid-hal-device.inc<br>
+<br>
+# IMPORTANT if you want to comment out any macros in your .spec, delete the %<br>
+# sign, otherwise they will remain defined! E.g.:<br>
+#define some_macro "I'll not be defined because I don't have % in front"<br>
+</details><br>
