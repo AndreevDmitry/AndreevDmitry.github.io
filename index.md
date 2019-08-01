@@ -15278,9 +15278,11 @@ PlatformSDK:~/hadk/rpm$ git commit -m "[dhd] Initial content"
  create mode 160000 dhd<br>
  create mode 100644 droid-hal-mido.spec<br>
  </details><br>
-PlatformSDK:~/hadk/rpm$ git remote add droid-hal-mido https://github.com/AndreevDmitry/droid-hal-mido.git<br>
-PlatformSDK:~/hadk/rpm$ git push dhm master<br>
-<details><br>
+ ```console
+PlatformSDK:~/hadk/rpm$ git remote add droid-hal-mido https://github.com/AndreevDmitry/droid-hal-mido.git
+PlatformSDK:~/hadk/rpm$ git push dhm master
+```
+<details>
 Username for 'https://github.com': AndreevDmitry<br>
 Password for 'https://AndreevDmitry@github.com':<br>
 remote: Repository not found.<br>
