@@ -16483,3 +16483,18 @@ Changing release from 3.0.2.8 to 3.0.3.10<br>
 Your device is now in release mode!<br>
 DBus unavailable, falling back to libssu<br>
 </details><br>
+
+PlatformSDK:~/hadk$ sudo zypper ref
+<details>
+Retrieving repository 'adaptation0' metadata .....................................................................................[done]<br>
+Building repository 'adaptation0' cache ..........................................................................................[done]<br>
+Retrieving repository 'customer-jolla' metadata ..................................................................................[done]<br>
+Building repository 'customer-jolla' cache .......................................................................................[done]<br>
+Retrieving repository 'hotfixes' metadata ........................................................................................[done]<br>
+Building repository 'hotfixes' cache .............................................................................................[done]<br>
+Retrieving repository 'jolla' metadata ...........................................................................................[done]<br>
+Building repository 'jolla' cache ................................................................................................[done]<br>
+Retrieving repository 'sdk' metadata .............................................................................................[done]<br>
+Building repository 'sdk' cache ..................................................................................................[done]<br>
+All repositories have been refreshed.<br>
+</details><br>
