@@ -16458,9 +16458,9 @@ Building for target armv7hl-meego-linux<br>
 
 
 Также почитав http://www.merproject.org/logs/%23sailfishos-porters/%23sailfishos-porters.2019-05-10.log.html возникла мысль:<br>
-конфиг ждет, что пакет pulseaudio-modules-nemo будет больше версии 11.1.24, найдем какой версии Sailfish соответствует текущая версия в истории изменений
+конфиг ждет, что пакет `pulseaudio-modules-nemo` будет больше версии `11.1.24`, найдем какой версии Sailfish соответствует текущая версия в истории изменений
 https://together.jolla.com/question/184470/changelog-220-mouhijoki-released/#184470-pulseaudio-modules-nemo
-Получается текущие пакеты для версии Sailfish 2.2
+Получается текущие пакеты для версии `Sailfish 2.2`
 
 Проверим версию песочницы
 ```console
@@ -16468,7 +16468,7 @@ PlatformSDK:~/hadk$ sudo ssu re
 Device release is currently: 3.0.2.8
 ```
 
-Проверим версию песочнницы для xiaomi-mido-armv7hl
+Проверим версию песочнницы для `xiaomi-mido-armv7hl`
 ```console
 PlatformSDK:~/hadk$ sb2 -t $VENDOR-$DEVICE-$PORT_ARCH -m sdk-install -R ssu re
 Device release is currently: 2.2.1.18
@@ -16484,7 +16484,9 @@ Your device is now in release mode!<br>
 DBus unavailable, falling back to libssu<br>
 </details><br>
 
+```console
 PlatformSDK:~/hadk$ sudo zypper ref
+```
 <details>
 Retrieving repository 'adaptation0' metadata .....................................................................................[done]<br>
 Building repository 'adaptation0' cache ..........................................................................................[done]<br>
@@ -16498,3 +16500,2503 @@ Retrieving repository 'sdk' metadata ...........................................
 Building repository 'sdk' cache ..................................................................................................[done]<br>
 All repositories have been refreshed.<br>
 </details><br>
+
+```console
+PlatformSDK:~/hadk$ sudo zypper dup
+```
+<details>
+Warning: You are about to do a distribution upgrade with all enabled repositories. Make sure these repositories are compatible before you continue. See 'man zypper' for more information about this command.<br>
+Loading repository data...<br>
+Reading installed packages...<br>
+Computing distribution upgrade...<br>
+<br>
+The following 3 NEW packages are going to be installed:<br>
+  cryptsetup-libs json-c libicu<br>
+<br>
+The following package is going to be REMOVED:<br>
+  libicu52<br>
+<br>
+The following 81 packages are going to be upgraded:<br>
+  PackageKit PackageKit-glib PackageKit-zypp btrfs-progs connman connman-configs-sailfish-sdk cpio curl e2fsprogs e2fsprogs-libs glibc<br>
+  glibc-common iptables iptables-ipv6 kbd libblkid libcom_err libcurl libdbusaccess libfdisk libgcc libgrilio libmount libpcap libsb2<br>
+  libsmartcols libss libstdc++ libuuid libzypp lsof mobile-broadband-provider-info ncurses ncurses-base ncurses-libs nss nss-sysinit<br>
+  ofono ofono-configs-build-engine openssh openssh-clients openssl-libs p11-kit p11-kit-nss-ckbi p11-kit-trust<br>
+  patterns-sailfish-configuration-platform-sdk-chroot patterns-sailfish-core patterns-sailfish-image-creation-tools<br>
+  patterns-sailfish-packaging-tools patterns-sailfish-platform-sdk patterns-sailfish-sb2-host pcre platform-sdk-support python<br>
+  python-libs qt5-qtcore qt5-qtdbus qt5-qtnetwork qt5-qtxml rpm rpm-build rpm-libs rpm-python sailfish-version sailfish-version-variant<br>
+  scratchbox2 sdk-chroot sdk-sb2-config sdk-utils shared-mime-info sqlite-libs ssu-vendor-data-jolla systemd systemd-config-sailfish<br>
+  systemd-libs util-linux vim-common vim-enhanced vim-filesystem vm-configs zlib<br>
+<br>
+The following 191 packages are going to be downgraded:<br>
+  android-tools-hadk augeas-libs basesystem bash binutils bluez bluez-libs boost-filesystem boost-system boost-thread bsdtar busybox<br>
+  busybox-symlinks-gzip bzip2 bzip2-libs ca-certificates connman-qt5 cor coreutils crda createrepo_c createrepo_c-libs db4 db4-utils<br>
+  dbus dbus-libs deltarpm desktop-file-utils device-mapper device-mapper-event device-mapper-event-libs device-mapper-libs diffutils<br>
+  dosfstools elfutils elfutils-libelf elfutils-libs expat fakeroot feature-jolla-sdk file file-libs filesystem findutils fontconfig<br>
+  fontpackages-filesystem freetype fuse fuse-libs gawk gdbm git glib2 gnupg2 gnutls gpgme grep groff hwdata info iproute iw jolla-ca<br>
+  kf5bluezqt-bluez4 kmod kmod-libs kpartx less libacl libarchive libattr libcap libdbuslogserver-dbus libffi libgcrypt libglibutil<br>
+  libgofono libgofonoext libgpg-error libgsupplicant libiphb libksba liblua libmce-glib libnl libqtaround2 libshadowutils libsolv-tools<br>
+  libsolv0 libtasn1 libusb libuser libutempter libwspcodec libxml2 libxslt lvm2 lvm2-libs lzo mic mtools net-tools nspr obex-capability<br>
+  obexd oneshot openconnect openvpn osc p7zip-full pacrunner pacrunner-python pam parted passwd patch perl perl-Error perl-Filter<br>
+  perl-Git perl-Module-Pluggable perl-Pod-Escapes perl-Pod-Parser perl-Pod-Perldoc perl-Pod-Simple perl-Scalar-List-Utils perl-Socket<br>
+  perl-libs perl-macros perl-parent perl-threads perl-threads-shared pkgconfig polkit popt ppp ppp-libs pptp procps psmisc pth<br>
+  python-M2Crypto python-cheetah python-distro python-lxml python-pycurl python-setuptools python-urlgrabber python-yaml python-zypp<br>
+  qemu-usermode qemu-usermode-common qemu-usermode-static qt5-qtsysteminfo readline repomd-pattern-builder rootfiles rsync sailfish-ca<br>
+  sdk-configs sdk-register sed setup shadow-utils spectacle squashfs-tools ssu ssu-network-proxy-plugin statefs<br>
+  statefs-contextkit-subscriber statefs-pp statefs-provider-inout-power statefs-qt5 strace sudo syslinux systemd-user-session-targets<br>
+  tar tzdata unzip vpnc wireless-regdb wpa_supplicant xdg-user-dirs xdg-utils xl2tpd xz xz-libs xz-lzma-compat zip zypper<br>
+<br>
+81 packages to upgrade, 191 to downgrade, 3 new, 1 to remove.<br>
+Overall download size: 98.5 MiB. Already cached: 0 B. After the operation, additional 3.2 MiB will be used.<br>
+Continue? [y/n/...? shows all options] (y): y<br>
+Retrieving package ofono-configs-build-engine-0.15.8-1.9.11.jolla.noarch                         (1/275),  24.1 KiB (   26   B unpacked)<br>
+Retrieving: ofono-configs-build-engine-0.15.8-1.9.11.jolla.noarch.rpm ................................................[done (4.0 KiB/s)]<br>
+Retrieving package fontpackages-filesystem-1.44-1.1.8.jolla.noarch                               (2/275),   9.0 KiB (    0   B unpacked)<br>
+Retrieving delta: ./drpms/fontpackages-filesystem-1.44-1.2.1.jolla_1.44_1.1.8.jolla.noarch.drpm, 5.0 KiB<br>
+Retrieving: fontpackages-filesystem-1.44-1.2.1.jolla_1.44_1.1.8.jolla.noarch.drpm ....................................[done (1.2 KiB/s)]<br>
+Applying delta: ./fontpackages-filesystem-1.44-1.2.1.jolla_1.44_1.1.8.jolla.noarch.drpm ..........................................[done]<br>
+Retrieving package jolla-ca-0.9-1.2.9.jolla.noarch                                               (3/275),  15.1 KiB ( 22.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/jolla-ca-0.9-1.3.2.jolla_0.9_1.2.9.jolla.noarch.drpm, 3.8 KiB<br>
+Retrieving: jolla-ca-0.9-1.3.2.jolla_0.9_1.2.9.jolla.noarch.drpm .................................................................[done]<br>
+Applying delta: ./jolla-ca-0.9-1.3.2.jolla_0.9_1.2.9.jolla.noarch.drpm ...........................................................[done]<br>
+Retrieving package libgcc-4.9.4-1.2.4.jolla.i486                                                 (4/275),  71.1 KiB (126.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/libgcc-4.8.3-1.2.1.jolla_4.9.4_1.2.4.jolla.i486.drpm, 57.8 KiB<br>
+Retrieving: libgcc-4.8.3-1.2.1.jolla_4.9.4_1.2.4.jolla.i486.drpm .....................................................[done (2.6 KiB/s)]<br>
+Applying delta: ./libgcc-4.8.3-1.2.1.jolla_4.9.4_1.2.4.jolla.i486.drpm ...........................................................[done]<br>
+Retrieving package mobile-broadband-provider-info-20131125+git68-1.3.2.jolla.noarch              (5/275),  55.8 KiB (329.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/mobile-broadband-provider-info-20131125+git66-1.3.1.jolla_20131125+git68_1.3.2.jolla.noarch.drpm, 14.9 KiB<br>
+Retrieving: mobile-broadband-provider-info-20131125+git66-1.3.1.jolla_20131125+git68_1.3.2.jolla.noarch.drpm .....................[done]<br>
+Applying delta: ./mobile-broadband-provider-info-20131125+git66-1.3.1.jolla_20131125+git68_1.3.2.jolla.noarch.drpm ...............[done]<br>
+Retrieving package ncurses-base-6.1+git1-1.3.4.jolla.i486                                        (6/275),  57.6 KiB (320.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/ncurses-base-6.0-1.3.1.jolla_6.1+git1_1.3.4.jolla.i486.drpm, 43.3 KiB<br>
+Retrieving: ncurses-base-6.0-1.3.1.jolla_6.1+git1_1.3.4.jolla.i486.drpm ..........................................................[done]<br>
+Applying delta: ./ncurses-base-6.0-1.3.1.jolla_6.1+git1_1.3.4.jolla.i486.drpm ....................................................[done]<br>
+Retrieving package rootfiles-8.1+git2-1.2.7.jolla.noarch                                         (7/275),   8.3 KiB (  599   B unpacked)<br>
+Retrieving delta: ./drpms/rootfiles-8.1+git2-1.3.1.jolla_8.1+git2_1.2.7.jolla.noarch.drpm, 4.4 KiB<br>
+Retrieving: rootfiles-8.1+git2-1.3.1.jolla_8.1+git2_1.2.7.jolla.noarch.drpm ......................................................[done]<br>
+Applying delta: ./rootfiles-8.1+git2-1.3.1.jolla_8.1+git2_1.2.7.jolla.noarch.drpm ................................................[done]<br>
+Retrieving package sailfish-ca-0.1.1-1.2.9.jolla.noarch                                          (8/275),  11.3 KiB (  9.1 KiB unpacked)<br>
+Retrieving delta: ./drpms/sailfish-ca-0.1.1-1.3.2.jolla_0.1.1_1.2.9.jolla.noarch.drpm, 3.6 KiB<br>
+Retrieving: sailfish-ca-0.1.1-1.3.2.jolla_0.1.1_1.2.9.jolla.noarch.drpm ..........................................................[done]<br>
+Applying delta: ./sailfish-ca-0.1.1-1.3.2.jolla_0.1.1_1.2.9.jolla.noarch.drpm ....................................................[done]<br>
+Retrieving package setup-2.8.56-1.2.4.jolla.noarch                                               (9/275), 116.1 KiB (663.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/setup-2.8.56-1.3.1.jolla_2.8.56_1.2.4.jolla.noarch.drpm, 111.3 KiB<br>
+Retrieving: setup-2.8.56-1.3.1.jolla_2.8.56_1.2.4.jolla.noarch.drpm ..............................................................[done]<br>
+Applying delta: ./setup-2.8.56-1.3.1.jolla_2.8.56_1.2.4.jolla.noarch.drpm ........................................................[done]<br>
+Retrieving package tzdata-2017b-1.1.8.jolla.noarch                                              (10/275), 346.5 KiB (  2.3 MiB unpacked)<br>
+Retrieving: tzdata-2017b-1.1.8.jolla.noarch.rpm ..................................................................................[done]<br>
+Retrieving package vim-filesystem-7.3.629-1.2.3.jolla.i486                                      (11/275),  10.0 KiB (    0   B unpacked)<br>
+Retrieving delta: ./drpms/vim-filesystem-7.3.629-1.2.1.jolla_7.3.629_1.2.3.jolla.i486.drpm, 5.9 KiB<br>
+Retrieving: vim-filesystem-7.3.629-1.2.1.jolla_7.3.629_1.2.3.jolla.i486.drpm ...........................................[done (154 B/s)]<br>
+Applying delta: ./vim-filesystem-7.3.629-1.2.1.jolla_7.3.629_1.2.3.jolla.i486.drpm ...............................................[done]<br>
+Retrieving package wireless-regdb-2016.06.10+git1-1.2.6.jolla.noarch                            (12/275),  11.2 KiB (  6.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/wireless-regdb-2016.06.10+git1-1.3.1.jolla_2016.06.10+git1_1.2.6.jolla.noarch.drpm, 5.0 KiB<br>
+Retrieving: wireless-regdb-2016.06.10+git1-1.3.1.jolla_2016.06.10+git1_1.2.6.jolla.noarch.drpm ...................................[done]<br>
+Applying delta: ./wireless-regdb-2016.06.10+git1-1.3.1.jolla_2016.06.10+git1_1.2.6.jolla.noarch.drpm .............................[done]<br>
+Retrieving package filesystem-3.1-1.1.8.jolla.noarch                                            (13/275), 910.7 KiB (    0   B unpacked)<br>
+Retrieving delta: ./drpms/filesystem-3.1-1.2.1.jolla_3.1_1.1.8.jolla.noarch.drpm, 902.9 KiB<br>
+Retrieving: filesystem-3.1-1.2.1.jolla_3.1_1.1.8.jolla.noarch.drpm .....................................................[done (154 B/s)]<br>
+Applying delta: ./filesystem-3.1-1.2.1.jolla_3.1_1.1.8.jolla.noarch.drpm .........................................................[done]<br>
+Retrieving package glibc-2.25+git5-1.4.1.jolla.i486                                             (14/275),   2.5 MiB ( 10.6 MiB unpacked)<br>
+Retrieving delta: ./drpms/glibc-2.19+6.13.1-1.3.1.jolla_2.25+git5_1.4.1.jolla.i486.drpm, 1.6 MiB<br>
+Retrieving: glibc-2.19+6.13.1-1.3.1.jolla_2.25+git5_1.4.1.jolla.i486.drpm ............................................[done (1.2 MiB/s)]<br>
+Applying delta: ./glibc-2.19+6.13.1-1.3.1.jolla_2.25+git5_1.4.1.jolla.i486.drpm ..................................................[done]<br>
+Retrieving package basesystem-11+git1-1.2.7.jolla.noarch                                        (15/275),   8.0 KiB (    0   B unpacked)<br>
+Retrieving delta: ./drpms/basesystem-11+git1-1.3.1.jolla_11+git1_1.2.7.jolla.noarch.drpm, 4.1 KiB<br>
+Retrieving: basesystem-11+git1-1.3.1.jolla_11+git1_1.2.7.jolla.noarch.drpm .......................................................[done]<br>
+Applying delta: ./basesystem-11+git1-1.3.1.jolla_11+git1_1.2.7.jolla.noarch.drpm .................................................[done]<br>
+Retrieving package ncurses-libs-6.1+git1-1.3.4.jolla.i486                                       (16/275), 238.7 KiB (756.3 KiB unpacked)<br>
+Retrieving delta: ./drpms/ncurses-libs-6.0-1.3.1.jolla_6.1+git1_1.3.4.jolla.i486.drpm, 226.8 KiB<br>
+Retrieving: ncurses-libs-6.0-1.3.1.jolla_6.1+git1_1.3.4.jolla.i486.drpm ................................................[done (154 B/s)]<br>
+Applying delta: ./ncurses-libs-6.0-1.3.1.jolla_6.1+git1_1.3.4.jolla.i486.drpm ....................................................[done]<br>
+Retrieving package bash-1:3.2.57-1.2.4.jolla.i486                                               (17/275), 322.2 KiB (778.8 KiB unpacked)<br>
+Retrieving delta: ./drpms/bash-3.2.57-1.3.1.jolla_3.2.57_1.2.4.jolla.i486.drpm, 310.0 KiB<br>
+Retrieving: bash-3.2.57-1.3.1.jolla_3.2.57_1.2.4.jolla.i486.drpm .....................................................[done (1.2 KiB/s)]<br>
+Applying delta: ./bash-3.2.57-1.3.1.jolla_3.2.57_1.2.4.jolla.i486.drpm ...........................................................[done]<br>
+Retrieving package glibc-common-2.25+git5-1.4.1.jolla.i486                                      (18/275),   4.1 MiB ( 14.1 MiB unpacked)<br>
+Retrieving delta: ./drpms/glibc-common-2.19+6.13.1-1.3.1.jolla_2.25+git5_1.4.1.jolla.i486.drpm, 1.4 MiB<br>
+Retrieving: glibc-common-2.19+6.13.1-1.3.1.jolla_2.25+git5_1.4.1.jolla.i486.drpm .................................................[done]<br>
+Applying delta: ./glibc-common-2.19+6.13.1-1.3.1.jolla_2.25+git5_1.4.1.jolla.i486.drpm ...........................................[done]<br>
+Retrieving package zlib-1.2.11+git1-1.4.4.jolla.i486                                            (19/275),  70.2 KiB (139.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/zlib-1.2.8+git3-1.4.1.jolla_1.2.11+git1_1.4.4.jolla.i486.drpm, 57.0 KiB<br>
+Retrieving: zlib-1.2.8+git3-1.4.1.jolla_1.2.11+git1_1.4.4.jolla.i486.drpm ............................................[done (2.6 KiB/s)]<br>
+Applying delta: ./zlib-1.2.8+git3-1.4.1.jolla_1.2.11+git1_1.4.4.jolla.i486.drpm ..................................................[done]<br>
+Retrieving package zip-3.0-1.1.10.jolla.i486                                                    (20/275), 239.3 KiB (798.3 KiB unpacked)<br>
+Retrieving delta: ./drpms/zip-3.0-1.2.1.jolla_3.0_1.1.10.jolla.i486.drpm, 129.3 KiB<br>
+Retrieving: zip-3.0-1.2.1.jolla_3.0_1.1.10.jolla.i486.drpm .......................................................................[done]<br>
+Applying delta: ./zip-3.0-1.2.1.jolla_3.0_1.1.10.jolla.i486.drpm .................................................................[done]<br>
+Retrieving package xz-libs-5.0.4-1.2.6.jolla.i486                                               (21/275),  73.6 KiB (139.1 KiB unpacked)<br>
+Retrieving delta: ./drpms/xz-libs-5.0.4-1.3.1.jolla_5.0.4_1.2.6.jolla.i486.drpm, 51.2 KiB<br>
+Retrieving: xz-libs-5.0.4-1.3.1.jolla_5.0.4_1.2.6.jolla.i486.drpm ................................................................[done]<br>
+Applying delta: ./xz-libs-5.0.4-1.3.1.jolla_5.0.4_1.2.6.jolla.i486.drpm ..........................................................[done]<br>
+Retrieving package xdg-user-dirs-0.16+git1-1.2.7.jolla.i486                                     (22/275),  52.9 KiB (152.1 KiB unpacked)<br>
+Retrieving delta: ./drpms/xdg-user-dirs-0.16+git1-1.3.1.jolla_0.16+git1_1.2.7.jolla.i486.drpm, 26.9 KiB<br>
+Retrieving: xdg-user-dirs-0.16+git1-1.3.1.jolla_0.16+git1_1.2.7.jolla.i486.drpm ..................................................[done]<br>
+Applying delta: ./xdg-user-dirs-0.16+git1-1.3.1.jolla_0.16+git1_1.2.7.jolla.i486.drpm ............................................[done]<br>
+Retrieving package vim-common-7.3.629-1.2.3.jolla.i486                                          (23/275),   4.9 MiB ( 18.4 MiB unpacked)<br>
+Retrieving delta: ./drpms/vim-common-7.3.629-1.2.1.jolla_7.3.629_1.2.3.jolla.i486.drpm, 238.1 KiB<br>
+Retrieving: vim-common-7.3.629-1.2.1.jolla_7.3.629_1.2.3.jolla.i486.drpm .........................................................[done]<br>
+Applying delta: ./vim-common-7.3.629-1.2.1.jolla_7.3.629_1.2.3.jolla.i486.drpm ...................................................[done]<br>
+Retrieving package unzip-6.0-1.2.4.jolla.i486                                                   (24/275),  95.5 KiB (269.7 KiB unpacked)<br>
+Retrieving delta: ./drpms/unzip-6.0-1.3.1.jolla_6.0_1.2.4.jolla.i486.drpm, 89.2 KiB<br>
+Retrieving: unzip-6.0-1.3.1.jolla_6.0_1.2.4.jolla.i486.drpm ......................................................................[done]<br>
+Applying delta: ./unzip-6.0-1.3.1.jolla_6.0_1.2.4.jolla.i486.drpm ................................................................[done]<br>
+Retrieving package tar-1.17-1.2.4.jolla.i486                                                    (25/275), 321.4 KiB (  1.4 MiB unpacked)<br>
+Retrieving delta: ./drpms/tar-1.17-1.3.1.jolla_1.17_1.2.4.jolla.i486.drpm, 121.8 KiB<br>
+Retrieving: tar-1.17-1.3.1.jolla_1.17_1.2.4.jolla.i486.drpm ......................................................................[done]<br>
+Applying delta: ./tar-1.17-1.3.1.jolla_1.17_1.2.4.jolla.i486.drpm ................................................................[done]<br>
+Retrieving package strace-4.22+git1-1.2.18.jolla.i486                                           (26/275), 198.4 KiB (558.7 KiB unpacked)<br>
+Retrieving delta: ./drpms/strace-4.22+git1-1.3.2.jolla_4.22+git1_1.2.18.jolla.i486.drpm, 192.3 KiB<br>
+Retrieving: strace-4.22+git1-1.3.2.jolla_4.22+git1_1.2.18.jolla.i486.drpm ..............................................[done (154 B/s)]<br>
+Applying delta: ./strace-4.22+git1-1.3.2.jolla_4.22+git1_1.2.18.jolla.i486.drpm ..................................................[done]<br>
+Retrieving package shadow-utils-4.6-1.2.4.jolla.i486                                            (27/275), 173.0 KiB (  1.0 MiB unpacked)<br>
+Retrieving delta: ./drpms/shadow-utils-4.6-1.3.1.jolla_4.6_1.2.4.jolla.i486.drpm, 169.5 KiB<br>
+Retrieving: shadow-utils-4.6-1.3.1.jolla_4.6_1.2.4.jolla.i486.drpm ...............................................................[done]<br>
+Applying delta: ./shadow-utils-4.6-1.3.1.jolla_4.6_1.2.4.jolla.i486.drpm .........................................................[done]<br>
+Retrieving package sed-1:4.1.5-1.2.5.jolla.i486                                                 (28/275),  34.0 KiB ( 61.1 KiB unpacked)<br>
+Retrieving delta: ./drpms/sed-4.1.5-1.3.1.jolla_4.1.5_1.2.5.jolla.i486.drpm, 23.9 KiB<br>
+Retrieving: sed-4.1.5-1.3.1.jolla_4.1.5_1.2.5.jolla.i486.drpm ....................................................................[done]<br>
+Applying delta: ./sed-4.1.5-1.3.1.jolla_4.1.5_1.2.5.jolla.i486.drpm ..............................................................[done]<br>
+Retrieving package readline-5.2-1.2.6.jolla.i486                                                (29/275), 101.1 KiB (263.9 KiB unpacked)<br>
+Retrieving delta: ./drpms/readline-5.2-1.3.1.jolla_5.2_1.2.6.jolla.i486.drpm, 87.8 KiB<br>
+Retrieving: readline-5.2-1.3.1.jolla_5.2_1.2.6.jolla.i486.drpm .........................................................[done (154 B/s)]<br>
+Applying delta: ./readline-5.2-1.3.1.jolla_5.2_1.2.6.jolla.i486.drpm .............................................................[done]<br>
+Retrieving package pth-2.0.7-1.1.8.jolla.i486                                                   (30/275),  48.9 KiB (101.3 KiB unpacked)<br>
+Retrieving delta: ./drpms/pth-2.0.7-1.2.1.jolla_2.0.7_1.1.8.jolla.i486.drpm, 33.3 KiB<br>
+Retrieving: pth-2.0.7-1.2.1.jolla_2.0.7_1.1.8.jolla.i486.drpm ....................................................................[done]<br>
+Applying delta: ./pth-2.0.7-1.2.1.jolla_2.0.7_1.1.8.jolla.i486.drpm ..............................................................[done]<br>
+Retrieving package psmisc-22.13-1.3.6.jolla.i486                                                (31/275),  43.7 KiB ( 91.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/psmisc-22.13-1.4.1.jolla_22.13_1.3.6.jolla.i486.drpm, 33.7 KiB<br>
+Retrieving: psmisc-22.13-1.4.1.jolla_22.13_1.3.6.jolla.i486.drpm .......................................................[done (154 B/s)]<br>
+Applying delta: ./psmisc-22.13-1.4.1.jolla_22.13_1.3.6.jolla.i486.drpm ...........................................................[done]<br>
+Retrieving package procps-3.2.8-1.2.6.jolla.i486                                                (32/275), 130.4 KiB (344.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/procps-3.2.8-1.3.1.jolla_3.2.8_1.2.6.jolla.i486.drpm, 119.3 KiB<br>
+Retrieving: procps-3.2.8-1.3.1.jolla_3.2.8_1.2.6.jolla.i486.drpm .................................................................[done]<br>
+Applying delta: ./procps-3.2.8-1.3.1.jolla_3.2.8_1.2.6.jolla.i486.drpm ...........................................................[done]<br>
+Retrieving package pptp-1.8.0+git4-1.1.14.jolla.i486                                            (33/275),  31.9 KiB ( 60.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/pptp-1.8.0+git4-1.2.2.jolla_1.8.0+git4_1.1.14.jolla.i486.drpm, 27.9 KiB<br>
+Retrieving: pptp-1.8.0+git4-1.2.2.jolla_1.8.0+git4_1.1.14.jolla.i486.drpm ........................................................[done]<br>
+Applying delta: ./pptp-1.8.0+git4-1.2.2.jolla_1.8.0+git4_1.1.14.jolla.i486.drpm ..................................................[done]<br>
+Retrieving package popt-1.16-1.1.9.jolla.i486                                                   (34/275),  30.1 KiB ( 44.8 KiB unpacked)<br>
+Retrieving delta: ./drpms/popt-1.16-1.2.1.jolla_1.16_1.1.9.jolla.i486.drpm, 23.8 KiB<br>
+Retrieving: popt-1.16-1.2.1.jolla_1.16_1.1.9.jolla.i486.drpm .....................................................................[done]<br>
+Applying delta: ./popt-1.16-1.2.1.jolla_1.16_1.1.9.jolla.i486.drpm ...............................................................[done]<br>
+Retrieving package pkgconfig-0.27.1-1.2.6.jolla.i486                                            (35/275), 162.3 KiB (523.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/pkgconfig-0.27.1-1.3.1.jolla_0.27.1_1.2.6.jolla.i486.drpm, 150.2 KiB<br>
+Retrieving: pkgconfig-0.27.1-1.3.1.jolla_0.27.1_1.2.6.jolla.i486.drpm ..................................................[done (154 B/s)]<br>
+Applying delta: ./pkgconfig-0.27.1-1.3.1.jolla_0.27.1_1.2.6.jolla.i486.drpm ......................................................[done]<br>
+Retrieving package patch-2.7.5+git1-1.1.8.jolla.i486                                            (36/275),  97.3 KiB (188.1 KiB unpacked)<br>
+Retrieving delta: ./drpms/patch-2.7.5+git1-1.2.1.jolla_2.7.5+git1_1.1.8.jolla.i486.drpm, 75.4 KiB<br>
+Retrieving: patch-2.7.5+git1-1.2.1.jolla_2.7.5+git1_1.1.8.jolla.i486.drpm ........................................................[done]<br>
+Applying delta: ./patch-2.7.5+git1-1.2.1.jolla_2.7.5+git1_1.1.8.jolla.i486.drpm ..................................................[done]<br>
+Retrieving package nspr-4.20.0-1.3.6.jolla.i486                                                 (37/275), 118.4 KiB (279.1 KiB unpacked)<br>
+Retrieving delta: ./drpms/nspr-4.20.0-1.4.1.jolla_4.20.0_1.3.6.jolla.i486.drpm, 101.3 KiB<br>
+Retrieving: nspr-4.20.0-1.4.1.jolla_4.20.0_1.3.6.jolla.i486.drpm .................................................................[done]<br>
+Applying delta: ./nspr-4.20.0-1.4.1.jolla_4.20.0_1.3.6.jolla.i486.drpm ...........................................................[done]<br>
+Retrieving package net-tools-1.60-1.2.4.jolla.i486                                              (38/275),  92.5 KiB (302.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/net-tools-1.60-1.3.1.jolla_1.60_1.2.4.jolla.i486.drpm, 82.3 KiB<br>
+Retrieving: net-tools-1.60-1.3.1.jolla_1.60_1.2.4.jolla.i486.drpm ................................................................[done]<br>
+Applying delta: ./net-tools-1.60-1.3.1.jolla_1.60_1.2.4.jolla.i486.drpm ..........................................................[done]<br>
+Retrieving package ncurses-6.1+git1-1.3.4.jolla.i486                                            (39/275),  70.9 KiB (191.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/ncurses-6.0-1.3.1.jolla_6.1+git1_1.3.4.jolla.i486.drpm, 67.3 KiB<br>
+Retrieving: ncurses-6.0-1.3.1.jolla_6.1+git1_1.3.4.jolla.i486.drpm ...............................................................[done]<br>
+Applying delta: ./ncurses-6.0-1.3.1.jolla_6.1+git1_1.3.4.jolla.i486.drpm .........................................................[done]<br>
+Retrieving package lzo-2.09-1.1.9.jolla.i486                                                    (40/275),  42.4 KiB (188.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/lzo-2.09-1.2.1.jolla_2.09_1.1.9.jolla.i486.drpm, 20.0 KiB<br>
+Retrieving: lzo-2.09-1.2.1.jolla_2.09_1.1.9.jolla.i486.drpm ......................................................................[done]<br>
+Applying delta: ./lzo-2.09-1.2.1.jolla_2.09_1.1.9.jolla.i486.drpm ................................................................[done]<br>
+Retrieving package lsof-4.91+git1-1.3.3.jolla.i486                                              (41/275),  71.2 KiB (150.9 KiB unpacked)<br>
+Retrieving delta: ./drpms/lsof-4.86+git1-1.3.1.jolla_4.91+git1_1.3.3.jolla.i486.drpm, 67.3 KiB<br>
+Retrieving: lsof-4.86+git1-1.3.1.jolla_4.91+git1_1.3.3.jolla.i486.drpm ...........................................................[done]<br>
+Applying delta: ./lsof-4.86+git1-1.3.1.jolla_4.91+git1_1.3.3.jolla.i486.drpm .....................................................[done]<br>
+Retrieving package libtasn1-4.13+git1-1.3.6.jolla.i486                                          (42/275),  48.0 KiB ( 97.2 KiB unpacked)<br>
+Retrieving delta: ./drpms/libtasn1-4.13+git1-1.4.1.jolla_4.13+git1_1.3.6.jolla.i486.drpm, 33.1 KiB<br>
+Retrieving: libtasn1-4.13+git1-1.4.1.jolla_4.13+git1_1.3.6.jolla.i486.drpm .......................................................[done]<br>
+Applying delta: ./libtasn1-4.13+git1-1.4.1.jolla_4.13+git1_1.3.6.jolla.i486.drpm .................................................[done]<br>
+Retrieving package libstdc++-4.9.4-1.2.4.jolla.i486                                             (43/275), 265.4 KiB (992.4 KiB unpacked)<br>
+Retrieving: libstdc++-4.9.4-1.2.4.jolla.i486.rpm .................................................................................[done]<br>
+Retrieving package libshadowutils-0.0.2-1.3.6.jolla.i486                                        (44/275),  13.9 KiB ( 15.3 KiB unpacked)<br>
+Retrieving delta: ./drpms/libshadowutils-0.0.2-1.4.2.jolla_0.0.2_1.3.6.jolla.i486.drpm, 7.4 KiB<br>
+Retrieving: libshadowutils-0.0.2-1.4.2.jolla_0.0.2_1.3.6.jolla.i486.drpm .........................................................[done]<br>
+Applying delta: ./libshadowutils-0.0.2-1.4.2.jolla_0.0.2_1.3.6.jolla.i486.drpm ...................................................[done]<br>
+Retrieving package libsb2-2.3.90+git17-1.5.3.jolla.i486                                         (45/275), 116.2 KiB (375.2 KiB unpacked)<br>
+Retrieving delta: ./drpms/libsb2-2.3.90+git15-1.5.1.jolla_2.3.90+git17_1.5.3.jolla.i486.drpm, 101.1 KiB<br>
+Retrieving: libsb2-2.3.90+git15-1.5.1.jolla_2.3.90+git17_1.5.3.jolla.i486.drpm .......................................[done (6.8 KiB/s)]<br>
+Applying delta: ./libsb2-2.3.90+git15-1.5.1.jolla_2.3.90+git17_1.5.3.jolla.i486.drpm .............................................[done]<br>
+Retrieving package libpcap-1.8.1+git2-1.2.4.jolla.i486                                          (46/275),  99.1 KiB (245.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/libpcap-1.8.1+git2-1.2.1.jolla_1.8.1+git2_1.2.4.jolla.i486.drpm, 70.1 KiB<br>
+Retrieving: libpcap-1.8.1+git2-1.2.1.jolla_1.8.1+git2_1.2.4.jolla.i486.drpm ......................................................[done]<br>
+Applying delta: ./libpcap-1.8.1+git2-1.2.1.jolla_1.8.1+git2_1.2.4.jolla.i486.drpm ................................................[done]<br>
+Retrieving package libnl-3.4.0-1.2.6.jolla.i486                                                 (47/275), 250.1 KiB (829.7 KiB unpacked)<br>
+Retrieving delta: ./drpms/libnl-3.4.0-1.3.1.jolla_3.4.0_1.2.6.jolla.i486.drpm, 221.3 KiB<br>
+Retrieving: libnl-3.4.0-1.3.1.jolla_3.4.0_1.2.6.jolla.i486.drpm ..................................................................[done]<br>
+Applying delta: ./libnl-3.4.0-1.3.1.jolla_3.4.0_1.2.6.jolla.i486.drpm ............................................................[done]<br>
+Retrieving package liblua-5.1.5-1.1.11.jolla.i486                                               (48/275),  81.0 KiB (172.7 KiB unpacked)<br>
+Retrieving delta: ./drpms/liblua-5.1.5-1.2.1.jolla_5.1.5_1.1.11.jolla.i486.drpm, 72.1 KiB<br>
+Retrieving: liblua-5.1.5-1.2.1.jolla_5.1.5_1.1.11.jolla.i486.drpm ...................................................[done (11.1 KiB/s)]<br>
+Applying delta: ./liblua-5.1.5-1.2.1.jolla_5.1.5_1.1.11.jolla.i486.drpm ..........................................................[done]<br>
+Retrieving package libiphb-1.2.5+git1-1.3.6.jolla.i486                                          (49/275),  21.4 KiB ( 32.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/libiphb-1.2.5+git1-1.4.1.jolla_1.2.5+git1_1.3.6.jolla.i486.drpm, 8.5 KiB<br>
+Retrieving: libiphb-1.2.5+git1-1.4.1.jolla_1.2.5+git1_1.3.6.jolla.i486.drpm ......................................................[done]<br>
+Applying delta: ./libiphb-1.2.5+git1-1.4.1.jolla_1.2.5+git1_1.3.6.jolla.i486.drpm ................................................[done]<br>
+Retrieving package libgpg-error-1.27+git2-1.3.4.jolla.i486                                      (50/275), 129.9 KiB (577.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/libgpg-error-1.27+git2-1.4.1.jolla_1.27+git2_1.3.4.jolla.i486.drpm, 47.2 KiB<br>
+Retrieving: libgpg-error-1.27+git2-1.4.1.jolla_1.27+git2_1.3.4.jolla.i486.drpm .......................................[done (1.2 KiB/s)]<br>
+Applying delta: ./libgpg-error-1.27+git2-1.4.1.jolla_1.27+git2_1.3.4.jolla.i486.drpm .............................................[done]<br>
+Retrieving package libffi-3.2.1+git1-1.2.9.jolla.i486                                           (51/275),  23.6 KiB ( 27.1 KiB unpacked)<br>
+Retrieving delta: ./drpms/libffi-3.2.1+git1-1.3.1.jolla_3.2.1+git1_1.2.9.jolla.i486.drpm, 18.1 KiB<br>
+Retrieving: libffi-3.2.1+git1-1.3.1.jolla_3.2.1+git1_1.2.9.jolla.i486.drpm .......................................................[done]<br>
+Applying delta: ./libffi-3.2.1+git1-1.3.1.jolla_3.2.1+git1_1.2.9.jolla.i486.drpm .................................................[done]<br>
+Retrieving package libcom_err-1.45.0+git1-1.3.4.jolla.i486                                      (52/275),  14.4 KiB ( 10.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/libcom_err-1.43.1+git2-1.3.1.jolla_1.45.0+git1_1.3.4.jolla.i486.drpm, 10.0 KiB<br>
+Retrieving: libcom_err-1.43.1+git2-1.3.1.jolla_1.45.0+git1_1.3.4.jolla.i486.drpm .....................................[done (9.6 KiB/s)]<br>
+Applying delta: ./libcom_err-1.43.1+git2-1.3.1.jolla_1.45.0+git1_1.3.4.jolla.i486.drpm ...........................................[done]<br>
+Retrieving package libcap-2.24+git1-1.3.6.jolla.i486                                            (53/275),  35.4 KiB ( 72.7 KiB unpacked)<br>
+Retrieving delta: ./drpms/libcap-2.24+git1-1.4.1.jolla_2.24+git1_1.3.6.jolla.i486.drpm, 24.9 KiB<br>
+Retrieving: libcap-2.24+git1-1.4.1.jolla_2.24+git1_1.3.6.jolla.i486.drpm .........................................................[done]<br>
+Applying delta: ./libcap-2.24+git1-1.4.1.jolla_2.24+git1_1.3.6.jolla.i486.drpm ...................................................[done]<br>
+Retrieving package libattr-2.4.47+git1-1.3.6.jolla.i486                                         (54/275),  23.8 KiB ( 42.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/libattr-2.4.47+git1-1.4.1.jolla_2.4.47+git1_1.3.6.jolla.i486.drpm, 11.1 KiB<br>
+Retrieving: libattr-2.4.47+git1-1.4.1.jolla_2.4.47+git1_1.3.6.jolla.i486.drpm ....................................................[done]<br>
+Applying delta: ./libattr-2.4.47+git1-1.4.1.jolla_2.4.47+git1_1.3.6.jolla.i486.drpm ..............................................[done]<br>
+Retrieving package less-436+mer1-1.1.24.jolla.i486                                              (55/275),  98.7 KiB (183.8 KiB unpacked)<br>
+Retrieving delta: ./drpms/less-436+mer1-1.2.2.jolla_436+mer1_1.1.24.jolla.i486.drpm, 69.7 KiB<br>
+Retrieving: less-436+mer1-1.2.2.jolla_436+mer1_1.1.24.jolla.i486.drpm ............................................................[done]<br>
+Applying delta: ./less-436+mer1-1.2.2.jolla_436+mer1_1.1.24.jolla.i486.drpm ......................................................[done]<br>
+Retrieving package json-c-0.12-1.1.8.jolla.i486                                                 (56/275),  25.0 KiB ( 42.3 KiB unpacked)<br>
+Retrieving: json-c-0.12-1.1.8.jolla.i486.rpm .....................................................................................[done]<br>
+Retrieving package iptables-1.8.2+git1-1.4.2.jolla.i486                                         (57/275), 230.3 KiB (874.2 KiB unpacked)<br>
+Retrieving delta: ./drpms/iptables-1.6.1+git3-1.4.1.jolla_1.8.2+git1_1.4.2.jolla.i486.drpm, 218.2 KiB<br>
+Retrieving: iptables-1.6.1+git3-1.4.1.jolla_1.8.2+git1_1.4.2.jolla.i486.drpm ...........................................[done (154 B/s)]<br>
+Applying delta: ./iptables-1.6.1+git3-1.4.1.jolla_1.8.2+git1_1.4.2.jolla.i486.drpm ...............................................[done]<br>
+Retrieving package iproute-3.7.0+git4-1.2.4.jolla.i486                                          (58/275), 260.1 KiB (770.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/iproute-3.7.0+git4-1.3.1.jolla_3.7.0+git4_1.2.4.jolla.i486.drpm, 230.4 KiB<br>
+Retrieving: iproute-3.7.0+git4-1.3.1.jolla_3.7.0+git4_1.2.4.jolla.i486.drpm .........................................[done (15.5 KiB/s)]<br>
+Applying delta: ./iproute-3.7.0+git4-1.3.1.jolla_3.7.0+git4_1.2.4.jolla.i486.drpm ................................................[done]<br>
+Retrieving package gdbm-1.8.3-1.2.6.jolla.i486                                                  (59/275),  24.3 KiB ( 37.7 KiB unpacked)<br>
+Retrieving delta: ./drpms/gdbm-1.8.3-1.3.1.jolla_1.8.3_1.2.6.jolla.i486.drpm, 13.2 KiB<br>
+Retrieving: gdbm-1.8.3-1.3.1.jolla_1.8.3_1.2.6.jolla.i486.drpm ...................................................................[done]<br>
+Applying delta: ./gdbm-1.8.3-1.3.1.jolla_1.8.3_1.2.6.jolla.i486.drpm .............................................................[done]<br>
+Retrieving package freetype-2.8.0-1.1.8.jolla.i486                                              (60/275), 314.8 KiB (693.2 KiB unpacked)<br>
+Retrieving delta: ./drpms/freetype-2.8.0-1.2.1.jolla_2.8.0_1.1.8.jolla.i486.drpm, 266.6 KiB<br>
+Retrieving: freetype-2.8.0-1.2.1.jolla_2.8.0_1.1.8.jolla.i486.drpm ...............................................................[done]<br>
+Applying delta: ./freetype-2.8.0-1.2.1.jolla_2.8.0_1.1.8.jolla.i486.drpm .........................................................[done]<br>
+Retrieving package findutils-4.2.31-1.2.4.jolla.i486                                            (61/275), 129.9 KiB (515.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/findutils-4.2.31-1.3.1.jolla_4.2.31_1.2.4.jolla.i486.drpm, 53.9 KiB<br>
+Retrieving: findutils-4.2.31-1.3.1.jolla_4.2.31_1.2.4.jolla.i486.drpm ...............................................[done (11.3 KiB/s)]<br>
+Applying delta: ./findutils-4.2.31-1.3.1.jolla_4.2.31_1.2.4.jolla.i486.drpm ......................................................[done]<br>
+Retrieving package expat-2.1.0-1.1.9.jolla.i486                                                 (62/275),  68.3 KiB (173.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/expat-2.1.0-1.2.1.jolla_2.1.0_1.1.9.jolla.i486.drpm, 63.1 KiB<br>
+Retrieving: expat-2.1.0-1.2.1.jolla_2.1.0_1.1.9.jolla.i486.drpm ..................................................................[done]<br>
+Applying delta: ./expat-2.1.0-1.2.1.jolla_2.1.0_1.1.9.jolla.i486.drpm ............................................................[done]<br>
+Retrieving package dosfstools-3.0.10+git1-1.1.25.jolla.i486                                     (63/275),  66.6 KiB (168.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/dosfstools-3.0.10+git1-1.2.2.jolla_3.0.10+git1_1.1.25.jolla.i486.drpm, 42.2 KiB<br>
+Retrieving: dosfstools-3.0.10+git1-1.2.2.jolla_3.0.10+git1_1.1.25.jolla.i486.drpm ......................................[done (154 B/s)]<br>
+Applying delta: ./dosfstools-3.0.10+git1-1.2.2.jolla_3.0.10+git1_1.1.25.jolla.i486.drpm ..........................................[done]<br>
+Retrieving package diffutils-2.8.1-1.2.5.jolla.i486                                             (64/275), 121.2 KiB (471.9 KiB unpacked)<br>
+Retrieving delta: ./drpms/diffutils-2.8.1-1.3.1.jolla_2.8.1_1.2.5.jolla.i486.drpm, 63.8 KiB<br>
+Retrieving: diffutils-2.8.1-1.3.1.jolla_2.8.1_1.2.5.jolla.i486.drpm ..............................................................[done]<br>
+Applying delta: ./diffutils-2.8.1-1.3.1.jolla_2.8.1_1.2.5.jolla.i486.drpm ........................................................[done]<br>
+Retrieving package db4-4.8.30-1.3.8.jolla.i486                                                  (65/275), 549.6 KiB (  1.4 MiB unpacked)<br>
+Retrieving delta: ./drpms/db4-4.8.30-1.4.1.jolla_4.8.30_1.3.8.jolla.i486.drpm, 507.5 KiB<br>
+Retrieving: db4-4.8.30-1.4.1.jolla_4.8.30_1.3.8.jolla.i486.drpm ..................................................................[done]<br>
+Applying delta: ./db4-4.8.30-1.4.1.jolla_4.8.30_1.3.8.jolla.i486.drpm ............................................................[done]<br>
+Retrieving package cpio-2.12+git1-1.3.3.jolla.i486                                              (66/275),  75.5 KiB (162.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/cpio-2.11-1.3.1.jolla_2.12+git1_1.3.3.jolla.i486.drpm, 60.9 KiB<br>
+Retrieving: cpio-2.11-1.3.1.jolla_2.12+git1_1.3.3.jolla.i486.drpm ................................................................[done]<br>
+Applying delta: ./cpio-2.11-1.3.1.jolla_2.12+git1_1.3.3.jolla.i486.drpm ..........................................................[done]<br>
+Retrieving package bzip2-libs-1.0.6-1.2.6.jolla.i486                                            (67/275),  38.5 KiB ( 73.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/bzip2-libs-1.0.6-1.3.1.jolla_1.0.6_1.2.6.jolla.i486.drpm, 30.5 KiB<br>
+Retrieving: bzip2-libs-1.0.6-1.3.1.jolla_1.0.6_1.2.6.jolla.i486.drpm .............................................................[done]<br>
+Applying delta: ./bzip2-libs-1.0.6-1.3.1.jolla_1.0.6_1.2.6.jolla.i486.drpm .......................................................[done]<br>
+Retrieving package busybox-1.29.3+git5-1.1.4.jolla.i486                                         (68/275),  80.6 KiB (144.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/busybox-1.29.3+git5-1.2.1.jolla_1.29.3+git5_1.1.4.jolla.i486.drpm, 70.3 KiB<br>
+Retrieving: busybox-1.29.3+git5-1.2.1.jolla_1.29.3+git5_1.1.4.jolla.i486.drpm ....................................................[done]<br>
+Applying delta: ./busybox-1.29.3+git5-1.2.1.jolla_1.29.3+git5_1.1.4.jolla.i486.drpm ..............................................[done]<br>
+Retrieving package bluez-libs-4.101+git76-1.2.12.jolla.i486                                     (69/275),  64.2 KiB (127.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/bluez-libs-4.101+git76-1.3.1.jolla_4.101+git76_1.2.12.jolla.i486.drpm, 43.6 KiB<br>
+Retrieving: bluez-libs-4.101+git76-1.3.1.jolla_4.101+git76_1.2.12.jolla.i486.drpm ................................................[done]<br>
+Applying delta: ./bluez-libs-4.101+git76-1.3.1.jolla_4.101+git76_1.2.12.jolla.i486.drpm ..........................................[done]<br>
+Retrieving package libxml2-2.9.8+git2-1.3.6.jolla.i486                                          (70/275), 522.9 KiB (  1.4 MiB unpacked)<br>
+Retrieving delta: ./drpms/libxml2-2.9.8+git2-1.4.1.jolla_2.9.8+git2_1.3.6.jolla.i486.drpm, 488.0 KiB<br>
+Retrieving: libxml2-2.9.8+git2-1.4.1.jolla_2.9.8+git2_1.3.6.jolla.i486.drpm ......................................................[done]<br>
+Applying delta: ./libxml2-2.9.8+git2-1.4.1.jolla_2.9.8+git2_1.3.6.jolla.i486.drpm ................................................[done]<br>
+Retrieving package info-4.13a-1.2.6.jolla.i486                                                  (71/275), 109.0 KiB (255.2 KiB unpacked)<br>
+Retrieving delta: ./drpms/info-4.13a-1.3.1.jolla_4.13a_1.2.6.jolla.i486.drpm, 94.3 KiB<br>
+Retrieving: info-4.13a-1.3.1.jolla_4.13a_1.2.6.jolla.i486.drpm ...................................................................[done]<br>
+Applying delta: ./info-4.13a-1.3.1.jolla_4.13a_1.2.6.jolla.i486.drpm .............................................................[done]<br>
+Retrieving package file-libs-5.35+git2-1.2.6.jolla.i486                                         (72/275), 473.1 KiB (  6.2 MiB unpacked)<br>
+Retrieving delta: ./drpms/file-libs-5.35+git2-1.3.1.jolla_5.35+git2_1.2.6.jolla.i486.drpm, 62.0 KiB<br>
+Retrieving: file-libs-5.35+git2-1.3.1.jolla_5.35+git2_1.2.6.jolla.i486.drpm ............................................[done (154 B/s)]<br>
+Applying delta: ./file-libs-5.35+git2-1.3.1.jolla_5.35+git2_1.2.6.jolla.i486.drpm ................................................[done]<br>
+Retrieving package elfutils-libelf-0.170+git1-1.3.6.jolla.i486                                  (73/275),  58.9 KiB ( 97.7 KiB unpacked)<br>
+Retrieving delta: ./drpms/elfutils-libelf-0.170+git1-1.4.1.jolla_0.170+git1_1.3.6.jolla.i486.drpm, 51.1 KiB<br>
+Retrieving: elfutils-libelf-0.170+git1-1.4.1.jolla_0.170+git1_1.3.6.jolla.i486.drpm ..............................................[done]<br>
+Applying delta: ./elfutils-libelf-0.170+git1-1.4.1.jolla_0.170+git1_1.3.6.jolla.i486.drpm ........................................[done]<br>
+Retrieving package binutils-2.25-1.3.6.jolla.i486                                               (74/275),   3.6 MiB ( 20.3 MiB unpacked)<br>
+Retrieving delta: ./drpms/binutils-2.25-1.4.1.jolla_2.25_1.3.6.jolla.i486.drpm, 2.4 MiB<br>
+Retrieving: binutils-2.25-1.4.1.jolla_2.25_1.3.6.jolla.i486.drpm ...................................................[done (715.3 KiB/s)]<br>
+Applying delta: ./binutils-2.25-1.4.1.jolla_2.25_1.3.6.jolla.i486.drpm ...........................................................[done]<br>
+Retrieving package xz-5.0.4-1.2.6.jolla.i486                                                    (75/275),  59.6 KiB (160.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/xz-5.0.4-1.3.1.jolla_5.0.4_1.2.6.jolla.i486.drpm, 33.4 KiB<br>
+Retrieving: xz-5.0.4-1.3.1.jolla_5.0.4_1.2.6.jolla.i486.drpm .....................................................................[done]<br>
+Applying delta: ./xz-5.0.4-1.3.1.jolla_5.0.4_1.2.6.jolla.i486.drpm ...............................................................[done]<br>
+Retrieving package libutempter-1.1.5+git1-1.1.9.jolla.i486                                      (76/275),  21.9 KiB ( 36.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/libutempter-1.1.5+git1-1.2.1.jolla_1.1.5+git1_1.1.9.jolla.i486.drpm, 9.2 KiB<br>
+Retrieving: libutempter-1.1.5+git1-1.2.1.jolla_1.1.5+git1_1.1.9.jolla.i486.drpm ..................................................[done]<br>
+Applying delta: ./libutempter-1.1.5+git1-1.2.1.jolla_1.1.5+git1_1.1.9.jolla.i486.drpm ............................................[done]<br>
+Retrieving package pcre-8.42+git1-1.3.4.jolla.i486                                              (77/275), 284.8 KiB (967.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/pcre-8.31-1.3.1.jolla_8.42+git1_1.3.4.jolla.i486.drpm, 287.0 KiB<br>
+Retrieving: pcre-8.31-1.3.1.jolla_8.42+git1_1.3.4.jolla.i486.drpm ................................................................[done]<br>
+Applying delta: ./pcre-8.31-1.3.1.jolla_8.42+git1_1.3.4.jolla.i486.drpm ..........................................................[done]<br>
+Retrieving package p7zip-full-16.02+git1-1.2.1.jolla.i486                                       (78/275),   1.1 MiB (  4.2 MiB unpacked)<br>
+Retrieving: p7zip-full-16.02+git1-1.2.1.jolla.i486.rpm ...........................................................................[done]<br>
+Retrieving package libusb-0.1.12-1.2.4.jolla.i486                                               (79/275),  33.8 KiB ( 70.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/libusb-0.1.12-1.3.1.jolla_0.1.12_1.2.4.jolla.i486.drpm, 19.4 KiB<br>
+Retrieving: libusb-0.1.12-1.3.1.jolla_0.1.12_1.2.4.jolla.i486.drpm ...............................................................[done]<br>
+Applying delta: ./libusb-0.1.12-1.3.1.jolla_0.1.12_1.2.4.jolla.i486.drpm .........................................................[done]<br>
+Retrieving package boost-system-1.66.0-1.3.8.jolla.i486                                         (80/275),  19.3 KiB ( 29.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/boost-system-1.66.0-1.4.1.jolla_1.66.0_1.3.8.jolla.i486.drpm, 13.2 KiB<br>
+Retrieving: boost-system-1.66.0-1.4.1.jolla_1.66.0_1.3.8.jolla.i486.drpm .........................................................[done]<br>
+Applying delta: ./boost-system-1.66.0-1.4.1.jolla_1.66.0_1.3.8.jolla.i486.drpm ...................................................[done]<br>
+Retrieving package ppp-2.4.7+git3-1.1.15.jolla.i486                                             (81/275), 169.8 KiB (404.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/ppp-2.4.7+git3-1.2.2.jolla_2.4.7+git3_1.1.15.jolla.i486.drpm, 165.8 KiB<br>
+Retrieving: ppp-2.4.7+git3-1.2.2.jolla_2.4.7+git3_1.1.15.jolla.i486.drpm .........................................................[done]<br>
+Applying delta: ./ppp-2.4.7+git3-1.2.2.jolla_2.4.7+git3_1.1.15.jolla.i486.drpm ...................................................[done]<br>
+Retrieving package iw-4.1+git2-1.2.4.jolla.i486                                                 (82/275),  63.4 KiB (145.1 KiB unpacked)<br>
+Retrieving delta: ./drpms/iw-4.1+git2-1.3.1.jolla_4.1+git2_1.2.4.jolla.i486.drpm, 59.0 KiB<br>
+Retrieving: iw-4.1+git2-1.3.1.jolla_4.1+git2_1.2.4.jolla.i486.drpm ...............................................................[done]<br>
+Applying delta: ./iw-4.1+git2-1.3.1.jolla_4.1+git2_1.2.4.jolla.i486.drpm .........................................................[done]<br>
+Retrieving package libksba-1.3.5+git2-1.2.4.jolla.i486                                          (83/275),  94.2 KiB (230.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/libksba-1.3.5+git2-1.3.1.jolla_1.3.5+git2_1.2.4.jolla.i486.drpm, 74.4 KiB<br>
+Retrieving: libksba-1.3.5+git2-1.3.1.jolla_1.3.5+git2_1.2.4.jolla.i486.drpm ......................................................[done]<br>
+Applying delta: ./libksba-1.3.5+git2-1.3.1.jolla_1.3.5+git2_1.2.4.jolla.i486.drpm ................................................[done]<br>
+Retrieving package libgcrypt-1.5.6+git1-1.1.11.jolla.i486                                       (84/275), 221.0 KiB (520.3 KiB unpacked)<br>
+Retrieving delta: ./drpms/libgcrypt-1.5.6+git1-1.2.1.jolla_1.5.6+git1_1.1.11.jolla.i486.drpm, 156.4 KiB<br>
+Retrieving: libgcrypt-1.5.6+git1-1.2.1.jolla_1.5.6+git1_1.1.11.jolla.i486.drpm ...................................................[done]<br>
+Applying delta: ./libgcrypt-1.5.6+git1-1.2.1.jolla_1.5.6+git1_1.1.11.jolla.i486.drpm .............................................[done]<br>
+Retrieving package p11-kit-0.23.12+git1-1.3.4.jolla.i486                                        (85/275), 177.7 KiB (  1.2 MiB unpacked)<br>
+Retrieving delta: ./drpms/p11-kit-0.23.12-1.3.1.jolla_0.23.12+git1_1.3.4.jolla.i486.drpm, 156.9 KiB<br>
+Retrieving: p11-kit-0.23.12-1.3.1.jolla_0.23.12+git1_1.3.4.jolla.i486.drpm ...........................................[done (1.2 KiB/s)]<br>
+Applying delta: ./p11-kit-0.23.12-1.3.1.jolla_0.23.12+git1_1.3.4.jolla.i486.drpm .................................................[done]<br>
+Retrieving package libss-1.45.0+git1-1.3.4.jolla.i486                                           (86/275),  29.1 KiB ( 63.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/libss-1.43.1+git2-1.3.1.jolla_1.45.0+git1_1.3.4.jolla.i486.drpm, 13.6 KiB<br>
+Retrieving: libss-1.43.1+git2-1.3.1.jolla_1.45.0+git1_1.3.4.jolla.i486.drpm ......................................................[done]<br>
+Applying delta: ./libss-1.43.1+git2-1.3.1.jolla_1.45.0+git1_1.3.4.jolla.i486.drpm ................................................[done]<br>
+Retrieving package e2fsprogs-libs-1.45.0+git1-1.3.4.jolla.i486                                  (87/275), 207.6 KiB (520.7 KiB unpacked)<br>
+Retrieving delta: ./drpms/e2fsprogs-libs-1.43.1+git2-1.3.1.jolla_1.45.0+git1_1.3.4.jolla.i486.drpm, 172.8 KiB<br>
+Retrieving: e2fsprogs-libs-1.43.1+git2-1.3.1.jolla_1.45.0+git1_1.3.4.jolla.i486.drpm .............................................[done]<br>
+Applying delta: ./e2fsprogs-libs-1.43.1+git2-1.3.1.jolla_1.45.0+git1_1.3.4.jolla.i486.drpm .......................................[done]<br>
+Retrieving package libacl-2.2.53-1.2.6.jolla.i486                                               (88/275),  21.5 KiB ( 28.9 KiB unpacked)<br>
+Retrieving delta: ./drpms/libacl-2.2.53-1.3.1.jolla_2.2.53_1.2.6.jolla.i486.drpm, 16.4 KiB<br>
+Retrieving: libacl-2.2.53-1.3.1.jolla_2.2.53_1.2.6.jolla.i486.drpm ...............................................................[done]<br>
+Applying delta: ./libacl-2.2.53-1.3.1.jolla_2.2.53_1.2.6.jolla.i486.drpm .........................................................[done]<br>
+Retrieving package iptables-ipv6-1.8.2+git1-1.4.2.jolla.i486                                    (89/275),  45.7 KiB (139.2 KiB unpacked)<br>
+Retrieving delta: ./drpms/iptables-ipv6-1.6.1+git3-1.4.1.jolla_1.8.2+git1_1.4.2.jolla.i486.drpm, 44.2 KiB<br>
+Retrieving: iptables-ipv6-1.6.1+git3-1.4.1.jolla_1.8.2+git1_1.4.2.jolla.i486.drpm ................................................[done]<br>
+Applying delta: ./iptables-ipv6-1.6.1+git3-1.4.1.jolla_1.8.2+git1_1.4.2.jolla.i486.drpm ..........................................[done]<br>
+Retrieving package db4-utils-4.8.30-1.3.8.jolla.i486                                            (90/275), 103.1 KiB (280.3 KiB unpacked)<br>
+Retrieving delta: ./drpms/db4-utils-4.8.30-1.4.1.jolla_4.8.30_1.3.8.jolla.i486.drpm, 99.2 KiB<br>
+Retrieving: db4-utils-4.8.30-1.4.1.jolla_4.8.30_1.3.8.jolla.i486.drpm ............................................................[done]<br>
+Applying delta: ./db4-utils-4.8.30-1.4.1.jolla_4.8.30_1.3.8.jolla.i486.drpm ......................................................[done]<br>
+Retrieving package bzip2-1.0.6-1.2.6.jolla.i486                                                 (91/275),  32.1 KiB ( 43.9 KiB unpacked)<br>
+Retrieving delta: ./drpms/bzip2-1.0.6-1.3.1.jolla_1.0.6_1.2.6.jolla.i486.drpm, 25.5 KiB<br>
+Retrieving: bzip2-1.0.6-1.3.1.jolla_1.0.6_1.2.6.jolla.i486.drpm ..................................................................[done]<br>
+Applying delta: ./bzip2-1.0.6-1.3.1.jolla_1.0.6_1.2.6.jolla.i486.drpm ............................................................[done]<br>
+Retrieving package busybox-symlinks-gzip-1.29.3+git5-1.1.4.jolla.i486                           (92/275),   9.5 KiB (    0   B unpacked)<br>
+Retrieving delta: ./drpms/busybox-symlinks-gzip-1.29.3+git5-1.2.1.jolla_1.29.3+git5_1.1.4.jolla.i486.drpm, 5.6 KiB<br>
+Retrieving: busybox-symlinks-gzip-1.29.3+git5-1.2.1.jolla_1.29.3+git5_1.1.4.jolla.i486.drpm ......................................[done]<br>
+Applying delta: ./busybox-symlinks-gzip-1.29.3+git5-1.2.1.jolla_1.29.3+git5_1.1.4.jolla.i486.drpm ................................[done]<br>
+Retrieving package libxslt-1.1.29-1.2.6.jolla.i486                                              (93/275), 131.7 KiB (331.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/libxslt-1.1.29-1.3.1.jolla_1.1.29_1.2.6.jolla.i486.drpm, 116.4 KiB<br>
+Retrieving: libxslt-1.1.29-1.3.1.jolla_1.1.29_1.2.6.jolla.i486.drpm ..............................................................[done]<br>
+Applying delta: ./libxslt-1.1.29-1.3.1.jolla_1.1.29_1.2.6.jolla.i486.drpm ........................................................[done]<br>
+Retrieving package augeas-libs-1.6.0+git1-1.2.5.jolla.i486                                      (94/275), 472.9 KiB (  1.8 MiB unpacked)<br>
+Retrieving delta: ./drpms/augeas-libs-1.6.0+git1-1.3.1.jolla_1.6.0+git1_1.2.5.jolla.i486.drpm, 193.2 KiB<br>
+Retrieving: augeas-libs-1.6.0+git1-1.3.1.jolla_1.6.0+git1_1.2.5.jolla.i486.drpm ..................................................[done]<br>
+Applying delta: ./augeas-libs-1.6.0+git1-1.3.1.jolla_1.6.0+git1_1.2.5.jolla.i486.drpm ............................................[done]<br>
+Retrieving package mtools-4.0.12+mer1-1.1.24.jolla.i486                                         (95/275), 184.8 KiB (300.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/mtools-4.0.12+mer1-1.2.2.jolla_4.0.12+mer1_1.1.24.jolla.i486.drpm, 86.2 KiB<br>
+Retrieving: mtools-4.0.12+mer1-1.2.2.jolla_4.0.12+mer1_1.1.24.jolla.i486.drpm ....................................................[done]<br>
+Applying delta: ./mtools-4.0.12+mer1-1.2.2.jolla_4.0.12+mer1_1.1.24.jolla.i486.drpm ..............................................[done]<br>
+Retrieving package file-5.35+git2-1.2.6.jolla.i486                                              (96/275),  15.5 KiB ( 17.3 KiB unpacked)<br>
+Retrieving delta: ./drpms/file-5.35+git2-1.3.1.jolla_5.35+git2_1.2.6.jolla.i486.drpm, 10.8 KiB<br>
+Retrieving: file-5.35+git2-1.3.1.jolla_5.35+git2_1.2.6.jolla.i486.drpm ...........................................................[done]<br>
+Applying delta: ./file-5.35+git2-1.3.1.jolla_5.35+git2_1.2.6.jolla.i486.drpm .....................................................[done]<br>
+Retrieving package xz-lzma-compat-5.0.4-1.2.6.jolla.i486                                        (97/275),  14.1 KiB ( 14.3 KiB unpacked)<br>
+Retrieving delta: ./drpms/xz-lzma-compat-5.0.4-1.3.1.jolla_5.0.4_1.2.6.jolla.i486.drpm, 10.2 KiB<br>
+Retrieving: xz-lzma-compat-5.0.4-1.3.1.jolla_5.0.4_1.2.6.jolla.i486.drpm .........................................................[done]<br>
+Applying delta: ./xz-lzma-compat-5.0.4-1.3.1.jolla_5.0.4_1.2.6.jolla.i486.drpm ...................................................[done]<br>
+Retrieving package squashfs-tools-4.3.0-1.1.9.jolla.i486                                        (98/275), 108.8 KiB (271.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/squashfs-tools-4.3.0-1.2.1.jolla_4.3.0_1.1.9.jolla.i486.drpm, 98.5 KiB<br>
+Retrieving: squashfs-tools-4.3.0-1.2.1.jolla_4.3.0_1.1.9.jolla.i486.drpm .........................................................[done]<br>
+Applying delta: ./squashfs-tools-4.3.0-1.2.1.jolla_4.3.0_1.1.9.jolla.i486.drpm ...................................................[done]<br>
+Retrieving package kmod-libs-21-1.2.7.jolla.i486                                                (99/275),  45.9 KiB ( 91.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/kmod-libs-21-1.3.1.jolla_21_1.2.7.jolla.i486.drpm, 39.9 KiB<br>
+Retrieving: kmod-libs-21-1.3.1.jolla_21_1.2.7.jolla.i486.drpm ....................................................................[done]<br>
+Applying delta: ./kmod-libs-21-1.3.1.jolla_21_1.2.7.jolla.i486.drpm ..............................................................[done]<br>
+Retrieving package kmod-21-1.2.7.jolla.i486                                                    (100/275),  69.3 KiB (143.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/kmod-21-1.3.1.jolla_21_1.2.7.jolla.i486.drpm, 64.2 KiB<br>
+Retrieving: kmod-21-1.3.1.jolla_21_1.2.7.jolla.i486.drpm .........................................................................[done]<br>
+Applying delta: ./kmod-21-1.3.1.jolla_21_1.2.7.jolla.i486.drpm ...................................................................[done]<br>
+Retrieving package elfutils-libs-0.170+git1-1.3.6.jolla.i486                                   (101/275), 238.6 KiB (694.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/elfutils-libs-0.170+git1-1.4.1.jolla_0.170+git1_1.3.6.jolla.i486.drpm, 207.0 KiB<br>
+Retrieving: elfutils-libs-0.170+git1-1.4.1.jolla_0.170+git1_1.3.6.jolla.i486.drpm ................................................[done]<br>
+Applying delta: ./elfutils-libs-0.170+git1-1.4.1.jolla_0.170+git1_1.3.6.jolla.i486.drpm ..........................................[done]<br>
+Retrieving package grep-1:2.5.1a-1.2.4.jolla.i486                                              (102/275),  64.4 KiB (103.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/grep-2.5.1a-1.3.1.jolla_2.5.1a_1.2.4.jolla.i486.drpm, 54.3 KiB<br>
+Retrieving: grep-2.5.1a-1.3.1.jolla_2.5.1a_1.2.4.jolla.i486.drpm .................................................................[done]<br>
+Applying delta: ./grep-2.5.1a-1.3.1.jolla_2.5.1a_1.2.4.jolla.i486.drpm ...........................................................[done]<br>
+Retrieving package glib2-2.56.1+git3-1.3.6.jolla.i486                                          (103/275),   1.2 MiB (  3.7 MiB unpacked)<br>
+Retrieving delta: ./drpms/glib2-2.56.1+git3-1.4.1.jolla_2.56.1+git3_1.3.6.jolla.i486.drpm, 1.0 MiB<br>
+Retrieving: glib2-2.56.1+git3-1.4.1.jolla_2.56.1+git3_1.3.6.jolla.i486.drpm .........................................[done (11.1 KiB/s)]<br>
+Applying delta: ./glib2-2.56.1+git3-1.4.1.jolla_2.56.1+git3_1.3.6.jolla.i486.drpm ................................................[done]<br>
+Retrieving package boost-thread-1.66.0-1.3.8.jolla.i486                                        (104/275),  80.9 KiB (330.1 KiB unpacked)<br>
+Retrieving delta: ./drpms/boost-thread-1.66.0-1.4.1.jolla_1.66.0_1.3.8.jolla.i486.drpm, 56.5 KiB<br>
+Retrieving: boost-thread-1.66.0-1.4.1.jolla_1.66.0_1.3.8.jolla.i486.drpm .........................................................[done]<br>
+Applying delta: ./boost-thread-1.66.0-1.4.1.jolla_1.66.0_1.3.8.jolla.i486.drpm ...................................................[done]<br>
+Retrieving package boost-filesystem-1.66.0-1.3.8.jolla.i486                                    (105/275),  55.7 KiB (266.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/boost-filesystem-1.66.0-1.4.1.jolla_1.66.0_1.3.8.jolla.i486.drpm, 42.6 KiB<br>
+Retrieving: boost-filesystem-1.66.0-1.4.1.jolla_1.66.0_1.3.8.jolla.i486.drpm .....................................................[done]<br>
+Applying delta: ./boost-filesystem-1.66.0-1.4.1.jolla_1.66.0_1.3.8.jolla.i486.drpm ...............................................[done]<br>
+Retrieving package ppp-libs-2.4.7+git3-1.1.15.jolla.i486                                       (106/275),  60.0 KiB (155.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/ppp-libs-2.4.7+git3-1.2.2.jolla_2.4.7+git3_1.1.15.jolla.i486.drpm, 51.5 KiB<br>
+Retrieving: ppp-libs-2.4.7+git3-1.2.2.jolla_2.4.7+git3_1.1.15.jolla.i486.drpm ....................................................[done]<br>
+Applying delta: ./ppp-libs-2.4.7+git3-1.2.2.jolla_2.4.7+git3_1.1.15.jolla.i486.drpm ..............................................[done]<br>
+Retrieving package vpnc-0.5.3-1.2.4.jolla.i486                                                 (107/275),  68.9 KiB (156.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/vpnc-0.5.3-1.3.1.jolla_0.5.3_1.2.4.jolla.i486.drpm, 58.4 KiB<br>
+Retrieving: vpnc-0.5.3-1.3.1.jolla_0.5.3_1.2.4.jolla.i486.drpm ...................................................................[done]<br>
+Applying delta: ./vpnc-0.5.3-1.3.1.jolla_0.5.3_1.2.4.jolla.i486.drpm .............................................................[done]<br>
+Retrieving package rsync-3.1.0+git2-1.3.5.jolla.i486                                           (108/275), 210.9 KiB (460.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/rsync-3.1.0+git2-1.4.2.jolla_3.1.0+git2_1.3.5.jolla.i486.drpm, 196.3 KiB<br>
+Retrieving: rsync-3.1.0+git2-1.4.2.jolla_3.1.0+git2_1.3.5.jolla.i486.drpm ...........................................[done (15.5 KiB/s)]<br>
+Applying delta: ./rsync-3.1.0+git2-1.4.2.jolla_3.1.0+git2_1.3.5.jolla.i486.drpm ..................................................[done]<br>
+Retrieving package coreutils-1:6.9-1.2.5.jolla.i486                                            (109/275), 549.2 KiB (  2.8 MiB unpacked)<br>
+Retrieving delta: ./drpms/coreutils-6.9-1.3.1.jolla_6.9_1.2.5.jolla.i486.drpm, 540.3 KiB<br>
+Retrieving: coreutils-6.9-1.3.1.jolla_6.9_1.2.5.jolla.i486.drpm ..................................................................[done]<br>
+Applying delta: ./coreutils-6.9-1.3.1.jolla_6.9_1.2.5.jolla.i486.drpm ............................................................[done]<br>
+Retrieving package hwdata-0.291+git1-1.1.8.jolla.noarch                                        (110/275),   1.2 MiB (  6.5 MiB unpacked)<br>
+Retrieving delta: ./drpms/hwdata-0.291+git1-1.2.1.jolla_0.291+git1_1.1.8.jolla.noarch.drpm, 5.0 KiB<br>
+Retrieving: hwdata-0.291+git1-1.2.1.jolla_0.291+git1_1.1.8.jolla.noarch.drpm .....................................................[done]<br>
+Applying delta: ./hwdata-0.291+git1-1.2.1.jolla_0.291+git1_1.1.8.jolla.noarch.drpm ...............................................[done]<br>
+Retrieving package elfutils-0.170+git1-1.3.6.jolla.i486                                        (111/275), 241.5 KiB (661.3 KiB unpacked)<br>
+Retrieving delta: ./drpms/elfutils-0.170+git1-1.4.1.jolla_0.170+git1_1.3.6.jolla.i486.drpm, 221.9 KiB<br>
+Retrieving: elfutils-0.170+git1-1.4.1.jolla_0.170+git1_1.3.6.jolla.i486.drpm .....................................................[done]<br>
+Applying delta: ./elfutils-0.170+git1-1.4.1.jolla_0.170+git1_1.3.6.jolla.i486.drpm ...............................................[done]<br>
+Retrieving package shared-mime-info-1.12-1.4.4.jolla.i486                                      (112/275), 321.2 KiB (  4.8 MiB unpacked)<br>
+Retrieving delta: ./drpms/shared-mime-info-1.9+git1-1.4.1.jolla_1.12_1.4.4.jolla.i486.drpm, 107.2 KiB<br>
+Retrieving: shared-mime-info-1.9+git1-1.4.1.jolla_1.12_1.4.4.jolla.i486.drpm .....................................................[done]<br>
+Applying delta: ./shared-mime-info-1.9+git1-1.4.1.jolla_1.12_1.4.4.jolla.i486.drpm ...............................................[done]<br>
+Retrieving package libwspcodec-2.2.1-1.2.8.jolla.i486                                          (113/275),  14.3 KiB ( 16.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/libwspcodec-2.2.1-1.3.1.jolla_2.2.1_1.2.8.jolla.i486.drpm, 9.1 KiB<br>
+Retrieving: libwspcodec-2.2.1-1.3.1.jolla_2.2.1_1.2.8.jolla.i486.drpm ................................................[done (9.1 KiB/s)]<br>
+Applying delta: ./libwspcodec-2.2.1-1.3.1.jolla_2.2.1_1.2.8.jolla.i486.drpm ......................................................[done]<br>
+Retrieving package libglibutil-1.0.35-1.8.4.jolla.i486                                         (114/275),  30.0 KiB ( 47.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/libglibutil-1.0.35-1.9.2.jolla_1.0.35_1.8.4.jolla.i486.drpm, 25.4 KiB<br>
+Retrieving: libglibutil-1.0.35-1.9.2.jolla_1.0.35_1.8.4.jolla.i486.drpm ..........................................................[done]<br>
+Applying delta: ./libglibutil-1.0.35-1.9.2.jolla_1.0.35_1.8.4.jolla.i486.drpm ....................................................[done]<br>
+Retrieving package desktop-file-utils-0.23+git1-1.2.10.jolla.i486                              (115/275),  44.3 KiB (143.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/desktop-file-utils-0.23+git1-1.3.1.jolla_0.23+git1_1.2.10.jolla.i486.drpm, 34.3 KiB<br>
+Retrieving: desktop-file-utils-0.23+git1-1.3.1.jolla_0.23+git1_1.2.10.jolla.i486.drpm ............................................[done]<br>
+Applying delta: ./desktop-file-utils-0.23+git1-1.3.1.jolla_0.23+git1_1.2.10.jolla.i486.drpm ......................................[done]<br>
+Retrieving package xl2tpd-1.3.8+git3-1.1.17.jolla.i486                                         (116/275),  49.2 KiB (106.7 KiB unpacked)<br>
+Retrieving delta: ./drpms/xl2tpd-1.3.8+git3-1.2.2.jolla_1.3.8+git3_1.1.17.jolla.i486.drpm, 45.2 KiB<br>
+Retrieving: xl2tpd-1.3.8+git3-1.2.2.jolla_1.3.8+git3_1.1.17.jolla.i486.drpm ......................................................[done]<br>
+Applying delta: ./xl2tpd-1.3.8+git3-1.2.2.jolla_1.3.8+git3_1.1.17.jolla.i486.drpm ................................................[done]<br>
+Retrieving package pam-1.1.8+git5-1.2.4.jolla.i486                                             (117/275), 314.9 KiB (  1.3 MiB unpacked)<br>
+Retrieving delta: ./drpms/pam-1.1.8+git5-1.3.1.jolla_1.1.8+git5_1.2.4.jolla.i486.drpm, 207.2 KiB<br>
+Retrieving: pam-1.1.8+git5-1.3.1.jolla_1.1.8+git5_1.2.4.jolla.i486.drpm ..........................................................[done]<br>
+Applying delta: ./pam-1.1.8+git5-1.3.1.jolla_1.1.8+git5_1.2.4.jolla.i486.drpm ....................................................[done]<br>
+Retrieving package libmce-glib-1.0.5-1.1.15.jolla.i486                                         (118/275),  20.0 KiB ( 39.3 KiB unpacked)<br>
+Retrieving delta: ./drpms/libmce-glib-1.0.5-1.2.2.jolla_1.0.5_1.1.15.jolla.i486.drpm, 14.0 KiB<br>
+Retrieving: libmce-glib-1.0.5-1.2.2.jolla_1.0.5_1.1.15.jolla.i486.drpm ..............................................[done (14.0 KiB/s)]<br>
+Applying delta: ./libmce-glib-1.0.5-1.2.2.jolla_1.0.5_1.1.15.jolla.i486.drpm .....................................................[done]<br>
+Retrieving package libgsupplicant-1.0.11-1.4.7.jolla.i486                                      (119/275),  65.0 KiB (230.9 KiB unpacked)<br>
+Retrieving delta: ./drpms/libgsupplicant-1.0.11-1.5.2.jolla_1.0.11_1.4.7.jolla.i486.drpm, 55.0 KiB<br>
+Retrieving: libgsupplicant-1.0.11-1.5.2.jolla_1.0.11_1.4.7.jolla.i486.drpm .......................................................[done]<br>
+Applying delta: ./libgsupplicant-1.0.11-1.5.2.jolla_1.0.11_1.4.7.jolla.i486.drpm .................................................[done]<br>
+Retrieving package libgrilio-1.0.29-1.9.1.jolla.i486                                           (120/275),  32.1 KiB ( 53.2 KiB unpacked)<br>
+Retrieving delta: ./drpms/libgrilio-1.0.26-1.7.2.jolla_1.0.29_1.9.1.jolla.i486.drpm, 26.8 KiB<br>
+Retrieving: libgrilio-1.0.26-1.7.2.jolla_1.0.29_1.9.1.jolla.i486.drpm ............................................................[done]<br>
+Applying delta: ./libgrilio-1.0.26-1.7.2.jolla_1.0.29_1.9.1.jolla.i486.drpm ......................................................[done]<br>
+Retrieving package libgofono-2.0.6-1.2.12.jolla.i486                                           (121/275),  54.1 KiB (192.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/libgofono-2.0.6-1.3.2.jolla_2.0.6_1.2.12.jolla.i486.drpm, 44.6 KiB<br>
+Retrieving: libgofono-2.0.6-1.3.2.jolla_2.0.6_1.2.12.jolla.i486.drpm .............................................................[done]<br>
+Applying delta: ./libgofono-2.0.6-1.3.2.jolla_2.0.6_1.2.12.jolla.i486.drpm .......................................................[done]<br>
+Retrieving package libdbusaccess-1.0.7-1.3.4.jolla.i486                                        (122/275),  22.6 KiB ( 36.2 KiB unpacked)<br>
+Retrieving delta: ./drpms/libdbusaccess-1.0.6-1.3.2.jolla_1.0.7_1.3.4.jolla.i486.drpm, 16.3 KiB<br>
+Retrieving: libdbusaccess-1.0.6-1.3.2.jolla_1.0.7_1.3.4.jolla.i486.drpm ..........................................................[done]<br>
+Applying delta: ./libdbusaccess-1.0.6-1.3.2.jolla_1.0.7_1.3.4.jolla.i486.drpm ....................................................[done]<br>
+Retrieving package systemd-libs-225+git13-1.4.4.jolla.i486                                     (123/275), 780.3 KiB (  5.2 MiB unpacked)<br>
+Retrieving delta: ./drpms/systemd-libs-225+git12-1.4.1.jolla_225+git13_1.4.4.jolla.i486.drpm, 824.3 KiB<br>
+Retrieving: systemd-libs-225+git12-1.4.1.jolla_225+git13_1.4.4.jolla.i486.drpm ...................................................[done]<br>
+Applying delta: ./systemd-libs-225+git12-1.4.1.jolla_225+git13_1.4.4.jolla.i486.drpm .............................................[done]<br>
+Retrieving package sudo-1.8.20p2-1.1.25.jolla.i486                                             (124/275), 358.2 KiB (980.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/sudo-1.8.20p2-1.2.2.jolla_1.8.20p2_1.1.25.jolla.i486.drpm, 237.0 KiB<br>
+Retrieving: sudo-1.8.20p2-1.2.2.jolla_1.8.20p2_1.1.25.jolla.i486.drpm ............................................................[done]<br>
+Applying delta: ./sudo-1.8.20p2-1.2.2.jolla_1.8.20p2_1.1.25.jolla.i486.drpm ......................................................[done]<br>
+Retrieving package p11-kit-trust-0.23.12+git1-1.3.4.jolla.i486                                 (125/275), 110.9 KiB (343.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/p11-kit-trust-0.23.12-1.3.1.jolla_0.23.12+git1_1.3.4.jolla.i486.drpm, 100.5 KiB<br>
+Retrieving: p11-kit-trust-0.23.12-1.3.1.jolla_0.23.12+git1_1.3.4.jolla.i486.drpm .................................................[done]<br>
+Applying delta: ./p11-kit-trust-0.23.12-1.3.1.jolla_0.23.12+git1_1.3.4.jolla.i486.drpm ...........................................[done]<br>
+Retrieving package libuser-0.62+git1-1.2.6.jolla.i486                                          (126/275), 264.1 KiB (  1.6 MiB unpacked)<br>
+Retrieving delta: ./drpms/libuser-0.62+git1-1.3.1.jolla_0.62+git1_1.2.6.jolla.i486.drpm, 98.7 KiB<br>
+Retrieving: libuser-0.62+git1-1.3.1.jolla_0.62+git1_1.2.6.jolla.i486.drpm ........................................................[done]<br>
+Applying delta: ./libuser-0.62+git1-1.3.1.jolla_0.62+git1_1.2.6.jolla.i486.drpm ..................................................[done]<br>
+Retrieving package libsmartcols-2.33+git1-1.4.4.jolla.i486                                     (127/275),  97.6 KiB (228.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/libsmartcols-2.31+git2-1.4.1.jolla_2.33+git1_1.4.4.jolla.i486.drpm, 80.7 KiB<br>
+Retrieving: libsmartcols-2.31+git2-1.4.1.jolla_2.33+git1_1.4.4.jolla.i486.drpm ...................................................[done]<br>
+Applying delta: ./libsmartcols-2.31+git2-1.4.1.jolla_2.33+git1_1.4.4.jolla.i486.drpm .............................................[done]<br>
+Retrieving package kbd-2.0.4-1.3.3.jolla.i486                                                  (128/275),   1.1 MiB (  2.5 MiB unpacked)<br>
+Retrieving delta: ./drpms/kbd-1.15.3-1.3.1.jolla_2.0.4_1.3.3.jolla.i486.drpm, 324.9 KiB<br>
+Retrieving: kbd-1.15.3-1.3.1.jolla_2.0.4_1.3.3.jolla.i486.drpm ...................................................................[done]<br>
+Applying delta: ./kbd-1.15.3-1.3.1.jolla_2.0.4_1.3.3.jolla.i486.drpm .............................................................[done]<br>
+Retrieving package groff-1.18.1.4-1.1.13.jolla.i486                                            (129/275),   1.4 MiB (  5.0 MiB unpacked)<br>
+Retrieving delta: ./drpms/groff-1.18.1.4-1.2.1.jolla_1.18.1.4_1.1.13.jolla.i486.drpm, 540.0 KiB<br>
+Retrieving: groff-1.18.1.4-1.2.1.jolla_1.18.1.4_1.1.13.jolla.i486.drpm ..............................................[done (11.1 KiB/s)]<br>
+Applying delta: ./groff-1.18.1.4-1.2.1.jolla_1.18.1.4_1.1.13.jolla.i486.drpm .....................................................[done]<br>
+Retrieving package gawk-1:3.1.5-1.2.6.jolla.i486                                               (130/275), 182.0 KiB (678.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/gawk-3.1.5-1.3.1.jolla_3.1.5_1.2.6.jolla.i486.drpm, 167.1 KiB<br>
+Retrieving: gawk-3.1.5-1.3.1.jolla_3.1.5_1.2.6.jolla.i486.drpm ...................................................................[done]<br>
+Applying delta: ./gawk-3.1.5-1.3.1.jolla_3.1.5_1.2.6.jolla.i486.drpm .............................................................[done]<br>
+Retrieving package fontconfig-2.12.4-1.2.10.jolla.i486                                         (131/275), 153.7 KiB (391.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/fontconfig-2.12.4-1.3.1.jolla_2.12.4_1.2.10.jolla.i486.drpm, 122.6 KiB<br>
+Retrieving: fontconfig-2.12.4-1.3.1.jolla_2.12.4_1.2.10.jolla.i486.drpm ..........................................................[done]<br>
+Applying delta: ./fontconfig-2.12.4-1.3.1.jolla_2.12.4_1.2.10.jolla.i486.drpm ....................................................[done]<br>
+Retrieving package libgofonoext-1.0.10-1.2.11.jolla.i486                                       (132/275),  25.3 KiB ( 65.2 KiB unpacked)<br>
+Retrieving delta: ./drpms/libgofonoext-1.0.10-1.3.2.jolla_1.0.10_1.2.11.jolla.i486.drpm, 18.3 KiB<br>
+Retrieving: libgofonoext-1.0.10-1.3.2.jolla_1.0.10_1.2.11.jolla.i486.drpm ...........................................[done (13.9 KiB/s)]<br>
+Applying delta: ./libgofonoext-1.0.10-1.3.2.jolla_1.0.10_1.2.11.jolla.i486.drpm ..................................................[done]<br>
+Retrieving package dbus-libs-1.10.8+git1-1.1.12.jolla.i486                                     (133/275), 116.6 KiB (312.3 KiB unpacked)<br>
+Retrieving delta: ./drpms/dbus-libs-1.10.8+git1-1.2.1.jolla_1.10.8+git1_1.1.12.jolla.i486.drpm, 103.8 KiB<br>
+Retrieving: dbus-libs-1.10.8+git1-1.2.1.jolla_1.10.8+git1_1.1.12.jolla.i486.drpm .................................................[done]<br>
+Applying delta: ./dbus-libs-1.10.8+git1-1.2.1.jolla_1.10.8+git1_1.1.12.jolla.i486.drpm ...........................................[done]<br>
+Retrieving package cor-0.1.18-1.1.16.jolla.i486                                                (134/275),  61.3 KiB (185.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/cor-0.1.18-1.2.2.jolla_0.1.18_1.1.16.jolla.i486.drpm, 53.4 KiB<br>
+Retrieving: cor-0.1.18-1.2.2.jolla_0.1.18_1.1.16.jolla.i486.drpm .......................................................[done (154 B/s)]<br>
+Applying delta: ./cor-0.1.18-1.2.2.jolla_0.1.18_1.1.16.jolla.i486.drpm ...........................................................[done]<br>
+Retrieving package p11-kit-nss-ckbi-0.23.12+git1-1.3.4.jolla.i486                              (135/275),   7.7 KiB (    0   B unpacked)<br>
+Retrieving delta: ./drpms/p11-kit-nss-ckbi-0.23.12-1.3.1.jolla_0.23.12+git1_1.3.4.jolla.i486.drpm, 3.7 KiB<br>
+Retrieving: p11-kit-nss-ckbi-0.23.12-1.3.1.jolla_0.23.12+git1_1.3.4.jolla.i486.drpm ..............................................[done]<br>
+Applying delta: ./p11-kit-nss-ckbi-0.23.12-1.3.1.jolla_0.23.12+git1_1.3.4.jolla.i486.drpm ........................................[done]<br>
+Retrieving package passwd-0.79+git1-1.3.6.jolla.i486                                           (136/275),  83.0 KiB (393.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/passwd-0.79+git1-1.4.1.jolla_0.79+git1_1.3.6.jolla.i486.drpm, 24.1 KiB<br>
+Retrieving: passwd-0.79+git1-1.4.1.jolla_0.79+git1_1.3.6.jolla.i486.drpm ............................................[done (13.9 KiB/s)]<br>
+Applying delta: ./passwd-0.79+git1-1.4.1.jolla_0.79+git1_1.3.6.jolla.i486.drpm ...................................................[done]<br>
+Retrieving package libuuid-2.33+git1-1.4.4.jolla.i486                                          (137/275),  22.9 KiB ( 26.3 KiB unpacked)<br>
+Retrieving delta: ./drpms/libuuid-2.31+git2-1.4.1.jolla_2.33+git1_1.4.4.jolla.i486.drpm, 18.5 KiB<br>
+Retrieving: libuuid-2.31+git2-1.4.1.jolla_2.33+git1_1.4.4.jolla.i486.drpm ........................................................[done]<br>
+Applying delta: ./libuuid-2.31+git2-1.4.1.jolla_2.33+git1_1.4.4.jolla.i486.drpm ..................................................[done]<br>
+Retrieving package perl-macros-2:5.16.1-1.1.15.jolla.i486                                      (138/275),  10.9 KiB (  5.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/perl-macros-5.16.1-1.2.1.jolla_5.16.1_1.1.15.jolla.i486.drpm, 4.7 KiB<br>
+Retrieving: perl-macros-5.16.1-1.2.1.jolla_5.16.1_1.1.15.jolla.i486.drpm .........................................................[done]<br>
+Applying delta: ./perl-macros-5.16.1-1.2.1.jolla_5.16.1_1.1.15.jolla.i486.drpm ...................................................[done]<br>
+Retrieving package libdbuslogserver-dbus-1.0.15-1.4.7.jolla.i486                               (139/275),  24.6 KiB ( 44.2 KiB unpacked)<br>
+Retrieving delta: ./drpms/libdbuslogserver-dbus-1.0.15-1.5.2.jolla_1.0.15_1.4.7.jolla.i486.drpm, 19.2 KiB<br>
+Retrieving: libdbuslogserver-dbus-1.0.15-1.5.2.jolla_1.0.15_1.4.7.jolla.i486.drpm ................................................[done]<br>
+Applying delta: ./libdbuslogserver-dbus-1.0.15-1.5.2.jolla_1.0.15_1.4.7.jolla.i486.drpm ..........................................[done]<br>
+Retrieving package statefs-pp-0.3.35-1.1.19.jolla.i486                                         (140/275),  31.2 KiB ( 47.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/statefs-pp-0.3.35-1.2.2.jolla_0.3.35_1.1.19.jolla.i486.drpm, 26.9 KiB<br>
+Retrieving: statefs-pp-0.3.35-1.2.2.jolla_0.3.35_1.1.19.jolla.i486.drpm ..............................................[done (4.0 KiB/s)]<br>
+Applying delta: ./statefs-pp-0.3.35-1.2.2.jolla_0.3.35_1.1.19.jolla.i486.drpm ....................................................[done]<br>
+Retrieving package gnutls-2.12.23.4-1.2.5.jolla.i486                                           (141/275), 315.1 KiB (  1.0 MiB unpacked)<br>
+Retrieving delta: ./drpms/gnutls-2.12.23.4-1.3.1.jolla_2.12.23.4_1.2.5.jolla.i486.drpm, 255.6 KiB<br>
+Retrieving: gnutls-2.12.23.4-1.3.1.jolla_2.12.23.4_1.2.5.jolla.i486.drpm .........................................................[done]<br>
+Applying delta: ./gnutls-2.12.23.4-1.3.1.jolla_2.12.23.4_1.2.5.jolla.i486.drpm ...................................................[done]<br>
+Retrieving package ca-certificates-2018.2.24-1.2.11.jolla.noarch                               (142/275), 342.0 KiB (928.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/ca-certificates-2018.2.24-1.3.1.jolla_2018.2.24_1.2.11.jolla.noarch.drpm, 14.2 KiB<br>
+Retrieving: ca-certificates-2018.2.24-1.3.1.jolla_2018.2.24_1.2.11.jolla.noarch.drpm .............................................[done]<br>
+Applying delta: ./ca-certificates-2018.2.24-1.3.1.jolla_2018.2.24_1.2.11.jolla.noarch.drpm .......................................[done]<br>
+Retrieving package libblkid-2.33+git1-1.4.4.jolla.i486                                         (143/275), 134.7 KiB (316.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/libblkid-2.31+git2-1.4.1.jolla_2.33+git1_1.4.4.jolla.i486.drpm, 125.9 KiB<br>
+Retrieving: libblkid-2.31+git2-1.4.1.jolla_2.33+git1_1.4.4.jolla.i486.drpm .......................................................[done]<br>
+Applying delta: ./libblkid-2.31+git2-1.4.1.jolla_2.33+git1_1.4.4.jolla.i486.drpm .................................................[done]<br>
+Retrieving package perl-libs-2:5.16.1-1.1.15.jolla.i486                                        (144/275), 583.9 KiB (  1.4 MiB unpacked)<br>
+Retrieving delta: ./drpms/perl-libs-5.16.1-1.2.1.jolla_5.16.1_1.1.15.jolla.i486.drpm, 544.8 KiB<br>
+Retrieving: perl-libs-5.16.1-1.2.1.jolla_5.16.1_1.1.15.jolla.i486.drpm ...........................................................[done]<br>
+Applying delta: ./perl-libs-5.16.1-1.2.1.jolla_5.16.1_1.1.15.jolla.i486.drpm .....................................................[done]<br>
+Retrieving package openssl-libs-1.0.2o+git2-1.4.4.jolla.i486                                   (145/275), 793.4 KiB (  2.3 MiB unpacked)<br>
+Retrieving delta: ./drpms/openssl-libs-1.0.2o-1.4.1.jolla_1.0.2o+git2_1.4.4.jolla.i486.drpm, 709.0 KiB<br>
+Retrieving: openssl-libs-1.0.2o-1.4.1.jolla_1.0.2o+git2_1.4.4.jolla.i486.drpm ..........................................[done (154 B/s)]<br>
+Applying delta: ./openssl-libs-1.0.2o-1.4.1.jolla_1.0.2o+git2_1.4.4.jolla.i486.drpm ..............................................[done]<br>
+Retrieving package libfdisk-2.33+git1-1.4.4.jolla.i486                                         (146/275), 171.6 KiB (427.8 KiB unpacked)<br>
+Retrieving delta: ./drpms/libfdisk-2.31+git2-1.4.1.jolla_2.33+git1_1.4.4.jolla.i486.drpm, 155.6 KiB<br>
+Retrieving: libfdisk-2.31+git2-1.4.1.jolla_2.33+git1_1.4.4.jolla.i486.drpm .......................................................[done]<br>
+Applying delta: ./libfdisk-2.31+git2-1.4.1.jolla_2.33+git1_1.4.4.jolla.i486.drpm .................................................[done]<br>
+Retrieving package perl-2:5.16.1-1.1.15.jolla.i486                                             (147/275),   8.7 MiB ( 27.8 MiB unpacked)<br>
+Retrieving delta: ./drpms/perl-5.16.1-1.2.1.jolla_5.16.1_1.1.15.jolla.i486.drpm, 1.2 MiB<br>
+Retrieving: perl-5.16.1-1.2.1.jolla_5.16.1_1.1.15.jolla.i486.drpm ................................................................[done]<br>
+Applying delta: ./perl-5.16.1-1.2.1.jolla_5.16.1_1.1.15.jolla.i486.drpm ..........................................................[done]<br>
+Retrieving package libcurl-7.64.0+git1-1.8.4.jolla.i486                                        (148/275), 217.7 KiB (525.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/libcurl-7.63.0-1.8.1.jolla_7.64.0+git1_1.8.4.jolla.i486.drpm, 199.6 KiB<br>
+Retrieving: libcurl-7.63.0-1.8.1.jolla_7.64.0+git1_1.8.4.jolla.i486.drpm .........................................................[done]<br>
+Applying delta: ./libcurl-7.63.0-1.8.1.jolla_7.64.0+git1_1.8.4.jolla.i486.drpm ...................................................[done]<br>
+Retrieving package libarchive-3.3.3+git1-1.2.6.jolla.i486                                      (149/275), 301.4 KiB (740.7 KiB unpacked)<br>
+Retrieving delta: ./drpms/libarchive-3.3.3+git1-1.3.1.jolla_3.3.3+git1_1.2.6.jolla.i486.drpm, 274.6 KiB<br>
+Retrieving: libarchive-3.3.3+git1-1.3.1.jolla_3.3.3+git1_1.2.6.jolla.i486.drpm ......................................[done (13.9 KiB/s)]<br>
+Applying delta: ./libarchive-3.3.3+git1-1.3.1.jolla_3.3.3+git1_1.2.6.jolla.i486.drpm .............................................[done]<br>
+Retrieving package libmount-2.33+git1-1.4.4.jolla.i486                                         (150/275), 140.8 KiB (348.3 KiB unpacked)<br>
+Retrieving delta: ./drpms/libmount-2.31+git2-1.4.1.jolla_2.33+git1_1.4.4.jolla.i486.drpm, 126.9 KiB<br>
+Retrieving: libmount-2.31+git2-1.4.1.jolla_2.33+git1_1.4.4.jolla.i486.drpm .......................................................[done]<br>
+Applying delta: ./libmount-2.31+git2-1.4.1.jolla_2.33+git1_1.4.4.jolla.i486.drpm .................................................[done]<br>
+Retrieving package perl-Scalar-List-Utils-2:1.25-1.1.15.jolla.i486                             (151/275),  33.0 KiB ( 43.3 KiB unpacked)<br>
+Retrieving delta: ./drpms/perl-Scalar-List-Utils-1.25-1.2.1.jolla_1.25_1.1.15.jolla.i486.drpm, 13.5 KiB<br>
+Retrieving: perl-Scalar-List-Utils-1.25-1.2.1.jolla_1.25_1.1.15.jolla.i486.drpm ..................................................[done]<br>
+Applying delta: ./perl-Scalar-List-Utils-1.25-1.2.1.jolla_1.25_1.1.15.jolla.i486.drpm ............................................[done]<br>
+Retrieving package qemu-usermode-common-2.1.0-1.2.6.jolla.i486                                 (152/275), 458.7 KiB (  2.8 MiB unpacked)<br>
+Retrieving delta: ./drpms/qemu-usermode-common-2.1.0-1.3.1.jolla_2.1.0_1.2.6.jolla.i486.drpm, 455.5 KiB<br>
+Retrieving: qemu-usermode-common-2.1.0-1.3.1.jolla_2.1.0_1.2.6.jolla.i486.drpm .....................................[done (424.0 KiB/s)]<br>
+Applying delta: ./qemu-usermode-common-2.1.0-1.3.1.jolla_2.1.0_1.2.6.jolla.i486.drpm .............................................[done]<br>
+Retrieving package pacrunner-0.15+git1-1.3.6.jolla.i486                                        (153/275), 191.7 KiB (454.7 KiB unpacked)<br>
+Retrieving delta: ./drpms/pacrunner-0.15+git1-1.4.1.jolla_0.15+git1_1.3.6.jolla.i486.drpm, 178.4 KiB<br>
+Retrieving: pacrunner-0.15+git1-1.4.1.jolla_0.15+git1_1.3.6.jolla.i486.drpm ......................................................[done]<br>
+Applying delta: ./pacrunner-0.15+git1-1.4.1.jolla_0.15+git1_1.3.6.jolla.i486.drpm ................................................[done]<br>
+Retrieving package gnupg2-1:2.0.4+git2-1.4.4.jolla.i486                                        (154/275),   1.0 MiB (  4.9 MiB unpacked)<br>
+Retrieving delta: ./drpms/gnupg2-2.0.4+git2-1.5.1.jolla_2.0.4+git2_1.4.4.jolla.i486.drpm, 616.6 KiB<br>
+Retrieving: gnupg2-2.0.4+git2-1.5.1.jolla_2.0.4+git2_1.4.4.jolla.i486.drpm ...........................................[done (8.7 KiB/s)]<br>
+Applying delta: ./gnupg2-2.0.4+git2-1.5.1.jolla_2.0.4+git2_1.4.4.jolla.i486.drpm .................................................[done]<br>
+Retrieving package curl-7.64.0+git1-1.8.4.jolla.i486                                           (155/275), 115.8 KiB (350.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/curl-7.63.0-1.8.1.jolla_7.64.0+git1_1.8.4.jolla.i486.drpm, 111.4 KiB<br>
+Retrieving: curl-7.63.0-1.8.1.jolla_7.64.0+git1_1.8.4.jolla.i486.drpm ............................................................[done]<br>
+Applying delta: ./curl-7.63.0-1.8.1.jolla_7.64.0+git1_1.8.4.jolla.i486.drpm ......................................................[done]<br>
+Retrieving package bsdtar-3.3.3+git1-1.2.6.jolla.i486                                          (156/275),  30.3 KiB ( 52.8 KiB unpacked)<br>
+Retrieving delta: ./drpms/bsdtar-3.3.3+git1-1.3.1.jolla_3.3.3+git1_1.2.6.jolla.i486.drpm, 26.4 KiB<br>
+Retrieving: bsdtar-3.3.3+git1-1.3.1.jolla_3.3.3+git1_1.2.6.jolla.i486.drpm .......................................................[done]<br>
+Applying delta: ./bsdtar-3.3.3+git1-1.3.1.jolla_3.3.3+git1_1.2.6.jolla.i486.drpm .................................................[done]<br>
+Retrieving package util-linux-2.33+git1-1.4.4.jolla.i486                                       (157/275), 795.9 KiB (  3.6 MiB unpacked)<br>
+Retrieving delta: ./drpms/util-linux-2.31+git2-1.4.1.jolla_2.33+git1_1.4.4.jolla.i486.drpm, 784.9 KiB<br>
+Retrieving: util-linux-2.31+git2-1.4.1.jolla_2.33+git1_1.4.4.jolla.i486.drpm .......................................[done (105.8 KiB/s)]<br>
+Applying delta: ./util-linux-2.31+git2-1.4.1.jolla_2.33+git1_1.4.4.jolla.i486.drpm ...............................................[done]<br>
+Retrieving package perl-Pod-Escapes-2:1.04-1.1.15.jolla.noarch                                 (158/275),  18.2 KiB ( 20.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/perl-Pod-Escapes-1.04-1.2.1.jolla_1.04_1.1.15.jolla.noarch.drpm, 5.1 KiB<br>
+Retrieving: perl-Pod-Escapes-1.04-1.2.1.jolla_1.04_1.1.15.jolla.noarch.drpm ......................................................[done]<br>
+Applying delta: ./perl-Pod-Escapes-1.04-1.2.1.jolla_1.04_1.1.15.jolla.noarch.drpm ................................................[done]<br>
+Retrieving package qemu-usermode-static-2.1.0-1.2.6.jolla.i486                                 (159/275),   1.4 MiB (  9.3 MiB unpacked)<br>
+Retrieving: qemu-usermode-static-2.1.0-1.2.6.jolla.i486.rpm ......................................................................[done]<br>
+Retrieving package qemu-usermode-2.1.0-1.2.6.jolla.i486                                        (160/275), 822.1 KiB (  5.0 MiB unpacked)<br>
+Retrieving delta: ./drpms/qemu-usermode-2.1.0-1.3.1.jolla_2.1.0_1.2.6.jolla.i486.drpm, 817.9 KiB<br>
+Retrieving: qemu-usermode-2.1.0-1.3.1.jolla_2.1.0_1.2.6.jolla.i486.drpm ..............................................[done (2.6 KiB/s)]<br>
+Applying delta: ./qemu-usermode-2.1.0-1.3.1.jolla_2.1.0_1.2.6.jolla.i486.drpm ....................................................[done]<br>
+Retrieving package gpgme-1.2.0+git6-1.3.4.jolla.i486                                           (161/275), 111.1 KiB (454.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/gpgme-1.2.0+git6-1.4.1.jolla_1.2.0+git6_1.3.4.jolla.i486.drpm, 94.4 KiB<br>
+Retrieving: gpgme-1.2.0+git6-1.4.1.jolla_1.2.0+git6_1.3.4.jolla.i486.drpm ........................................................[done]<br>
+Applying delta: ./gpgme-1.2.0+git6-1.4.1.jolla_1.2.0+git6_1.3.4.jolla.i486.drpm ..................................................[done]<br>
+Retrieving package rpm-libs-4.14.1+git9-1.5.6.jolla.i486                                       (162/275), 304.1 KiB (780.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/rpm-libs-4.14.1+git7-1.6.1.jolla_4.14.1+git9_1.5.6.jolla.i486.drpm, 286.2 KiB<br>
+Retrieving: rpm-libs-4.14.1+git7-1.6.1.jolla_4.14.1+git9_1.5.6.jolla.i486.drpm ...................................................[done]<br>
+Applying delta: ./rpm-libs-4.14.1+git7-1.6.1.jolla_4.14.1+git9_1.5.6.jolla.i486.drpm .............................................[done]<br>
+Retrieving package xdg-utils-1.1.2+git1-1.2.7.jolla.noarch                                     (163/275),  43.8 KiB (257.9 KiB unpacked)<br>
+Retrieving delta: ./drpms/xdg-utils-1.1.2+git1-1.3.1.jolla_1.1.2+git1_1.2.7.jolla.noarch.drpm, 8.2 KiB<br>
+Retrieving: xdg-utils-1.1.2+git1-1.3.1.jolla_1.1.2+git1_1.2.7.jolla.noarch.drpm ..................................................[done]<br>
+Applying delta: ./xdg-utils-1.1.2+git1-1.3.1.jolla_1.1.2+git1_1.2.7.jolla.noarch.drpm ............................................[done]<br>
+Retrieving package vim-enhanced-7.3.629-1.2.3.jolla.i486                                       (164/275), 774.1 KiB (  1.7 MiB unpacked)<br>
+Retrieving delta: ./drpms/vim-enhanced-7.3.629-1.2.1.jolla_7.3.629_1.2.3.jolla.i486.drpm, 770.0 KiB<br>
+Retrieving: vim-enhanced-7.3.629-1.2.1.jolla_7.3.629_1.2.3.jolla.i486.drpm .......................................................[done]<br>
+Applying delta: ./vim-enhanced-7.3.629-1.2.1.jolla_7.3.629_1.2.3.jolla.i486.drpm .................................................[done]<br>
+Retrieving package parted-3.0+mer4-1.2.12.jolla.i486                                           (165/275), 148.2 KiB (386.7 KiB unpacked)<br>
+Retrieving delta: ./drpms/parted-3.0+mer4-1.3.2.jolla_3.0+mer4_1.2.12.jolla.i486.drpm, 129.4 KiB<br>
+Retrieving: parted-3.0+mer4-1.3.2.jolla_3.0+mer4_1.2.12.jolla.i486.drpm ..........................................................[done]<br>
+Applying delta: ./parted-3.0+mer4-1.3.2.jolla_3.0+mer4_1.2.12.jolla.i486.drpm ....................................................[done]<br>
+Retrieving package fuse-2.9.0+git1-1.2.6.jolla.i486                                            (166/275),  32.1 KiB ( 57.2 KiB unpacked)<br>
+Retrieving delta: ./drpms/fuse-2.9.0+git1-1.3.2.jolla_2.9.0+git1_1.2.6.jolla.i486.drpm, 22.0 KiB<br>
+Retrieving: fuse-2.9.0+git1-1.3.2.jolla_2.9.0+git1_1.2.6.jolla.i486.drpm ............................................[done (15.6 KiB/s)]<br>
+Applying delta: ./fuse-2.9.0+git1-1.3.2.jolla_2.9.0+git1_1.2.6.jolla.i486.drpm ...................................................[done]<br>
+Retrieving package fakeroot-1.12.4-1.1.9.jolla.i486                                            (167/275),  87.3 KiB (233.8 KiB unpacked)<br>
+Retrieving delta: ./drpms/fakeroot-1.12.4-1.2.1.jolla_1.12.4_1.1.9.jolla.i486.drpm, 35.2 KiB<br>
+Retrieving: fakeroot-1.12.4-1.2.1.jolla_1.12.4_1.1.9.jolla.i486.drpm .............................................................[done]<br>
+Applying delta: ./fakeroot-1.12.4-1.2.1.jolla_1.12.4_1.1.9.jolla.i486.drpm .......................................................[done]<br>
+Retrieving package e2fsprogs-1.45.0+git1-1.3.4.jolla.i486                                      (168/275), 334.9 KiB (970.1 KiB unpacked)<br>
+Retrieving delta: ./drpms/e2fsprogs-1.43.1+git2-1.3.1.jolla_1.45.0+git1_1.3.4.jolla.i486.drpm, 321.0 KiB<br>
+Retrieving: e2fsprogs-1.43.1+git2-1.3.1.jolla_1.45.0+git1_1.3.4.jolla.i486.drpm ......................................[done (2.6 KiB/s)]<br>
+Applying delta: ./e2fsprogs-1.43.1+git2-1.3.1.jolla_1.45.0+git1_1.3.4.jolla.i486.drpm ............................................[done]<br>
+Retrieving package btrfs-progs-3.16+git2-1.4.2.jolla.i486                                      (169/275), 388.1 KiB (  2.9 MiB unpacked)<br>
+Retrieving delta: ./drpms/btrfs-progs-3.16+git1-1.4.2.jolla_3.16+git2_1.4.2.jolla.i486.drpm, 389.8 KiB<br>
+Retrieving: btrfs-progs-3.16+git1-1.4.2.jolla_3.16+git2_1.4.2.jolla.i486.drpm ......................................[done (156.7 KiB/s)]<br>
+Applying delta: ./btrfs-progs-3.16+git1-1.4.2.jolla_3.16+git2_1.4.2.jolla.i486.drpm ..............................................[done]<br>
+Retrieving package perl-Pod-Simple-2:3.20-1.1.15.jolla.noarch                                  (170/275), 198.5 KiB (488.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/perl-Pod-Simple-3.20-1.2.1.jolla_3.20_1.1.15.jolla.noarch.drpm, 14.9 KiB<br>
+Retrieving: perl-Pod-Simple-3.20-1.2.1.jolla_3.20_1.1.15.jolla.noarch.drpm .......................................................[done]<br>
+Applying delta: ./perl-Pod-Simple-3.20-1.2.1.jolla_3.20_1.1.15.jolla.noarch.drpm .................................................[done]<br>
+Retrieving package rpm-4.14.1+git9-1.5.6.jolla.i486                                            (171/275), 332.5 KiB (  1.8 MiB unpacked)<br>
+Retrieving delta: ./drpms/rpm-4.14.1+git7-1.6.1.jolla_4.14.1+git9_1.5.6.jolla.i486.drpm, 62.1 KiB<br>
+Retrieving: rpm-4.14.1+git7-1.6.1.jolla_4.14.1+git9_1.5.6.jolla.i486.drpm ..............................................[done (154 B/s)]<br>
+Applying delta: ./rpm-4.14.1+git7-1.6.1.jolla_4.14.1+git9_1.5.6.jolla.i486.drpm ..................................................[done]<br>
+Retrieving package fuse-libs-2.9.0+git1-1.2.6.jolla.i486                                       (172/275),  82.1 KiB (227.8 KiB unpacked)<br>
+Retrieving delta: ./drpms/fuse-libs-2.9.0+git1-1.3.2.jolla_2.9.0+git1_1.2.6.jolla.i486.drpm, 63.6 KiB<br>
+Retrieving: fuse-libs-2.9.0+git1-1.3.2.jolla_2.9.0+git1_1.2.6.jolla.i486.drpm ....................................................[done]<br>
+Applying delta: ./fuse-libs-2.9.0+git1-1.3.2.jolla_2.9.0+git1_1.2.6.jolla.i486.drpm ..............................................[done]<br>
+Retrieving package perl-parent-2:0.225-1.1.15.jolla.noarch                                     (173/275),  13.3 KiB (  5.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/perl-parent-0.225-1.2.1.jolla_0.225_1.1.15.jolla.noarch.drpm, 5.2 KiB<br>
+Retrieving: perl-parent-0.225-1.2.1.jolla_0.225_1.1.15.jolla.noarch.drpm .........................................................[done]<br>
+Applying delta: ./perl-parent-0.225-1.2.1.jolla_0.225_1.1.15.jolla.noarch.drpm ...................................................[done]<br>
+Retrieving package libicu-63.1+git5-1.1.5.jolla.i486                                           (174/275),   7.8 MiB ( 30.6 MiB unpacked)<br>
+Retrieving: libicu-63.1+git5-1.1.5.jolla.i486.rpm ....................................................................[done (4.2 MiB/s)]<br>
+Retrieving package perl-Pod-Perldoc-2:3.17.00-1.1.15.jolla.noarch                              (175/275),  75.3 KiB (143.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/perl-Pod-Perldoc-3.17.00-1.2.1.jolla_3.17.00_1.1.15.jolla.noarch.drpm, 10.6 KiB<br>
+Retrieving: perl-Pod-Perldoc-3.17.00-1.2.1.jolla_3.17.00_1.1.15.jolla.noarch.drpm ................................................[done]<br>
+Applying delta: ./perl-Pod-Perldoc-3.17.00-1.2.1.jolla_3.17.00_1.1.15.jolla.noarch.drpm ..........................................[done]<br>
+Retrieving package sqlite-libs-3.13.0+git3-1.3.5.jolla.i486                                    (176/275), 457.9 KiB (971.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/sqlite-libs-3.13.0+git2-1.4.2.jolla_3.13.0+git3_1.3.5.jolla.i486.drpm, 430.1 KiB<br>
+Retrieving: sqlite-libs-3.13.0+git2-1.4.2.jolla_3.13.0+git3_1.3.5.jolla.i486.drpm ................................................[done]<br>
+Applying delta: ./sqlite-libs-3.13.0+git2-1.4.2.jolla_3.13.0+git3_1.3.5.jolla.i486.drpm ..........................................[done]<br>
+Retrieving package qt5-qtcore-5.6.3+git9-1.9.1.jolla.i486                                      (177/275),   1.6 MiB (  4.6 MiB unpacked)<br>
+Retrieving delta: ./drpms/qt5-qtcore-5.6.3+git8-1.8.2.jolla_5.6.3+git9_1.9.1.jolla.i486.drpm, 1.2 MiB<br>
+Retrieving: qt5-qtcore-5.6.3+git8-1.8.2.jolla_5.6.3+git9_1.9.1.jolla.i486.drpm ...................................................[done]<br>
+Applying delta: ./qt5-qtcore-5.6.3+git8-1.8.2.jolla_5.6.3+git9_1.9.1.jolla.i486.drpm .............................................[done]<br>
+Retrieving package perl-Pod-Parser-2:1.51-1.1.15.jolla.noarch                                  (178/275), 124.7 KiB (305.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/perl-Pod-Parser-1.51-1.2.1.jolla_1.51_1.1.15.jolla.noarch.drpm, 9.1 KiB<br>
+Retrieving: perl-Pod-Parser-1.51-1.2.1.jolla_1.51_1.1.15.jolla.noarch.drpm .............................................[done (154 B/s)]<br>
+Applying delta: ./perl-Pod-Parser-1.51-1.2.1.jolla_1.51_1.1.15.jolla.noarch.drpm .................................................[done]<br>
+Retrieving package nss-3.39-1.3.5.jolla.i486                                                   (179/275), 871.6 KiB (  2.7 MiB unpacked)<br>
+Retrieving delta: ./drpms/nss-3.39-1.3.2.jolla_3.39_1.3.5.jolla.i486.drpm, 803.9 KiB<br>
+Retrieving: nss-3.39-1.3.2.jolla_3.39_1.3.5.jolla.i486.drpm ......................................................................[done]<br>
+Applying delta: ./nss-3.39-1.3.2.jolla_3.39_1.3.5.jolla.i486.drpm ................................................................[done]<br>
+Retrieving package qt5-qtdbus-5.6.3+git9-1.9.1.jolla.i486                                      (180/275), 164.8 KiB (492.8 KiB unpacked)<br>
+Retrieving delta: ./drpms/qt5-qtdbus-5.6.3+git8-1.8.2.jolla_5.6.3+git9_1.9.1.jolla.i486.drpm, 155.6 KiB<br>
+Retrieving: qt5-qtdbus-5.6.3+git8-1.8.2.jolla_5.6.3+git9_1.9.1.jolla.i486.drpm ...................................................[done]<br>
+Applying delta: ./qt5-qtdbus-5.6.3+git8-1.8.2.jolla_5.6.3+git9_1.9.1.jolla.i486.drpm .............................................[done]<br>
+Retrieving package perl-Filter-2:1.40-1.1.15.jolla.i486                                        (181/275),  40.6 KiB ( 57.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/perl-Filter-1.40-1.2.1.jolla_1.40_1.1.15.jolla.i486.drpm, 9.3 KiB<br>
+Retrieving: perl-Filter-1.40-1.2.1.jolla_1.40_1.1.15.jolla.i486.drpm .............................................................[done]<br>
+Applying delta: ./perl-Filter-1.40-1.2.1.jolla_1.40_1.1.15.jolla.i486.drpm .......................................................[done]<br>
+Retrieving package python-2.7.15+git2-1.3.5.jolla.i486                                         (182/275),  17.8 KiB ( 16.2 KiB unpacked)<br>
+Retrieving delta: ./drpms/python-2.7.15+git1-1.3.2.jolla_2.7.15+git2_1.3.5.jolla.i486.drpm, 10.1 KiB<br>
+Retrieving: python-2.7.15+git1-1.3.2.jolla_2.7.15+git2_1.3.5.jolla.i486.drpm .....................................................[done]<br>
+Applying delta: ./python-2.7.15+git1-1.3.2.jolla_2.7.15+git2_1.3.5.jolla.i486.drpm ...............................................[done]<br>
+Retrieving package openvpn-2.4.5+git2-1.3.5.jolla.i486                                         (183/275), 305.7 KiB (803.9 KiB unpacked)<br>
+Retrieving delta: ./drpms/openvpn-2.4.5+git2-1.4.1.jolla_2.4.5+git2_1.3.5.jolla.i486.drpm, 286.8 KiB<br>
+Retrieving: openvpn-2.4.5+git2-1.4.1.jolla_2.4.5+git2_1.3.5.jolla.i486.drpm ..........................................[done (2.6 KiB/s)]<br>
+Applying delta: ./openvpn-2.4.5+git2-1.4.1.jolla_2.4.5+git2_1.3.5.jolla.i486.drpm ................................................[done]<br>
+Retrieving package openconnect-7.08+git1-1.2.4.jolla.i486                                      (184/275), 374.6 KiB (  1.9 MiB unpacked)<br>
+Retrieving delta: ./drpms/openconnect-7.08+git1-1.3.1.jolla_7.08+git1_1.2.4.jolla.i486.drpm, 98.0 KiB<br>
+Retrieving: openconnect-7.08+git1-1.3.1.jolla_7.08+git1_1.2.4.jolla.i486.drpm ........................................[done (5.4 KiB/s)]<br>
+Applying delta: ./openconnect-7.08+git1-1.3.1.jolla_7.08+git1_1.2.4.jolla.i486.drpm ..............................................[done]<br>
+Retrieving package nss-sysinit-3.39-1.3.5.jolla.i486                                           (185/275),  15.8 KiB ( 10.9 KiB unpacked)<br>
+Retrieving delta: ./drpms/nss-sysinit-3.39-1.3.2.jolla_3.39_1.3.5.jolla.i486.drpm, 10.1 KiB<br>
+Retrieving: nss-sysinit-3.39-1.3.2.jolla_3.39_1.3.5.jolla.i486.drpm ....................................................[done (154 B/s)]<br>
+Applying delta: ./nss-sysinit-3.39-1.3.2.jolla_3.39_1.3.5.jolla.i486.drpm ........................................................[done]<br>
+Retrieving package libsolv0-0.6.35+git2-1.4.6.jolla.i486                                       (186/275), 337.5 KiB (794.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/libsolv0-0.6.35+git2-1.5.1.jolla_0.6.35+git2_1.4.6.jolla.i486.drpm, 318.7 KiB<br>
+Retrieving: libsolv0-0.6.35+git2-1.5.1.jolla_0.6.35+git2_1.4.6.jolla.i486.drpm ...................................................[done]<br>
+Applying delta: ./libsolv0-0.6.35+git2-1.5.1.jolla_0.6.35+git2_1.4.6.jolla.i486.drpm .............................................[done]<br>
+Retrieving package deltarpm-3.5-1.2.6.jolla.i486                                               (187/275),  65.4 KiB (177.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/deltarpm-3.5-1.3.1.jolla_3.5_1.2.6.jolla.i486.drpm, 60.9 KiB<br>
+Retrieving: deltarpm-3.5-1.3.1.jolla_3.5_1.2.6.jolla.i486.drpm ...................................................................[done]<br>
+Applying delta: ./deltarpm-3.5-1.3.1.jolla_3.5_1.2.6.jolla.i486.drpm .............................................................[done]<br>
+Retrieving package cryptsetup-libs-2.1.0+git1-1.3.4.jolla.i486                                 (188/275), 315.9 KiB (  1.4 MiB unpacked)<br>
+Retrieving: cryptsetup-libs-2.1.0+git1-1.3.4.jolla.i486.rpm ..........................................................[done (5.4 KiB/s)]<br>
+Retrieving package createrepo_c-libs-0.10.0+git1-1.1.47.jolla.i486                             (189/275),  73.8 KiB (186.8 KiB unpacked)<br>
+Retrieving: createrepo_c-libs-0.10.0+git1-1.1.47.jolla.i486.rpm ..................................................................[done]<br>
+Retrieving package qt5-qtnetwork-5.6.3+git9-1.9.1.jolla.i486                                   (190/275), 416.2 KiB (  1.4 MiB unpacked)<br>
+Retrieving delta: ./drpms/qt5-qtnetwork-5.6.3+git8-1.8.2.jolla_5.6.3+git9_1.9.1.jolla.i486.drpm, 400.4 KiB<br>
+Retrieving: qt5-qtnetwork-5.6.3+git8-1.8.2.jolla_5.6.3+git9_1.9.1.jolla.i486.drpm ................................................[done]<br>
+Applying delta: ./qt5-qtnetwork-5.6.3+git8-1.8.2.jolla_5.6.3+git9_1.9.1.jolla.i486.drpm ..........................................[done]<br>
+Retrieving package perl-Module-Pluggable-2:4.00-1.1.15.jolla.noarch                            (191/275),  25.6 KiB ( 30.3 KiB unpacked)<br>
+Retrieving delta: ./drpms/perl-Module-Pluggable-4.00-1.2.1.jolla_4.00_1.1.15.jolla.noarch.drpm, 6.1 KiB<br>
+Retrieving: perl-Module-Pluggable-4.00-1.2.1.jolla_4.00_1.1.15.jolla.noarch.drpm .................................................[done]<br>
+Applying delta: ./perl-Module-Pluggable-4.00-1.2.1.jolla_4.00_1.1.15.jolla.noarch.drpm ...........................................[done]<br>
+Retrieving package python-libs-2.7.15+git2-1.3.5.jolla.i486                                    (192/275),   6.6 MiB ( 26.5 MiB unpacked)<br>
+Retrieving delta: ./drpms/python-libs-2.7.15+git1-1.3.2.jolla_2.7.15+git2_1.3.5.jolla.i486.drpm, 1.4 MiB<br>
+Retrieving: python-libs-2.7.15+git1-1.3.2.jolla_2.7.15+git2_1.3.5.jolla.i486.drpm ................................................[done]<br>
+Applying delta: ./python-libs-2.7.15+git1-1.3.2.jolla_2.7.15+git2_1.3.5.jolla.i486.drpm ..........................................[done]<br>
+Retrieving package libsolv-tools-0.6.35+git2-1.4.6.jolla.i486                                  (193/275),  51.6 KiB (173.2 KiB unpacked)<br>
+Retrieving delta: ./drpms/libsolv-tools-0.6.35+git2-1.5.1.jolla_0.6.35+git2_1.4.6.jolla.i486.drpm, 47.6 KiB<br>
+Retrieving: libsolv-tools-0.6.35+git2-1.5.1.jolla_0.6.35+git2_1.4.6.jolla.i486.drpm ..............................................[done]<br>
+Applying delta: ./libsolv-tools-0.6.35+git2-1.5.1.jolla_0.6.35+git2_1.4.6.jolla.i486.drpm ........................................[done]<br>
+Retrieving package systemd-config-sailfish-0.8.15-1.7.2.jolla.noarch                           (194/275),  33.9 KiB (  3.7 KiB unpacked)<br>
+Retrieving delta: ./drpms/systemd-config-sailfish-0.8.14-1.7.2.jolla_0.8.15_1.7.2.jolla.noarch.drpm, 30.0 KiB<br>
+Retrieving: systemd-config-sailfish-0.8.14-1.7.2.jolla_0.8.15_1.7.2.jolla.noarch.drpm ............................................[done]<br>
+Applying delta: ./systemd-config-sailfish-0.8.14-1.7.2.jolla_0.8.15_1.7.2.jolla.noarch.drpm ......................................[done]<br>
+Retrieving package createrepo_c-0.10.0+git1-1.1.47.jolla.i486                                  (195/275),  43.2 KiB (101.5 KiB unpacked)<br>
+Retrieving: createrepo_c-0.10.0+git1-1.1.47.jolla.i486.rpm .......................................................................[done]<br>
+Retrieving package qt5-qtxml-5.6.3+git9-1.9.1.jolla.i486                                       (196/275),  82.8 KiB (229.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/qt5-qtxml-5.6.3+git8-1.8.2.jolla_5.6.3+git9_1.9.1.jolla.i486.drpm, 78.1 KiB<br>
+Retrieving: qt5-qtxml-5.6.3+git8-1.8.2.jolla_5.6.3+git9_1.9.1.jolla.i486.drpm ....................................................[done]<br>
+Applying delta: ./qt5-qtxml-5.6.3+git8-1.8.2.jolla_5.6.3+git9_1.9.1.jolla.i486.drpm ..............................................[done]<br>
+Retrieving package libqtaround2-0.2.8-1.2.1.jolla.i486                                         (197/275),  80.2 KiB (224.5 KiB unpacked)<br>
+Retrieving: libqtaround2-0.2.8-1.2.1.jolla.i486.rpm .................................................................[done (15.5 KiB/s)]<br>
+Retrieving package perl-threads-2:1.86-1.1.15.jolla.i486                                       (198/275),  46.6 KiB ( 78.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/perl-threads-1.86-1.2.1.jolla_1.86_1.1.15.jolla.i486.drpm, 17.5 KiB<br>
+Retrieving: perl-threads-1.86-1.2.1.jolla_1.86_1.1.15.jolla.i486.drpm ............................................................[done]<br>
+Applying delta: ./perl-threads-1.86-1.2.1.jolla_1.86_1.1.15.jolla.i486.drpm ......................................................[done]<br>
+Retrieving package rpm-python-4.14.1+git9-1.4.4.jolla.i486                                     (199/275),  63.6 KiB (158.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/rpm-python-4.14.1+git7-1.5.1.jolla_4.14.1+git9_1.4.4.jolla.i486.drpm, 44.8 KiB<br>
+Retrieving: rpm-python-4.14.1+git7-1.5.1.jolla_4.14.1+git9_1.4.4.jolla.i486.drpm .................................................[done]<br>
+Applying delta: ./rpm-python-4.14.1+git7-1.5.1.jolla_4.14.1+git9_1.4.4.jolla.i486.drpm ...........................................[done]<br>
+Retrieving package python-yaml-3.10-1.1.10.jolla.i486                                          (200/275),  89.5 KiB (427.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/python-yaml-3.10-1.2.1.jolla_3.10_1.1.10.jolla.i486.drpm, 13.2 KiB<br>
+Retrieving: python-yaml-3.10-1.2.1.jolla_3.10_1.1.10.jolla.i486.drpm .............................................................[done]<br>
+Applying delta: ./python-yaml-3.10-1.2.1.jolla_3.10_1.1.10.jolla.i486.drpm .......................................................[done]<br>
+Retrieving package python-setuptools-0.6c11-1.1.10.jolla.noarch                                (201/275), 241.3 KiB (981.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/python-setuptools-0.6c11-1.2.1.jolla_0.6c11_1.1.10.jolla.noarch.drpm, 20.5 KiB<br>
+Retrieving: python-setuptools-0.6c11-1.2.1.jolla_0.6c11_1.1.10.jolla.noarch.drpm .................................................[done]<br>
+Applying delta: ./python-setuptools-0.6c11-1.2.1.jolla_0.6c11_1.1.10.jolla.noarch.drpm ...........................................[done]<br>
+Retrieving package python-pycurl-7.19.0+mer1-1.1.45.jolla.i486                                 (202/275),  72.7 KiB (221.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/python-pycurl-7.19.0+mer1-1.2.3.jolla_7.19.0+mer1_1.1.45.jolla.i486.drpm, 27.4 KiB<br>
+Retrieving: python-pycurl-7.19.0+mer1-1.2.3.jolla_7.19.0+mer1_1.1.45.jolla.i486.drpm .............................................[done]<br>
+Applying delta: ./python-pycurl-7.19.0+mer1-1.2.3.jolla_7.19.0+mer1_1.1.45.jolla.i486.drpm .......................................[done]<br>
+Retrieving package python-lxml-3.2.0-1.1.12.jolla.i486                                         (203/275),   1.7 MiB ( 22.9 MiB unpacked)<br>
+Retrieving delta: ./drpms/python-lxml-3.2.0-1.2.1.jolla_3.2.0_1.1.12.jolla.i486.drpm, 539.0 KiB<br>
+Retrieving: python-lxml-3.2.0-1.2.1.jolla_3.2.0_1.1.12.jolla.i486.drpm ...........................................................[done]<br>
+Applying delta: ./python-lxml-3.2.0-1.2.1.jolla_3.2.0_1.1.12.jolla.i486.drpm .....................................................[done]<br>
+Retrieving package python-cheetah-2.4.4+mer1-1.1.31.jolla.i486                                 (204/275), 307.1 KiB (  1.9 MiB unpacked)<br>
+Retrieving delta: ./drpms/python-cheetah-2.4.4+mer1-1.2.4.jolla_2.4.4+mer1_1.1.31.jolla.i486.drpm, 35.0 KiB<br>
+Retrieving: python-cheetah-2.4.4+mer1-1.2.4.jolla_2.4.4+mer1_1.1.31.jolla.i486.drpm ..............................................[done]<br>
+Applying delta: ./python-cheetah-2.4.4+mer1-1.2.4.jolla_2.4.4+mer1_1.1.31.jolla.i486.drpm ........................................[done]<br>
+Retrieving package python-M2Crypto-0.23.0-1.1.11.jolla.i486                                    (205/275), 216.4 KiB (  1.1 MiB unpacked)<br>
+Retrieving delta: ./drpms/python-M2Crypto-0.23.0-1.2.1.jolla_0.23.0_1.1.11.jolla.i486.drpm, 100.8 KiB<br>
+Retrieving: python-M2Crypto-0.23.0-1.2.1.jolla_0.23.0_1.1.11.jolla.i486.drpm .....................................................[done]<br>
+Applying delta: ./python-M2Crypto-0.23.0-1.2.1.jolla_0.23.0_1.1.11.jolla.i486.drpm ...............................................[done]<br>
+Retrieving package pacrunner-python-0.15+git1-1.3.6.jolla.i486                                 (206/275),  12.6 KiB (  9.3 KiB unpacked)<br>
+Retrieving delta: ./drpms/pacrunner-python-0.15+git1-1.4.1.jolla_0.15+git1_1.3.6.jolla.i486.drpm, 5.9 KiB<br>
+Retrieving: pacrunner-python-0.15+git1-1.4.1.jolla_0.15+git1_1.3.6.jolla.i486.drpm ...............................................[done]<br>
+Applying delta: ./pacrunner-python-0.15+git1-1.4.1.jolla_0.15+git1_1.3.6.jolla.i486.drpm .........................................[done]<br>
+Retrieving package libzypp-17.3.1+git4-1.6.2.jolla.i486                                        (207/275),   1.8 MiB (  7.1 MiB unpacked)<br>
+Retrieving delta: ./drpms/libzypp-17.3.1-1.6.1.jolla_17.3.1+git4_1.6.2.jolla.i486.drpm, 1.4 MiB<br>
+Retrieving: libzypp-17.3.1-1.6.1.jolla_17.3.1+git4_1.6.2.jolla.i486.drpm ............................................[done (13.9 KiB/s)]<br>
+Applying delta: ./libzypp-17.3.1-1.6.1.jolla_17.3.1+git4_1.6.2.jolla.i486.drpm ...................................................[done]<br>
+Retrieving package device-mapper-libs-2.02.177+git3-1.3.6.jolla.i486                           (208/275), 129.7 KiB (331.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/device-mapper-libs-2.02.177+git3-1.4.1.jolla_2.02.177+git3_1.3.6.jolla.i486.drpm, 112.4 KiB<br>
+Retrieving: device-mapper-libs-2.02.177+git3-1.4.1.jolla_2.02.177+git3_1.3.6.jolla.i486.drpm .....................................[done]<br>
+Applying delta: ./device-mapper-libs-2.02.177+git3-1.4.1.jolla_2.02.177+git3_1.3.6.jolla.i486.drpm ...............................[done]<br>
+Retrieving package statefs-qt5-0.3.5-1.4.1.jolla.i486                                          (209/275),  29.0 KiB ( 52.1 KiB unpacked)<br>
+Retrieving: statefs-qt5-0.3.5-1.4.1.jolla.i486.rpm ..................................................................[done (15.5 KiB/s)]<br>
+Retrieving package perl-Socket-2:2.001-1.1.15.jolla.i486                                       (210/275),  38.5 KiB ( 70.8 KiB unpacked)<br>
+Retrieving delta: ./drpms/perl-Socket-2.001-1.2.1.jolla_2.001_1.1.15.jolla.i486.drpm, 14.3 KiB<br>
+Retrieving: perl-Socket-2.001-1.2.1.jolla_2.001_1.1.15.jolla.i486.drpm ...........................................................[done]<br>
+Applying delta: ./perl-Socket-2.001-1.2.1.jolla_2.001_1.1.15.jolla.i486.drpm .....................................................[done]<br>
+Retrieving package python-distro-1.0.4+mer1-1.1.10.jolla.noarch                                (211/275),  23.0 KiB ( 81.2 KiB unpacked)<br>
+Retrieving delta: ./drpms/python-distro-1.0.4+mer1-1.2.1.jolla_1.0.4+mer1_1.1.10.jolla.noarch.drpm, 4.9 KiB<br>
+Retrieving: python-distro-1.0.4+mer1-1.2.1.jolla_1.0.4+mer1_1.1.10.jolla.noarch.drpm .............................................[done]<br>
+Applying delta: ./python-distro-1.0.4+mer1-1.2.1.jolla_1.0.4+mer1_1.1.10.jolla.noarch.drpm .......................................[done]<br>
+Retrieving package repomd-pattern-builder-0.3.3-1.2.7.jolla.i486                               (212/275),  10.8 KiB (  6.8 KiB unpacked)<br>
+Retrieving delta: ./drpms/repomd-pattern-builder-0.3.3-1.3.1.jolla_0.3.3_1.2.7.jolla.i486.drpm, 4.4 KiB<br>
+Retrieving: repomd-pattern-builder-0.3.3-1.3.1.jolla_0.3.3_1.2.7.jolla.i486.drpm .................................................[done]<br>
+Applying delta: ./repomd-pattern-builder-0.3.3-1.3.1.jolla_0.3.3_1.2.7.jolla.i486.drpm ...........................................[done]<br>
+Retrieving package python-urlgrabber-3.9.1+mer1-1.1.26.jolla.noarch                            (213/275),  78.0 KiB (313.2 KiB unpacked)<br>
+Retrieving delta: ./drpms/python-urlgrabber-3.9.1+mer1-1.2.3.jolla_3.9.1+mer1_1.1.26.jolla.noarch.drpm, 7.5 KiB<br>
+Retrieving: python-urlgrabber-3.9.1+mer1-1.2.3.jolla_3.9.1+mer1_1.1.26.jolla.noarch.drpm .........................................[done]<br>
+Applying delta: ./python-urlgrabber-3.9.1+mer1-1.2.3.jolla_3.9.1+mer1_1.1.26.jolla.noarch.drpm ...................................[done]<br>
+Retrieving package zypper-1.14.6+git3-1.3.6.jolla.i486                                         (214/275),   1.2 MiB (  6.7 MiB unpacked)<br>
+Retrieving delta: ./drpms/zypper-1.14.6+git3-1.4.1.jolla_1.14.6+git3_1.3.6.jolla.i486.drpm, 610.1 KiB<br>
+Retrieving: zypper-1.14.6+git3-1.4.1.jolla_1.14.6+git3_1.3.6.jolla.i486.drpm .....................................................[done]<br>
+Applying delta: ./zypper-1.14.6+git3-1.4.1.jolla_1.14.6+git3_1.3.6.jolla.i486.drpm ...............................................[done]<br>
+Retrieving package python-zypp-0.7.4+git3-1.2.9.jolla.i486                                     (215/275), 844.0 KiB (  5.4 MiB unpacked)<br>
+Retrieving: python-zypp-0.7.4+git3-1.2.9.jolla.i486.rpm ..........................................................................[done]<br>
+Retrieving package device-mapper-event-libs-2.02.177+git3-1.3.6.jolla.i486                     (216/275),  16.8 KiB ( 21.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/device-mapper-event-libs-2.02.177+git3-1.4.1.jolla_2.02.177+git3_1.3.6.jolla.i486.drpm, 11.5 KiB<br>
+Retrieving: device-mapper-event-libs-2.02.177+git3-1.4.1.jolla_2.02.177+git3_1.3.6.jolla.i486.drpm ...............................[done]<br>
+Applying delta: ./device-mapper-event-libs-2.02.177+git3-1.4.1.jolla_2.02.177+git3_1.3.6.jolla.i486.drpm .........................[done]<br>
+Retrieving package perl-threads-shared-2:1.40-1.1.15.jolla.i486                                (217/275),  35.9 KiB ( 59.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/perl-threads-shared-1.40-1.2.1.jolla_1.40_1.1.15.jolla.i486.drpm, 17.4 KiB<br>
+Retrieving: perl-threads-shared-1.40-1.2.1.jolla_1.40_1.1.15.jolla.i486.drpm .....................................................[done]<br>
+Applying delta: ./perl-threads-shared-1.40-1.2.1.jolla_1.40_1.1.15.jolla.i486.drpm ...............................................[done]<br>
+Retrieving package osc-0.146.0-1.1.33.jolla.noarch                                             (218/275), 381.3 KiB (  1.7 MiB unpacked)<br>
+Retrieving delta: ./drpms/osc-0.146.0-1.2.5.jolla_0.146.0_1.1.33.jolla.noarch.drpm, 19.6 KiB<br>
+Retrieving: osc-0.146.0-1.2.5.jolla_0.146.0_1.1.33.jolla.noarch.drpm .............................................................[done]<br>
+Applying delta: ./osc-0.146.0-1.2.5.jolla_0.146.0_1.1.33.jolla.noarch.drpm .......................................................[done]<br>
+Retrieving package lvm2-libs-2.02.177+git3-1.3.6.jolla.i486                                    (219/275), 700.0 KiB (  3.1 MiB unpacked)<br>
+Retrieving delta: ./drpms/lvm2-libs-2.02.177+git3-1.4.1.jolla_2.02.177+git3_1.3.6.jolla.i486.drpm, 606.9 KiB<br>
+Retrieving: lvm2-libs-2.02.177+git3-1.4.1.jolla_2.02.177+git3_1.3.6.jolla.i486.drpm ....................................[done (154 B/s)]<br>
+Applying delta: ./lvm2-libs-2.02.177+git3-1.4.1.jolla_2.02.177+git3_1.3.6.jolla.i486.drpm ........................................[done]<br>
+Retrieving package spectacle-0.30-1.1.24.jolla.noarch                                          (220/275), 132.4 KiB (726.7 KiB unpacked)<br>
+Retrieving delta: ./drpms/spectacle-0.30-1.2.4.jolla_0.30_1.1.24.jolla.noarch.drpm, 23.5 KiB<br>
+Retrieving: spectacle-0.30-1.2.4.jolla_0.30_1.1.24.jolla.noarch.drpm ...................................................[done (154 B/s)]<br>
+Applying delta: ./spectacle-0.30-1.2.4.jolla_0.30_1.1.24.jolla.noarch.drpm .......................................................[done]<br>
+Retrieving package scratchbox2-2.3.90+git17-1.5.3.jolla.i486                                   (221/275), 227.8 KiB (794.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/scratchbox2-2.3.90+git15-1.5.1.jolla_2.3.90+git17_1.5.3.jolla.i486.drpm, 126.3 KiB<br>
+Retrieving: scratchbox2-2.3.90+git15-1.5.1.jolla_2.3.90+git17_1.5.3.jolla.i486.drpm ....................................[done (154 B/s)]<br>
+Applying delta: ./scratchbox2-2.3.90+git15-1.5.1.jolla_2.3.90+git17_1.5.3.jolla.i486.drpm ........................................[done]<br>
+Retrieving package rpm-build-4.14.1+git9-1.5.6.jolla.i486                                      (222/275), 107.5 KiB (260.9 KiB unpacked)<br>
+Retrieving delta: ./drpms/rpm-build-4.14.1+git7-1.6.1.jolla_4.14.1+git9_1.5.6.jolla.i486.drpm, 54.4 KiB<br>
+Retrieving: rpm-build-4.14.1+git7-1.6.1.jolla_4.14.1+git9_1.5.6.jolla.i486.drpm ..................................................[done]<br>
+Applying delta: ./rpm-build-4.14.1+git7-1.6.1.jolla_4.14.1+git9_1.5.6.jolla.i486.drpm ............................................[done]<br>
+Retrieving package perl-Error-0.17020+mer2-1.1.15.jolla.noarch                                 (223/275),  30.7 KiB ( 48.7 KiB unpacked)<br>
+Retrieving delta: ./drpms/perl-Error-0.17020+mer2-1.2.2.jolla_0.17020+mer2_1.1.15.jolla.noarch.drpm, 6.2 KiB<br>
+Retrieving: perl-Error-0.17020+mer2-1.2.2.jolla_0.17020+mer2_1.1.15.jolla.noarch.drpm ............................................[done]<br>
+Applying delta: ./perl-Error-0.17020+mer2-1.2.2.jolla_0.17020+mer2_1.1.15.jolla.noarch.drpm ......................................[done]<br>
+Retrieving package android-tools-hadk-5.1.1+git2-1.1.30.jolla.i486                             (224/275), 122.6 KiB (291.8 KiB unpacked)<br>
+Retrieving delta: ./drpms/android-tools-hadk-5.1.1+git2-1.2.3.jolla_5.1.1+git2_1.1.30.jolla.i486.drpm, 113.3 KiB<br>
+Retrieving: android-tools-hadk-5.1.1+git2-1.2.3.jolla_5.1.1+git2_1.1.30.jolla.i486.drpm ..........................................[done]<br>
+Applying delta: ./android-tools-hadk-5.1.1+git2-1.2.3.jolla_5.1.1+git2_1.1.30.jolla.i486.drpm ....................................[done]<br>
+Retrieving package lvm2-2.02.177+git3-1.3.6.jolla.i486                                         (225/275), 634.5 KiB (  2.0 MiB unpacked)<br>
+Retrieving delta: ./drpms/lvm2-2.02.177+git3-1.4.1.jolla_2.02.177+git3_1.3.6.jolla.i486.drpm, 604.9 KiB<br>
+Retrieving: lvm2-2.02.177+git3-1.4.1.jolla_2.02.177+git3_1.3.6.jolla.i486.drpm ...................................................[done]<br>
+Applying delta: ./lvm2-2.02.177+git3-1.4.1.jolla_2.02.177+git3_1.3.6.jolla.i486.drpm .............................................[done]<br>
+Retrieving package systemd-225+git13-1.4.4.jolla.i486                                          (226/275),   4.8 MiB ( 39.5 MiB unpacked)<br>
+Retrieving delta: ./drpms/systemd-225+git12-1.4.1.jolla_225+git13_1.4.4.jolla.i486.drpm, 4.0 MiB<br>
+Retrieving: systemd-225+git12-1.4.1.jolla_225+git13_1.4.4.jolla.i486.drpm ..........................................[done (879.7 KiB/s)]<br>
+Applying delta: ./systemd-225+git12-1.4.1.jolla_225+git13_1.4.4.jolla.i486.drpm ..................................................[done]<br>
+Retrieving package dbus-1.10.8+git1-1.1.12.jolla.i486                                          (227/275), 132.5 KiB (371.1 KiB unpacked)<br>
+Retrieving delta: ./drpms/dbus-1.10.8+git1-1.2.1.jolla_1.10.8+git1_1.1.12.jolla.i486.drpm, 120.0 KiB<br>
+Retrieving: dbus-1.10.8+git1-1.2.1.jolla_1.10.8+git1_1.1.12.jolla.i486.drpm ......................................................[done]<br>
+Applying delta: ./dbus-1.10.8+git1-1.2.1.jolla_1.10.8+git1_1.1.12.jolla.i486.drpm ................................................[done]<br>
+Retrieving package polkit-0.105+git2-1.2.5.jolla.i486                                          (228/275), 113.8 KiB (339.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/polkit-0.105+git2-1.3.1.jolla_0.105+git2_1.2.5.jolla.i486.drpm, 93.2 KiB<br>
+Retrieving: polkit-0.105+git2-1.3.1.jolla_0.105+git2_1.2.5.jolla.i486.drpm ...........................................[done (1.2 KiB/s)]<br>
+Applying delta: ./polkit-0.105+git2-1.3.1.jolla_0.105+git2_1.2.5.jolla.i486.drpm .................................................[done]<br>
+Retrieving package device-mapper-2.02.177+git3-1.3.6.jolla.i486                                (229/275),  65.3 KiB (180.7 KiB unpacked)<br>
+Retrieving delta: ./drpms/device-mapper-2.02.177+git3-1.4.1.jolla_2.02.177+git3_1.3.6.jolla.i486.drpm, 47.9 KiB<br>
+Retrieving: device-mapper-2.02.177+git3-1.4.1.jolla_2.02.177+git3_1.3.6.jolla.i486.drpm ..........................................[done]<br>
+Applying delta: ./device-mapper-2.02.177+git3-1.4.1.jolla_2.02.177+git3_1.3.6.jolla.i486.drpm ....................................[done]<br>
+Retrieving package PackageKit-glib-1.1.9+git5-1.7.2.jolla.i486                                 (230/275), 105.7 KiB (343.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/PackageKit-glib-1.1.9+git3-1.6.2.jolla_1.1.9+git5_1.7.2.jolla.i486.drpm, 91.5 KiB<br>
+Retrieving: PackageKit-glib-1.1.9+git3-1.6.2.jolla_1.1.9+git5_1.7.2.jolla.i486.drpm ..................................[done (6.8 KiB/s)]<br>
+Applying delta: ./PackageKit-glib-1.1.9+git3-1.6.2.jolla_1.1.9+git5_1.7.2.jolla.i486.drpm ........................................[done]<br>
+Retrieving package device-mapper-event-2.02.177+git3-1.3.6.jolla.i486                          (231/275),  23.1 KiB ( 33.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/device-mapper-event-2.02.177+git3-1.4.1.jolla_2.02.177+git3_1.3.6.jolla.i486.drpm, 19.1 KiB<br>
+Retrieving: device-mapper-event-2.02.177+git3-1.4.1.jolla_2.02.177+git3_1.3.6.jolla.i486.drpm ....................................[done]<br>
+Applying delta: ./device-mapper-event-2.02.177+git3-1.4.1.jolla_2.02.177+git3_1.3.6.jolla.i486.drpm ..............................[done]<br>
+Retrieving package PackageKit-1.1.9+git5-1.7.2.jolla.i486                                      (232/275), 385.5 KiB (  2.0 MiB unpacked)<br>
+Retrieving delta: ./drpms/PackageKit-1.1.9+git3-1.6.2.jolla_1.1.9+git5_1.7.2.jolla.i486.drpm, 176.7 KiB<br>
+Retrieving: PackageKit-1.1.9+git3-1.6.2.jolla_1.1.9+git5_1.7.2.jolla.i486.drpm ...................................................[done]<br>
+Applying delta: ./PackageKit-1.1.9+git3-1.6.2.jolla_1.1.9+git5_1.7.2.jolla.i486.drpm .............................................[done]<br>
+Retrieving package wpa_supplicant-2.6+git5-1.3.6.jolla.i486                                    (233/275), 560.4 KiB (  1.5 MiB unpacked)<br>
+Retrieving delta: ./drpms/wpa_supplicant-2.6+git5-1.4.1.jolla_2.6+git5_1.3.6.jolla.i486.drpm, 555.9 KiB<br>
+Retrieving: wpa_supplicant-2.6+git5-1.4.1.jolla_2.6+git5_1.3.6.jolla.i486.drpm ...................................................[done]<br>
+Applying delta: ./wpa_supplicant-2.6+git5-1.4.1.jolla_2.6+git5_1.3.6.jolla.i486.drpm .............................................[done]<br>
+Retrieving package systemd-user-session-targets-0.0.2-1.3.5.jolla.noarch                       (234/275),   8.7 KiB (  1.3 KiB unpacked)<br>
+Retrieving delta: ./drpms/systemd-user-session-targets-0.0.2-1.4.1.jolla_0.0.2_1.3.5.jolla.noarch.drpm, 4.4 KiB<br>
+Retrieving: systemd-user-session-targets-0.0.2-1.4.1.jolla_0.0.2_1.3.5.jolla.noarch.drpm .........................................[done]<br>
+Applying delta: ./systemd-user-session-targets-0.0.2-1.4.1.jolla_0.0.2_1.3.5.jolla.noarch.drpm ...................................[done]<br>
+Retrieving package openssh-7.9p1+git2-1.5.4.jolla.i486                                         (235/275), 243.0 KiB (  1.4 MiB unpacked)<br>
+Retrieving delta: ./drpms/openssh-7.7p1+git4-1.5.1.jolla_7.9p1+git2_1.5.4.jolla.i486.drpm, 234.7 KiB<br>
+Retrieving: openssh-7.7p1+git4-1.5.1.jolla_7.9p1+git2_1.5.4.jolla.i486.drpm .........................................[done (15.5 KiB/s)]<br>
+Applying delta: ./openssh-7.7p1+git4-1.5.1.jolla_7.9p1+git2_1.5.4.jolla.i486.drpm ................................................[done]<br>
+Retrieving package ofono-1.21+git44-1.19.1.jolla.i486                                          (236/275), 520.4 KiB (  1.3 MiB unpacked)<br>
+Retrieving delta: ./drpms/ofono-1.21+git38-1.18.2.jolla_1.21+git44_1.19.1.jolla.i486.drpm, 510.0 KiB<br>
+Retrieving: ofono-1.21+git38-1.18.2.jolla_1.21+git44_1.19.1.jolla.i486.drpm ......................................................[done]<br>
+Applying delta: ./ofono-1.21+git38-1.18.2.jolla_1.21+git44_1.19.1.jolla.i486.drpm ................................................[done]<br>
+Retrieving package kpartx-0.4.9+mer1-1.1.41.jolla.i486                                         (237/275),  23.9 KiB ( 40.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/kpartx-0.4.9+mer1-1.2.3.jolla_0.4.9+mer1_1.1.41.jolla.i486.drpm, 18.1 KiB<br>
+Retrieving: kpartx-0.4.9+mer1-1.2.3.jolla_0.4.9+mer1_1.1.41.jolla.i486.drpm ......................................................[done]<br>
+Applying delta: ./kpartx-0.4.9+mer1-1.2.3.jolla_0.4.9+mer1_1.1.41.jolla.i486.drpm ................................................[done]<br>
+Retrieving package crda-4.14+git2-1.3.6.jolla.i486                                             (238/275),  22.6 KiB ( 30.7 KiB unpacked)<br>
+Retrieving delta: ./drpms/crda-4.14+git2-1.4.1.jolla_4.14+git2_1.3.6.jolla.i486.drpm, 18.3 KiB<br>
+Retrieving: crda-4.14+git2-1.4.1.jolla_4.14+git2_1.3.6.jolla.i486.drpm ...........................................................[done]<br>
+Applying delta: ./crda-4.14+git2-1.4.1.jolla_4.14+git2_1.3.6.jolla.i486.drpm .....................................................[done]<br>
+Retrieving package PackageKit-zypp-1.1.9+git5-1.7.2.jolla.i486                                 (239/275), 104.2 KiB (272.8 KiB unpacked)<br>
+Retrieving delta: ./drpms/PackageKit-zypp-1.1.9+git3-1.6.2.jolla_1.1.9+git5_1.7.2.jolla.i486.drpm, 91.7 KiB<br>
+Retrieving: PackageKit-zypp-1.1.9+git3-1.6.2.jolla_1.1.9+git5_1.7.2.jolla.i486.drpm ..............................................[done]<br>
+Applying delta: ./PackageKit-zypp-1.1.9+git3-1.6.2.jolla_1.1.9+git5_1.7.2.jolla.i486.drpm ........................................[done]<br>
+Retrieving package oneshot-0.4.8-1.2.8.jolla.noarch                                            (240/275),  15.2 KiB (  8.3 KiB unpacked)<br>
+Retrieving delta: ./drpms/oneshot-0.4.8-1.3.1.jolla_0.4.8_1.2.8.jolla.noarch.drpm, 8.9 KiB<br>
+Retrieving: oneshot-0.4.8-1.3.1.jolla_0.4.8_1.2.8.jolla.noarch.drpm ..............................................................[done]<br>
+Applying delta: ./oneshot-0.4.8-1.3.1.jolla_0.4.8_1.2.8.jolla.noarch.drpm ........................................................[done]<br>
+Retrieving package openssh-clients-7.9p1+git2-1.5.4.jolla.i486                                 (241/275), 424.5 KiB (  2.2 MiB unpacked)<br>
+Retrieving delta: ./drpms/openssh-clients-7.7p1+git4-1.5.1.jolla_7.9p1+git2_1.5.4.jolla.i486.drpm, 417.0 KiB<br>
+Retrieving: openssh-clients-7.7p1+git4-1.5.1.jolla_7.9p1+git2_1.5.4.jolla.i486.drpm ..............................................[done]<br>
+Applying delta: ./openssh-clients-7.7p1+git4-1.5.1.jolla_7.9p1+git2_1.5.4.jolla.i486.drpm ........................................[done]<br>
+Retrieving package statefs-0.3.35-1.1.19.jolla.i486                                            (242/275), 168.1 KiB (642.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/statefs-0.3.35-1.2.2.jolla_0.3.35_1.1.19.jolla.i486.drpm, 163.5 KiB<br>
+Retrieving: statefs-0.3.35-1.2.2.jolla_0.3.35_1.1.19.jolla.i486.drpm ................................................[done (15.5 KiB/s)]<br>
+Applying delta: ./statefs-0.3.35-1.2.2.jolla_0.3.35_1.1.19.jolla.i486.drpm .......................................................[done]<br>
+Retrieving package perl-Git-1.8.3+mer2-1.1.22.jolla.i486                                       (243/275),  24.0 KiB ( 45.1 KiB unpacked)<br>
+Retrieving delta: ./drpms/perl-Git-1.8.3+mer2-1.2.3.jolla_1.8.3+mer2_1.1.22.jolla.i486.drpm, 5.7 KiB<br>
+Retrieving: perl-Git-1.8.3+mer2-1.2.3.jolla_1.8.3+mer2_1.1.22.jolla.i486.drpm ....................................................[done]<br>
+Applying delta: ./perl-Git-1.8.3+mer2-1.2.3.jolla_1.8.3+mer2_1.1.22.jolla.i486.drpm ..............................................[done]<br>
+Retrieving package statefs-provider-inout-power-0.3.17-1.3.1.jolla.noarch                      (244/275),  19.0 KiB (  795   B unpacked)<br>
+Retrieving delta: ./drpms/statefs-provider-inout-power-0.3.17-1.3.8.jolla_0.3.17_1.3.1.jolla.noarch.drpm, 14.8 KiB<br>
+Retrieving: statefs-provider-inout-power-0.3.17-1.3.8.jolla_0.3.17_1.3.1.jolla.noarch.drpm .......................................[done]<br>
+Applying delta: ./statefs-provider-inout-power-0.3.17-1.3.8.jolla_0.3.17_1.3.1.jolla.noarch.drpm .................................[done]<br>
+Retrieving package statefs-contextkit-subscriber-0.3.5-1.4.1.jolla.i486                        (245/275),  55.6 KiB (147.5 KiB unpacked)<br>
+Retrieving: statefs-contextkit-subscriber-0.3.5-1.4.1.jolla.i486.rpm .............................................................[done]<br>
+Retrieving package git-1.8.3+mer2-1.1.22.jolla.i486                                            (246/275),   2.1 MiB ( 12.4 MiB unpacked)<br>
+Retrieving delta: ./drpms/git-1.8.3+mer2-1.2.3.jolla_1.8.3+mer2_1.1.22.jolla.i486.drpm, 1.4 MiB<br>
+Retrieving: git-1.8.3+mer2-1.2.3.jolla_1.8.3+mer2_1.1.22.jolla.i486.drpm ...........................................[done (166.9 KiB/s)]<br>
+Applying delta: ./git-1.8.3+mer2-1.2.3.jolla_1.8.3+mer2_1.1.22.jolla.i486.drpm ...................................................[done]<br>
+Retrieving package syslinux-4.06+git1-1.1.11.jolla.i486                                        (247/275), 562.2 KiB (  1.8 MiB unpacked)<br>
+Retrieving: syslinux-4.06+git1-1.1.11.jolla.i486.rpm ...............................................................[done (274.2 KiB/s)]<br>
+Retrieving package platform-sdk-support-0.15.8-1.9.11.jolla.noarch                             (248/275),  24.0 KiB (    7   B unpacked)<br>
+Retrieving: platform-sdk-support-0.15.8-1.9.11.jolla.noarch.rpm ..................................................................[done]<br>
+Retrieving package connman-configs-sailfish-sdk-0.15.8-1.9.11.jolla.noarch                     (249/275),  24.3 KiB (  233   B unpacked)<br>
+Retrieving: connman-configs-sailfish-sdk-0.15.8-1.9.11.jolla.noarch.rpm ..........................................................[done]<br>
+Retrieving package sdk-chroot-1.2.53.1-1.16.1.jolla.noarch                                     (250/275),  34.5 KiB ( 16.8 KiB unpacked)<br>
+Retrieving: sdk-chroot-1.2.53.1-1.16.1.jolla.noarch.rpm ................................................................[done (154 B/s)]<br>
+Retrieving package sdk-sb2-config-1.2.53.1-1.16.1.jolla.noarch                                 (251/275),  27.6 KiB (    0   B unpacked)<br>
+Retrieving: sdk-sb2-config-1.2.53.1-1.16.1.jolla.noarch.rpm ......................................................................[done]<br>
+Retrieving package mic-0.14+git6-1.3.18.jolla.noarch                                           (252/275), 385.2 KiB (  1.9 MiB unpacked)<br>
+Retrieving delta: ./drpms/mic-0.14+git6-1.4.3.jolla_0.14+git6_1.3.18.jolla.noarch.drpm, 65.7 KiB<br>
+Retrieving: mic-0.14+git6-1.4.3.jolla_0.14+git6_1.3.18.jolla.noarch.drpm .............................................[done (8.2 KiB/s)]<br>
+Applying delta: ./mic-0.14+git6-1.4.3.jolla_0.14+git6_1.3.18.jolla.noarch.drpm ...................................................[done]<br>
+Retrieving package connman-1.32+git65-1.25.1.jolla.i486                                        (253/275), 481.3 KiB (  1.3 MiB unpacked)<br>
+Retrieving delta: ./drpms/connman-1.32+git61-1.22.1.jolla_1.32+git65_1.25.1.jolla.i486.drpm, 472.2 KiB<br>
+Retrieving: connman-1.32+git61-1.22.1.jolla_1.32+git65_1.25.1.jolla.i486.drpm ....................................................[done]<br>
+Applying delta: ./connman-1.32+git61-1.22.1.jolla_1.32+git65_1.25.1.jolla.i486.drpm ..............................................[done]<br>
+Retrieving package patterns-sailfish-sb2-host-1.0.18-1.10.2.jolla.noarch                       (254/275),  47.4 KiB (    0   B unpacked)<br>
+Retrieving delta: ./drpms/patterns-sailfish-sb2-host-1.0.17-1.10.2.jolla_1.0.18_1.10.2.jolla.noarch.drpm, 43.5 KiB<br>
+Retrieving: patterns-sailfish-sb2-host-1.0.17-1.10.2.jolla_1.0.18_1.10.2.jolla.noarch.drpm .......................................[done]<br>
+Applying delta: ./patterns-sailfish-sb2-host-1.0.17-1.10.2.jolla_1.0.18_1.10.2.jolla.noarch.drpm .................................[done]<br>
+Retrieving package patterns-sailfish-image-creation-tools-1.0.18-1.10.2.jolla.noarch           (255/275),  47.4 KiB (    0   B unpacked)<br>
+Retrieving delta: ./drpms/patterns-sailfish-image-creation-tools-1.0.17-1.10.2.jolla_1.0.18_1.10.2.jolla.noarch.drpm, 43.5 KiB<br>
+Retrieving: patterns-sailfish-image-creation-tools-1.0.17-1.10.2.jolla_1.0.18_1.10.2.jolla.noarch.drpm ...........................[done]<br>
+Applying delta: ./patterns-sailfish-image-creation-tools-1.0.17-1.10.2.jolla_1.0.18_1.10.2.jolla.noarch.drpm .....................[done]<br>
+Retrieving package connman-qt5-1.2.16-1.10.1.jolla.i486                                        (256/275), 146.8 KiB (446.6 KiB unpacked)<br>
+Retrieving delta: ./drpms/connman-qt5-1.2.17-1.11.2.jolla_1.2.16_1.10.1.jolla.i486.drpm, 133.0 KiB<br>
+Retrieving: connman-qt5-1.2.17-1.11.2.jolla_1.2.16_1.10.1.jolla.i486.drpm ........................................................[done]<br>
+Applying delta: ./connman-qt5-1.2.17-1.11.2.jolla_1.2.16_1.10.1.jolla.i486.drpm ..................................................[done]<br>
+Retrieving package ssu-network-proxy-plugin-0.43.12-1.8.1.jolla.i486                           (257/275),  25.3 KiB (  4.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/ssu-network-proxy-plugin-0.43.12-1.8.3.jolla_0.43.12_1.8.1.jolla.i486.drpm, 20.7 KiB<br>
+Retrieving: ssu-network-proxy-plugin-0.43.12-1.8.3.jolla_0.43.12_1.8.1.jolla.i486.drpm ...........................................[done]<br>
+Applying delta: ./ssu-network-proxy-plugin-0.43.12-1.8.3.jolla_0.43.12_1.8.1.jolla.i486.drpm .....................................[done]<br>
+Retrieving package ssu-0.43.12-1.8.1.jolla.i486                                                (258/275), 181.8 KiB (517.4 KiB unpacked)<br>
+Retrieving delta: ./drpms/ssu-0.43.12-1.8.3.jolla_0.43.12_1.8.1.jolla.i486.drpm, 165.4 KiB<br>
+Retrieving: ssu-0.43.12-1.8.3.jolla_0.43.12_1.8.1.jolla.i486.drpm ................................................................[done]<br>
+Applying delta: ./ssu-0.43.12-1.8.3.jolla_0.43.12_1.8.1.jolla.i486.drpm ..........................................................[done]<br>
+Retrieving package ssu-vendor-data-jolla-0.108-1.6.1.jolla.noarch                              (259/275),  26.6 KiB ( 11.3 KiB unpacked)<br>
+Retrieving delta: ./drpms/ssu-vendor-data-jolla-0.107-1.6.1.jolla_0.108_1.6.1.jolla.noarch.drpm, 17.7 KiB<br>
+Retrieving: ssu-vendor-data-jolla-0.107-1.6.1.jolla_0.108_1.6.1.jolla.noarch.drpm ....................................[done (2.6 KiB/s)]<br>
+Applying delta: ./ssu-vendor-data-jolla-0.107-1.6.1.jolla_0.108_1.6.1.jolla.noarch.drpm ..........................................[done]<br>
+Retrieving package sailfish-version-variant-3.0.3-1.11.10.jolla.noarch                         (260/275),  16.5 KiB (   97   B unpacked)<br>
+Retrieving delta: ./drpms/sailfish-version-variant-3.0.2-1.10.8.jolla_3.0.3_1.11.10.jolla.noarch.drpm, 12.6 KiB<br>
+Retrieving: sailfish-version-variant-3.0.2-1.10.8.jolla_3.0.3_1.11.10.jolla.noarch.drpm ..........................................[done]<br>
+Applying delta: ./sailfish-version-variant-3.0.2-1.10.8.jolla_3.0.3_1.11.10.jolla.noarch.drpm ....................................[done]<br>
+Retrieving package qt5-qtsysteminfo-5.2.0+git9-1.2.1.jolla.i486                                (261/275),  72.2 KiB (248.1 KiB unpacked)<br>
+Retrieving: qt5-qtsysteminfo-5.2.0+git9-1.2.1.jolla.i486.rpm .....................................................................[done]<br>
+Retrieving package sailfish-version-3.0.3-1.11.10.jolla.noarch                                 (262/275),  17.7 KiB (  2.0 KiB unpacked)<br>
+Retrieving delta: ./drpms/sailfish-version-3.0.2-1.10.8.jolla_3.0.3_1.11.10.jolla.noarch.drpm, 13.0 KiB<br>
+Retrieving: sailfish-version-3.0.2-1.10.8.jolla_3.0.3_1.11.10.jolla.noarch.drpm ........................................[done (154 B/s)]<br>
+Applying delta: ./sailfish-version-3.0.2-1.10.8.jolla_3.0.3_1.11.10.jolla.noarch.drpm ............................................[done]<br>
+Retrieving package obex-capability-0.0.2-1.3.2.jolla.i486                                      (263/275),  17.4 KiB ( 26.5 KiB unpacked)<br>
+Retrieving delta: ./drpms/obex-capability-0.0.2-1.3.8.jolla_0.0.2_1.3.2.jolla.i486.drpm, 13.5 KiB<br>
+Retrieving: obex-capability-0.0.2-1.3.8.jolla_0.0.2_1.3.2.jolla.i486.drpm ........................................................[done]<br>
+Applying delta: ./obex-capability-0.0.2-1.3.8.jolla_0.0.2_1.3.2.jolla.i486.drpm ..................................................[done]<br>
+Retrieving package patterns-sailfish-core-1.0.18-1.10.2.jolla.noarch                           (264/275),  47.9 KiB (    0   B unpacked)<br>
+Retrieving delta: ./drpms/patterns-sailfish-core-1.0.17-1.10.2.jolla_1.0.18_1.10.2.jolla.noarch.drpm, 44.0 KiB<br>
+Retrieving: patterns-sailfish-core-1.0.17-1.10.2.jolla_1.0.18_1.10.2.jolla.noarch.drpm ..............................[done (15.6 KiB/s)]<br>
+Applying delta: ./patterns-sailfish-core-1.0.17-1.10.2.jolla_1.0.18_1.10.2.jolla.noarch.drpm .....................................[done]<br>
+Retrieving package obexd-0.48+git17-1.1.15.jolla.i486                                          (265/275),  78.1 KiB (183.2 KiB unpacked)<br>
+Retrieving delta: ./drpms/obexd-0.48+git17-1.2.2.jolla_0.48+git17_1.1.15.jolla.i486.drpm, 64.4 KiB<br>
+Retrieving: obexd-0.48+git17-1.2.2.jolla_0.48+git17_1.1.15.jolla.i486.drpm .......................................................[done]<br>
+Applying delta: ./obexd-0.48+git17-1.2.2.jolla_0.48+git17_1.1.15.jolla.i486.drpm .................................................[done]<br>
+Retrieving package kf5bluezqt-bluez4-5.24.0+git15-1.3.1.jolla.i486                             (266/275), 219.7 KiB (835.1 KiB unpacked)<br>
+Retrieving: kf5bluezqt-bluez4-5.24.0+git15-1.3.1.jolla.i486.rpm ....................................................[done (153.6 KiB/s)]<br>
+Retrieving package sdk-register-0.5-1.3.4.jolla.i486                                           (267/275),  13.5 KiB ( 14.2 KiB unpacked)<br>
+Retrieving: sdk-register-0.5-1.3.4.jolla.i486.rpm ................................................................................[done]<br>
+Retrieving package sdk-configs-0.114-1.9.4.jolla.noarch                                        (268/275), 122.5 KiB (  3.1 MiB unpacked)<br>
+Retrieving: sdk-configs-0.114-1.9.4.jolla.noarch.rpm .............................................................................[done]<br>
+Retrieving package sdk-utils-1.2.53.1-1.16.1.jolla.noarch                                      (269/275),  86.2 KiB (296.6 KiB unpacked)<br>
+Retrieving: sdk-utils-1.2.53.1-1.16.1.jolla.noarch.rpm ...........................................................................[done]<br>
+Retrieving package feature-jolla-sdk-0.1.3-1.2.10.jolla.i486                                   (270/275),   8.1 KiB (  501   B unpacked)<br>
+Retrieving delta: ./drpms/feature-jolla-sdk-0.1.3-1.3.2.jolla_0.1.3_1.2.10.jolla.i486.drpm, 3.9 KiB<br>
+Retrieving: feature-jolla-sdk-0.1.3-1.3.2.jolla_0.1.3_1.2.10.jolla.i486.drpm .....................................................[done]<br>
+Applying delta: ./feature-jolla-sdk-0.1.3-1.3.2.jolla_0.1.3_1.2.10.jolla.i486.drpm ...............................................[done]<br>
+Retrieving package vm-configs-0.15.8-1.9.11.jolla.noarch                                       (271/275),  26.7 KiB (  1.0 KiB unpacked)<br>
+Retrieving: vm-configs-0.15.8-1.9.11.jolla.noarch.rpm ............................................................................[done]<br>
+Retrieving package patterns-sailfish-packaging-tools-1.0.18-1.10.2.jolla.noarch                (272/275),  47.3 KiB (    0   B unpacked)<br>
+Retrieving delta: ./drpms/patterns-sailfish-packaging-tools-1.0.17-1.10.2.jolla_1.0.18_1.10.2.jolla.noarch.drpm, 43.4 KiB<br>
+Retrieving: patterns-sailfish-packaging-tools-1.0.17-1.10.2.jolla_1.0.18_1.10.2.jolla.noarch.drpm ................................[done]<br>
+Applying delta: ./patterns-sailfish-packaging-tools-1.0.17-1.10.2.jolla_1.0.18_1.10.2.jolla.noarch.drpm ..........................[done]<br>
+Retrieving package bluez-4.101+git76-1.2.12.jolla.i486                                         (273/275), 554.3 KiB (  2.2 MiB unpacked)<br>
+Retrieving delta: ./drpms/bluez-4.101+git76-1.3.1.jolla_4.101+git76_1.2.12.jolla.i486.drpm, 556.0 KiB<br>
+Retrieving: bluez-4.101+git76-1.3.1.jolla_4.101+git76_1.2.12.jolla.i486.drpm .....................................................[done]<br>
+Applying delta: ./bluez-4.101+git76-1.3.1.jolla_4.101+git76_1.2.12.jolla.i486.drpm ...............................................[done]<br>
+Retrieving package patterns-sailfish-platform-sdk-0.15.8-1.9.11.jolla.noarch                   (274/275),  23.7 KiB (    0   B unpacked)<br>
+Retrieving: patterns-sailfish-platform-sdk-0.15.8-1.9.11.jolla.noarch.rpm ........................................................[done]<br>
+Retrieving package patterns-sailfish-configuration-platform-sdk-chroot-0.15.8-1.9.11.jolla.noarch<br>
+                                                                                               (275/275),  23.5 KiB (    0   B unpacked)<br>
+Retrieving: patterns-sailfish-configuration-platform-sdk-chroot-0.15.8-1.9.11.jolla.noarch.rpm ...................................[done]<br>
+Checking for file conflicts: .....................................................................................................[done]<br>
+(  1/275) Installing: ofono-configs-build-engine-0.15.8-1.9.11.jolla.noarch ......................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/adaptation0/noarch/ofono-configs-build-engine-0.15.8-1.9.11.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(  2/275) Installing: fontpackages-filesystem-1.44-1.1.8.jolla.noarch ............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/fontpackages-filesystem-1.44-1.1.8.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(  3/275) Installing: jolla-ca-0.9-1.2.9.jolla.noarch ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/jolla-ca-0.9-1.2.9.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(  4/275) Installing: libgcc-4.9.4-1.2.4.jolla.i486 ..............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libgcc-4.9.4-1.2.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(  5/275) Installing: mobile-broadband-provider-info-20131125+git68-1.3.2.jolla.noarch ...........................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/mobile-broadband-provider-info-20131125+git68-1.3.2.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(  6/275) Installing: ncurses-base-6.1+git1-1.3.4.jolla.i486 .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/ncurses-base-6.1+git1-1.3.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(  7/275) Installing: rootfiles-8.1+git2-1.2.7.jolla.noarch ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/rootfiles-8.1+git2-1.2.7.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(  8/275) Installing: sailfish-ca-0.1.1-1.2.9.jolla.noarch .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/sailfish-ca-0.1.1-1.2.9.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(  9/275) Installing: setup-2.8.56-1.2.4.jolla.noarch ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/setup-2.8.56-1.2.4.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+warning: /etc/shadow created as /etc/shadow.rpmnew<br>
+<br>
+<br>
+( 10/275) Installing: tzdata-2017b-1.1.8.jolla.noarch ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/tzdata-2017b-1.1.8.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 11/275) Installing: vim-filesystem-7.3.629-1.2.3.jolla.i486 ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/vim-filesystem-7.3.629-1.2.3.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 12/275) Installing: wireless-regdb-2016.06.10+git1-1.2.6.jolla.noarch ..........................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/wireless-regdb-2016.06.10+git1-1.2.6.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 13/275) Installing: filesystem-3.1-1.1.8.jolla.noarch ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/filesystem-3.1-1.1.8.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 14/275) Installing: glibc-2.25+git5-1.4.1.jolla.i486 ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/glibc-2.25+git5-1.4.1.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 15/275) Installing: basesystem-11+git1-1.2.7.jolla.noarch ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/basesystem-11+git1-1.2.7.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 16/275) Installing: ncurses-libs-6.1+git1-1.3.4.jolla.i486 .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/ncurses-libs-6.1+git1-1.3.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 17/275) Installing: bash-1:3.2.57-1.2.4.jolla.i486 .............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/bash-3.2.57-1.2.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 18/275) Installing: glibc-common-2.25+git5-1.4.1.jolla.i486 ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/glibc-common-2.25+git5-1.4.1.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 19/275) Installing: zlib-1.2.11+git1-1.4.4.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/zlib-1.2.11+git1-1.4.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 20/275) Installing: zip-3.0-1.1.10.jolla.i486 ..................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/zip-3.0-1.1.10.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 21/275) Installing: xz-libs-5.0.4-1.2.6.jolla.i486 .............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/xz-libs-5.0.4-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 22/275) Installing: xdg-user-dirs-0.16+git1-1.2.7.jolla.i486 ...................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/xdg-user-dirs-0.16+git1-1.2.7.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 23/275) Installing: vim-common-7.3.629-1.2.3.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/vim-common-7.3.629-1.2.3.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 24/275) Installing: unzip-6.0-1.2.4.jolla.i486 .................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/unzip-6.0-1.2.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 25/275) Installing: tar-1.17-1.2.4.jolla.i486 ..................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/tar-1.17-1.2.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 26/275) Installing: strace-4.22+git1-1.2.18.jolla.i486 .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/i486/strace-4.22+git1-1.2.18.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 27/275) Installing: shadow-utils-4.6-1.2.4.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/shadow-utils-4.6-1.2.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 28/275) Installing: sed-1:4.1.5-1.2.5.jolla.i486 ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/sed-4.1.5-1.2.5.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 29/275) Installing: readline-5.2-1.2.6.jolla.i486 ..............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/readline-5.2-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 30/275) Installing: pth-2.0.7-1.1.8.jolla.i486 .................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/pth-2.0.7-1.1.8.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 31/275) Installing: psmisc-22.13-1.3.6.jolla.i486 ..............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/psmisc-22.13-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 32/275) Installing: procps-3.2.8-1.2.6.jolla.i486 ..............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/procps-3.2.8-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 33/275) Installing: pptp-1.8.0+git4-1.1.14.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/pptp-1.8.0+git4-1.1.14.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 34/275) Installing: popt-1.16-1.1.9.jolla.i486 .................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/popt-1.16-1.1.9.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 35/275) Installing: pkgconfig-0.27.1-1.2.6.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/pkgconfig-0.27.1-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 36/275) Installing: patch-2.7.5+git1-1.1.8.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/patch-2.7.5+git1-1.1.8.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 37/275) Installing: nspr-4.20.0-1.3.6.jolla.i486 ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/nspr-4.20.0-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 38/275) Installing: net-tools-1.60-1.2.4.jolla.i486 ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/net-tools-1.60-1.2.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 39/275) Installing: ncurses-6.1+git1-1.3.4.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/ncurses-6.1+git1-1.3.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 40/275) Installing: lzo-2.09-1.1.9.jolla.i486 ..................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/lzo-2.09-1.1.9.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 41/275) Installing: lsof-4.91+git1-1.3.3.jolla.i486 ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/lsof-4.91+git1-1.3.3.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 42/275) Installing: libtasn1-4.13+git1-1.3.6.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libtasn1-4.13+git1-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 43/275) Installing: libstdc++-4.9.4-1.2.4.jolla.i486 ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libstdc++-4.9.4-1.2.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 44/275) Installing: libshadowutils-0.0.2-1.3.6.jolla.i486 ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/libshadowutils-0.0.2-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 45/275) Installing: libsb2-2.3.90+git17-1.5.3.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libsb2-2.3.90+git17-1.5.3.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 46/275) Installing: libpcap-1.8.1+git2-1.2.4.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libpcap-1.8.1+git2-1.2.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 47/275) Installing: libnl-3.4.0-1.2.6.jolla.i486 ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libnl-3.4.0-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 48/275) Installing: liblua-5.1.5-1.1.11.jolla.i486 .............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/liblua-5.1.5-1.1.11.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 49/275) Installing: libiphb-1.2.5+git1-1.3.6.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libiphb-1.2.5+git1-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 50/275) Installing: libgpg-error-1.27+git2-1.3.4.jolla.i486 ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libgpg-error-1.27+git2-1.3.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 51/275) Installing: libffi-3.2.1+git1-1.2.9.jolla.i486 .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libffi-3.2.1+git1-1.2.9.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 52/275) Installing: libcom_err-1.45.0+git1-1.3.4.jolla.i486 ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libcom_err-1.45.0+git1-1.3.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 53/275) Installing: libcap-2.24+git1-1.3.6.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libcap-2.24+git1-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 54/275) Installing: libattr-2.4.47+git1-1.3.6.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libattr-2.4.47+git1-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 55/275) Installing: less-436+mer1-1.1.24.jolla.i486 ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/i486/less-436+mer1-1.1.24.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 56/275) Installing: json-c-0.12-1.1.8.jolla.i486 ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/json-c-0.12-1.1.8.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 57/275) Installing: iptables-1.8.2+git1-1.4.2.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/iptables-1.8.2+git1-1.4.2.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 58/275) Installing: iproute-3.7.0+git4-1.2.4.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/iproute-3.7.0+git4-1.2.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 59/275) Installing: gdbm-1.8.3-1.2.6.jolla.i486 ................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/gdbm-1.8.3-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 60/275) Installing: freetype-2.8.0-1.1.8.jolla.i486 ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/freetype-2.8.0-1.1.8.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 61/275) Installing: findutils-4.2.31-1.2.4.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/findutils-4.2.31-1.2.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 62/275) Installing: expat-2.1.0-1.1.9.jolla.i486 ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/expat-2.1.0-1.1.9.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 63/275) Installing: dosfstools-3.0.10+git1-1.1.25.jolla.i486 ...................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/i486/dosfstools-3.0.10+git1-1.1.25.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 64/275) Installing: diffutils-2.8.1-1.2.5.jolla.i486 ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/diffutils-2.8.1-1.2.5.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 65/275) Installing: db4-4.8.30-1.3.8.jolla.i486 ................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/db4-4.8.30-1.3.8.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 66/275) Installing: cpio-2.12+git1-1.3.3.jolla.i486 ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/cpio-2.12+git1-1.3.3.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 67/275) Installing: bzip2-libs-1.0.6-1.2.6.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/bzip2-libs-1.0.6-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 68/275) Installing: busybox-1.29.3+git5-1.1.4.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/busybox-1.29.3+git5-1.1.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 69/275) Installing: bluez-libs-4.101+git76-1.2.12.jolla.i486 ...................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/bluez-libs-4.101+git76-1.2.12.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 70/275) Installing: libxml2-2.9.8+git2-1.3.6.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libxml2-2.9.8+git2-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 71/275) Installing: info-4.13a-1.2.6.jolla.i486 ................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/info-4.13a-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+warning: /usr/share/info/dir saved as /usr/share/info/dir.rpmsave<br>
+<br>
+<br>
+( 72/275) Installing: file-libs-5.35+git2-1.2.6.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/file-libs-5.35+git2-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 73/275) Installing: elfutils-libelf-0.170+git1-1.3.6.jolla.i486 ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/elfutils-libelf-0.170+git1-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 74/275) Installing: binutils-2.25-1.3.6.jolla.i486 .............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/binutils-2.25-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 75/275) Installing: xz-5.0.4-1.2.6.jolla.i486 ..................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/xz-5.0.4-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 76/275) Installing: libutempter-1.1.5+git1-1.1.9.jolla.i486 ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libutempter-1.1.5+git1-1.1.9.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 77/275) Installing: pcre-8.42+git1-1.3.4.jolla.i486 ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/pcre-8.42+git1-1.3.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 78/275) Installing: p7zip-full-16.02+git1-1.2.1.jolla.i486 .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/i486/p7zip-full-16.02+git1-1.2.1.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 79/275) Installing: libusb-0.1.12-1.2.4.jolla.i486 .............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libusb-0.1.12-1.2.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 80/275) Installing: boost-system-1.66.0-1.3.8.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/boost-system-1.66.0-1.3.8.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 81/275) Installing: ppp-2.4.7+git3-1.1.15.jolla.i486 ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/ppp-2.4.7+git3-1.1.15.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 82/275) Installing: iw-4.1+git2-1.2.4.jolla.i486 ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/iw-4.1+git2-1.2.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 83/275) Installing: libksba-1.3.5+git2-1.2.4.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libksba-1.3.5+git2-1.2.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 84/275) Installing: libgcrypt-1.5.6+git1-1.1.11.jolla.i486 .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libgcrypt-1.5.6+git1-1.1.11.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 85/275) Installing: p11-kit-0.23.12+git1-1.3.4.jolla.i486 ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/p11-kit-0.23.12+git1-1.3.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 86/275) Installing: libss-1.45.0+git1-1.3.4.jolla.i486 .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libss-1.45.0+git1-1.3.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 87/275) Installing: e2fsprogs-libs-1.45.0+git1-1.3.4.jolla.i486 ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/e2fsprogs-libs-1.45.0+git1-1.3.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 88/275) Installing: libacl-2.2.53-1.2.6.jolla.i486 .............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libacl-2.2.53-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 89/275) Installing: iptables-ipv6-1.8.2+git1-1.4.2.jolla.i486 ..................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/iptables-ipv6-1.8.2+git1-1.4.2.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 90/275) Installing: db4-utils-4.8.30-1.3.8.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/db4-utils-4.8.30-1.3.8.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 91/275) Installing: bzip2-1.0.6-1.2.6.jolla.i486 ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/bzip2-1.0.6-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 92/275) Installing: busybox-symlinks-gzip-1.29.3+git5-1.1.4.jolla.i486 .........................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/busybox-symlinks-gzip-1.29.3+git5-1.1.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 93/275) Installing: libxslt-1.1.29-1.2.6.jolla.i486 ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libxslt-1.1.29-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 94/275) Installing: augeas-libs-1.6.0+git1-1.2.5.jolla.i486 ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/augeas-libs-1.6.0+git1-1.2.5.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 95/275) Installing: mtools-4.0.12+mer1-1.1.24.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/i486/mtools-4.0.12+mer1-1.1.24.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 96/275) Installing: file-5.35+git2-1.2.6.jolla.i486 ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/file-5.35+git2-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 97/275) Installing: xz-lzma-compat-5.0.4-1.2.6.jolla.i486 ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/xz-lzma-compat-5.0.4-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 98/275) Installing: squashfs-tools-4.3.0-1.1.9.jolla.i486 ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/squashfs-tools-4.3.0-1.1.9.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+( 99/275) Installing: kmod-libs-21-1.2.7.jolla.i486 ..............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/kmod-libs-21-1.2.7.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(100/275) Installing: kmod-21-1.2.7.jolla.i486 ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/kmod-21-1.2.7.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(101/275) Installing: elfutils-libs-0.170+git1-1.3.6.jolla.i486 ..................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/elfutils-libs-0.170+git1-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(102/275) Installing: grep-1:2.5.1a-1.2.4.jolla.i486 .............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/grep-2.5.1a-1.2.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(103/275) Installing: glib2-2.56.1+git3-1.3.6.jolla.i486 .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/glib2-2.56.1+git3-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(104/275) Installing: boost-thread-1.66.0-1.3.8.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/boost-thread-1.66.0-1.3.8.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(105/275) Installing: boost-filesystem-1.66.0-1.3.8.jolla.i486 ...................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/boost-filesystem-1.66.0-1.3.8.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(106/275) Installing: ppp-libs-2.4.7+git3-1.1.15.jolla.i486 ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/ppp-libs-2.4.7+git3-1.1.15.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(107/275) Installing: vpnc-0.5.3-1.2.4.jolla.i486 ................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/vpnc-0.5.3-1.2.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(108/275) Installing: rsync-3.1.0+git2-1.3.5.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/oss/i486/rsync-3.1.0+git2-1.3.5.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(109/275) Installing: coreutils-1:6.9-1.2.5.jolla.i486 ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/coreutils-6.9-1.2.5.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(110/275) Installing: hwdata-0.291+git1-1.1.8.jolla.noarch .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/hwdata-0.291+git1-1.1.8.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(111/275) Installing: elfutils-0.170+git1-1.3.6.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/elfutils-0.170+git1-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(112/275) Installing: shared-mime-info-1.12-1.4.4.jolla.i486 .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/shared-mime-info-1.12-1.4.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(113/275) Installing: libwspcodec-2.2.1-1.2.8.jolla.i486 .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libwspcodec-2.2.1-1.2.8.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(114/275) Installing: libglibutil-1.0.35-1.8.4.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libglibutil-1.0.35-1.8.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(115/275) Installing: desktop-file-utils-0.23+git1-1.2.10.jolla.i486 .............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/desktop-file-utils-0.23+git1-1.2.10.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(116/275) Installing: xl2tpd-1.3.8+git3-1.1.17.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/xl2tpd-1.3.8+git3-1.1.17.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(117/275) Installing: pam-1.1.8+git5-1.2.4.jolla.i486 ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/pam-1.1.8+git5-1.2.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(118/275) Installing: libmce-glib-1.0.5-1.1.15.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libmce-glib-1.0.5-1.1.15.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(119/275) Installing: libgsupplicant-1.0.11-1.4.7.jolla.i486 .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libgsupplicant-1.0.11-1.4.7.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(120/275) Installing: libgrilio-1.0.29-1.9.1.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libgrilio-1.0.29-1.9.1.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(121/275) Installing: libgofono-2.0.6-1.2.12.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libgofono-2.0.6-1.2.12.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(122/275) Installing: libdbusaccess-1.0.7-1.3.4.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libdbusaccess-1.0.7-1.3.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(123/275) Installing: systemd-libs-225+git13-1.4.4.jolla.i486 ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/systemd-libs-225+git13-1.4.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(124/275) Installing: sudo-1.8.20p2-1.1.25.jolla.i486 ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/i486/sudo-1.8.20p2-1.1.25.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(125/275) Installing: p11-kit-trust-0.23.12+git1-1.3.4.jolla.i486 ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/p11-kit-trust-0.23.12+git1-1.3.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(126/275) Installing: libuser-0.62+git1-1.2.6.jolla.i486 .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libuser-0.62+git1-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(127/275) Installing: libsmartcols-2.33+git1-1.4.4.jolla.i486 ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libsmartcols-2.33+git1-1.4.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(128/275) Installing: kbd-2.0.4-1.3.3.jolla.i486 .................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/kbd-2.0.4-1.3.3.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(129/275) Installing: groff-1.18.1.4-1.1.13.jolla.i486 ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/groff-1.18.1.4-1.1.13.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(130/275) Installing: gawk-1:3.1.5-1.2.6.jolla.i486 ..............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/gawk-3.1.5-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(131/275) Installing: fontconfig-2.12.4-1.2.10.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/fontconfig-2.12.4-1.2.10.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(132/275) Installing: libgofonoext-1.0.10-1.2.11.jolla.i486 ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libgofonoext-1.0.10-1.2.11.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(133/275) Installing: dbus-libs-1.10.8+git1-1.1.12.jolla.i486 ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/dbus-libs-1.10.8+git1-1.1.12.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(134/275) Installing: cor-0.1.18-1.1.16.jolla.i486 ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/cor-0.1.18-1.1.16.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(135/275) Installing: p11-kit-nss-ckbi-0.23.12+git1-1.3.4.jolla.i486 .............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/p11-kit-nss-ckbi-0.23.12+git1-1.3.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(136/275) Installing: passwd-0.79+git1-1.3.6.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/passwd-0.79+git1-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(137/275) Installing: libuuid-2.33+git1-1.4.4.jolla.i486 .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libuuid-2.33+git1-1.4.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(138/275) Installing: perl-macros-2:5.16.1-1.1.15.jolla.i486 .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/perl-macros-5.16.1-1.1.15.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(139/275) Installing: libdbuslogserver-dbus-1.0.15-1.4.7.jolla.i486 ..............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libdbuslogserver-dbus-1.0.15-1.4.7.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(140/275) Installing: statefs-pp-0.3.35-1.1.19.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/statefs-pp-0.3.35-1.1.19.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(141/275) Installing: gnutls-2.12.23.4-1.2.5.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/gnutls-2.12.23.4-1.2.5.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(142/275) Installing: ca-certificates-2018.2.24-1.2.11.jolla.noarch ..............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/ca-certificates-2018.2.24-1.2.11.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(143/275) Installing: libblkid-2.33+git1-1.4.4.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libblkid-2.33+git1-1.4.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(144/275) Installing: perl-libs-2:5.16.1-1.1.15.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/perl-libs-5.16.1-1.1.15.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(145/275) Installing: openssl-libs-1.0.2o+git2-1.4.4.jolla.i486 ..................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/openssl-libs-1.0.2o+git2-1.4.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(146/275) Installing: libfdisk-2.33+git1-1.4.4.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libfdisk-2.33+git1-1.4.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(147/275) Installing: perl-2:5.16.1-1.1.15.jolla.i486 ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/perl-5.16.1-1.1.15.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(148/275) Installing: libcurl-7.64.0+git1-1.8.4.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libcurl-7.64.0+git1-1.8.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(149/275) Installing: libarchive-3.3.3+git1-1.2.6.jolla.i486 .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libarchive-3.3.3+git1-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(150/275) Installing: libmount-2.33+git1-1.4.4.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libmount-2.33+git1-1.4.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(151/275) Installing: perl-Scalar-List-Utils-2:1.25-1.1.15.jolla.i486 ............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/perl-Scalar-List-Utils-1.25-1.1.15.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(152/275) Installing: qemu-usermode-common-2.1.0-1.2.6.jolla.i486 ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/qemu-usermode-common-2.1.0-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(153/275) Installing: pacrunner-0.15+git1-1.3.6.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/pacrunner-0.15+git1-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(154/275) Installing: gnupg2-1:2.0.4+git2-1.4.4.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/gnupg2-2.0.4+git2-1.4.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(155/275) Installing: curl-7.64.0+git1-1.8.4.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/curl-7.64.0+git1-1.8.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(156/275) Installing: bsdtar-3.3.3+git1-1.2.6.jolla.i486 .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/bsdtar-3.3.3+git1-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(157/275) Installing: util-linux-2.33+git1-1.4.4.jolla.i486 ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/util-linux-2.33+git1-1.4.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(158/275) Installing: perl-Pod-Escapes-2:1.04-1.1.15.jolla.noarch ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/perl-Pod-Escapes-1.04-1.1.15.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(159/275) Installing: qemu-usermode-static-2.1.0-1.2.6.jolla.i486 ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/qemu-usermode-static-2.1.0-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(160/275) Installing: qemu-usermode-2.1.0-1.2.6.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/qemu-usermode-2.1.0-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(161/275) Installing: gpgme-1.2.0+git6-1.3.4.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/gpgme-1.2.0+git6-1.3.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(162/275) Installing: rpm-libs-4.14.1+git9-1.5.6.jolla.i486 ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/rpm-libs-4.14.1+git9-1.5.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(163/275) Installing: xdg-utils-1.1.2+git1-1.2.7.jolla.noarch ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/xdg-utils-1.1.2+git1-1.2.7.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(164/275) Installing: vim-enhanced-7.3.629-1.2.3.jolla.i486 ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/vim-enhanced-7.3.629-1.2.3.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(165/275) Installing: parted-3.0+mer4-1.2.12.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/i486/parted-3.0+mer4-1.2.12.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(166/275) Installing: fuse-2.9.0+git1-1.2.6.jolla.i486 ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/fuse-2.9.0+git1-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(167/275) Installing: fakeroot-1.12.4-1.1.9.jolla.i486 ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/fakeroot-1.12.4-1.1.9.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(168/275) Installing: e2fsprogs-1.45.0+git1-1.3.4.jolla.i486 .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/e2fsprogs-1.45.0+git1-1.3.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(169/275) Installing: btrfs-progs-3.16+git2-1.4.2.jolla.i486 .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/btrfs-progs-3.16+git2-1.4.2.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(170/275) Installing: perl-Pod-Simple-2:3.20-1.1.15.jolla.noarch .................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/perl-Pod-Simple-3.20-1.1.15.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(171/275) Installing: rpm-4.14.1+git9-1.5.6.jolla.i486 ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/rpm-4.14.1+git9-1.5.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(172/275) Installing: fuse-libs-2.9.0+git1-1.2.6.jolla.i486 ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/fuse-libs-2.9.0+git1-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(173/275) Installing: perl-parent-2:0.225-1.1.15.jolla.noarch ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/perl-parent-0.225-1.1.15.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(174/275) Installing: libicu-63.1+git5-1.1.5.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libicu-63.1+git5-1.1.5.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(175/275) Installing: perl-Pod-Perldoc-2:3.17.00-1.1.15.jolla.noarch .............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/perl-Pod-Perldoc-3.17.00-1.1.15.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(176/275) Installing: sqlite-libs-3.13.0+git3-1.3.5.jolla.i486 ...................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/sqlite-libs-3.13.0+git3-1.3.5.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(177/275) Installing: qt5-qtcore-5.6.3+git9-1.9.1.jolla.i486 .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/i486/qt5-qtcore-5.6.3+git9-1.9.1.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(178/275) Installing: perl-Pod-Parser-2:1.51-1.1.15.jolla.noarch .................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/perl-Pod-Parser-1.51-1.1.15.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(179/275) Installing: nss-3.39-1.3.5.jolla.i486 ..................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/nss-3.39-1.3.5.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(180/275) Installing: qt5-qtdbus-5.6.3+git9-1.9.1.jolla.i486 .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/i486/qt5-qtdbus-5.6.3+git9-1.9.1.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(181/275) Installing: perl-Filter-2:1.40-1.1.15.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/perl-Filter-1.40-1.1.15.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(182/275) Installing: python-2.7.15+git2-1.3.5.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/python-2.7.15+git2-1.3.5.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(183/275) Installing: openvpn-2.4.5+git2-1.3.5.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/openvpn-2.4.5+git2-1.3.5.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(184/275) Installing: openconnect-7.08+git1-1.2.4.jolla.i486 .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/openconnect-7.08+git1-1.2.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(185/275) Installing: nss-sysinit-3.39-1.3.5.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/nss-sysinit-3.39-1.3.5.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(186/275) Installing: libsolv0-0.6.35+git2-1.4.6.jolla.i486 ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libsolv0-0.6.35+git2-1.4.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(187/275) Installing: deltarpm-3.5-1.2.6.jolla.i486 ..............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/deltarpm-3.5-1.2.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(188/275) Installing: cryptsetup-libs-2.1.0+git1-1.3.4.jolla.i486 ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/cryptsetup-libs-2.1.0+git1-1.3.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(189/275) Installing: createrepo_c-libs-0.10.0+git1-1.1.47.jolla.i486 ............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/i486/createrepo_c-libs-0.10.0+git1-1.1.47.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(190/275) Installing: qt5-qtnetwork-5.6.3+git9-1.9.1.jolla.i486 ..................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/i486/qt5-qtnetwork-5.6.3+git9-1.9.1.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(191/275) Installing: perl-Module-Pluggable-2:4.00-1.1.15.jolla.noarch ...........................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/perl-Module-Pluggable-4.00-1.1.15.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(192/275) Installing: python-libs-2.7.15+git2-1.3.5.jolla.i486 ...................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/python-libs-2.7.15+git2-1.3.5.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(193/275) Installing: libsolv-tools-0.6.35+git2-1.4.6.jolla.i486 .................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libsolv-tools-0.6.35+git2-1.4.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(194/275) Installing: systemd-config-sailfish-0.8.15-1.7.2.jolla.noarch ..........................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/systemd-config-sailfish-0.8.15-1.7.2.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(195/275) Installing: createrepo_c-0.10.0+git1-1.1.47.jolla.i486 .................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/i486/createrepo_c-0.10.0+git1-1.1.47.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(196/275) Installing: qt5-qtxml-5.6.3+git9-1.9.1.jolla.i486 ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/i486/qt5-qtxml-5.6.3+git9-1.9.1.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(197/275) Installing: libqtaround2-0.2.8-1.2.1.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/libqtaround2-0.2.8-1.2.1.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(198/275) Installing: perl-threads-2:1.86-1.1.15.jolla.i486 ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/perl-threads-1.86-1.1.15.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(199/275) Installing: rpm-python-4.14.1+git9-1.4.4.jolla.i486 ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/rpm-python-4.14.1+git9-1.4.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(200/275) Installing: python-yaml-3.10-1.1.10.jolla.i486 .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/python-yaml-3.10-1.1.10.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(201/275) Installing: python-setuptools-0.6c11-1.1.10.jolla.noarch ...............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/python-setuptools-0.6c11-1.1.10.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(202/275) Installing: python-pycurl-7.19.0+mer1-1.1.45.jolla.i486 ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/i486/python-pycurl-7.19.0+mer1-1.1.45.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(203/275) Installing: python-lxml-3.2.0-1.1.12.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/python-lxml-3.2.0-1.1.12.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(204/275) Installing: python-cheetah-2.4.4+mer1-1.1.31.jolla.i486 ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/i486/python-cheetah-2.4.4+mer1-1.1.31.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(205/275) Installing: python-M2Crypto-0.23.0-1.1.11.jolla.i486 ...................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/python-M2Crypto-0.23.0-1.1.11.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(206/275) Installing: pacrunner-python-0.15+git1-1.3.6.jolla.i486 ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/pacrunner-python-0.15+git1-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(207/275) Installing: libzypp-17.3.1+git4-1.6.2.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/libzypp-17.3.1+git4-1.6.2.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(208/275) Installing: device-mapper-libs-2.02.177+git3-1.3.6.jolla.i486 ..........................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/device-mapper-libs-2.02.177+git3-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(209/275) Installing: statefs-qt5-0.3.5-1.4.1.jolla.i486 .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/statefs-qt5-0.3.5-1.4.1.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(210/275) Installing: perl-Socket-2:2.001-1.1.15.jolla.i486 ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/perl-Socket-2.001-1.1.15.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(211/275) Installing: python-distro-1.0.4+mer1-1.1.10.jolla.noarch ...............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/python-distro-1.0.4+mer1-1.1.10.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(212/275) Installing: repomd-pattern-builder-0.3.3-1.2.7.jolla.i486 ..............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/repomd-pattern-builder-0.3.3-1.2.7.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(213/275) Installing: python-urlgrabber-3.9.1+mer1-1.1.26.jolla.noarch ...........................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/noarch/python-urlgrabber-3.9.1+mer1-1.1.26.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(214/275) Installing: zypper-1.14.6+git3-1.3.6.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/zypper-1.14.6+git3-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(215/275) Installing: python-zypp-0.7.4+git3-1.2.9.jolla.i486 ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/python-zypp-0.7.4+git3-1.2.9.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(216/275) Installing: device-mapper-event-libs-2.02.177+git3-1.3.6.jolla.i486 ....................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/device-mapper-event-libs-2.02.177+git3-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(217/275) Installing: perl-threads-shared-2:1.40-1.1.15.jolla.i486 ...............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/perl-threads-shared-1.40-1.1.15.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(218/275) Installing: osc-0.146.0-1.1.33.jolla.noarch ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/noarch/osc-0.146.0-1.1.33.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(219/275) Installing: lvm2-libs-2.02.177+git3-1.3.6.jolla.i486 ...................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/lvm2-libs-2.02.177+git3-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(220/275) Installing: spectacle-0.30-1.1.24.jolla.noarch .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/noarch/spectacle-0.30-1.1.24.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(221/275) Installing: scratchbox2-2.3.90+git17-1.5.3.jolla.i486 ..................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/scratchbox2-2.3.90+git17-1.5.3.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(222/275) Installing: rpm-build-4.14.1+git9-1.5.6.jolla.i486 .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/rpm-build-4.14.1+git9-1.5.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(223/275) Installing: perl-Error-0.17020+mer2-1.1.15.jolla.noarch ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/noarch/perl-Error-0.17020+mer2-1.1.15.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(224/275) Installing: android-tools-hadk-5.1.1+git2-1.1.30.jolla.i486 ............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/i486/android-tools-hadk-5.1.1+git2-1.1.30.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(225/275) Installing: lvm2-2.02.177+git3-1.3.6.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/lvm2-2.02.177+git3-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(226/275) Installing: systemd-225+git13-1.4.4.jolla.i486 .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/systemd-225+git13-1.4.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(227/275) Installing: dbus-1.10.8+git1-1.1.12.jolla.i486 .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/dbus-1.10.8+git1-1.1.12.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+<br>
+(228/275) Installing: polkit-0.105+git2-1.2.5.jolla.i486 .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/polkit-0.105+git2-1.2.5.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(229/275) Installing: device-mapper-2.02.177+git3-1.3.6.jolla.i486 ...............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/device-mapper-2.02.177+git3-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(230/275) Installing: PackageKit-glib-1.1.9+git5-1.7.2.jolla.i486 ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/PackageKit-glib-1.1.9+git5-1.7.2.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(231/275) Installing: device-mapper-event-2.02.177+git3-1.3.6.jolla.i486 .........................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/device-mapper-event-2.02.177+git3-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(232/275) Installing: PackageKit-1.1.9+git5-1.7.2.jolla.i486 .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/PackageKit-1.1.9+git5-1.7.2.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(233/275) Installing: wpa_supplicant-2.6+git5-1.3.6.jolla.i486 ...................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/wpa_supplicant-2.6+git5-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(234/275) Installing: systemd-user-session-targets-0.0.2-1.3.5.jolla.noarch ......................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/systemd-user-session-targets-0.0.2-1.3.5.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(235/275) Installing: openssh-7.9p1+git2-1.5.4.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/openssh-7.9p1+git2-1.5.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(236/275) Installing: ofono-1.21+git44-1.19.1.jolla.i486 .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/ofono-1.21+git44-1.19.1.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+warning: user radio does not exist - using root<br>
+warning: group radio does not exist - using root<br>
+Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+<br>
+(237/275) Installing: kpartx-0.4.9+mer1-1.1.41.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/i486/kpartx-0.4.9+mer1-1.1.41.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(238/275) Installing: crda-4.14+git2-1.3.6.jolla.i486 ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/crda-4.14+git2-1.3.6.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(239/275) Installing: PackageKit-zypp-1.1.9+git5-1.7.2.jolla.i486 ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/PackageKit-zypp-1.1.9+git5-1.7.2.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(240/275) Installing: oneshot-0.4.8-1.2.8.jolla.noarch ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/oneshot-0.4.8-1.2.8.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(241/275) Installing: openssh-clients-7.9p1+git2-1.5.4.jolla.i486 ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/openssh-clients-7.9p1+git2-1.5.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(242/275) Installing: statefs-0.3.35-1.1.19.jolla.i486 ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/statefs-0.3.35-1.1.19.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+WARNING: there is no privileged group, failed<br>
+<br>
+<br>
+(243/275) Installing: perl-Git-1.8.3+mer2-1.1.22.jolla.i486 ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/i486/perl-Git-1.8.3+mer2-1.1.22.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(244/275) Installing: statefs-provider-inout-power-0.3.17-1.3.1.jolla.noarch .....................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/noarch/statefs-provider-inout-power-0.3.17-1.3.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+unregister<br>
+Register inout_power<br>
+Trying to dump inout provider "/usr/share/statefs/inout_power.conf"<br>
+Can't find inout loader<br>
+Can't retrieve information from /usr/share/statefs/inout_power.conf<br>
+add-oneshot: /usr/lib/oneshot.d/statefs-03-register-inout_power - run OK<br>
+<br>
+<br>
+(245/275) Installing: statefs-contextkit-subscriber-0.3.5-1.4.1.jolla.i486 .......................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/statefs-contextkit-subscriber-0.3.5-1.4.1.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(246/275) Installing: git-1.8.3+mer2-1.1.22.jolla.i486 ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/i486/git-1.8.3+mer2-1.1.22.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(247/275) Installing: syslinux-4.06+git1-1.1.11.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/adaptation0/i486/syslinux-4.06+git1-1.1.11.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(248/275) Installing: platform-sdk-support-0.15.8-1.9.11.jolla.noarch ............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/adaptation0/noarch/platform-sdk-support-0.15.8-1.9.11.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(249/275) Installing: connman-configs-sailfish-sdk-0.15.8-1.9.11.jolla.noarch ....................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/adaptation0/noarch/connman-configs-sailfish-sdk-0.15.8-1.9.11.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(250/275) Installing: sdk-chroot-1.2.53.1-1.16.1.jolla.noarch ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/sdk/sdk/noarch/sdk-chroot-1.2.53.1-1.16.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(251/275) Installing: sdk-sb2-config-1.2.53.1-1.16.1.jolla.noarch ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/sdk/sdk/noarch/sdk-sb2-config-1.2.53.1-1.16.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(252/275) Installing: mic-0.14+git6-1.3.18.jolla.noarch ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/tools/noarch/mic-0.14+git6-1.3.18.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(253/275) Installing: connman-1.32+git65-1.25.1.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/connman-1.32+git65-1.25.1.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+find: /var/lib/connman: No such file or directory<br>
+Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+<br>
+(254/275) Installing: patterns-sailfish-sb2-host-1.0.18-1.10.2.jolla.noarch ......................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/patterns-sailfish-sb2-host-1.0.18-1.10.2.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(255/275) Installing: patterns-sailfish-image-creation-tools-1.0.18-1.10.2.jolla.noarch ..........................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/patterns-sailfish-image-creation-tools-1.0.18-1.10.2.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(256/275) Installing: connman-qt5-1.2.16-1.10.1.jolla.i486 .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/connman-qt5-1.2.16-1.10.1.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(257/275) Installing: ssu-network-proxy-plugin-0.43.12-1.8.1.jolla.i486 ..........................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/ssu-network-proxy-plugin-0.43.12-1.8.1.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(258/275) Installing: ssu-0.43.12-1.8.1.jolla.i486 ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/ssu-0.43.12-1.8.1.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(259/275) Installing: ssu-vendor-data-jolla-0.108-1.6.1.jolla.noarch .............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/oss/noarch/ssu-vendor-data-jolla-0.108-1.6.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+DBus unavailable, falling back to libssu<br>
+add-oneshot: /usr/lib/oneshot.d/ssu-update-repos - run OK<br>
+<br>
+<br>
+(260/275) Installing: sailfish-version-variant-3.0.3-1.11.10.jolla.noarch ........................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/sailfish-version-variant-3.0.3-1.11.10.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(261/275) Installing: qt5-qtsysteminfo-5.2.0+git9-1.2.1.jolla.i486 ...............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/qt5-qtsysteminfo-5.2.0+git9-1.2.1.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(262/275) Installing: sailfish-version-3.0.3-1.11.10.jolla.noarch ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/sailfish-version-3.0.3-1.11.10.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(263/275) Installing: obex-capability-0.0.2-1.3.2.jolla.i486 .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/obex-capability-0.0.2-1.3.2.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(264/275) Installing: patterns-sailfish-core-1.0.18-1.10.2.jolla.noarch ..........................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/patterns-sailfish-core-1.0.18-1.10.2.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(265/275) Installing: obexd-0.48+git17-1.1.15.jolla.i486 .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/obexd-0.48+git17-1.1.15.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(266/275) Installing: kf5bluezqt-bluez4-5.24.0+git15-1.3.1.jolla.i486 ............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/i486/kf5bluezqt-bluez4-5.24.0+git15-1.3.1.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(267/275) Installing: sdk-register-0.5-1.3.4.jolla.i486 ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/sdk/sdk/i486/sdk-register-0.5-1.3.4.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(268/275) Installing: sdk-configs-0.114-1.9.4.jolla.noarch .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/sdk/sdk/noarch/sdk-configs-0.114-1.9.4.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(269/275) Installing: sdk-utils-1.2.53.1-1.16.1.jolla.noarch .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/sdk/sdk/noarch/sdk-utils-1.2.53.1-1.16.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(270/275) Installing: feature-jolla-sdk-0.1.3-1.2.10.jolla.i486 ..................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/customer-jolla/i486/feature-jolla-sdk-0.1.3-1.2.10.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(271/275) Installing: vm-configs-0.15.8-1.9.11.jolla.noarch ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/adaptation0/noarch/vm-configs-0.15.8-1.9.11.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+DBus unavailable, falling back to libssu<br>
+add-oneshot: /usr/lib/oneshot.d/ssu-update-repos - run OK<br>
+<br>
+<br>
+(272/275) Installing: patterns-sailfish-packaging-tools-1.0.18-1.10.2.jolla.noarch ...............................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/patterns-sailfish-packaging-tools-1.0.18-1.10.2.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(273/275) Installing: bluez-4.101+git76-1.2.12.jolla.i486 ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/i486/bluez-4.101+git76-1.2.12.jolla.i486.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+<br>
+(274/275) Installing: patterns-sailfish-platform-sdk-0.15.8-1.9.11.jolla.noarch ..................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/adaptation0/noarch/patterns-sailfish-platform-sdk-0.15.8-1.9.11.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+(275/275) Installing: patterns-sailfish-configuration-platform-sdk-chroot-0.15.8-1.9.11.jolla.noarch .............................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/adaptation0/noarch/patterns-sailfish-configuration-platform-sdk-chroot-0.15.8-1.9.11.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Executing %posttrans scripts .....................................................................................................[done]<br>
+There are some running programs that might use files deleted by recent upgrade. You may wish to check and restart some of them. Run 'zypper ps -s' to list these programs<br>
+</details>
