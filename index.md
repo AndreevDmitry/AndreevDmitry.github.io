@@ -13457,3 +13457,695 @@ RPM build errors:<br>
 * Check /home/stalker/hadk/droid-hal-mido.log for full log.<br>
 !! building of package failed<br>
 </details><br>
+
+Решение описано в https://wiki.merproject.org/wiki/Platform_SDK_and_SB2
+```console
+PlatformSDK:~/hadk$ mv /parentroot/srv/mer/targets/xiaomi-mido-armv7hl/usr/share/misc/magic.mgc /parentroot/srv/mer/targets/xiaomi-mido-armv7hl/usr/share/misc/magic.mgc.orig
+PlatformSDK:~/hadk$ cp /srv/mer/sdks/ubuntu/usr/share/misc/magic.mgc /parentroot/srv/mer/targets/xiaomi-mido-armv7hl/usr/share/misc/magic.mgc
+PlatformSDK:~/hadk$ rpm/dhd/helpers/build_packages.sh
+```
+<details>
+* Building rpm/droid-hal-mido.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+Repository 'sdk' is up to date.<br>
+All repositories have been refreshed.<br>
+* Building of droid-hal-mido finished successfully<br>
+* pulling updates...<br>
+* Building rpm/community-adaptation-localbuild.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+Repository 'sdk' is up to date.<br>
+All repositories have been refreshed.<br>
+* Building of community-adaptation finished successfully<br>
+* Building rpm/droid-config-mido.spec<br>
+* Building successful, adding packages to repo<br>
+Retrieving repository 'adaptation-community-common' metadata ......................................................................[done]<br>
+Building repository 'adaptation-community-common' cache ...........................................................................[done]<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+Repository 'sdk' is up to date.<br>
+All repositories have been refreshed.<br>
+* Building of droid-configs finished successfully<br>
+Changing domain from sailfish to sales<br>
+DBus unavailable, falling back to libssu<br>
+Forcing raw metadata refresh<br>
+Retrieving repository 'adaptation-community-common' metadata ......................................................................[done]<br>
+Forcing building of repository cache<br>
+Building repository 'adaptation-community-common' cache ...........................................................................[done]<br>
+Forcing raw metadata refresh<br>
+Retrieving repository 'hotfixes' metadata .........................................................................................[done]<br>
+Forcing building of repository cache<br>
+Building repository 'hotfixes' cache ..............................................................................................[done]<br>
+Forcing raw metadata refresh<br>
+Retrieving repository 'jolla' metadata ............................................................................................[done]<br>
+Forcing building of repository cache<br>
+Building repository 'jolla' cache .................................................................................................[done]<br>
+Forcing raw metadata refresh<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Forcing building of repository cache<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+Loading repository data...<br>
+Reading installed packages...<br>
+'droid-hal-mido-devel' is already installed.<br>
+No update candidate for 'droid-hal-mido-devel-0.0.6-201907081048.armv7hl'. The highest available version is already installed.<br>
+Resolving package dependencies...<br>
+<br>
+Nothing to do.<br>
+Build libhybris? [Y/n/all]all<br>
+* pulling updates...<br>
+* enabling debugging in libhybris...<br>
+* No spec file for package building specified, building all I can find.<br>
+* Building rpm/libhybris.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of libhybris finished successfully<br>
+* pulling updates...<br>
+* Building rpm/pulseaudio-modules-droid.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of pulseaudio-modules-droid finished successfully<br>
+* pulling updates...<br>
+* No spec file for package building specified, building all I can find.<br>
+* Building rpm/mce-plugin-libhybris.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of mce-plugin-libhybris finished successfully<br>
+* pulling updates...<br>
+* Building rpm/ngfd-plugin-native-vibrator.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of ngfd-plugin-droid-vibrator finished successfully<br>
+* pulling updates...<br>
+* Building rpm/qt5-feedback-haptics-native-vibrator.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of qt5-feedback-haptics-droid-vibrator finished successfully<br>
+* pulling updates...<br>
+* No spec file for package building specified, building all I can find.<br>
+* Building rpm/qt5-qpa-hwcomposer-plugin.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of qt5-qpa-hwcomposer-plugin finished successfully<br>
+* pulling updates...<br>
+* No spec file for package building specified, building all I can find.<br>
+* Building rpm/qt5-qpa-surfaceflinger-plugin.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of qt5-qpa-surfaceflinger-plugin finished successfully<br>
+* pulling updates...<br>
+* Building rpm/qtscenegraph-adaptation-droid.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of qtscenegraph-adaptation finished successfully<br>
+* pulling updates...<br>
+* Building rpm/sensorfw-qt5-hybris.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of sensorfw finished successfully<br>
+* pulling updates...<br>
+* Building rpm/geoclue-providers-hybris.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of geoclue-providers-hybris finished successfully<br>
+* Building rpm/droid-hal-version-mido.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of droid-hal-version-mido finished successfully<br>
+----------------------DONE! Now proceed on creating the rootfs------------------<br>
+</details><br>
+
+
+Создадим файл конфигурации kickstart для создания образа sailfish
+```console
+PlatformSDK:~/hadk$ HA_REPO="repo --name=adaptation-community-common-$DEVICE-@RELEASE@"
+PlatformSDK:~/hadk$ HA_DEV="repo --name=adaptation-community-$DEVICE-@RELEASE@"
+PlatformSDK:~/hadk$ KS="Jolla-@RELEASE@-$DEVICE-@ARCH@.ks"
+PlatformSDK:~/hadk$ sed "/$HA_REPO/i$HA_DEV --baseurl=file:\/\/$ANDROID_ROOT\/droid-local-repo\/$DEVICE" $ANDROID_ROOT/hybris/droid-configs/installroot/usr/share/kickstarts/$KS > $KS
+```
+
+Произведем сборку rootfs используя хранилище RPM пакетов и kickstart file.
+```console
+PlatformSDK:~/hadk$ sudo mic create fs --arch=$PORT_ARCH --tokenmap=ARCH:$PORT_ARCH,RELEASE:$RELEASE,EXTRA_NAME:$EXTRA_NAME --record-pkgs=name,url --outdir=sfe-$DEVICE-$RELEASE$EXTRA_NAME --pack-to=sfe-$DEVICE-$RELEASE$EXTRA_NAME.tar.bz2 $ANDROID_ROOT/Jolla-@RELEASE@-$DEVICE-@ARCH@.ks
+```
+<details><br>
+[07/08 10:12:39] : mic 0.14 (Sailfish OS 3.0.3.10 (Hossa))<br>
+Info[07/08 10:12:39] : Substitute macro variable @RELEASE@ with 3.0.3.10<br>
+Info[07/08 10:12:39] : Substitute macro variable @EXTRA_NAME@ with -DmitryAndreev<br>
+Info[07/08 10:12:39] : Substitute macro variable @ARCH@ with armv7hl<br>
+Info[07/08 10:12:39] : Retrieving repo metadata:<br>
+Info[07/08 10:12:39] : filename /var/tmp/mic/cache/adaptation-community-mido-3.0.3.10/e34e5ee48406079e1aa270b634976aa956907c4a202d7cc1fc549c3342580c99-primary.xml.gz gunzipped<br>
+Info[07/08 10:12:39] : filename is now /var/tmp/mic/cache/adaptation-community-mido-3.0.3.10/e34e5ee48406079e1aa270b634976aa956907c4a202d7cc1fc549c3342580c99-primary.xml<br>
+Info[07/08 10:12:39] : filename /var/tmp/mic/cache/adaptation-community-mido-3.0.3.10/2dc0b522c29a004af7a3f7f812a374446f79d50742ae241cea41a819280e06c9-patterns.xml.gz gunzipped<br>
+Info[07/08 10:12:39] : filename is now /var/tmp/mic/cache/adaptation-community-mido-3.0.3.10/2dc0b522c29a004af7a3f7f812a374446f79d50742ae241cea41a819280e06c9-patterns.xml<br>
+Info[07/08 10:12:42] : Retrieving a7953e2ebcc0e38e2e5dc24311f12ec385da80b24e591f884c5f0139a5815483-primary.xml.gz ...Info[07/08 10:12:42] : filename /var/tmp/mic/cache/adaptation-community-common-mido-3.0.3.10/a7953e2ebcc0e38e2e5dc24311f12ec385da80b24e591f884c5f0139a5815483-primary.xml.gz gunzipped<br>
+Info[07/08 10:12:42] : filename is now /var/tmp/mic/cache/adaptation-community-common-mido-3.0.3.10/a7953e2ebcc0e38e2e5dc24311f12ec385da80b24e591f884c5f0139a5815483-primary.xml<br>
+Info[07/08 10:12:45] : Retrieving primary.xml.gz ...Info[07/08 10:12:45] : filename /var/tmp/mic/cache/apps-3.0.3.10/primary.xml.gz gunzipped<br>
+Info[07/08 10:12:45] : filename is now /var/tmp/mic/cache/apps-3.0.3.10/primary.xml<br>
+Info[07/08 10:12:45] : Retrieving primary.xml.gz ...Info[07/08 10:12:45] : filename /var/tmp/mic/cache/hotfixes-3.0.3.10/primary.xml.gz gunzipped<br>
+Info[07/08 10:12:45] : filename is now /var/tmp/mic/cache/hotfixes-3.0.3.10/primary.xml<br>
+Info[07/08 10:12:46] : Retrieving primary.xml.gz ...Info[07/08 10:12:47] : filename /var/tmp/mic/cache/jolla-3.0.3.10/primary.xml.gz gunzipped<br>
+Info[07/08 10:12:47] : filename is now /var/tmp/mic/cache/jolla-3.0.3.10/primary.xml<br>
+Info[07/08 10:12:47] : Retrieving patterns.xml.gz ...Info[07/08 10:12:47] : filename /var/tmp/mic/cache/jolla-3.0.3.10/patterns.xml.gz gunzipped<br>
+Info[07/08 10:12:47] : filename is now /var/tmp/mic/cache/jolla-3.0.3.10/patterns.xml<br>
+Info[07/08 10:12:47] : Retrieving repomd.xml.key ...[07/08 10:12:47] :  DONE<br>
+Warning[07/08 10:12:48] : Can't get version info of /usr/bin/qemu-arm-static, please make sure it's higher than 0.13.0<br>
+Info[07/08 10:12:48] : Running pre scripts ...<br>
+Info[07/08 10:12:48] : Refreshing repository: adaptation-community-common-mido-3.0.3.10 ...<br>
+Info[07/08 10:12:50] : Refreshing repository: hotfixes-3.0.3.10 ...<br>
+Info[07/08 10:12:53] : Refreshing repository: jolla-3.0.3.10 ...<br>
+Info[07/08 10:12:57] : Refreshing repository: adaptation-community-mido-3.0.3.10 ...<br>
+Info[07/08 10:12:58] : Refreshing repository: apps-3.0.3.10 ...<br>
+Info[07/08 10:13:01] : zypp architecture is <armv7hl><br>
+Info[07/08 10:13:01] : marking pattern jolla-configuration-mido 1-1 to be installed<br>
+Info[07/08 10:13:01] : Checking packages cache and packages integrity ...<br>
+Info[07/08 10:13:01] : 711 packages to be installed, 0 packages gotten from cache, 711 packages to be downloaded<br>
+Info[07/08 10:13:01] : Downloading packages ...<br>
+Info[07/08 10:16:33] : Installing: dbus                 +++++++++++++++++                  [367/711]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:16:34] : Installing: dconf                +++++++++++++++++                  [372/711]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+Info[07/08 10:16:34] : Installing: nemo-qml-plugin-thum +++++++++++++++++                  [375/711]add-oneshot: /etc/oneshot.d/0/remove-obsolete-nemothumbs-cache-dir - job saved OK<br>
+Info[07/08 10:16:35] : Installing: buteo-syncfw-qt5     ++++++++++++++++++                 [379/711]add-oneshot: /etc/oneshot.d/0/msyncd-storage-perm - job saved OK<br>
+su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:16:36] : Installing: ofono                ++++++++++++++++++                 [382/711]Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:16:36] : Installing: statefs              ++++++++++++++++++                 [385/711]Loader register default<br>
+Register default<br>
+add-oneshot: /etc/oneshot.d/0/statefs-02-register-default - job saved OK<br>
+Running in chroot, ignoring request.<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:16:37] : Installing: timed-qt5            ++++++++++++++++++                 [386/711]add-oneshot: /etc/oneshot.d/0/setcaps-timed-qt5.sh - job saved OK<br>
+su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:16:39] : Installing: statefs-loader-qt5   ++++++++++++++++++                 [392/711]Loader register qt5<br>
+Register qt5<br>
+add-oneshot: /etc/oneshot.d/0/statefs-02-register-qt5 - job saved OK<br>
+Info[07/08 10:16:39] : Installing: statefs-provider-ofo ++++++++++++++++++                 [393/711]Register ofono<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-ofono - job saved OK<br>
+Info[07/08 10:16:39] : Installing: signon-qt5           ++++++++++++++++++                 [395/711]add-oneshot: /etc/oneshot.d/0/signon-storage-perm - job saved OK<br>
+Info[07/08 10:16:40] : Installing: statefs-provider-pow ++++++++++++++++++                 [398/711]Register power_udev<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-power_udev - job saved OK<br>
+Info[07/08 10:16:41] : Installing: sensorfw-qt5         +++++++++++++++++++                [404/711]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:16:41] : Installing: sailfish-content-gra +++++++++++++++++++                [405/711]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+Info[07/08 10:16:41] : Installing: jolla-ambient-sound- +++++++++++++++++++                [406/711]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+Info[07/08 10:16:42] : Installing: contactsd            +++++++++++++++++++                [409/711]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:16:52] : Installing: connman              ++++++++++++++++++++               [426/711]Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:16:53] : Installing: connectionagent-qt5  ++++++++++++++++++++               [430/711]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:16:55] : Installing: vault                ++++++++++++++++++++               [440/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:16:56] : Installing: ssu-vendor-data-joll +++++++++++++++++++++              [444/711]add-oneshot: /etc/oneshot.d/0/ssu-update-repos - job saved OK<br>
+Info[07/08 10:16:57] : Installing: statefs-provider-con +++++++++++++++++++++              [455/711]Register connman<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-connman - job saved OK<br>
+Info[07/08 10:16:58] : Installing: statefs-provider-mce ++++++++++++++++++++++             [472/711]Register mce<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-mce - job saved OK<br>
+Info[07/08 10:16:58] : Installing: bluez5-obexd         ++++++++++++++++++++++             [477/711]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:16:59] : Installing: bluez5               ++++++++++++++++++++++             [478/711]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:17:00] : Installing: statefs-provider-blu ++++++++++++++++++++++             [482/711]Register bluez<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-bluez - job saved OK<br>
+Info[07/08 10:17:00] : Installing: mms-engine           +++++++++++++++++++++++            [485/711]Warning: Schema ?org.freedesktop.Geoclue? has path ?/apps/geoclue/?.  Paths starting with ?/apps/?, ?/desktop/? or ?/system/? are deprecated.<br>
+<br>
+Info[07/08 10:17:00] : Installing: thumbnaild           +++++++++++++++++++++++            [488/711]add-oneshot: /etc/oneshot.d/0/remove-obsolete-tumbler-cache-dir - job saved OK<br>
+Info[07/08 10:17:01] : Installing: ngfd                 +++++++++++++++++++++++            [496/711]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:05] : Installing: jolla-common-configu ++++++++++++++++++++++++           [513/711]add-oneshot: /etc/oneshot.d/0/preload-privileged - job saved OK<br>
+add-oneshot: /etc/oneshot.d/0/remove-swap-from-fstab - job saved OK<br>
+Info[07/08 10:17:05] : Installing: dsme                 ++++++++++++++++++++++++           [514/711]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:17:05] : Installing: mce                  ++++++++++++++++++++++++           [515/711]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:17:06] : Installing: buteo-syncfw-qt5-msy ++++++++++++++++++++++++           [517/711]Warning: Schema ?org.freedesktop.Geoclue? has path ?/apps/geoclue/?.  Paths starting with ?/apps/?, ?/desktop/? or ?/system/? are deprecated.<br>
+<br>
+Info[07/08 10:17:06] : Installing: sociald              ++++++++++++++++++++++++           [518/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:06] : Installing: buteo-sync-plugin-ca ++++++++++++++++++++++++           [519/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:07] : Installing: buteo-sync-plugin-ca ++++++++++++++++++++++++           [520/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:08] : Installing: libsailfishkeyprovid +++++++++++++++++++++++++          [530/711]add-oneshot: /etc/oneshot.d/0/libsailfishkeyprovider-data-jolla-privileges - job saved OK<br>
+Info[07/08 10:17:08] : Installing: sociald-vk-posts     +++++++++++++++++++++++++          [533/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:08] : Installing: sociald-vk-notificat +++++++++++++++++++++++++          [534/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:09] : Installing: sociald-vk-images    +++++++++++++++++++++++++          [535/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:09] : Installing: sociald-vk-contacts  +++++++++++++++++++++++++          [536/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:10] : Installing: sociald-vk-calendars +++++++++++++++++++++++++          [537/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:10] : Installing: sociald-twitter-post +++++++++++++++++++++++++          [538/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:11] : Installing: sociald-twitter-noti +++++++++++++++++++++++++          [539/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:11] : Installing: sociald-onedrive-sig +++++++++++++++++++++++++          [540/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:12] : Installing: sociald-onedrive-ima +++++++++++++++++++++++++          [541/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:12] : Installing: sociald-onedrive-bac +++++++++++++++++++++++++          [542/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:12] : Installing: sociald-google-signo +++++++++++++++++++++++++          [543/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:13] : Installing: sociald-google-conta +++++++++++++++++++++++++          [544/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:13] : Installing: sociald-google-calen +++++++++++++++++++++++++          [545/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:14] : Installing: sociald-facebook-sig +++++++++++++++++++++++++          [547/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:14] : Installing: sociald-facebook-ima ++++++++++++++++++++++++++         [548/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:15] : Installing: sociald-facebook-con ++++++++++++++++++++++++++         [549/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:15] : Installing: sociald-facebook-cal ++++++++++++++++++++++++++         [550/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:16] : Installing: sociald-dropbox-imag ++++++++++++++++++++++++++         [551/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:16] : Installing: sociald-dropbox-back ++++++++++++++++++++++++++         [552/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:17] : Installing: simkit               ++++++++++++++++++++++++++         [553/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:18] : Installing: jolla-devicelock-dae ++++++++++++++++++++++++++         [556/711]qemu: Unsupported syscall: 384<br>
+Created symlink from /etc/systemd/system/nemo-devicelock.service to /lib/systemd/system/jolla-devicelock-encsfa.service.<br>
+<br>
+Info[07/08 10:17:18] : Installing: voicecall-qt5        ++++++++++++++++++++++++++         [558/711]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:19] : Installing: jolla-sessions-qt5   ++++++++++++++++++++++++++         [561/711]add-oneshot: /etc/oneshot.d/0/zz-env-dir-for-users - job saved OK<br>
+Info[07/08 10:17:19] : Installing: statefs-provider-pro ++++++++++++++++++++++++++         [563/711]Register profile<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-profile - job saved OK<br>
+Info[07/08 10:17:20] : Installing: ohm-plugins-misc     ++++++++++++++++++++++++++         [567/711]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:20] : Installing: ohm                  +++++++++++++++++++++++++++        [576/711]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:17:21] : Installing: udisks2              +++++++++++++++++++++++++++        [587/711]add-oneshot: /etc/oneshot.d/0/late/udisks2-symlink-mount-path - job saved OK<br>
+Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+qemu: Unsupported syscall: 384<br>
+<br>
+Info[07/08 10:17:22] : Installing: tracker              +++++++++++++++++++++++++++        [589/711]add-oneshot: /etc/oneshot.d/default/tracker-configs.sh - job saved OK<br>
+Warning: Schema ?org.freedesktop.Geoclue? has path ?/apps/geoclue/?.  Paths starting with ?/apps/?, ?/desktop/? or ?/system/? are deprecated.<br>
+su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:23] : Installing: sailfish-content-gal ++++++++++++++++++++++++++++       [591/711]add-oneshot: /etc/oneshot.d/default/preload-content - job saved OK<br>
+add-oneshot: /etc/oneshot.d/0/preload-copyright - job saved OK<br>
+add-oneshot: /etc/oneshot.d/0/preload-apks - job saved OK<br>
+Info[07/08 10:17:24] : Installing: jolla-firstsession   ++++++++++++++++++++++++++++       [593/711]add-oneshot: /etc/oneshot.d/default/00-initial-user-setup - job saved OK<br>
+add-oneshot: /etc/oneshot.d/default/zz-initialize-tracker-index - job saved OK<br>
+add-oneshot: /etc/oneshot.d/0/00-disable-defaultpasswords - job saved OK<br>
+Info[07/08 10:17:25] : Installing: jolla-signon-ui      ++++++++++++++++++++++++++++       [605/711]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:25] : Installing: jolla-settings       ++++++++++++++++++++++++++++       [606/711]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+Info[07/08 10:17:26] : Installing: jolla-settings-netwo ++++++++++++++++++++++++++++       [609/711]add-oneshot: /etc/oneshot.d/default/settings-cleanup-deprecated-dconf - job saved OK<br>
+Could not parse file "/usr/share/applications/simkit.desktop": Key file does not have group ?Desktop Entry?<br>
+<br>
+Info[07/08 10:17:35] : Installing: lipstick-jolla-home- ++++++++++++++++++++++++++++       [610/711]add-oneshot: /etc/oneshot.d/default/enable-lipstick-hints - job saved OK<br>
+Info[07/08 10:17:36] : Installing: usb-moded            +++++++++++++++++++++++++++++      [612/711]Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:17:36] : Installing: jolla-developer-mode +++++++++++++++++++++++++++++      [614/711]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:17:36] : Installing: jolla-settings-syste +++++++++++++++++++++++++++++      [616/711]add-oneshot: /etc/oneshot.d/default/late/jolla-settings-system-gps-clean - job saved OK<br>
+Info[07/08 10:17:39] : Installing: sailfish-content-amb ++++++++++++++++++++++++++++++     [633/711]add-oneshot: /etc/oneshot.d/default/late/preload-ambience - job saved OK<br>
+Info[07/08 10:17:40] : Installing: jolla-gallery        ++++++++++++++++++++++++++++++     [649/711]add-oneshot: /etc/oneshot.d/default/enable-gallery-hints - job saved OK<br>
+Info[07/08 10:17:40] : Installing: jolla-camera         ++++++++++++++++++++++++++++++     [653/711]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+add-oneshot: /etc/oneshot.d/default/camera-enable-hints - job saved OK<br>
+Info[07/08 10:17:41] : Installing: voicecall-ui-jolla   +++++++++++++++++++++++++++++++    [665/711]add-oneshot: /etc/oneshot.d/default/enable-voicecall-hints - job saved OK<br>
+su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:42] : Installing: jolla-messages       +++++++++++++++++++++++++++++++    [669/711]add-oneshot: /etc/oneshot.d/default/enable-messages-hints - job saved OK<br>
+Info[07/08 10:17:43] : Installing: droid-config-mido-sa ++++++++++++++++++++++++++++++++   [681/711]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+Info[07/08 10:17:44] : Installing: droid-hal-mido-0.0.6 ++++++++++++++++++++++++++++++++   [683/711]creating droid users and groups<br>
+groupadd: group 'bluetooth' already exists<br>
+groupadd: group 'input' already exists<br>
+useradd: group '1004' does not exist<br>
+groupadd: group 'audio' already exists<br>
+groupadd: group 'mtp' already exists<br>
+groupadd: group 'nobody' already exists<br>
+useradd: user 'nobody' already exists<br>
+<br>
+Info[07/08 10:18:00] : Installing: droid-hal-mido-kerne ++++++++++++++++++++++++++++++++   [684/711]depmod: WARNING: could not open /lib/modules/3.18.31-perf-g3180dc01dc9-dirty/modules.order: No such file or directory<br>
+depmod: WARNING: could not open /lib/modules/3.18.31-perf-g3180dc01dc9-dirty/modules.builtin: No such file or directory<br>
+<br>
+Info[07/08 10:18:03] : Installing: sailfish-browser     ++++++++++++++++++++++++++++++++   [695/711]add-oneshot: /etc/oneshot.d/default/late/browser-update-default-data - job saved OK<br>
+Info[07/08 10:18:04] : Installing: csd                  +++++++++++++++++++++++++++++++++  [697/711]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+add-oneshot: /etc/oneshot.d/default/late/csd-cleanup-database - job saved OK<br>
+Info[07/08 10:18:04] : Installing: mce-plugin-libhybris +++++++++++++++++++++++++++++++++  [700/711]Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:18:05] : Installing: ngfd-plugin-native-v +++++++++++++++++++++++++++++++++  [702/711]qemu: Unsupported syscall: 311<br>
+qemu: Unsupported syscall: 311<br>
+su: failed to execute /sbin/nologin: Resource temporarily unavailable<br>
+qemu: Unsupported syscall: 311<br>
+qemu: Unsupported syscall: 311<br>
+su: failed to execute /sbin/nologin: Resource temporarily unavailable<br>
+<br>
+Info[07/08 10:18:07] : Installing: strace               ++++++++++++++++++++++++++++++++++ [711/711]<br>
+Register timed<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-timed - job saved OK<br>
+Info[07/08 10:18:08] : Copying attachment files...<br>
+Info[07/08 10:18:09] : Applying configurations ...<br>
+Removing password for user root.<br>
+passwd: Success<br>
+Info[07/08 10:18:09] : Running post scripts ...<br>
+Rebuilding db using target rpm..done<br>
+qemu: Unsupported syscall: 311<br>
+oneshot: /etc/oneshot.d/0/00-disable-defaultpasswords - OK<br>
+Unsupported ancillary data: 1/2<br>
+<br>
+(/usr/bin/dconf:7218): GLib-GIO-CRITICAL **: 15:18:14.846: g_dbus_connection_emit_signal: assertion 'object_path != NULL && g_variant_is_object_path (object_path)' failed<br>
+Unsupported ancillary data: 1/2<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/0/dconf-update - FAIL<br>
+oneshot: /etc/oneshot.d/0/groupadd-user.later - OK<br>
+changed ownership of `/usr/share/libsailfishkeyprovider/storedkeys.ini' to nemo:privileged<br>
+oneshot: /etc/oneshot.d/0/libsailfishkeyprovider-data-jolla-privileges - OK<br>
+oneshot: /etc/oneshot.d/0/msyncd-storage-perm - FAIL<br>
+Reading file: /usr/share/jolla-preload-content/2k<br>
+Using content configuration(s): 2k<br>
+Can't reach the default host. Using ssu credentials to download demo content.<br>
+Device is not registered, can't update credentials<br>
+Failed to parse ssu credentials.<br>
+Downloading ...<br>
+-=#=- #    #      #<br>
+curl: (22) The requested URL returned error: 401<br>
+Failed to download a file: https://dav.jollamobile.com/democontent//2k/apks/apks.list<br>
+oneshot: /etc/oneshot.d/0/preload-apks - OK<br>
+Reading file: /usr/share/jolla-preload-content/2k<br>
+Using content configuration(s): 2k<br>
+Can't reach the default host. Using ssu credentials to download demo content.<br>
+Device is not registered, can't update credentials<br>
+Failed to parse ssu credentials.<br>
+Downloading ...<br>
+#=O#-  #    #<br>
+curl: (22) The requested URL returned error: 401<br>
+Failed to download a file: https://dav.jollamobile.com/democontent//2k/copyright/copyrights.list<br>
+oneshot: /etc/oneshot.d/0/preload-copyright - OK<br>
+oneshot: /etc/oneshot.d/0/preload-privileged - OK<br>
+oneshot: /etc/oneshot.d/0/remove-obsolete-nemothumbs-cache-dir - OK<br>
+oneshot: /etc/oneshot.d/0/remove-obsolete-tumbler-cache-dir - OK<br>
+oneshot: /etc/oneshot.d/0/remove-swap-from-fstab - OK<br>
+oneshot: /etc/oneshot.d/0/setcaps-timed-qt5.sh - OK<br>
+oneshot: /etc/oneshot.d/0/signon-storage-perm - FAIL<br>
+oneshot: /etc/oneshot.d/0/ssu-update-repos - FAIL<br>
+Dumping loader "/usr/lib/statefs/libloader-default.so"<br>
+Dumping loader "/usr/lib/statefs/libloader-default.so"<br>
+Trying to dump default provider "/usr/lib/statefs/libprovider-power_udev.so"<br>
+DTOR:/usr/lib/statefs/libprovider-power_udev.so<br>
+provider-udev<br>
+Dumping loader "/usr/lib/statefs/libloader-inout.so"<br>
+Dumping loader "/usr/lib/statefs/libloader-inout.so"<br>
+Trying to dump inout provider "/etc/timed-statefs.conf"<br>
+provider-timed-qt5<br>
+oneshot: /etc/oneshot.d/0/statefs-02-register-default - OK<br>
+Dumping loader "/usr/lib/statefs/libloader-qt5.so"<br>
+Dumping loader "/usr/lib/statefs/libloader-qt5.so"<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-profile.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-profile.so<br>
+provider-profile<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-connman.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-connman.so<br>
+provider-connman<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-ofono.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-ofono.so<br>
+provider-ofono<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-mce.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-mce.so<br>
+provider-mce<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-bluez.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-bluez.so<br>
+provider-bluez<br>
+oneshot: /etc/oneshot.d/0/statefs-02-register-qt5 - OK<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-bluez.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-bluez.so<br>
+provider-bluez<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-bluez - OK<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-connman.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-connman.so<br>
+provider-connman<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-connman - OK<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-mce.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-mce.so<br>
+provider-mce<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-mce - OK<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-ofono.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-ofono.so<br>
+provider-ofono<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-ofono - OK<br>
+Trying to dump default provider "/usr/lib/statefs/libprovider-power_udev.so"<br>
+DTOR:/usr/lib/statefs/libprovider-power_udev.so<br>
+provider-udev<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-power_udev - OK<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-profile.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-profile.so<br>
+provider-profile<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-profile - OK<br>
+Trying to dump inout provider "/etc/timed-statefs.conf"<br>
+provider-timed-qt5<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-timed - OK<br>
+oneshot: /etc/oneshot.d/0/zz-env-dir-for-users - OK<br>
+qemu: Unsupported syscall: 311<br>
+qemu: Unsupported syscall: 384<br>
+oneshot: /etc/oneshot.d/100000/00-initial-user-setup - OK<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/100000/camera-enable-hints - OK<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/100000/enable-gallery-hints - OK<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/100000/enable-lipstick-hints - OK<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/100000/enable-messages-hints - OK<br>
+Unsupported ancillary data: 1/2<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/100000/enable-voicecall-hints - OK<br>
+Reading file: /usr/share/jolla-preload-content/2k<br>
+Using content configuration(s): 2k<br>
+Can't reach the default host. Using ssu credentials to download demo content.<br>
+WARNING: ssu.ini does not seem to be writable. Setting values might not work.<br>
+Device is not registered, can't update credentials<br>
+Failed to parse ssu credentials.<br>
+Downloading ...<br>
+#=O#-  #    #<br>
+curl: (22) The requested URL returned error: 401<br>
+Failed to download a file: https://dav.jollamobile.com/democontent//2k/videos/videos.list<br>
+find: /home/nemo/Pictures/Default: No such file or directory<br>
+oneshot: /etc/oneshot.d/100000/preload-content - OK<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/100000/settings-cleanup-deprecated-dconf - OK<br>
+tracker-configs.sh - returning FAIL to postpone oneshot to first boot<br>
+oneshot: /etc/oneshot.d/100000/tracker-configs.sh - FAIL<br>
+Starting miners…<br>
+Unsupported ancillary data: 1/2<br>
+  ✓ File System<br>
+  ✓ Extractor<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Unsupported ancillary data: 1/2<br>
+Unsupported ancillary data: 1/2<br>
+<br>
+(tracker search:8036): GLib-GIO-WARNING **: 15:19:14.580: Can't find module 'gconf' specified in GSETTINGS_BACKEND<br>
+Unsupported ancillary data: 1/2<br>
+qemu: Unsupported syscall: 384<br>
+Files:<br>
+<br>
+Found 0 PIDs…<br>
+oneshot: /etc/oneshot.d/100000/zz-initialize-tracker-index - OK<br>
+Changing release from latest to 3.0.3.10<br>
+Your device is now in release mode!<br>
+WARNING: DBus call failed, falling back to libssu: The permission of the setuid helper is not correct<br>
+Setting device mode from 4 to 4<br>
+WARNING: DBus call failed, falling back to libssu: The permission of the setuid helper is not correct<br>
+Warning[07/08 10:19:15] : Failed to terminate /proc/8055/root [Errno 2] No such file or directory: '/proc/8055/root'<br>
+Info[07/08 10:19:23] : Pack rootfs to /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev/sfe-mido-3.0.3.10-DmitryAndreev.tar.bz2. Please wait...<br>
+Info[07/08 10:20:51] : Running pack scripts ...<br>
+/home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev /home/stalker/hadk<br>
+/home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev/updater /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev /home/stalker/hadk<br>
+	zip warning: name not matched: sailfishos-mido-release-3.0.3.10-DmitryAndreev.ks<br>
+  adding: META-INF/com/google/android/update-binary (deflated 54%)<br>
+  adding: META-INF/com/google/android/updater-script (deflated 67%)<br>
+  adding: updater-unpack.sh (deflated 27%)<br>
+  adding: hybris-boot.img (deflated 2%)<br>
+  adding: sailfishos-mido-release-3.0.3.10-DmitryAndreev.tar.bz2 (deflated 0%)<br>
+/home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev /home/stalker/hadk<br>
+/home/stalker/hadk<br>
+Info[07/08 10:21:01] : The new image can be found here:<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev/Jolla-3.0.3.10-mido-armv7hl.ks<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev/Jolla-3.0.3.10-mido-armv7hl.ks<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev/Jolla-3.0.3.10-mido-armv7hl.packages<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev/Jolla-3.0.3.10-mido-armv7hl.urls<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev/os-release<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev/sailfishos-mido-release-3.0.3.10-DmitryAndreev.zip<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev/sfe-mido-3.0.3.10-DmitryAndreev.tar.bz2<br>
+<br>
+Info[07/08 10:21:02] : Finished.<br>
+</details><br>
+
+Пора попробовать установить нашу собранную систему на mido. Для этого нужно, чтобы был разблокирован загрузчик и установлен twrp (у меня установлена версия 3.3.0-1). Также нужно чтобы на компьютере был установлен adb и fastboot.<br>
+Далее действуем по инструкции с https://4pda.ru/forum/index.php?showtopic=809215&st=1160#entry80072510. Заходим в twrp, делаем полный бэкап и сохраняем это куданибудь
+Затем обязательно делаем форматирование
+```console
+TWRP: Wipe->Advanced Wipe->Выбираем Data->Repair or Change File System->Change File System->EXT2->Swipe to Change
+```
+<details>
+Updating partition details...<br>
+...done<br>
+Full SELinux support is present.<br>
+MTP Enabled<br>
+Formatting Data using mke2fs...<br>
+Done.<br>
+Failed to mount '/data' (Operation not supported on transport endpoint)<br>
+Unable to recreate /data/media folder.<br>
+Updating partition details...<br>
+Failed to mount '/data'  (Operation not supported on transport endpoint)<br>
+... done<br>
+Unable to mount storage<br>
+</details><br>
+
+```console
+TWRP: Wipe->Advanced Wipe->Выбираем Data->Repair or Change File System->Change File System->EXT4->Swipe to Change
+```
+<details>
+Formatting data using make_ext4fs<br>
+Updating partition details...<br>
+...done<br>
+</details><br>
+
+Выходим в главное меню и делаем Reboot->Recovery<br>
+Качаем следующие архивы с https://drive.google.com/drive/folders/1NNbT9LPJypFGSdhu-ykOz50-JHjqHAEt<br>
+- cm-14.1-mido-firmware-20170430.zip
+- lineage-14.1-20170921-nightly-mido-signed.zip
+
+
+Подключаем телефон (который должен находиться в recovery (twrp)) к компьютеру и проверяем подлючение
+```console
+HOST:~$ adb devices
+```
+<details>
+List of devices attached<br>
+6fcdaa929904	recovery<br>
+</details><br>
