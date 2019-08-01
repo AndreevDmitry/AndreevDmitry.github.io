@@ -15800,12 +15800,12 @@ PlatformSDK:~/hadk$ cat .repo/local_manifests/mido.xml
 <details>
 
 `<?xml version="1.0" encoding="UTF-8"?>`<br>
-<manifest><br>
-  <project path="device/xiaomi/mido" name="LineageOS/android_device_xiaomi_mido" revision="cm-14.1" /><br>
-  <project path="kernel/xiaomi/msm8953" name="LineageOS/android_kernel_xiaomi_msm8953" revision="cm-14.1" /><br>
-  <project path="vendor/xiaomi" name="TheMuppets/proprietary_vendor_xiaomi" revision="cm-14.1" /><br>
-  <project path="rpm/"name="AndreevDmitry/droid-hal-mido" revision="master" /><br>
-  <project path="hybris/droid-configs"name="AndreevDmitry/droid-config-mido" revision="master" /><br>
-  <project path="hybris/droid-hal-version-mido"name="AndreevDmitry/droid-hal-version-mido" revision="master" /><br>
-</manifest><br>
+`<manifest>`<br>
+`  <project path="device/xiaomi/mido" name="LineageOS/android_device_xiaomi_mido" revision="cm-14.1" />`<br>
+`  <project path="kernel/xiaomi/msm8953" name="LineageOS/android_kernel_xiaomi_msm8953" revision="cm-14.1" />`<br>
+`  <project path="vendor/xiaomi" name="TheMuppets/proprietary_vendor_xiaomi" revision="cm-14.1" />`<br>
+`  <project path="rpm/"name="AndreevDmitry/droid-hal-mido" revision="master" />`<br>
+`  <project path="hybris/droid-configs"name="AndreevDmitry/droid-config-mido" revision="master" />`<br>
+`  <project path="hybris/droid-hal-version-mido"name="AndreevDmitry/droid-hal-version-mido" revision="master" />`<br>
+`</manifest>`<br>
 </details><br>
