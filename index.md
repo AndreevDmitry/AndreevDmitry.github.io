@@ -13652,7 +13652,233 @@ PlatformSDK:~/hadk$ sed "/$HA_REPO/i$HA_DEV --baseurl=file:\/\/$ANDROID_ROOT\/dr
 ```console
 PlatformSDK:~/hadk$ sudo mic create fs --arch=$PORT_ARCH --tokenmap=ARCH:$PORT_ARCH,RELEASE:$RELEASE,EXTRA_NAME:$EXTRA_NAME --record-pkgs=name,url --outdir=sfe-$DEVICE-$RELEASE$EXTRA_NAME --pack-to=sfe-$DEVICE-$RELEASE$EXTRA_NAME.tar.bz2 $ANDROID_ROOT/Jolla-@RELEASE@-$DEVICE-@ARCH@.ks
 ```
+<details>
 
+Info[07/08 10:18:05] : Installing: ngfd-plugin-native-v +++++++++++++++++++++++++++++++++  [702/711]qemu: Unsupported syscall: 311<br>
+qemu: Unsupported syscall: 311<br>
+su: failed to execute /sbin/nologin: Resource temporarily unavailable<br>
+qemu: Unsupported syscall: 311<br>
+qemu: Unsupported syscall: 311<br>
+su: failed to execute /sbin/nologin: Resource temporarily unavailable<br>
+<br>
+Info[07/08 10:18:07] : Installing: strace               ++++++++++++++++++++++++++++++++++ [711/711]<br>
+Register timed<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-timed - job saved OK<br>
+Info[07/08 10:18:08] : Copying attachment files...<br>
+Info[07/08 10:18:09] : Applying configurations ...<br>
+Removing password for user root.<br>
+passwd: Success<br>
+Info[07/08 10:18:09] : Running post scripts ...<br>
+Rebuilding db using target rpm..done<br>
+qemu: Unsupported syscall: 311<br>
+oneshot: /etc/oneshot.d/0/00-disable-defaultpasswords - OK<br>
+Unsupported ancillary data: 1/2<br>
+<br>
+(/usr/bin/dconf:7218): GLib-GIO-CRITICAL **: 15:18:14.846: g_dbus_connection_emit_signal: assertion 'object_path != NULL && g_variant_is_object_path (object_path)' failed<br>
+Unsupported ancillary data: 1/2<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/0/dconf-update - FAIL<br>
+oneshot: /etc/oneshot.d/0/groupadd-user.later - OK<br>
+changed ownership of `/usr/share/libsailfishkeyprovider/storedkeys.ini' to nemo:privileged<br>
+oneshot: /etc/oneshot.d/0/libsailfishkeyprovider-data-jolla-privileges - OK<br>
+oneshot: /etc/oneshot.d/0/msyncd-storage-perm - FAIL<br>
+Reading file: /usr/share/jolla-preload-content/2k<br>
+Using content configuration(s): 2k<br>
+Can't reach the default host. Using ssu credentials to download demo content.<br>
+Device is not registered, can't update credentials<br>
+Failed to parse ssu credentials.<br>
+Downloading ...<br>
+-=#=- #    #      #<br>
+curl: (22) The requested URL returned error: 401<br>
+Failed to download a file: https://dav.jollamobile.com/democontent//2k/apks/apks.list<br>
+oneshot: /etc/oneshot.d/0/preload-apks - OK<br>
+Reading file: /usr/share/jolla-preload-content/2k<br>
+Using content configuration(s): 2k<br>
+Can't reach the default host. Using ssu credentials to download demo content.<br>
+Device is not registered, can't update credentials<br>
+Failed to parse ssu credentials.<br>
+Downloading ...<br>
+#=O#-  #    #<br>
+curl: (22) The requested URL returned error: 401<br>
+Failed to download a file: https://dav.jollamobile.com/democontent//2k/copyright/copyrights.list<br>
+oneshot: /etc/oneshot.d/0/preload-copyright - OK<br>
+oneshot: /etc/oneshot.d/0/preload-privileged - OK<br>
+oneshot: /etc/oneshot.d/0/remove-obsolete-nemothumbs-cache-dir - OK<br>
+oneshot: /etc/oneshot.d/0/remove-obsolete-tumbler-cache-dir - OK<br>
+oneshot: /etc/oneshot.d/0/remove-swap-from-fstab - OK<br>
+oneshot: /etc/oneshot.d/0/setcaps-timed-qt5.sh - OK<br>
+oneshot: /etc/oneshot.d/0/signon-storage-perm - FAIL<br>
+oneshot: /etc/oneshot.d/0/ssu-update-repos - FAIL<br>
+Dumping loader "/usr/lib/statefs/libloader-default.so"<br>
+Dumping loader "/usr/lib/statefs/libloader-default.so"<br>
+Trying to dump default provider "/usr/lib/statefs/libprovider-power_udev.so"<br>
+DTOR:/usr/lib/statefs/libprovider-power_udev.so<br>
+provider-udev<br>
+Dumping loader "/usr/lib/statefs/libloader-inout.so"<br>
+Dumping loader "/usr/lib/statefs/libloader-inout.so"<br>
+Trying to dump inout provider "/etc/timed-statefs.conf"<br>
+provider-timed-qt5<br>
+oneshot: /etc/oneshot.d/0/statefs-02-register-default - OK<br>
+Dumping loader "/usr/lib/statefs/libloader-qt5.so"<br>
+Dumping loader "/usr/lib/statefs/libloader-qt5.so"<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-profile.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-profile.so<br>
+provider-profile<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-connman.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-connman.so<br>
+provider-connman<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-ofono.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-ofono.so<br>
+provider-ofono<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-mce.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-mce.so<br>
+provider-mce<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-bluez.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-bluez.so<br>
+provider-bluez<br>
+oneshot: /etc/oneshot.d/0/statefs-02-register-qt5 - OK<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-bluez.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-bluez.so<br>
+provider-bluez<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-bluez - OK<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-connman.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-connman.so<br>
+provider-connman<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-connman - OK<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-mce.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-mce.so<br>
+provider-mce<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-mce - OK<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-ofono.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-ofono.so<br>
+provider-ofono<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-ofono - OK<br>
+Trying to dump default provider "/usr/lib/statefs/libprovider-power_udev.so"<br>
+DTOR:/usr/lib/statefs/libprovider-power_udev.so<br>
+provider-udev<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-power_udev - OK<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-profile.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-profile.so<br>
+provider-profile<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-profile - OK<br>
+Trying to dump inout provider "/etc/timed-statefs.conf"<br>
+provider-timed-qt5<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-timed - OK<br>
+oneshot: /etc/oneshot.d/0/zz-env-dir-for-users - OK<br>
+qemu: Unsupported syscall: 311<br>
+qemu: Unsupported syscall: 384<br>
+oneshot: /etc/oneshot.d/100000/00-initial-user-setup - OK<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/100000/camera-enable-hints - OK<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/100000/enable-gallery-hints - OK<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/100000/enable-lipstick-hints - OK<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/100000/enable-messages-hints - OK<br>
+Unsupported ancillary data: 1/2<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/100000/enable-voicecall-hints - OK<br>
+Reading file: /usr/share/jolla-preload-content/2k<br>
+Using content configuration(s): 2k<br>
+Can't reach the default host. Using ssu credentials to download demo content.<br>
+WARNING: ssu.ini does not seem to be writable. Setting values might not work.<br>
+Device is not registered, can't update credentials<br>
+Failed to parse ssu credentials.<br>
+Downloading ...<br>
+#=O#-  #    #<br>
+curl: (22) The requested URL returned error: 401<br>
+Failed to download a file: https://dav.jollamobile.com/democontent//2k/videos/videos.list<br>
+find: /home/nemo/Pictures/Default: No such file or directory<br>
+oneshot: /etc/oneshot.d/100000/preload-content - OK<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/100000/settings-cleanup-deprecated-dconf - OK<br>
+tracker-configs.sh - returning FAIL to postpone oneshot to first boot<br>
+oneshot: /etc/oneshot.d/100000/tracker-configs.sh - FAIL<br>
+Starting miners…<br>
+Unsupported ancillary data: 1/2<br>
+  ✓ File System<br>
+  ✓ Extractor<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Unsupported ancillary data: 1/2<br>
+Unsupported ancillary data: 1/2<br>
+<br>
+(tracker search:8036): GLib-GIO-WARNING **: 15:19:14.580: Can't find module 'gconf' specified in GSETTINGS_BACKEND<br>
+Unsupported ancillary data: 1/2<br>
+qemu: Unsupported syscall: 384<br>
+Files:<br>
+<br>
+Found 0 PIDs…<br>
+oneshot: /etc/oneshot.d/100000/zz-initialize-tracker-index - OK<br>
+Changing release from latest to 3.0.3.10<br>
+Your device is now in release mode!<br>
+WARNING: DBus call failed, falling back to libssu: The permission of the setuid helper is not correct<br>
+Setting device mode from 4 to 4<br>
+WARNING: DBus call failed, falling back to libssu: The permission of the setuid helper is not correct<br>
+Warning[07/08 10:19:15] : Failed to terminate /proc/8055/root [Errno 2] No such file or directory: '/proc/8055/root'<br>
+Info[07/08 10:19:23] : Pack rootfs to /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev/sfe-mido-3.0.3.10-DmitryAndreev.tar.bz2. Please wait...<br>
+Info[07/08 10:20:51] : Running pack scripts ...<br>
+/home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev /home/stalker/hadk<br>
+/home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev/updater /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev /home/stalker/hadk<br>
+	zip warning: name not matched: sailfishos-mido-release-3.0.3.10-DmitryAndreev.ks<br>
+  adding: META-INF/com/google/android/update-binary (deflated 54%)<br>
+  adding: META-INF/com/google/android/updater-script (deflated 67%)<br>
+  adding: updater-unpack.sh (deflated 27%)<br>
+  adding: hybris-boot.img (deflated 2%)<br>
+  adding: sailfishos-mido-release-3.0.3.10-DmitryAndreev.tar.bz2 (deflated 0%)<br>
+/home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev /home/stalker/hadk<br>
+/home/stalker/hadk<br>
+Info[07/08 10:21:01] : The new image can be found here:<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev/Jolla-3.0.3.10-mido-armv7hl.ks<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev/Jolla-3.0.3.10-mido-armv7hl.ks<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev/Jolla-3.0.3.10-mido-armv7hl.packages<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev/Jolla-3.0.3.10-mido-armv7hl.urls<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev/os-release<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev/sailfishos-mido-release-3.0.3.10-DmitryAndreev.zip<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev/sfe-mido-3.0.3.10-DmitryAndreev.tar.bz2<br>
+<br>
+Info[07/08 10:21:02] : Finished.<br>
+</details><br>
 
 Пора попробовать установить нашу собранную систему на mido. Для этого нужно, чтобы был разблокирован загрузчик и установлен twrp (у меня установлена версия 3.3.0-1). Также нужно чтобы на компьютере был установлен adb и fastboot.<br>
 Далее действуем по инструкции с https://4pda.ru/forum/index.php?showtopic=809215&st=1160#entry80072510. Заходим в twrp, делаем полный бэкап и сохраняем это куданибудь
