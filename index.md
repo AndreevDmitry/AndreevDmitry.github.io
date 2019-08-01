@@ -15913,8 +15913,11 @@ PlatformSDK:~/hadk/rpm$ git commit -m "Add aarch64 target"
 [master 3453226] Add aarch64 target<br>
  1 file changed, 2 insertions(+)<br>
 </details><br>
-PlatformSDK:~/hadk/rpm$ git push droid-hal-mido master<br>
-<details><br>
+
+```console
+PlatformSDK:~/hadk/rpm$ git push droid-hal-mido master
+```
+<details>
 Username for 'https://github.com': AndreevDmitry<br>
 Password for 'https://AndreevDmitry@github.com':<br>
 Counting objects: 5, done.<br>
@@ -15925,4 +15928,35 @@ Total 3 (delta 2), reused 0 (delta 0)<br>
 remote: Resolving deltas: 100% (2/2), completed with 2 local objects.<br>
 To https://github.com/AndreevDmitry/droid-hal-mido.git<br>
    ad8ef90..3453226  master -> master<br>
+</details><br>
+
+Запускаем снова сборку пакетов
+```console
+PlatformSDK:~/hadk/rpm$ cd ..
+PlatformSDK:~/hadk$ rpm/dhd/helpers/build_packages.sh
+```
+<details>
+* Building rpm/droid-hal-mido.spec<br>
+   /init.qcom.usb.sh<br>
+   /property_contexts<br>
+   /sdcard<br>
+   /selinux_version<br>
+   /service_contexts<br>
+   /vendor<br>
+<br>
+<br>
+RPM build errors:<br>
+    Installed (but unpackaged) file(s) found:<br>
+   /bugreports<br>
+   /d<br>
+   /file_contexts.bin<br>
+   /init.qcom.sh<br>
+   /init.qcom.usb.sh<br>
+   /property_contexts<br>
+   /sdcard<br>
+   /selinux_version<br>
+   /service_contexts<br>
+   /vendor<br>
+* Check /home/stalker/hadk/droid-hal-mido.log for full log.<br>
+!! building of package failed<br>
 </details><br>
