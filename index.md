@@ -13653,6 +13653,20 @@ PlatformSDK:~/hadk$ sed "/$HA_REPO/i$HA_DEV --baseurl=file:\/\/$ANDROID_ROOT\/dr
 PlatformSDK:~/hadk$ sudo mic create fs --arch=$PORT_ARCH --tokenmap=ARCH:$PORT_ARCH,RELEASE:$RELEASE,EXTRA_NAME:$EXTRA_NAME --record-pkgs=name,url --outdir=sfe-$DEVICE-$RELEASE$EXTRA_NAME --pack-to=sfe-$DEVICE-$RELEASE$EXTRA_NAME.tar.bz2 $ANDROID_ROOT/Jolla-@RELEASE@-$DEVICE-@ARCH@.ks
 ```
 <details>
+[07/08 10:12:39] : mic 0.14 (Sailfish OS 3.0.3.10 (Hossa))<br>
+Info[07/08 10:12:39] : Substitute macro variable @RELEASE@ with 3.0.3.10<br>
+Info[07/08 10:12:39] : Substitute macro variable @EXTRA_NAME@ with -DmitryAndreev<br>
+Info[07/08 10:12:39] : Substitute macro variable @ARCH@ with armv7hl<br>
+Info[07/08 10:12:39] : Retrieving repo metadata:<br>
+Info[07/08 10:12:39] : filename /var/tmp/mic/cache/adaptation-community-mido-3.0.3.10/e34e5ee48406079e1aa270b634976aa956907c4a202d7cc1fc549c3342580c99-primary.xml.gz gunzipped<br>
+Info[07/08 10:12:39] : filename is now /var/tmp/mic/cache/adaptation-community-mido-3.0.3.10/e34e5ee48406079e1aa270b634976aa956907c4a202d7cc1fc549c3342580c99-primary.xml<br>
+Info[07/08 10:12:39] : filename /var/tmp/mic/cache/adaptation-community-mido-3.0.3.10/2dc0b522c29a004af7a3f7f812a374446f79d50742ae241cea41a819280e06c9-patterns.xml.gz gunzipped<br>
+Info[07/08 10:12:39] : filename is now /var/tmp/mic/cache/adaptation-community-mido-3.0.3.10/2dc0b522c29a004af7a3f7f812a374446f79d50742ae241cea41a819280e06c9-patterns.xml<br>
+Info[07/08 10:12:42] : Retrieving a7953e2ebcc0e38e2e5dc24311f12ec385da80b24e591f884c5f0139a5815483-primary.xml.gz ...Info[07/08 10:12:42] : filename /var/tmp/mic/cache/adaptation-community-common-mido-3.0.3.10/a7953e2ebcc0e38e2e5dc24311f12ec385da80b24e591f884c5f0139a5815483-primary.xml.gz gunzipped<br>
+Info[07/08 10:12:42] : filename is now /var/tmp/mic/cache/adaptation-community-common-mido-3.0.3.10/a7953e2ebcc0e38e2e5dc24311f12ec385da80b24e591f884c5f0139a5815483-primary.xml<br>
+Info[07/08 10:12:45] : Retrieving primary.xml.gz ...Info[07/08 10:12:45] : filename /var/tmp/mic/cache/apps-3.0.3.10/primary.xml.gz gunzipped<br>
+Info[07/08 10:12:45] : filename is now /var/tmp/mic/cache/apps-3.0.3.10/primary.xml<br>
+Info[07/08 10:12:45] : Retrieving primary.xml.gz ...Info[07/08 10:12:45] : filename /var/tmp/mic/cache/hotfixes-3.0.3.10/primary.xml.gz gunzipped<br>
 Info[07/08 10:12:45] : filename is now /var/tmp/mic/cache/hotfixes-3.0.3.10/primary.xml<br>
 Info[07/08 10:12:46] : Retrieving primary.xml.gz ...Info[07/08 10:12:47] : filename /var/tmp/mic/cache/jolla-3.0.3.10/primary.xml.gz gunzipped<br>
 Info[07/08 10:12:47] : filename is now /var/tmp/mic/cache/jolla-3.0.3.10/primary.xml<br>
@@ -13666,7 +13680,7 @@ Info[07/08 10:12:50] : Refreshing repository: hotfixes-3.0.3.10 ...<br>
 Info[07/08 10:12:53] : Refreshing repository: jolla-3.0.3.10 ...<br>
 Info[07/08 10:12:57] : Refreshing repository: adaptation-community-mido-3.0.3.10 ...<br>
 Info[07/08 10:12:58] : Refreshing repository: apps-3.0.3.10 ...<br>
-Info[07/08 10:13:01] : zypp architecture is <armv7hl><br>
+Info[07/08 10:13:01] : zypp architecture is armv7hl<br>
 Info[07/08 10:13:01] : marking pattern jolla-configuration-mido 1-1 to be installed<br>
 Info[07/08 10:13:01] : Checking packages cache and packages integrity ...<br>
 Info[07/08 10:13:01] : 711 packages to be installed, 0 packages gotten from cache, 711 packages to be downloaded<br>
