@@ -14149,3 +14149,127 @@ HOST:~$ adb devices
 List of devices attached<br>
 6fcdaa929904	recovery<br>
 </details><br>
+
+
+Закидываем файлы
+```console
+HOST:~$ adb push Downloads/cm-14.1-mido-firmware-20170430.zip /sdcard
+```
+<details>
+Downloads/cm-14.1-mido-firmware-20170430.zip: 1 file pushed. 25.5 MB/s (47435624 bytes in 1.775s)<br>
+</details><br>
+
+```console
+HOST:~$ adb push Downloads/lineage-14.1-20170921-nightly-mido-signed.zip /sdcard
+```
+<details>
+Downloads/lineage-14.1-20170921-nightly-mido-signed.zip: 1 file pushed. 25.2 MB/s (526878893 bytes in 19.926s)<br>
+</details><br>
+
+```console
+HOST:~$ adb push hadk/sfe-mido-3.0.3.10-DmitryAndreev/sailfishos-mido-release-3.0.3.10-DmitryAndreev.zip /sdcard
+```
+<details>
+hadk/sfe-mido-3.0.3.10-DmitryAndreev/sailfishos-mido-release-3.0.3...Andreev.zip: 1 file pushed. 25.5 MB/s (337923974 bytes in 12.643s)<br>
+</details><br>
+
+Устанавливаем CianogenMod
+```console
+TWRP: Install->Выбираем cm-14.1-mido-firmware-20170430.zip-> Swipe to confirm Flash
+```
+<details>
+Updating partition details...<br>
+...done<br>
+Full SELinux support is present.<br>
+MTP Enabled<br>
+Installing zip file '/sdcard/cm-14.1-mido-firmware-20170430.zip'<br>
+Checking for Digest file...<br>
+Patching firmware images...<br>
+package_extract file took 00s.<br>
+...<br>
+package_extract file took 00s.<br>
+SetMetadataFn took 00s.<br>
+RunProgramFn took 00s.<br>
+script succeeded: result was [1.000000]<br>
+Updating partition details...<br>
+...done<br>
+</details><br>
+
+```console
+TWRP: Install->Выбираем lineage-14.1-20170921-nightly-mido-signed.zip-> Swipe to confirm Flash
+```
+<details>
+Installing zip file '/sdcard/lineage-14.1-20170921-nightly-mido-signed.zip'<br>
+Checking for Digest file...<br>
+Target: xiaomi/mido/mido:7.0/NRD90M/V8.5.4.0.NCFMIED:user/release-keys<br>
+detected filesystem ext4 for /dev/block/bootdevice/by-name/system<br>
+Patching system image unconditionally...<br>
+detected filesystem ext4 for /dev/block/bootdevice/by-name/system<br>
+script succeeded: result was [1.000000]<br>
+Updating partition details...<br>
+...done<br>
+</details><br>
+
+
+Нажмем Reboot System и проверим визуально что Lineage 14.1 установился корректно.
+
+Проверили, перезагружаемся в TWRP и пытаемся установить наш собранный zip c Sailfish.
+```console
+TWRP: Install->Выбираем sailfishos-mido-release-3.0.3.10-DmitryAndreev.zip-> Swipe to confirm Flash
+```
+<details>
+Updating partition details...<br>
+...done<br>
+Full SELinux support is present.<br>
+MTP Enabled<br>
+Installing zip file '/sdcard/sailfishos-mido-release-3.0.3.10-DmitryAndreev.zip'<br>
+Checking for Digest file...<br>
+========================================<br>
+Hybris Installer<br>
+========================================<br>
+      Device: mido<br>
+     Version: 3.0.3.10<br>
+       Image: sailfishos-mido-release-3.0.3.10-DmitryAndreev.zip<br>
+        Size: 312M<br>
+  Partitions:<br>
+    /boot -> /dev/block/bootdevice/by-name/boot<br>
+    /data -> /dev/block/bootdevice/by-name/userdata<br>
+========================================<br>
+Device check succeeded, mounting filesystems ...<br>
+detected filesystem ext4 for /dev/block/bootdevice/by-name/userdata<br>
+mount: failed to mount /dev/block/bootdevice/by-name/userdata at /data: Device or resource busy<br>
+Copying filesystem archive ...<br>
+Copying installation script ...<br>
+Running installation script ...<br>
+Failed to extract filesystem!<br>
+Updater process ended with ERROR: 7<br>
+Error installation zip file '/sdcard/sailfishos-mido-release-3.0.3.10-DmitryAndreev.zip'<br>
+Updating partition details...<br>
+...done<br>
+</details><br>
+
+Итак видим, что распаковка прошла неудачно. Попробуем распаковать вручную
+```console
+HOST:~$ adb shell
+adb shell:~ # mkdir -p /sdcard/sailfish_unzip
+adb shell:~ # unzip /sdcard/sailfishos-mido-release-3.0.3.10-DmitryAndreev.zip -d /sdcard/sailfish_unzip
+```
+<details>
+Archive:  /sdcard/sailfishos-mido-release-3.0.3.10-DmitryAndreev.zip<br>
+  inflating: META-INF/com/google/android/update-binary<br>
+  inflating: META-INF/com/google/android/updater-script<br>
+  inflating: updater-unpack.sh<br>
+  inflating: hybris-boot.img<br>
+  inflating: sailfishos-mido-release-3.0.3.10-DmitryAndreev.tar.bz2<br>
+</details><br>
+
+```console
+adb shell:~ # rm -rf /data/.stowaways/sailfishos/
+adb shell:~ # mkdir -p /data/.stowaways/sailfishos
+adb shell:~ # tar --numeric-owner -xvjf /sdcard/sailfish_unzip/sailfishos-mido-release-3.0.3.10-DmitryAndreev.tar.bz2 -C /data/.stowaways/sailfishos/
+```
+<details>
+./<br>
+...<br>
+tar: short read<br>
+</details><br>
