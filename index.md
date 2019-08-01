@@ -15241,3 +15241,48 @@ PlatformSDK:~$ sb2 -t $VENDOR-$DEVICE-$PORT_ARCH ./test
 <details>
 Hello, world!<br>
 </details><br>
+
+
+Далее упакуем наши результаты сборки ядра Android как RPM пакет и создадим локальный RPM репозиторий.
+```console
+PlatformSDK:~$ cd $ANDROID_ROOT
+PlatformSDK:~/hadk$ mkdir rpm
+PlatformSDK:~/hadk$ cd rpm
+PlatformSDK:~/hadk/rpm$ git init
+```
+<details>
+Initialized empty Git repository in /home/stalker/hadk/rpm/.git/<br>
+PlatformSDK:~/hadk/rpm$ git submodule add https://github.com/mer-hybris/droid-hal-device dhd<br>
+Cloning into 'dhd'...<br>
+remote: Enumerating objects: 6, done.<br>
+remote: Counting objects: 100% (6/6), done.<br>
+remote: Compressing objects: 100% (4/4), done.<br>
+remote: Total 2847 (delta 2), reused 6 (delta 2), pack-reused 2841<br>
+Receiving objects: 100% (2847/2847), 669.47 KiB | 0 bytes/s, done.<br>
+Resolving deltas: 100% (1419/1419), done.<br>
+</details><br>
+
+```console
+PlatformSDK:~/hadk/rpm$ sed -e "s/@DEVICE@/mido/" \
+-e "s/@VENDOR@/xiaomi/" \
+-e "s/@DEVICE_PRETTY@/Redmi Note 4/" \
+-e "s/@VENDOR_PRETTY@/Xiaomi/" \
+dhd/droid-hal-@DEVICE@.spec.template > droid-hal-mido.spec
+PlatformSDK:~/hadk/rpm$ git add .
+PlatformSDK:~/hadk/rpm$ git commit -m "[dhd] Initial content"
+```
+<details>
+[master (root-commit) ccdedfa] [dhd] Initial content<br>
+ 3 files changed, 21 insertions(+)<br>
+ create mode 100644 .gitmodules<br>
+ create mode 160000 dhd<br>
+ create mode 100644 droid-hal-mido.spec<br>
+ </details><br>
+PlatformSDK:~/hadk/rpm$ git remote add droid-hal-mido https://github.com/AndreevDmitry/droid-hal-mido.git<br>
+PlatformSDK:~/hadk/rpm$ git push dhm master<br>
+<details><br>
+Username for 'https://github.com': AndreevDmitry<br>
+Password for 'https://AndreevDmitry@github.com':<br>
+remote: Repository not found.<br>
+fatal: repository 'https://github.com/AndreevDmitry/droid-hal-mido.git/' not found<br>
+</details><br>
