@@ -15401,3 +15401,165 @@ Enter host password for user 'AndreevDmitry':<br>
   "subscribers_count": 0<br>
 }<br>
 </details><br>
+
+Отправим изменения в созданный репозиторий
+```console
+PlatformSDK:~/hadk/rpm$ git push droid-hal-mido master
+```
+<details>
+Username for 'https://github.com': AndreevDmitry<br>
+Password for 'https://AndreevDmitry@github.com':<br>
+Counting objects: 4, done.<br>
+Delta compression using up to 16 threads.<br>
+Compressing objects: 100% (4/4), done.<br>
+Writing objects: 100% (4/4), 712 bytes | 0 bytes/s, done.<br>
+Total 4 (delta 0), reused 0 (delta 0)<br>
+To https://github.com/AndreevDmitry/droid-hal-mido.git<br>
+ * [new branch]      master -> master<br>
+</details><br>
+
+```console
+PlatformSDK:~/hadk/rpm$ cd -
+PlatformSDK:~/hadk$ mkdir -p hybris/droid-configs
+PlatformSDK:~/hadk$ cd hybris/droid-configs
+PlatformSDK:~/hadk/hybris/droid-configs$ git init
+```
+<details>
+Initialized empty Git repository in /home/stalker/hadk/hybris/droid-configs/.git/<br>
+PlatformSDK:~/hadk/hybris/droid-configs$ git submodule add https://github.com/mer-hybris/droid-hal-configs droid-configs-device<br>
+Cloning into 'droid-configs-device'...<br>
+remote: Enumerating objects: 1493, done.<br>
+remote: Total 1493 (delta 0), reused 0 (delta 0), pack-reused 1493<br>
+Receiving objects: 100% (1493/1493), 280.76 KiB | 0 bytes/s, done.<br>
+Resolving deltas: 100% (649/649), done.<br>
+</details><br>
+
+```console
+PlatformSDK:~/hadk/hybris/droid-configs$ mkdir rpm
+PlatformSDK:~/hadk/hybris/droid-configs$ sed -e "s/@DEVICE@/mido/" \
+-e "s/@VENDOR@/xiaomi/" \
+-e "s/@DEVICE_PRETTY@/Redmi Note 4/" \
+-e "s/@VENDOR_PRETTY@/Xiaomi/" \
+droid-configs-device/droid-config-@DEVICE@.spec.template > \
+rpm/droid-config-mido.spec
+PlatformSDK:~/hadk/hybris/droid-configs$ git add .
+PlatformSDK:~/hadk/hybris/droid-configs$ git commit -m "[dcd] Initial content"
+```
+<details>
+[master (root-commit) 8797725] [dcd] Initial content<br><br>
+ 3 files changed, 29 insertions(+)<br><br>
+ create mode 100644 .gitmodules<br><br>
+ create mode 160000 droid-configs-device<br><br>
+ create mode 100644 rpm/droid-config-mido.spec<br><br>
+ </details><br><br>
+
+ ```console
+PlatformSDK:~/hadk/hybris/droid-configs$ curl -u 'AndreevDmitry' https://api.github.com/user/repos -d'{"name":"droid-config-mido"}'
+```
+<details>
+Enter host password for user 'AndreevDmitry':<br>
+{<br>
+  "id": 194710241,<br>
+  "node_id": "MDEwOlJlcG9zaXRvcnkxOTQ3MTAyNDE=",<br>
+  "name": "droid-config-mido",<br>
+  "full_name": "AndreevDmitry/droid-config-mido",<br>
+  "private": false,<br>
+  "owner": {<br>
+    "login": "AndreevDmitry",<br>
+    "id": 46165782,<br>
+    "node_id": "MDQ6VXNlcjQ2MTY1Nzgy",<br>
+    "avatar_url": "https://avatars3.githubusercontent.com/u/46165782?v=4",<br>
+    "gravatar_id": "",<br>
+    "url": "https://api.github.com/users/AndreevDmitry",<br>
+    "html_url": "https://github.com/AndreevDmitry",<br>
+    "followers_url": "https://api.github.com/users/AndreevDmitry/followers",<br>
+    "following_url": "https://api.github.com/users/AndreevDmitry/following{/other_user}",<br>
+    "gists_url": "https://api.github.com/users/AndreevDmitry/gists{/gist_id}",<br>
+    "starred_url": "https://api.github.com/users/AndreevDmitry/starred{/owner}{/repo}",<br>
+    "subscriptions_url": "https://api.github.com/users/AndreevDmitry/subscriptions",<br>
+    "organizations_url": "https://api.github.com/users/AndreevDmitry/orgs",<br>
+    "repos_url": "https://api.github.com/users/AndreevDmitry/repos",<br>
+    "events_url": "https://api.github.com/users/AndreevDmitry/events{/privacy}",<br>
+    "received_events_url": "https://api.github.com/users/AndreevDmitry/received_events",<br>
+    "type": "User",<br>
+    "site_admin": false<br>
+  },<br>
+  "html_url": "https://github.com/AndreevDmitry/droid-config-mido",<br>
+  "description": null,<br>
+  "fork": false,<br>
+  "url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido",<br>
+  "forks_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/forks",<br>
+  "keys_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/keys{/key_id}",<br>
+  "collaborators_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/collaborators{/collaborator}",<br>
+  "teams_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/teams",<br>
+  "hooks_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/hooks",<br>
+  "issue_events_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/issues/events{/number}",<br>
+  "events_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/events",<br>
+  "assignees_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/assignees{/user}",<br>
+  "branches_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/branches{/branch}",<br>
+  "tags_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/tags",<br>
+  "blobs_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/git/blobs{/sha}",<br>
+  "git_tags_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/git/tags{/sha}",<br>
+  "git_refs_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/git/refs{/sha}",<br>
+  "trees_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/git/trees{/sha}",<br>
+  "statuses_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/statuses/{sha}",<br>
+  "languages_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/languages",<br>
+  "stargazers_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/stargazers",<br>
+  "contributors_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/contributors",<br>
+  "subscribers_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/subscribers",<br>
+  "subscription_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/subscription",<br>
+  "commits_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/commits{/sha}",<br>
+  "git_commits_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/git/commits{/sha}",<br>
+  "comments_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/comments{/number}",<br>
+  "issue_comment_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/issues/comments{/number}",<br>
+  "contents_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/contents/{+path}",<br>
+  "compare_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/compare/{base}...{head}",<br>
+  "merges_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/merges",<br>
+  "archive_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/{archive_format}{/ref}",<br>
+  "downloads_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/downloads",<br>
+  "issues_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/issues{/number}",<br>
+  "pulls_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/pulls{/number}",<br>
+  "milestones_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/milestones{/number}",<br>
+  "notifications_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/notifications{?since,all,participating}",<br>
+  "labels_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/labels{/name}",<br>
+  "releases_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/releases{/id}",<br>
+  "deployments_url": "https://api.github.com/repos/AndreevDmitry/droid-config-mido/deployments",<br>
+  "created_at": "2019-07-01T16:45:46Z",<br>
+  "updated_at": "2019-07-01T16:45:46Z",<br>
+  "pushed_at": "2019-07-01T16:45:47Z",<br>
+  "git_url": "git://github.com/AndreevDmitry/droid-config-mido.git",<br>
+  "ssh_url": "git@github.com:AndreevDmitry/droid-config-mido.git",<br>
+  "clone_url": "https://github.com/AndreevDmitry/droid-config-mido.git",<br>
+  "svn_url": "https://github.com/AndreevDmitry/droid-config-mido",<br>
+  "homepage": null,<br>
+  "size": 0,<br>
+  "stargazers_count": 0,<br>
+  "watchers_count": 0,<br>
+  "language": null,<br>
+  "has_issues": true,<br>
+  "has_projects": true,<br>
+  "has_downloads": true,<br>
+  "has_wiki": true,<br>
+  "has_pages": false,<br>
+  "forks_count": 0,<br>
+  "mirror_url": null,<br>
+  "archived": false,<br>
+  "disabled": false,<br>
+  "open_issues_count": 0,<br>
+  "license": null,<br>
+  "forks": 0,<br>
+  "open_issues": 0,<br>
+  "watchers": 0,<br>
+  "default_branch": "master",<br>
+  "permissions": {<br>
+    "admin": true,<br>
+    "push": true,<br>
+    "pull": true<br>
+  },<br>
+  "allow_squash_merge": true,<br>
+  "allow_merge_commit": true,<br>
+  "allow_rebase_merge": true,<br>
+  "network_count": 0,<br>
+  "subscribers_count": 0<br>
+}<br>
+</details><br>
