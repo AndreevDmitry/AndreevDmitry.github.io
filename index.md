@@ -7452,7 +7452,7 @@ Device release is currently: 3.0.2.8
 ```console
 PlatformSDK:~/hadk$ sb2 -t $VENDOR-$DEVICE-$PORT_ARCH -m sdk-install -R ssu re
 Device release is currently: 2.2.1.18
-```console
+```
 
 Видим, что версии не совпадают, обновим все до последней (на момент написания перевода) версии 3.0.3.10
 ```console
@@ -9980,3 +9980,3448 @@ warning: /var/cache/zypp/packages/adaptation0/noarch/patterns-sailfish-configura
 Executing %posttrans scripts .....................................................................................................[done]<br>
 There are some running programs that might use files deleted by recent upgrade. You may wish to check and restart some of them. Run 'zypper ps -s' to list these programs<br>
 </details>
+
+```console
+PlatformSDK:~$ sb2 -t $VENDOR-$DEVICE-$PORT_ARCH -m sdk-install -R ssu re 3.0.3.10
+```
+<details>
+Changing release from 2.2.1.18 to 3.0.3.10<br>
+Your device is now in release mode!<br>
+DBus unavailable, falling back to libssu<br>
+</details><br>
+
+```console
+PlatformSDK:~/hadk$ sb2 -t $VENDOR-$DEVICE-$PORT_ARCH -m sdk-install -R zypper ref
+```
+<details>
+Retrieving repository 'hotfixes' metadata --------------------------------------------------------------------------------------------[\]<br>
+Download (curl) error for 'https://releases.jolla.com/releases/3.0.3.10/hotfixes/armv7hl/repodata/repomd.xml':<br>
+Error code: Connection failed<br>
+Error message: Could not resolve host: releases.jolla.com<br>
+<br>
+Abort, retry, ignore? [a/r/i/?] (a): a<br>
+Retrieving repository 'hotfixes' metadata ........................................................................................[error]<br>
+Repository 'hotfixes' is invalid.<br>
+[|] Valid metadata not found at specified URL(s)<br>
+Please check if the URIs defined for this repository are pointing to a valid repository.<br>
+Skipping repository 'hotfixes' because of the above error.<br>
+Retrieving repository 'jolla' metadata -----------------------------------------------------------------------------------------------[|]<br>
+Download (curl) error for 'https://releases.jolla.com/releases/3.0.3.10/jolla/armv7hl/repodata/repomd.xml':<br>
+Error code: Connection failed<br>
+Error message: Could not resolve host: releases.jolla.com<br>
+<br>
+Abort, retry, ignore? [a/r/i/?] (a): a<br>
+Retrieving repository 'jolla' metadata ...........................................................................................[error]<br>
+Repository 'jolla' is invalid.<br>
+[|] Valid metadata not found at specified URL(s)<br>
+Please check if the URIs defined for this repository are pointing to a valid repository.<br>
+Skipping repository 'jolla' because of the above error.<br>
+Retrieving repository 'sdk' metadata -------------------------------------------------------------------------------------------------[/]<br>
+Download (curl) error for 'https://releases.jolla.com/releases/3.0.3.10/sdk/armv7hl/repodata/repomd.xml':<br>
+Error code: Connection failed<br>
+Error message: Could not resolve host: releases.jolla.com<br>
+<br>
+Abort, retry, ignore? [a/r/i/?] (a): a<br>
+Retrieving repository 'sdk' metadata .............................................................................................[error]<br>
+Repository 'sdk' is invalid.<br>
+[|] Valid metadata not found at specified URL(s)<br>
+Please check if the URIs defined for this repository are pointing to a valid repository.<br>
+Skipping repository 'sdk' because of the above error.<br>
+Could not refresh the repositories because of errors.<br>
+</details><br>
+
+Такое иногда бывает выходим из песочницы и заходим снова
+```console
+PlatformSDK:~/hadk$ exit
+HOST:~$ sfossdk
+```
+<details>
+[sudo] пароль для stalker:<br>
+Mounting system directories...<br>
+Mounting /srv/mer/targets as /srv/mer/targets<br>
+Mounting /srv/mer/toolings as /srv/mer/toolings<br>
+Mounting / as /parentroot<br>
+Mounting home directory: /home/stalker<br>
+Entering chroot as stalker<br>
+Last login: Mon Jul  8 09:51:22 EDT 2019 on pts/0<br>
+Env setup for mido<br>
+</details><br>
+
+```console
+PlatformSDK:~$ sb2 -t $VENDOR-$DEVICE-$PORT_ARCH -m sdk-install -R zypper ref
+```
+<details>
+Retrieving repository 'hotfixes' metadata .........................................................................................[done]<br>
+Building repository 'hotfixes' cache ..............................................................................................[done]<br>
+Retrieving repository 'jolla' metadata ............................................................................................[done]<br>
+Building repository 'jolla' cache .................................................................................................[done]<br>
+Retrieving repository 'sdk' metadata ..............................................................................................[done]<br>
+Building repository 'sdk' cache ...................................................................................................[done]<br>
+All repositories have been refreshed.<br>
+</details><br>
+
+```console
+PlatformSDK:~$ sb2 -t $VENDOR-$DEVICE-$PORT_ARCH -m sdk-install -R zypper dup
+```
+<details>
+Warning: You are about to do a distribution upgrade with all enabled repositories. Make sure these repositories are compatible before you continue. See 'man zypper' for more information about this command.<br>
+Loading repository data...<br>
+Reading installed packages...<br>
+Computing distribution upgrade...<br>
+<br>
+The following NEW packages are going to be installed:<br>
+  boost-thread busybox-symlinks-diffutils busybox-symlinks-findutils busybox-symlinks-grep buteo-mtp-qt5<br>
+  buteo-mtp-qt5-sample-vendor-configuration buteo-syncfw-qt5 cryptsetup-libs ffmpeg gpgme iptables-ipv6 json-c libaccounts-qt5-devel<br>
+  libicu libmce-qt5 libpython3_7m1_0 libqt5sparql libqt5sparql-tracker libqt5sparql-tracker-direct libsignon-qt5-devel nspr-devel<br>
+  nss-devel poppler-qt5 sailfish-minui-resources-z1.0 sdk-harbour-rpmvalidator sqlite-libs tar thumbnaild<br>
+<br>
+The following packages are going to be REMOVED:<br>
+  diffutils findutils grep libav libicu52 libpython3_4m1_0 sqlite<br>
+<br>
+The following packages are going to be upgraded:<br>
+  PackageKit PackageKit-Qt5 PackageKit-glib PackageKit-zypp alsa-lib ambienced ambienced-devel augeas-libs basesystem bash binutils<br>
+  boost-filesystem boost-system busybox busybox-symlinks-dhcp busybox-symlinks-gzip bzip2 bzip2-libs ca-certificates cairo connman<br>
+  connman-configs-mer connman-qt5 cor coreutils cpio curl db4 db4-utils dbus dbus-devel dbus-glib dbus-libs dbusextended-qt5<br>
+  declarative-transferengine-qt5 desktop-file-utils device-mapper device-mapper-event device-mapper-event-libs device-mapper-libs dsme<br>
+  elfutils elfutils-libelf elfutils-libs exempi expat expat-devel file file-libs filesystem flac fontconfig fontconfig-devel<br>
+  fontpackages-filesystem freetype freetype-devel fuse fuse-libs gawk gdbm giflib glib-networking glib2 glibc glibc-common glibc-devel<br>
+  glibc-headers gmime gnupg2 gnutls groff gstreamer1.0 gstreamer1.0-plugins-base info iptables jolla-ambient-sound-theme jolla-ca<br>
+  kernel-headers kmod-libs libaccounts-glib libaccounts-qt5 libacl libarchive libasyncns libattr libblkid libcanberra libcap<br>
+  libcontentaction-qt5 libcurl libdbus-qeventloop-qt5 libdbusaccess libdbuslogserver-dbus libdrm libdsme libexif libfdisk libffi libgcc<br>
+  libgcrypt libglibutil libgofono libgofonoext libgpg-error libgrilio libgsf libgsupplicant libiodata-qt5 libiphb libiptcdata<br>
+  libjollasignonuiservice-qt5 libjollasignonuiservice-qt5-plugin libjpeg-turbo libkeepalive libkf5archive libksba liblua libmce-glib<br>
+  libmediaart libmlocale-qt5 libmount libnemotransferengine-qt5 libngf libngf-qt5 libngf-qt5-declarative libnl libogg libpng<br>
+  libqmfclient1-qt5 libqmfmessageserver1-qt5 libqtaround2 libqtwebkit5 libqtwebkit5-devel libqtwebkit5-widgets libquillmetadata-qt5<br>
+  libresource libresourceqt-qt5 libsailfishkeyprovider libsbc libshadowutils libsignon-qt5 libsmartcols libsndfile libsolv-tools<br>
+  libsolv0 libsoup libstdc++ libtasn1 libtheora libtiff libtool-ltdl libusb libusb-moded-qt5 libuser libutempter libuuid libvorbis<br>
+  libvpx libwebp libwspcodec libxkbcommon libxml2 libxslt libzypp lsof lvm2 lvm2-libs maliit-framework-wayland<br>
+  maliit-framework-wayland-devel maliit-framework-wayland-inputcontext mapplauncherd mapplauncherd-qt5 mapplauncherd-qt5-devel mce<br>
+  meego-rpm-config mesa-llvmpipe mesa-llvmpipe-libEGL mesa-llvmpipe-libEGL-devel mesa-llvmpipe-libGLESv2 mesa-llvmpipe-libGLESv2-devel<br>
+  mesa-llvmpipe-libglapi mesa-llvmpipe-libwayland-egl mlite-qt5 mlite-qt5-devel mobile-broadband-provider-info mpris-qt5<br>
+  mpris-qt5-qml-plugin mtdev ncurses ncurses-base ncurses-libs nemo-gstreamer1.0-interfaces nemo-qml-plugin-contentaction<br>
+  nemo-qml-plugin-dbus-qt5 nemo-qml-plugin-filemanager nemo-qml-plugin-models-qt5 nemo-qml-plugin-notifications-qt5<br>
+  nemo-qml-plugin-systemsettings nemo-qml-plugin-thumbnailer-qt5 nemo-transferengine-qt5 ngfd ngfd-settings-sailfish nspr nss<br>
+  nss-softokn-freebl nss-sysinit ofono ofono-configs-mer oneshot openjpeg openssl-libs opus orc p11-kit p11-kit-nss-ckbi p11-kit-trust<br>
+  pacrunner pam passwd patch patterns-sailfish-configuration-sdk-target patterns-sailfish-qt5-devel-basic<br>
+  patterns-sailfish-qt5-devel-full patterns-sailfish-silica-devel patterns-sailfish-target-support pcre perl perl-Filter<br>
+  perl-Module-Pluggable perl-Pod-Escapes perl-Pod-Parser perl-Pod-Perldoc perl-Pod-Simple perl-Scalar-List-Utils perl-Socket perl-libs<br>
+  perl-macros perl-parent perl-threads perl-threads-shared pixman pkgconfig polkit poppler poppler-glib popt procps profiled psmisc pth<br>
+  pulseaudio pyotherside-qml-plugin-python3-qt5 python python-libs python3-base qmf-qt5-devel qml-rpm-macros qt5-default<br>
+  qt5-plugin-bearer-generic qt5-plugin-imageformat-jpeg qt5-plugin-platform-minimal qt5-plugin-sqldriver-sqlite qt5-qmake<br>
+  qt5-qtconcurrent qt5-qtconcurrent-devel qt5-qtconnectivity-qtbluetooth qt5-qtconnectivity-qtbluetooth-devel qt5-qtcore<br>
+  qt5-qtcore-devel qt5-qtdbus qt5-qtdbus-devel qt5-qtdeclarative qt5-qtdeclarative-devel qt5-qtdeclarative-import-folderlistmodel<br>
+  qt5-qtdeclarative-import-localstorageplugin qt5-qtdeclarative-import-location qt5-qtdeclarative-import-models2<br>
+  qt5-qtdeclarative-import-multimedia qt5-qtdeclarative-import-particles2 qt5-qtdeclarative-import-positioning<br>
+  qt5-qtdeclarative-import-qtquick2plugin qt5-qtdeclarative-import-qttest qt5-qtdeclarative-import-sensors<br>
+  qt5-qtdeclarative-import-window2 qt5-qtdeclarative-import-xmllistmodel qt5-qtdeclarative-pim-contacts qt5-qtdeclarative-pim-organizer<br>
+  qt5-qtdeclarative-plugin-qmlinspector qt5-qtdeclarative-qtquick qt5-qtdeclarative-qtquick-devel qt5-qtdeclarative-qtquickparticles<br>
+  qt5-qtdeclarative-qtquickparticles-devel qt5-qtdeclarative-qtquicktest qt5-qtdocgallery qt5-qtdocgallery-devel qt5-qtfeedback<br>
+  qt5-qtfeedback-devel qt5-qtgraphicaleffects qt5-qtgui qt5-qtgui-devel qt5-qtlocation qt5-qtlocation-devel qt5-qtmultimedia<br>
+  qt5-qtmultimedia-devel qt5-qtmultimedia-gsttools qt5-qtnetwork qt5-qtnetwork-devel qt5-qtopengl qt5-qtopengl-devel qt5-qtpim-contacts<br>
+  qt5-qtpim-contacts-devel qt5-qtpim-organizer qt5-qtpim-organizer-devel qt5-qtpim-versit qt5-qtpim-versit-devel<br>
+  qt5-qtpim-versitorganizer qt5-qtpim-versitorganizer-devel qt5-qtplatformsupport-devel qt5-qtpositioning qt5-qtpositioning-devel<br>
+  qt5-qtprintsupport qt5-qtqml-import-webkitplugin qt5-qtqml-import-webkitplugin-experimental qt5-qtquickcontrols-layouts qt5-qtsensors<br>
+  qt5-qtsensors-devel qt5-qtsql qt5-qtsql-devel qt5-qtsvg qt5-qtsvg-devel qt5-qttest qt5-qttools qt5-qttools-linguist<br>
+  qt5-qtwayland-wayland_egl qt5-qtwayland-wayland_egl-devel qt5-qtwebkit-uiprocess-launcher qt5-qtwidgets qt5-qtwidgets-devel qt5-qtxml<br>
+  qt5-qtxml-devel qt5-qtxmlpatterns qt5-qtxmlpatterns-devel qt5-tools qtchooser readline rpm rpm-build rpm-libs sailfish-ca<br>
+  sailfish-components-filemanager sailfish-components-gallery-qt5 sailfish-components-pickers-qt5 sailfish-content-graphics-closed<br>
+  sailfish-content-graphics-closed-z1.0 sailfish-content-graphics-default sailfish-content-graphics-default-base<br>
+  sailfish-content-graphics-default-z1.0 sailfish-content-graphics-default-z1.0-base sailfish-content-profiled-settings-default<br>
+  sailfish-content-tones-default sailfish-fonts sailfish-silica-background-qt5 sailfish-upgrade-ui-resources-z1.0 sailfish-version<br>
+  sailfish-version-variant sailfishsilica-qt5 sdk-configs sdk-register sdk-target-configs sed setup shadow-utils shared-mime-info<br>
+  signon-qt5 sound-theme-freedesktop speex speexdsp ssu ssu-network-proxy-plugin ssu-sysinfo ssu-vendor-data-jolla systemd<br>
+  systemd-config-sailfish systemd-libs taglib timed-qt5 totem-pl-parser tracker tzdata tzdata-timed unzip usb-moded usb-moded-defaults<br>
+  usb-moded-developer-mode util-linux wayland xdg-utils xkeyboard-config xz xz-libs xz-lzma-compat zlib zlib-devel zypper<br>
+<br>
+The following packages are going to be downgraded:<br>
+  dconf gstreamer1.0-plugins-good libmpg123 signon-plugin-oauth2-qt5 statefs-provider-inout-power systemd-user-session-targets<br>
+  wpa_supplicant<br>
+<br>
+The following packages are going to be reinstalled:<br>
+  contextkit-declarative-qt5 libsailfishapp libsailfishapp-devel nemo-qml-plugin-configuration-qt5<br>
+  nemo-qtmultimedia-plugins-gstvideotexturebackend qt5-qtdeclarative-publishsubscribe qt5-qtdeclarative-serviceframework<br>
+  qt5-qtdeclarative-systeminfo qt5-qtpublishsubscribe qt5-qtpublishsubscribe-devel qt5-qtserviceframework qt5-qtserviceframework-devel<br>
+  qt5-qtsysteminfo sailfish-components-media-qt5 statefs statefs-contextkit-subscriber statefs-pp statefs-qt5<br>
+<br>
+404 packages to upgrade, 7 to downgrade, 28 new, 18 to reinstall, 7 to remove.<br>
+Overall download size: 168.0 MiB. After the operation, additional 45.7 MiB will be used.<br>
+Continue? [y/n/?] (y): y<br>
+Retrieving package buteo-mtp-qt5-sample-vendor-configuration-0.7.0-1.6.1.jolla.armv7hl            (1/457),  28.0 KiB (108.6 KiB unpacked)<br>
+Retrieving: buteo-mtp-qt5-sample-vendor-configuration-0.7.0-1.6.1.jolla.armv7hl.rpm ...............................................[done]<br>
+Retrieving package fontpackages-filesystem-1.44-1.1.9.jolla.noarch                                  (2/457),   8.9 KiB (    0 B unpacked)<br>
+Retrieving: fontpackages-filesystem-1.44-1.1.9.jolla.noarch.rpm ...................................................................[done]<br>
+Retrieving package jolla-ca-0.9-1.3.1.jolla.noarch                                                (3/457),  15.1 KiB ( 22.5 KiB unpacked)<br>
+Retrieving: jolla-ca-0.9-1.3.1.jolla.noarch.rpm ...................................................................................[done]<br>
+Retrieving package kernel-headers-3.18.136-1.2.3.jolla.armv7hl                                    (4/457), 793.3 KiB (  3.2 MiB unpacked)<br>
+Retrieving: kernel-headers-3.18.136-1.2.3.jolla.armv7hl.rpm .......................................................................[done]<br>
+Retrieving package libgcc-4.9.4-1.2.5.jolla.armv7hl                                               (5/457),  47.7 KiB ( 84.9 KiB unpacked)<br>
+Retrieving: libgcc-4.9.4-1.2.5.jolla.armv7hl.rpm ..................................................................................[done]<br>
+Retrieving package mobile-broadband-provider-info-20131125+git68-1.3.2.jolla.noarch               (6/457),  55.8 KiB (329.0 KiB unpacked)<br>
+Retrieving: mobile-broadband-provider-info-20131125+git68-1.3.2.jolla.noarch.rpm ..................................................[done]<br>
+Retrieving package ncurses-base-6.1+git1-1.3.5.jolla.armv7hl                                      (7/457),  57.6 KiB (320.4 KiB unpacked)<br>
+Retrieving: ncurses-base-6.1+git1-1.3.5.jolla.armv7hl.rpm .........................................................................[done]<br>
+Retrieving package ofono-configs-mer-1.21+git44-1.19.1.jolla.armv7hl                              (8/457),  68.1 KiB (  8.0 KiB unpacked)<br>
+Retrieving: ofono-configs-mer-1.21+git44-1.19.1.jolla.armv7hl.rpm .................................................................[done]<br>
+Retrieving package qt5-qtplatformsupport-devel-5.6.3+git9-1.9.2.jolla.armv7hl                     (9/457), 237.2 KiB (  1.2 MiB unpacked)<br>
+Retrieving: qt5-qtplatformsupport-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ........................................................[done]<br>
+Retrieving package sailfish-ca-0.1.1-1.3.1.jolla.noarch                                          (10/457),  11.3 KiB (  9.1 KiB unpacked)<br>
+Retrieving: sailfish-ca-0.1.1-1.3.1.jolla.noarch.rpm ..............................................................................[done]<br>
+Retrieving package setup-2.8.56-1.2.5.jolla.noarch                                               (11/457), 115.0 KiB (663.0 KiB unpacked)<br>
+Retrieving: setup-2.8.56-1.2.5.jolla.noarch.rpm ...................................................................................[done]<br>
+Retrieving package tzdata-2017b-1.1.11.jolla.noarch                                              (12/457), 304.2 KiB (  1.1 MiB unpacked)<br>
+Retrieving: tzdata-2017b-1.1.11.jolla.noarch.rpm ..................................................................................[done]<br>
+Retrieving package usb-moded-developer-mode-0.86.0+mer33-1.3.2.jolla.armv7hl                       (13/457),  42.5 KiB (  110 B unpacked)<br>
+Retrieving: usb-moded-developer-mode-0.86.0+mer33-1.3.2.jolla.armv7hl.rpm .........................................................[done]<br>
+Retrieving package xkeyboard-config-2.10.1+git6-1.2.7.jolla.noarch                               (14/457), 311.1 KiB (  2.4 MiB unpacked)<br>
+Retrieving: xkeyboard-config-2.10.1+git6-1.2.7.jolla.noarch.rpm ...................................................................[done]<br>
+Retrieving package filesystem-3.1-1.1.9.jolla.noarch                                               (15/457), 911.0 KiB (    0 B unpacked)<br>
+Retrieving: filesystem-3.1-1.1.9.jolla.noarch.rpm .................................................................................[done]<br>
+Retrieving package tzdata-timed-2017b.2-1.3.1.jolla.noarch                                       (16/457),  17.0 KiB ( 35.9 KiB unpacked)<br>
+Retrieving: tzdata-timed-2017b.2-1.3.1.jolla.noarch.rpm ...........................................................................[done]<br>
+Retrieving package glibc-2.25+git5-1.4.1.jolla.armv7hl                                           (17/457),   2.3 MiB (  8.7 MiB unpacked)<br>
+Retrieving: glibc-2.25+git5-1.4.1.jolla.armv7hl.rpm ...............................................................................[done]<br>
+Retrieving package usb-moded-defaults-0.86.0+mer33-1.3.2.jolla.armv7hl                             (18/457),  41.8 KiB (    0 B unpacked)<br>
+Retrieving: usb-moded-defaults-0.86.0+mer33-1.3.2.jolla.armv7hl.rpm ...............................................................[done]<br>
+Retrieving package basesystem-11+git1-1.2.8.jolla.noarch                                           (19/457),   8.0 KiB (    0 B unpacked)<br>
+Retrieving: basesystem-11+git1-1.2.8.jolla.noarch.rpm .............................................................................[done]<br>
+Retrieving package ncurses-libs-6.1+git1-1.3.5.jolla.armv7hl                                     (20/457), 201.6 KiB (504.4 KiB unpacked)<br>
+Retrieving: ncurses-libs-6.1+git1-1.3.5.jolla.armv7hl.rpm .........................................................................[done]<br>
+Retrieving package sailfish-content-graphics-closed-z1.0-0.6.1-1.2.1.jolla.noarch                (21/457), 416.0 KiB (389.0 KiB unpacked)<br>
+Retrieving: sailfish-content-graphics-closed-z1.0-0.6.1-1.2.1.jolla.noarch.rpm ....................................................[done]<br>
+Retrieving package bash-1:3.2.57-1.2.5.jolla.armv7hl                                             (22/457), 277.7 KiB (542.1 KiB unpacked)<br>
+Retrieving: bash-3.2.57-1.2.5.jolla.armv7hl.rpm ...................................................................................[done]<br>
+Retrieving package sailfish-content-graphics-closed-0.6.1-1.2.1.jolla.noarch                     (23/457), 175.9 KiB (157.7 KiB unpacked)<br>
+Retrieving: sailfish-content-graphics-closed-0.6.1-1.2.1.jolla.noarch.rpm .........................................................[done]<br>
+Retrieving package glibc-common-2.25+git5-1.4.1.jolla.armv7hl                                    (24/457),   4.0 MiB ( 13.6 MiB unpacked)<br>
+Retrieving: glibc-common-2.25+git5-1.4.1.jolla.armv7hl.rpm ........................................................................[done]<br>
+Retrieving package zlib-1.2.11+git1-1.4.5.jolla.armv7hl                                          (25/457),  68.4 KiB (106.2 KiB unpacked)<br>
+Retrieving: zlib-1.2.11+git1-1.4.5.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package sailfish-minui-resources-z1.0-0.0.4-1.4.2.jolla.armv7hl                       (26/457),  40.9 KiB ( 31.9 KiB unpacked)<br>
+Retrieving: sailfish-minui-resources-z1.0-0.0.4-1.4.2.jolla.armv7hl.rpm ...........................................................[done]<br>
+Retrieving package qt5-qttools-5.6.3+git1-1.4.1.jolla.armv7hl                                      (27/457),   7.5 KiB (    0 B unpacked)<br>
+Retrieving: qt5-qttools-5.6.3+git1-1.4.1.jolla.armv7hl.rpm ........................................................................[done]<br>
+Retrieving package qml-rpm-macros-0.0.5-1.1.9.jolla.armv7hl                                      (28/457),   8.8 KiB (  3.9 KiB unpacked)<br>
+Retrieving: qml-rpm-macros-0.0.5-1.1.9.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package info-4.13a-1.2.7.jolla.armv7hl                                                (29/457),  95.3 KiB (187.3 KiB unpacked)<br>
+Retrieving: info-4.13a-1.2.7.jolla.armv7hl.rpm ....................................................................................[done]<br>
+Retrieving package sailfish-upgrade-ui-resources-z1.0-0.1.1-1.5.2.jolla.armv7hl                  (30/457), 869.1 KiB (869.1 KiB unpacked)<br>
+Retrieving: sailfish-upgrade-ui-resources-z1.0-0.1.1-1.5.2.jolla.armv7hl.rpm ......................................................[done]<br>
+Retrieving package glibc-headers-2.25+git5-1.4.1.jolla.armv7hl                                   (31/457), 433.3 KiB (  2.1 MiB unpacked)<br>
+Retrieving: glibc-headers-2.25+git5-1.4.1.jolla.armv7hl.rpm .......................................................................[done]<br>
+Retrieving package glibc-devel-2.25+git5-1.4.1.jolla.armv7hl                                     (32/457),  29.2 KiB ( 59.7 KiB unpacked)<br>
+Retrieving: glibc-devel-2.25+git5-1.4.1.jolla.armv7hl.rpm .........................................................................[done]<br>
+Retrieving package xz-libs-5.0.4-1.2.8.jolla.armv7hl                                             (33/457),  64.6 KiB ( 91.4 KiB unpacked)<br>
+Retrieving: xz-libs-5.0.4-1.2.8.jolla.armv7hl.rpm .................................................................................[done]<br>
+Retrieving package unzip-6.0-1.2.5.jolla.armv7hl                                                 (34/457),  84.0 KiB (182.3 KiB unpacked)<br>
+Retrieving: unzip-6.0-1.2.5.jolla.armv7hl.rpm .....................................................................................[done]<br>
+Retrieving package ssu-sysinfo-1.1.3-1.3.7.jolla.armv7hl                                         (35/457),  20.9 KiB ( 34.0 KiB unpacked)<br>
+Retrieving: ssu-sysinfo-1.1.3-1.3.7.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package speexdsp-1.2.0+git2-1.1.7.jolla.armv7hl                                       (36/457),  43.9 KiB ( 56.4 KiB unpacked)<br>
+Retrieving: speexdsp-1.2.0+git2-1.1.7.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package speex-1.2.0+git1-1.2.7.jolla.armv7hl                                          (37/457),  52.2 KiB ( 69.1 KiB unpacked)<br>
+Retrieving: speex-1.2.0+git1-1.2.7.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package shadow-utils-4.6-1.2.5.jolla.armv7hl                                          (38/457), 148.9 KiB (749.1 KiB unpacked)<br>
+Retrieving: shadow-utils-4.6-1.2.5.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package sed-1:4.1.5-1.2.6.jolla.armv7hl                                               (39/457),  31.4 KiB ( 49.4 KiB unpacked)<br>
+Retrieving: sed-4.1.5-1.2.6.jolla.armv7hl.rpm .....................................................................................[done]<br>
+Retrieving package readline-5.2-1.2.7.jolla.armv7hl                                              (40/457),  89.8 KiB (190.1 KiB unpacked)<br>
+Retrieving: readline-5.2-1.2.7.jolla.armv7hl.rpm ..................................................................................[done]<br>
+Retrieving package pth-2.0.7-1.1.9.jolla.armv7hl                                                 (41/457),  44.2 KiB ( 76.7 KiB unpacked)<br>
+Retrieving: pth-2.0.7-1.1.9.jolla.armv7hl.rpm .....................................................................................[done]<br>
+Retrieving package psmisc-22.13-1.3.6.jolla.armv7hl                                              (42/457),  40.6 KiB ( 80.5 KiB unpacked)<br>
+Retrieving: psmisc-22.13-1.3.6.jolla.armv7hl.rpm ..................................................................................[done]<br>
+Retrieving package procps-3.2.8-1.2.7.jolla.armv7hl                                              (43/457), 122.9 KiB (287.1 KiB unpacked)<br>
+Retrieving: procps-3.2.8-1.2.7.jolla.armv7hl.rpm ..................................................................................[done]<br>
+Retrieving package popt-1.16-1.1.10.jolla.armv7hl                                                (44/457),  26.7 KiB ( 31.7 KiB unpacked)<br>
+Retrieving: popt-1.16-1.1.10.jolla.armv7hl.rpm ....................................................................................[done]<br>
+Retrieving package pkgconfig-0.27.1-1.2.7.jolla.armv7hl                                          (45/457), 139.7 KiB (415.6 KiB unpacked)<br>
+Retrieving: pkgconfig-0.27.1-1.2.7.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package pixman-0.34.0-1.1.9.jolla.armv7hl                                             (46/457), 154.8 KiB (487.6 KiB unpacked)<br>
+Retrieving: pixman-0.34.0-1.1.9.jolla.armv7hl.rpm .................................................................................[done]<br>
+Retrieving package patch-2.7.5+git1-1.1.9.jolla.armv7hl                                          (47/457),  85.7 KiB (136.2 KiB unpacked)<br>
+Retrieving: patch-2.7.5+git1-1.1.9.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package orc-0.4.26+git1-1.1.9.jolla.armv7hl                                           (48/457), 123.1 KiB (354.7 KiB unpacked)<br>
+Retrieving: orc-0.4.26+git1-1.1.9.jolla.armv7hl.rpm ...............................................................................[done]<br>
+Retrieving package opus-1.2.1-1.2.7.jolla.armv7hl                                                (49/457), 149.6 KiB (208.8 KiB unpacked)<br>
+Retrieving: opus-1.2.1-1.2.7.jolla.armv7hl.rpm ....................................................................................[done]<br>
+Retrieving package openjpeg-2.3.0+git1-1.2.5.jolla.armv7hl                                       (50/457), 130.3 KiB (246.8 KiB unpacked)<br>
+Retrieving: openjpeg-2.3.0+git1-1.2.5.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package nspr-4.20.0-1.3.7.jolla.armv7hl                                               (51/457),  98.5 KiB (178.5 KiB unpacked)<br>
+Retrieving: nspr-4.20.0-1.3.7.jolla.armv7hl.rpm ...................................................................................[done]<br>
+Retrieving package ncurses-6.1+git1-1.3.5.jolla.armv7hl                                          (52/457),  64.9 KiB (149.9 KiB unpacked)<br>
+Retrieving: ncurses-6.1+git1-1.3.5.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package mtdev-1.1.3-1.1.9.jolla.armv7hl                                               (53/457),  15.2 KiB ( 13.8 KiB unpacked)<br>
+Retrieving: mtdev-1.1.3-1.1.9.jolla.armv7hl.rpm ...................................................................................[done]<br>
+Retrieving package lsof-4.91+git1-1.3.4.jolla.armv7hl                                            (54/457),  68.4 KiB (118.9 KiB unpacked)<br>
+Retrieving: lsof-4.91+git1-1.3.4.jolla.armv7hl.rpm ................................................................................[done]<br>
+Retrieving package libxml2-2.9.8+git2-1.3.10.jolla.armv7hl                                       (55/457), 454.0 KiB (924.2 KiB unpacked)<br>
+Retrieving: libxml2-2.9.8+git2-1.3.10.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package libxkbcommon-0.5.0+git1-1.2.8.jolla.armv7hl                                   (56/457),  77.3 KiB (220.4 KiB unpacked)<br>
+Retrieving: libxkbcommon-0.5.0+git1-1.2.8.jolla.armv7hl.rpm .......................................................................[done]<br>
+Retrieving package libwebp-0.6.1+git3-1.3.6.jolla.armv7hl                                        (57/457), 164.4 KiB (364.4 KiB unpacked)<br>
+Retrieving: libwebp-0.6.1+git3-1.3.6.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package libtool-ltdl-2.4.6-1.2.9.jolla.armv7hl                                        (58/457),  42.1 KiB ( 48.7 KiB unpacked)<br>
+Retrieving: libtool-ltdl-2.4.6-1.2.9.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package libtasn1-4.13+git1-1.3.9.jolla.armv7hl                                        (59/457),  42.7 KiB ( 70.3 KiB unpacked)<br>
+Retrieving: libtasn1-4.13+git1-1.3.9.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package libstdc++-4.9.4-1.2.5.jolla.armv7hl                                           (60/457), 217.2 KiB (681.2 KiB unpacked)<br>
+Retrieving: libstdc++-4.9.4-1.2.5.jolla.armv7hl.rpm ...............................................................................[done]<br>
+Retrieving package libshadowutils-0.0.2-1.4.1.jolla.armv7hl                                      (61/457),  13.4 KiB ( 13.4 KiB unpacked)<br>
+Retrieving: libshadowutils-0.0.2-1.4.1.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package libsbc-1.3-1.3.6.jolla.armv7hl                                                (62/457),  34.5 KiB ( 54.0 KiB unpacked)<br>
+Retrieving: libsbc-1.3-1.3.6.jolla.armv7hl.rpm ....................................................................................[done]<br>
+Retrieving package libpng-1.6.34-1.2.9.jolla.armv7hl                                             (63/457),  88.4 KiB (141.7 KiB unpacked)<br>
+Retrieving: libpng-1.6.34-1.2.9.jolla.armv7hl.rpm .................................................................................[done]<br>
+Retrieving package libogg-1.3.3-1.2.7.jolla.armv7hl                                              (64/457),  17.3 KiB ( 15.9 KiB unpacked)<br>
+Retrieving: libogg-1.3.3-1.2.7.jolla.armv7hl.rpm ..................................................................................[done]<br>
+Retrieving package libnl-3.4.0-1.2.7.jolla.armv7hl                                               (65/457), 215.3 KiB (567.4 KiB unpacked)<br>
+Retrieving: libnl-3.4.0-1.2.7.jolla.armv7hl.rpm ...................................................................................[done]<br>
+Retrieving package libmpg123-1.25.10-1.1.7.jolla.armv7hl                                         (66/457), 145.5 KiB (294.3 KiB unpacked)<br>
+Retrieving: libmpg123-1.25.10-1.1.7.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package liblua-5.1.5-1.1.11.jolla.armv7hl                                             (67/457),  64.0 KiB (100.3 KiB unpacked)<br>
+Retrieving: liblua-5.1.5-1.1.11.jolla.armv7hl.rpm .................................................................................[done]<br>
+Retrieving package libjpeg-turbo-1.5.3+git1-1.4.5.jolla.armv7hl                                  (68/457), 116.5 KiB (364.4 KiB unpacked)<br>
+Retrieving: libjpeg-turbo-1.5.3+git1-1.4.5.jolla.armv7hl.rpm ......................................................................[done]<br>
+Retrieving package libiptcdata-1.0.4+git1-1.3.1.jolla.armv7hl                                    (69/457),  42.3 KiB (118.5 KiB unpacked)<br>
+Retrieving: libiptcdata-1.0.4+git1-1.3.1.jolla.armv7hl.rpm ........................................................................[done]<br>
+Retrieving package libiphb-1.2.5+git1-1.3.3.jolla.armv7hl                                        (70/457),  21.2 KiB ( 31.6 KiB unpacked)<br>
+Retrieving: libiphb-1.2.5+git1-1.3.3.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package libgpg-error-1.27+git2-1.3.5.jolla.armv7hl                                    (71/457), 123.5 KiB (538.2 KiB unpacked)<br>
+Retrieving: libgpg-error-1.27+git2-1.3.5.jolla.armv7hl.rpm ........................................................................[done]<br>
+Retrieving package libffi-3.2.1+git1-1.2.13.jolla.armv7hl                                        (72/457),  23.2 KiB ( 22.0 KiB unpacked)<br>
+Retrieving: libffi-3.2.1+git1-1.2.13.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package libexif-0.6.21+git2-1.2.5.jolla.armv7hl                                       (73/457), 294.8 KiB (  1.7 MiB unpacked)<br>
+Retrieving: libexif-0.6.21+git2-1.2.5.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package libdrm-2.4.39-1.1.9.jolla.armv7hl                                             (74/457),  28.4 KiB ( 39.2 KiB unpacked)<br>
+Retrieving: libdrm-2.4.39-1.1.9.jolla.armv7hl.rpm .................................................................................[done]<br>
+Retrieving package libattr-2.4.47+git1-1.3.7.jolla.armv7hl                                       (75/457),  23.2 KiB ( 37.9 KiB unpacked)<br>
+Retrieving: libattr-2.4.47+git1-1.3.7.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package libasyncns-0.8-1.2.5.jolla.armv7hl                                            (76/457),  23.9 KiB ( 39.8 KiB unpacked)<br>
+Retrieving: libasyncns-0.8-1.2.5.jolla.armv7hl.rpm ................................................................................[done]<br>
+Retrieving package json-c-0.12-1.1.9.jolla.armv7hl                                               (77/457),  22.3 KiB ( 29.1 KiB unpacked)<br>
+Retrieving: json-c-0.12-1.1.9.jolla.armv7hl.rpm ...................................................................................[done]<br>
+Retrieving package iptables-1.8.2+git1-1.4.3.jolla.armv7hl                                       (78/457), 211.7 KiB (731.2 KiB unpacked)<br>
+Retrieving: iptables-1.8.2+git1-1.4.3.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package giflib-4.2.3+git2-1.3.5.jolla.armv7hl                                         (79/457),  21.5 KiB ( 25.9 KiB unpacked)<br>
+Retrieving: giflib-4.2.3+git2-1.3.5.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package gdbm-1.8.3-1.2.10.jolla.armv7hl                                               (80/457),  23.0 KiB ( 32.4 KiB unpacked)<br>
+Retrieving: gdbm-1.8.3-1.2.10.jolla.armv7hl.rpm ...................................................................................[done]<br>
+Retrieving package freetype-2.8.0-1.1.9.jolla.armv7hl                                            (81/457), 262.1 KiB (433.3 KiB unpacked)<br>
+Retrieving: freetype-2.8.0-1.1.9.jolla.armv7hl.rpm ................................................................................[done]<br>
+Retrieving package file-libs-5.35+git2-1.2.8.jolla.armv7hl                                       (82/457), 465.3 KiB (  6.2 MiB unpacked)<br>
+Retrieving: file-libs-5.35+git2-1.2.8.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package expat-2.1.0-1.1.10.jolla.armv7hl                                              (83/457),  56.6 KiB (106.4 KiB unpacked)<br>
+Retrieving: expat-2.1.0-1.1.10.jolla.armv7hl.rpm ..................................................................................[done]<br>
+Retrieving package elfutils-libelf-0.170+git1-1.3.10.jolla.armv7hl                               (84/457),  53.2 KiB ( 65.8 KiB unpacked)<br>
+Retrieving: elfutils-libelf-0.170+git1-1.3.10.jolla.armv7hl.rpm ...................................................................[done]<br>
+Retrieving package db4-4.8.30-1.3.12.jolla.armv7hl                                               (85/457), 475.4 KiB (926.2 KiB unpacked)<br>
+Retrieving: db4-4.8.30-1.3.12.jolla.armv7hl.rpm ...................................................................................[done]<br>
+Retrieving package cpio-2.12+git1-1.3.4.jolla.armv7hl                                            (86/457),  67.3 KiB (122.7 KiB unpacked)<br>
+Retrieving: cpio-2.12+git1-1.3.4.jolla.armv7hl.rpm ................................................................................[done]<br>
+Retrieving package bzip2-libs-1.0.6-1.2.9.jolla.armv7hl                                          (87/457),  37.5 KiB ( 49.0 KiB unpacked)<br>
+Retrieving: bzip2-libs-1.0.6-1.2.9.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package busybox-1.29.3+git5-1.1.5.jolla.armv7hl                                       (88/457),  75.8 KiB (112.7 KiB unpacked)<br>
+Retrieving: busybox-1.29.3+git5-1.1.5.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package binutils-2.25-1.3.11.jolla.armv7hl                                            (89/457),   3.1 MiB ( 15.7 MiB unpacked)<br>
+Retrieving: binutils-2.25-1.3.11.jolla.armv7hl.rpm ................................................................................[done]<br>
+Retrieving package xz-5.0.4-1.2.8.jolla.armv7hl                                                  (90/457),  56.5 KiB (148.1 KiB unpacked)<br>
+Retrieving: xz-5.0.4-1.2.8.jolla.armv7hl.rpm ......................................................................................[done]<br>
+Retrieving package libutempter-1.1.5+git1-1.1.12.jolla.armv7hl                                   (91/457),  21.4 KiB ( 35.4 KiB unpacked)<br>
+Retrieving: libutempter-1.1.5+git1-1.1.12.jolla.armv7hl.rpm .......................................................................[done]<br>
+Retrieving package zlib-devel-1.2.11+git1-1.4.5.jolla.armv7hl                                    (92/457),  35.4 KiB (110.1 KiB unpacked)<br>
+Retrieving: zlib-devel-1.2.11+git1-1.4.5.jolla.armv7hl.rpm ........................................................................[done]<br>
+Retrieving package nspr-devel-4.20.0-1.3.7.jolla.armv7hl                                         (93/457), 106.2 KiB (447.8 KiB unpacked)<br>
+Retrieving: nspr-devel-4.20.0-1.3.7.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package libxslt-1.1.29-1.2.6.jolla.armv7hl                                            (94/457), 119.4 KiB (240.9 KiB unpacked)<br>
+Retrieving: libxslt-1.1.29-1.2.6.jolla.armv7hl.rpm ................................................................................[done]<br>
+Retrieving package augeas-libs-1.6.0+git1-1.2.5.jolla.armv7hl                                    (95/457), 449.5 KiB (  1.6 MiB unpacked)<br>
+Retrieving: augeas-libs-1.6.0+git1-1.2.5.jolla.armv7hl.rpm ........................................................................[done]<br>
+Retrieving package taglib-1.11.1+git1-1.3.1.jolla.armv7hl                                        (96/457), 220.6 KiB (652.2 KiB unpacked)<br>
+Retrieving: taglib-1.11.1+git1-1.3.1.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package qtchooser-26-1.1.9.jolla.armv7hl                                              (97/457),  37.3 KiB ( 79.0 KiB unpacked)<br>
+Retrieving: qtchooser-26-1.1.9.jolla.armv7hl.rpm ..................................................................................[done]<br>
+Retrieving package pcre-8.42+git1-1.3.5.jolla.armv7hl                                            (98/457), 265.9 KiB (710.4 KiB unpacked)<br>
+Retrieving: pcre-8.42+git1-1.3.5.jolla.armv7hl.rpm ................................................................................[done]<br>
+Retrieving package libvpx-1.7.0+git1-1.2.5.jolla.armv7hl                                         (99/457), 928.5 KiB (  2.0 MiB unpacked)<br>
+Retrieving: libvpx-1.7.0+git1-1.2.5.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package libusb-0.1.12-1.2.5.jolla.armv7hl                                            (100/457),  32.2 KiB ( 59.4 KiB unpacked)<br>
+Retrieving: libusb-0.1.12-1.2.5.jolla.armv7hl.rpm .................................................................................[done]<br>
+Retrieving package libsailfishkeyprovider-0.0.14-1.2.1.jolla.armv7hl                            (101/457),  17.4 KiB ( 20.3 KiB unpacked)<br>
+Retrieving: libsailfishkeyprovider-0.0.14-1.2.1.jolla.armv7hl.rpm .................................................................[done]<br>
+Retrieving package libvorbis-1.3.6+git1-1.2.5.jolla.armv7hl                                     (102/457), 149.0 KiB (670.2 KiB unpacked)<br>
+Retrieving: libvorbis-1.3.6+git1-1.2.5.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package libtheora-1.2.0alpha1+git-1.2.8.jolla.armv7hl                                (103/457), 140.9 KiB (469.6 KiB unpacked)<br>
+Retrieving: libtheora-1.2.0alpha1+git-1.2.8.jolla.armv7hl.rpm .....................................................................[done]<br>
+Retrieving package flac-1.3.2-1.2.7.jolla.armv7hl                                               (104/457), 171.4 KiB (340.3 KiB unpacked)<br>
+Retrieving: flac-1.3.2-1.2.7.jolla.armv7hl.rpm ....................................................................................[done]<br>
+Retrieving package libtiff-4.0.10+git1-1.2.6.jolla.armv7hl                                      (105/457), 136.1 KiB (354.7 KiB unpacked)<br>
+Retrieving: libtiff-4.0.10+git1-1.2.6.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package libksba-1.3.5+git2-1.2.5.jolla.armv7hl                                       (106/457),  80.9 KiB (158.4 KiB unpacked)<br>
+Retrieving: libksba-1.3.5+git2-1.2.5.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package libgcrypt-1.5.6+git1-1.1.11.jolla.armv7hl                                    (107/457), 213.8 KiB (372.2 KiB unpacked)<br>
+Retrieving: libgcrypt-1.5.6+git1-1.1.11.jolla.armv7hl.rpm .........................................................................[done]<br>
+Retrieving package p11-kit-0.23.12+git1-1.3.5.jolla.armv7hl                                     (108/457), 175.3 KiB (768.0 KiB unpacked)<br>
+Retrieving: p11-kit-0.23.12+git1-1.3.5.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package libcap-2.24+git1-1.3.6.jolla.armv7hl                                         (109/457),  33.2 KiB ( 65.4 KiB unpacked)<br>
+Retrieving: libcap-2.24+git1-1.3.6.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package libacl-2.2.53-1.2.7.jolla.armv7hl                                            (110/457),  18.9 KiB ( 19.1 KiB unpacked)<br>
+Retrieving: libacl-2.2.53-1.2.7.jolla.armv7hl.rpm .................................................................................[done]<br>
+Retrieving package iptables-ipv6-1.8.2+git1-1.4.3.jolla.armv7hl                                 (111/457),  44.1 KiB (124.5 KiB unpacked)<br>
+Retrieving: iptables-ipv6-1.8.2+git1-1.4.3.jolla.armv7hl.rpm ......................................................................[done]<br>
+Retrieving package file-5.35+git2-1.2.8.jolla.armv7hl                                           (112/457),  15.1 KiB ( 15.9 KiB unpacked)<br>
+Retrieving: file-5.35+git2-1.2.8.jolla.armv7hl.rpm ................................................................................[done]<br>
+Retrieving package wayland-1.6.0+git1-1.2.8.jolla.armv7hl                                       (113/457),  45.9 KiB (111.0 KiB unpacked)<br>
+Retrieving: wayland-1.6.0+git1-1.2.8.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package expat-devel-2.1.0-1.1.10.jolla.armv7hl                                       (114/457),  22.1 KiB ( 44.3 KiB unpacked)<br>
+Retrieving: expat-devel-2.1.0-1.1.10.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package exempi-2.4.3-1.2.1.jolla.armv7hl                                             (115/457), 486.9 KiB (  1.2 MiB unpacked)<br>
+Retrieving: exempi-2.4.3-1.2.1.jolla.armv7hl.rpm ..................................................................................[done]<br>
+Retrieving package db4-utils-4.8.30-1.3.12.jolla.armv7hl                                        (116/457),  96.7 KiB (222.7 KiB unpacked)<br>
+Retrieving: db4-utils-4.8.30-1.3.12.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package bzip2-1.0.6-1.2.9.jolla.armv7hl                                              (117/457),  31.7 KiB ( 38.4 KiB unpacked)<br>
+Retrieving: bzip2-1.0.6-1.2.9.jolla.armv7hl.rpm ...................................................................................[done]<br>
+Retrieving package busybox-symlinks-gzip-1.29.3+git5-1.1.5.jolla.armv7hl                          (118/457),   9.5 KiB (    0 B unpacked)<br>
+Retrieving: busybox-symlinks-gzip-1.29.3+git5-1.1.5.jolla.armv7hl.rpm .............................................................[done]<br>
+Retrieving package busybox-symlinks-grep-1.29.3+git5-1.1.5.jolla.armv7hl                          (119/457),   9.4 KiB (    0 B unpacked)<br>
+Retrieving: busybox-symlinks-grep-1.29.3+git5-1.1.5.jolla.armv7hl.rpm .............................................................[done]<br>
+Retrieving package busybox-symlinks-findutils-1.29.3+git5-1.1.5.jolla.armv7hl                     (120/457),   9.4 KiB (    0 B unpacked)<br>
+Retrieving: busybox-symlinks-findutils-1.29.3+git5-1.1.5.jolla.armv7hl.rpm ........................................................[done]<br>
+Retrieving package busybox-symlinks-diffutils-1.29.3+git5-1.1.5.jolla.armv7hl                     (121/457),   9.3 KiB (    0 B unpacked)<br>
+Retrieving: busybox-symlinks-diffutils-1.29.3+git5-1.1.5.jolla.armv7hl.rpm ........................................................[done]<br>
+Retrieving package busybox-symlinks-dhcp-1.29.3+git5-1.1.5.jolla.armv7hl                          (122/457),   9.5 KiB (  151 B unpacked)<br>
+Retrieving: busybox-symlinks-dhcp-1.29.3+git5-1.1.5.jolla.armv7hl.rpm .............................................................[done]<br>
+Retrieving package xz-lzma-compat-5.0.4-1.2.8.jolla.armv7hl                                     (123/457),  13.9 KiB ( 13.8 KiB unpacked)<br>
+Retrieving: xz-lzma-compat-5.0.4-1.2.8.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package kmod-libs-21-1.2.8.jolla.armv7hl                                             (124/457),  37.3 KiB ( 54.6 KiB unpacked)<br>
+Retrieving: kmod-libs-21-1.2.8.jolla.armv7hl.rpm ..................................................................................[done]<br>
+Retrieving package elfutils-libs-0.170+git1-1.3.10.jolla.armv7hl                                (125/457), 205.0 KiB (496.4 KiB unpacked)<br>
+Retrieving: elfutils-libs-0.170+git1-1.3.10.jolla.armv7hl.rpm .....................................................................[done]<br>
+Retrieving package freetype-devel-2.8.0-1.1.9.jolla.armv7hl                                     (126/457), 155.4 KiB (  1.2 MiB unpacked)<br>
+Retrieving: freetype-devel-2.8.0-1.1.9.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package qt5-default-5.6.3+git9-1.9.2.jolla.armv7hl                                     (127/457),  10.9 KiB (    0 B unpacked)<br>
+Retrieving: qt5-default-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ........................................................................[done]<br>
+Retrieving package glib2-2.56.1+git3-1.3.6.jolla.armv7hl                                        (128/457),   1.1 MiB (  2.7 MiB unpacked)<br>
+Retrieving: glib2-2.56.1+git3-1.3.6.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package tar-1.17-1.2.5.jolla.armv7hl                                                 (129/457), 303.3 KiB (  1.3 MiB unpacked)<br>
+Retrieving: tar-1.17-1.2.5.jolla.armv7hl.rpm ......................................................................................[done]<br>
+Retrieving package coreutils-1:6.9-1.2.6.jolla.armv7hl                                          (130/457), 492.4 KiB (  2.1 MiB unpacked)<br>
+Retrieving: coreutils-6.9-1.2.6.jolla.armv7hl.rpm .................................................................................[done]<br>
+Retrieving package elfutils-0.170+git1-1.3.10.jolla.armv7hl                                     (131/457), 217.8 KiB (541.0 KiB unpacked)<br>
+Retrieving: elfutils-0.170+git1-1.3.10.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package shared-mime-info-1.12-1.4.2.jolla.armv7hl                                    (132/457), 318.4 KiB (  4.7 MiB unpacked)<br>
+Retrieving: shared-mime-info-1.12-1.4.2.jolla.armv7hl.rpm .........................................................................[done]<br>
+Retrieving package libwspcodec-2.2.1-1.2.7.jolla.armv7hl                                        (133/457),  12.8 KiB ( 12.1 KiB unpacked)<br>
+Retrieving: libwspcodec-2.2.1-1.2.7.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package libgsf-1.14.36+git3-1.3.1.jolla.armv7hl                                      (134/457), 180.8 KiB (734.4 KiB unpacked)<br>
+Retrieving: libgsf-1.14.36+git3-1.3.1.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package libglibutil-1.0.35-1.8.4.jolla.armv7hl                                       (135/457),  26.3 KiB ( 31.9 KiB unpacked)<br>
+Retrieving: libglibutil-1.0.35-1.8.4.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package libdsme-0.66.1-1.4.4.jolla.armv7hl                                           (136/457),  25.4 KiB ( 42.9 KiB unpacked)<br>
+Retrieving: libdsme-0.66.1-1.4.4.jolla.armv7hl.rpm ................................................................................[done]<br>
+Retrieving package gstreamer1.0-1.14.1-1.3.5.jolla.armv7hl                                      (137/457), 756.3 KiB (  1.9 MiB unpacked)<br>
+Retrieving: gstreamer1.0-1.14.1-1.3.5.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package gmime-2.6.20-1.2.1.jolla.armv7hl                                             (138/457), 122.4 KiB (310.3 KiB unpacked)<br>
+Retrieving: gmime-2.6.20-1.2.1.jolla.armv7hl.rpm ..................................................................................[done]<br>
+Retrieving package desktop-file-utils-0.23+git1-1.2.9.jolla.armv7hl                             (139/457),  41.0 KiB (125.3 KiB unpacked)<br>
+Retrieving: desktop-file-utils-0.23+git1-1.2.9.jolla.armv7hl.rpm ..................................................................[done]<br>
+Retrieving package pam-1.1.8+git5-1.2.5.jolla.armv7hl                                           (140/457), 295.2 KiB (  1.2 MiB unpacked)<br>
+Retrieving: pam-1.1.8+git5-1.2.5.jolla.armv7hl.rpm ................................................................................[done]<br>
+Retrieving package libmce-glib-1.0.5-1.1.14.jolla.armv7hl                                       (141/457),  18.2 KiB ( 27.3 KiB unpacked)<br>
+Retrieving: libmce-glib-1.0.5-1.1.14.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package libgsupplicant-1.0.11-1.4.6.jolla.armv7hl                                    (142/457),  55.4 KiB (150.0 KiB unpacked)<br>
+Retrieving: libgsupplicant-1.0.11-1.4.6.jolla.armv7hl.rpm .........................................................................[done]<br>
+Retrieving package libgrilio-1.0.29-1.9.1.jolla.armv7hl                                         (143/457),  27.9 KiB ( 34.5 KiB unpacked)<br>
+Retrieving: libgrilio-1.0.29-1.9.1.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package libgofono-2.0.6-1.2.11.jolla.armv7hl                                         (144/457),  47.3 KiB (136.3 KiB unpacked)<br>
+Retrieving: libgofono-2.0.6-1.2.11.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package libdbusaccess-1.0.7-1.3.4.jolla.armv7hl                                      (145/457),  19.9 KiB ( 25.0 KiB unpacked)<br>
+Retrieving: libdbusaccess-1.0.7-1.3.4.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package systemd-libs-225+git13-1.4.2.jolla.armv7hl                                   (146/457), 573.9 KiB (  3.6 MiB unpacked)<br>
+Retrieving: systemd-libs-225+git13-1.4.2.jolla.armv7hl.rpm ........................................................................[done]<br>
+Retrieving package sound-theme-freedesktop-0.8-1.3.1.jolla.noarch                               (147/457), 377.0 KiB (460.5 KiB unpacked)<br>
+Retrieving: sound-theme-freedesktop-0.8-1.3.1.jolla.noarch.rpm ....................................................................[done]<br>
+Retrieving package p11-kit-trust-0.23.12+git1-1.3.5.jolla.armv7hl                               (148/457),  96.7 KiB (264.9 KiB unpacked)<br>
+Retrieving: p11-kit-trust-0.23.12+git1-1.3.5.jolla.armv7hl.rpm ....................................................................[done]<br>
+Retrieving package libuser-0.62+git1-1.2.5.jolla.armv7hl                                        (149/457), 259.9 KiB (  1.5 MiB unpacked)<br>
+Retrieving: libuser-0.62+git1-1.2.5.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package libsmartcols-2.33+git1-1.4.5.jolla.armv7hl                                   (150/457),  87.8 KiB (157.4 KiB unpacked)<br>
+Retrieving: libsmartcols-2.33+git1-1.4.5.jolla.armv7hl.rpm ........................................................................[done]<br>
+Retrieving package groff-1.18.1.4-1.1.14.jolla.armv7hl                                          (151/457),   1.3 MiB (  4.4 MiB unpacked)<br>
+Retrieving: groff-1.18.1.4-1.1.14.jolla.armv7hl.rpm ...............................................................................[done]<br>
+Retrieving package gawk-1:3.1.5-1.2.7.jolla.armv7hl                                             (152/457), 157.6 KiB (488.5 KiB unpacked)<br>
+Retrieving: gawk-3.1.5-1.2.7.jolla.armv7hl.rpm ....................................................................................[done]<br>
+Retrieving package fontconfig-2.12.4-1.2.9.jolla.armv7hl                                        (153/457), 135.4 KiB (308.7 KiB unpacked)<br>
+Retrieving: fontconfig-2.12.4-1.2.9.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package alsa-lib-1.0.26-1.2.6.jolla.armv7hl                                          (154/457), 301.1 KiB (797.5 KiB unpacked)<br>
+Retrieving: alsa-lib-1.0.26-1.2.6.jolla.armv7hl.rpm ...............................................................................[done]<br>
+Retrieving package libgofonoext-1.0.10-1.2.10.jolla.armv7hl                                     (155/457),  23.0 KiB ( 49.1 KiB unpacked)<br>
+Retrieving: libgofonoext-1.0.10-1.2.10.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package mesa-llvmpipe-libglapi-9.2.5+git3-1.1.10.jolla.armv7hl                       (156/457),  41.6 KiB (192.8 KiB unpacked)<br>
+Retrieving: mesa-llvmpipe-libglapi-9.2.5+git3-1.1.10.jolla.armv7hl.rpm ............................................................[done]<br>
+Retrieving package dbus-libs-1.10.8+git1-1.1.12.jolla.armv7hl                                   (157/457),  97.1 KiB (192.3 KiB unpacked)<br>
+Retrieving: dbus-libs-1.10.8+git1-1.1.12.jolla.armv7hl.rpm ........................................................................[done]<br>
+Retrieving package cor-0.1.18-1.2.1.jolla.armv7hl                                               (158/457),  53.8 KiB (142.4 KiB unpacked)<br>
+Retrieving: cor-0.1.18-1.2.1.jolla.armv7hl.rpm ....................................................................................[done]<br>
+Retrieving package p11-kit-nss-ckbi-0.23.12+git1-1.3.5.jolla.armv7hl                              (159/457),   7.7 KiB (    0 B unpacked)<br>
+Retrieving: p11-kit-nss-ckbi-0.23.12+git1-1.3.5.jolla.armv7hl.rpm .................................................................[done]<br>
+Retrieving package passwd-0.79+git1-1.3.5.jolla.armv7hl                                         (160/457),  83.3 KiB (389.2 KiB unpacked)<br>
+Retrieving: passwd-0.79+git1-1.3.5.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package libuuid-2.33+git1-1.4.5.jolla.armv7hl                                        (161/457),  22.5 KiB ( 20.1 KiB unpacked)<br>
+Retrieving: libuuid-2.33+git1-1.4.5.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package perl-macros-2:5.16.1-1.1.16.jolla.armv7hl                                    (162/457),  10.9 KiB (  5.0 KiB unpacked)<br>
+Retrieving: perl-macros-5.16.1-1.1.16.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package sailfish-fonts-0.1.5-1.3.1.jolla.noarch                                      (163/457),  12.1 MiB ( 32.9 MiB unpacked)<br>
+Retrieving: sailfish-fonts-0.1.5-1.3.1.jolla.noarch.rpm ...........................................................................[done]<br>
+Retrieving package fontconfig-devel-2.12.4-1.2.9.jolla.armv7hl                                  (164/457),  25.9 KiB ( 32.8 KiB unpacked)<br>
+Retrieving: fontconfig-devel-2.12.4-1.2.9.jolla.armv7hl.rpm .......................................................................[done]<br>
+Retrieving package libsndfile-1.0.25-1.2.5.jolla.armv7hl                                        (165/457), 167.6 KiB (425.1 KiB unpacked)<br>
+Retrieving: libsndfile-1.0.25-1.2.5.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package mesa-llvmpipe-libEGL-9.2.5+git3-1.1.10.jolla.armv7hl                         (166/457),  38.9 KiB ( 67.5 KiB unpacked)<br>
+Retrieving: mesa-llvmpipe-libEGL-9.2.5+git3-1.1.10.jolla.armv7hl.rpm ..............................................................[done]<br>
+Retrieving package libdbuslogserver-dbus-1.0.15-1.4.4.jolla.armv7hl                             (167/457),  21.7 KiB ( 30.8 KiB unpacked)<br>
+Retrieving: libdbuslogserver-dbus-1.0.15-1.4.4.jolla.armv7hl.rpm ..................................................................[done]<br>
+Retrieving package dbus-glib-0.100.2-1.2.7.jolla.armv7hl                                        (168/457),  84.9 KiB (211.6 KiB unpacked)<br>
+Retrieving: dbus-glib-0.100.2-1.2.7.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package statefs-pp-0.3.35-1.2.1.jolla.armv7hl                                        (169/457),  29.1 KiB ( 35.6 KiB unpacked)<br>
+Retrieving: statefs-pp-0.3.35-1.2.1.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package gnutls-2.12.23.4-1.2.5.jolla.armv7hl                                         (170/457), 301.8 KiB (801.1 KiB unpacked)<br>
+Retrieving: gnutls-2.12.23.4-1.2.5.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package ca-certificates-2018.2.24-1.2.14.jolla.noarch                                (171/457), 342.5 KiB (928.0 KiB unpacked)<br>
+Retrieving: ca-certificates-2018.2.24-1.2.14.jolla.noarch.rpm .....................................................................[done]<br>
+Retrieving package libblkid-2.33+git1-1.4.5.jolla.armv7hl                                       (172/457), 120.6 KiB (208.3 KiB unpacked)<br>
+Retrieving: libblkid-2.33+git1-1.4.5.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package perl-libs-2:5.16.1-1.1.16.jolla.armv7hl                                      (173/457), 497.9 KiB (952.6 KiB unpacked)<br>
+Retrieving: perl-libs-5.16.1-1.1.16.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package mesa-llvmpipe-9.2.5+git3-1.1.10.jolla.armv7hl                                (174/457),   5.2 MiB ( 16.3 MiB unpacked)<br>
+Retrieving: mesa-llvmpipe-9.2.5+git3-1.1.10.jolla.armv7hl.rpm .....................................................................[done]<br>
+Retrieving package libresource-0.23.1+git1-1.2.3.jolla.armv7hl                                  (175/457),  30.8 KiB ( 53.9 KiB unpacked)<br>
+Retrieving: libresource-0.23.1+git1-1.2.3.jolla.armv7hl.rpm .......................................................................[done]<br>
+Retrieving package glib-networking-2.42.0-1.2.2.jolla.armv7hl                                   (176/457),  82.4 KiB (278.8 KiB unpacked)<br>
+Retrieving: glib-networking-2.42.0-1.2.2.jolla.armv7hl.rpm ........................................................................[done]<br>
+Retrieving package openssl-libs-1.0.2o+git2-1.4.5.jolla.armv7hl                                 (177/457), 692.3 KiB (  1.5 MiB unpacked)<br>
+Retrieving: openssl-libs-1.0.2o+git2-1.4.5.jolla.armv7hl.rpm ......................................................................[done]<br>
+Retrieving package libfdisk-2.33+git1-1.4.5.jolla.armv7hl                                       (178/457), 159.4 KiB (300.7 KiB unpacked)<br>
+Retrieving: libfdisk-2.33+git1-1.4.5.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package perl-2:5.16.1-1.1.16.jolla.armv7hl                                           (179/457),   8.6 MiB ( 27.1 MiB unpacked)<br>
+Retrieving: perl-5.16.1-1.1.16.jolla.armv7hl.rpm ..................................................................................[done]<br>
+Retrieving package mesa-llvmpipe-libwayland-egl-9.2.5+git3-1.1.10.jolla.armv7hl                 (180/457),  10.3 KiB (  3.5 KiB unpacked)<br>
+Retrieving: mesa-llvmpipe-libwayland-egl-9.2.5+git3-1.1.10.jolla.armv7hl.rpm ......................................................[done]<br>
+Retrieving package mesa-llvmpipe-libGLESv2-9.2.5+git3-1.1.10.jolla.armv7hl                      (181/457),  16.6 KiB ( 31.7 KiB unpacked)<br>
+Retrieving: mesa-llvmpipe-libGLESv2-9.2.5+git3-1.1.10.jolla.armv7hl.rpm ...........................................................[done]<br>
+Retrieving package mesa-llvmpipe-libEGL-devel-9.2.5+git3-1.1.10.jolla.armv7hl                   (182/457),  21.2 KiB ( 60.7 KiB unpacked)<br>
+Retrieving: mesa-llvmpipe-libEGL-devel-9.2.5+git3-1.1.10.jolla.armv7hl.rpm ........................................................[done]<br>
+Retrieving package libcurl-7.64.0+git1-1.8.5.jolla.armv7hl                                      (183/457), 171.5 KiB (287.3 KiB unpacked)<br>
+Retrieving: libcurl-7.64.0+git1-1.8.5.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package libarchive-3.3.3+git1-1.2.9.jolla.armv7hl                                    (184/457), 249.4 KiB (471.5 KiB unpacked)<br>
+Retrieving: libarchive-3.3.3+git1-1.2.9.jolla.armv7hl.rpm .........................................................................[done]<br>
+Retrieving package libmount-2.33+git1-1.4.5.jolla.armv7hl                                       (185/457), 128.9 KiB (235.8 KiB unpacked)<br>
+Retrieving: libmount-2.33+git1-1.4.5.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package perl-Scalar-List-Utils-2:1.25-1.1.16.jolla.armv7hl                           (186/457),  31.5 KiB ( 38.4 KiB unpacked)<br>
+Retrieving: perl-Scalar-List-Utils-1.25-1.1.16.jolla.armv7hl.rpm ..................................................................[done]<br>
+Retrieving package mesa-llvmpipe-libGLESv2-devel-9.2.5+git3-1.1.10.jolla.armv7hl                (187/457),  29.4 KiB (187.0 KiB unpacked)<br>
+Retrieving: mesa-llvmpipe-libGLESv2-devel-9.2.5+git3-1.1.10.jolla.armv7hl.rpm .....................................................[done]<br>
+Retrieving package gstreamer1.0-plugins-base-1.14.1-1.2.5.jolla.armv7hl                         (188/457),   1.3 MiB (  3.4 MiB unpacked)<br>
+Retrieving: gstreamer1.0-plugins-base-1.14.1-1.2.5.jolla.armv7hl.rpm ..............................................................[done]<br>
+Retrieving package cairo-1.14.6+git1-1.2.3.jolla.armv7hl                                        (189/457), 399.3 KiB (797.6 KiB unpacked)<br>
+Retrieving: cairo-1.14.6+git1-1.2.3.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package pacrunner-0.15+git1-1.3.3.jolla.armv7hl                                      (190/457), 163.9 KiB (318.2 KiB unpacked)<br>
+Retrieving: pacrunner-0.15+git1-1.3.3.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package gnupg2-1:2.0.4+git2-1.4.5.jolla.armv7hl                                      (191/457), 949.6 KiB (  4.2 MiB unpacked)<br>
+Retrieving: gnupg2-2.0.4+git2-1.4.5.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package curl-7.64.0+git1-1.8.5.jolla.armv7hl                                         (192/457), 107.0 KiB (307.8 KiB unpacked)<br>
+Retrieving: curl-7.64.0+git1-1.8.5.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package util-linux-2.33+git1-1.4.5.jolla.armv7hl                                     (193/457), 673.2 KiB (  2.6 MiB unpacked)<br>
+Retrieving: util-linux-2.33+git1-1.4.5.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package perl-Pod-Escapes-2:1.04-1.1.16.jolla.noarch                                  (194/457),  18.2 KiB ( 20.6 KiB unpacked)<br>
+Retrieving: perl-Pod-Escapes-1.04-1.1.16.jolla.noarch.rpm .........................................................................[done]<br>
+Retrieving package nemo-gstreamer1.0-interfaces-0.20150126.0-1.3.3.jolla.armv7hl                (195/457),  12.0 KiB (  9.5 KiB unpacked)<br>
+Retrieving: nemo-gstreamer1.0-interfaces-0.20150126.0-1.3.3.jolla.armv7hl.rpm .....................................................[done]<br>
+Retrieving package gpgme-1.2.0+git6-1.3.4.jolla.armv7hl                                         (196/457),  91.0 KiB (293.9 KiB unpacked)<br>
+Retrieving: gpgme-1.2.0+git6-1.3.4.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package rpm-libs-4.14.1+git9-1.5.7.jolla.armv7hl                                     (197/457), 254.8 KiB (504.9 KiB unpacked)<br>
+Retrieving: rpm-libs-4.14.1+git9-1.5.7.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package xdg-utils-1.1.2+git1-1.2.8.jolla.noarch                                      (198/457),  43.8 KiB (257.9 KiB unpacked)<br>
+Retrieving: xdg-utils-1.1.2+git1-1.2.8.jolla.noarch.rpm ...........................................................................[done]<br>
+Retrieving package fuse-2.9.0+git1-1.3.1.jolla.armv7hl                                          (199/457),  30.2 KiB ( 51.5 KiB unpacked)<br>
+Retrieving: fuse-2.9.0+git1-1.3.1.jolla.armv7hl.rpm ...............................................................................[done]<br>
+Retrieving package cryptsetup-libs-2.1.0+git1-1.3.5.jolla.armv7hl                               (200/457), 298.2 KiB (  1.3 MiB unpacked)<br>
+Retrieving: cryptsetup-libs-2.1.0+git1-1.3.5.jolla.armv7hl.rpm ....................................................................[done]<br>
+Retrieving package perl-Pod-Simple-2:3.20-1.1.16.jolla.noarch                                   (201/457), 198.4 KiB (488.0 KiB unpacked)<br>
+Retrieving: perl-Pod-Simple-3.20-1.1.16.jolla.noarch.rpm ..........................................................................[done]<br>
+Retrieving package rpm-4.14.1+git9-1.5.7.jolla.armv7hl                                          (202/457), 331.3 KiB (  1.8 MiB unpacked)<br>
+Retrieving: rpm-4.14.1+git9-1.5.7.jolla.armv7hl.rpm ...............................................................................[done]<br>
+Retrieving package fuse-libs-2.9.0+git1-1.3.1.jolla.armv7hl                                     (203/457),  70.4 KiB (166.2 KiB unpacked)<br>
+Retrieving: fuse-libs-2.9.0+git1-1.3.1.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package systemd-config-sailfish-0.8.15-1.8.1.jolla.noarch                            (204/457),  33.9 KiB (  3.7 KiB unpacked)<br>
+Retrieving: systemd-config-sailfish-0.8.15-1.8.1.jolla.noarch.rpm .................................................................[done]<br>
+Retrieving package perl-parent-2:0.225-1.1.16.jolla.noarch                                      (205/457),  13.2 KiB (  5.6 KiB unpacked)<br>
+Retrieving: perl-parent-0.225-1.1.16.jolla.noarch.rpm .............................................................................[done]<br>
+Retrieving package device-mapper-libs-2.02.177+git3-1.3.7.jolla.armv7hl                         (206/457), 124.9 KiB (239.3 KiB unpacked)<br>
+Retrieving: device-mapper-libs-2.02.177+git3-1.3.7.jolla.armv7hl.rpm ..............................................................[done]<br>
+Retrieving package perl-Pod-Perldoc-2:3.17.00-1.1.16.jolla.noarch                               (207/457),  75.3 KiB (143.0 KiB unpacked)<br>
+Retrieving: perl-Pod-Perldoc-3.17.00-1.1.16.jolla.noarch.rpm ......................................................................[done]<br>
+Retrieving package device-mapper-event-libs-2.02.177+git3-1.3.7.jolla.armv7hl                   (208/457),  16.5 KiB ( 17.8 KiB unpacked)<br>
+Retrieving: device-mapper-event-libs-2.02.177+git3-1.3.7.jolla.armv7hl.rpm ........................................................[done]<br>
+Retrieving package perl-Pod-Parser-2:1.51-1.1.16.jolla.noarch                                   (209/457), 124.6 KiB (305.0 KiB unpacked)<br>
+Retrieving: perl-Pod-Parser-1.51-1.1.16.jolla.noarch.rpm ..........................................................................[done]<br>
+Retrieving package lvm2-2.02.177+git3-1.3.7.jolla.armv7hl                                       (210/457), 618.2 KiB (  1.6 MiB unpacked)<br>
+Retrieving: lvm2-2.02.177+git3-1.3.7.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package perl-Filter-2:1.40-1.1.16.jolla.armv7hl                                      (211/457),  40.2 KiB ( 56.0 KiB unpacked)<br>
+Retrieving: perl-Filter-1.40-1.1.16.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package systemd-225+git13-1.4.2.jolla.armv7hl                                        (212/457),   3.8 MiB ( 31.3 MiB unpacked)<br>
+Retrieving: systemd-225+git13-1.4.2.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package perl-Module-Pluggable-2:4.00-1.1.16.jolla.noarch                             (213/457),  25.6 KiB ( 30.3 KiB unpacked)<br>
+Retrieving: perl-Module-Pluggable-4.00-1.1.16.jolla.noarch.rpm ....................................................................[done]<br>
+Retrieving package dbus-1.10.8+git1-1.1.12.jolla.armv7hl                                        (214/457), 113.1 KiB (278.0 KiB unpacked)<br>
+Retrieving: dbus-1.10.8+git1-1.1.12.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package perl-threads-2:1.86-1.1.16.jolla.armv7hl                                     (215/457),  45.2 KiB ( 72.0 KiB unpacked)<br>
+Retrieving: perl-threads-1.86-1.1.16.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package polkit-0.105+git2-1.2.3.jolla.armv7hl                                        (216/457), 103.1 KiB (268.9 KiB unpacked)<br>
+Retrieving: polkit-0.105+git2-1.2.3.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package device-mapper-2.02.177+git3-1.3.7.jolla.armv7hl                              (217/457),  67.8 KiB (160.9 KiB unpacked)<br>
+Retrieving: device-mapper-2.02.177+git3-1.3.7.jolla.armv7hl.rpm ...................................................................[done]<br>
+Retrieving package dbus-devel-1.10.8+git1-1.1.12.jolla.armv7hl                                  (218/457),  30.2 KiB (116.4 KiB unpacked)<br>
+Retrieving: dbus-devel-1.10.8+git1-1.1.12.jolla.armv7hl.rpm .......................................................................[done]<br>
+Retrieving package perl-Socket-2:2.001-1.1.16.jolla.armv7hl                                     (219/457),  37.6 KiB ( 66.8 KiB unpacked)<br>
+Retrieving: perl-Socket-2.001-1.1.16.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package device-mapper-event-2.02.177+git3-1.3.7.jolla.armv7hl                        (220/457),  22.0 KiB ( 29.6 KiB unpacked)<br>
+Retrieving: device-mapper-event-2.02.177+git3-1.3.7.jolla.armv7hl.rpm .............................................................[done]<br>
+Retrieving package perl-threads-shared-2:1.40-1.1.16.jolla.armv7hl                              (221/457),  34.5 KiB ( 50.6 KiB unpacked)<br>
+Retrieving: perl-threads-shared-1.40-1.1.16.jolla.armv7hl.rpm .....................................................................[done]<br>
+Retrieving package lvm2-libs-2.02.177+git3-1.3.7.jolla.armv7hl                                  (222/457), 670.2 KiB (  2.3 MiB unpacked)<br>
+Retrieving: lvm2-libs-2.02.177+git3-1.3.7.jolla.armv7hl.rpm .......................................................................[done]<br>
+Retrieving package qt5-qmake-5.6.3+git9-1.9.2.jolla.armv7hl                                     (223/457),   1.1 MiB (  2.7 MiB unpacked)<br>
+Retrieving: qt5-qmake-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package meego-rpm-config-0.18-1.2.7.jolla.noarch                                     (224/457),  49.4 KiB (132.3 KiB unpacked)<br>
+Retrieving: meego-rpm-config-0.18-1.2.7.jolla.noarch.rpm ..........................................................................[done]<br>
+Retrieving package wpa_supplicant-2.6+git5-1.3.5.jolla.armv7hl                                  (225/457), 483.4 KiB (  1.0 MiB unpacked)<br>
+Retrieving: wpa_supplicant-2.6+git5-1.3.5.jolla.armv7hl.rpm .......................................................................[done]<br>
+Retrieving package usb-moded-0.86.0+mer33-1.3.2.jolla.armv7hl                                   (226/457), 100.8 KiB (138.3 KiB unpacked)<br>
+Retrieving: usb-moded-0.86.0+mer33-1.3.2.jolla.armv7hl.rpm ........................................................................[done]<br>
+Retrieving package systemd-user-session-targets-0.0.2-1.3.5.jolla.noarch                        (227/457),   8.7 KiB (  1.3 KiB unpacked)<br>
+Retrieving: systemd-user-session-targets-0.0.2-1.3.5.jolla.noarch.rpm .............................................................[done]<br>
+Retrieving package pulseaudio-12.2+git1-1.7.2.jolla.armv7hl                                     (228/457),   1.3 MiB (  5.6 MiB unpacked)<br>
+Retrieving: pulseaudio-12.2+git1-1.7.2.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package ofono-1.21+git44-1.19.1.jolla.armv7hl                                        (229/457), 443.3 KiB (834.2 KiB unpacked)<br>
+Retrieving: ofono-1.21+git44-1.19.1.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package oneshot-0.4.8-1.2.8.jolla.noarch                                             (230/457),  15.2 KiB (  8.3 KiB unpacked)<br>
+Retrieving: oneshot-0.4.8-1.2.8.jolla.noarch.rpm ..................................................................................[done]<br>
+Retrieving package mapplauncherd-4.1.30-1.6.1.jolla.armv7hl                                     (231/457),  53.4 KiB ( 87.9 KiB unpacked)<br>
+Retrieving: mapplauncherd-4.1.30-1.6.1.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package libcanberra-0.30+git1-1.4.1.jolla.armv7hl                                    (232/457),  48.4 KiB (103.5 KiB unpacked)<br>
+Retrieving: libcanberra-0.30+git1-1.4.1.jolla.armv7hl.rpm .........................................................................[done]<br>
+Retrieving package connman-configs-mer-1.32+git65-1.25.2.jolla.armv7hl                            (233/457),  62.4 KiB (   94 B unpacked)<br>
+Retrieving: connman-configs-mer-1.32+git65-1.25.2.jolla.armv7hl.rpm ...............................................................[done]<br>
+Retrieving package ffmpeg-4.1.1+git1-1.2.1.jolla.armv7hl                                        (234/457),   3.4 MiB (  7.9 MiB unpacked)<br>
+Retrieving: ffmpeg-4.1.1+git1-1.2.1.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package dconf-0.28.0-1.1.2.jolla.armv7hl                                             (235/457),  56.5 KiB (146.1 KiB unpacked)<br>
+Retrieving: dconf-0.28.0-1.1.2.jolla.armv7hl.rpm ..................................................................................[done]<br>
+Retrieving package boost-system-1.66.0-1.3.8.jolla.armv7hl                                      (236/457),  18.8 KiB ( 23.9 KiB unpacked)<br>
+Retrieving: boost-system-1.66.0-1.3.8.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package connman-1.32+git65-1.25.2.jolla.armv7hl                                      (237/457), 417.5 KiB (874.1 KiB unpacked)<br>
+Retrieving: connman-1.32+git65-1.25.2.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package libicu-63.1+git5-1.1.6.jolla.armv7hl                                         (238/457),   7.5 MiB ( 29.1 MiB unpacked)<br>
+Retrieving: libicu-63.1+git5-1.1.6.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package jolla-ambient-sound-theme-0.0.17-1.2.1.jolla.noarch                          (239/457), 774.7 KiB (  1.8 MiB unpacked)<br>
+Retrieving: jolla-ambient-sound-theme-0.0.17-1.2.1.jolla.noarch.rpm ...............................................................[done]<br>
+Retrieving package boost-filesystem-1.66.0-1.3.8.jolla.armv7hl                                  (240/457),  46.4 KiB (217.3 KiB unpacked)<br>
+Retrieving: boost-filesystem-1.66.0-1.3.8.jolla.armv7hl.rpm .......................................................................[done]<br>
+Retrieving package sqlite-libs-3.13.0+git3-1.3.6.jolla.armv7hl                                  (241/457), 381.7 KiB (591.0 KiB unpacked)<br>
+Retrieving: sqlite-libs-3.13.0+git3-1.3.6.jolla.armv7hl.rpm .......................................................................[done]<br>
+Retrieving package qt5-qtcore-5.6.3+git9-1.9.2.jolla.armv7hl                                    (242/457),   1.4 MiB (  3.4 MiB unpacked)<br>
+Retrieving: qt5-qtcore-5.6.3+git9-1.9.2.jolla.armv7hl.rpm .........................................................................[done]<br>
+Retrieving package statefs-0.3.35-1.2.1.jolla.armv7hl                                           (243/457), 145.0 KiB (497.1 KiB unpacked)<br>
+Retrieving: statefs-0.3.35-1.2.1.jolla.armv7hl.rpm ................................................................................[done]<br>
+Retrieving package nss-3.39-1.3.6.jolla.armv7hl                                                 (244/457), 746.1 KiB (  1.7 MiB unpacked)<br>
+Retrieving: nss-3.39-1.3.6.jolla.armv7hl.rpm ......................................................................................[done]<br>
+Retrieving package qt5-qtconcurrent-5.6.3+git9-1.9.2.jolla.armv7hl                              (245/457),  18.6 KiB ( 16.4 KiB unpacked)<br>
+Retrieving: qt5-qtconcurrent-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ...................................................................[done]<br>
+Retrieving package statefs-provider-inout-power-0.3.17-1.3.1.jolla.noarch                         (246/457),  19.0 KiB (  795 B unpacked)<br>
+Retrieving: statefs-provider-inout-power-0.3.17-1.3.1.jolla.noarch.rpm ............................................................[done]<br>
+Retrieving package boost-thread-1.66.0-1.3.8.jolla.armv7hl                                      (247/457),  66.7 KiB (274.2 KiB unpacked)<br>
+Retrieving: boost-thread-1.66.0-1.3.8.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package nss-sysinit-3.39-1.3.6.jolla.armv7hl                                         (248/457),  15.7 KiB ( 11.0 KiB unpacked)<br>
+Retrieving: nss-sysinit-3.39-1.3.6.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package qt5-qtdbus-5.6.3+git9-1.9.2.jolla.armv7hl                                    (249/457), 141.9 KiB (351.3 KiB unpacked)<br>
+Retrieving: qt5-qtdbus-5.6.3+git9-1.9.2.jolla.armv7hl.rpm .........................................................................[done]<br>
+Retrieving package nss-devel-3.39-1.3.6.jolla.armv7hl                                           (250/457), 220.6 KiB (  1.1 MiB unpacked)<br>
+Retrieving: nss-devel-3.39-1.3.6.jolla.armv7hl.rpm ................................................................................[done]<br>
+Retrieving package qt5-qtgui-5.6.3+git9-1.9.2.jolla.armv7hl                                     (251/457),   1.4 MiB (  3.6 MiB unpacked)<br>
+Retrieving: qt5-qtgui-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package nss-softokn-freebl-3.39-1.3.6.jolla.armv7hl                                  (252/457), 202.5 KiB (671.2 KiB unpacked)<br>
+Retrieving: nss-softokn-freebl-3.39-1.3.6.jolla.armv7hl.rpm .......................................................................[done]<br>
+Retrieving package qt5-qtnetwork-5.6.3+git9-1.9.2.jolla.armv7hl                                 (253/457), 357.4 KiB (962.8 KiB unpacked)<br>
+Retrieving: qt5-qtnetwork-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ......................................................................[done]<br>
+Retrieving package python-2.7.15+git2-1.3.7.jolla.armv7hl                                       (254/457),  17.7 KiB ( 16.1 KiB unpacked)<br>
+Retrieving: python-2.7.15+git2-1.3.7.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package poppler-0.74.0+git1-1.5.1.jolla.armv7hl                                      (255/457), 770.2 KiB (  2.1 MiB unpacked)<br>
+Retrieving: poppler-0.74.0+git1-1.5.1.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package libsoup-2.54.1+git3-1.2.4.jolla.armv7hl                                      (256/457), 255.4 KiB (851.2 KiB unpacked)<br>
+Retrieving: libsoup-2.54.1+git3-1.2.4.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package libsolv0-0.6.35+git2-1.4.5.jolla.armv7hl                                     (257/457), 290.0 KiB (513.9 KiB unpacked)<br>
+Retrieving: libsolv0-0.6.35+git2-1.4.5.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package libaccounts-glib-1.18+git1-1.1.8.jolla.armv7hl                               (258/457),  42.9 KiB ( 79.1 KiB unpacked)<br>
+Retrieving: libaccounts-glib-1.18+git1-1.1.8.jolla.armv7hl.rpm ....................................................................[done]<br>
+Retrieving package PackageKit-glib-1.1.9+git5-1.8.1.jolla.armv7hl                               (259/457),  98.5 KiB (240.6 KiB unpacked)<br>
+Retrieving: PackageKit-glib-1.1.9+git5-1.8.1.jolla.armv7hl.rpm ....................................................................[done]<br>
+Retrieving package qt5-qtwidgets-5.6.3+git9-1.9.2.jolla.armv7hl                                 (260/457),   1.7 MiB (  4.1 MiB unpacked)<br>
+Retrieving: qt5-qtwidgets-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ......................................................................[done]<br>
+Retrieving package python-libs-2.7.15+git2-1.3.7.jolla.armv7hl                                  (261/457),   6.5 MiB ( 25.3 MiB unpacked)<br>
+Retrieving: python-libs-2.7.15+git2-1.3.7.jolla.armv7hl.rpm .......................................................................[done]<br>
+Retrieving package poppler-glib-0.74.0+git1-1.5.1.jolla.armv7hl                                 (262/457), 103.8 KiB (296.1 KiB unpacked)<br>
+Retrieving: poppler-glib-0.74.0+git1-1.5.1.jolla.armv7hl.rpm ......................................................................[done]<br>
+Retrieving package totem-pl-parser-3.26.1+git1-1.4.1.jolla.armv7hl                              (263/457), 146.8 KiB (503.3 KiB unpacked)<br>
+Retrieving: totem-pl-parser-3.26.1+git1-1.4.1.jolla.armv7hl.rpm ...................................................................[done]<br>
+Retrieving package gstreamer1.0-plugins-good-1.14.1-1.2.8.jolla.armv7hl                         (264/457),   1.3 MiB (  3.2 MiB unpacked)<br>
+Retrieving: gstreamer1.0-plugins-good-1.14.1-1.2.8.jolla.armv7hl.rpm ..............................................................[done]<br>
+Retrieving package libsolv-tools-0.6.35+git2-1.4.5.jolla.armv7hl                                (265/457),  46.3 KiB (144.5 KiB unpacked)<br>
+Retrieving: libsolv-tools-0.6.35+git2-1.4.5.jolla.armv7hl.rpm .....................................................................[done]<br>
+Retrieving package qt5-qtopengl-5.6.3+git9-1.9.2.jolla.armv7hl                                  (266/457),  91.2 KiB (232.1 KiB unpacked)<br>
+Retrieving: qt5-qtopengl-5.6.3+git9-1.9.2.jolla.armv7hl.rpm .......................................................................[done]<br>
+Retrieving package rpm-build-4.14.1+git9-1.5.7.jolla.armv7hl                                    (267/457), 105.1 KiB (250.6 KiB unpacked)<br>
+Retrieving: rpm-build-4.14.1+git9-1.5.7.jolla.armv7hl.rpm .........................................................................[done]<br>
+Retrieving package ngfd-settings-sailfish-0.8.15-1.8.1.jolla.noarch                             (268/457),  41.4 KiB ( 25.8 KiB unpacked)<br>
+Retrieving: ngfd-settings-sailfish-0.8.15-1.8.1.jolla.noarch.rpm ..................................................................[done]<br>
+Retrieving package qt5-qtsql-5.6.3+git9-1.9.2.jolla.armv7hl                                     (269/457),  78.2 KiB (180.6 KiB unpacked)<br>
+Retrieving: qt5-qtsql-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package qt5-tools-5.6.3+git9-1.9.2.jolla.armv7hl                                     (270/457), 671.9 KiB (  2.3 MiB unpacked)<br>
+Retrieving: qt5-tools-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package qt5-qtxmlpatterns-5.6.3+git2-1.2.1.jolla.armv7hl                             (271/457), 776.1 KiB (  2.5 MiB unpacked)<br>
+Retrieving: qt5-qtxmlpatterns-5.6.3+git2-1.2.1.jolla.armv7hl.rpm ..................................................................[done]<br>
+Retrieving package qt5-qtxml-5.6.3+git9-1.9.2.jolla.armv7hl                                     (272/457),  68.3 KiB (149.6 KiB unpacked)<br>
+Retrieving: qt5-qtxml-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package qt5-qttest-5.6.3+git9-1.9.2.jolla.armv7hl                                    (273/457),  69.8 KiB (159.5 KiB unpacked)<br>
+Retrieving: qt5-qttest-5.6.3+git9-1.9.2.jolla.armv7hl.rpm .........................................................................[done]<br>
+Retrieving package qt5-qtsvg-5.6.2+git1-1.2.1.jolla.armv7hl                                     (274/457),  84.8 KiB (199.3 KiB unpacked)<br>
+Retrieving: qt5-qtsvg-5.6.2+git1-1.2.1.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package qt5-qtserviceframework-5.2.0+git9-1.2.1.jolla.armv7hl                        (275/457), 123.0 KiB (317.1 KiB unpacked)<br>
+Retrieving: qt5-qtserviceframework-5.2.0+git9-1.2.1.jolla.armv7hl.rpm .............................................................[done]<br>
+Retrieving package qt5-qtsensors-5.2.1+git17-1.3.1.jolla.armv7hl                                (276/457),  52.2 KiB (153.3 KiB unpacked)<br>
+Retrieving: qt5-qtsensors-5.2.1+git17-1.3.1.jolla.armv7hl.rpm .....................................................................[done]<br>
+Retrieving package qt5-qtpublishsubscribe-5.2.0+git9-1.2.1.jolla.armv7hl                        (277/457),  21.3 KiB ( 28.7 KiB unpacked)<br>
+Retrieving: qt5-qtpublishsubscribe-5.2.0+git9-1.2.1.jolla.armv7hl.rpm .............................................................[done]<br>
+Retrieving package qt5-qtprintsupport-5.6.3+git9-1.9.2.jolla.armv7hl                            (278/457), 126.6 KiB (311.9 KiB unpacked)<br>
+Retrieving: qt5-qtprintsupport-5.6.3+git9-1.9.2.jolla.armv7hl.rpm .................................................................[done]<br>
+Retrieving package qt5-qtpositioning-5.2.1+git31-1.4.1.jolla.armv7hl                            (279/457),  64.9 KiB (157.1 KiB unpacked)<br>
+Retrieving: qt5-qtpositioning-5.2.1+git31-1.4.1.jolla.armv7hl.rpm .................................................................[done]<br>
+Retrieving package qt5-qtpim-organizer-5.2.0+git2-1.2.1.jolla.armv7hl                           (280/457), 119.0 KiB (426.8 KiB unpacked)<br>
+Retrieving: qt5-qtpim-organizer-5.2.0+git2-1.2.1.jolla.armv7hl.rpm ................................................................[done]<br>
+Retrieving package qt5-qtpim-contacts-5.2.0+git2-1.2.1.jolla.armv7hl                            (281/457), 109.3 KiB (356.2 KiB unpacked)<br>
+Retrieving: qt5-qtpim-contacts-5.2.0+git2-1.2.1.jolla.armv7hl.rpm .................................................................[done]<br>
+Retrieving package qt5-plugin-sqldriver-sqlite-5.6.3+git9-1.9.2.jolla.armv7hl                   (282/457),  24.9 KiB ( 37.6 KiB unpacked)<br>
+Retrieving: qt5-plugin-sqldriver-sqlite-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ........................................................[done]<br>
+Retrieving package qt5-plugin-platform-minimal-5.6.3+git9-1.9.2.jolla.armv7hl                   (283/457),  46.8 KiB ( 91.4 KiB unpacked)<br>
+Retrieving: qt5-plugin-platform-minimal-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ........................................................[done]<br>
+Retrieving package qt5-plugin-imageformat-jpeg-5.6.3+git9-1.9.2.jolla.armv7hl                   (284/457),  24.3 KiB ( 32.0 KiB unpacked)<br>
+Retrieving: qt5-plugin-imageformat-jpeg-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ........................................................[done]<br>
+Retrieving package qt5-plugin-bearer-generic-5.6.3+git9-1.9.2.jolla.armv7hl                     (285/457),  29.2 KiB ( 55.3 KiB unpacked)<br>
+Retrieving: qt5-plugin-bearer-generic-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ..........................................................[done]<br>
+Retrieving package mlite-qt5-0.2.25-1.4.1.jolla.armv7hl                                         (286/457),  80.2 KiB (199.5 KiB unpacked)<br>
+Retrieving: mlite-qt5-0.2.25-1.4.1.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package libusb-moded-qt5-1.8-1.4.1.jolla.armv7hl                                     (287/457),  30.3 KiB ( 71.0 KiB unpacked)<br>
+Retrieving: libusb-moded-qt5-1.8-1.4.1.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package libqtaround2-0.2.8-1.2.1.jolla.armv7hl                                       (288/457),  68.9 KiB (165.0 KiB unpacked)<br>
+Retrieving: libqtaround2-0.2.8-1.2.1.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package libmediaart-1.9.4-1.4.1.jolla.armv7hl                                        (289/457),  27.2 KiB ( 43.9 KiB unpacked)<br>
+Retrieving: libmediaart-1.9.4-1.4.1.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package libmce-qt5-1.1.1-1.4.1.jolla.armv7hl                                         (290/457),  39.8 KiB (129.1 KiB unpacked)<br>
+Retrieving: libmce-qt5-1.1.1-1.4.1.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package libkf5archive-5.41.0+git4-1.4.1.jolla.armv7hl                                (291/457),  82.3 KiB (196.4 KiB unpacked)<br>
+Retrieving: libkf5archive-5.41.0+git4-1.4.1.jolla.armv7hl.rpm .....................................................................[done]<br>
+Retrieving package libiodata-qt5-0.19.10-1.3.1.jolla.armv7hl                                    (292/457),  58.9 KiB (122.9 KiB unpacked)<br>
+Retrieving: libiodata-qt5-0.19.10-1.3.1.jolla.armv7hl.rpm .........................................................................[done]<br>
+Retrieving package libdbus-qeventloop-qt5-1.30.3-1.4.1.jolla.armv7hl                            (293/457),  17.3 KiB ( 18.2 KiB unpacked)<br>
+Retrieving: libdbus-qeventloop-qt5-1.30.3-1.4.1.jolla.armv7hl.rpm .................................................................[done]<br>
+Retrieving package dbusextended-qt5-0.0.3-1.3.1.jolla.armv7hl                                   (294/457),  30.9 KiB ( 67.1 KiB unpacked)<br>
+Retrieving: dbusextended-qt5-0.0.3-1.3.1.jolla.armv7hl.rpm ........................................................................[done]<br>
+Retrieving package connman-qt5-1.2.16-1.10.1.jolla.armv7hl                                      (295/457), 126.7 KiB (324.9 KiB unpacked)<br>
+Retrieving: connman-qt5-1.2.16-1.10.1.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package qt5-qtcore-devel-5.6.3+git9-1.9.2.jolla.armv7hl                              (296/457), 601.5 KiB (  3.9 MiB unpacked)<br>
+Retrieving: qt5-qtcore-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ...................................................................[done]<br>
+Retrieving package poppler-qt5-0.74.0+git1-1.5.1.jolla.armv7hl                                  (297/457), 133.3 KiB (347.6 KiB unpacked)<br>
+Retrieving: poppler-qt5-0.74.0+git1-1.5.1.jolla.armv7hl.rpm .......................................................................[done]<br>
+Retrieving package libaccounts-qt5-1.13+git1-1.3.1.jolla.armv7hl                                (298/457),  38.4 KiB ( 87.6 KiB unpacked)<br>
+Retrieving: libaccounts-qt5-1.13+git1-1.3.1.jolla.armv7hl.rpm .....................................................................[done]<br>
+Retrieving package qt5-qtdeclarative-5.6.3+git7-1.5.1.jolla.armv7hl                             (299/457), 958.7 KiB (  2.5 MiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-5.6.3+git7-1.5.1.jolla.armv7hl.rpm ..................................................................[done]<br>
+Retrieving package qt5-qttools-linguist-5.6.3+git1-1.4.1.jolla.armv7hl                          (300/457), 653.6 KiB (  2.3 MiB unpacked)<br>
+Retrieving: qt5-qttools-linguist-5.6.3+git1-1.4.1.jolla.armv7hl.rpm ...............................................................[done]<br>
+Retrieving package qt5-qtpim-versit-5.2.0+git2-1.2.1.jolla.armv7hl                              (301/457),  93.5 KiB (258.0 KiB unpacked)<br>
+Retrieving: qt5-qtpim-versit-5.2.0+git2-1.2.1.jolla.armv7hl.rpm ...................................................................[done]<br>
+Retrieving package libquillmetadata-qt5-1.111111.10-1.5.1.jolla.armv7hl                         (302/457),  44.6 KiB ( 95.2 KiB unpacked)<br>
+Retrieving: libquillmetadata-qt5-1.111111.10-1.5.1.jolla.armv7hl.rpm ..............................................................[done]<br>
+Retrieving package sailfish-silica-background-qt5-0.9.14-1.4.1.jolla.armv7hl                    (303/457),  24.4 KiB ( 29.5 KiB unpacked)<br>
+Retrieving: sailfish-silica-background-qt5-0.9.14-1.4.1.jolla.armv7hl.rpm .........................................................[done]<br>
+Retrieving package statefs-qt5-0.3.5-1.4.1.jolla.armv7hl                                        (304/457),  27.4 KiB ( 46.2 KiB unpacked)<br>
+Retrieving: statefs-qt5-0.3.5-1.4.1.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package tracker-1.12.4+git9-1.7.1.jolla.armv7hl                                      (305/457), 981.0 KiB (  4.3 MiB unpacked)<br>
+Retrieving: tracker-1.12.4+git9-1.7.1.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package libresourceqt-qt5-1.30.3-1.4.1.jolla.armv7hl                                 (306/457),  38.7 KiB ( 91.7 KiB unpacked)<br>
+Retrieving: libresourceqt-qt5-1.30.3-1.4.1.jolla.armv7hl.rpm ......................................................................[done]<br>
+Retrieving package ssu-network-proxy-plugin-0.43.12-1.8.1.jolla.armv7hl                         (307/457),  25.3 KiB (  3.8 KiB unpacked)<br>
+Retrieving: ssu-network-proxy-plugin-0.43.12-1.8.1.jolla.armv7hl.rpm ..............................................................[done]<br>
+Retrieving package qt5-qtxml-devel-5.6.3+git9-1.9.2.jolla.armv7hl                               (308/457),  26.1 KiB ( 49.2 KiB unpacked)<br>
+Retrieving: qt5-qtxml-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ....................................................................[done]<br>
+Retrieving package qt5-qtsql-devel-5.6.3+git9-1.9.2.jolla.armv7hl                               (309/457),  31.7 KiB (113.4 KiB unpacked)<br>
+Retrieving: qt5-qtsql-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ....................................................................[done]<br>
+Retrieving package qt5-qtserviceframework-devel-5.2.0+git9-1.2.1.jolla.armv7hl                  (310/457),  32.2 KiB (135.8 KiB unpacked)<br>
+Retrieving: qt5-qtserviceframework-devel-5.2.0+git9-1.2.1.jolla.armv7hl.rpm .......................................................[done]<br>
+Retrieving package qt5-qtsensors-devel-5.2.1+git17-1.3.1.jolla.armv7hl                          (311/457),  38.9 KiB (148.9 KiB unpacked)<br>
+Retrieving: qt5-qtsensors-devel-5.2.1+git17-1.3.1.jolla.armv7hl.rpm ...............................................................[done]<br>
+Retrieving package qt5-qtpublishsubscribe-devel-5.2.0+git9-1.2.1.jolla.armv7hl                  (312/457),  19.9 KiB ( 48.4 KiB unpacked)<br>
+Retrieving: qt5-qtpublishsubscribe-devel-5.2.0+git9-1.2.1.jolla.armv7hl.rpm .......................................................[done]<br>
+Retrieving package qt5-qtpositioning-devel-5.2.1+git31-1.4.1.jolla.armv7hl                      (313/457),  30.9 KiB (122.5 KiB unpacked)<br>
+Retrieving: qt5-qtpositioning-devel-5.2.1+git31-1.4.1.jolla.armv7hl.rpm ...........................................................[done]<br>
+Retrieving package qt5-qtpim-organizer-devel-5.2.0+git2-1.2.1.jolla.armv7hl                     (314/457),  55.8 KiB (338.5 KiB unpacked)<br>
+Retrieving: qt5-qtpim-organizer-devel-5.2.0+git2-1.2.1.jolla.armv7hl.rpm ..........................................................[done]<br>
+Retrieving package qt5-qtpim-contacts-devel-5.2.0+git2-1.2.1.jolla.armv7hl                      (315/457),  57.6 KiB (338.7 KiB unpacked)<br>
+Retrieving: qt5-qtpim-contacts-devel-5.2.0+git2-1.2.1.jolla.armv7hl.rpm ...........................................................[done]<br>
+Retrieving package qt5-qtnetwork-devel-5.6.3+git9-1.9.2.jolla.armv7hl                           (316/457),  87.6 KiB (491.3 KiB unpacked)<br>
+Retrieving: qt5-qtnetwork-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ................................................................[done]<br>
+Retrieving package qt5-qtgui-devel-5.6.3+git9-1.9.2.jolla.armv7hl                               (317/457), 458.0 KiB (  6.5 MiB unpacked)<br>
+Retrieving: qt5-qtgui-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ....................................................................[done]<br>
+Retrieving package qt5-qtdbus-devel-5.6.3+git9-1.9.2.jolla.armv7hl                              (318/457), 136.7 KiB (423.8 KiB unpacked)<br>
+Retrieving: qt5-qtdbus-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ...................................................................[done]<br>
+Retrieving package qt5-qtconcurrent-devel-5.6.3+git9-1.9.2.jolla.armv7hl                        (319/457),  30.7 KiB (187.0 KiB unpacked)<br>
+Retrieving: qt5-qtconcurrent-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm .............................................................[done]<br>
+Retrieving package qt5-qtdeclarative-qtquick-5.6.3+git7-1.5.1.jolla.armv7hl                     (320/457), 827.0 KiB (  2.4 MiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-qtquick-5.6.3+git7-1.5.1.jolla.armv7hl.rpm ..........................................................[done]<br>
+Retrieving package qt5-qtpim-versitorganizer-5.2.0+git2-1.2.1.jolla.armv7hl                     (321/457),  50.9 KiB (120.9 KiB unpacked)<br>
+Retrieving: qt5-qtpim-versitorganizer-5.2.0+git2-1.2.1.jolla.armv7hl.rpm ..........................................................[done]<br>
+Retrieving package timed-qt5-3.5.1-1.4.1.jolla.armv7hl                                          (322/457), 286.0 KiB (772.7 KiB unpacked)<br>
+Retrieving: timed-qt5-3.5.1-1.4.1.jolla.armv7hl.rpm ...............................................................................[done]<br>
+Retrieving package statefs-contextkit-subscriber-0.3.5-1.4.1.jolla.armv7hl                      (323/457),  48.2 KiB (111.9 KiB unpacked)<br>
+Retrieving: statefs-contextkit-subscriber-0.3.5-1.4.1.jolla.armv7hl.rpm ...........................................................[done]<br>
+Retrieving package libmlocale-qt5-0.7.0-1.3.1.jolla.armv7hl                                     (324/457), 117.0 KiB (356.0 KiB unpacked)<br>
+Retrieving: libmlocale-qt5-0.7.0-1.3.1.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package libzypp-17.3.1+git4-1.6.2.jolla.armv7hl                                      (325/457),   1.6 MiB (  5.6 MiB unpacked)<br>
+Retrieving: libzypp-17.3.1+git4-1.6.2.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package libaccounts-qt5-devel-1.13+git1-1.3.1.jolla.armv7hl                          (326/457),  18.4 KiB ( 30.5 KiB unpacked)<br>
+Retrieving: libaccounts-qt5-devel-1.13+git1-1.3.1.jolla.armv7hl.rpm ...............................................................[done]<br>
+Retrieving package qt5-qtpim-versit-devel-5.2.0+git2-1.2.1.jolla.armv7hl                        (327/457),  29.8 KiB (117.2 KiB unpacked)<br>
+Retrieving: qt5-qtpim-versit-devel-5.2.0+git2-1.2.1.jolla.armv7hl.rpm .............................................................[done]<br>
+Retrieving package qt5-qtxmlpatterns-devel-5.6.3+git2-1.2.1.jolla.armv7hl                       (328/457), 266.4 KiB (  2.2 MiB unpacked)<br>
+Retrieving: qt5-qtxmlpatterns-devel-5.6.3+git2-1.2.1.jolla.armv7hl.rpm ............................................................[done]<br>
+Retrieving package qt5-qtwidgets-devel-5.6.3+git9-1.9.2.jolla.armv7hl                           (329/457), 270.2 KiB (  1.6 MiB unpacked)<br>
+Retrieving: qt5-qtwidgets-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm ................................................................[done]<br>
+Retrieving package qt5-qtsvg-devel-5.6.2+git1-1.2.1.jolla.armv7hl                               (330/457),  24.6 KiB ( 77.1 KiB unpacked)<br>
+Retrieving: qt5-qtsvg-devel-5.6.2+git1-1.2.1.jolla.armv7hl.rpm ....................................................................[done]<br>
+Retrieving package mlite-qt5-devel-0.2.25-1.4.1.jolla.armv7hl                                   (331/457),  23.9 KiB ( 48.4 KiB unpacked)<br>
+Retrieving: mlite-qt5-devel-0.2.25-1.4.1.jolla.armv7hl.rpm ........................................................................[done]<br>
+Retrieving package qt5-qtdeclarative-qtquickparticles-5.6.3+git7-1.5.1.jolla.armv7hl            (332/457), 128.7 KiB (348.5 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-qtquickparticles-5.6.3+git7-1.5.1.jolla.armv7hl.rpm .................................................[done]<br>
+Retrieving package PackageKit-1.1.9+git5-1.8.1.jolla.armv7hl                                    (333/457), 378.2 KiB (  1.9 MiB unpacked)<br>
+Retrieving: PackageKit-1.1.9+git5-1.8.1.jolla.armv7hl.rpm .........................................................................[done]<br>
+Retrieving package qt5-qtpim-versitorganizer-devel-5.2.0+git2-1.2.1.jolla.armv7hl               (334/457),  21.5 KiB ( 61.8 KiB unpacked)<br>
+Retrieving: qt5-qtpim-versitorganizer-devel-5.2.0+git2-1.2.1.jolla.armv7hl.rpm ....................................................[done]<br>
+Retrieving package qt5-qtopengl-devel-5.6.3+git9-1.9.2.jolla.armv7hl                            (335/457), 114.7 KiB (  1.2 MiB unpacked)<br>
+Retrieving: qt5-qtopengl-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm .................................................................[done]<br>
+Retrieving package qt5-qtdeclarative-qtquicktest-5.6.3+git7-1.5.1.jolla.armv7hl                 (336/457),  41.4 KiB ( 85.5 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-qtquicktest-5.6.3+git7-1.5.1.jolla.armv7hl.rpm ......................................................[done]<br>
+Retrieving package PackageKit-zypp-1.1.9+git5-1.8.1.jolla.armv7hl                               (337/457),  92.2 KiB (196.6 KiB unpacked)<br>
+Retrieving: PackageKit-zypp-1.1.9+git5-1.8.1.jolla.armv7hl.rpm ....................................................................[done]<br>
+Retrieving package sailfish-content-profiled-settings-default-0.15.3-1.3.1.jolla.noarch         (338/457),  11.7 KiB (  3.1 KiB unpacked)<br>
+Retrieving: sailfish-content-profiled-settings-default-0.15.3-1.3.1.jolla.noarch.rpm ..............................................[done]<br>
+Retrieving package qt5-qtwayland-wayland_egl-5.4.0+git48-1.3.1.jolla.armv7hl                    (339/457), 279.1 KiB (  1.0 MiB unpacked)<br>
+Retrieving: qt5-qtwayland-wayland_egl-5.4.0+git48-1.3.1.jolla.armv7hl.rpm .........................................................[done]<br>
+Retrieving package qt5-qtquickcontrols-layouts-5.2.1+git3-1.2.1.jolla.armv7hl                   (340/457),  43.1 KiB (101.4 KiB unpacked)<br>
+Retrieving: qt5-qtquickcontrols-layouts-5.2.1+git3-1.2.1.jolla.armv7hl.rpm ........................................................[done]<br>
+Retrieving package qt5-qtmultimedia-5.6.2+git8-1.4.1.jolla.armv7hl                              (341/457), 237.4 KiB (809.7 KiB unpacked)<br>
+Retrieving: qt5-qtmultimedia-5.6.2+git8-1.4.1.jolla.armv7hl.rpm ...................................................................[done]<br>
+Retrieving package qt5-qtlocation-5.2.1+git31-1.4.1.jolla.armv7hl                               (342/457), 120.6 KiB (372.8 KiB unpacked)<br>
+Retrieving: qt5-qtlocation-5.2.1+git31-1.4.1.jolla.armv7hl.rpm ....................................................................[done]<br>
+Retrieving package qt5-qtgraphicaleffects-5.6.2+git2-1.2.1.jolla.armv7hl                        (343/457),  51.6 KiB (360.3 KiB unpacked)<br>
+Retrieving: qt5-qtgraphicaleffects-5.6.2+git2-1.2.1.jolla.armv7hl.rpm .............................................................[done]<br>
+Retrieving package qt5-qtfeedback-5.2.0+git6-1.3.1.jolla.armv7hl                                (344/457),  32.8 KiB ( 78.6 KiB unpacked)<br>
+Retrieving: qt5-qtfeedback-5.2.0+git6-1.3.1.jolla.armv7hl.rpm .....................................................................[done]<br>
+Retrieving package qt5-qtdocgallery-5.2.0+git8-1.4.1.jolla.armv7hl                              (345/457), 107.1 KiB (358.0 KiB unpacked)<br>
+Retrieving: qt5-qtdocgallery-5.2.0+git8-1.4.1.jolla.armv7hl.rpm ...................................................................[done]<br>
+Retrieving package qt5-qtdeclarative-serviceframework-5.2.0+git9-1.2.1.jolla.armv7hl            (346/457),  30.7 KiB ( 62.2 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-serviceframework-5.2.0+git9-1.2.1.jolla.armv7hl.rpm .................................................[done]<br>
+Retrieving package qt5-qtdeclarative-qtquickparticles-devel-5.6.3+git7-1.5.1.jolla.armv7hl      (347/457),  30.3 KiB (131.9 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-qtquickparticles-devel-5.6.3+git7-1.5.1.jolla.armv7hl.rpm ...........................................[done]<br>
+Retrieving package qt5-qtdeclarative-publishsubscribe-5.2.0+git9-1.2.1.jolla.armv7hl            (348/457),  19.4 KiB ( 25.6 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-publishsubscribe-5.2.0+git9-1.2.1.jolla.armv7hl.rpm .................................................[done]<br>
+Retrieving package qt5-qtdeclarative-plugin-qmlinspector-5.6.3+git7-1.5.1.jolla.armv7hl         (349/457), 125.8 KiB (354.7 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-plugin-qmlinspector-5.6.3+git7-1.5.1.jolla.armv7hl.rpm ..............................................[done]<br>
+Retrieving package qt5-qtdeclarative-pim-organizer-5.2.0+git2-1.2.1.jolla.armv7hl               (350/457),  85.5 KiB (327.5 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-pim-organizer-5.2.0+git2-1.2.1.jolla.armv7hl.rpm ....................................................[done]<br>
+Retrieving package qt5-qtdeclarative-pim-contacts-5.2.0+git2-1.2.1.jolla.armv7hl                (351/457),  90.9 KiB (348.9 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-pim-contacts-5.2.0+git2-1.2.1.jolla.armv7hl.rpm .....................................................[done]<br>
+Retrieving package qt5-qtdeclarative-import-xmllistmodel-5.6.3+git7-1.5.1.jolla.armv7hl         (352/457),  33.3 KiB ( 71.8 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-import-xmllistmodel-5.6.3+git7-1.5.1.jolla.armv7hl.rpm ..............................................[done]<br>
+Retrieving package qt5-qtdeclarative-import-window2-5.6.3+git7-1.5.1.jolla.armv7hl              (353/457),  14.3 KiB ( 17.0 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-import-window2-5.6.3+git7-1.5.1.jolla.armv7hl.rpm ...................................................[done]<br>
+Retrieving package qt5-qtdeclarative-import-sensors-5.2.1+git17-1.3.1.jolla.armv7hl             (354/457),  39.0 KiB (137.8 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-import-sensors-5.2.1+git17-1.3.1.jolla.armv7hl.rpm ..................................................[done]<br>
+Retrieving package qt5-qtdeclarative-import-qttest-5.6.3+git7-1.5.1.jolla.armv7hl               (355/457),  30.1 KiB ( 96.0 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-import-qttest-5.6.3+git7-1.5.1.jolla.armv7hl.rpm ....................................................[done]<br>
+Retrieving package qt5-qtdeclarative-import-qtquick2plugin-5.6.3+git7-1.5.1.jolla.armv7hl       (356/457),  26.7 KiB (176.0 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-import-qtquick2plugin-5.6.3+git7-1.5.1.jolla.armv7hl.rpm ............................................[done]<br>
+Retrieving package qt5-qtdeclarative-import-positioning-5.2.1+git31-1.4.1.jolla.armv7hl         (357/457),  30.1 KiB ( 62.9 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-import-positioning-5.2.1+git31-1.4.1.jolla.armv7hl.rpm ..............................................[done]<br>
+Retrieving package qt5-qtdeclarative-import-particles2-5.6.3+git7-1.5.1.jolla.armv7hl           (358/457),  16.7 KiB ( 54.1 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-import-particles2-5.6.3+git7-1.5.1.jolla.armv7hl.rpm ................................................[done]<br>
+Retrieving package qt5-qtdeclarative-import-models2-5.6.3+git7-1.5.1.jolla.armv7hl              (359/457),  14.6 KiB ( 27.8 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-import-models2-5.6.3+git7-1.5.1.jolla.armv7hl.rpm ...................................................[done]<br>
+Retrieving package qt5-qtdeclarative-import-localstorageplugin-5.6.3+git7-1.5.1.jolla.armv7hl   (360/457),  24.9 KiB ( 39.8 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-import-localstorageplugin-5.6.3+git7-1.5.1.jolla.armv7hl.rpm ........................................[done]<br>
+Retrieving package qt5-qtdeclarative-import-folderlistmodel-5.6.3+git7-1.5.1.jolla.armv7hl      (361/457),  26.1 KiB ( 55.6 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-import-folderlistmodel-5.6.3+git7-1.5.1.jolla.armv7hl.rpm ...........................................[done]<br>
+Retrieving package qt5-qtdeclarative-devel-5.6.3+git7-1.5.1.jolla.armv7hl                       (362/457), 220.2 KiB (  1.5 MiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-devel-5.6.3+git7-1.5.1.jolla.armv7hl.rpm ............................................................[done]<br>
+Retrieving package qt5-qtconnectivity-qtbluetooth-5.6.2+git0-1.2.1.jolla.armv7hl                (363/457), 199.1 KiB (545.2 KiB unpacked)<br>
+Retrieving: qt5-qtconnectivity-qtbluetooth-5.6.2+git0-1.2.1.jolla.armv7hl.rpm .....................................................[done]<br>
+Retrieving package nemo-qml-plugin-thumbnailer-qt5-1.0.0-1.6.1.jolla.armv7hl                    (364/457),  40.9 KiB ( 74.0 KiB unpacked)<br>
+Retrieving: nemo-qml-plugin-thumbnailer-qt5-1.0.0-1.6.1.jolla.armv7hl.rpm .........................................................[done]<br>
+Retrieving package nemo-qml-plugin-notifications-qt5-1.1.6-1.5.1.jolla.armv7hl                  (365/457),  49.5 KiB ( 99.0 KiB unpacked)<br>
+Retrieving: nemo-qml-plugin-notifications-qt5-1.1.6-1.5.1.jolla.armv7hl.rpm .......................................................[done]<br>
+Retrieving package nemo-qml-plugin-models-qt5-0.1.3-1.4.1.jolla.armv7hl                         (366/457),  78.0 KiB (189.6 KiB unpacked)<br>
+Retrieving: nemo-qml-plugin-models-qt5-0.1.3-1.4.1.jolla.armv7hl.rpm ..............................................................[done]<br>
+Retrieving package nemo-qml-plugin-filemanager-0.1.11-1.7.1.jolla.armv7hl                       (367/457),  81.6 KiB (222.8 KiB unpacked)<br>
+Retrieving: nemo-qml-plugin-filemanager-0.1.11-1.7.1.jolla.armv7hl.rpm ............................................................[done]<br>
+Retrieving package nemo-qml-plugin-dbus-qt5-2.1.20-1.6.1.jolla.armv7hl                          (368/457),  78.7 KiB (189.0 KiB unpacked)<br>
+Retrieving: nemo-qml-plugin-dbus-qt5-2.1.20-1.6.1.jolla.armv7hl.rpm ...............................................................[done]<br>
+Retrieving package nemo-qml-plugin-configuration-qt5-0.2.2-1.3.1.jolla.armv7hl                  (369/457),  21.3 KiB ( 27.7 KiB unpacked)<br>
+Retrieving: nemo-qml-plugin-configuration-qt5-0.2.2-1.3.1.jolla.armv7hl.rpm .......................................................[done]<br>
+Retrieving package mpris-qt5-1.0.0-1.4.1.jolla.armv7hl                                          (370/457),  76.3 KiB (233.4 KiB unpacked)<br>
+Retrieving: mpris-qt5-1.0.0-1.4.1.jolla.armv7hl.rpm ...............................................................................[done]<br>
+Retrieving package mapplauncherd-qt5-1.1.14-1.3.1.jolla.armv7hl                                 (371/457),  19.3 KiB ( 20.0 KiB unpacked)<br>
+Retrieving: mapplauncherd-qt5-1.1.14-1.3.1.jolla.armv7hl.rpm ......................................................................[done]<br>
+Retrieving package libqtwebkit5-5.6.2+git8-1.5.1.jolla.armv7hl                                  (372/457),   7.1 MiB ( 23.3 MiB unpacked)<br>
+Retrieving: libqtwebkit5-5.6.2+git8-1.5.1.jolla.armv7hl.rpm .......................................................................[done]<br>
+Retrieving package libqt5sparql-0.2.18-1.2.1.jolla.armv7hl                                      (373/457),  84.0 KiB (206.8 KiB unpacked)<br>
+Retrieving: libqt5sparql-0.2.18-1.2.1.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package libpython3_7m1_0-3.7.2+git2-1.3.5.jolla.armv7hl                              (374/457), 732.0 KiB (  1.8 MiB unpacked)<br>
+Retrieving: libpython3_7m1_0-3.7.2+git2-1.3.5.jolla.armv7hl.rpm ...................................................................[done]<br>
+Retrieving package contextkit-declarative-qt5-0.3.5-1.4.1.jolla.armv7hl                         (375/457),  19.0 KiB ( 21.2 KiB unpacked)<br>
+Retrieving: contextkit-declarative-qt5-0.3.5-1.4.1.jolla.armv7hl.rpm ..............................................................[done]<br>
+Retrieving package ssu-0.43.12-1.8.1.jolla.armv7hl                                              (376/457), 161.8 KiB (424.8 KiB unpacked)<br>
+Retrieving: ssu-0.43.12-1.8.1.jolla.armv7hl.rpm ...................................................................................[done]<br>
+Retrieving package PackageKit-Qt5-0.9.6+git-1.3.1.jolla.armv7hl                                 (377/457),  69.8 KiB (181.9 KiB unpacked)<br>
+Retrieving: PackageKit-Qt5-0.9.6+git-1.3.1.jolla.armv7hl.rpm ......................................................................[done]<br>
+Retrieving package profiled-1.0.6-1.2.1.jolla.armv7hl                                           (378/457),  27.8 KiB ( 40.9 KiB unpacked)<br>
+Retrieving: profiled-1.0.6-1.2.1.jolla.armv7hl.rpm ................................................................................[done]<br>
+Retrieving package qt5-qtwayland-wayland_egl-devel-5.4.0+git48-1.3.1.jolla.armv7hl              (379/457), 127.1 KiB (815.3 KiB unpacked)<br>
+Retrieving: qt5-qtwayland-wayland_egl-devel-5.4.0+git48-1.3.1.jolla.armv7hl.rpm ...................................................[done]<br>
+Retrieving package qt5-qtmultimedia-gsttools-5.6.2+git8-1.4.1.jolla.armv7hl                     (380/457),  52.6 KiB (143.4 KiB unpacked)<br>
+Retrieving: qt5-qtmultimedia-gsttools-5.6.2+git8-1.4.1.jolla.armv7hl.rpm ..........................................................[done]<br>
+Retrieving package qt5-qtdeclarative-import-location-5.2.1+git31-1.4.1.jolla.armv7hl            (381/457), 155.5 KiB (502.2 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-import-location-5.2.1+git31-1.4.1.jolla.armv7hl.rpm .................................................[done]<br>
+Retrieving package qt5-qtfeedback-devel-5.2.0+git6-1.3.1.jolla.armv7hl                          (382/457),  19.2 KiB ( 36.7 KiB unpacked)<br>
+Retrieving: qt5-qtfeedback-devel-5.2.0+git6-1.3.1.jolla.armv7hl.rpm ...............................................................[done]<br>
+Retrieving package qt5-qtdocgallery-devel-5.2.0+git8-1.4.1.jolla.armv7hl                        (383/457),  30.4 KiB (130.6 KiB unpacked)<br>
+Retrieving: qt5-qtdocgallery-devel-5.2.0+git8-1.4.1.jolla.armv7hl.rpm .............................................................[done]<br>
+Retrieving package qt5-qtdeclarative-qtquick-devel-5.6.3+git7-1.5.1.jolla.armv7hl              (384/457), 153.4 KiB (1008.6 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-qtquick-devel-5.6.3+git7-1.5.1.jolla.armv7hl.rpm ....................................................[done]<br>
+Retrieving package qt5-qtconnectivity-qtbluetooth-devel-5.6.2+git0-1.2.1.jolla.armv7hl          (385/457),  83.7 KiB (495.7 KiB unpacked)<br>
+Retrieving: qt5-qtconnectivity-qtbluetooth-devel-5.6.2+git0-1.2.1.jolla.armv7hl.rpm ...............................................[done]<br>
+Retrieving package thumbnaild-0.0.6-1.4.1.jolla.armv7hl                                         (386/457),  34.1 KiB ( 71.9 KiB unpacked)<br>
+Retrieving: thumbnaild-0.0.6-1.4.1.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package libnemotransferengine-qt5-1.0.1-1.5.1.jolla.armv7hl                          (387/457),  64.6 KiB (157.0 KiB unpacked)<br>
+Retrieving: libnemotransferengine-qt5-1.0.1-1.5.1.jolla.armv7hl.rpm ...............................................................[done]<br>
+Retrieving package mpris-qt5-qml-plugin-1.0.0-1.4.1.jolla.armv7hl                               (388/457),  17.0 KiB ( 33.6 KiB unpacked)<br>
+Retrieving: mpris-qt5-qml-plugin-1.0.0-1.4.1.jolla.armv7hl.rpm ....................................................................[done]<br>
+Retrieving package signon-qt5-8.57.5+git3-1.5.1.jolla.armv7hl                                   (389/457), 218.1 KiB (560.4 KiB unpacked)<br>
+Retrieving: signon-qt5-8.57.5+git3-1.5.1.jolla.armv7hl.rpm ........................................................................[done]<br>
+Retrieving package mapplauncherd-qt5-devel-1.1.14-1.3.1.jolla.armv7hl                           (390/457),  12.4 KiB (  3.6 KiB unpacked)<br>
+Retrieving: mapplauncherd-qt5-devel-1.1.14-1.3.1.jolla.armv7hl.rpm ................................................................[done]<br>
+Retrieving package maliit-framework-wayland-inputcontext-0.99.1+git4-1.4.1.jolla.armv7hl        (391/457),  59.4 KiB (152.7 KiB unpacked)<br>
+Retrieving: maliit-framework-wayland-inputcontext-0.99.1+git4-1.4.1.jolla.armv7hl.rpm .............................................[done]<br>
+Retrieving package libsailfishapp-1.2.8-1.4.1.jolla.armv7hl                                     (392/457),  19.3 KiB ( 14.0 KiB unpacked)<br>
+Retrieving: libsailfishapp-1.2.8-1.4.1.jolla.armv7hl.rpm ..........................................................................[done]<br>
+Retrieving package buteo-syncfw-qt5-0.8.18-1.7.1.jolla.armv7hl                                  (393/457), 182.7 KiB (481.7 KiB unpacked)<br>
+Retrieving: buteo-syncfw-qt5-0.8.18-1.7.1.jolla.armv7hl.rpm .......................................................................[done]<br>
+Retrieving package libqtwebkit5-widgets-5.6.2+git8-1.5.1.jolla.armv7hl                          (394/457),  79.8 KiB (290.2 KiB unpacked)<br>
+Retrieving: libqtwebkit5-widgets-5.6.2+git8-1.5.1.jolla.armv7hl.rpm ...............................................................[done]<br>
+Retrieving package libqt5sparql-tracker-direct-0.2.18-1.2.1.jolla.armv7hl                       (395/457),  34.1 KiB ( 49.4 KiB unpacked)<br>
+Retrieving: libqt5sparql-tracker-direct-0.2.18-1.2.1.jolla.armv7hl.rpm ............................................................[done]<br>
+Retrieving package libqt5sparql-tracker-0.2.18-1.2.1.jolla.armv7hl                              (396/457),  32.7 KiB ( 47.0 KiB unpacked)<br>
+Retrieving: libqt5sparql-tracker-0.2.18-1.2.1.jolla.armv7hl.rpm ...................................................................[done]<br>
+Retrieving package python3-base-3.7.2+git2-1.3.5.jolla.armv7hl                                  (397/457),   9.0 MiB ( 38.5 MiB unpacked)<br>
+Retrieving: python3-base-3.7.2+git2-1.3.5.jolla.armv7hl.rpm .......................................................................[done]<br>
+Retrieving package zypper-1.14.6+git3-1.3.4.jolla.armv7hl                                       (398/457),   1.1 MiB (  6.1 MiB unpacked)<br>
+Retrieving: zypper-1.14.6+git3-1.3.4.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package ssu-vendor-data-jolla-0.108-1.6.1.jolla.noarch                               (399/457),  26.6 KiB ( 11.3 KiB unpacked)<br>
+Retrieving: ssu-vendor-data-jolla-0.108-1.6.1.jolla.noarch.rpm ....................................................................[done]<br>
+Retrieving package ngfd-1.1.1-1.5.1.jolla.armv7hl                                               (400/457), 110.2 KiB (245.6 KiB unpacked)<br>
+Retrieving: ngfd-1.1.1-1.5.1.jolla.armv7hl.rpm ....................................................................................[done]<br>
+Retrieving package qt5-qtmultimedia-devel-5.6.2+git8-1.4.1.jolla.armv7hl                        (401/457),  96.4 KiB (521.5 KiB unpacked)<br>
+Retrieving: qt5-qtmultimedia-devel-5.6.2+git8-1.4.1.jolla.armv7hl.rpm .............................................................[done]<br>
+Retrieving package qt5-qtdeclarative-import-multimedia-5.6.2+git8-1.4.1.jolla.armv7hl           (402/457),  69.7 KiB (270.1 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-import-multimedia-5.6.2+git8-1.4.1.jolla.armv7hl.rpm ................................................[done]<br>
+Retrieving package nemo-qtmultimedia-plugins-gstvideotexturebackend-0.0.10-1.3.1.jolla.armv7hl  (403/457),  20.4 KiB ( 27.1 KiB unpacked)<br>
+Retrieving: nemo-qtmultimedia-plugins-gstvideotexturebackend-0.0.10-1.3.1.jolla.armv7hl.rpm .......................................[done]<br>
+Retrieving package qt5-qtlocation-devel-5.2.1+git31-1.4.1.jolla.armv7hl                         (404/457),  56.4 KiB (344.2 KiB unpacked)<br>
+Retrieving: qt5-qtlocation-devel-5.2.1+git31-1.4.1.jolla.armv7hl.rpm ..............................................................[done]<br>
+Retrieving package nemo-transferengine-qt5-1.0.1-1.5.1.jolla.armv7hl                            (405/457),  63.2 KiB (132.7 KiB unpacked)<br>
+Retrieving: nemo-transferengine-qt5-1.0.1-1.5.1.jolla.armv7hl.rpm .................................................................[done]<br>
+Retrieving package libsignon-qt5-8.57.5+git3-1.5.1.jolla.armv7hl                                (406/457),  73.0 KiB (171.7 KiB unpacked)<br>
+Retrieving: libsignon-qt5-8.57.5+git3-1.5.1.jolla.armv7hl.rpm .....................................................................[done]<br>
+Retrieving package maliit-framework-wayland-0.99.1+git4-1.4.1.jolla.armv7hl                     (407/457), 152.3 KiB (449.6 KiB unpacked)<br>
+Retrieving: maliit-framework-wayland-0.99.1+git4-1.4.1.jolla.armv7hl.rpm ..........................................................[done]<br>
+Retrieving package libsailfishapp-devel-1.2.8-1.4.1.jolla.armv7hl                               (408/457),  16.1 KiB ( 10.2 KiB unpacked)<br>
+Retrieving: libsailfishapp-devel-1.2.8-1.4.1.jolla.armv7hl.rpm ....................................................................[done]<br>
+Retrieving package qt5-qtwebkit-uiprocess-launcher-5.6.2+git8-1.5.1.jolla.armv7hl               (409/457),  15.2 KiB (  8.2 KiB unpacked)<br>
+Retrieving: qt5-qtwebkit-uiprocess-launcher-5.6.2+git8-1.5.1.jolla.armv7hl.rpm ....................................................[done]<br>
+Retrieving package pyotherside-qml-plugin-python3-qt5-1.5.1+git2-1.3.1.jolla.armv7hl            (410/457),  70.0 KiB (189.6 KiB unpacked)<br>
+Retrieving: pyotherside-qml-plugin-python3-qt5-1.5.1+git2-1.3.1.jolla.armv7hl.rpm .................................................[done]<br>
+Retrieving package sailfish-version-variant-3.0.3-1.11.10.jolla.noarch                            (411/457),  16.5 KiB (   97 B unpacked)<br>
+Retrieving: sailfish-version-variant-3.0.3-1.11.10.jolla.noarch.rpm ...............................................................[done]<br>
+Retrieving package qt5-qtsysteminfo-5.2.0+git9-1.2.1.jolla.armv7hl                              (412/457),  63.8 KiB (176.4 KiB unpacked)<br>
+Retrieving: qt5-qtsysteminfo-5.2.0+git9-1.2.1.jolla.armv7hl.rpm ...................................................................[done]<br>
+Retrieving package libngf-qt5-0.6.2-1.4.1.jolla.armv7hl                                         (413/457),  22.3 KiB ( 33.2 KiB unpacked)<br>
+Retrieving: libngf-qt5-0.6.2-1.4.1.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package signon-plugin-oauth2-qt5-0.21.5-1.2.1.jolla.armv7hl                          (414/457),  63.3 KiB (139.7 KiB unpacked)<br>
+Retrieving: signon-plugin-oauth2-qt5-0.21.5-1.2.1.jolla.armv7hl.rpm ...............................................................[done]<br>
+Retrieving package libsignon-qt5-devel-8.57.5+git3-1.5.1.jolla.armv7hl                          (415/457),  22.8 KiB ( 59.0 KiB unpacked)<br>
+Retrieving: libsignon-qt5-devel-8.57.5+git3-1.5.1.jolla.armv7hl.rpm ...............................................................[done]<br>
+Retrieving package libqmfclient1-qt5-4.0.4+git111-1.10.1.jolla.armv7hl                          (416/457), 514.5 KiB (  1.5 MiB unpacked)<br>
+Retrieving: libqmfclient1-qt5-4.0.4+git111-1.10.1.jolla.armv7hl.rpm ...............................................................[done]<br>
+Retrieving package maliit-framework-wayland-devel-0.99.1+git4-1.4.1.jolla.armv7hl               (417/457),  25.9 KiB ( 53.1 KiB unpacked)<br>
+Retrieving: maliit-framework-wayland-devel-0.99.1+git4-1.4.1.jolla.armv7hl.rpm ....................................................[done]<br>
+Retrieving package qt5-qtqml-import-webkitplugin-experimental-5.6.2+git8-1.5.1.jolla.armv7hl    (418/457),  24.6 KiB ( 59.2 KiB unpacked)<br>
+Retrieving: qt5-qtqml-import-webkitplugin-experimental-5.6.2+git8-1.5.1.jolla.armv7hl.rpm .........................................[done]<br>
+Retrieving package qt5-qtqml-import-webkitplugin-5.6.2+git8-1.5.1.jolla.armv7hl                 (419/457),  23.0 KiB ( 43.7 KiB unpacked)<br>
+Retrieving: qt5-qtqml-import-webkitplugin-5.6.2+git8-1.5.1.jolla.armv7hl.rpm ......................................................[done]<br>
+Retrieving package libqtwebkit5-devel-5.6.2+git8-1.5.1.jolla.armv7hl                            (420/457),  45.7 KiB (145.4 KiB unpacked)<br>
+Retrieving: libqtwebkit5-devel-5.6.2+git8-1.5.1.jolla.armv7hl.rpm .................................................................[done]<br>
+Retrieving package sailfish-version-3.0.3-1.11.10.jolla.noarch                                  (421/457),  17.7 KiB (  2.0 KiB unpacked)<br>
+Retrieving: sailfish-version-3.0.3-1.11.10.jolla.noarch.rpm .......................................................................[done]<br>
+Retrieving package qt5-qtdeclarative-systeminfo-5.2.0+git9-1.2.1.jolla.armv7hl                  (422/457),  21.2 KiB ( 52.1 KiB unpacked)<br>
+Retrieving: qt5-qtdeclarative-systeminfo-5.2.0+git9-1.2.1.jolla.armv7hl.rpm .......................................................[done]<br>
+Retrieving package libcontentaction-qt5-0.3.9-1.6.1.jolla.armv7hl                               (423/457),  74.9 KiB (158.7 KiB unpacked)<br>
+Retrieving: libcontentaction-qt5-0.3.9-1.6.1.jolla.armv7hl.rpm ....................................................................[done]<br>
+Retrieving package buteo-mtp-qt5-0.7.0-1.6.1.jolla.armv7hl                                      (424/457), 219.1 KiB (581.6 KiB unpacked)<br>
+Retrieving: buteo-mtp-qt5-0.7.0-1.6.1.jolla.armv7hl.rpm ...........................................................................[done]<br>
+Retrieving package libngf-qt5-declarative-0.6.2-1.4.1.jolla.armv7hl                             (425/457),  17.4 KiB ( 16.6 KiB unpacked)<br>
+Retrieving: libngf-qt5-declarative-0.6.2-1.4.1.jolla.armv7hl.rpm ..................................................................[done]<br>
+Retrieving package nemo-qml-plugin-contentaction-0.3.9-1.6.1.jolla.armv7hl                      (426/457),  20.6 KiB ( 19.7 KiB unpacked)<br>
+Retrieving: nemo-qml-plugin-contentaction-0.3.9-1.6.1.jolla.armv7hl.rpm ...........................................................[done]<br>
+Retrieving package sailfish-content-graphics-default-base-1.0.17-1.15.1.jolla.noarch            (427/457), 951.6 KiB (  1.0 MiB unpacked)<br>
+Retrieving: sailfish-content-graphics-default-base-1.0.17-1.15.1.jolla.noarch.rpm .................................................[done]<br>
+Retrieving package sailfish-content-graphics-default-z1.0-base-1.0.17-1.15.1.jolla.noarch       (428/457),   1.1 MiB (  1.1 MiB unpacked)<br>
+Retrieving: sailfish-content-graphics-default-z1.0-base-1.0.17-1.15.1.jolla.noarch.rpm ............................................[done]<br>
+Retrieving package sailfish-content-graphics-default-z1.0-1.0.17-1.15.1.jolla.noarch              (429/457),  56.4 KiB (    0 B unpacked)<br>
+Retrieving: sailfish-content-graphics-default-z1.0-1.0.17-1.15.1.jolla.noarch.rpm .................................................[done]<br>
+Retrieving package sailfish-content-graphics-default-1.0.17-1.15.1.jolla.noarch                   (430/457),  56.3 KiB (    0 B unpacked)<br>
+Retrieving: sailfish-content-graphics-default-1.0.17-1.15.1.jolla.noarch.rpm ......................................................[done]<br>
+Retrieving package ambienced-0.29.10-1.9.2.jolla.armv7hl                                        (431/457), 237.9 KiB (770.8 KiB unpacked)<br>
+Retrieving: ambienced-0.29.10-1.9.2.jolla.armv7hl.rpm .............................................................................[done]<br>
+Retrieving package sailfish-content-tones-default-0.15.3-1.3.1.jolla.noarch                     (432/457),  22.3 MiB ( 22.8 MiB unpacked)<br>
+Retrieving: sailfish-content-tones-default-0.15.3-1.3.1.jolla.noarch.rpm ..........................................................[done]<br>
+Retrieving package sailfishsilica-qt5-1.0.51.1-1.22.1.jolla.armv7hl                             (433/457), 570.3 KiB (  1.4 MiB unpacked)<br>
+Retrieving: sailfishsilica-qt5-1.0.51.1-1.22.1.jolla.armv7hl.rpm ..................................................................[done]<br>
+Retrieving package sailfish-components-media-qt5-0.2.2-1.5.1.jolla.armv7hl                      (434/457),  35.9 KiB ( 63.7 KiB unpacked)<br>
+Retrieving: sailfish-components-media-qt5-0.2.2-1.5.1.jolla.armv7hl.rpm ...........................................................[done]<br>
+Retrieving package sailfish-components-filemanager-0.2.3-1.7.1.jolla.armv7hl                    (435/457),  24.8 KiB ( 48.8 KiB unpacked)<br>
+Retrieving: sailfish-components-filemanager-0.2.3-1.7.1.jolla.armv7hl.rpm .........................................................[done]<br>
+Retrieving package libngf-0.26-1.1.8.jolla.armv7hl                                              (436/457),  22.5 KiB ( 36.4 KiB unpacked)<br>
+Retrieving: libngf-0.26-1.1.8.jolla.armv7hl.rpm ...................................................................................[done]<br>
+Retrieving package libjollasignonuiservice-qt5-0.4.6-1.6.1.jolla.armv7hl                        (437/457),  66.4 KiB (141.6 KiB unpacked)<br>
+Retrieving: libjollasignonuiservice-qt5-0.4.6-1.6.1.jolla.armv7hl.rpm .............................................................[done]<br>
+Retrieving package declarative-transferengine-qt5-0.3.9-1.8.1.jolla.armv7hl                     (438/457),  63.5 KiB (147.2 KiB unpacked)<br>
+Retrieving: declarative-transferengine-qt5-0.3.9-1.8.1.jolla.armv7hl.rpm ..........................................................[done]<br>
+Retrieving package ambienced-devel-0.29.10-1.9.2.jolla.armv7hl                                  (439/457),  31.6 KiB (  3.4 KiB unpacked)<br>
+Retrieving: ambienced-devel-0.29.10-1.9.2.jolla.armv7hl.rpm .......................................................................[done]<br>
+Retrieving package dsme-0.79.4-1.6.2.jolla.armv7hl                                              (440/457), 154.8 KiB (349.1 KiB unpacked)<br>
+Retrieving: dsme-0.79.4-1.6.2.jolla.armv7hl.rpm ...................................................................................[done]<br>
+Retrieving package libjollasignonuiservice-qt5-plugin-0.4.6-1.6.1.jolla.armv7hl                 (441/457),  21.6 KiB ( 14.3 KiB unpacked)<br>
+Retrieving: libjollasignonuiservice-qt5-plugin-0.4.6-1.6.1.jolla.armv7hl.rpm ......................................................[done]<br>
+Retrieving package patterns-sailfish-silica-devel-1.0.18-1.11.1.jolla.noarch                      (442/457),  47.5 KiB (    0 B unpacked)<br>
+Retrieving: patterns-sailfish-silica-devel-1.0.18-1.11.1.jolla.noarch.rpm .........................................................[done]<br>
+Retrieving package mce-1.100.2-1.16.1.jolla.armv7hl                                             (443/457), 335.1 KiB (727.8 KiB unpacked)<br>
+Retrieving: mce-1.100.2-1.16.1.jolla.armv7hl.rpm ..................................................................................[done]<br>
+Retrieving package sailfish-components-gallery-qt5-1.0.2-1.15.1.jolla.armv7hl                   (444/457),  68.9 KiB (148.6 KiB unpacked)<br>
+Retrieving: sailfish-components-gallery-qt5-1.0.2-1.15.1.jolla.armv7hl.rpm ........................................................[done]<br>
+Retrieving package nemo-qml-plugin-systemsettings-0.5.11-1.18.1.jolla.armv7hl                   (445/457), 252.4 KiB (662.3 KiB unpacked)<br>
+Retrieving: nemo-qml-plugin-systemsettings-0.5.11-1.18.1.jolla.armv7hl.rpm ........................................................[done]<br>
+Retrieving package libkeepalive-1.6.2-1.6.1.jolla.armv7hl                                       (446/457),  39.3 KiB ( 88.9 KiB unpacked)<br>
+Retrieving: libkeepalive-1.6.2-1.6.1.jolla.armv7hl.rpm ............................................................................[done]<br>
+Retrieving package sailfish-components-pickers-qt5-1.0.0-1.6.1.jolla.armv7hl                    (447/457),  43.0 KiB (103.8 KiB unpacked)<br>
+Retrieving: sailfish-components-pickers-qt5-1.0.0-1.6.1.jolla.armv7hl.rpm .........................................................[done]<br>
+Retrieving package libqmfmessageserver1-qt5-4.0.4+git111-1.10.1.jolla.armv7hl                   (448/457), 367.8 KiB (  1.0 MiB unpacked)<br>
+Retrieving: libqmfmessageserver1-qt5-4.0.4+git111-1.10.1.jolla.armv7hl.rpm ........................................................[done]<br>
+Retrieving package qmf-qt5-devel-4.0.4+git111-1.10.1.jolla.armv7hl                              (449/457), 115.1 KiB (534.8 KiB unpacked)<br>
+Retrieving: qmf-qt5-devel-4.0.4+git111-1.10.1.jolla.armv7hl.rpm ...................................................................[done]<br>
+Retrieving package patterns-sailfish-qt5-devel-basic-1.0.18-1.11.1.jolla.noarch                   (450/457),  49.0 KiB (    0 B unpacked)<br>
+Retrieving: patterns-sailfish-qt5-devel-basic-1.0.18-1.11.1.jolla.noarch.rpm ......................................................[done]<br>
+Retrieving package patterns-sailfish-qt5-devel-full-1.0.18-1.11.1.jolla.noarch                    (451/457),  47.7 KiB (    0 B unpacked)<br>
+Retrieving: patterns-sailfish-qt5-devel-full-1.0.18-1.11.1.jolla.noarch.rpm .......................................................[done]<br>
+Retrieving package sdk-target-configs-0.114-1.9.4.jolla.noarch                                  (452/457),  11.0 KiB (  4.2 KiB unpacked)<br>
+Retrieving: sdk-target-configs-0.114-1.9.4.jolla.noarch.rpm .......................................................................[done]<br>
+Retrieving package sdk-harbour-rpmvalidator-1.49.1-1.8.1.jolla.noarch                           (453/457),  32.2 KiB ( 50.0 KiB unpacked)<br>
+Retrieving: sdk-harbour-rpmvalidator-1.49.1-1.8.1.jolla.noarch.rpm ................................................................[done]<br>
+Retrieving package sdk-register-0.5-1.3.4.jolla.armv7hl                                         (454/457),  12.6 KiB ( 12.0 KiB unpacked)<br>
+Retrieving: sdk-register-0.5-1.3.4.jolla.armv7hl.rpm ..............................................................................[done]<br>
+Retrieving package sdk-configs-0.114-1.9.4.jolla.noarch                                         (455/457), 123.1 KiB (  3.1 MiB unpacked)<br>
+Retrieving: sdk-configs-0.114-1.9.4.jolla.noarch.rpm ..............................................................................[done]<br>
+Retrieving package patterns-sailfish-target-support-1.0.18-1.11.1.jolla.noarch                    (456/457),  47.5 KiB (    0 B unpacked)<br>
+Retrieving: patterns-sailfish-target-support-1.0.18-1.11.1.jolla.noarch.rpm .......................................................[done]<br>
+Retrieving package patterns-sailfish-configuration-sdk-target-1.0.18-1.11.1.jolla.noarch          (457/457),  47.6 KiB (    0 B unpacked)<br>
+Retrieving: patterns-sailfish-configuration-sdk-target-1.0.18-1.11.1.jolla.noarch.rpm .............................................[done]<br>
+Installing: buteo-mtp-qt5-sample-vendor-configuration-0.7.0-1.6.1.jolla ...........................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/buteo-mtp-qt5-sample-vendor-configuration-0.7.0-1.6.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: fontpackages-filesystem-1.44-1.1.9.jolla ..............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/fontpackages-filesystem-1.44-1.1.9.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: jolla-ca-0.9-1.3.1.jolla ..............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/jolla-ca-0.9-1.3.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: kernel-headers-3.18.136-1.2.3.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/kernel-headers-3.18.136-1.2.3.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libgcc-4.9.4-1.2.5.jolla ..............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libgcc-4.9.4-1.2.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: mobile-broadband-provider-info-20131125+git68-1.3.2.jolla .............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/mobile-broadband-provider-info-20131125+git68-1.3.2.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: ncurses-base-6.1+git1-1.3.5.jolla .....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/ncurses-base-6.1+git1-1.3.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: ofono-configs-mer-1.21+git44-1.19.1.jolla .............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/ofono-configs-mer-1.21+git44-1.19.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtplatformsupport-devel-5.6.3+git9-1.9.2.jolla ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtplatformsupport-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sailfish-ca-0.1.1-1.3.1.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/sailfish-ca-0.1.1-1.3.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: setup-2.8.56-1.2.5.jolla ..............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/setup-2.8.56-1.2.5.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+warning: /etc/group created as /etc/group.rpmnew<br>
+warning: /etc/gshadow created as /etc/gshadow.rpmnew<br>
+warning: /etc/passwd created as /etc/passwd.rpmnew<br>
+warning: /etc/shadow created as /etc/shadow.rpmnew<br>
+<br>
+<br>
+Installing: tzdata-2017b-1.1.11.jolla .............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/tzdata-2017b-1.1.11.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: usb-moded-developer-mode-0.86.0+mer33-1.3.2.jolla .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/usb-moded-developer-mode-0.86.0+mer33-1.3.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: xkeyboard-config-2.10.1+git6-1.2.7.jolla ..............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/xkeyboard-config-2.10.1+git6-1.2.7.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: filesystem-3.1-1.1.9.jolla ............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/filesystem-3.1-1.1.9.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: tzdata-timed-2017b.2-1.3.1.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/noarch/tzdata-timed-2017b.2-1.3.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: glibc-2.25+git5-1.4.1.jolla ...........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/glibc-2.25+git5-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: usb-moded-defaults-0.86.0+mer33-1.3.2.jolla ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/usb-moded-defaults-0.86.0+mer33-1.3.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: basesystem-11+git1-1.2.8.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/basesystem-11+git1-1.2.8.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: ncurses-libs-6.1+git1-1.3.5.jolla .....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/ncurses-libs-6.1+git1-1.3.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sailfish-content-graphics-closed-z1.0-0.6.1-1.2.1.jolla ...............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/sailfish-content-graphics-closed-z1.0-0.6.1-1.2.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: bash-1:3.2.57-1.2.5.jolla .............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/bash-3.2.57-1.2.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sailfish-content-graphics-closed-0.6.1-1.2.1.jolla ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/sailfish-content-graphics-closed-0.6.1-1.2.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: glibc-common-2.25+git5-1.4.1.jolla ....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/glibc-common-2.25+git5-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: zlib-1.2.11+git1-1.4.5.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/zlib-1.2.11+git1-1.4.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sailfish-minui-resources-z1.0-0.0.4-1.4.2.jolla .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/armv7hl/sailfish-minui-resources-z1.0-0.0.4-1.4.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qttools-5.6.3+git1-1.4.1.jolla ....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qttools-5.6.3+git1-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qml-rpm-macros-0.0.5-1.1.9.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/qml-rpm-macros-0.0.5-1.1.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: info-4.13a-1.2.7.jolla ................................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/info-4.13a-1.2.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+warning: /usr/share/info/dir saved as /usr/share/info/dir.rpmsave<br>
+<br>
+<br>
+Installing: sailfish-upgrade-ui-resources-z1.0-0.1.1-1.5.2.jolla ..................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/armv7hl/sailfish-upgrade-ui-resources-z1.0-0.1.1-1.5.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: glibc-headers-2.25+git5-1.4.1.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/glibc-headers-2.25+git5-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: glibc-devel-2.25+git5-1.4.1.jolla .....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/glibc-devel-2.25+git5-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: xz-libs-5.0.4-1.2.8.jolla .............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/xz-libs-5.0.4-1.2.8.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: unzip-6.0-1.2.5.jolla .................................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/unzip-6.0-1.2.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: ssu-sysinfo-1.1.3-1.3.7.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/ssu-sysinfo-1.1.3-1.3.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: speexdsp-1.2.0+git2-1.1.7.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/speexdsp-1.2.0+git2-1.1.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: speex-1.2.0+git1-1.2.7.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/speex-1.2.0+git1-1.2.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: shadow-utils-4.6-1.2.5.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/shadow-utils-4.6-1.2.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sed-1:4.1.5-1.2.6.jolla ...............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/sed-4.1.5-1.2.6.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: readline-5.2-1.2.7.jolla ..............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/readline-5.2-1.2.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: pth-2.0.7-1.1.9.jolla .................................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/pth-2.0.7-1.1.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: psmisc-22.13-1.3.6.jolla ..............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/psmisc-22.13-1.3.6.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: procps-3.2.8-1.2.7.jolla ..............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/procps-3.2.8-1.2.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: popt-1.16-1.1.10.jolla ................................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/popt-1.16-1.1.10.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: pkgconfig-0.27.1-1.2.7.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/pkgconfig-0.27.1-1.2.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: pixman-0.34.0-1.1.9.jolla .............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/pixman-0.34.0-1.1.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: patch-2.7.5+git1-1.1.9.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/patch-2.7.5+git1-1.1.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: orc-0.4.26+git1-1.1.9.jolla ...........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/orc-0.4.26+git1-1.1.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: opus-1.2.1-1.2.7.jolla ................................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/opus-1.2.1-1.2.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: openjpeg-2.3.0+git1-1.2.5.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/openjpeg-2.3.0+git1-1.2.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: nspr-4.20.0-1.3.7.jolla ...............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/nspr-4.20.0-1.3.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: ncurses-6.1+git1-1.3.5.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/ncurses-6.1+git1-1.3.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: mtdev-1.1.3-1.1.9.jolla ...............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/mtdev-1.1.3-1.1.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: lsof-4.91+git1-1.3.4.jolla ............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/lsof-4.91+git1-1.3.4.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libxml2-2.9.8+git2-1.3.10.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libxml2-2.9.8+git2-1.3.10.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libxkbcommon-0.5.0+git1-1.2.8.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libxkbcommon-0.5.0+git1-1.2.8.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libwebp-0.6.1+git3-1.3.6.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libwebp-0.6.1+git3-1.3.6.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libtool-ltdl-2.4.6-1.2.9.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libtool-ltdl-2.4.6-1.2.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libtasn1-4.13+git1-1.3.9.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libtasn1-4.13+git1-1.3.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libstdc++-4.9.4-1.2.5.jolla ...........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libstdc++-4.9.4-1.2.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libshadowutils-0.0.2-1.4.1.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libshadowutils-0.0.2-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libsbc-1.3-1.3.6.jolla ................................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libsbc-1.3-1.3.6.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libpng-1.6.34-1.2.9.jolla .............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libpng-1.6.34-1.2.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libogg-1.3.3-1.2.7.jolla ..............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libogg-1.3.3-1.2.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libnl-3.4.0-1.2.7.jolla ...............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libnl-3.4.0-1.2.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libmpg123-1.25.10-1.1.7.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libmpg123-1.25.10-1.1.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: liblua-5.1.5-1.1.11.jolla .............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/liblua-5.1.5-1.1.11.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libjpeg-turbo-1.5.3+git1-1.4.5.jolla ..................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libjpeg-turbo-1.5.3+git1-1.4.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libiptcdata-1.0.4+git1-1.3.1.jolla ....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libiptcdata-1.0.4+git1-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libiphb-1.2.5+git1-1.3.3.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libiphb-1.2.5+git1-1.3.3.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libgpg-error-1.27+git2-1.3.5.jolla ....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libgpg-error-1.27+git2-1.3.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libffi-3.2.1+git1-1.2.13.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libffi-3.2.1+git1-1.2.13.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libexif-0.6.21+git2-1.2.5.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libexif-0.6.21+git2-1.2.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libdrm-2.4.39-1.1.9.jolla .............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libdrm-2.4.39-1.1.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libattr-2.4.47+git1-1.3.7.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libattr-2.4.47+git1-1.3.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libasyncns-0.8-1.2.5.jolla ............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libasyncns-0.8-1.2.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: json-c-0.12-1.1.9.jolla ...............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/json-c-0.12-1.1.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: iptables-1.8.2+git1-1.4.3.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/iptables-1.8.2+git1-1.4.3.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: giflib-4.2.3+git2-1.3.5.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/giflib-4.2.3+git2-1.3.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: gdbm-1.8.3-1.2.10.jolla ...............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/gdbm-1.8.3-1.2.10.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: freetype-2.8.0-1.1.9.jolla ............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/freetype-2.8.0-1.1.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: file-libs-5.35+git2-1.2.8.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/file-libs-5.35+git2-1.2.8.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: expat-2.1.0-1.1.10.jolla ..............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/expat-2.1.0-1.1.10.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: elfutils-libelf-0.170+git1-1.3.10.jolla ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/elfutils-libelf-0.170+git1-1.3.10.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: db4-4.8.30-1.3.12.jolla ...............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/db4-4.8.30-1.3.12.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: cpio-2.12+git1-1.3.4.jolla ............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/cpio-2.12+git1-1.3.4.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: bzip2-libs-1.0.6-1.2.9.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/bzip2-libs-1.0.6-1.2.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: busybox-1.29.3+git5-1.1.5.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/busybox-1.29.3+git5-1.1.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: binutils-2.25-1.3.11.jolla ............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/binutils-2.25-1.3.11.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: xz-5.0.4-1.2.8.jolla ..................................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/xz-5.0.4-1.2.8.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libutempter-1.1.5+git1-1.1.12.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libutempter-1.1.5+git1-1.1.12.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: zlib-devel-1.2.11+git1-1.4.5.jolla ....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/zlib-devel-1.2.11+git1-1.4.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: nspr-devel-4.20.0-1.3.7.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/nspr-devel-4.20.0-1.3.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libxslt-1.1.29-1.2.6.jolla ............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libxslt-1.1.29-1.2.6.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: augeas-libs-1.6.0+git1-1.2.5.jolla ....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/augeas-libs-1.6.0+git1-1.2.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: taglib-1.11.1+git1-1.3.1.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/taglib-1.11.1+git1-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qtchooser-26-1.1.9.jolla ..............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/qtchooser-26-1.1.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: pcre-8.42+git1-1.3.5.jolla ............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/pcre-8.42+git1-1.3.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libvpx-1.7.0+git1-1.2.5.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libvpx-1.7.0+git1-1.2.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libusb-0.1.12-1.2.5.jolla .............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libusb-0.1.12-1.2.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libsailfishkeyprovider-0.0.14-1.2.1.jolla .............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libsailfishkeyprovider-0.0.14-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libvorbis-1.3.6+git1-1.2.5.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libvorbis-1.3.6+git1-1.2.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libtheora-1.2.0alpha1+git-1.2.8.jolla .................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libtheora-1.2.0alpha1+git-1.2.8.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: flac-1.3.2-1.2.7.jolla ................................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/flac-1.3.2-1.2.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libtiff-4.0.10+git1-1.2.6.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libtiff-4.0.10+git1-1.2.6.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libksba-1.3.5+git2-1.2.5.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libksba-1.3.5+git2-1.2.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libgcrypt-1.5.6+git1-1.1.11.jolla .....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libgcrypt-1.5.6+git1-1.1.11.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: p11-kit-0.23.12+git1-1.3.5.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/p11-kit-0.23.12+git1-1.3.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libcap-2.24+git1-1.3.6.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libcap-2.24+git1-1.3.6.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libacl-2.2.53-1.2.7.jolla .............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libacl-2.2.53-1.2.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: iptables-ipv6-1.8.2+git1-1.4.3.jolla ..................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/iptables-ipv6-1.8.2+git1-1.4.3.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: file-5.35+git2-1.2.8.jolla ............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/file-5.35+git2-1.2.8.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: wayland-1.6.0+git1-1.2.8.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/wayland-1.6.0+git1-1.2.8.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: expat-devel-2.1.0-1.1.10.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/expat-devel-2.1.0-1.1.10.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: exempi-2.4.3-1.2.1.jolla ..............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/exempi-2.4.3-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: db4-utils-4.8.30-1.3.12.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/db4-utils-4.8.30-1.3.12.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: bzip2-1.0.6-1.2.9.jolla ...............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/bzip2-1.0.6-1.2.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: busybox-symlinks-gzip-1.29.3+git5-1.1.5.jolla .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/busybox-symlinks-gzip-1.29.3+git5-1.1.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: busybox-symlinks-grep-1.29.3+git5-1.1.5.jolla .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/busybox-symlinks-grep-1.29.3+git5-1.1.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: busybox-symlinks-findutils-1.29.3+git5-1.1.5.jolla ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/busybox-symlinks-findutils-1.29.3+git5-1.1.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: busybox-symlinks-diffutils-1.29.3+git5-1.1.5.jolla ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/busybox-symlinks-diffutils-1.29.3+git5-1.1.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: busybox-symlinks-dhcp-1.29.3+git5-1.1.5.jolla .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/busybox-symlinks-dhcp-1.29.3+git5-1.1.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: xz-lzma-compat-5.0.4-1.2.8.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/xz-lzma-compat-5.0.4-1.2.8.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: kmod-libs-21-1.2.8.jolla ..............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/kmod-libs-21-1.2.8.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: elfutils-libs-0.170+git1-1.3.10.jolla .................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/elfutils-libs-0.170+git1-1.3.10.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: freetype-devel-2.8.0-1.1.9.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/freetype-devel-2.8.0-1.1.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-default-5.6.3+git9-1.9.2.jolla ....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-default-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: glib2-2.56.1+git3-1.3.6.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/glib2-2.56.1+git3-1.3.6.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: tar-1.17-1.2.5.jolla ..................................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/tar-1.17-1.2.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: coreutils-1:6.9-1.2.6.jolla ...........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/coreutils-6.9-1.2.6.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: elfutils-0.170+git1-1.3.10.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/elfutils-0.170+git1-1.3.10.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: shared-mime-info-1.12-1.4.2.jolla .....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/shared-mime-info-1.12-1.4.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libwspcodec-2.2.1-1.2.7.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libwspcodec-2.2.1-1.2.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libgsf-1.14.36+git3-1.3.1.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libgsf-1.14.36+git3-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libglibutil-1.0.35-1.8.4.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libglibutil-1.0.35-1.8.4.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libdsme-0.66.1-1.4.4.jolla ............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libdsme-0.66.1-1.4.4.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: gstreamer1.0-1.14.1-1.3.5.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/gstreamer1.0-1.14.1-1.3.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: gmime-2.6.20-1.2.1.jolla ..............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/gmime-2.6.20-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: desktop-file-utils-0.23+git1-1.2.9.jolla ..............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/desktop-file-utils-0.23+git1-1.2.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: pam-1.1.8+git5-1.2.5.jolla ............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/pam-1.1.8+git5-1.2.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libmce-glib-1.0.5-1.1.14.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libmce-glib-1.0.5-1.1.14.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libgsupplicant-1.0.11-1.4.6.jolla .....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libgsupplicant-1.0.11-1.4.6.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libgrilio-1.0.29-1.9.1.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libgrilio-1.0.29-1.9.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libgofono-2.0.6-1.2.11.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libgofono-2.0.6-1.2.11.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libdbusaccess-1.0.7-1.3.4.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libdbusaccess-1.0.7-1.3.4.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: systemd-libs-225+git13-1.4.2.jolla ....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/systemd-libs-225+git13-1.4.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sound-theme-freedesktop-0.8-1.3.1.jolla ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/noarch/sound-theme-freedesktop-0.8-1.3.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: p11-kit-trust-0.23.12+git1-1.3.5.jolla ................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/p11-kit-trust-0.23.12+git1-1.3.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libuser-0.62+git1-1.2.5.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libuser-0.62+git1-1.2.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libsmartcols-2.33+git1-1.4.5.jolla ....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libsmartcols-2.33+git1-1.4.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: groff-1.18.1.4-1.1.14.jolla ...........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/groff-1.18.1.4-1.1.14.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: gawk-1:3.1.5-1.2.7.jolla ..............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/gawk-3.1.5-1.2.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: fontconfig-2.12.4-1.2.9.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/fontconfig-2.12.4-1.2.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: alsa-lib-1.0.26-1.2.6.jolla ...........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/alsa-lib-1.0.26-1.2.6.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libgofonoext-1.0.10-1.2.10.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libgofonoext-1.0.10-1.2.10.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: mesa-llvmpipe-libglapi-9.2.5+git3-1.1.10.jolla ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/mesa-llvmpipe-libglapi-9.2.5+git3-1.1.10.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: dbus-libs-1.10.8+git1-1.1.12.jolla ....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/dbus-libs-1.10.8+git1-1.1.12.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: cor-0.1.18-1.2.1.jolla ................................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/cor-0.1.18-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: p11-kit-nss-ckbi-0.23.12+git1-1.3.5.jolla .............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/p11-kit-nss-ckbi-0.23.12+git1-1.3.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: passwd-0.79+git1-1.3.5.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/passwd-0.79+git1-1.3.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libuuid-2.33+git1-1.4.5.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libuuid-2.33+git1-1.4.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: perl-macros-2:5.16.1-1.1.16.jolla .....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/perl-macros-5.16.1-1.1.16.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sailfish-fonts-0.1.5-1.3.1.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/sailfish-fonts-0.1.5-1.3.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: fontconfig-devel-2.12.4-1.2.9.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/fontconfig-devel-2.12.4-1.2.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libsndfile-1.0.25-1.2.5.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libsndfile-1.0.25-1.2.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: mesa-llvmpipe-libEGL-9.2.5+git3-1.1.10.jolla ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/mesa-llvmpipe-libEGL-9.2.5+git3-1.1.10.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libdbuslogserver-dbus-1.0.15-1.4.4.jolla ..............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libdbuslogserver-dbus-1.0.15-1.4.4.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: dbus-glib-0.100.2-1.2.7.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/dbus-glib-0.100.2-1.2.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: statefs-pp-0.3.35-1.2.1.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/statefs-pp-0.3.35-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: gnutls-2.12.23.4-1.2.5.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/gnutls-2.12.23.4-1.2.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: ca-certificates-2018.2.24-1.2.14.jolla ................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/ca-certificates-2018.2.24-1.2.14.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libblkid-2.33+git1-1.4.5.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libblkid-2.33+git1-1.4.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: perl-libs-2:5.16.1-1.1.16.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/perl-libs-5.16.1-1.1.16.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: mesa-llvmpipe-9.2.5+git3-1.1.10.jolla .................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/mesa-llvmpipe-9.2.5+git3-1.1.10.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libresource-0.23.1+git1-1.2.3.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libresource-0.23.1+git1-1.2.3.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: glib-networking-2.42.0-1.2.2.jolla ....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/glib-networking-2.42.0-1.2.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: openssl-libs-1.0.2o+git2-1.4.5.jolla ..................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/openssl-libs-1.0.2o+git2-1.4.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libfdisk-2.33+git1-1.4.5.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libfdisk-2.33+git1-1.4.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: perl-2:5.16.1-1.1.16.jolla ............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/perl-5.16.1-1.1.16.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: mesa-llvmpipe-libwayland-egl-9.2.5+git3-1.1.10.jolla ..................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/mesa-llvmpipe-libwayland-egl-9.2.5+git3-1.1.10.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: mesa-llvmpipe-libGLESv2-9.2.5+git3-1.1.10.jolla .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/mesa-llvmpipe-libGLESv2-9.2.5+git3-1.1.10.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: mesa-llvmpipe-libEGL-devel-9.2.5+git3-1.1.10.jolla ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/mesa-llvmpipe-libEGL-devel-9.2.5+git3-1.1.10.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libcurl-7.64.0+git1-1.8.5.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libcurl-7.64.0+git1-1.8.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libarchive-3.3.3+git1-1.2.9.jolla .....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libarchive-3.3.3+git1-1.2.9.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libmount-2.33+git1-1.4.5.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libmount-2.33+git1-1.4.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: perl-Scalar-List-Utils-2:1.25-1.1.16.jolla ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/perl-Scalar-List-Utils-1.25-1.1.16.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: mesa-llvmpipe-libGLESv2-devel-9.2.5+git3-1.1.10.jolla .................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/mesa-llvmpipe-libGLESv2-devel-9.2.5+git3-1.1.10.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: gstreamer1.0-plugins-base-1.14.1-1.2.5.jolla ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/gstreamer1.0-plugins-base-1.14.1-1.2.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: cairo-1.14.6+git1-1.2.3.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/cairo-1.14.6+git1-1.2.3.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: pacrunner-0.15+git1-1.3.3.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/pacrunner-0.15+git1-1.3.3.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: gnupg2-1:2.0.4+git2-1.4.5.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/gnupg2-2.0.4+git2-1.4.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: curl-7.64.0+git1-1.8.5.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/curl-7.64.0+git1-1.8.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: util-linux-2.33+git1-1.4.5.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/util-linux-2.33+git1-1.4.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: perl-Pod-Escapes-2:1.04-1.1.16.jolla ..................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/perl-Pod-Escapes-1.04-1.1.16.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: nemo-gstreamer1.0-interfaces-0.20150126.0-1.3.3.jolla .................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/nemo-gstreamer1.0-interfaces-0.20150126.0-1.3.3.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: gpgme-1.2.0+git6-1.3.4.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/gpgme-1.2.0+git6-1.3.4.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: rpm-libs-4.14.1+git9-1.5.7.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/rpm-libs-4.14.1+git9-1.5.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: xdg-utils-1.1.2+git1-1.2.8.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/xdg-utils-1.1.2+git1-1.2.8.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: fuse-2.9.0+git1-1.3.1.jolla ...........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/fuse-2.9.0+git1-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: cryptsetup-libs-2.1.0+git1-1.3.5.jolla ................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/cryptsetup-libs-2.1.0+git1-1.3.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: perl-Pod-Simple-2:3.20-1.1.16.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/perl-Pod-Simple-3.20-1.1.16.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: rpm-4.14.1+git9-1.5.7.jolla ...........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/rpm-4.14.1+git9-1.5.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: fuse-libs-2.9.0+git1-1.3.1.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/fuse-libs-2.9.0+git1-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: systemd-config-sailfish-0.8.15-1.8.1.jolla ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/systemd-config-sailfish-0.8.15-1.8.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: perl-parent-2:0.225-1.1.16.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/perl-parent-0.225-1.1.16.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: device-mapper-libs-2.02.177+git3-1.3.7.jolla ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/device-mapper-libs-2.02.177+git3-1.3.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: perl-Pod-Perldoc-2:3.17.00-1.1.16.jolla ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/perl-Pod-Perldoc-3.17.00-1.1.16.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: device-mapper-event-libs-2.02.177+git3-1.3.7.jolla ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/device-mapper-event-libs-2.02.177+git3-1.3.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: perl-Pod-Parser-2:1.51-1.1.16.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/perl-Pod-Parser-1.51-1.1.16.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: lvm2-2.02.177+git3-1.3.7.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/lvm2-2.02.177+git3-1.3.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: perl-Filter-2:1.40-1.1.16.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/perl-Filter-1.40-1.1.16.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: systemd-225+git13-1.4.2.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/systemd-225+git13-1.4.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: perl-Module-Pluggable-2:4.00-1.1.16.jolla .............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/perl-Module-Pluggable-4.00-1.1.16.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: dbus-1.10.8+git1-1.1.12.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/dbus-1.10.8+git1-1.1.12.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+Failed to get D-Bus connection: Operation not permitted<br>
+Failed to get D-Bus connection: Operation not permitted<br>
+Failed to get D-Bus connection: Operation not permitted<br>
+<br>
+<br>
+Installing: perl-threads-2:1.86-1.1.16.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/perl-threads-1.86-1.1.16.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: polkit-0.105+git2-1.2.3.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/polkit-0.105+git2-1.2.3.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: device-mapper-2.02.177+git3-1.3.7.jolla ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/device-mapper-2.02.177+git3-1.3.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: dbus-devel-1.10.8+git1-1.1.12.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/dbus-devel-1.10.8+git1-1.1.12.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: perl-Socket-2:2.001-1.1.16.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/perl-Socket-2.001-1.1.16.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: device-mapper-event-2.02.177+git3-1.3.7.jolla .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/device-mapper-event-2.02.177+git3-1.3.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: perl-threads-shared-2:1.40-1.1.16.jolla ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/perl-threads-shared-1.40-1.1.16.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: lvm2-libs-2.02.177+git3-1.3.7.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/lvm2-libs-2.02.177+git3-1.3.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qmake-5.6.3+git9-1.9.2.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qmake-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: meego-rpm-config-0.18-1.2.7.jolla .....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/meego-rpm-config-0.18-1.2.7.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: wpa_supplicant-2.6+git5-1.3.5.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/wpa_supplicant-2.6+git5-1.3.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: usb-moded-0.86.0+mer33-1.3.2.jolla ....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/usb-moded-0.86.0+mer33-1.3.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+Failed to get D-Bus connection: Operation not permitted<br>
+Failed to get D-Bus connection: Operation not permitted<br>
+<br>
+<br>
+Installing: systemd-user-session-targets-0.0.2-1.3.5.jolla ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/systemd-user-session-targets-0.0.2-1.3.5.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: pulseaudio-12.2+git1-1.7.2.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/pulseaudio-12.2+git1-1.7.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: ofono-1.21+git44-1.19.1.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/ofono-1.21+git44-1.19.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+warning: user radio does not exist - using root<br>
+warning: group radio does not exist - using root<br>
+Failed to get D-Bus connection: Operation not permitted<br>
+Failed to get D-Bus connection: Operation not permitted<br>
+<br>
+<br>
+Installing: oneshot-0.4.8-1.2.8.jolla .............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/noarch/oneshot-0.4.8-1.2.8.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: mapplauncherd-4.1.30-1.6.1.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/mapplauncherd-4.1.30-1.6.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libcanberra-0.30+git1-1.4.1.jolla .....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libcanberra-0.30+git1-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: connman-configs-mer-1.32+git65-1.25.2.jolla ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/connman-configs-mer-1.32+git65-1.25.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: ffmpeg-4.1.1+git1-1.2.1.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/ffmpeg-4.1.1+git1-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: dconf-0.28.0-1.1.2.jolla ..............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/dconf-0.28.0-1.1.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+<br>
+<br>
+Installing: boost-system-1.66.0-1.3.8.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/boost-system-1.66.0-1.3.8.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: connman-1.32+git65-1.25.2.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/connman-1.32+git65-1.25.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+rm: cannot remove `/etc/resolv.conf': Read-only file system<br>
+ln: creating symbolic link `/etc/resolv.conf': Read-only file system<br>
+find: /var/lib/connman: No such file or directory<br>
+Failed to get D-Bus connection: Operation not permitted<br>
+Failed to get D-Bus connection: Operation not permitted<br>
+<br>
+<br>
+Installing: libicu-63.1+git5-1.1.6.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libicu-63.1+git5-1.1.6.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: jolla-ambient-sound-theme-0.0.17-1.2.1.jolla ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/jolla-ambient-sound-theme-0.0.17-1.2.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+<br>
+<br>
+Installing: boost-filesystem-1.66.0-1.3.8.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/boost-filesystem-1.66.0-1.3.8.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sqlite-libs-3.13.0+git3-1.3.6.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/sqlite-libs-3.13.0+git3-1.3.6.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtcore-5.6.3+git9-1.9.2.jolla .....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtcore-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: statefs-0.3.35-1.2.1.jolla ............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/statefs-0.3.35-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+STATEFS_GID=995<br>
+STATEFS_UMASK=0002<br>
+STATEFS_GID=995<br>
+STATEFS_UMASK=0002<br>
+Loader register default<br>
+Register default<br>
+Dumping loader "/usr/lib/statefs/libloader-default.so"<br>
+Dumping loader "/usr/lib/statefs/libloader-default.so"<br>
+Dumping loader "/usr/lib/statefs/libloader-inout.so"<br>
+Dumping loader "/usr/lib/statefs/libloader-inout.so"<br>
+Trying to dump inout provider "/usr/share/statefs/inout_power.conf"<br>
+provider-power-inout<br>
+Trying to dump inout provider "/etc/timed-statefs.conf"<br>
+provider-timed-qt5<br>
+add-oneshot: /usr/lib/oneshot.d/statefs-02-register-default - run OK<br>
+<br>
+<br>
+Installing: nss-3.39-1.3.6.jolla ..................................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/nss-3.39-1.3.6.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtconcurrent-5.6.3+git9-1.9.2.jolla ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtconcurrent-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: statefs-provider-inout-power-0.3.17-1.3.1.jolla .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/noarch/statefs-provider-inout-power-0.3.17-1.3.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+unregister<br>
+Register inout_power<br>
+Trying to dump inout provider "/usr/share/statefs/inout_power.conf"<br>
+provider-power-inout<br>
+add-oneshot: /usr/lib/oneshot.d/statefs-03-register-inout_power - run OK<br>
+<br>
+<br>
+Installing: boost-thread-1.66.0-1.3.8.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/boost-thread-1.66.0-1.3.8.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: nss-sysinit-3.39-1.3.6.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/nss-sysinit-3.39-1.3.6.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdbus-5.6.3+git9-1.9.2.jolla .....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdbus-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: nss-devel-3.39-1.3.6.jolla ............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/nss-devel-3.39-1.3.6.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtgui-5.6.3+git9-1.9.2.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtgui-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: nss-softokn-freebl-3.39-1.3.6.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/nss-softokn-freebl-3.39-1.3.6.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtnetwork-5.6.3+git9-1.9.2.jolla ..................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtnetwork-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: python-2.7.15+git2-1.3.7.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/python-2.7.15+git2-1.3.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: poppler-0.74.0+git1-1.5.1.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/poppler-0.74.0+git1-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libsoup-2.54.1+git3-1.2.4.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libsoup-2.54.1+git3-1.2.4.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libsolv0-0.6.35+git2-1.4.5.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libsolv0-0.6.35+git2-1.4.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libaccounts-glib-1.18+git1-1.1.8.jolla ................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libaccounts-glib-1.18+git1-1.1.8.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: PackageKit-glib-1.1.9+git5-1.8.1.jolla ................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/PackageKit-glib-1.1.9+git5-1.8.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtwidgets-5.6.3+git9-1.9.2.jolla ..................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtwidgets-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: python-libs-2.7.15+git2-1.3.7.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/python-libs-2.7.15+git2-1.3.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: poppler-glib-0.74.0+git1-1.5.1.jolla ..................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/poppler-glib-0.74.0+git1-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: totem-pl-parser-3.26.1+git1-1.4.1.jolla ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/totem-pl-parser-3.26.1+git1-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: gstreamer1.0-plugins-good-1.14.1-1.2.8.jolla ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/gstreamer1.0-plugins-good-1.14.1-1.2.8.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libsolv-tools-0.6.35+git2-1.4.5.jolla .................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libsolv-tools-0.6.35+git2-1.4.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtopengl-5.6.3+git9-1.9.2.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtopengl-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: rpm-build-4.14.1+git9-1.5.7.jolla .....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/rpm-build-4.14.1+git9-1.5.7.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: ngfd-settings-sailfish-0.8.15-1.8.1.jolla .............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/ngfd-settings-sailfish-0.8.15-1.8.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtsql-5.6.3+git9-1.9.2.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtsql-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-tools-5.6.3+git9-1.9.2.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-tools-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtxmlpatterns-5.6.3+git2-1.2.1.jolla ..............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtxmlpatterns-5.6.3+git2-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtxml-5.6.3+git9-1.9.2.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtxml-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qttest-5.6.3+git9-1.9.2.jolla .....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qttest-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtsvg-5.6.2+git1-1.2.1.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtsvg-5.6.2+git1-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtserviceframework-5.2.0+git9-1.2.1.jolla .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/qt5-qtserviceframework-5.2.0+git9-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtsensors-5.2.1+git17-1.3.1.jolla .................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtsensors-5.2.1+git17-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtpublishsubscribe-5.2.0+git9-1.2.1.jolla .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/qt5-qtpublishsubscribe-5.2.0+git9-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtprintsupport-5.6.3+git9-1.9.2.jolla .............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtprintsupport-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtpositioning-5.2.1+git31-1.4.1.jolla .............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtpositioning-5.2.1+git31-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtpim-organizer-5.2.0+git2-1.2.1.jolla ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtpim-organizer-5.2.0+git2-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtpim-contacts-5.2.0+git2-1.2.1.jolla .............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtpim-contacts-5.2.0+git2-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-plugin-sqldriver-sqlite-5.6.3+git9-1.9.2.jolla ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-plugin-sqldriver-sqlite-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-plugin-platform-minimal-5.6.3+git9-1.9.2.jolla ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-plugin-platform-minimal-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-plugin-imageformat-jpeg-5.6.3+git9-1.9.2.jolla ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-plugin-imageformat-jpeg-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-plugin-bearer-generic-5.6.3+git9-1.9.2.jolla ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-plugin-bearer-generic-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: mlite-qt5-0.2.25-1.4.1.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/mlite-qt5-0.2.25-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libusb-moded-qt5-1.8-1.4.1.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libusb-moded-qt5-1.8-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libqtaround2-0.2.8-1.2.1.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libqtaround2-0.2.8-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libmediaart-1.9.4-1.4.1.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libmediaart-1.9.4-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libmce-qt5-1.1.1-1.4.1.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libmce-qt5-1.1.1-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libkf5archive-5.41.0+git4-1.4.1.jolla .................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/libkf5archive-5.41.0+git4-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libiodata-qt5-0.19.10-1.3.1.jolla .....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libiodata-qt5-0.19.10-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libdbus-qeventloop-qt5-1.30.3-1.4.1.jolla .............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/libdbus-qeventloop-qt5-1.30.3-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: dbusextended-qt5-0.0.3-1.3.1.jolla ....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/dbusextended-qt5-0.0.3-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: connman-qt5-1.2.16-1.10.1.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/connman-qt5-1.2.16-1.10.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtcore-devel-5.6.3+git9-1.9.2.jolla ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtcore-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: poppler-qt5-0.74.0+git1-1.5.1.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/poppler-qt5-0.74.0+git1-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libaccounts-qt5-1.13+git1-1.3.1.jolla .................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/libaccounts-qt5-1.13+git1-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-5.6.3+git7-1.5.1.jolla ..............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-5.6.3+git7-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qttools-linguist-5.6.3+git1-1.4.1.jolla ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qttools-linguist-5.6.3+git1-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtpim-versit-5.2.0+git2-1.2.1.jolla ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtpim-versit-5.2.0+git2-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libquillmetadata-qt5-1.111111.10-1.5.1.jolla ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libquillmetadata-qt5-1.111111.10-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sailfish-silica-background-qt5-0.9.14-1.4.1.jolla .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/armv7hl/sailfish-silica-background-qt5-0.9.14-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: statefs-qt5-0.3.5-1.4.1.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/statefs-qt5-0.3.5-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: tracker-1.12.4+git9-1.7.1.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/tracker-1.12.4+git9-1.7.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+su: cannot set groups: Operation not permitted<br>
+su: cannot set groups: Operation not permitted<br>
+add-oneshot: /etc/oneshot.d/default/tracker-configs.sh - job saved OK<br>
+<br>
+<br>
+Removing libav-12.2+git1-1.2.17.jolla .............................................................................................[done]<br>
+Installing: libresourceqt-qt5-1.30.3-1.4.1.jolla ..................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/libresourceqt-qt5-1.30.3-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: ssu-network-proxy-plugin-0.43.12-1.8.1.jolla ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/ssu-network-proxy-plugin-0.43.12-1.8.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtxml-devel-5.6.3+git9-1.9.2.jolla ................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtxml-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtsql-devel-5.6.3+git9-1.9.2.jolla ................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtsql-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtserviceframework-devel-5.2.0+git9-1.2.1.jolla ...................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/qt5-qtserviceframework-devel-5.2.0+git9-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtsensors-devel-5.2.1+git17-1.3.1.jolla ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtsensors-devel-5.2.1+git17-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtpublishsubscribe-devel-5.2.0+git9-1.2.1.jolla ...................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/qt5-qtpublishsubscribe-devel-5.2.0+git9-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtpositioning-devel-5.2.1+git31-1.4.1.jolla .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtpositioning-devel-5.2.1+git31-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtpim-organizer-devel-5.2.0+git2-1.2.1.jolla ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtpim-organizer-devel-5.2.0+git2-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtpim-contacts-devel-5.2.0+git2-1.2.1.jolla .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtpim-contacts-devel-5.2.0+git2-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtnetwork-devel-5.6.3+git9-1.9.2.jolla ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtnetwork-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtgui-devel-5.6.3+git9-1.9.2.jolla ................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtgui-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdbus-devel-5.6.3+git9-1.9.2.jolla ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdbus-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtconcurrent-devel-5.6.3+git9-1.9.2.jolla .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtconcurrent-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-qtquick-5.6.3+git7-1.5.1.jolla ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-qtquick-5.6.3+git7-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtpim-versitorganizer-5.2.0+git2-1.2.1.jolla ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtpim-versitorganizer-5.2.0+git2-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: timed-qt5-3.5.1-1.4.1.jolla ...........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/timed-qt5-3.5.1-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+unable to set CAP_SETFCAP effective capability: Operation not permitted<br>
+add-oneshot: /usr/lib/oneshot.d/setcaps-timed-qt5.sh - could not be run, save for later<br>
+add-oneshot: /etc/oneshot.d/0/setcaps-timed-qt5.sh - job saved OK<br>
+su: cannot set groups: Operation not permitted<br>
+su: cannot set groups: Operation not permitted<br>
+Register timed<br>
+Trying to dump inout provider "/etc/timed-statefs.conf"<br>
+provider-timed-qt5<br>
+add-oneshot: /usr/lib/oneshot.d/statefs-03-register-timed - run OK<br>
+<br>
+<br>
+Installing: statefs-contextkit-subscriber-0.3.5-1.4.1.jolla .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/statefs-contextkit-subscriber-0.3.5-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libmlocale-qt5-0.7.0-1.3.1.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libmlocale-qt5-0.7.0-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libzypp-17.3.1+git4-1.6.2.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libzypp-17.3.1+git4-1.6.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+warning: /etc/zypp/zypp.conf created as /etc/zypp/zypp.conf.rpmnew<br>
+<br>
+<br>
+Installing: libaccounts-qt5-devel-1.13+git1-1.3.1.jolla ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/libaccounts-qt5-devel-1.13+git1-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtpim-versit-devel-5.2.0+git2-1.2.1.jolla .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtpim-versit-devel-5.2.0+git2-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtxmlpatterns-devel-5.6.3+git2-1.2.1.jolla ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtxmlpatterns-devel-5.6.3+git2-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtwidgets-devel-5.6.3+git9-1.9.2.jolla ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtwidgets-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtsvg-devel-5.6.2+git1-1.2.1.jolla ................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtsvg-devel-5.6.2+git1-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: mlite-qt5-devel-0.2.25-1.4.1.jolla ....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/mlite-qt5-devel-0.2.25-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-qtquickparticles-5.6.3+git7-1.5.1.jolla .............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-qtquickparticles-5.6.3+git7-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: PackageKit-1.1.9+git5-1.8.1.jolla .....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/PackageKit-1.1.9+git5-1.8.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtpim-versitorganizer-devel-5.2.0+git2-1.2.1.jolla ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtpim-versitorganizer-devel-5.2.0+git2-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtopengl-devel-5.6.3+git9-1.9.2.jolla .............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtopengl-devel-5.6.3+git9-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-qtquicktest-5.6.3+git7-1.5.1.jolla ..................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-qtquicktest-5.6.3+git7-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: PackageKit-zypp-1.1.9+git5-1.8.1.jolla ................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/PackageKit-zypp-1.1.9+git5-1.8.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sailfish-content-profiled-settings-default-0.15.3-1.3.1.jolla .........................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/sailfish-content-profiled-settings-default-0.15.3-1.3.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+add-oneshot: /etc/oneshot.d/default/rename-profile-settings - job saved OK<br>
+<br>
+<br>
+Installing: qt5-qtwayland-wayland_egl-5.4.0+git48-1.3.1.jolla .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtwayland-wayland_egl-5.4.0+git48-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtquickcontrols-layouts-5.2.1+git3-1.2.1.jolla ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtquickcontrols-layouts-5.2.1+git3-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtmultimedia-5.6.2+git8-1.4.1.jolla ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtmultimedia-5.6.2+git8-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtlocation-5.2.1+git31-1.4.1.jolla ................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtlocation-5.2.1+git31-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtgraphicaleffects-5.6.2+git2-1.2.1.jolla .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtgraphicaleffects-5.6.2+git2-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtfeedback-5.2.0+git6-1.3.1.jolla .................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtfeedback-5.2.0+git6-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdocgallery-5.2.0+git8-1.4.1.jolla ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/qt5-qtdocgallery-5.2.0+git8-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-serviceframework-5.2.0+git9-1.2.1.jolla .............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/qt5-qtdeclarative-serviceframework-5.2.0+git9-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-qtquickparticles-devel-5.6.3+git7-1.5.1.jolla .......................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-qtquickparticles-devel-5.6.3+git7-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-publishsubscribe-5.2.0+git9-1.2.1.jolla .............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/qt5-qtdeclarative-publishsubscribe-5.2.0+git9-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-plugin-qmlinspector-5.6.3+git7-1.5.1.jolla ..........................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-plugin-qmlinspector-5.6.3+git7-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-pim-organizer-5.2.0+git2-1.2.1.jolla ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-pim-organizer-5.2.0+git2-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-pim-contacts-5.2.0+git2-1.2.1.jolla .................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-pim-contacts-5.2.0+git2-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-import-xmllistmodel-5.6.3+git7-1.5.1.jolla ..........................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-import-xmllistmodel-5.6.3+git7-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-import-window2-5.6.3+git7-1.5.1.jolla ...............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-import-window2-5.6.3+git7-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-import-sensors-5.2.1+git17-1.3.1.jolla ..............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-import-sensors-5.2.1+git17-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-import-qttest-5.6.3+git7-1.5.1.jolla ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-import-qttest-5.6.3+git7-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-import-qtquick2plugin-5.6.3+git7-1.5.1.jolla ........................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-import-qtquick2plugin-5.6.3+git7-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-import-positioning-5.2.1+git31-1.4.1.jolla ..........................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-import-positioning-5.2.1+git31-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-import-particles2-5.6.3+git7-1.5.1.jolla ............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-import-particles2-5.6.3+git7-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-import-models2-5.6.3+git7-1.5.1.jolla ...............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-import-models2-5.6.3+git7-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-import-localstorageplugin-5.6.3+git7-1.5.1.jolla ....................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-import-localstorageplugin-5.6.3+git7-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-import-folderlistmodel-5.6.3+git7-1.5.1.jolla .......................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-import-folderlistmodel-5.6.3+git7-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-devel-5.6.3+git7-1.5.1.jolla ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-devel-5.6.3+git7-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtconnectivity-qtbluetooth-5.6.2+git0-1.2.1.jolla .................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtconnectivity-qtbluetooth-5.6.2+git0-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: nemo-qml-plugin-thumbnailer-qt5-1.0.0-1.6.1.jolla .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/nemo-qml-plugin-thumbnailer-qt5-1.0.0-1.6.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+/bin/rm: cannot remove `/home/nemo/.cache/.nemothumbs': Permission denied<br>
+add-oneshot: /usr/lib/oneshot.d/remove-obsolete-nemothumbs-cache-dir - could not be run, save for later<br>
+add-oneshot: /etc/oneshot.d/0/remove-obsolete-nemothumbs-cache-dir - job saved OK<br>
+<br>
+<br>
+Installing: nemo-qml-plugin-notifications-qt5-1.1.6-1.5.1.jolla ...................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/nemo-qml-plugin-notifications-qt5-1.1.6-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: nemo-qml-plugin-models-qt5-0.1.3-1.4.1.jolla ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/nemo-qml-plugin-models-qt5-0.1.3-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: nemo-qml-plugin-filemanager-0.1.11-1.7.1.jolla ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/nemo-qml-plugin-filemanager-0.1.11-1.7.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: nemo-qml-plugin-dbus-qt5-2.1.20-1.6.1.jolla ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/nemo-qml-plugin-dbus-qt5-2.1.20-1.6.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: nemo-qml-plugin-configuration-qt5-0.2.2-1.3.1.jolla ...................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/nemo-qml-plugin-configuration-qt5-0.2.2-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: mpris-qt5-1.0.0-1.4.1.jolla ...........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/mpris-qt5-1.0.0-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: mapplauncherd-qt5-1.1.14-1.3.1.jolla ..................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/mapplauncherd-qt5-1.1.14-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libqtwebkit5-5.6.2+git8-1.5.1.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/libqtwebkit5-5.6.2+git8-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libqt5sparql-0.2.18-1.2.1.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libqt5sparql-0.2.18-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libpython3_7m1_0-3.7.2+git2-1.3.5.jolla ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libpython3_7m1_0-3.7.2+git2-1.3.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: contextkit-declarative-qt5-0.3.5-1.4.1.jolla ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/contextkit-declarative-qt5-0.3.5-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: ssu-0.43.12-1.8.1.jolla ...............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/ssu-0.43.12-1.8.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: PackageKit-Qt5-0.9.6+git-1.3.1.jolla ..................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/PackageKit-Qt5-0.9.6+git-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: profiled-1.0.6-1.2.1.jolla ............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/profiled-1.0.6-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtwayland-wayland_egl-devel-5.4.0+git48-1.3.1.jolla ...............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtwayland-wayland_egl-devel-5.4.0+git48-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtmultimedia-gsttools-5.6.2+git8-1.4.1.jolla ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtmultimedia-gsttools-5.6.2+git8-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-import-location-5.2.1+git31-1.4.1.jolla .............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-import-location-5.2.1+git31-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtfeedback-devel-5.2.0+git6-1.3.1.jolla ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtfeedback-devel-5.2.0+git6-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdocgallery-devel-5.2.0+git8-1.4.1.jolla .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/qt5-qtdocgallery-devel-5.2.0+git8-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-qtquick-devel-5.6.3+git7-1.5.1.jolla ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-qtquick-devel-5.6.3+git7-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtconnectivity-qtbluetooth-devel-5.6.2+git0-1.2.1.jolla ...........................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtconnectivity-qtbluetooth-devel-5.6.2+git0-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: thumbnaild-0.0.6-1.4.1.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/thumbnaild-0.0.6-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+/bin/rm: cannot remove `/home/nemo/.thumbnails': Permission denied<br>
+add-oneshot: /usr/lib/oneshot.d/remove-obsolete-tumbler-cache-dir - could not be run, save for later<br>
+add-oneshot: /etc/oneshot.d/0/remove-obsolete-tumbler-cache-dir - job saved OK<br>
+<br>
+<br>
+Installing: libnemotransferengine-qt5-1.0.1-1.5.1.jolla ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libnemotransferengine-qt5-1.0.1-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: mpris-qt5-qml-plugin-1.0.0-1.4.1.jolla ................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/mpris-qt5-qml-plugin-1.0.0-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: signon-qt5-8.57.5+git3-1.5.1.jolla ....................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/signon-qt5-8.57.5+git3-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+add-oneshot: /etc/oneshot.d/0/signon-storage-perm - job saved OK<br>
+<br>
+<br>
+Installing: mapplauncherd-qt5-devel-1.1.14-1.3.1.jolla ............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/mapplauncherd-qt5-devel-1.1.14-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: maliit-framework-wayland-inputcontext-0.99.1+git4-1.4.1.jolla .........................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/maliit-framework-wayland-inputcontext-0.99.1+git4-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libsailfishapp-1.2.8-1.4.1.jolla ......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/oss/armv7hl/libsailfishapp-1.2.8-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: buteo-syncfw-qt5-0.8.18-1.7.1.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/buteo-syncfw-qt5-0.8.18-1.7.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+add-oneshot: /etc/oneshot.d/0/msyncd-storage-perm - job saved OK<br>
+su: cannot set groups: Operation not permitted<br>
+su: cannot set groups: Operation not permitted<br>
+<br>
+<br>
+Installing: libqtwebkit5-widgets-5.6.2+git8-1.5.1.jolla ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/libqtwebkit5-widgets-5.6.2+git8-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libqt5sparql-tracker-direct-0.2.18-1.2.1.jolla ........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libqt5sparql-tracker-direct-0.2.18-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libqt5sparql-tracker-0.2.18-1.2.1.jolla ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libqt5sparql-tracker-0.2.18-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: python3-base-3.7.2+git2-1.3.5.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/python3-base-3.7.2+git2-1.3.5.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: zypper-1.14.6+git3-1.3.4.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/zypper-1.14.6+git3-1.3.4.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: ssu-vendor-data-jolla-0.108-1.6.1.jolla ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/oss/noarch/ssu-vendor-data-jolla-0.108-1.6.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+DBus unavailable, falling back to libssu<br>
+add-oneshot: /usr/lib/oneshot.d/ssu-update-repos - run OK<br>
+<br>
+<br>
+Installing: ngfd-1.1.1-1.5.1.jolla ................................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/ngfd-1.1.1-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+su: cannot set groups: Operation not permitted<br>
+su: cannot set groups: Operation not permitted<br>
+<br>
+<br>
+Installing: qt5-qtmultimedia-devel-5.6.2+git8-1.4.1.jolla .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtmultimedia-devel-5.6.2+git8-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-import-multimedia-5.6.2+git8-1.4.1.jolla ............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtdeclarative-import-multimedia-5.6.2+git8-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: nemo-qtmultimedia-plugins-gstvideotexturebackend-0.0.10-1.3.1.jolla ...................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/nemo-qtmultimedia-plugins-gstvideotexturebackend-0.0.10-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtlocation-devel-5.2.1+git31-1.4.1.jolla ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtlocation-devel-5.2.1+git31-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: nemo-transferengine-qt5-1.0.1-1.5.1.jolla .............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/nemo-transferengine-qt5-1.0.1-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libsignon-qt5-8.57.5+git3-1.5.1.jolla .................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libsignon-qt5-8.57.5+git3-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: maliit-framework-wayland-0.99.1+git4-1.4.1.jolla ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/maliit-framework-wayland-0.99.1+git4-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libsailfishapp-devel-1.2.8-1.4.1.jolla ................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/oss/armv7hl/libsailfishapp-devel-1.2.8-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtwebkit-uiprocess-launcher-5.6.2+git8-1.5.1.jolla ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtwebkit-uiprocess-launcher-5.6.2+git8-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: pyotherside-qml-plugin-python3-qt5-1.5.1+git2-1.3.1.jolla .............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/pyotherside-qml-plugin-python3-qt5-1.5.1+git2-1.3.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sailfish-version-variant-3.0.3-1.11.10.jolla ..........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/sailfish-version-variant-3.0.3-1.11.10.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtsysteminfo-5.2.0+git9-1.2.1.jolla ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/qt5-qtsysteminfo-5.2.0+git9-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libngf-qt5-0.6.2-1.4.1.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libngf-qt5-0.6.2-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: signon-plugin-oauth2-qt5-0.21.5-1.2.1.jolla ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/signon-plugin-oauth2-qt5-0.21.5-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libsignon-qt5-devel-8.57.5+git3-1.5.1.jolla ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libsignon-qt5-devel-8.57.5+git3-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libqmfclient1-qt5-4.0.4+git111-1.10.1.jolla ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libqmfclient1-qt5-4.0.4+git111-1.10.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: maliit-framework-wayland-devel-0.99.1+git4-1.4.1.jolla ................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/maliit-framework-wayland-devel-0.99.1+git4-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtqml-import-webkitplugin-experimental-5.6.2+git8-1.5.1.jolla .....................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtqml-import-webkitplugin-experimental-5.6.2+git8-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtqml-import-webkitplugin-5.6.2+git8-1.5.1.jolla ..................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/qt5-qtqml-import-webkitplugin-5.6.2+git8-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libqtwebkit5-devel-5.6.2+git8-1.5.1.jolla .............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/qt/armv7hl/libqtwebkit5-devel-5.6.2+git8-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sailfish-version-3.0.3-1.11.10.jolla ..................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/sailfish-version-3.0.3-1.11.10.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qt5-qtdeclarative-systeminfo-5.2.0+git9-1.2.1.jolla ...................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/qt5-qtdeclarative-systeminfo-5.2.0+git9-1.2.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libcontentaction-qt5-0.3.9-1.6.1.jolla ................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libcontentaction-qt5-0.3.9-1.6.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: buteo-mtp-qt5-0.7.0-1.6.1.jolla .......................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/buteo-mtp-qt5-0.7.0-1.6.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libngf-qt5-declarative-0.6.2-1.4.1.jolla ..............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libngf-qt5-declarative-0.6.2-1.4.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: nemo-qml-plugin-contentaction-0.3.9-1.6.1.jolla .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/nemo-qml-plugin-contentaction-0.3.9-1.6.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sailfish-content-graphics-default-base-1.0.17-1.15.1.jolla ............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/sailfish-content-graphics-default-base-1.0.17-1.15.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+<br>
+<br>
+Installing: sailfish-content-graphics-default-z1.0-base-1.0.17-1.15.1.jolla .......................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/sailfish-content-graphics-default-z1.0-base-1.0.17-1.15.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sailfish-content-graphics-default-z1.0-1.0.17-1.15.1.jolla ............................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/sailfish-content-graphics-default-z1.0-1.0.17-1.15.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sailfish-content-graphics-default-1.0.17-1.15.1.jolla .................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/sailfish-content-graphics-default-1.0.17-1.15.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: ambienced-0.29.10-1.9.2.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/armv7hl/ambienced-0.29.10-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+add-oneshot: /etc/oneshot.d/default/late/reset-ambience-profile - job saved OK<br>
+<br>
+<br>
+Installing: sailfish-content-tones-default-0.15.3-1.3.1.jolla .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/sailfish-content-tones-default-0.15.3-1.3.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sailfishsilica-qt5-1.0.51.1-1.22.1.jolla ..............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/armv7hl/sailfishsilica-qt5-1.0.51.1-1.22.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sailfish-components-media-qt5-0.2.2-1.5.1.jolla .......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/armv7hl/sailfish-components-media-qt5-0.2.2-1.5.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sailfish-components-filemanager-0.2.3-1.7.1.jolla .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/armv7hl/sailfish-components-filemanager-0.2.3-1.7.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libngf-0.26-1.1.8.jolla ...............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/libngf-0.26-1.1.8.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libjollasignonuiservice-qt5-0.4.6-1.6.1.jolla .........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/armv7hl/libjollasignonuiservice-qt5-0.4.6-1.6.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: declarative-transferengine-qt5-0.3.9-1.8.1.jolla ......................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/armv7hl/declarative-transferengine-qt5-0.3.9-1.8.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: ambienced-devel-0.29.10-1.9.2.jolla ...................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/armv7hl/ambienced-devel-0.29.10-1.9.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: dsme-0.79.4-1.6.2.jolla ...............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/dsme-0.79.4-1.6.2.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+Failed to get D-Bus connection: Operation not permitted<br>
+Failed to get D-Bus connection: Operation not permitted<br>
+Failed to get D-Bus connection: Operation not permitted<br>
+<br>
+<br>
+Installing: libjollasignonuiservice-qt5-plugin-0.4.6-1.6.1.jolla ..................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/armv7hl/libjollasignonuiservice-qt5-plugin-0.4.6-1.6.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: patterns-sailfish-silica-devel-1.0.18-1.11.1.jolla ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/patterns-sailfish-silica-devel-1.0.18-1.11.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: mce-1.100.2-1.16.1.jolla ..............................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/core/armv7hl/mce-1.100.2-1.16.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+Failed to get D-Bus connection: Operation not permitted<br>
+Failed to get D-Bus connection: Operation not permitted<br>
+Failed to get D-Bus connection: Operation not permitted<br>
+<br>
+<br>
+Installing: sailfish-components-gallery-qt5-1.0.2-1.15.1.jolla ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/armv7hl/sailfish-components-gallery-qt5-1.0.2-1.15.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: nemo-qml-plugin-systemsettings-0.5.11-1.18.1.jolla ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/nemo-qml-plugin-systemsettings-0.5.11-1.18.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libkeepalive-1.6.2-1.6.1.jolla ........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libkeepalive-1.6.2-1.6.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sailfish-components-pickers-qt5-1.0.0-1.6.1.jolla .....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/armv7hl/sailfish-components-pickers-qt5-1.0.0-1.6.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: libqmfmessageserver1-qt5-4.0.4+git111-1.10.1.jolla ....................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/libqmfmessageserver1-qt5-4.0.4+git111-1.10.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: qmf-qt5-devel-4.0.4+git111-1.10.1.jolla ...............................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/mw/armv7hl/qmf-qt5-devel-4.0.4+git111-1.10.1.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: patterns-sailfish-qt5-devel-basic-1.0.18-1.11.1.jolla .................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/patterns-sailfish-qt5-devel-basic-1.0.18-1.11.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: patterns-sailfish-qt5-devel-full-1.0.18-1.11.1.jolla ..................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/patterns-sailfish-qt5-devel-full-1.0.18-1.11.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sdk-target-configs-0.114-1.9.4.jolla ..................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/sdk/sdk/noarch/sdk-target-configs-0.114-1.9.4.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sdk-harbour-rpmvalidator-1.49.1-1.8.1.jolla ...........................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/sdk/sdk/noarch/sdk-harbour-rpmvalidator-1.49.1-1.8.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sdk-register-0.5-1.3.4.jolla ..........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/sdk/sdk/armv7hl/sdk-register-0.5-1.3.4.jolla.armv7hl.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: sdk-configs-0.114-1.9.4.jolla .........................................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/sdk/sdk/noarch/sdk-configs-0.114-1.9.4.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: patterns-sailfish-target-support-1.0.18-1.11.1.jolla ..................................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/patterns-sailfish-target-support-1.0.18-1.11.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+Installing: patterns-sailfish-configuration-sdk-target-1.0.18-1.11.1.jolla ........................................................[done]<br>
+Additional rpm output:<br>
+warning: /var/cache/zypp/packages/jolla/non-oss/noarch/patterns-sailfish-configuration-sdk-target-1.0.18-1.11.1.jolla.noarch.rpm: Header V3 DSA/SHA1 Signature, key ID f2633ee0: NOKEY<br>
+<br>
+<br>
+There are some running programs that use files deleted by recent upgrade. You may wish to restart some of them. Run 'zypper ps' to list these programs.<br>
+</details><br>
