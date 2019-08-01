@@ -13653,6 +13653,20 @@ PlatformSDK:~/hadk$ sed "/$HA_REPO/i$HA_DEV --baseurl=file:\/\/$ANDROID_ROOT\/dr
 PlatformSDK:~/hadk$ sudo mic create fs --arch=$PORT_ARCH --tokenmap=ARCH:$PORT_ARCH,RELEASE:$RELEASE,EXTRA_NAME:$EXTRA_NAME --record-pkgs=name,url --outdir=sfe-$DEVICE-$RELEASE$EXTRA_NAME --pack-to=sfe-$DEVICE-$RELEASE$EXTRA_NAME.tar.bz2 $ANDROID_ROOT/Jolla-@RELEASE@-$DEVICE-@ARCH@.ks
 ```
 <details>
+Info[07/08 10:12:45] : filename is now /var/tmp/mic/cache/hotfixes-3.0.3.10/primary.xml<br>
+Info[07/08 10:12:46] : Retrieving primary.xml.gz ...Info[07/08 10:12:47] : filename /var/tmp/mic/cache/jolla-3.0.3.10/primary.xml.gz gunzipped<br>
+Info[07/08 10:12:47] : filename is now /var/tmp/mic/cache/jolla-3.0.3.10/primary.xml<br>
+Info[07/08 10:12:47] : Retrieving patterns.xml.gz ...Info[07/08 10:12:47] : filename /var/tmp/mic/cache/jolla-3.0.3.10/patterns.xml.gz gunzipped<br>
+Info[07/08 10:12:47] : filename is now /var/tmp/mic/cache/jolla-3.0.3.10/patterns.xml<br>
+Info[07/08 10:12:47] : Retrieving repomd.xml.key ...[07/08 10:12:47] :  DONE<br>
+Warning[07/08 10:12:48] : Can't get version info of /usr/bin/qemu-arm-static, please make sure it's higher than 0.13.0<br>
+Info[07/08 10:12:48] : Running pre scripts ...<br>
+Info[07/08 10:12:48] : Refreshing repository: adaptation-community-common-mido-3.0.3.10 ...<br>
+Info[07/08 10:12:50] : Refreshing repository: hotfixes-3.0.3.10 ...<br>
+Info[07/08 10:12:53] : Refreshing repository: jolla-3.0.3.10 ...<br>
+Info[07/08 10:12:57] : Refreshing repository: adaptation-community-mido-3.0.3.10 ...<br>
+Info[07/08 10:12:58] : Refreshing repository: apps-3.0.3.10 ...<br>
+Info[07/08 10:13:01] : zypp architecture is <armv7hl><br>
 Info[07/08 10:13:01] : marking pattern jolla-configuration-mido 1-1 to be installed<br>
 Info[07/08 10:13:01] : Checking packages cache and packages integrity ...<br>
 Info[07/08 10:13:01] : 711 packages to be installed, 0 packages gotten from cache, 711 packages to be downloaded<br>
