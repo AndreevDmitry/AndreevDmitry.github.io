@@ -13654,6 +13654,119 @@ PlatformSDK:~/hadk$ sudo mic create fs --arch=$PORT_ARCH --tokenmap=ARCH:$PORT_A
 ```
 <details>
 
+Info[07/08 10:17:08] : Installing: sociald-vk-posts     +++++++++++++++++++++++++          [533/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:08] : Installing: sociald-vk-notificat +++++++++++++++++++++++++          [534/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:09] : Installing: sociald-vk-images    +++++++++++++++++++++++++          [535/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:09] : Installing: sociald-vk-contacts  +++++++++++++++++++++++++          [536/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:10] : Installing: sociald-vk-calendars +++++++++++++++++++++++++          [537/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:10] : Installing: sociald-twitter-post +++++++++++++++++++++++++          [538/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:11] : Installing: sociald-twitter-noti +++++++++++++++++++++++++          [539/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:11] : Installing: sociald-onedrive-sig +++++++++++++++++++++++++          [540/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:12] : Installing: sociald-onedrive-ima +++++++++++++++++++++++++          [541/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:12] : Installing: sociald-onedrive-bac +++++++++++++++++++++++++          [542/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:12] : Installing: sociald-google-signo +++++++++++++++++++++++++          [543/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:13] : Installing: sociald-google-conta +++++++++++++++++++++++++          [544/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:13] : Installing: sociald-google-calen +++++++++++++++++++++++++          [545/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:14] : Installing: sociald-facebook-sig +++++++++++++++++++++++++          [547/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:14] : Installing: sociald-facebook-ima ++++++++++++++++++++++++++         [548/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:15] : Installing: sociald-facebook-con ++++++++++++++++++++++++++         [549/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:15] : Installing: sociald-facebook-cal ++++++++++++++++++++++++++         [550/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:16] : Installing: sociald-dropbox-imag ++++++++++++++++++++++++++         [551/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:16] : Installing: sociald-dropbox-back ++++++++++++++++++++++++++         [552/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:17] : Installing: simkit               ++++++++++++++++++++++++++         [553/711]su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:18] : Installing: jolla-devicelock-dae ++++++++++++++++++++++++++         [556/711]qemu: Unsupported syscall: 384<br>
+Created symlink from /etc/systemd/system/nemo-devicelock.service to /lib/systemd/system/jolla-devicelock-encsfa.service.<br>
+<br>
+Info[07/08 10:17:18] : Installing: voicecall-qt5        ++++++++++++++++++++++++++         [558/711]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:19] : Installing: jolla-sessions-qt5   ++++++++++++++++++++++++++         [561/711]add-oneshot: /etc/oneshot.d/0/zz-env-dir-for-users - job saved OK<br>
+Info[07/08 10:17:19] : Installing: statefs-provider-pro ++++++++++++++++++++++++++         [563/711]Register profile<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-profile - job saved OK<br>
+Info[07/08 10:17:20] : Installing: ohm-plugins-misc     ++++++++++++++++++++++++++         [567/711]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:20] : Installing: ohm                  +++++++++++++++++++++++++++        [576/711]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:17:21] : Installing: udisks2              +++++++++++++++++++++++++++        [587/711]add-oneshot: /etc/oneshot.d/0/late/udisks2-symlink-mount-path - job saved OK<br>
+Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+qemu: Unsupported syscall: 384<br>
+<br>
+Info[07/08 10:17:22] : Installing: tracker              +++++++++++++++++++++++++++        [589/711]add-oneshot: /etc/oneshot.d/default/tracker-configs.sh - job saved OK<br>
+Warning: Schema ?org.freedesktop.Geoclue? has path ?/apps/geoclue/?.  Paths starting with ?/apps/?, ?/desktop/? or ?/system/? are deprecated.<br>
+su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:23] : Installing: sailfish-content-gal ++++++++++++++++++++++++++++       [591/711]add-oneshot: /etc/oneshot.d/default/preload-content - job saved OK<br>
+add-oneshot: /etc/oneshot.d/0/preload-copyright - job saved OK<br>
+add-oneshot: /etc/oneshot.d/0/preload-apks - job saved OK<br>
+Info[07/08 10:17:24] : Installing: jolla-firstsession   ++++++++++++++++++++++++++++       [593/711]add-oneshot: /etc/oneshot.d/default/00-initial-user-setup - job saved OK<br>
+add-oneshot: /etc/oneshot.d/default/zz-initialize-tracker-index - job saved OK<br>
+add-oneshot: /etc/oneshot.d/0/00-disable-defaultpasswords - job saved OK<br>
+Info[07/08 10:17:25] : Installing: jolla-signon-ui      ++++++++++++++++++++++++++++       [605/711]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:25] : Installing: jolla-settings       ++++++++++++++++++++++++++++       [606/711]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+Info[07/08 10:17:26] : Installing: jolla-settings-netwo ++++++++++++++++++++++++++++       [609/711]add-oneshot: /etc/oneshot.d/default/settings-cleanup-deprecated-dconf - job saved OK<br>
+Could not parse file "/usr/share/applications/simkit.desktop": Key file does not have group ?Desktop Entry?<br>
+<br>
+Info[07/08 10:17:35] : Installing: lipstick-jolla-home- ++++++++++++++++++++++++++++       [610/711]add-oneshot: /etc/oneshot.d/default/enable-lipstick-hints - job saved OK<br>
+Info[07/08 10:17:36] : Installing: usb-moded            +++++++++++++++++++++++++++++      [612/711]Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:17:36] : Installing: jolla-developer-mode +++++++++++++++++++++++++++++      [614/711]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:17:36] : Installing: jolla-settings-syste +++++++++++++++++++++++++++++      [616/711]add-oneshot: /etc/oneshot.d/default/late/jolla-settings-system-gps-clean - job saved OK<br>
+Info[07/08 10:17:39] : Installing: sailfish-content-amb ++++++++++++++++++++++++++++++     [633/711]add-oneshot: /etc/oneshot.d/default/late/preload-ambience - job saved OK<br>
+Info[07/08 10:17:40] : Installing: jolla-gallery        ++++++++++++++++++++++++++++++     [649/711]add-oneshot: /etc/oneshot.d/default/enable-gallery-hints - job saved OK<br>
+Info[07/08 10:17:40] : Installing: jolla-camera         ++++++++++++++++++++++++++++++     [653/711]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+add-oneshot: /etc/oneshot.d/default/camera-enable-hints - job saved OK<br>
+Info[07/08 10:17:41] : Installing: voicecall-ui-jolla   +++++++++++++++++++++++++++++++    [665/711]add-oneshot: /etc/oneshot.d/default/enable-voicecall-hints - job saved OK<br>
+su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:17:42] : Installing: jolla-messages       +++++++++++++++++++++++++++++++    [669/711]add-oneshot: /etc/oneshot.d/default/enable-messages-hints - job saved OK<br>
+Info[07/08 10:17:43] : Installing: droid-config-mido-sa ++++++++++++++++++++++++++++++++   [681/711]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+Info[07/08 10:17:44] : Installing: droid-hal-mido-0.0.6 ++++++++++++++++++++++++++++++++   [683/711]creating droid users and groups<br>
+groupadd: group 'bluetooth' already exists<br>
+groupadd: group 'input' already exists<br>
+useradd: group '1004' does not exist<br>
+groupadd: group 'audio' already exists<br>
+groupadd: group 'mtp' already exists<br>
+groupadd: group 'nobody' already exists<br>
+useradd: user 'nobody' already exists<br>
+<br>
+Info[07/08 10:18:00] : Installing: droid-hal-mido-kerne ++++++++++++++++++++++++++++++++   [684/711]depmod: WARNING: could not open /lib/modules/3.18.31-perf-g3180dc01dc9-dirty/modules.order: No such file or directory<br>
+depmod: WARNING: could not open /lib/modules/3.18.31-perf-g3180dc01dc9-dirty/modules.builtin: No such file or directory<br>
+<br>
+Info[07/08 10:18:03] : Installing: sailfish-browser     ++++++++++++++++++++++++++++++++   [695/711]add-oneshot: /etc/oneshot.d/default/late/browser-update-default-data - job saved OK<br>
+Info[07/08 10:18:04] : Installing: csd                  +++++++++++++++++++++++++++++++++  [697/711]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+add-oneshot: /etc/oneshot.d/default/late/csd-cleanup-database - job saved OK<br>
+Info[07/08 10:18:04] : Installing: mce-plugin-libhybris +++++++++++++++++++++++++++++++++  [700/711]Running in chroot, ignoring request.<br>
+<br>
 Info[07/08 10:18:05] : Installing: ngfd-plugin-native-v +++++++++++++++++++++++++++++++++  [702/711]qemu: Unsupported syscall: 311<br>
 qemu: Unsupported syscall: 311<br>
 su: failed to execute /sbin/nologin: Resource temporarily unavailable<br>
