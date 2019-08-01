@@ -13425,3 +13425,35 @@ warning: /var/cache/zypp/packages/jolla/non-oss/noarch/patterns-sailfish-configu
 <br>
 There are some running programs that use files deleted by recent upgrade. You may wish to restart some of them. Run 'zypper ps' to list these programs.<br>
 </details><br>
+
+Также в ходе выполнения последней команды возникала ошибка с `nothing provides default-rpm-validation-suite needed by patterns-sailfish-target-support...` - решить удалось с помощью полной переустановки песочницы
+
+Запускаем снова сборку пакетов
+```console
+PlatformSDK:~/hadk$ rpm/dhd/helpers/build_packages.sh
+```
+<details>
+* Building rpm/droid-hal-mido.spec<br>
+/usr/share/misc/magic, 14816: Warning: type `clear		x' invalid<br>
+/usr/share/misc/magic, 19673: Warning: missing ')' in indirect offset<br>
+/usr/share/misc/magic, 19673: Warning: invalid string op: ,<br>
+/usr/share/misc/magic, 22433: Warning: type `clear	x' invalid<br>
+/usr/share/misc/magic, 27164: Warning: Printf format `#' is not valid for type `lelong' in description `version %#x (MVP)'<br>
+/usr/share/misc/magic, 27165: Warning: Printf format `#' is not valid for type `lelong' in description `version %#x'<br>
+/usr/share/misc/magic, 28422: Warning: type `clear	x' invalid<br>
+/usr/share/misc/magic, 28568: Warning: Printf format `#' is not valid for type `leshort' in description `[%#x]'<br>
+/usr/share/misc/magic, 28588: Warning: Printf format `#' is not valid for type `leshort' in description `v?[%#x]'<br>
+error: magic_load failed: File 5.14 supports only version 10 magic files. `/usr/share/misc/magic.mgc' is version 14<br>
+Provides: droid-hal droid-hal-mido = 0.0.6-201907081020 droid-hal-mido(armv7hl-32) = 0.0.6-201907081020<br>
+Requires(interp): /bin/sh /bin/sh<br>
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1<br>
+Requires(post): /bin/grep /bin/ln /bin/sed /bin/sh /bin/touch /etc/login.defs /usr/bin/add-oneshot /usr/bin/getent systemd<br>
+Requires(preun): /bin/sh systemd<br>
+Requires(postun): systemd<br>
+<br>
+<br>
+RPM build errors:<br>
+    magic_load failed: File 5.14 supports only version 10 magic files. `/usr/share/misc/magic.mgc' is version 14<br>
+* Check /home/stalker/hadk/droid-hal-mido.log for full log.<br>
+!! building of package failed<br>
+</details><br>
