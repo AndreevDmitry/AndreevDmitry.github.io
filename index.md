@@ -15874,8 +15874,8 @@ RPM build errors:<br>
 </details><br>
 
 
-Похоже имеет место несовместимость архитектуры процессора в конфигурации ядра и конфигурации droid-hal.Исправим это добавив строку
-` %define droid_target_aarch64 1`
+Похоже имеет место несовместимость архитектуры процессора в конфигурации ядра и конфигурации droid-hal. Исправим это добавив строку<br>
+` %define droid_target_aarch64 1`<br>
 в `$ANDROID_ROOT/rpm/droid-hal-mido.spec`
 
 В итоге получим следующее
@@ -15901,4 +15901,28 @@ PlatformSDK:~/hadk$ cat rpm/droid-hal-mido.spec
 # IMPORTANT if you want to comment out any macros in your .spec, delete the %<br>
 # sign, otherwise they will remain defined! E.g.:<br>
 #define some_macro "I'll not be defined because I don't have % in front"<br>
+</details><br>
+
+Заливаем наши изменения на github (это очень важно, т.к. в дальнейшем скрипт сборщика пакетов будет синхронизироваться с github)
+```console
+PlatformSDK:~/hadk$ cd rpm
+PlatformSDK:~/hadk/rpm$ git add .
+PlatformSDK:~/hadk/rpm$ git commit -m "Add aarch64 target"
+```
+<details>
+[master 3453226] Add aarch64 target<br>
+ 1 file changed, 2 insertions(+)<br>
+</details><br>
+PlatformSDK:~/hadk/rpm$ git push droid-hal-mido master<br>
+<details><br>
+Username for 'https://github.com': AndreevDmitry<br>
+Password for 'https://AndreevDmitry@github.com':<br>
+Counting objects: 5, done.<br>
+Delta compression using up to 16 threads.<br>
+Compressing objects: 100% (3/3), done.<br>
+Writing objects: 100% (3/3), 317 bytes | 0 bytes/s, done.<br>
+Total 3 (delta 2), reused 0 (delta 0)<br>
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.<br>
+To https://github.com/AndreevDmitry/droid-hal-mido.git<br>
+   ad8ef90..3453226  master -> master<br>
 </details><br>
