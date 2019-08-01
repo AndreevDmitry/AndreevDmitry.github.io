@@ -15563,3 +15563,32 @@ Enter host password for user 'AndreevDmitry':<br>
   "subscribers_count": 0<br>
 }<br>
 </details><br>
+
+```console
+PlatformSDK:~/hadk/hybris/droid-configs$ git remote add dcm https://github.com/AndreevDmitry/droid-config-mido.git
+PlatformSDK:~/hadk/hybris/droid-configs$ git push dcm master
+```
+<details>
+Username for 'https://github.com': AndreevDmitry<br>
+Password for 'https://AndreevDmitry@github.com':<br>
+Counting objects: 5, done.<br>
+Delta compression using up to 16 threads.<br>
+Compressing objects: 100% (5/5), done.<br>
+Writing objects: 100% (5/5), 1.02 KiB | 0 bytes/s, done.<br>
+Total 5 (delta 0), reused 0 (delta 0)<br>
+To https://github.com/AndreevDmitry/droid-config-mido.git<br>
+ * [new branch]      master -> master<br>
+</details><br>
+
+```console
+PlatformSDK:~/hadk/hybris/droid-configs$ cd -
+PlatformSDK:~/hadk$ rpm/dhd/helpers/add_new_device.sh
+```
+<details>
+Creating the following nodes:<br>
+sparse/<br>
+patterns/<br>
+patterns/jolla-hw-adaptation-mido.yaml<br>
+patterns/jolla-configuration-mido.yaml<br>
+/home/stalker/hadk<br>
+</details><br>
