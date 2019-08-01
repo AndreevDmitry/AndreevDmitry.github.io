@@ -13653,7 +13653,35 @@ PlatformSDK:~/hadk$ sed "/$HA_REPO/i$HA_DEV --baseurl=file:\/\/$ANDROID_ROOT\/dr
 PlatformSDK:~/hadk$ sudo mic create fs --arch=$PORT_ARCH --tokenmap=ARCH:$PORT_ARCH,RELEASE:$RELEASE,EXTRA_NAME:$EXTRA_NAME --record-pkgs=name,url --outdir=sfe-$DEVICE-$RELEASE$EXTRA_NAME --pack-to=sfe-$DEVICE-$RELEASE$EXTRA_NAME.tar.bz2 $ANDROID_ROOT/Jolla-@RELEASE@-$DEVICE-@ARCH@.ks
 ```
 <details>
-
+Info[07/08 10:13:01] : marking pattern jolla-configuration-mido 1-1 to be installed<br>
+Info[07/08 10:13:01] : Checking packages cache and packages integrity ...<br>
+Info[07/08 10:13:01] : 711 packages to be installed, 0 packages gotten from cache, 711 packages to be downloaded<br>
+Info[07/08 10:13:01] : Downloading packages ...<br>
+Info[07/08 10:16:33] : Installing: dbus                 +++++++++++++++++                  [367/711]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:16:34] : Installing: dconf                +++++++++++++++++                  [372/711]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+Info[07/08 10:16:34] : Installing: nemo-qml-plugin-thum +++++++++++++++++                  [375/711]add-oneshot: /etc/oneshot.d/0/remove-obsolete-nemothumbs-cache-dir - job saved OK<br>
+Info[07/08 10:16:35] : Installing: buteo-syncfw-qt5     ++++++++++++++++++                 [379/711]add-oneshot: /etc/oneshot.d/0/msyncd-storage-perm - job saved OK<br>
+su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:16:36] : Installing: ofono                ++++++++++++++++++                 [382/711]Running in chroot, ignoring request.<br>
+<br>
+Info[07/08 10:16:36] : Installing: statefs              ++++++++++++++++++                 [385/711]Loader register default<br>
+Register default<br>
+add-oneshot: /etc/oneshot.d/0/statefs-02-register-default - job saved OK<br>
+Running in chroot, ignoring request.<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:16:37] : Installing: timed-qt5            ++++++++++++++++++                 [386/711]add-oneshot: /etc/oneshot.d/0/setcaps-timed-qt5.sh - job saved OK<br>
+su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/08 10:16:39] : Installing: statefs-loader-qt5   ++++++++++++++++++                 [392/711]Loader register qt5<br>
+Register qt5<br>
+add-oneshot: /etc/oneshot.d/0/statefs-02-register-qt5 - job saved OK<br>
+Info[07/08 10:16:39] : Installing: statefs-provider-ofo ++++++++++++++++++                 [393/711]Register ofono<br>
 add-oneshot: /etc/oneshot.d/0/statefs-03-register-ofono - job saved OK<br>
 Info[07/08 10:16:39] : Installing: signon-qt5           ++++++++++++++++++                 [395/711]add-oneshot: /etc/oneshot.d/0/signon-storage-perm - job saved OK<br>
 Info[07/08 10:16:40] : Installing: statefs-provider-pow ++++++++++++++++++                 [398/711]Register power_udev<br>
