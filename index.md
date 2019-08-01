@@ -15592,3 +15592,55 @@ patterns/jolla-hw-adaptation-mido.yaml<br>
 patterns/jolla-configuration-mido.yaml<br>
 /home/stalker/hadk<br>
 </details><br>
+
+```console
+PlatformSDK:~/hadk$ cd hybris/droid-configs
+PlatformSDK:~/hadk/hybris/droid-configs$ COMPOSITOR_CFGS=sparse/var/lib/environment/compositor
+PlatformSDK:~/hadk/hybris/droid-configs$ mkdir -p $COMPOSITOR_CFGS
+PlatformSDK:~/hadk/hybris/droid-configs$ cat <<EOF >$COMPOSITOR_CFGS/droid-hal-device.conf
+#Config for xiaomi/mido
+EGL_PLATFORM=hwcomposer
+QT_QPA_PLATFORM=hwcomposer
+LIPSTICK_OPTIONS=-plugin evdevtouch:/dev/input/event1 -plugin evdevkeyboard:keymap=/usr/share/qt5/keymaps/droid.qmap
+EOF
+PlatformSDK:~/hadk/hybris/droid-configs$ git add .
+PlatformSDK:~/hadk/hybris/droid-configs$ git commit -m "[dcd] Patterns and compositor config"
+```
+<details>
+[master 395a722] [dcd] Patterns and compositor config<br>
+ 3 files changed, 130 insertions(+)<br>
+ create mode 100644 patterns/jolla-configuration-mido.yaml<br>
+ create mode 100644 patterns/jolla-hw-adaptation-mido.yaml<br>
+ create mode 100644 sparse/var/lib/environment/compositor/droid-hal-device.conf<br>
+</details><br>
+
+```console
+PlatformSDK:~/hadk/hybris/droid-configs$ git push dcm master
+```
+<details>
+Username for 'https://github.com': AndreevDmitry<br>
+Password for 'https://AndreevDmitry@github.com':<br>
+Counting objects: 12, done.<br>
+Delta compression using up to 16 threads.<br>
+Compressing objects: 100% (6/6), done.<br>
+Writing objects: 100% (11/11), 2.51 KiB | 0 bytes/s, done.<br>
+Total 11 (delta 1), reused 0 (delta 0)<br>
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.<br>
+To https://github.com/AndreevDmitry/droid-config-mido.git<br>
+   8797725..395a722  master -> master<br>
+</details><br>
+
+```console
+PlatformSDK:~/hadk/hybris/droid-configs$ cd -
+PlatformSDK:~/hadk$ mkdir -p hybris/droid-hal-version-mido
+PlatformSDK:~/hadk$ cd hybris/droid-hal-version-mido
+PlatformSDK:~/hadk/hybris/droid-hal-version-mido$ git init
+```
+<details>
+Initialized empty Git repository in /home/stalker/hadk/hybris/droid-hal-version-mido/.git/<br>
+PlatformSDK:~/hadk/hybris/droid-hal-version-mido$ git submodule add https://github.com/mer-hybris/droid-hal-version<br>
+Cloning into 'droid-hal-version'...<br>
+remote: Enumerating objects: 81, done.<br>
+remote: Total 81 (delta 0), reused 0 (delta 0), pack-reused 81<br>
+Unpacking objects: 100% (81/81), done.<br>
+</details><br>
