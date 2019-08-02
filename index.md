@@ -39004,3 +39004,7 @@ May 23 03:42:21 Sailfish mce[2045]: modules/display.c: mdy_stm_step(): no compos
 May 23 03:42:21 Sailfish mce[2045]: modules/display.c: mdy_display_state_enter(): current display state = OFF<br>
 May 23 03:42:21 Sailfish kernel: binder: 2670:2670 transaction failed 29189, size 0-0<br>
 /details<br>
+
+```console
+sh-3.2#   systemctl
+```
