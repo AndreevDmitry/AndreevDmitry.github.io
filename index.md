@@ -36422,7 +36422,7 @@ sh-3.2# dmesg
 [   46.658240] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister lo<br>
 [   46.710092] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister lo<br>
 [   47.169971] binder: 2670:2670 transaction failed 29189, size 0-0<br>
-/details<br>
+</details><br>
 
 ```console
 sh-3.2# journalctl
