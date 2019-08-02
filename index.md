@@ -61754,3 +61754,177 @@ PlatformSDK:~/hadk/hybris/droid-configs$ git commit -m "Piggz repo"
   create mode 100644 tmp/sailfish-settings.files<br>
   create mode 100644 tmp/ssu-kickstarts.files<br>
  </details><br>
+
+```console
+PlatformSDK:~/hadk/hybris/droid-configs$ git push --force dcm master
+```
+<details>
+Username for 'https://github.com': AndreevDmitry<br>
+Password for 'https://AndreevDmitry@github.com':<br>
+Counting objects: 494, done.<br>
+Delta compression using up to 16 threads.<br>
+Compressing objects: 100% (235/235), done.<br>
+Writing objects: 100% (494/494), 81.06 KiB | 0 bytes/s, done.<br>
+Total 494 (delta 134), reused 477 (delta 134)<br>
+remote: Resolving deltas: 100% (134/134), done.<br>
+To https://github.com/AndreevDmitry/droid-config-mido.git<br>
++ b6fd7ed...8834edf master -> master (forced update)<br>
+</details><br>
+
+```console
+PlatformSDK:~/hadk/hybris$ cp -r droid-hal-version-mido ~/hadk/backup/hybris/droid-hal-version-mido
+PlatformSDK:~/hadk/hybris$ cd droid-hal-version-mido
+PlatformSDK:~/hadk/hybris/droid-hal-version-mido$ git remote add piggz https://github.com/piggz/droid-hal-version-mido
+PlatformSDK:~/hadk/hybris/droid-hal-version-mido$ git fetch --all
+```
+<details>
+Fetching dhvm<br>
+Fetching piggz<br>
+warning: no common commits<br>
+remote: Enumerating objects: 19, done.<br>
+remote: Total 19 (delta 0), reused 0 (delta 0), pack-reused 19<br>
+Unpacking objects: 100% (19/19), done.<br>
+From https://github.com/piggz/droid-hal-version-mido<br>
+* [new branch]      master     -> piggz/master<br>
+* [new tag]         0.0.4      -> 0.0.4<br>
+From https://github.com/piggz/droid-hal-version-mido<br>
+* [new tag]         0.0.1      -> 0.0.1<br>
+* [new tag]         0.0.2      -> 0.0.2<br>
+* [new tag]         0.0.3      -> 0.0.3<br>
+</details><br>
+
+```console
+PlatformSDK:~/hadk/hybris/droid-hal-version-mido$ git reset --hard piggz/master
+```
+<details>
+HEAD is now at 760dbde Fixup vibrator config<br>
+</details><br>
+
+```console
+PlatformSDK:~/hadk/hybris/droid-hal-version-mido$ git add .
+PlatformSDK:~/hadk/hybris/droid-hal-version-mido$ git commit -m "Piggz repo"
+```
+<details>
+[master 0c41091] Piggz repo<br>
+ 2 files changed, 1 insertion(+), 1 deletion(-)<br>
+ create mode 100644 documentation.list<br>
+</details><br>
+
+```console
+PlatformSDK:~/hadk/hybris/droid-hal-version-mido$ git push --force dhvm master
+```
+<details>
+Username for 'https://github.com': AndreevDmitry<br>
+Password for 'https://AndreevDmitry@github.com':<br>
+Counting objects: 21, done.<br>
+Delta compression using up to 16 threads.<br>
+Compressing objects: 100% (20/20), done.<br>
+Writing objects: 100% (21/21), 2.32 KiB | 0 bytes/s, done.<br>
+Total 21 (delta 5), reused 0 (delta 0)<br>
+remote: Resolving deltas: 100% (5/5), done.<br>
+To https://github.com/AndreevDmitry/droid-hal-version-mido.git<br>
+ + a9825d4...0c41091 master -> master (forced update)<br>
+</details><br>
+
+Запустим сборку пакетов
+```console
+PlatformSDK:~/hadk$ rpm/dhd/helpers/build_packages.sh
+```
+<details>
+* Building rpm/droid-hal-mido.spec<br>
+   /bugreports<br>
+   /d<br>
+   /file_contexts.bin<br>
+   /property_contexts<br>
+   /sdcard<br>
+   /selinux_version<br>
+   /service_contexts<br>
+   /vendor<br>
+<br>
+<br>
+RPM build errors:<br>
+    Installed (but unpackaged) file(s) found:<br>
+   /bugreports<br>
+   /d<br>
+   /file_contexts.bin<br>
+   /property_contexts<br>
+   /sdcard<br>
+   /selinux_version<br>
+   /service_contexts<br>
+   /vendor<br>
+* Check /home/stalker/hadk/droid-hal-mido.log for full log.<br>
+!! building of package failed<br>
+</details><br>
+
+Да, снова те же грабли...<br>
+В HADK это ситуация описана в пункте 7.2.2, решается добавлением
+```console
+%define straggler_files \
+/init.qcom.sh \
+/init.qcom.usb.sh \
+/bugreports \
+/d \
+/file_contexts.bin \
+/property_contexts \
+/sdcard \
+/selinux_version \
+/service_contexts \
+/vendor \
+%{nil}
+```console
+в тот же $ANDROID_ROOT/rpm/droid-hal-mido.spec
+
+После добавления файл следующий
+```console
+PlatformSDK:~/hadk$ cat rpm/droid-hal-mido.spec
+```
+<details>
+# These and other macros are documented in dhd/droid-hal-device.inc<br>
+%define device mido<br>
+%define vendor xiaomi<br>
+%define vendor_pretty Xiaomi<br>
+%define device_pretty Redmi Note 4 (mido)<br>
+%define installable_zip 1<br>
+%define droid_target_aarch64 1<br>
+%define straggler_files \<br>
+/init.qcom.sh \<br>
+/init.qcom.usb.sh \<br>
+/bugreports \<br>
+/d \<br>
+/file_contexts.bin \<br>
+/property_contexts \<br>
+/sdcard \<br>
+/selinux_version \<br>
+/service_contexts \<br>
+/vendor \<br>
+%{nil}<br>
+<br>
+%define additional_post_scripts \<br>
+/usr/bin/groupadd-user media_rw || :\<br>
+%{nil}<br>
+<br>
+%include rpm/dhd/droid-hal-device.inc<br>
+</details><br>
+
+```console
+PlatformSDK:~/hadk$ cd rpm
+PlatformSDK:~/hadk/rpm$ git add .
+PlatformSDK:~/hadk/rpm$ git commit -m "Add straggler files... again"
+```
+<details>
+[master 3cd9994] Add straggler files... again<br>
+ 1 file changed, 8 insertions(+)<br>
+</details><br>
+PlatformSDK:~/hadk/rpm$ git push droid-hal-mido master<br>
+<details><br>
+Username for 'https://github.com': AndreevDmitry<br>
+Password for 'https://AndreevDmitry@github.com':<br>
+Counting objects: 5, done.<br>
+Delta compression using up to 16 threads.<br>
+Compressing objects: 100% (3/3), done.<br>
+Writing objects: 100% (3/3), 399 bytes | 0 bytes/s, done.<br>
+Total 3 (delta 2), reused 0 (delta 0)<br>
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.<br>
+To https://github.com/AndreevDmitry/droid-hal-mido.git<br>
+   8fd1eb2..3cd9994  master -> master<br>
+</details><br>
