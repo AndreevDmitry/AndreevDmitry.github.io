@@ -35740,3 +35740,15 @@ adb shell:~ # /sdcard/busybox_unzip/./busybox tar --numeric-owner -xvjf /sdcard/
 ./var/opt/<br>
 ./var/games/<br>
 </details><br>
+
+
+Распаковалось удачно, зальем образ boot
+```console
+adb shell:~ # dd if=/sdcard/sailfish_unzip/hybris-boot.img of=/dev/block/bootdevice/by-name/boot
+24500+0 records in
+24500+0 records out
+12544000 bytes (12.0MB) copied, 0.928418 seconds, 12.9MB/s
+adb shell:~ # reboot
+```
+
+Перезагружаемся и видим только логотим MI и горящий индикатор(((
