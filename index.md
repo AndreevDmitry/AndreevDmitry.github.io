@@ -22667,6 +22667,9 @@ PlatformSDK:~/hadk$ sed "/$HA_REPO/i$HA_DEV --baseurl=file:\/\/$ANDROID_ROOT\/dr
 
 Произведем сборку rootfs используя хранилище RPM пакетов и kickstart file.
 ```console
+PlatformSDK:~/hadk$ RELEASE=3.0.3.10
+PlatformSDK:~/hadk$ EXTRA_NAME=-DmitryAndreev
+PlatformSDK:~/hadk$ hybris/droid-configs/droid-configs-device/helpers/process_patterns.sh
 PlatformSDK:~/hadk$ sudo mic create fs --arch=$PORT_ARCH --tokenmap=ARCH:$PORT_ARCH,RELEASE:$RELEASE,EXTRA_NAME:$EXTRA_NAME --record-pkgs=name,url --outdir=sfe-$DEVICE-$RELEASE$EXTRA_NAME --pack-to=sfe-$DEVICE-$RELEASE$EXTRA_NAME.tar.bz2 $ANDROID_ROOT/Jolla-@RELEASE@-$DEVICE-@ARCH@.ks
 ```
 <details>
@@ -61915,8 +61918,11 @@ PlatformSDK:~/hadk/rpm$ git commit -m "Add straggler files... again"
 [master 3cd9994] Add straggler files... again<br>
  1 file changed, 8 insertions(+)<br>
 </details><br>
-PlatformSDK:~/hadk/rpm$ git push droid-hal-mido master<br>
-<details><br>
+
+```console
+PlatformSDK:~/hadk/rpm$ git push droid-hal-mido master
+```
+<details>
 Username for 'https://github.com': AndreevDmitry<br>
 Password for 'https://AndreevDmitry@github.com':<br>
 Counting objects: 5, done.<br>
@@ -62101,4 +62107,477 @@ Building repository 'local-mido-hal' cache .....................................
 All repositories have been refreshed.<br>
 * Building of droid-hal-version-mido finished successfully<br>
 ----------------------DONE! Now proceed on creating the rootfs------------------<br>
+</details><br>
+
+Также возьмем kickstart-файл c канала sailfishos-porters-ci на gitlab
+```console
+PlatformSDK:~/hadk$ mv Jolla-\@RELEASE\@-mido-\@ARCH\@.ks Jolla-\@RELEASE\@-mido-\@ARCH\@_orig2.ks
+stalker@stalkerPC:~/hadk$ wget https://gitlab.com/sailfishos-porters-ci/mido-ci/raw/master/Jolla-@RELEASE@-mido-@ARCH@.ks?inline=false
+```
+<details>
+--2019-07-29 21:18:24--  https://gitlab.com/sailfishos-porters-ci/mido-ci/raw/master/Jolla-@RELEASE@-mido-@ARCH@.ks?inline=false<br>
+Распознаётся gitlab.com (gitlab.com)… 35.231.145.151<br>
+Подключение к gitlab.com (gitlab.com)|35.231.145.151|:443... соединение установлено.<br>
+HTTP-запрос отправлен. Ожидание ответа… 200 OK<br>
+Длина: 5087 (5,0K) [text/plain]<br>
+Сохранение в: «Jolla-@RELEASE@-mido-@ARCH@.ks?inline=false»<br>
+<br>
+Jolla-@RELEASE@-mid 100%[===================>]   4,97K  --.-KB/s    за 0s<br>
+<br>
+2019-07-29 21:18:25 (81,2 MB/s) - «Jolla-@RELEASE@-mido-@ARCH@.ks?inline=false» сохранён [5087/5087]<br>
+</details><br>
+
+Снова соберем Sailfish 3.0.3.10 с конфигурациями от piggz
+```console
+PlatformSDK:~/hadk$ RELEASE=3.0.3.10
+PlatformSDK:~/hadk$ EXTRA_NAME=-DmitryAndreev_with_Piggz_configs
+PlatformSDK:~/hadk$ hybris/droid-configs/droid-configs-device/helpers/process_patterns.sh
+PlatformSDK:~/hadk$ sudo mic create fs --arch=$PORT_ARCH --tokenmap=ARCH:$PORT_ARCH,RELEASE:$RELEASE,EXTRA_NAME:$EXTRA_NAME --record-pkgs=name,url --outdir=sfe-$DEVICE-$RELEASE$EXTRA_NAME --pack-to=sfe-$DEVICE-$RELEASE$EXTRA_NAME.tar.bz2 $ANDROID_ROOT/Jolla-@RELEASE@-$DEVICE-@ARCH@.ks
+```
+<details>
+[07/29 11:07:40] : mic 0.14 (Sailfish OS 3.0.3.10 (Hossa))<br>
+Info[07/29 11:07:40] : Substitute macro variable @RELEASE@ with 3.0.3.10<br>
+Info[07/29 11:07:40] : Substitute macro variable @EXTRA_NAME@ with -DmitryAndreev_with_Piggz_configs<br>
+Info[07/29 11:07:40] : Substitute macro variable @ARCH@ with armv7hl<br>
+Info[07/29 11:07:40] : Retrieving repo metadata:<br>
+Info[07/29 11:07:41] : Retrieving repomd.xml ...Info[07/29 11:07:41] : /var/tmp/mic/cache/adaptation-community-common-mido-3.0.3.10/4be1563ede15ca9a405a68cc7630dcbc949de74df1a17673c2249db99c575cbe-primary.xml checksum 3f258a9e3d4c8da275b466e6fe3910578eec1065e54d0feac031bf0b36bb8be4 matches cache<br>
+Info[07/29 11:07:42] : Retrieving f28a6fcfa63cf371cbb487710831eea8bde956e0e9041b47f584dfad22d0393b-primary.xml.gz ...Info[07/29 11:07:42] : filename /var/tmp/mic/cache/adaptation-community-mido-3.0.3.10/f28a6fcfa63cf371cbb487710831eea8bde956e0e9041b47f584dfad22d0393b-primary.xml.gz gunzipped<br>
+Info[07/29 11:07:42] : filename is now /var/tmp/mic/cache/adaptation-community-mido-3.0.3.10/f28a6fcfa63cf371cbb487710831eea8bde956e0e9041b47f584dfad22d0393b-primary.xml<br>
+Info[07/29 11:07:42] : Retrieving c31c1973023feff31042c74a8b82f4a447237767cdf30a27142ef03f4f24f9bb-patterns.xml.gz ...Info[07/29 11:07:42] : filename /var/tmp/mic/cache/adaptation-community-mido-3.0.3.10/c31c1973023feff31042c74a8b82f4a447237767cdf30a27142ef03f4f24f9bb-patterns.xml.gz gunzipped<br>
+Info[07/29 11:07:42] : filename is now /var/tmp/mic/cache/adaptation-community-mido-3.0.3.10/c31c1973023feff31042c74a8b82f4a447237767cdf30a27142ef03f4f24f9bb-patterns.xml<br>
+Info[07/29 11:07:42] : Retrieving 63cd53bba2d139cb0a5a2df3e20882883bc33bf37970e960f1c97113a0fa1ecc-group.xml.gz ...Info[07/29 11:07:42] : filename /var/tmp/mic/cache/adaptation-community-mido-3.0.3.10/63cd53bba2d139cb0a5a2df3e20882883bc33bf37970e960f1c97113a0fa1ecc-group.xml.gz gunzipped<br>
+Info[07/29 11:07:42] : filename is now /var/tmp/mic/cache/adaptation-community-mido-3.0.3.10/63cd53bba2d139cb0a5a2df3e20882883bc33bf37970e960f1c97113a0fa1ecc-group.xml<br>
+Info[07/29 11:07:43] : Retrieving repomd.xml ...Info[07/29 11:07:43] : /var/tmp/mic/cache/apps-3.0.3.10/primary.xml checksum 07bf0cd8b6e57c5b071d1df25a0f9e7b4b35ea14 matches cache<br>
+Info[07/29 11:07:44] : Retrieving repomd.xml ...Info[07/29 11:07:44] : /var/tmp/mic/cache/hotfixes-3.0.3.10/primary.xml checksum a79fecf5e7aed5576bee5d4cce635b4bfd57f850 matches cache<br>
+Info[07/29 11:07:44] : Retrieving repomd.xml ...Info[07/29 11:07:44] : /var/tmp/mic/cache/jolla-3.0.3.10/primary.xml checksum 9d9e5bd7d5415017773c47921b9b65069dd87c37 matches cache<br>
+Info[07/29 11:07:44] : /var/tmp/mic/cache/jolla-3.0.3.10/patterns.xml checksum f8fec5473c72db15d04a56bc736fe527530120c4 matches cache<br>
+Info[07/29 11:07:44] : Retrieving repomd.xml.key ...[07/29 11:07:44] :  DONE<br>
+Warning[07/29 11:07:45] : Can't get version info of /usr/bin/qemu-arm-static, please make sure it's higher than 0.13.0<br>
+Info[07/29 11:07:45] : Running pre scripts ...<br>
+Info[07/29 11:07:46] : Refreshing repository: adaptation-community-common-mido-3.0.3.10 ...<br>
+Info[07/29 11:07:47] : Refreshing repository: hotfixes-3.0.3.10 ...<br>
+Info[07/29 11:07:50] : Refreshing repository: jolla-3.0.3.10 ...<br>
+Info[07/29 11:07:55] : Refreshing repository: adaptation-community-mido-3.0.3.10 ...<br>
+Info[07/29 11:07:56] : Refreshing repository: apps-3.0.3.10 ...<br>
+Info[07/29 11:08:00] : zypp architecture is armv7hl<br>
+Info[07/29 11:08:00] : marking pattern jolla-configuration-mido 0.4.0-1.71.3.jolla to be installed<br>
+Info[07/29 11:08:00] : Checking packages cache and packages integrity ...<br>
+Info[07/29 11:08:15] : 722 packages to be installed, 671 packages gotten from cache, 51 packages to be downloaded<br>
+Info[07/29 11:08:15] : Downloading packages ...<br>
+Info[07/29 11:08:37] : Retrieving pulseaudio-modules-droid-common-12.2.78+master.20190515084647.12.g96c4e2e-1.10.7.jolla.armv7hl.rpm [20/Info[07/29 11:08:50] : Retrieving geoclue-provider-hybris-0.2.21-1.9.7.jolla.armv7hl.rpm [51/51] ...<br>
+<br>
+Info[07/29 11:09:50] : Installing: dbus                 +++++++++++++++++                  [371/722]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/29 11:09:51] : Installing: buteo-syncfw-qt5     +++++++++++++++++                  [378/722]add-oneshot: /etc/oneshot.d/0/msyncd-storage-perm - job saved OK<br>
+su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:09:52] : Installing: dconf                +++++++++++++++++                  [379/722]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+Info[07/29 11:09:52] : Installing: nemo-qml-plugin-thum +++++++++++++++++                  [382/722]add-oneshot: /etc/oneshot.d/0/remove-obsolete-nemothumbs-cache-dir - job saved OK<br>
+Info[07/29 11:09:53] : Installing: statefs              ++++++++++++++++++                 [388/722]Loader register default<br>
+Register default<br>
+add-oneshot: /etc/oneshot.d/0/statefs-02-register-default - job saved OK<br>
+Running in chroot, ignoring request.<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:09:54] : Installing: timed-qt5            ++++++++++++++++++                 [389/722]add-oneshot: /etc/oneshot.d/0/setcaps-timed-qt5.sh - job saved OK<br>
+su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:09:56] : Installing: statefs-loader-qt5   ++++++++++++++++++                 [395/722]Loader register qt5<br>
+Register qt5<br>
+add-oneshot: /etc/oneshot.d/0/statefs-02-register-qt5 - job saved OK<br>
+Info[07/29 11:09:56] : Installing: signon-qt5           ++++++++++++++++++                 [397/722]add-oneshot: /etc/oneshot.d/0/signon-storage-perm - job saved OK<br>
+Info[07/29 11:09:57] : Installing: statefs-provider-pow ++++++++++++++++++                 [400/722]Register power_udev<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-power_udev - job saved OK<br>
+Info[07/29 11:09:57] : Installing: sensorfw-qt5         +++++++++++++++++++                [406/722]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/29 11:09:58] : Installing: sailfish-content-gra +++++++++++++++++++                [407/722]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+Info[07/29 11:09:58] : Installing: jolla-ambient-sound- +++++++++++++++++++                [408/722]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+Info[07/29 11:09:59] : Installing: contactsd            +++++++++++++++++++                [413/722]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:10] : Installing: vault                ++++++++++++++++++++               [437/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:11] : Installing: statefs-provider-mce +++++++++++++++++++++              [454/722]Register mce<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-mce - job saved OK<br>
+Info[07/29 11:10:12] : Installing: bluez5-obexd         +++++++++++++++++++++              [462/722]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:13] : Installing: kf5bluezqt-bluez5    +++++++++++++++++++++              [463/722]Running in chroot, ignoring request.<br>
+<br>
+Info[07/29 11:10:13] : Installing: bluez5               +++++++++++++++++++++              [464/722]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/29 11:10:14] : Installing: ofono                +++++++++++++++++++++              [468/722]Running in chroot, ignoring request.<br>
+<br>
+Info[07/29 11:10:14] : Installing: connman              ++++++++++++++++++++++             [470/722]Running in chroot, ignoring request.<br>
+<br>
+Info[07/29 11:10:15] : Installing: ssu-vendor-data-joll ++++++++++++++++++++++             [474/722]add-oneshot: /etc/oneshot.d/0/ssu-update-repos - job saved OK<br>
+Info[07/29 11:10:15] : Installing: statefs-provider-ofo ++++++++++++++++++++++             [476/722]Register ofono<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-ofono - job saved OK<br>
+Info[07/29 11:10:16] : Installing: connectionagent-qt5  ++++++++++++++++++++++             [482/722]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:16] : Installing: statefs-provider-con ++++++++++++++++++++++             [487/722]Register connman<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-connman - job saved OK<br>
+Info[07/29 11:10:17] : Installing: mms-engine           ++++++++++++++++++++++             [488/722]Warning: Schema ?org.freedesktop.Geoclue? has path ?/apps/geoclue/?.  Paths starting with ?/apps/?, ?/desktop/? or ?/system/? are deprecated.<br>
+<br>
+Info[07/29 11:10:17] : Installing: statefs-provider-blu ++++++++++++++++++++++             [489/722]Register bluez<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-bluez - job saved OK<br>
+Info[07/29 11:10:17] : Installing: thumbnaild           +++++++++++++++++++++++            [494/722]add-oneshot: /etc/oneshot.d/0/remove-obsolete-tumbler-cache-dir - job saved OK<br>
+Info[07/29 11:10:18] : Installing: ngfd                 +++++++++++++++++++++++            [502/722]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:22] : Installing: jolla-common-configu ++++++++++++++++++++++++           [519/722]add-oneshot: /etc/oneshot.d/0/preload-privileged - job saved OK<br>
+add-oneshot: /etc/oneshot.d/0/remove-swap-from-fstab - job saved OK<br>
+Info[07/29 11:10:22] : Installing: dsme                 ++++++++++++++++++++++++           [520/722]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/29 11:10:22] : Installing: mce                  ++++++++++++++++++++++++           [521/722]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/29 11:10:23] : Installing: buteo-syncfw-qt5-msy ++++++++++++++++++++++++           [523/722]Warning: Schema ?org.freedesktop.Geoclue? has path ?/apps/geoclue/?.  Paths starting with ?/apps/?, ?/desktop/? or ?/system/? are deprecated.<br>
+<br>
+Info[07/29 11:10:23] : Installing: sociald              ++++++++++++++++++++++++           [524/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:24] : Installing: buteo-sync-plugin-ca ++++++++++++++++++++++++           [525/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:24] : Installing: buteo-sync-plugin-ca ++++++++++++++++++++++++           [526/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:25] : Installing: libsailfishkeyprovid +++++++++++++++++++++++++          [536/722]add-oneshot: /etc/oneshot.d/0/libsailfishkeyprovider-data-jolla-privileges - job saved OK<br>
+Info[07/29 11:10:25] : Installing: sociald-vk-posts     +++++++++++++++++++++++++          [539/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:26] : Installing: sociald-vk-notificat +++++++++++++++++++++++++          [540/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:26] : Installing: sociald-vk-images    +++++++++++++++++++++++++          [541/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:27] : Installing: sociald-vk-contacts  +++++++++++++++++++++++++          [542/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:27] : Installing: sociald-vk-calendars +++++++++++++++++++++++++          [543/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:27] : Installing: sociald-twitter-post +++++++++++++++++++++++++          [544/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:28] : Installing: sociald-twitter-noti +++++++++++++++++++++++++          [545/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:28] : Installing: sociald-onedrive-sig +++++++++++++++++++++++++          [546/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:29] : Installing: sociald-onedrive-ima +++++++++++++++++++++++++          [547/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:29] : Installing: sociald-onedrive-bac +++++++++++++++++++++++++          [548/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:30] : Installing: sociald-google-signo +++++++++++++++++++++++++          [549/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:30] : Installing: sociald-google-conta +++++++++++++++++++++++++          [550/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:31] : Installing: sociald-google-calen +++++++++++++++++++++++++          [551/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:31] : Installing: sociald-facebook-sig +++++++++++++++++++++++++          [553/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:32] : Installing: sociald-facebook-ima +++++++++++++++++++++++++          [554/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:32] : Installing: sociald-facebook-con +++++++++++++++++++++++++          [555/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:32] : Installing: sociald-facebook-cal ++++++++++++++++++++++++++         [556/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:33] : Installing: sociald-dropbox-imag ++++++++++++++++++++++++++         [557/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:33] : Installing: sociald-dropbox-back ++++++++++++++++++++++++++         [558/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:34] : Installing: simkit               ++++++++++++++++++++++++++         [559/722]su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:35] : Installing: jolla-devicelock-dae ++++++++++++++++++++++++++         [562/722]qemu: Unsupported syscall: 384<br>
+Created symlink from /etc/systemd/system/nemo-devicelock.service to /lib/systemd/system/jolla-devicelock-encsfa.service.<br>
+<br>
+Info[07/29 11:10:35] : Installing: voicecall-qt5        ++++++++++++++++++++++++++         [564/722]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:36] : Installing: jolla-sessions-qt5   ++++++++++++++++++++++++++         [567/722]add-oneshot: /etc/oneshot.d/0/zz-env-dir-for-users - job saved OK<br>
+Info[07/29 11:10:36] : Installing: statefs-provider-pro ++++++++++++++++++++++++++         [569/722]Register profile<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-profile - job saved OK<br>
+Info[07/29 11:10:37] : Installing: ohm-plugins-misc     ++++++++++++++++++++++++++         [573/722]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:38] : Installing: ohm                  +++++++++++++++++++++++++++        [582/722]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/29 11:10:38] : Installing: udisks2              +++++++++++++++++++++++++++        [591/722]add-oneshot: /etc/oneshot.d/0/late/udisks2-symlink-mount-path - job saved OK<br>
+Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+qemu: Unsupported syscall: 384<br>
+<br>
+Info[07/29 11:10:39] : Installing: tracker              +++++++++++++++++++++++++++        [593/722]add-oneshot: /etc/oneshot.d/default/tracker-configs.sh - job saved OK<br>
+Warning: Schema ?org.freedesktop.Geoclue? has path ?/apps/geoclue/?.  Paths starting with ?/apps/?, ?/desktop/? or ?/system/? are deprecated.<br>
+su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:40] : Installing: sailfish-content-gal +++++++++++++++++++++++++++        [595/722]add-oneshot: /etc/oneshot.d/default/preload-content - job saved OK<br>
+add-oneshot: /etc/oneshot.d/0/preload-copyright - job saved OK<br>
+add-oneshot: /etc/oneshot.d/0/preload-apks - job saved OK<br>
+Info[07/29 11:10:41] : Installing: jolla-firstsession   +++++++++++++++++++++++++++        [597/722]add-oneshot: /etc/oneshot.d/default/00-initial-user-setup - job saved OK<br>
+add-oneshot: /etc/oneshot.d/default/zz-initialize-tracker-index - job saved OK<br>
+add-oneshot: /etc/oneshot.d/0/00-disable-defaultpasswords - job saved OK<br>
+Info[07/29 11:10:42] : Installing: jolla-signon-ui      ++++++++++++++++++++++++++++       [609/722]su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:43] : Installing: jolla-settings       ++++++++++++++++++++++++++++       [610/722]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+Info[07/29 11:10:43] : Installing: usb-moded            ++++++++++++++++++++++++++++       [613/722]Running in chroot, ignoring request.<br>
+<br>
+Info[07/29 11:10:43] : Installing: jolla-developer-mode ++++++++++++++++++++++++++++       [615/722]Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+Running in chroot, ignoring request.<br>
+<br>
+Info[07/29 11:10:44] : Installing: jolla-settings-syste ++++++++++++++++++++++++++++       [617/722]add-oneshot: /etc/oneshot.d/default/late/jolla-settings-system-gps-clean - job saved OK<br>
+Info[07/29 11:10:45] : Installing: lipstick-jolla-home- ++++++++++++++++++++++++++++       [620/722]add-oneshot: /etc/oneshot.d/default/enable-lipstick-hints - job saved OK<br>
+Info[07/29 11:10:45] : Installing: jolla-settings-netwo +++++++++++++++++++++++++++++      [622/722]add-oneshot: /etc/oneshot.d/default/settings-cleanup-deprecated-dconf - job saved OK<br>
+Could not parse file "/usr/share/applications/simkit.desktop": Key file does not have group ?Desktop Entry?<br>
+<br>
+Info[07/29 11:10:56] : Installing: sailfish-content-amb +++++++++++++++++++++++++++++      [637/722]add-oneshot: /etc/oneshot.d/default/late/preload-ambience - job saved OK<br>
+Info[07/29 11:10:57] : Installing: jolla-gallery        ++++++++++++++++++++++++++++++     [653/722]add-oneshot: /etc/oneshot.d/default/enable-gallery-hints - job saved OK<br>
+Info[07/29 11:10:57] : Installing: jolla-camera         ++++++++++++++++++++++++++++++     [657/722]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+add-oneshot: /etc/oneshot.d/default/camera-enable-hints - job saved OK<br>
+Info[07/29 11:10:58] : Installing: voicecall-ui-jolla   +++++++++++++++++++++++++++++++    [669/722]add-oneshot: /etc/oneshot.d/default/enable-voicecall-hints - job saved OK<br>
+su: user 1000 does not exist<br>
+su: user 1000 does not exist<br>
+<br>
+Info[07/29 11:10:59] : Installing: jolla-messages       +++++++++++++++++++++++++++++++    [673/722]add-oneshot: /etc/oneshot.d/default/enable-messages-hints - job saved OK<br>
+Info[07/29 11:11:00] : Installing: droid-config-mido-sa +++++++++++++++++++++++++++++++    [684/722]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+Info[07/29 11:11:00] : Installing: droid-hal-mido-0.0.6 ++++++++++++++++++++++++++++++++   [686/722]creating droid users and groups<br>
+groupadd: group 'bluetooth' already exists<br>
+groupadd: group 'input' already exists<br>
+useradd: group '1004' does not exist<br>
+groupadd: group 'audio' already exists<br>
+groupadd: group 'mtp' already exists<br>
+groupadd: group 'nobody' already exists<br>
+useradd: user 'nobody' already exists<br>
+<br>
+Info[07/29 11:11:21] : Installing: sailfish-browser     ++++++++++++++++++++++++++++++++   [698/722]add-oneshot: /etc/oneshot.d/default/late/browser-update-default-data - job saved OK<br>
+Info[07/29 11:11:21] : Installing: jolla-settings-netwo ++++++++++++++++++++++++++++++++   [700/722]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+Info[07/29 11:11:21] : Installing: csd                  ++++++++++++++++++++++++++++++++   [701/722]add-oneshot: /etc/oneshot.d/0/dconf-update - job saved OK<br>
+add-oneshot: /etc/oneshot.d/default/late/csd-cleanup-database - job saved OK<br>
+Info[07/29 11:11:22] : Installing: mce-plugin-libhybris ++++++++++++++++++++++++++++++++   [705/722]Running in chroot, ignoring request.<br>
+<br>
+Info[07/29 11:11:22] : Installing: ngfd-plugin-native-v +++++++++++++++++++++++++++++++++  [709/722]qemu: Unsupported syscall: 311<br>
+qemu: Unsupported syscall: 311<br>
+su: failed to execute /sbin/nologin: Resource temporarily unavailable<br>
+qemu: Unsupported syscall: 311<br>
+qemu: Unsupported syscall: 311<br>
+su: failed to execute /sbin/nologin: Resource temporarily unavailable<br>
+<br>
+Info[07/29 11:11:24] : Installing: strace               ++++++++++++++++++++++++++++++++++ [722/722]<br>
+Register timed<br>
+add-oneshot: /etc/oneshot.d/0/statefs-03-register-timed - job saved OK<br>
+Info[07/29 11:11:26] : Copying attachment files...<br>
+Info[07/29 11:11:26] : Applying configurations ...<br>
+Removing password for user root.<br>
+passwd: Success<br>
+Info[07/29 11:11:27] : Running post scripts ...<br>
+Rebuilding db using target rpm..done<br>
+qemu: Unsupported syscall: 311<br>
+oneshot: /etc/oneshot.d/0/00-disable-defaultpasswords - OK<br>
+Unsupported ancillary data: 1/2<br>
+<br>
+(/usr/bin/dconf:9566): GLib-GIO-CRITICAL **: 16:11:32.675: g_dbus_connection_emit_signal: assertion 'object_path != NULL && g_variant_is_object_path (object_path)' failed<br>
+Unsupported ancillary data: 1/2<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/0/dconf-update - FAIL<br>
+oneshot: /etc/oneshot.d/0/groupadd-user.later - OK<br>
+changed ownership of `/usr/share/libsailfishkeyprovider/storedkeys.ini' to nemo:privileged<br>
+oneshot: /etc/oneshot.d/0/libsailfishkeyprovider-data-jolla-privileges - OK<br>
+oneshot: /etc/oneshot.d/0/msyncd-storage-perm - FAIL<br>
+Reading file: /usr/share/jolla-preload-content/2k<br>
+Using content configuration(s): 2k<br>
+Can't reach the default host. Using ssu credentials to download demo content.<br>
+Device is not registered, can't update credentials<br>
+Failed to parse ssu credentials.<br>
+Downloading ...<br>
+-=#=- #    #      #<br>
+curl: (22) The requested URL returned error: 401<br>
+Failed to download a file: https://dav.jollamobile.com/democontent//2k/apks/apks.list<br>
+oneshot: /etc/oneshot.d/0/preload-apks - OK<br>
+Reading file: /usr/share/jolla-preload-content/2k<br>
+Using content configuration(s): 2k<br>
+Can't reach the default host. Using ssu credentials to download demo content.<br>
+Device is not registered, can't update credentials<br>
+Failed to parse ssu credentials.<br>
+Downloading ...<br>
+#=#=-#    #<br>
+curl: (22) The requested URL returned error: 401<br>
+Failed to download a file: https://dav.jollamobile.com/democontent//2k/copyright/copyrights.list<br>
+oneshot: /etc/oneshot.d/0/preload-copyright - OK<br>
+oneshot: /etc/oneshot.d/0/preload-privileged - OK<br>
+oneshot: /etc/oneshot.d/0/remove-obsolete-nemothumbs-cache-dir - OK<br>
+oneshot: /etc/oneshot.d/0/remove-obsolete-tumbler-cache-dir - OK<br>
+oneshot: /etc/oneshot.d/0/remove-swap-from-fstab - OK<br>
+oneshot: /etc/oneshot.d/0/setcaps-timed-qt5.sh - OK<br>
+oneshot: /etc/oneshot.d/0/signon-storage-perm - FAIL<br>
+oneshot: /etc/oneshot.d/0/ssu-update-repos - FAIL<br>
+Dumping loader "/usr/lib/statefs/libloader-default.so"<br>
+Dumping loader "/usr/lib/statefs/libloader-default.so"<br>
+Trying to dump default provider "/usr/lib/statefs/libprovider-power_udev.so"<br>
+DTOR:/usr/lib/statefs/libprovider-power_udev.so<br>
+provider-udev<br>
+Dumping loader "/usr/lib/statefs/libloader-inout.so"<br>
+Dumping loader "/usr/lib/statefs/libloader-inout.so"<br>
+Trying to dump inout provider "/etc/timed-statefs.conf"<br>
+provider-timed-qt5<br>
+oneshot: /etc/oneshot.d/0/statefs-02-register-default - OK<br>
+Dumping loader "/usr/lib/statefs/libloader-qt5.so"<br>
+Dumping loader "/usr/lib/statefs/libloader-qt5.so"<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-profile.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-profile.so<br>
+provider-profile<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-connman.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-connman.so<br>
+provider-connman<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-ofono.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-ofono.so<br>
+provider-ofono<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-mce.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-mce.so<br>
+provider-mce<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-bluez.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-bluez.so<br>
+provider-bluez<br>
+oneshot: /etc/oneshot.d/0/statefs-02-register-qt5 - OK<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-bluez.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-bluez.so<br>
+provider-bluez<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-bluez - OK<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-connman.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-connman.so<br>
+provider-connman<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-connman - OK<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-mce.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-mce.so<br>
+provider-mce<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-mce - OK<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-ofono.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-ofono.so<br>
+provider-ofono<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-ofono - OK<br>
+Trying to dump default provider "/usr/lib/statefs/libprovider-power_udev.so"<br>
+DTOR:/usr/lib/statefs/libprovider-power_udev.so<br>
+provider-udev<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-power_udev - OK<br>
+Trying to dump qt5 provider "/usr/lib/statefs/libprovider-profile.so"<br>
+Qt5 loader: loading /usr/lib/statefs/libprovider-profile.so<br>
+provider-profile<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-profile - OK<br>
+Trying to dump inout provider "/etc/timed-statefs.conf"<br>
+provider-timed-qt5<br>
+oneshot: /etc/oneshot.d/0/statefs-03-register-timed - OK<br>
+oneshot: /etc/oneshot.d/0/zz-env-dir-for-users - OK<br>
+qemu: Unsupported syscall: 311<br>
+qemu: Unsupported syscall: 384<br>
+oneshot: /etc/oneshot.d/100000/00-initial-user-setup - OK<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/100000/camera-enable-hints - OK<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/100000/enable-gallery-hints - OK<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/100000/enable-lipstick-hints - OK<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/100000/enable-messages-hints - OK<br>
+Unsupported ancillary data: 1/2<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/100000/enable-voicecall-hints - OK<br>
+Reading file: /usr/share/jolla-preload-content/2k<br>
+Using content configuration(s): 2k<br>
+Can't reach the default host. Using ssu credentials to download demo content.<br>
+WARNING: ssu.ini does not seem to be writable. Setting values might not work.<br>
+Device is not registered, can't update credentials<br>
+Failed to parse ssu credentials.<br>
+Downloading ...<br>
+#=#=-#    #<br>
+curl: (22) The requested URL returned error: 401<br>
+Failed to download a file: https://dav.jollamobile.com/democontent//2k/videos/videos.list<br>
+find: /home/nemo/Pictures/Default: No such file or directory<br>
+oneshot: /etc/oneshot.d/100000/preload-content - OK<br>
+Unsupported ancillary data: 1/2<br>
+oneshot: /etc/oneshot.d/100000/settings-cleanup-deprecated-dconf - OK<br>
+tracker-configs.sh - returning FAIL to postpone oneshot to first boot<br>
+oneshot: /etc/oneshot.d/100000/tracker-configs.sh - FAIL<br>
+Starting miners…<br>
+Unsupported ancillary data: 1/2<br>
+  ✓ File System<br>
+  ✓ Extractor<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Tracker miners initializing, waiting...<br>
+Unsupported ancillary data: 1/2<br>
+Unsupported ancillary data: 1/2<br>
+Unsupported ancillary data: 1/2<br>
+<br>
+(tracker search:10428): GLib-GIO-WARNING **: 16:12:32.377: Can't find module 'gconf' specified in GSETTINGS_BACKEND<br>
+Unsupported ancillary data: 1/2<br>
+qemu: Unsupported syscall: 384<br>
+Files:<br>
+<br>
+Found 0 PIDs…<br>
+oneshot: /etc/oneshot.d/100000/zz-initialize-tracker-index - OK<br>
+Changing release from latest to 3.0.3.10<br>
+Your device is now in release mode!<br>
+WARNING: DBus call failed, falling back to libssu: The permission of the setuid helper is not correct<br>
+Setting device mode from 4 to 4<br>
+WARNING: DBus call failed, falling back to libssu: The permission of the setuid helper is not correct<br>
+Info[07/29 11:12:41] : Pack rootfs to /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev_with_Piggz_configs/sfe-mido-3.0.3.10-DmitryAndreev_with_Piggz_configs.tar.bz2. Please wait...<br>
+Info[07/29 11:14:16] : Running pack scripts ...<br>
+/home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev_with_Piggz_configs /home/stalker/hadk<br>
+/home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev_with_Piggz_configs/updater /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev_with_Piggz_configs /home/stalker/hadk<br>
+	zip warning: name not matched: sailfishos-mido-release-3.0.3.10-DmitryAndreev_with_Piggz_configs.ks<br>
+  adding: META-INF/com/google/android/update-binary (deflated 54%)<br>
+  adding: META-INF/com/google/android/updater-script (deflated 67%)<br>
+  adding: updater-unpack.sh (deflated 27%)<br>
+  adding: hybris-boot.img (deflated 8%)<br>
+  adding: sailfishos-mido-release-3.0.3.10-DmitryAndreev_with_Piggz_configs.tar.bz2 (deflated 0%)<br>
+/home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev_with_Piggz_configs /home/stalker/hadk<br>
+/home/stalker/hadk<br>
+Info[07/29 11:14:26] : The new image can be found here:<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev_with_Piggz_configs/Jolla-3.0.3.10-mido-armv7hl.ks<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev_with_Piggz_configs/Jolla-3.0.3.10-mido-armv7hl.ks<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev_with_Piggz_configs/Jolla-3.0.3.10-mido-armv7hl.packages<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev_with_Piggz_configs/Jolla-3.0.3.10-mido-armv7hl.urls<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev_with_Piggz_configs/sailfish-release<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev_with_Piggz_configs/sailfishos-mido-release-3.0.3.10-DmitryAndreev_with_Piggz_configs.zip<br>
+  /home/stalker/hadk/sfe-mido-3.0.3.10-DmitryAndreev_with_Piggz_configs/sfe-mido-3.0.3.10-DmitryAndreev_with_Piggz_configs.tar.bz2<br>
+<br>
+Info[07/29 11:14:27] : Finished.<br>
 </details><br>
