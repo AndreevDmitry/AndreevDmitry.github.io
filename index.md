@@ -57729,3 +57729,3871 @@ OUT_DIR=/home/stalker/hadk/out<br>
 
 HABUILD_SDK [mido] stalker@stalkerPC:~/hadk$ make -j$(nproc --all) hybris-hal
 <details>
+============================================<br>
+PLATFORM_VERSION_CODENAME=REL<br>
+PLATFORM_VERSION=7.1.2<br>
+LINEAGE_VERSION=14.1-20190710-UNOFFICIAL-mido<br>
+TARGET_PRODUCT=lineage_mido<br>
+TARGET_BUILD_VARIANT=userdebug<br>
+TARGET_BUILD_TYPE=release<br>
+TARGET_BUILD_APPS=<br>
+TARGET_ARCH=arm64<br>
+TARGET_ARCH_VARIANT=armv8-a<br>
+TARGET_CPU_VARIANT=generic<br>
+TARGET_2ND_ARCH=arm<br>
+TARGET_2ND_ARCH_VARIANT=armv7-a-neon<br>
+TARGET_2ND_CPU_VARIANT=cortex-a53<br>
+HOST_ARCH=x86_64<br>
+HOST_2ND_ARCH=x86<br>
+HOST_OS=linux<br>
+HOST_OS_EXTRA=Linux-4.15.0-54-generic-x86_64-with-Ubuntu-14.04-trusty<br>
+HOST_CROSS_OS=windows<br>
+HOST_CROSS_ARCH=x86<br>
+HOST_CROSS_2ND_ARCH=x86_64<br>
+HOST_BUILD_TYPE=release<br>
+BUILD_ID=NJH47F<br>
+OUT_DIR=/home/stalker/hadk/out<br>
+============================================<br>
+Running kati to generate build-lineage_mido.ninja...<br>
+Environment variable BUILD_NUMBER was modified (4a0ab6dddd = 1e6529fe31), regenerating...<br>
+============================================<br>
+PLATFORM_VERSION_CODENAME=REL<br>
+PLATFORM_VERSION=7.1.2<br>
+LINEAGE_VERSION=14.1-20190710-UNOFFICIAL-mido<br>
+TARGET_PRODUCT=lineage_mido<br>
+TARGET_BUILD_VARIANT=userdebug<br>
+TARGET_BUILD_TYPE=release<br>
+TARGET_BUILD_APPS=<br>
+TARGET_ARCH=arm64<br>
+TARGET_ARCH_VARIANT=armv8-a<br>
+TARGET_CPU_VARIANT=generic<br>
+TARGET_2ND_ARCH=arm<br>
+TARGET_2ND_ARCH_VARIANT=armv7-a-neon<br>
+TARGET_2ND_CPU_VARIANT=cortex-a53<br>
+HOST_ARCH=x86_64<br>
+HOST_2ND_ARCH=x86<br>
+HOST_OS=linux<br>
+HOST_OS_EXTRA=Linux-4.15.0-54-generic-x86_64-with-Ubuntu-14.04-trusty<br>
+HOST_CROSS_OS=windows<br>
+HOST_CROSS_ARCH=x86<br>
+HOST_CROSS_2ND_ARCH=x86_64<br>
+HOST_BUILD_TYPE=release<br>
+BUILD_ID=NJH47F<br>
+OUT_DIR=/home/stalker/hadk/out<br>
+============================================<br>
+build/core/binary.mk:37: hal3-test-app uses kernel headers, but does not depend on them!<br>
+external/speex/Android.mk:56: TODOArm64: enable neon in libspeex<br>
+perl: warning: Setting locale failed.<br>
+perl: warning: Please check that your locale settings:<br>
+	LANGUAGE = (unset),<br>
+	LC_ALL = (unset),<br>
+	LC_MESSAGES = "en_US.UTF-8",<br>
+	LC_CTYPE = "en_US.UTF-8",<br>
+	LANG = (unset)<br>
+    are supported and installed on your system.<br>
+perl: warning: Falling back to the standard locale ("C").<br>
+perl: warning: Setting locale failed.<br>
+perl: warning: Please check that your locale settings:<br>
+	LANGUAGE = (unset),<br>
+	LC_ALL = (unset),<br>
+	LC_MESSAGES = "en_US.UTF-8",<br>
+	LC_CTYPE = "en_US.UTF-8",<br>
+	LANG = (unset)<br>
+    are supported and installed on your system.<br>
+perl: warning: Falling back to the standard locale ("C").<br>
+hybris/hybris-boot/Android.mk:71: ********************* /boot appears to live on /dev/block/bootdevice/by-name/boot<br>
+hybris/hybris-boot/Android.mk:72: ********************* /data appears to live on /dev/block/bootdevice/by-name/userdata<br>
+build/core/Makefile:34: warning: overriding commands for target `/home/stalker/hadk/out/target/product/mido/system/bin/wcnss_service'<br>
+build/core/base_rules.mk:320: warning: ignoring old commands for target `/home/stalker/hadk/out/target/product/mido/system/bin/wcnss_service'<br>
+Starting build with ninja<br>
+ninja: Entering directory `.'<br>
+[ 29% 5/17] build /home/stalker/hadk/out/target/product/mido/obj/ROOT/hybris-boot_intermediates/init<br>
+Fixing mount-points for device mido<br>
+[ 35% 6/17] build /home/stalker/hadk/out/target/product/mido/obj/ROOT/hybris-recovery_intermediates/init<br>
+Fixing mount-points for device mido<br>
+[ 41% 7/17] Target buildinfo: /home/stalker/hadk/out/target/product/mido/obj/ETC/system_build_prop_intermediates/build.prop<br>
+Target buildinfo from: device/xiaomi/mido/system.prop<br>
+[ 52% 9/17] Making initramfs : /home/stalker/hadk/out/target/product/mido/obj/ROOT/hybris-recovery_intermediates/recovery-initramfs.gz<br>
+2953 blocks<br>
+[ 52% 9/17] Making initramfs : /home/stalker/hadk/out/target/product/mido/obj/ROOT/hybris-boot_intermediates/boot-initramfs.gz<br>
+2953 blocks<br>
+[ 52% 9/17] Building Kernel Config<br>
+make: Entering directory `/home/stalker/hadk/kernel/xiaomi/msm8953'<br>
+make[1]: Entering directory `/home/stalker/hadk/out/target/product/mido/obj/KERNEL_OBJ'<br>
+  GEN     ./Makefile<br>
+  HOSTCC  scripts/basic/fixdep<br>
+  HOSTCC  scripts/basic/bin2c<br>
+  HOSTCC  scripts/kconfig/conf.o<br>
+  SHIPPED scripts/kconfig/zconf.tab.c<br>
+  SHIPPED scripts/kconfig/zconf.lex.c<br>
+  SHIPPED scripts/kconfig/zconf.hash.c<br>
+  HOSTCC  scripts/kconfig/zconf.tab.o<br>
+  HOSTLD  scripts/kconfig/conf<br>
+warning: (SND_SOC_APQ8084 && SND_SOC_MSM8994 && SND_SOC_MSM8996 && SND_SOC_MSM8X16 && SND_SOC_MDM9607 && SND_SOC_MDM9640) selects SND_SOC_WCD9330 which has unmet direct dependencies (SOUND && !M68K && !UML && SND && SND_SOC && WCD9330_CODEC)<br>
+warning: (SND_SOC_APQ8084 && SND_SOC_MSM8994 && SND_SOC_MSM8996 && SND_SOC_MSM8X16 && SND_SOC_MDM9607 && SND_SOC_MDM9640) selects SND_SOC_WCD9330 which has unmet direct dependencies (SOUND && !M68K && !UML && SND && SND_SOC && WCD9330_CODEC)<br>
+#<br>
+# configuration written to .config<br>
+#<br>
+make[1]: Leaving directory `/home/stalker/hadk/out/target/product/mido/obj/KERNEL_OBJ'<br>
+make: Leaving directory `/home/stalker/hadk/kernel/xiaomi/msm8953'<br>
+make: Entering directory `/home/stalker/hadk/kernel/xiaomi/msm8953'<br>
+make[1]: Entering directory `/home/stalker/hadk/out/target/product/mido/obj/KERNEL_OBJ'<br>
+  GEN     ./Makefile<br>
+scripts/kconfig/conf --savedefconfig=defconfig Kconfig<br>
+warning: (SND_SOC_APQ8084 && SND_SOC_MSM8994 && SND_SOC_MSM8996 && SND_SOC_MSM8X16 && SND_SOC_MDM9607 && SND_SOC_MDM9640) selects SND_SOC_WCD9330 which has unmet direct dependencies (SOUND && !M68K && !UML && SND && SND_SOC && WCD9330_CODEC)<br>
+warning: (SND_SOC_APQ8084 && SND_SOC_MSM8994 && SND_SOC_MSM8996 && SND_SOC_MSM8X16 && SND_SOC_MDM9607 && SND_SOC_MDM9640) selects SND_SOC_WCD9330 which has unmet direct dependencies (SOUND && !M68K && !UML && SND && SND_SOC && WCD9330_CODEC)<br>
+make[1]: Leaving directory `/home/stalker/hadk/out/target/product/mido/obj/KERNEL_OBJ'<br>
+make: Leaving directory `/home/stalker/hadk/kernel/xiaomi/msm8953'<br>
+[ 58% 10/17] Building Kernel Headers<br>
+make: Entering directory `/home/stalker/hadk/kernel/xiaomi/msm8953'<br>
+make[1]: Entering directory `/home/stalker/hadk/out/target/product/mido/obj/KERNEL_OBJ'<br>
+  GEN     ./Makefile<br>
+warning: (SND_SOC_APQ8084 && SND_SOC_MSM8994 && SND_SOC_MSM8996 && SND_SOC_MSM8X16 && SND_SOC_MDM9607 && SND_SOC_MDM9640) selects SND_SOC_WCD9330 which has unmet direct dependencies (SOUND && !M68K && !UML && SND && SND_SOC && WCD9330_CODEC)<br>
+warning: (SND_SOC_APQ8084 && SND_SOC_MSM8994 && SND_SOC_MSM8996 && SND_SOC_MSM8X16 && SND_SOC_MDM9607 && SND_SOC_MDM9640) selects SND_SOC_WCD9330 which has unmet direct dependencies (SOUND && !M68K && !UML && SND && SND_SOC && WCD9330_CODEC)<br>
+#<br>
+# configuration written to .config<br>
+#<br>
+make[1]: Leaving directory `/home/stalker/hadk/out/target/product/mido/obj/KERNEL_OBJ'<br>
+make: Leaving directory `/home/stalker/hadk/kernel/xiaomi/msm8953'<br>
+make: Entering directory `/home/stalker/hadk/kernel/xiaomi/msm8953'<br>
+make[1]: Entering directory `/home/stalker/hadk/out/target/product/mido/obj/KERNEL_OBJ'<br>
+  CHK     include/generated/uapi/linux/version.h<br>
+  UPD     include/generated/uapi/linux/version.h<br>
+  HOSTCC  scripts/unifdef<br>
+  INSTALL usr/include/uapi/ (0 file)<br>
+  INSTALL usr/include/mtd/ (5 files)<br>
+  INSTALL usr/include/drm/ (18 files)<br>
+  INSTALL usr/include/misc/ (1 file)<br>
+  INSTALL usr/include/asm-generic/ (35 files)<br>
+  INSTALL usr/include/rdma/ (6 files)<br>
+  INSTALL usr/include/scsi/ (5 files)<br>
+  INSTALL usr/include/media/ (21 files)<br>
+  INSTALL usr/include/sound/ (19 files)<br>
+  INSTALL usr/include/video/ (5 files)<br>
+  INSTALL usr/include/xen/ (4 files)<br>
+  INSTALL usr/include/scsi/fc/ (4 files)<br>
+  INSTALL usr/include/scsi/ufs/ (2 files)<br>
+  INSTALL usr/include/linux/../../../usr/include/linux/staging/android/uapi/ (2 files)<br>
+  INSTALL usr/include/linux/byteorder/ (2 files)<br>
+  INSTALL usr/include/linux/can/ (5 files)<br>
+  INSTALL usr/include/linux/caif/ (2 files)<br>
+  INSTALL usr/include/linux/dvb/ (8 files)<br>
+  INSTALL usr/include/linux/hdlc/ (1 file)<br>
+  INSTALL usr/include/linux/hsi/ (1 file)<br>
+  INSTALL usr/include/linux/isdn/ (1 file)<br>
+  INSTALL usr/include/linux/mmc/ (3 files)<br>
+  INSTALL usr/include/linux/netfilter_arp/ (2 files)<br>
+  INSTALL usr/include/linux/netfilter_bridge/ (17 files)<br>
+  INSTALL usr/include/linux/netfilter/ (85 files)<br>
+  INSTALL usr/include/linux/netfilter_ipv6/ (12 files)<br>
+  INSTALL usr/include/linux/netfilter_ipv4/ (10 files)<br>
+  INSTALL usr/include/linux/mfd/wcd9xxx/ (2 files)<br>
+  INSTALL usr/include/linux/nfc/ (1 file)<br>
+  INSTALL usr/include/linux/netfilter/ipset/ (4 files)<br>
+  INSTALL usr/include/linux/nfsd/ (5 files)<br>
+  INSTALL usr/include/linux/mfd/ (1 file)<br>
+  INSTALL usr/include/linux/raid/ (2 files)<br>
+  INSTALL usr/include/linux/spi/ (1 file)<br>
+  INSTALL usr/include/linux/sunrpc/ (1 file)<br>
+  INSTALL usr/include/linux/tc_act/ (8 files)<br>
+  INSTALL usr/include/linux/tc_ematch/ (4 files)<br>
+  REMOVE  lirc.h spcom.h<br>
+  INSTALL usr/include/linux/usb/ (11 files)<br>
+  INSTALL usr/include/linux/ (469 files)<br>
+  INSTALL usr/include/linux/wimax/ (1 file)<br>
+  INSTALL usr/include/asm/ (35 files)<br>
+make[1]: Leaving directory `/home/stalker/hadk/out/target/product/mido/obj/KERNEL_OBJ'<br>
+make: Leaving directory `/home/stalker/hadk/kernel/xiaomi/msm8953'<br>
+[ 64% 11/17] Building Kernel<br>
+make: Entering directory `/home/stalker/hadk/kernel/xiaomi/msm8953'<br>
+make[1]: Entering directory `/home/stalker/hadk/out/target/product/mido/obj/KERNEL_OBJ'<br>
+  GEN     ./Makefile<br>
+scripts/kconfig/conf --silentoldconfig Kconfig<br>
+warning: (SND_SOC_APQ8084 && SND_SOC_MSM8994 && SND_SOC_MSM8996 && SND_SOC_MSM8X16 && SND_SOC_MDM9607 && SND_SOC_MDM9640) selects SND_SOC_WCD9330 which has unmet direct dependencies (SOUND && !M68K && !UML && SND && SND_SOC && WCD9330_CODEC)<br>
+warning: (SND_SOC_APQ8084 && SND_SOC_MSM8994 && SND_SOC_MSM8996 && SND_SOC_MSM8X16 && SND_SOC_MDM9607 && SND_SOC_MDM9640) selects SND_SOC_WCD9330 which has unmet direct dependencies (SOUND && !M68K && !UML && SND && SND_SOC && WCD9330_CODEC)<br>
+make[1]: Leaving directory `/home/stalker/hadk/out/target/product/mido/obj/KERNEL_OBJ'<br>
+make[1]: Entering directory `/home/stalker/hadk/out/target/product/mido/obj/KERNEL_OBJ'<br>
+  CHK     include/config/kernel.release<br>
+  UPD     include/config/kernel.release<br>
+  GEN     ./Makefile<br>
+  CHK     include/generated/uapi/linux/version.h<br>
+  CHK     include/generated/utsrelease.h<br>
+  UPD     include/generated/utsrelease.h<br>
+  Using /home/stalker/hadk/kernel/xiaomi/msm8953 as source for kernel<br>
+  HOSTCC  scripts/kallsyms<br>
+  HOSTCC  scripts/conmakehash<br>
+  HOSTCC  scripts/recordmcount<br>
+  HOSTCC  scripts/sortextable<br>
+  HOSTCC  scripts/asn1_compiler<br>
+  HOSTCC  scripts/genksyms/genksyms.o<br>
+  SHIPPED scripts/genksyms/parse.tab.c<br>
+  SHIPPED scripts/genksyms/lex.lex.c<br>
+  SHIPPED scripts/genksyms/keywords.hash.c<br>
+  SHIPPED scripts/genksyms/parse.tab.h<br>
+  HOSTCC  scripts/genksyms/parse.tab.o<br>
+  HOSTCC  scripts/genksyms/lex.lex.o<br>
+  CC      scripts/mod/empty.o<br>
+  HOSTCC  scripts/dtc/dtc.o<br>
+  HOSTCC  scripts/dtc/flattree.o<br>
+  HOSTCC  scripts/mod/mk_elfconfig<br>
+  HOSTCC  scripts/dtc/fstree.o<br>
+  HOSTCC  scripts/selinux/genheaders/genheaders<br>
+  HOSTCC  scripts/dtc/data.o<br>
+  HOSTCC  scripts/selinux/mdp/mdp<br>
+  HOSTCC  scripts/dtc/livetree.o<br>
+  CC      scripts/mod/devicetable-offsets.s<br>
+  HOSTCC  scripts/dtc/treesource.o<br>
+  HOSTCC  scripts/dtc/srcpos.o<br>
+  HOSTCC  scripts/dtc/checks.o<br>
+  HOSTCC  scripts/dtc/util.o<br>
+  MKELF   scripts/mod/elfconfig.h<br>
+  GEN     scripts/mod/devicetable-offsets.h<br>
+  HOSTCC  scripts/mod/sumversion.o<br>
+  SHIPPED scripts/dtc/dtc-lexer.lex.c<br>
+  SHIPPED scripts/dtc/dtc-parser.tab.h<br>
+  SHIPPED scripts/dtc/dtc-parser.tab.c<br>
+  HOSTCC  scripts/dtc/dtc-lexer.lex.o<br>
+  HOSTCC  scripts/dtc/dtc-parser.tab.o<br>
+  HOSTCC  scripts/mod/modpost.o<br>
+  HOSTCC  scripts/mod/file2alias.o<br>
+  HOSTLD  scripts/genksyms/genksyms<br>
+  HOSTLD  scripts/dtc/dtc<br>
+  HOSTLD  scripts/mod/modpost<br>
+  CC      kernel/bounds.s<br>
+  GEN     include/generated/bounds.h<br>
+  CC      arch/arm64/kernel/asm-offsets.s<br>
+  GEN     include/generated/asm-offsets.h<br>
+  CALL    /home/stalker/hadk/kernel/xiaomi/msm8953/scripts/checksyscalls.sh<br>
+  HOSTCC  usr/gen_init_cpio<br>
+  CC      init/main.o<br>
+  CHK     include/generated/compile.h<br>
+  CC      init/do_mounts.o<br>
+  CC      init/do_mounts_rd.o<br>
+  CC      init/do_mounts_initrd.o<br>
+  CC      init/do_mounts_dm.o<br>
+  CC      init/noinitramfs.o<br>
+  CC      init/initramfs.o<br>
+  CC      init/calibrate.o<br>
+  CC      init/init_task.o<br>
+  CC      arch/arm64/mm/dma-mapping.o<br>
+  CC      arch/arm64/mm/extable.o<br>
+  CC      arch/arm64/mm/fault.o<br>
+  GEN     usr/initramfs_data.cpio.gz<br>
+  CC      arch/arm64/crypto/sha1-ce-glue.o<br>
+  AS      usr/initramfs_data.o<br>
+  LD      usr/built-in.o<br>
+  CC      arch/arm64/mm/init.o<br>
+  AS      arch/arm64/kernel/head.o<br>
+  LDS     arch/arm64/kernel/vmlinux.lds<br>
+  LDS     arch/arm64/kernel/vdso/vdso.lds<br>
+  VDSOA   arch/arm64/kernel/vdso/gettimeofday.o<br>
+  CC      init/version.o<br>
+  VDSOA   arch/arm64/kernel/vdso/note.o<br>
+  VDSOA   arch/arm64/kernel/vdso/sigreturn.o<br>
+  AS      arch/arm64/crypto/sha1-ce-core.o<br>
+  VDSOL   arch/arm64/kernel/vdso/vdso.so.dbg<br>
+  CC      arch/arm64/crypto/sha2-ce-glue.o<br>
+  OBJCOPY arch/arm64/kernel/vdso/vdso.so<br>
+  VDSOSYM arch/arm64/kernel/vdso/vdso-offsets.h<br>
+  AS      arch/arm64/kernel/vdso/vdso.o<br>
+  AS      arch/arm64/crypto/sha2-ce-core.o<br>
+  LD      arch/arm64/kernel/vdso/built-in.o<br>
+  AS      arch/arm64/mm/cache.o<br>
+  CC      arch/arm64/kernel/cputable.o<br>
+  CC      arch/arm64/kernel/debug-monitors.o<br>
+  AS      arch/arm64/kernel/entry.o<br>
+  CC      arch/arm64/kernel/irq.o<br>
+  CC      arch/arm64/kernel/fpsimd.o<br>
+  AS      arch/arm64/kernel/entry-fpsimd.o<br>
+  CC      arch/arm64/crypto/ghash-ce-glue.o<br>
+  CC      arch/arm64/mm/copypage.o<br>
+  AS      arch/arm64/crypto/ghash-ce-core.o<br>
+  CC      arch/arm64/kernel/process.o<br>
+  CC      arch/arm64/kernel/ptrace.o<br>
+  CC      kernel/fork.o<br>
+  CC      arch/arm64/kernel/setup.o<br>
+  CC      arch/arm64/crypto/aes-ce-cipher.o<br>
+  CC      arch/arm64/kernel/signal.o<br>
+  CC      kernel/exec_domain.o<br>
+  CC      arch/arm64/crypto/aes-ce-ccm-glue.o<br>
+  CC      arch/arm64/kernel/sys.o<br>
+  AS      arch/arm64/crypto/aes-ce-ccm-core.o<br>
+  CC      arch/arm64/crypto/aes-glue-ce.o<br>
+  CC      kernel/panic.o<br>
+  LD      init/mounts.o<br>
+  LD      init/built-in.o<br>
+  AS      arch/arm64/crypto/aes-ce.o<br>
+  CC      kernel/cpu.o<br>
+  CC      arch/arm64/mm/flush.o<br>
+  CC      arch/arm64/crypto/aes-glue-neon.o<br>
+  AS      arch/arm64/crypto/aes-neon.o<br>
+  CC      arch/arm64/mm/ioremap.o<br>
+  CC      arch/arm64/mm/mmap.o<br>
+  CC      arch/arm64/kernel/stacktrace.o<br>
+  CC      arch/arm64/kernel/time.o<br>
+  CC      mm/filemap.o<br>
+  CC      arch/arm64/mm/pgd.o<br>
+  CC      mm/mempool.o<br>
+  CC      arch/arm64/kernel/traps.o<br>
+  CC      mm/oom_kill.o<br>
+  CC      mm/maccess.o<br>
+  CC      mm/page_alloc.o<br>
+  CC      arch/arm64/mm/mmu.o<br>
+  CC      arch/arm64/crypto/crc32-arm64.o<br>
+  CC      kernel/exit.o<br>
+  CC      kernel/softirq.o<br>
+  CC      kernel/resource.o<br>
+  CC      fs/open.o<br>
+  CC      kernel/sysctl.o<br>
+  CC      arch/arm64/kernel/io.o<br>
+  CC      kernel/sysctl_binary.o<br>
+  CC      arch/arm64/mm/context.o<br>
+  CC      mm/page-writeback.o<br>
+  CC      arch/arm64/kernel/vdso.o<br>
+  CC      fs/read_write.o<br>
+  LD      arch/arm64/crypto/sha1-ce.o<br>
+  LD      arch/arm64/crypto/sha2-ce.o<br>
+  LD      arch/arm64/crypto/ghash-ce.o<br>
+  LD      arch/arm64/crypto/aes-ce-ccm.o<br>
+  LD      arch/arm64/crypto/aes-ce-blk.o<br>
+  LD      arch/arm64/crypto/aes-neon-blk.o<br>
+  LD      arch/arm64/crypto/built-in.o<br>
+  AS      arch/arm64/mm/proc.o<br>
+  CC      ipc/compat.o<br>
+  CC      ipc/util.o<br>
+  CC      ipc/msgutil.o<br>
+  CC      security/integrity/iint.o<br>
+  AS      arch/arm64/kernel/hyp-stub.o<br>
+  CC      arch/arm64/mm/pageattr.o<br>
+  CC      arch/arm64/kernel/psci.o<br>
+  CC      ipc/msg.o<br>
+  CC      kernel/capability.o<br>
+  CC      kernel/ptrace.o<br>
+  CC      ipc/sem.o<br>
+  CC      security/integrity/integrity_audit.o<br>
+  CC      ipc/shm.o<br>
+  CC      ipc/ipcns_notifier.o<br>
+  LD      arch/arm64/mm/built-in.o<br>
+  AS      arch/arm64/kernel/psci-call.o<br>
+  CC      arch/arm64/kernel/cpu_ops.o<br>
+  CC      arch/arm64/kernel/insn.o<br>
+  CC      security/keys/gc.o<br>
+  CC      arch/arm64/kernel/return_address.o<br>
+  CC      security/keys/key.o<br>
+  LD      security/integrity/integrity.o<br>
+  CC      kernel/user.o<br>
+  LD      security/integrity/built-in.o<br>
+  CC      kernel/signal.o<br>
+  CC      ipc/syscall.o<br>
+  CC      fs/file_table.o<br>
+  CC      security/keys/keyring.o<br>
+  GEN     security/selinux/flask.h security/selinux/av_permissions.h<br>
+  CC      security/selinux/avc.o<br>
+  CC      block/bio.o<br>
+  CC      block/elevator.o<br>
+  CC      kernel/sys.o<br>
+  CC      mm/readahead.o<br>
+  CC      crypto/api.o<br>
+  CC      mm/swap.o<br>
+  CC      security/selinux/hooks.o<br>
+  CC      arch/arm64/kernel/cpuinfo.o<br>
+  CC      security/selinux/selinuxfs.o<br>
+  CC      ipc/ipc_sysctl.o<br>
+  CC      fs/super.o<br>
+  CC      security/commoncap.o<br>
+  CC      drivers/amba/bus.o<br>
+  CC      arch/arm64/kernel/cpu_errata.o<br>
+  CC      security/keys/keyctl.o<br>
+  CC      ipc/namespace.o<br>
+  CC      drivers/base/component.o<br>
+  CC      arch/arm64/kernel/cpufeature.o<br>
+  CC      drivers/base/core.o<br>
+  CC      drivers/base/bus.o<br>
+  LD      ipc/built-in.o<br>
+  CC      crypto/cipher.o<br>
+  CC      crypto/compress.o<br>
+  LD      drivers/amba/built-in.o<br>
+  CC      crypto/memneq.o<br>
+  CC      crypto/crypto_wq.o<br>
+  CC      security/min_addr.o<br>
+  CC      mm/truncate.o<br>
+  CC      block/blk-core.o<br>
+  CC      arch/arm64/kernel/alternative.o<br>
+  CC      security/keys/permission.o<br>
+  CC      fs/char_dev.o<br>
+  CC      mm/vmscan.o<br>
+  CC      crypto/algapi.o<br>
+  CC      kernel/kmod.o<br>
+  CC      sound/sound_core.o<br>
+  AS      arch/arm64/kernel/sys32.o<br>
+  AS      arch/arm64/kernel/kuser32.o<br>
+  CC      arch/arm64/kernel/signal32.o<br>
+  CC      arch/arm64/kernel/sys_compat.o<br>
+  CC      mm/shmem.o<br>
+  CC      kernel/workqueue.o<br>
+  CC      kernel/pid.o<br>
+  CC      sound/core/sound.o<br>
+  CC      security/keys/process_keys.o<br>
+  CC      sound/core/init.o<br>
+  CC      fs/stat.o<br>
+  CC      security/security.o<br>
+  CC      arch/arm64/kernel/../../arm/kernel/opcodes.o<br>
+  CC      drivers/base/dd.o<br>
+  CC      arch/arm64/kernel/ftrace.o<br>
+  CC      crypto/scatterwalk.o<br>
+  CC      security/keys/request_key.o<br>
+  CC      crypto/proc.o<br>
+  CC      security/selinux/netlink.o<br>
+  CC      crypto/aead.o<br>
+  CC      crypto/ablkcipher.o<br>
+  CC      security/selinux/nlmsgtab.o<br>
+  AS      arch/arm64/kernel/entry-ftrace.o<br>
+  CC      arch/arm64/kernel/arm64ksyms.o<br>
+  CC      sound/core/memory.o<br>
+  CC      fs/exec.o<br>
+  CC      drivers/base/syscore.o<br>
+  CC      sound/core/info.o<br>
+  CC      security/keys/request_key_auth.o<br>
+  CC      crypto/blkcipher.o<br>
+  CC      security/selinux/netif.o<br>
+  CC      sound/core/control.o<br>
+  CC      security/selinux/netnode.o<br>
+  CC      security/selinux/netport.o<br>
+  CC      arch/arm64/kernel/module.o<br>
+  CC      block/blk-tag.o<br>
+  CC      security/keys/user_defined.o<br>
+  CC      crypto/chainiv.o<br>
+  CC      mm/util.o<br>
+  CC      security/keys/compat.o<br>
+  CC      drivers/base/driver.o<br>
+  CC      arch/arm64/kernel/smp.o<br>
+  CC      kernel/task_work.o<br>
+  CC      security/capability.o<br>
+  CC      security/selinux/exports.o<br>
+  CC      drivers/base/class.o<br>
+  CC      security/keys/proc.o<br>
+  CC      security/keys/sysctl.o<br>
+  CC      security/selinux/ss/ebitmap.o<br>
+  CC      block/blk-sysfs.o<br>
+  CC      security/selinux/ss/hashtab.o<br>
+  CC      security/keys/encrypted-keys/encrypted.o<br>
+  CC      fs/pipe.o<br>
+  CC      kernel/extable.o<br>
+  CC      crypto/eseqiv.o<br>
+  CC      security/keys/encrypted-keys/ecryptfs_format.o<br>
+  CC      security/selinux/ss/symtab.o<br>
+  CC      security/lsm_audit.o<br>
+  CC      mm/mmzone.o<br>
+  CC      mm/vmstat.o<br>
+  CC      mm/backing-dev.o<br>
+  CC      security/selinux/ss/sidtab.o<br>
+  CC      arch/arm64/kernel/smp_spin_table.o<br>
+  CC      kernel/params.o<br>
+  CC      sound/core/misc.o<br>
+  CC      arch/arm64/kernel/topology.o<br>
+  CC      drivers/base/platform.o<br>
+  CC      drivers/base/cpu.o<br>
+  CC      drivers/block/brd.o<br>
+  CC      crypto/seqiv.o<br>
+  CC      block/blk-flush.o<br>
+  CC      drivers/block/loop.o<br>
+  CC      security/device_cgroup.o<br>
+  LD      security/keys/encrypted-keys/encrypted-keys.o<br>
+  LD      security/keys/encrypted-keys/built-in.o<br>
+  LD      security/keys/built-in.o<br>
+  CC      mm/mm_init.o<br>
+  CC      sound/core/device.o<br>
+  CC      fs/namei.o<br>
+  CC      fs/fcntl.o<br>
+  CC      arch/arm64/kernel/perf_regs.o<br>
+  CC      fs/ioctl.o<br>
+  CC      sound/core/jack.o<br>
+  CC      security/selinux/ss/avtab.o<br>
+  CC      crypto/ahash.o<br>
+  CC      fs/readdir.o<br>
+  CC      kernel/kthread.o<br>
+  CC      fs/select.o<br>
+  CC      mm/mmu_context.o<br>
+  CC      fs/dcache.o<br>
+  CC      drivers/base/firmware.o<br>
+  CC      block/blk-settings.o<br>
+  CC      arch/arm64/kernel/perf_event.o<br>
+  CC      block/blk-ioc.o<br>
+  CC      mm/percpu.o<br>
+  CC      sound/core/hwdep.o<br>
+  CC      drivers/base/init.o<br>
+  CC      drivers/base/map.o<br>
+  CC      fs/inode.o<br>
+  CC      sound/core/timer.o<br>
+  CC      security/selinux/ss/policydb.o<br>
+  CC      kernel/sys_ni.o<br>
+  CC      crypto/shash.o<br>
+  CC      drivers/base/devres.o<br>
+  CC      kernel/nsproxy.o<br>
+  CC      drivers/base/attribute_container.o<br>
+  CC      block/blk-map.o<br>
+  CC      drivers/block/zram/zcomp_lzo.o<br>
+  CC      kernel/notifier.o<br>
+  CC      drivers/block/zram/zcomp.o<br>
+  CC      sound/core/pcm.o<br>
+  CC      arch/arm64/kernel/perf_debug.o<br>
+  CC      sound/core/pcm_native.o<br>
+  CC      fs/attr.o<br>
+  CC      mm/slab_common.o<br>
+  CC      drivers/base/transport_class.o<br>
+  CC      kernel/ksysfs.o<br>
+  CC      drivers/block/zram/zram_drv.o<br>
+  CC      block/blk-exec.o<br>
+  CC      arch/arm64/kernel/perf_trace_counters.o<br>
+  CC      sound/core/pcm_lib.o<br>
+  CC      fs/bad_inode.o<br>
+  CC      fs/file.o<br>
+  CC      fs/filesystems.o<br>
+  CC      crypto/pcompress.o<br>
+  CC      sound/core/pcm_timer.o<br>
+  CC      kernel/cred.o<br>
+  LD      drivers/bluetooth/built-in.o<br>
+  CC      drivers/base/topology.o<br>
+  CC      kernel/reboot.o<br>
+  CC      kernel/async.o<br>
+  CC      arch/arm64/kernel/perf_trace_user.o<br>
+  CC      block/blk-merge.o<br>
+  CC      drivers/block/zram/zcomp_lz4.o<br>
+  CC      security/selinux/ss/services.o<br>
+  CC      sound/core/pcm_misc.o<br>
+  CC      drivers/base/container.o<br>
+  CC      fs/namespace.o<br>
+  LD      drivers/block/zram/zram.o<br>
+  LD      drivers/block/zram/built-in.o<br>
+  CC      fs/seq_file.o<br>
+  LD      drivers/block/built-in.o<br>
+  CC      security/selinux/ss/conditional.o<br>
+  CC      crypto/algboss.o<br>
+  CC      crypto/testmgr.o<br>
+  AS      arch/arm64/kernel/sleep.o<br>
+  CC      drivers/base/property.o<br>
+  CC      fs/xattr.o<br>
+  CC      arch/arm64/kernel/suspend.o<br>
+  CC      kernel/range.o<br>
+  CC      drivers/char/mem.o<br>
+  CC      kernel/groups.o<br>
+  CC      fs/libfs.o<br>
+  CC      mm/compaction.o<br>
+  CC      arch/arm64/kernel/cpuidle.o<br>
+  CC      block/blk-softirq.o<br>
+  CC      drivers/base/devtmpfs.o<br>
+  CC      drivers/char/random.o<br>
+  CC      drivers/base/dma-contiguous.o<br>
+  CC      crypto/cmac.o<br>
+  CC      arch/arm64/kernel/efi.o<br>
+  CC      crypto/hmac.o<br>
+  CC      drivers/char/misc.o<br>
+  CC      drivers/char/msm_smd_pkt.o<br>
+  CC      sound/core/pcm_memory.o<br>
+  CC      kernel/smpboot.o<br>
+  CC      drivers/base/power/sysfs.o<br>
+  CC      drivers/base/power/generic_ops.o<br>
+  CC      kernel/bpf/core.o<br>
+  CC      drivers/base/power/common.o<br>
+  CC      arch/arm64/kernel/efi-stub.o<br>
+  CC      block/blk-timeout.o<br>
+  CC      security/selinux/ss/mls.o<br>
+  AS      arch/arm64/kernel/efi-entry.o<br>
+  CC      block/blk-iopoll.o<br>
+  CC      crypto/xcbc.o<br>
+  CC      arch/arm64/kernel/pci.o<br>
+  CC      mm/vmacache.o<br>
+  CC      sound/core/memalloc.o<br>
+  CC      mm/interval_tree.o<br>
+  CC      security/selinux/ss/status.o<br>
+  CC      fs/fs-writeback.o<br>
+  CC      drivers/base/power/qos.o<br>
+  CC      drivers/base/power/runtime.o<br>
+  CC      arch/arm64/kernel/armv8_deprecated.o<br>
+  CC      drivers/base/power/main.o<br>
+  CC      mm/list_lru.o<br>
+  CC      crypto/crypto_null.o<br>
+  CC      mm/workingset.o<br>
+  CC      block/blk-lib.o<br>
+  CC      drivers/clk/clk-devres.o<br>
+  CC      block/blk-mq.o<br>
+  LD      kernel/bpf/built-in.o<br>
+  CC      sound/core/rawmidi.o<br>
+  CC      kernel/events/core.o<br>
+  CC      drivers/char/diag/diagchar_core.o<br>
+  CC      crypto/md4.o<br>
+  CC      drivers/char/diag/diagchar_hdlc.o<br>
+  CC      drivers/char/diag/diagfwd.o<br>
+  LD      security/selinux/selinux.o<br>
+  LD      security/selinux/built-in.o<br>
+  LD      security/built-in.o<br>
+  CC      drivers/char/diag/diagfwd_peripheral.o<br>
+  CC      mm/iov_iter.o<br>
+  LD      arch/arm64/kernel/built-in.o<br>
+  CC      drivers/clk/clkdev.o<br>
+  CC      drivers/base/power/wakeup.o<br>
+  CC      net/socket.o<br>
+  CC      drivers/char/diag/diagfwd_smd.o<br>
+  CC      net/802/p8022.o<br>
+  CC      drivers/char/hw_random/core.o<br>
+  CC      crypto/md5.o<br>
+  CC      drivers/clk/clk.o<br>
+  CC      net/802/psnap.o<br>
+  CC      drivers/char/diag/diagfwd_socket.o<br>
+  CC      crypto/sha1_generic.o<br>
+  CC      drivers/char/hw_random/msm_rng.o<br>
+  CC      mm/debug.o<br>
+  CC      mm/fremap.o<br>
+  CC      mm/gup.o<br>
+  CC      sound/core/compress_offload.o<br>
+  CC      mm/highmem.o<br>
+  CC      fs/pnode.o<br>
+  CC      drivers/base/power/opp/core.o<br>
+  CC      drivers/clk/msm/clock.o<br>
+  CC      block/blk-mq-tag.o<br>
+  CC      block/blk-mq-sysfs.o<br>
+  CC      crypto/sha256_generic.o<br>
+  LD      drivers/char/hw_random/rng-core.o<br>
+  LD      drivers/char/hw_random/built-in.o<br>
+  CC      crypto/sha512_generic.o<br>
+  CC      drivers/base/power/clock_ops.o<br>
+  CC      net/802/stp.o<br>
+  CC      fs/splice.o<br>
+  CC      drivers/clocksource/clksrc-of.o<br>
+  CC      fs/sync.o<br>
+  CC      mm/memory.o<br>
+  CC      drivers/char/diag/diag_mux.o<br>
+  LD      sound/core/snd.o<br>
+  LD      sound/core/snd-hwdep.o<br>
+  CC      mm/mincore.o<br>
+  LD      sound/core/snd-timer.o<br>
+  LD      sound/core/snd-pcm.o<br>
+  CC      net/8021q/vlan_core.o<br>
+  LD      sound/core/snd-rawmidi.o<br>
+  CC      drivers/clocksource/arm_arch_timer.o<br>
+  LD      sound/core/snd-compress.o<br>
+  LD      sound/core/built-in.o<br>
+  CC      block/blk-mq-cpu.o<br>
+  CC      drivers/base/power/opp/cpu.o<br>
+  CC      drivers/char/diag/diag_memorydevice.o<br>
+  CC      net/8021q/vlan.o<br>
+  LD      net/802/built-in.o<br>
+  CC      net/8021q/vlan_dev.o<br>
+  CC      drivers/clk/msm/clock-dummy.o<br>
+  CC      kernel/events/ring_buffer.o<br>
+  CC      crypto/gf128mul.o<br>
+  LD      net/bluetooth/built-in.o<br>
+  LD      net/bluetooth/bnep/built-in.o<br>
+  CC      net/bridge/br.o<br>
+  CC      block/blk-mq-cpumap.o<br>
+  LD      drivers/base/power/opp/built-in.o<br>
+  LD      net/bluetooth/hidp/built-in.o<br>
+  CC      drivers/base/power/boeffla_wl_blocker.o<br>
+  CC      drivers/clocksource/dummy_timer.o<br>
+  LD      net/bluetooth/rfcomm/built-in.o<br>
+  CC      drivers/char/diag/diag_usb.o<br>
+  CC      net/bridge/br_device.o<br>
+  CC      drivers/clk/msm/clock-generic.o<br>
+  CC      fs/utimes.o<br>
+  CC      net/8021q/vlan_netlink.o<br>
+  CC      fs/stack.o<br>
+  CC      kernel/events/callchain.o<br>
+  LD      drivers/clocksource/built-in.o<br>
+  LD      drivers/base/power/built-in.o<br>
+  CC      net/8021q/vlanproc.o<br>
+  CC      drivers/coresight/coresight.o<br>
+  CC      drivers/base/regmap/regmap.o<br>
+  CC      sound/soc/soc-core.o<br>
+  CC      block/ioctl.o<br>
+  CC      drivers/base/regmap/regcache.o<br>
+  CC      drivers/char/diag/diagmem.o<br>
+  CC      drivers/char/diag/diagfwd_cntl.o<br>
+  CC      drivers/char/diag/diag_dci.o<br>
+  CC      crypto/ecb.o<br>
+  CC      fs/fs_struct.o<br>
+  CC      drivers/clk/msm/clock-local2.o<br>
+  LD      kernel/events/built-in.o<br>
+  CC      mm/mlock.o<br>
+  CC      net/bridge/br_fdb.o<br>
+  CC      net/bridge/br_forward.o<br>
+  CC      kernel/irq/irqdesc.o<br>
+  CC      kernel/irq/handle.o<br>
+  LD      net/8021q/8021q.o<br>
+  LD      net/8021q/built-in.o<br>
+  CC      mm/mmap.o<br>
+  CC      drivers/coresight/coresight-event.o<br>
+  CC      block/genhd.o<br>
+  CC      crypto/cbc.o<br>
+  CC      fs/statfs.o<br>
+  CC      crypto/cts.o<br>
+  CC      drivers/char/diag/diag_masks.o<br>
+  CC      net/bridge/br_if.o<br>
+  CC      kernel/irq/manage.o<br>
+  CC      drivers/coresight/coresight-fuse.o<br>
+  CC      drivers/coresight/coresight-cti.o<br>
+  CC      drivers/char/diag/diag_debugfs.o<br>
+  CC      net/bridge/br_input.o<br>
+  CC      kernel/irq/spurious.o<br>
+  CC      drivers/base/regmap/regcache-rbtree.o<br>
+  CC      crypto/xts.o<br>
+  CC      drivers/clk/msm/clock-pll.o<br>
+  CC      fs/fs_pin.o<br>
+  CC      drivers/clk/msm/clock-alpha-pll.o<br>
+  CC      drivers/base/regmap/regcache-lzo.o<br>
+  CC      net/bridge/br_ioctl.o<br>
+  CC      block/scsi_ioctl.o<br>
+  CC      drivers/base/regmap/regcache-flat.o<br>
+  CC      kernel/irq/resend.o<br>
+  CC      fs/buffer.o<br>
+  CC      kernel/irq/chip.o<br>
+  LD      drivers/char/diag/diagchar.o<br>
+  LD      drivers/char/diag/built-in.o<br>
+  CC      drivers/char/adsprpc.o<br>
+  CC      mm/mprotect.o<br>
+  CC      fs/block_dev.o<br>
+  CC      drivers/coresight/coresight-csr.o<br>
+  CC      crypto/ctr.o<br>
+  CC      drivers/clk/msm/clock-rpm.o<br>
+  CC      drivers/clk/msm/clock-voter.o<br>
+  CC      drivers/clk/msm/clock-pm.o<br>
+  CC      drivers/base/regmap/regmap-debugfs.o<br>
+  CC      drivers/clk/msm/msm-clock-controller.o<br>
+  CC      drivers/base/regmap/regmap-i2c.o<br>
+  CC      sound/soc/soc-dapm.o<br>
+  CC      net/bridge/br_stp.o<br>
+  CC      drivers/base/regmap/regmap-spi.o<br>
+  CC      drivers/coresight/coresight-tmc.o<br>
+  CC      drivers/coresight/coresight-tpiu.o<br>
+  CC      drivers/clk/msm/clock-debug.o<br>
+  CC      crypto/cryptd.o<br>
+  CC      mm/mremap.o<br>
+  CC      kernel/irq/dummychip.o<br>
+  CC      block/partition-generic.o<br>
+  CC      block/ioprio.o<br>
+  CC      drivers/clk/msm/clock-a7.o<br>
+  AS      arch/arm64/lib/bitops.o<br>
+  AS      arch/arm64/lib/clear_page.o<br>
+  CC      kernel/irq/devres.o<br>
+  AS      arch/arm64/lib/clear_user.o<br>
+  AS      arch/arm64/lib/copy_from_user.o<br>
+  CC      drivers/base/regmap/regmap-swr.o<br>
+  AS      arch/arm64/lib/copy_in_user.o<br>
+  CC      fs/direct-io.o<br>
+  AS      arch/arm64/lib/copy_page.o<br>
+  AS      arch/arm64/lib/copy_to_user.o<br>
+  CC      fs/mpage.o<br>
+  CC      arch/arm64/lib/delay.o<br>
+  CC      mm/msync.o<br>
+  CC      net/bridge/br_stp_bpdu.o<br>
+  CC      fs/proc_namespace.o<br>
+  CC      drivers/clk/msm/clock-cpu-8939.o<br>
+  CC      drivers/char/adsprpc_compat.o<br>
+  CC      drivers/clk/msm/clock-gcc-8952.o<br>
+  CC      kernel/irq/autoprobe.o<br>
+  CC      crypto/des_generic.o<br>
+  CC      block/partitions/check.o<br>
+  AS      arch/arm64/lib/memchr.o<br>
+  CC      mm/rmap.o<br>
+  AS      arch/arm64/lib/memcmp.o<br>
+  LD      drivers/base/regmap/built-in.o<br>
+  CC      drivers/coresight/coresight-nidnt.o<br>
+  CC      drivers/base/dma-mapping.o<br>
+  AS      arch/arm64/lib/memcpy.o<br>
+  AS      arch/arm64/lib/memmove.o<br>
+  CC      block/bounce.o<br>
+  AS      arch/arm64/lib/memset.o<br>
+  AS      arch/arm64/lib/strchr.o<br>
+  AS      arch/arm64/lib/strcmp.o<br>
+  AS      arch/arm64/lib/strlen.o<br>
+  AS      arch/arm64/lib/strncmp.o<br>
+  AS      arch/arm64/lib/strnlen.o<br>
+  AS      arch/arm64/lib/strrchr.o<br>
+  CC      net/bridge/br_stp_if.o<br>
+  AS      arch/arm64/lib/tishift.o<br>
+  AR      arch/arm64/lib/lib.a<br>
+  CC      kernel/irq/irqdomain.o<br>
+  LD      fs/autofs4/built-in.o<br>
+  CC      net/bridge/br_stp_timer.o<br>
+  CC      drivers/char/frandom.o<br>
+  CC      block/partitions/msdos.o<br>
+  CC      block/partitions/efi.o<br>
+  CC      drivers/cpufreq/cpufreq.o<br>
+  CC      net/core/sock.o<br>
+  CC      drivers/clk/msm/clock-gcc-8953.o<br>
+  CC      sound/soc/soc-jack.o<br>
+  CC      drivers/base/dma-coherent.o<br>
+  CC      drivers/coresight/coresight-funnel.o<br>
+  CC      drivers/coresight/coresight-replicator.o<br>
+  CC      crypto/twofish_generic.o<br>
+  CC      crypto/twofish_common.o<br>
+  CC      mm/vmalloc.o<br>
+  LD      block/partitions/built-in.o<br>
+  CC      block/bsg.o<br>
+  LD      drivers/char/built-in.o<br>
+  CC      net/bridge/br_netlink.o<br>
+  CC      drivers/cpuidle/cpuidle.o<br>
+  CC      mm/pagewalk.o<br>
+  CC      drivers/cpuidle/driver.o<br>
+  CC      fs/cifs/cifsfs.o<br>
+  CC      kernel/irq/proc.o<br>
+  CC      drivers/clk/msm/clock-rcgwr.o<br>
+  CC      drivers/coresight/coresight-stm.o<br>
+  CC      drivers/base/dma-removed.o<br>
+  CC      sound/soc/soc-cache.o<br>
+  CC      sound/soc/soc-utils.o<br>
+  CC      crypto/aes_generic.o<br>
+  CC      drivers/cpuidle/governor.o<br>
+  CC      kernel/irq/pm.o<br>
+  CC      drivers/clk/msm/clock-cpu-8953.o<br>
+  CC      kernel/irq/msi.o<br>
+  CC      net/bridge/br_sysfs_if.o<br>
+  CC      drivers/coresight/coresight-hwevent.o<br>
+  CC      drivers/cpuidle/sysfs.o<br>
+  CC      drivers/cpufreq/freq_table.o<br>
+  CC      drivers/base/firmware_class.o<br>
+  CC      block/blk-cgroup.o<br>
+  CC      block/noop-iosched.o<br>
+  CC      block/deadline-iosched.o<br>
+  CC      sound/soc/soc-pcm.o<br>
+  CC      fs/cifs/cifssmb.o<br>
+  CC      fs/cifs/cifs_debug.o<br>
+  LD      drivers/coresight/built-in.o<br>
+  CC      drivers/clk/msm/gdsc.o<br>
+  CC      fs/cifs/connect.o<br>
+  LD      kernel/irq/built-in.o<br>
+  CC      mm/pgtable-generic.o<br>
+  CC      drivers/cpuidle/governors/ladder.o<br>
+  CC      crypto/arc4.o<br>
+  CC      drivers/cpufreq/cpufreq_stats.o<br>
+  CC      kernel/locking/mutex.o<br>
+  CC      crypto/deflate.o<br>
+  CC      net/core/request_sock.o<br>
+  CC      kernel/power/qos.o<br>
+  CC      net/bridge/br_sysfs_br.o<br>
+  CC      mm/process_vm_access.o<br>
+  CC      drivers/cpuidle/governors/menu.o<br>
+  CC      mm/showmem.o<br>
+  CC      crypto/crc32c_generic.o<br>
+  CC      block/cfq-iosched.o<br>
+  CC      drivers/base/module.o<br>
+  CC      block/zen-iosched.o<br>
+  CC      drivers/clk/msm/mdss/mdss-pll-util.o<br>
+  CC      kernel/locking/semaphore.o<br>
+  LD      drivers/cpuidle/governors/built-in.o<br>
+  CC      drivers/cpuidle/lpm-levels.o<br>
+  CC      kernel/locking/rwsem.o<br>
+  CC      drivers/base/soc.o<br>
+  CC      mm/vmpressure.o<br>
+  CC      crypto/crc32.o<br>
+  CC      net/core/skbuff.o<br>
+  CC      drivers/cpufreq/cpufreq_performance.o<br>
+  CC      drivers/cpufreq/cpufreq_powersave.o<br>
+  CC      drivers/clk/msm/mdss/mdss-pll.o<br>
+  CC      kernel/power/main.o<br>
+  CC      net/bridge/br_nf_core.o<br>
+  CC      sound/soc/soc-compress.o<br>
+  CC      kernel/locking/mcs_spinlock.o<br>
+  CC      net/ethernet/eth.o<br>
+  CC      drivers/base/pinctrl.o<br>
+  CC      crypto/authenc.o<br>
+  CC      mm/init-mm.o<br>
+  CC      mm/nobootmem.o<br>
+  CC      drivers/cpufreq/cpufreq_userspace.o<br>
+  CC      kernel/locking/spinlock.o<br>
+  CC      kernel/locking/lglock.o<br>
+  CC      drivers/base/devcoredump.o<br>
+  CC      drivers/clk/msm/mdss/mdss-dsi-pll-util.o<br>
+  CC      kernel/locking/rtmutex.o<br>
+  CC      drivers/cpufreq/cpufreq_ondemand.o<br>
+  CC      fs/cifs/dir.o<br>
+  CC      net/bridge/br_multicast.o<br>
+  CC      kernel/power/console.o<br>
+  CC      sound/soc/soc-io.o<br>
+  CC      block/fiops-iosched.o<br>
+  CC      block/sio-iosched.o<br>
+  CC      mm/fadvise.o<br>
+  CC      mm/madvise.o<br>
+  LD      drivers/base/built-in.o<br>
+  CC      mm/memblock.o<br>
+  CC      drivers/clk/msm/mdss/mdss-dsi-pll-28lpm.o<br>
+  CC      kernel/locking/rwsem-xadd.o<br>
+  LD      net/ethernet/built-in.o<br>
+  CC      drivers/cpuidle/lpm-levels-of.o<br>
+  CC      drivers/cpuidle/lpm-workarounds.o<br>
+  CC      crypto/authencesn.o<br>
+  CC      kernel/power/process.o<br>
+  CC      crypto/lzo.o<br>
+  CC      drivers/cpufreq/cpufreq_zzmoove.o<br>
+  CC      block/maple-iosched.o<br>
+  CC      sound/soc/soc-devres.o<br>
+  CC      drivers/clk/msm/mdss/mdss-dsi-pll-8996.o<br>
+  CC      crypto/rng.o<br>
+  CC      fs/cifs/file.o<br>
+  LD      kernel/locking/built-in.o<br>
+  CC      net/bridge/br_mdb.o<br>
+  CC      lib/lockref.o<br>
+  CC      mm/page_io.o<br>
+  CC      drivers/cpufreq/cpufreq_interactive.o<br>
+  CC      kernel/printk/printk.o<br>
+  CC      lib/bcd.o<br>
+  CC      drivers/clk/msm/mdss/mdss-dsi-pll-8996-util.o<br>
+  CC      lib/div64.o<br>
+  CC      block/iosched_switcher.o<br>
+  LD      drivers/cpuidle/built-in.o<br>
+  CC      kernel/power/suspend.o<br>
+  CC      lib/sort.o<br>
+  CC      net/ipc_router/ipc_router_core.o<br>
+  CC      sound/usb/card.o<br>
+  CC      crypto/krng.o<br>
+  CC      mm/swap_state.o<br>
+  CC      sound/soc/codecs/msm_hdmi_dba_codec_rx.o<br>
+  CC      sound/soc/codecs/wcd9330.o<br>
+  CC      block/bfq-iosched.o<br>
+  CC      net/bridge/br_netfilter.o<br>
+  CC      lib/parser.o<br>
+  CC      net/core/iovec.o<br>
+  CC      drivers/clk/msm/mdss/mdss-hdmi-pll-8996.o<br>
+  CC      crypto/ansi_cprng.o<br>
+  CC      lib/halfmd4.o<br>
+  CC      mm/swapfile.o<br>
+  CC      sound/usb/clock.o<br>
+  CC      kernel/power/powersuspend.o<br>
+  CC      lib/debug_locks.o<br>
+  CC      drivers/cpufreq/cpufreq_blu_active.o<br>
+  CC      lib/random32.o<br>
+  LD      kernel/printk/built-in.o<br>
+  CC      drivers/cpufreq/cpufreq_governor.o<br>
+  CC      net/core/datagram.o<br>
+  LD      drivers/clk/msm/mdss/built-in.o<br>
+  CC      kernel/rcu/update.o<br>
+  CC      crypto/asymmetric_keys/asymmetric_type.o<br>
+  LD      drivers/clk/msm/built-in.o<br>
+  LD      drivers/clk/built-in.o<br>
+  CC      crypto/asymmetric_keys/signature.o<br>
+  CC      fs/cifs/inode.o<br>
+  CC      fs/cifs/link.o<br>
+  CC      sound/usb/endpoint.o<br>
+  CC      kernel/power/autosleep.o<br>
+  CC      lib/bust_spinlocks.o<br>
+  CC      net/bridge/netfilter/ebtables.o<br>
+  CC      lib/hexdump.o<br>
+  CC      sound/last.o<br>
+  CC      kernel/power/wakelock.o<br>
+  CC      crypto/asymmetric_keys/public_key.o<br>
+  CC      net/bridge/netfilter/ebtable_broute.o<br>
+  CC      drivers/cpufreq/cpufreq_nightmare.o<br>
+  CC      net/ipc_router/ipc_router_socket.o<br>
+  CC      kernel/rcu/srcu.o<br>
+  CC      lib/kasprintf.o<br>
+  CC      block/compat_ioctl.o<br>
+  CC      sound/usb/format.o<br>
+  CC      lib/bitmap.o<br>
+  CC      sound/usb/helper.o<br>
+  CC      kernel/power/suspend_time.o<br>
+  CC      mm/swap_ratio.o<br>
+  CC      crypto/asymmetric_keys/rsa.o<br>
+  CC      lib/scatterlist.o<br>
+  CC      kernel/rcu/tree.o<br>
+  CC      lib/gcd.o<br>
+  CC      net/core/stream.o<br>
+  CC      sound/soc/codecs/wcd9330-tables.o<br>
+  CC      lib/lcm.o<br>
+../../../../../../kernel/xiaomi/msm8953/drivers/cpufreq/cpufreq_nightmare.c:643:2: warning: initialization from incompatible pointer type<br>
+  .init = nm_init,<br>
+  ^<br>
+../../../../../../kernel/xiaomi/msm8953/drivers/cpufreq/cpufreq_nightmare.c:643:2: warning: (near initialization for 'nm_dbs_cdata.init')<br>
+cc1: warning: unrecognized command line option "-Wno-misleading-indentation"<br>
+  CC      fs/cifs/misc.o<br>
+  CC      fs/cifs/netmisc.o<br>
+  CC      drivers/cpufreq/cpufreq_darkness.o<br>
+  CC      kernel/power/poweroff.o<br>
+  CC      sound/usb/mixer.o<br>
+  CC      fs/cifs/smbencrypt.o<br>
+  CC      mm/zcache.o<br>
+  CC      fs/configfs/inode.o<br>
+  CC      kernel/power/wakeup_reason.o<br>
+  LD      block/built-in.o<br>
+  ASN.1   crypto/asymmetric_keys/x509-asn1.c<br>
+Extracted 203 tokens<br>
+Extracted 14 types<br>
+Extracted 12 actions<br>
+Pass 1<br>
+Pass 2<br>
+  CC      sound/soc/codecs/wcd9335.o<br>
+  ASN.1   crypto/asymmetric_keys/x509_rsakey-asn1.c<br>
+Extracted 16 tokens<br>
+Extracted 1 types<br>
+Extracted 1 actions<br>
+Pass 1<br>
+Pass 2<br>
+  CC      crypto/asymmetric_keys/x509_public_key.o<br>
+../../../../../../kernel/xiaomi/msm8953/drivers/cpufreq/cpufreq_darkness.c:304:2: warning: initialization from incompatible pointer type<br>
+  .init = dk_init,<br>
+  ^<br>
+../../../../../../kernel/xiaomi/msm8953/drivers/cpufreq/cpufreq_darkness.c:304:2: warning: (near initialization for 'dk_dbs_cdata.init')<br>
+cc1: warning: unrecognized command line option "-Wno-misleading-indentation"<br>
+  CC      net/ipc_router/ipc_router_security.o<br>
+  CC      drivers/cpufreq/cpufreq_alucard.o<br>
+  CC      lib/list_sort.o<br>
+  CC      fs/configfs/file.o<br>
+  CC      drivers/firmware/efi/libstub/arm-stub.o<br>
+  CC      drivers/cpufreq/cpufreq_relaxed.o<br>
+  LD      kernel/power/built-in.o<br>
+  CC      drivers/firmware/efi/libstub/efi-stub-helper.o<br>
+  CC      fs/cifs/transport.o<br>
+  LD      net/bridge/netfilter/built-in.o<br>
+  LD      net/bridge/bridge.o<br>
+  LD      net/bridge/built-in.o<br>
+  CC      net/core/scm.o<br>
+  DTC     arch/arm64/boot/dts/qcom/msm8953-qrd-sku3.dtb<br>
+  CC      fs/cifs/asn1.o<br>
+  CC      mm/dmapool.o<br>
+  LD      crypto/asymmetric_keys/asymmetric_keys.o<br>
+  CC      crypto/asymmetric_keys/x509-asn1.o<br>
+  CC      lib/uuid.o<br>
+  CC      fs/configfs/dir.o<br>
+  CC      sound/usb/mixer_quirks.o<br>
+  CC      crypto/asymmetric_keys/x509_rsakey-asn1.o<br>
+  CC      lib/flex_array.o<br>
+  CC      crypto/asymmetric_keys/x509_cert_parser.o<br>
+  CC      drivers/cpufreq/cpufreq_chill.o<br>
+  CC      drivers/firmware/efi/libstub/fdt.o<br>
+  DTC     arch/arm64/boot/dts/qcom/msm8952-qrd-skum.dtb<br>
+  LD      net/ipc_router/built-in.o<br>
+../../../../../../kernel/xiaomi/msm8953/drivers/cpufreq/cpufreq_alucard.c:710:2: warning: initialization from incompatible pointer type<br>
+  .init = ac_init,<br>
+  ^<br>
+../../../../../../kernel/xiaomi/msm8953/drivers/cpufreq/cpufreq_alucard.c:710:2: warning: (near initialization for 'ac_dbs_cdata.init')<br>
+cc1: warning: unrecognized command line option "-Wno-misleading-indentation"<br>
+  CC      drivers/cpufreq/cpufreq_electron.o<br>
+  CC      drivers/crypto/msm/qcedev.o<br>
+  CC      mm/sparse.o<br>
+  CC      lib/iovec.o<br>
+  DTC     arch/arm64/boot/dts/qcom/msm8952-cdp.dtb<br>
+  LD      crypto/asymmetric_keys/x509_key_parser.o<br>
+  CC      lib/clz_ctz.o<br>
+  LD      crypto/asymmetric_keys/built-in.o<br>
+  CC      crypto/hash_info.o<br>
+  CC      fs/cifs/cifs_unicode.o<br>
+  CC      fs/cifs/nterr.o<br>
+  CC      crypto/ablk_helper.o<br>
+  CC      lib/bsearch.o<br>
+  AR      drivers/firmware/efi/libstub/lib.a<br>
+  CC      lib/find_last_bit.o<br>
+  CC      net/ipv4/route.o<br>
+  CC      net/core/gen_stats.o<br>
+  LD      kernel/rcu/built-in.o<br>
+  DTC     arch/arm64/boot/dts/qcom/msm8952-ext-codec-cdp.dtb<br>
+  CC      net/core/gen_estimator.o<br>
+  CC      fs/crypto/crypto.o<br>
+  CC      sound/usb/pcm.o<br>
+  CC      lib/find_next_bit.o<br>
+  CC      fs/configfs/symlink.o<br>
+  CC      kernel/sched/core.o<br>
+  CC      lib/llist.o<br>
+  CC      kernel/sched/fair.o<br>
+  CC      mm/sparse-vmemmap.o<br>
+  DTC     arch/arm64/boot/dts/qcom/msm8952-mtp.dtb<br>
+  CC      lib/memweight.o<br>
+  LD      crypto/crypto.o<br>
+  LD      crypto/crypto_algapi.o<br>
+  LD      crypto/crypto_blkcipher.o<br>
+  LD      crypto/crypto_hash.o<br>
+  LD      crypto/cryptomgr.o<br>
+  LD      crypto/built-in.o<br>
+  CC      fs/configfs/mount.o<br>
+  CC      net/ipv4/inetpeer.o<br>
+  CC      lib/kfifo.o<br>
+  CC      fs/cifs/xattr.o<br>
+  CC      mm/ksm.o<br>
+  CC      fs/crypto/fname.o<br>
+  CC      lib/percpu-refcount.o<br>
+  CC      drivers/crypto/msm/qce50.o<br>
+  CC      sound/usb/proc.o<br>
+  CC      fs/configfs/item.o<br>
+  CC      net/core/net_namespace.o<br>
+../../../../../../kernel/xiaomi/msm8953/drivers/cpufreq/cpufreq_electron.c: In function 'cpufreq_electron_timer':<br>
+../../../../../../kernel/xiaomi/msm8953/drivers/cpufreq/cpufreq_electron.c:469:23: warning: passing argument 1 of 'sched_get_cpus_busy' from incompatible pointer type<br>
+   sched_get_cpus_busy(ppol-cpu_busy_times,<br>
+                       ^<br>
+In file included from ../../../../../../kernel/xiaomi/msm8953/arch/arm64/include/asm/compat.h:25:0,<br>
+                 from ../../../../../../kernel/xiaomi/msm8953/arch/arm64/include/asm/stat.h:23,<br>
+                 from ../../../../../../kernel/xiaomi/msm8953/include/linux/stat.h:5,<br>
+                 from ../../../../../../kernel/xiaomi/msm8953/include/linux/sysfs.h:21,<br>
+                 from ../../../../../../kernel/xiaomi/msm8953/include/linux/kobject.h:21,<br>
+                 from ../../../../../../kernel/xiaomi/msm8953/include/linux/device.h:17,<br>
+                 from ../../../../../../kernel/xiaomi/msm8953/include/linux/node.h:17,<br>
+                 from ../../../../../../kernel/xiaomi/msm8953/include/linux/cpu.h:16,<br>
+                 from ../../../../../../kernel/xiaomi/msm8953/drivers/cpufreq/cpufreq_electron.c:19:<br>
+../../../../../../kernel/xiaomi/msm8953/include/linux/sched.h:2084:13: note: expected 'struct sched_load *' but argument is of type 'long unsigned int *'<br>
+ extern void sched_get_cpus_busy(struct sched_load *busy,<br>
+             ^<br>
+../../../../../../kernel/xiaomi/msm8953/drivers/cpufreq/cpufreq_electron.c: At top level:<br>
+cc1: warning: unrecognized command line option "-Wno-misleading-indentation"<br>
+  CC      net/ipv6/af_inet6.o<br>
+  CC      drivers/cpufreq/fp-boost.o<br>
+  CC      net/ipv6/anycast.o<br>
+  CC      fs/cifs/cifsencrypt.o<br>
+  CC      lib/percpu_ida.o<br>
+  CC      fs/crypto/policy.o<br>
+  CC      sound/usb/quirks.o<br>
+  LD      fs/configfs/configfs.o<br>
+  LD      fs/configfs/built-in.o<br>
+  CC      drivers/cpufreq/qcom-cpufreq.o<br>
+  CC      lib/hash.o<br>
+  LD      sound/soundcore.o<br>
+  CC      sound/usb/stream.o<br>
+  CC      mm/slub.o<br>
+  CC      fs/debugfs/inode.o<br>
+  CC      lib/rhashtable.o<br>
+  CC      sound/soc/codecs/wcdcal-hwdep.o<br>
+  CC      net/ipv4/protocol.o<br>
+  CC      fs/crypto/keyinfo.o<br>
+  CC      net/core/secure_seq.o<br>
+  CC      fs/debugfs/file.o<br>
+  CC      sound/usb/midi.o<br>
+  CC      fs/cifs/readdir.o<br>
+  LD      drivers/cpufreq/built-in.o<br>
+  CC      net/ipv6/ip6_output.o<br>
+  CC      fs/cifs/ioctl.o<br>
+  CC      lib/reciprocal_div.o<br>
+  CC      net/core/flow_dissector.o<br>
+  CC      fs/crypto/bio.o<br>
+  CC      lib/string_helpers.o<br>
+  CC      sound/soc/codecs/audio-ext-clk.o<br>
+  CC      sound/soc/codecs/wcd9xxx-resmgr.o<br>
+  CC      drivers/devfreq/devfreq.o<br>
+  CC      lib/kstrtox.o<br>
+  CC      net/ipv4/ip_input.o<br>
+  LD      fs/debugfs/debugfs.o<br>
+  LD      fs/debugfs/built-in.o<br>
+  CC      fs/devpts/inode.o<br>
+  CC      lib/iomap.o<br>
+  CC      fs/cifs/sess.o<br>
+  CC      drivers/devfreq/devfreq_trace.o<br>
+  CC      fs/cifs/export.o<br>
+  LD      fs/crypto/fscrypto.o<br>
+  LD      fs/crypto/built-in.o<br>
+  CC      drivers/crypto/msm/compat_qcedev.o<br>
+  CC      sound/soc/codecs/wcd9xxx-mbhc.o<br>
+  CC      fs/ecryptfs/dentry.o<br>
+  CC      drivers/devfreq/governor_simpleondemand.o<br>
+  CC      fs/exfat/exfat_core.o<br>
+  CC      net/core/sysctl_net_core.o<br>
+  LD      sound/usb/snd-usb-audio.o<br>
+  LD      fs/devpts/devpts.o<br>
+  LD      fs/devpts/built-in.o<br>
+  LD      sound/usb/snd-usbmidi-lib.o<br>
+  CC      fs/exfat/exfat_super.o<br>
+  LD      sound/usb/built-in.o<br>
+  CC      net/core/dev.o<br>
+  CC      mm/migrate.o<br>
+  CC      lib/pci_iomap.o<br>
+  CC      fs/cifs/smb1ops.o<br>
+  CC      drivers/devfreq/governor_performance.o<br>
+  CC      fs/ecryptfs/file.o<br>
+  CC      lib/iomap_copy.o<br>
+  CC      net/ipv4/ip_fragment.o<br>
+  CC      fs/cifs/winucase.o<br>
+  CC      drivers/devfreq/governor_powersave.o<br>
+  CC      drivers/devfreq/governor_userspace.o<br>
+  CC      lib/devres.o<br>
+  CC      lib/hweight.o<br>
+  CC      drivers/devfreq/governor_cpufreq.o<br>
+  CC      drivers/crypto/msm/qcrypto.o<br>
+  CC      net/core/ethtool.o<br>
+  CC      fs/ecryptfs/inode.o<br>
+  CC      drivers/devfreq/governor_msm_adreno_tz.o<br>
+  CC      drivers/devfreq/bimc-bwmon.o<br>
+  CC      net/ipv6/ip6_input.o<br>
+  CC      net/core/dev_addr_lists.o<br>
+  LD      fs/cifs/cifs.o<br>
+  LD      fs/cifs/built-in.o<br>
+  CC      lib/assoc_array.o<br>
+  CC      mm/memcontrol.o<br>
+  CC      kernel/sched/rt.o<br>
+  CC      mm/page_cgroup.o<br>
+  CC      lib/smp_processor_id.o<br>
+  CC      drivers/devfreq/arm-memlat-mon.o<br>
+  CC      fs/ecryptfs/main.o<br>
+  CC      net/ipv4/ip_forward.o<br>
+  CC      lib/bitrev.o<br>
+  CC      lib/crc-ccitt.o<br>
+  CC      lib/crc16.o<br>
+  CC      sound/soc/codecs/wcd9xxx-common.o<br>
+  CC      net/ipv6/addrconf.o<br>
+  CC      fs/exfat/exfat_api.o<br>
+  CC      drivers/devfreq/msmcci-hwmon.o<br>
+  CC      fs/exfat/exfat_blkdev.o<br>
+  CC      fs/exfat/exfat_cache.o<br>
+  CC      fs/ecryptfs/super.o<br>
+  HOSTCC  lib/gen_crc32table<br>
+  CC      lib/libcrc32c.o<br>
+  CC      net/ipv4/ip_options.o<br>
+  CC      kernel/sched/proc.o<br>
+  CC      kernel/sched/clock.o<br>
+  CC      net/ipv4/ip_output.o<br>
+  CC      drivers/devfreq/m4m-hwmon.o<br>
+  CC      fs/ecryptfs/mmap.o<br>
+  CC      fs/ecryptfs/read_write.o<br>
+  CC      fs/exportfs/expfs.o<br>
+  CC      fs/exfat/exfat_data.o<br>
+  CC      lib/genalloc.o<br>
+  CC      lib/lz4/lz4_compress.o<br>
+  CC      fs/ext2/balloc.o<br>
+  CC      sound/soc/codecs/wcd9xxx-common-v2.o<br>
+  CC      kernel/sched/cputime.o<br>
+  CC      drivers/devfreq/governor_bw_hwmon.o<br>
+  CC      kernel/sched/idle_task.o<br>
+  CC      fs/exfat/exfat_bitmap.o<br>
+  CC      fs/ecryptfs/events.o<br>
+  CC      fs/exfat/exfat_nls.o<br>
+  CC      drivers/crypto/msm/ota_crypto.o<br>
+  LD      fs/exportfs/exportfs.o<br>
+  LD      fs/exportfs/built-in.o<br>
+  CC      lib/lz4/lz4_decompress.o<br>
+  CC      sound/soc/codecs/wcd9xxx-resmgr-v2.o<br>
+  CC      net/core/dst.o<br>
+  CC      fs/ext3/balloc.o<br>
+  CC      fs/ext3/bitmap.o<br>
+  CC      fs/ext2/dir.o<br>
+  CC      fs/ecryptfs/crypto.o<br>
+  CC      fs/ext2/file.o<br>
+  CC      fs/exfat/exfat_oal.o<br>
+  CC      kernel/sched/deadline.o<br>
+  LD      lib/lz4/built-in.o<br>
+  CC      drivers/devfreq/governor_cache_hwmon.o<br>
+  CC      fs/exfat/exfat_upcase.o<br>
+  CC      net/core/netevent.o<br>
+  CC      lib/lzo/lzo1x_compress.o<br>
+  CC      drivers/crypto/msm/ice.o<br>
+  CC      sound/soc/codecs/msm8x16-wcd.o<br>
+  CC      net/core/neighbour.o<br>
+  CC      mm/cleancache.o<br>
+  CC      fs/ext2/ialloc.o<br>
+  CC      drivers/dma/dmaengine.o<br>
+  CC      net/ipv4/ip_sockglue.o<br>
+  LD      fs/exfat/exfat.o<br>
+  LD      fs/exfat/built-in.o<br>
+  CC      drivers/dma/of-dma.o<br>
+  CC      net/core/rtnetlink.o<br>
+  CC      lib/lzo/lzo1x_decompress_safe.o<br>
+  CC      drivers/devfreq/governor_gpubw_mon.o<br>
+  CC      fs/ext3/dir.o<br>
+  CC      kernel/sched/stop_task.o<br>
+  CC      net/ipv6/addrlabel.o<br>
+  CC      kernel/sched/wait.o<br>
+  CC      fs/ext2/inode.o<br>
+  CC      fs/ecryptfs/keystore.o<br>
+  CC      mm/page_isolation.o<br>
+  CC      drivers/dma/qcom-sps-dma.o<br>
+  LD      lib/lzo/lzo_compress.o<br>
+  LD      lib/lzo/lzo_decompress.o<br>
+  LD      drivers/crypto/msm/built-in.o<br>
+  LD      lib/lzo/built-in.o<br>
+  CC      drivers/devfreq/governor_bw_vbif.o<br>
+  LD      drivers/crypto/built-in.o<br>
+  CC      drivers/dma-buf/dma-buf.o<br>
+  CC      drivers/dma-buf/fence.o<br>
+  CC      mm/zbud.o<br>
+  CC      lib/mpi/generic_mpih-lshift.o<br>
+  CC      drivers/edac/edac_stub.o<br>
+  CC      fs/ext3/file.o<br>
+  CC      kernel/sched/completion.o<br>
+  CC      drivers/devfreq/governor_spdm_bw_hyp.o<br>
+  LD      drivers/dma/built-in.o<br>
+  CC      drivers/edac/edac_mc.o<br>
+  CC      fs/ext2/ioctl.o<br>
+  CC      net/ipv6/route.o<br>
+  CC      lib/mpi/generic_mpih-mul1.o<br>
+  CC      mm/zsmalloc.o<br>
+  CC      fs/ecryptfs/kthread.o<br>
+  CC      fs/ext3/fsync.o<br>
+  CC      kernel/sched/idle.o<br>
+  CC      drivers/edac/edac_device.o<br>
+  CC      net/ipv4/inet_hashtables.o<br>
+  CC      lib/mpi/generic_mpih-mul2.o<br>
+  CC      fs/ext2/namei.o<br>
+  CC      drivers/devfreq/governor_memlat.o<br>
+  CC      lib/mpi/generic_mpih-mul3.o<br>
+  CC      drivers/dma-buf/reservation.o<br>
+  CC      fs/ecryptfs/debug.o<br>
+  CC      sound/soc/codecs/msm8x16-wcd-tables.o<br>
+  CC      drivers/dma-buf/seqno-fence.o<br>
+  CC      fs/ext3/ialloc.o<br>
+  CC      lib/mpi/generic_mpih-rshift.o<br>
+  CC      kernel/sched/sched_avg.o<br>
+  CC      lib/mpi/generic_mpih-sub1.o<br>
+  CC      fs/ext2/super.o<br>
+  CC      net/core/utils.o<br>
+  CC      lib/reed_solomon/reed_solomon.o<br>
+  LD      fs/ecryptfs/ecryptfs.o<br>
+  LD      fs/ecryptfs/built-in.o<br>
+  CC      drivers/edac/edac_mc_sysfs.o<br>
+  CC      drivers/devfreq/adreno_idler.o<br>
+  CC      mm/early_ioremap.o<br>
+  CC      sound/soc/codecs/msm8916-wcd-irq.o<br>
+  CC      sound/soc/codecs/wcd_cpe_services.o<br>
+  CC      sound/soc/codecs/wcd_cpe_core.o<br>
+  CC      lib/mpi/generic_mpih-add1.o<br>
+  LD      drivers/dma-buf/built-in.o<br>
+  HZFILE  kernel/time/hz.bc<br>
+  CC      drivers/firmware/dmi_scan.o<br>
+  CC      kernel/time/timer.o<br>
+  CC      fs/ext3/inode.o<br>
+  CC      lib/mpi/mpicoder.o<br>
+  CC      mm/cma.o<br>
+  CC      drivers/devfreq/devfreq_devbw.o<br>
+  CC      net/ipv4/inet_timewait_sock.o<br>
+  CC      kernel/sched/cpupri.o<br>
+  LD      lib/reed_solomon/built-in.o<br>
+  CC      fs/ext3/ioctl.o<br>
+  CC      drivers/edac/edac_pci_sysfs.o<br>
+  CC      fs/ext2/symlink.o<br>
+  CC      fs/ext2/xattr.o<br>
+  CC      net/core/link_watch.o<br>
+  CC      lib/mpi/mpi-bit.o<br>
+  CC      kernel/sched/cpudeadline.o<br>
+  CC      net/ipv6/ip6_fib.o<br>
+  CC      drivers/devfreq/devfreq_simple_dev.o<br>
+  CC      drivers/firmware/dmi-id.o<br>
+  CC      net/ipv6/ipv6_sockglue.o<br>
+  CC      mm/process_reclaim.o<br>
+  CC      drivers/gpio/devres.o<br>
+  CC      net/core/filter.o<br>
+  CC      kernel/sched/stats.o<br>
+  CC      drivers/edac/edac_module.o<br>
+  CC      lib/mpi/mpi-cmp.o<br>
+  CC      net/ipv4/inet_connection_sock.o<br>
+  CC      fs/ext2/xattr_user.o<br>
+  CC      drivers/firmware/efi/efi.o<br>
+  CC      drivers/devfreq/devfreq_spdm.o<br>
+  CC      drivers/gpio/gpiolib.o<br>
+  CC      mm/cma_debug.o<br>
+  CC      kernel/sched/debug.o<br>
+  CC      sound/soc/codecs/wcd-mbhc-v2.o<br>
+  CC      kernel/time/hrtimer.o<br>
+  CC      drivers/firmware/efi/vars.o<br>
+  CC      drivers/edac/edac_device_sysfs.o<br>
+  CC      fs/ext2/xattr_trusted.o<br>
+  CC      lib/mpi/mpih-cmp.o<br>
+  CC      fs/ext3/namei.o<br>
+  CC      drivers/devfreq/devfreq_spdm_debugfs.o<br>
+  LD      mm/built-in.o<br>
+  CC      lib/mpi/mpih-div.o<br>
+  CC      fs/ext3/super.o<br>
+  LD      fs/ext2/ext2.o<br>
+  CC      fs/ext3/symlink.o<br>
+  LD      fs/ext2/built-in.o<br>
+  CC      net/ipv6/ndisc.o<br>
+  CC      drivers/edac/edac_pci.o<br>
+  CC      net/core/sock_diag.o<br>
+  CC      drivers/firmware/qcom/tz_log.o<br>
+  CC      drivers/firmware/efi/reboot.o<br>
+  CC      lib/mpi/mpih-mul.o<br>
+  CC      kernel/sched/cpuacct.o<br>
+  CC      fs/ext3/hash.o<br>
+  CC      net/ipv4/tcp.o<br>
+  LD      drivers/devfreq/built-in.o<br>
+  CC      drivers/gpu/msm/kgsl.o<br>
+  CC      fs/ext3/resize.o<br>
+  CC      kernel/time/itimer.o<br>
+  CC      drivers/gpio/gpiolib-legacy.o<br>
+  CC      drivers/firmware/efi/runtime-wrappers.o<br>
+  CC      lib/mpi/mpi-pow.o<br>
+  CC      drivers/edac/cortex_arm64_edac.o<br>
+  LD      kernel/sched/built-in.o<br>
+  LD      drivers/firmware/qcom/built-in.o<br>
+  CC      kernel/time/posix-timers.o<br>
+  CC      fs/ext3/ext3_jbd.o<br>
+  CC      net/core/dev_ioctl.o<br>
+  CC      sound/soc/codecs/wsa881x.o<br>
+  CC      lib/xz/xz_dec_syms.o<br>
+  CC      net/core/tso.o<br>
+  CC      drivers/gpio/gpiolib-of.o<br>
+  LD      drivers/firmware/efi/built-in.o<br>
+  LD      drivers/firmware/built-in.o<br>
+  CC      kernel/time/posix-cpu-timers.o<br>
+  CC      drivers/hid/hid-debug.o<br>
+  CC      lib/xz/xz_dec_stream.o<br>
+  CC      lib/mpi/mpiutil.o<br>
+  CC      kernel/trace/trace_clock.o<br>
+  CC      kernel/kcmp.o<br>
+  LD      drivers/edac/edac_core.o<br>
+  LD      drivers/edac/built-in.o<br>
+  CC      kernel/trace/ftrace.o<br>
+  CC      net/ipv6/udp.o<br>
+  CC      drivers/gpio/gpiolib-sysfs.o<br>
+  CC      lib/xz/xz_dec_lzma2.o<br>
+  CC      kernel/trace/ring_buffer.o<br>
+  CC      kernel/time/timekeeping.o<br>
+  LD      lib/mpi/mpi.o<br>
+  LD      lib/mpi/built-in.o<br>
+  CC      kernel/time/ntp.o<br>
+  CC      sound/soc/codecs/wsa881x-tables.o<br>
+  CC      kernel/time/clocksource.o<br>
+  CC      net/ipv4/tcp_input.o<br>
+  CC      kernel/time/jiffies.o<br>
+  CC      drivers/hid/hid-core.o<br>
+  CC      net/core/flow.o<br>
+  CC      sound/soc/codecs/wsa881x-regmap.o<br>
+  CC      lib/xz/xz_dec_bcj.o<br>
+  CC      sound/soc/codecs/wsa881x-analog.o<br>
+  CC      drivers/gpio/qpnp-pin.o<br>
+  CC      fs/ext3/xattr.o<br>
+  CC      fs/ext3/xattr_user.o<br>
+  CC      fs/ext3/xattr_trusted.o<br>
+  LD      lib/xz/xz_dec.o<br>
+  LD      lib/xz/built-in.o<br>
+  CC      kernel/time/timer_list.o<br>
+  CC      drivers/hwmon/hwmon.o<br>
+  CC      lib/zlib_deflate/deflate.o<br>
+  CC      drivers/gpu/msm/kgsl_trace.o<br>
+  CC      net/core/net-sysfs.o<br>
+  CC      fs/ext4/balloc.o<br>
+  CC      lib/zlib_deflate/deftree.o<br>
+  CC      lib/zlib_deflate/deflate_syms.o<br>
+  CC      drivers/hid/hid-input.o<br>
+  CC      kernel/time/timeconv.o<br>
+  LD      fs/ext3/ext3.o<br>
+  LD      fs/ext3/built-in.o<br>
+  CC      drivers/hwmon/epm_adc.o<br>
+  CC      drivers/gpio/gpio-msm-smp2p.o<br>
+  CC      kernel/time/posix-clock.o<br>
+  CC      kernel/time/alarmtimer.o<br>
+  CC      kernel/time/clockevents.o<br>
+  CC      sound/soc/codecs/wsa881x-tables-analog.o<br>
+  CC      kernel/trace/trace.o<br>
+  CC      net/ipv6/udplite.o<br>
+  CC      kernel/trace/trace_output.o<br>
+  LD      lib/zlib_deflate/zlib_deflate.o<br>
+  LD      lib/zlib_deflate/built-in.o<br>
+  CC      lib/zlib_inflate/inffast.o<br>
+  CC      lib/textsearch.o<br>
+  CC      sound/soc/codecs/wsa881x-regmap-analog.o<br>
+  CC      lib/zlib_inflate/inflate.o<br>
+  CC      drivers/hwmon/qpnp-adc-voltage.o<br>
+  CC      fs/ext4/bitmap.o<br>
+  CC      drivers/gpio/gpio-msm-smp2p-test.o<br>
+  CC      lib/zlib_inflate/infutil.o<br>
+  CC      net/ipv4/tcp_output.o<br>
+  CC      kernel/time/tick-common.o<br>
+  CC      net/ipv4/tcp_timer.o<br>
+  CC      net/ipv6/raw.o<br>
+  CC      sound/soc/codecs/wsa881x-irq.o<br>
+  CC      lib/zlib_inflate/inftrees.o<br>
+  CC      net/core/net-procfs.o<br>
+  CC      fs/f2fs/dir.o<br>
+  CC      fs/ext4/dir.o<br>
+  LD      drivers/gpio/built-in.o<br>
+  CC      lib/zlib_inflate/inflate_syms.o<br>
+  CC      fs/f2fs/file.o<br>
+  CC      net/ipv4/tcp_ipv4.o<br>
+  CC      kernel/time/tick-broadcast.o<br>
+  CC      drivers/hid/hidraw.o<br>
+  CC      drivers/hid/uhid.o<br>
+  CC      sound/soc/codecs/wsa881x-temp-sensor.o<br>
+  LD      lib/zlib_inflate/zlib_inflate.o<br>
+  LD      lib/zlib_inflate/built-in.o<br>
+  CC      lib/ts_kmp.o<br>
+  CC      drivers/gpu/msm/kgsl_cmdbatch.o<br>
+  CC      net/core/fib_rules.o<br>
+  CC      fs/ext4/file.o<br>
+  CC      drivers/hwmon/qpnp-adc-common.o<br>
+  CC      kernel/time/tick-broadcast-hrtimer.o<br>
+  CC      fs/f2fs/inode.o<br>
+  CC      lib/ts_bm.o<br>
+  CC      drivers/hid/hid-generic.o<br>
+  CC      kernel/time/sched_clock.o<br>
+  CC      net/ipv6/icmp.o<br>
+  CC      drivers/hwspinlock/hwspinlock_core.o<br>
+  CC      sound/soc/codecs/msm_stub.o<br>
+  CC      kernel/time/tick-oneshot.o<br>
+  CC      fs/ext4/fsync.o<br>
+  CC      lib/ts_fsm.o<br>
+  CC      lib/percpu_counter.o<br>
+  CC      kernel/time/tick-sched.o<br>
+  CC      kernel/trace/trace_seq.o<br>
+  CC      drivers/hid/hid-apple.o<br>
+  LD      sound/soc/codecs/snd-soc-wcd9330.o<br>
+  LD      sound/soc/codecs/snd-soc-wcd9335.o<br>
+  CC      drivers/hwmon/qpnp-adc-current.o<br>
+  CC      kernel/time/timekeeping_debug.o<br>
+  LD      sound/soc/codecs/audio-ext-clock.o<br>
+  LD      sound/soc/codecs/snd-soc-wcd9xxx.o<br>
+  LD      sound/soc/codecs/snd-soc-wcd9xxx-v2.o<br>
+  LD      sound/soc/codecs/snd-soc-msm8952-wcd.o<br>
+  LD      sound/soc/codecs/snd-soc-wcd-cpe.o<br>
+  CC      drivers/hwspinlock/msm_remote_spinlock.o<br>
+  LD      sound/soc/codecs/snd-soc-wcd-mbhc.o<br>
+  LD      sound/soc/codecs/snd-soc-wsa881x.o<br>
+  LD      sound/soc/codecs/snd-soc-wsa881x-analog.o<br>
+  CC      drivers/gpu/msm/kgsl_ioctl.o<br>
+  LD      sound/soc/codecs/snd-soc-wsa881x-sensor.o<br>
+  LD      sound/soc/codecs/snd-soc-msm-stub.o<br>
+  LD      sound/soc/codecs/built-in.o<br>
+  CC      drivers/gpu/msm/kgsl_sharedmem.o<br>
+  CC      net/core/net-traces.o<br>
+  CC      kernel/freezer.o<br>
+  CC      fs/f2fs/namei.o<br>
+  CC      lib/audit.o<br>
+  CC      fs/ext4/ialloc.o<br>
+  CC      drivers/hid/hid-elecom.o<br>
+  CC      kernel/profile.o<br>
+  CC      net/ipv4/tcp_minisocks.o<br>
+  CC      kernel/trace/trace_stat.o<br>
+  CC      sound/soc/msm/msm-pcm-hostless.o<br>
+  CC      drivers/gpu/msm/kgsl_pwrctrl.o<br>
+  CC      lib/compat_audit.o<br>
+  LD      drivers/hwspinlock/built-in.o<br>
+  BC      kernel/time/timeconst.h<br>
+  CC      drivers/hid/hid-magicmouse.o<br>
+  CC      drivers/hid/hid-microsoft.o<br>
+  CC      lib/swiotlb.o<br>
+  CC      kernel/time/time.o<br>
+  CC      net/ipv6/mcast.o<br>
+  CC      net/ipv6/reassembly.o<br>
+  CC      kernel/trace/trace_printk.o<br>
+  LD      drivers/hwmon/built-in.o<br>
+  CC      drivers/i2c/i2c-boardinfo.o<br>
+  CC      lib/iommu-helper.o<br>
+  CC      drivers/gpu/msm/kgsl_pwrscale.o<br>
+  CC      drivers/hid/hid-multitouch.o<br>
+  CC      fs/f2fs/hash.o<br>
+  CC      lib/syscall.o<br>
+  CC      drivers/hid/usbhid/hid-core.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-dai-slim.o<br>
+  CC      fs/ext4/inode.o<br>
+  LD      kernel/time/built-in.o<br>
+  CC      sound/soc/msm/qdsp6v2/audio_slimslave.o<br>
+  CC      drivers/i2c/i2c-core.o<br>
+  CC      net/ipv4/tcp_cong.o<br>
+  CC      lib/nlattr.o<br>
+  CC      kernel/trace/trace_sched_switch.o<br>
+  CC      net/core/netclassid_cgroup.o<br>
+  CC      fs/f2fs/super.o<br>
+  CC      fs/f2fs/inline.o<br>
+  LD      drivers/hid/hid.o<br>
+  CC      net/core/sockev_nlmcast.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-dai-q6-v2.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-pcm-q6-v2.o<br>
+  CC      net/ipv6/tcp_ipv6.o<br>
+  CC      drivers/gpu/msm/kgsl_mmu.o<br>
+  CC      kernel/trace/trace_functions.o<br>
+  CC      drivers/hid/usbhid/hid-quirks.o<br>
+  CC      drivers/gpu/msm/kgsl_snapshot.o<br>
+  CC      kernel/trace/trace_cpu_freq_switch.o<br>
+  CC      lib/checksum.o<br>
+  CC      net/ipv6/ping.o<br>
+  LD      net/core/built-in.o<br>
+  CC      net/ipv4/tcp_metrics.o<br>
+  CC      lib/cpu_rmap.o<br>
+  CC      net/ipv4/tcp_fastopen.o<br>
+  CC      fs/f2fs/checkpoint.o<br>
+  CC      drivers/hid/usbhid/hiddev.o<br>
+  CC      net/key/af_key.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-pcm-routing-v2.o<br>
+  CC      fs/fat/cache.o<br>
+  CC      kernel/trace/trace_nop.o<br>
+  CC      lib/dynamic_queue_limits.o<br>
+  CC      drivers/gpu/msm/kgsl_events.o<br>
+  CC      fs/fat/dir.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-compress-q6-v2.o<br>
+  CC      fs/ext4/page-io.o<br>
+  CC      drivers/i2c/i2c-dev.o<br>
+  CC      kernel/trace/trace_functions_graph.o<br>
+  CC      lib/strncpy_from_user.o<br>
+  CC      net/ipv6/exthdrs.o<br>
+  LD      drivers/hid/usbhid/usbhid.o<br>
+  LD      drivers/hid/usbhid/built-in.o<br>
+  LD      drivers/hid/built-in.o<br>
+  CC      net/ipv4/tcp_offload.o<br>
+  CC      net/ipv4/datagram.o<br>
+  CC      net/ipv4/raw.o<br>
+  CC      lib/strnlen_user.o<br>
+  CC      fs/fat/fatent.o<br>
+  CC      drivers/i2c/i2c-mux.o<br>
+  CC      fs/ext4/ioctl.o<br>
+  CC      fs/fat/file.o<br>
+  CC      drivers/gpu/msm/kgsl_pool.o<br>
+  CC      lib/net_utils.o<br>
+  CC      fs/f2fs/gc.o<br>
+  CC      kernel/trace/blktrace.o<br>
+  LD      net/key/built-in.o<br>
+  CC      fs/fat/inode.o<br>
+  CC      net/l2tp/l2tp_core.o<br>
+  CC      net/l2tp/l2tp_ppp.o<br>
+  CC      net/l2tp/l2tp_ip.o<br>
+  CC      drivers/i2c/busses/i2c-msm-v2.o<br>
+  CC      lib/asn1_decoder.o<br>
+  CC      drivers/gpu/msm/kgsl_iommu.o<br>
+  CC      drivers/gpu/msm/kgsl_debugfs.o<br>
+  CC      fs/ext4/namei.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-pcm-lpa-v2.o<br>
+  CC      fs/ext4/super.o<br>
+  CC      net/ipv6/datagram.o<br>
+  CC      net/ipv6/ip6_flowlabel.o<br>
+  GEN     lib/oid_registry_data.c<br>
+perl: warning: Setting locale failed.<br>
+perl: warning: Please check that your locale settings:<br>
+	LANGUAGE = (unset),<br>
+	LC_ALL = (unset),<br>
+	LC_CTYPE = "en_US.UTF-8",<br>
+	LC_COLLATE = "C",<br>
+	LC_MESSAGES = "en_US.UTF-8",<br>
+	LC_NUMERIC = "C",<br>
+	LANG = (unset)<br>
+    are supported and installed on your system.<br>
+perl: warning: Falling back to the standard locale ("C").<br>
+  CC      kernel/trace/trace_events.o<br>
+  CC      lib/ucs2_string.o<br>
+  CC      net/ipv4/udp.o<br>
+  CC      fs/f2fs/data.o<br>
+  CC      fs/f2fs/node.o<br>
+  CC      lib/qmi_encdec.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-pcm-afe-v2.o<br>
+  CC      fs/fat/misc.o<br>
+  LD      drivers/i2c/busses/built-in.o<br>
+  CC      net/l2tp/l2tp_netlink.o<br>
+  LD      drivers/i2c/built-in.o<br>
+  CC      fs/f2fs/segment.o<br>
+  CC      drivers/gpu/msm/kgsl_sync.o<br>
+  CC      net/ipv4/udplite.o<br>
+  CC      net/ipv6/inet6_connection_sock.o<br>
+  CC      drivers/input/input.o<br>
+  CC      lib/argv_split.o<br>
+  CC      lib/bug.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-pcm-voip-v2.o<br>
+  CC      kernel/trace/trace_export.o<br>
+  CC      lib/clz_tab.o<br>
+  CC      fs/fat/nfs.o<br>
+  CC      lib/cmdline.o<br>
+  CC      lib/cpumask.o<br>
+  CC      fs/ext4/symlink.o<br>
+  CC      fs/ext4/hash.o<br>
+  CC      drivers/gpu/msm/kgsl_compat.o<br>
+  CC      kernel/trace/trace_event_perf.o<br>
+  CC      fs/fat/namei_vfat.o<br>
+  CC      lib/ctype.o<br>
+  CC      lib/dec_and_lock.o<br>
+  CC      fs/ext4/resize.o<br>
+  CC      net/l2tp/l2tp_eth.o<br>
+  CC      net/l2tp/l2tp_debugfs.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-pcm-voice-v2.o<br>
+  CC      lib/decompress.o<br>
+  CC      net/ipv6/sysctl_net_ipv6.o<br>
+  CC      net/ipv6/xfrm6_policy.o<br>
+  CC      lib/decompress_bunzip2.o<br>
+  CC      drivers/gpu/msm/adreno_ioctl.o<br>
+  CC      drivers/input/input-compat.o<br>
+  CC      drivers/input/serio/serio.o<br>
+  CC      net/l2tp/l2tp_ip6.o<br>
+  CC      kernel/trace/trace_events_filter.o<br>
+  CC      net/ipv4/udp_offload.o<br>
+  CC      fs/fat/namei_msdos.o<br>
+  CC      drivers/gpu/msm/adreno_ringbuffer.o<br>
+  CC      lib/decompress_inflate.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-dai-q6-hdmi-v2.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-lsm-client.o<br>
+  CC      kernel/stacktrace.o<br>
+  CC      kernel/futex.o<br>
+  CC      drivers/input/input-mt.o<br>
+  CC      net/ipv6/xfrm6_state.o<br>
+  CC      lib/decompress_unlzma.o<br>
+  CC      fs/f2fs/recovery.o<br>
+  CC      fs/ext4/extents.o<br>
+  CC      kernel/futex_compat.o<br>
+  CC      drivers/input/serio/serport.o<br>
+  LD      fs/fat/fat.o<br>
+  LD      fs/fat/vfat.o<br>
+  LD      fs/fat/msdos.o<br>
+  LD      fs/fat/built-in.o<br>
+  CC      fs/ext4/ext4_jbd2.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-pcm-host-voice-v2.o<br>
+  LD      net/l2tp/built-in.o<br>
+  CC      net/llc/llc_core.o<br>
+  CC      drivers/gpu/msm/adreno_drawctxt.o<br>
+  CC      drivers/input/ff-core.o<br>
+  CC      net/ipv4/arp.o<br>
+  CC      lib/dump_stack.o<br>
+  CC      kernel/trace/trace_events_trigger.o<br>
+  CC      net/ipv4/icmp.o<br>
+  CC      net/ipv6/xfrm6_input.o<br>
+  CC      drivers/input/serio/libps2.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-audio-effects-q6-v2.o<br>
+  CC      fs/f2fs/shrinker.o<br>
+  CC      lib/earlycpio.o<br>
+  CC      fs/ext4/migrate.o<br>
+  CC      kernel/smp.o<br>
+  CC      lib/extable.o<br>
+  CC      lib/fdt.o<br>
+  CC      drivers/input/mousedev.o<br>
+  CC      drivers/gpu/msm/adreno_dispatch.o<br>
+  CC      drivers/input/evdev.o<br>
+  CC      net/llc/llc_input.o<br>
+  LD      drivers/input/serio/built-in.o<br>
+  CC      lib/fdt_empty_tree.o<br>
+  CC      drivers/input/fingerprint/fpc/fpc1020_tee.o<br>
+  CC      fs/f2fs/extent_cache.o<br>
+  CC      lib/fdt_ro.o<br>
+  CC      kernel/trace/power-traces.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-pcm-loopback-v2.o<br>
+  CC      net/ipv6/xfrm6_output.o<br>
+  CC      net/ipv6/xfrm6_protocol.o<br>
+  CC      net/ipv6/netfilter.o<br>
+  CC      lib/fdt_rw.o<br>
+  CC      lib/fdt_strerror.o<br>
+  CC      lib/fdt_sw.o<br>
+  LD      drivers/input/fingerprint/fpc/built-in.o<br>
+  CC      drivers/input/fingerprint/goodix/gf_spi.o<br>
+  CC      lib/fdt_wip.o<br>
+  CC      net/ipv4/devinet.o<br>
+  CC      drivers/input/fingerprint/goodix/platform.o<br>
+  CC      drivers/input/fingerprint/goodix/netlink.o<br>
+  CC      lib/flex_proportions.o<br>
+  CC      fs/ext4/mballoc.o<br>
+  CC      net/llc/llc_output.o<br>
+  CC      sound/soc/msm/qdsp6v2/adsp_err.o<br>
+  CC      drivers/input/joystick/xpad.o<br>
+  CC      fs/f2fs/debug.o<br>
+  CC      lib/idr.o<br>
+  CC      kernel/trace/rpm-traces.o<br>
+  CC      kernel/trace/ipc_logging.o<br>
+  CC      drivers/gpu/msm/adreno_snapshot.o<br>
+  CC      drivers/gpu/msm/adreno_coresight.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-pcm-dtmf-v2.o<br>
+  CC      lib/int_sqrt.o<br>
+  CC      lib/ioremap.o<br>
+  CC      net/ipv6/fib6_rules.o<br>
+  LD      drivers/input/fingerprint/goodix/built-in.o<br>
+  LD      drivers/input/fingerprint/built-in.o<br>
+  CC      drivers/gpu/msm/adreno_trace.o<br>
+  CC      lib/irq_regs.o<br>
+  LD      drivers/input/joystick/built-in.o<br>
+  CC      drivers/input/keyboard/atkbd.o<br>
+  LD      net/llc/llc.o<br>
+  LD      net/llc/built-in.o<br>
+  CC      drivers/input/keyboard/gpio_keys.o<br>
+  CC      fs/f2fs/xattr.o<br>
+  CC      drivers/input/misc/gpio_event.o<br>
+  CC      fs/f2fs/acl.o<br>
+  CC      lib/is_single_threaded.o<br>
+  CC      drivers/input/touchscreen/of_touchscreen.o<br>
+  CC      drivers/input/keyreset.o<br>
+  CC      drivers/input/keycombo.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-dai-stub-v2.o<br>
+  CC      lib/klist.o<br>
+  CC      kernel/trace/ipc_logging_debug.o<br>
+  CC      lib/kobject.o<br>
+  CC      net/ipv6/proc.o<br>
+  CC      drivers/input/misc/gpio_matrix.o<br>
+  CC      net/ipv4/af_inet.o<br>
+  CC      drivers/gpu/msm/adreno_a3xx.o<br>
+  LD      fs/f2fs/f2fs.o<br>
+  LD      drivers/input/keyboard/built-in.o<br>
+  LD      fs/f2fs/built-in.o<br>
+  CC      net/netlink/af_netlink.o<br>
+  CC      net/packet/af_packet.o<br>
+  CC      net/packet/diag.o<br>
+  CC      drivers/input/touchscreen/ft5435/ft5435_ts.o<br>
+  CC      net/rfkill/core.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-pcm-routing-devdep.o<br>
+  CC      drivers/iommu/iommu.o<br>
+  LD      kernel/trace/libftrace.o<br>
+  LD      kernel/trace/built-in.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-dolby-dap-config.o<br>
+  CC      kernel/uid16.o<br>
+  CC      lib/kobject_uevent.o<br>
+  CC      drivers/input/misc/gpio_input.o<br>
+  CC      net/ipv6/ah6.o<br>
+  CC      net/ipv6/esp6.o<br>
+  CC      net/ipv6/ipcomp6.o<br>
+  LD      net/rfkill/rfkill.o<br>
+  LD      net/rfkill/built-in.o<br>
+  CC      net/ipv6/xfrm6_tunnel.o<br>
+  CC      kernel/system_keyring.o<br>
+  CC      drivers/input/misc/gpio_output.o<br>
+  CC      fs/ext4/block_validity.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-ds2-dap-config.o<br>
+  CC      drivers/gpu/msm/adreno_a4xx.o<br>
+  AS      kernel/system_certificates.o<br>
+  CC      kernel/module.o<br>
+  CC      lib/md5.o<br>
+  CC      net/netfilter/core.o<br>
+  CC      drivers/input/misc/gpio_axis.o<br>
+  CC      drivers/iommu/iommu-traces.o<br>
+  CC      drivers/iommu/iommu-sysfs.o<br>
+  CC      lib/memcopy.o<br>
+  CC      fs/ext4/move_extent.o<br>
+  CC      sound/soc/msm/msm-dai-fe.o<br>
+  CC      drivers/irqchip/irqchip.o<br>
+  CC      net/ipv4/igmp.o<br>
+  CC      lib/plist.o<br>
+  CC      lib/proportions.o<br>
+  CC      drivers/input/misc/hbtp_input.o<br>
+  CC      lib/radix-tree.o<br>
+  CC      net/netlink/genetlink.o<br>
+  CC      net/ipv6/tunnel6.o<br>
+  CC      drivers/gpu/msm/adreno_a5xx.o<br>
+  CC      drivers/irqchip/irq-gic.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-dts-srs-tm-config.o<br>
+  LD      drivers/input/touchscreen/ft5435/built-in.o<br>
+  LD      drivers/input/touchscreen/gt9xx/built-in.o<br>
+  CC      net/ipv6/xfrm6_mode_transport.o<br>
+  CC      drivers/input/touchscreen/ist3038c/ist30xxc.o<br>
+  CC      drivers/input/touchscreen/ist3038c/ist30xxc_misc.o<br>
+  LD      net/packet/af_packet_diag.o<br>
+  LD      net/packet/built-in.o<br>
+  CC      fs/ext4/mmp.o<br>
+  CC      fs/ext4/indirect.o<br>
+  CC      drivers/iommu/msm_dma_iommu_mapping.o<br>
+  CC      net/netfilter/nf_log.o<br>
+  CC      drivers/input/misc/hbtp_vm.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-qti-pp-config.o<br>
+  CC      drivers/irqchip/irq-gic-common.o<br>
+  CC      lib/ratelimit.o<br>
+  CC      drivers/iommu/io-pgtable.o<br>
+  CC      sound/soc/msm/qdsp6v2/audio_calibration.o<br>
+  CC      sound/soc/msm/qdsp6v2/audio_cal_utils.o<br>
+  CC      net/ipv6/xfrm6_mode_tunnel.o<br>
+  CC      lib/rbtree.o<br>
+  CC      drivers/input/misc/keychord.o<br>
+  CC      drivers/irqchip/irq-gic-v2m.o<br>
+  CC      net/netlink/diag.o<br>
+  CC      drivers/iommu/io-pgtable-arm.o<br>
+  CC      drivers/iommu/io-pgtable-msm-secure.o<br>
+  CC      kernel/kallsyms.o<br>
+  CC      drivers/gpu/msm/adreno_a3xx_snapshot.o<br>
+  CC      lib/sha1.o<br>
+  CC      fs/ext4/extents_status.o<br>
+  CC      net/netfilter/nf_queue.o<br>
+  CC      lib/show_mem.o<br>
+  CC      drivers/input/touchscreen/ist3038c/ist30xxc_sys.o<br>
+  CC      lib/string.o<br>
+  CC      drivers/irqchip/irq-gic-v3.o<br>
+  CC      sound/soc/msm/qdsp6v2/q6adm.o<br>
+  CC      drivers/input/misc/uinput.o<br>
+  CC      net/ipv4/fib_frontend.o<br>
+  CC      net/ipv6/xfrm6_mode_beet.o<br>
+  CC      net/ipv4/fib_semantics.o<br>
+  CC      drivers/iommu/of_iommu.o<br>
+  CC      lib/timerqueue.o<br>
+  CC      drivers/irqchip/irq-gic-v3-its.o<br>
+  CC      drivers/gpu/msm/adreno_a4xx_snapshot.o<br>
+  LD      net/netlink/netlink_diag.o<br>
+  LD      net/netlink/built-in.o<br>
+  CC      drivers/irqchip/irq-gic-v3-its-pci-msi.o<br>
+  CC      kernel/compat.o<br>
+  CC      lib/vsprintf.o<br>
+  CC      sound/soc/msm/msm-cpe-lsm.o<br>
+  CC      drivers/input/touchscreen/ist3038c/ist30xxc_update.o<br>
+  CC      drivers/iommu/iommu-debug.o<br>
+  LD      drivers/input/misc/built-in.o<br>
+  LD      drivers/input/input-core.o<br>
+  CC      sound/soc/msm/msm8952.o<br>
+  CC      net/netfilter/nf_sockopt.o<br>
+  CC      drivers/irqchip/irq-msm.o<br>
+  CC      drivers/leds/led-core.o<br>
+  CC      net/ipv6/mip6.o<br>
+  CC      drivers/gpu/msm/adreno_a5xx_snapshot.o<br>
+  CC      fs/ext4/xattr.o<br>
+  CC      drivers/leds/led-class.o<br>
+  CC      drivers/irqchip/msm_show_resume_irq.o<br>
+  CC      net/ipv4/fib_trie.o<br>
+  CC      net/ipv4/inet_fragment.o<br>
+  CC      drivers/input/touchscreen/ist3038c/ist30xxc_tracking.o<br>
+  LD      drivers/irqchip/built-in.o<br>
+  CC      drivers/input/touchscreen/ist3038c/ist30xxc_cmcs.o<br>
+  CC      drivers/gpu/msm/adreno_a4xx_preempt.o<br>
+  CC      net/ipv6/netfilter/ip6_tables.o<br>
+  CC      kernel/cgroup.o<br>
+  CC      net/netfilter/nfnetlink.o<br>
+  CC      drivers/gpu/msm/adreno_a5xx_preempt.o<br>
+  CC      drivers/leds/led-triggers.o<br>
+  CC      drivers/gpu/msm/adreno_sysfs.o<br>
+  CC      drivers/gpu/msm/adreno.o<br>
+  CC      sound/soc/msm/msm-audio-pinctrl.o<br>
+  CC      sound/soc/msm/qdsp6v2/q6afe.o<br>
+  CC      drivers/iommu/msm_iommu.o<br>
+  CC      fs/ext4/xattr_user.o<br>
+  GEN     lib/crc32table.h<br>
+  CC      lib/oid_registry.o<br>
+  CC      drivers/gpu/msm/adreno_cp_parser.o<br>
+  CC      sound/soc/msm/msm8952-slimbus.o<br>
+  CC      drivers/gpu/msm/adreno_perfcounter.o<br>
+  CC      drivers/leds/leds-qpnp.o<br>
+  CC      drivers/leds/leds-qpnp-flash.o<br>
+  CC      net/ipv6/netfilter/ip6table_filter.o<br>
+  CC      drivers/iommu/msm_iommu_domains.o<br>
+  AR      lib/lib.a<br>
+  CC      lib/crc32.o<br>
+  CC      fs/ext4/xattr_trusted.o<br>
+  CC      net/netfilter/nfnetlink_queue_core.o<br>
+  LD      drivers/input/touchscreen/ist3038c/built-in.o<br>
+  CC      drivers/input/touchscreen/synaptics_dsx/synaptics_dsx_i2c.o<br>
+  CC      net/ipv4/ping.o<br>
+  CC      drivers/gpu/msm/adreno_iommu.o<br>
+  CC      drivers/gpu/msm/adreno_debugfs.o<br>
+  CC      fs/ext4/inline.o<br>
+  CC      net/ipv6/netfilter/ip6table_mangle.o<br>
+  CC      fs/fuse/dev.o<br>
+  CC      fs/jbd/transaction.o<br>
+  LD      drivers/input/touchscreen/synaptics_dsx/built-in.o<br>
+  CC      drivers/iommu/msm_iommu_mapping.o<br>
+  CC      drivers/input/touchscreen/synaptics_dsx_2.6/synaptics_dsx_i2c.o<br>
+  CC      fs/jbd/commit.o<br>
+  LD      lib/built-in.o<br>
+  CC      drivers/gpu/msm/adreno_profile.o<br>
+  CC      drivers/leds/leds-qpnp-wled.o<br>
+  CC      sound/soc/msm/qdsp6v2/q6asm.o<br>
+  CC      drivers/leds/leds-aw2013.o<br>
+  CC      net/netfilter/nfnetlink_log.o<br>
+  CC      drivers/gpu/msm/adreno_compat.o<br>
+  CC      net/ipv6/netfilter/ip6table_raw.o<br>
+  CC      kernel/cgroup_freezer.o<br>
+  CC      sound/soc/msm/qdsp6v2/q6audio-v2.o<br>
+  CC      net/ipv4/ip_tunnel_core.o<br>
+  LD      drivers/input/touchscreen/synaptics_dsx_2.6/built-in.o<br>
+  CC      fs/ext4/xattr_security.o<br>
+  CC      drivers/input/touchscreen/sweep2wake.o<br>
+  CC      sound/soc/msm/msm8952-dai-links.o<br>
+  CC      drivers/iommu/msm_iommu-v1.o<br>
+  CC      fs/jbd/recovery.o<br>
+  CC      drivers/input/touchscreen/sweep2sleep.o<br>
+  LD      drivers/gpu/msm/msm_kgsl_core.o<br>
+  LD      drivers/leds/built-in.o<br>
+  LD      drivers/gpu/msm/msm_adreno.o<br>
+  LD      drivers/gpu/msm/built-in.o<br>
+  CC      net/netfilter/nf_conntrack_core.o<br>
+  CC      kernel/cpuset.o<br>
+  CC      drivers/iommu/msm_iommu_dev-v1.o<br>
+  CC      drivers/gpu/vga/vgaarb.o<br>
+  CC      kernel/utsname.o<br>
+  CC      fs/fuse/dir.o<br>
+  CC      net/ipv6/netfilter/nf_conntrack_l3proto_ipv6.o<br>
+  LD      fs/ext4/ext4.o<br>
+  LD      fs/ext4/built-in.o<br>
+  CC      net/ipv4/gre_offload.o<br>
+  CC      net/ipv4/ip_tunnel.o<br>
+  LD      drivers/input/touchscreen/built-in.o<br>
+  CC      kernel/user_namespace.o<br>
+  CC      kernel/pid_namespace.o<br>
+  CC      fs/jbd/checkpoint.o<br>
+  LD      drivers/input/built-in.o<br>
+  CC      fs/jbd/revoke.o<br>
+  CC      net/netfilter/nf_conntrack_standalone.o<br>
+  CC      drivers/iommu/msm_iommu_sec.o<br>
+  CC      net/ipv4/sysctl_net_ipv4.o<br>
+  LD      drivers/gpu/vga/built-in.o<br>
+  CC      net/ipv6/netfilter/nf_conntrack_proto_icmpv6.o<br>
+  LD      drivers/gpu/built-in.o<br>
+  CC      net/ipv6/netfilter/nf_nat_l3proto_ipv6.o<br>
+  CC      net/ipv6/sit.o<br>
+  CC      drivers/iommu/msm_iommu_pagetable.o<br>
+  GZIP    kernel/config_data.gz<br>
+  CC      fs/fuse/file.o<br>
+  CC      drivers/iommu/arm-smmu.o<br>
+  CC      kernel/res_counter.o<br>
+  CC      fs/jbd/journal.o<br>
+  LD      sound/soc/msm/snd-soc-hostless-pcm.o<br>
+  CC      net/ipv4/sysfs_net_ipv4.o<br>
+  CC      kernel/stop_machine.o<br>
+../../../../../../kernel/xiaomi/msm8953/net/netfilter/nf_conntrack_core.c: In function 'nf_conntrack_init_net':<br>
+../../../../../../kernel/xiaomi/msm8953/net/netfilter/nf_conntrack_core.c:1787:20: warning: unused variable 'unique_id' [-Wunused-variable]<br>
+  static atomic64_t unique_id;<br>
+                    ^<br>
+../../../../../../kernel/xiaomi/msm8953/net/netfilter/nf_conntrack_core.c: At top level:<br>
+cc1: warning: unrecognized command line option "-Wno-misleading-indentation"<br>
+  CC      kernel/audit.o<br>
+  CC      kernel/auditfilter.o<br>
+  CC      net/netfilter/nf_conntrack_expect.o<br>
+  CC      net/ipv4/proc.o<br>
+  CC      net/ipv4/fib_rules.o<br>
+  CC      fs/fuse/inode.o<br>
+  CC      net/ipv4/udp_tunnel.o<br>
+  LD      sound/soc/msm/snd-soc-qdsp6v2.o<br>
+  CC      fs/jbd2/transaction.o<br>
+  CC      net/ipv6/netfilter/nf_nat_proto_icmpv6.o<br>
+  CC      sound/soc/msm/qdsp6v2/q6voice.o<br>
+  CC      fs/jbd2/commit.o<br>
+  CC      net/ipv6/netfilter/nf_defrag_ipv6_hooks.o<br>
+  CC      net/ipv6/addrconf_core.o<br>
+  CC      net/ipv4/ah4.o<br>
+  CC      net/ipv6/netfilter/nf_conntrack_reasm.o<br>
+  LD      drivers/iommu/built-in.o<br>
+  CC      kernel/auditsc.o<br>
+  LD      fs/jbd/jbd.o<br>
+  CC      net/netfilter/nf_conntrack_helper.o<br>
+  CC      net/ipv4/esp4.o<br>
+  LD      fs/jbd/built-in.o<br>
+  CC      net/ipv6/netfilter/nf_log_ipv6.o<br>
+  CC      fs/fuse/control.o<br>
+  CC      fs/kernfs/mount.o<br>
+  CC      drivers/md/dm-uevent.o<br>
+  CC      fs/jbd2/recovery.o<br>
+  CC      net/ipv6/netfilter/nf_reject_ipv6.o<br>
+  CC      kernel/audit_watch.o<br>
+  CC      fs/jbd2/checkpoint.o<br>
+  CC      fs/kernfs/inode.o<br>
+  CC      drivers/media/i2c/ir-kbd-i2c.o<br>
+  CC      fs/fuse/shortcircuit.o<br>
+  CC      net/ipv6/exthdrs_core.o<br>
+  CC      net/ipv6/netfilter/ip6t_rpfilter.o<br>
+  CC      drivers/md/dm.o<br>
+  CC      drivers/md/dm-table.o<br>
+  CC      drivers/md/dm-target.o<br>
+  CC      fs/jbd2/revoke.o<br>
+  CC      net/ipv4/ipcomp.o<br>
+  CC      fs/kernfs/dir.o<br>
+  LD      fs/fuse/fuse.o<br>
+  LD      fs/fuse/built-in.o<br>
+  CC      net/netfilter/nf_conntrack_proto.o<br>
+  CC      net/netfilter/nf_conntrack_l3proto_generic.o<br>
+  CC      fs/nls/nls_base.o<br>
+  LD      drivers/media/i2c/built-in.o<br>
+  CC      fs/nls/nls_cp437.o<br>
+  CC      fs/nls/nls_cp936.o<br>
+  CC      kernel/audit_tree.o<br>
+  CC      net/ipv6/netfilter/ip6t_REJECT.o<br>
+  CC      fs/nls/nls_cp950.o<br>
+  CC      drivers/md/dm-linear.o<br>
+  CC      fs/jbd2/journal.o<br>
+  CC      kernel/seccomp.o<br>
+  CC      kernel/utsname_sysctl.o<br>
+  CC      drivers/media/platform/msm/camera_v2/camera/camera.o<br>
+  CC      net/ipv4/xfrm4_tunnel.o<br>
+  CC      fs/kernfs/file.o<br>
+  CC      fs/nls/nls_ascii.o<br>
+  CC      drivers/media/platform/msm/camera_v2/common/msm_camera_io_util.o<br>
+  CC      net/netfilter/nf_conntrack_proto_generic.o<br>
+  CC      drivers/media/platform/msm/camera_v2/common/cam_smmu_api.o<br>
+  CC      sound/soc/msm/qdsp6v2/q6core.o<br>
+  LD      sound/soc/msm/snd-soc-cpe.o<br>
+  CC      sound/soc/msm/qdsp6v2/rtac.o<br>
+  CC      sound/soc/msm/qdsp6v2/q6lsm.o<br>
+  LD      net/ipv6/netfilter/nf_conntrack_ipv6.o<br>
+  LD      net/ipv6/netfilter/nf_nat_ipv6.o<br>
+  LD      sound/soc/msm/snd-soc-msm8x16.o<br>
+  LD      net/ipv6/netfilter/nf_defrag_ipv6.o<br>
+  CC      kernel/tracepoint.o<br>
+  LD      net/ipv6/netfilter/built-in.o<br>
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_dev.o<br>
+  CC      net/ipv6/ip6_checksum.o<br>
+  CC      fs/nls/nls_iso8859-1.o<br>
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_core.o<br>
+  CC      drivers/md/dm-stripe.o<br>
+  CC      net/ipv4/tunnel4.o<br>
+  LD      drivers/media/platform/msm/camera_v2/camera/built-in.o<br>
+  CC      fs/kernfs/symlink.o<br>
+  CC      fs/nls/nls_utf8.o<br>
+  CC      net/netfilter/nf_conntrack_proto_tcp.o<br>
+  CC      drivers/media/platform/msm/camera_v2/fd/msm_fd_dev.o<br>
+  CC      drivers/media/platform/msm/camera_v2/fd/msm_fd_hw.o<br>
+  CC      sound/soc/msm/qdsp6v2/msm-pcm-q6-noirq.o<br>
+  CC      kernel/elfcore.o<br>
+  CC      kernel/irq_work.o<br>
+  CC      drivers/md/dm-ioctl.o<br>
+  LD      fs/nls/built-in.o<br>
+  LD      fs/kernfs/built-in.o<br>
+  CC      kernel/cpu_pm.o<br>
+  LD      sound/soc/snd-soc-core.o<br>
+  CC      drivers/md/dm-io.o<br>
+  CC      drivers/md/dm-kcopyd.o<br>
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_base.o<br>
+  CC      drivers/media/platform/msm/camera_v2/common/cam_hw_ops.o<br>
+  CC      net/ipv6/ip6_icmp.o<br>
+  LD      sound/soc/msm/qdsp6v2/snd-soc-qdsp6v2.o<br>
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_formats.o<br>
+  CC      net/ipv6/output_core.o<br>
+  CC      net/ipv4/xfrm4_mode_transport.o<br>
+  LD      sound/soc/msm/qdsp6v2/built-in.o<br>
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_util.o<br>
+  LD      sound/soc/msm/built-in.o<br>
+  LD      drivers/media/platform/msm/camera_v2/fd/built-in.o<br>
+  CHK     kernel/config_data.h<br>
+  UPD     kernel/config_data.h<br>
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_io_util.o<br>
+  CC      kernel/configs.o<br>
+  LD      fs/jbd2/jbd2.o<br>
+  LD      sound/soc/built-in.o<br>
+  LD      fs/jbd2/built-in.o<br>
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_smmu.o<br>
+  LD      sound/built-in.o<br>
+  CC      drivers/media/platform/msm/camera_v2/common/cam_soc_api.o<br>
+  CC      fs/notify/fsnotify.o<br>
+  CC      drivers/md/dm-sysfs.o<br>
+  CC      drivers/md/dm-stats.o<br>
+  CC      net/netfilter/nf_conntrack_proto_udp.o<br>
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_r1_wb.o<br>
+  LD      kernel/built-in.o<br>
+  CC      net/rmnet_data/rmnet_data_main.o<br>
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_r1_pipe.o<br>
+  CC      drivers/mfd/mfd-core.o<br>
+  CC      drivers/misc/uid_stat.o<br>
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_r1_ctl.o<br>
+  CC      net/ipv4/xfrm4_mode_tunnel.o<br>
+  CC      net/sched/sch_generic.o<br>
+  CC      net/sched/sch_mq.o<br>
+  CC      drivers/md/dm-builtin.o<br>
+  LD      fs/overlayfs/built-in.o<br>
+  CC      net/ipv6/protocol.o<br>
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_r1.o<br>
+  CC      fs/notify/notification.o<br>
+  CC      fs/notify/group.o<br>
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_r3.o<br>
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_sync.o<br>
+  CC      net/ipv4/ipconfig.o<br>
+  LD      drivers/media/platform/msm/camera_v2/common/built-in.o<br>
+  CC      drivers/mfd/wcd9xxx-core.o<br>
+  CC      net/netfilter/nf_conntrack_extend.o<br>
+  CC      drivers/md/dm-bufio.o<br>
+  CC      drivers/md/dm-crypt.o<br>
+  CC      net/netfilter/nf_conntrack_acct.o<br>
+  CC      drivers/media/platform/msm/camera_v2/isp/msm_buf_mgr.o<br>
+  CC      net/netfilter/nf_conntrack_seqadj.o<br>
+  CC      net/rmnet_data/rmnet_data_config.o<br>
+  CC      fs/notify/inode_mark.o<br>
+  CC      drivers/media/platform/msm/vidc/msm_v4l2_vidc.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/aac_in.o<br>
+  CC      net/rmnet_data/rmnet_data_vnd.o<br>
+  CC      net/ipv6/ip6_offload.o<br>
+  CC      fs/notify/mark.o<br>
+  CC      net/sched/sch_api.o<br>
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_debug.o<br>
+  CC      net/netfilter/nf_conntrack_ecache.o<br>
+  CC      net/netfilter/nf_conntrack_proto_dccp.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/qcelp_in.o<br>
+  CC      net/ipv4/netfilter.o<br>
+  CC      drivers/media/platform/msm/camera_v2/isp/msm_isp_util.o<br>
+  CC      drivers/media/platform/msm/vidc/msm_vidc_common.o<br>
+  CC      fs/notify/vfsmount_mark.o<br>
+  CC      drivers/media/platform/msm/vidc/msm_vidc.o<br>
+  CC      net/sched/sch_blackhole.o<br>
+  CC      fs/notify/fdinfo.o<br>
+  CC      drivers/md/dm-verity-fec.o<br>
+  CC      net/ipv6/tcpv6_offload.o<br>
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_r1_debug.o<br>
+  CC      net/rmnet_data/rmnet_data_handlers.o<br>
+  CC      drivers/mfd/wcd9xxx-irq.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/evrc_in.o<br>
+  CC      drivers/mfd/wcd9xxx-slimslave.o<br>
+  CC      fs/notify/dnotify/dnotify.o<br>
+  CC      net/sched/cls_api.o<br>
+  CC      net/netfilter/nf_conntrack_proto_gre.o<br>
+  CC      drivers/media/platform/msm/sde/rotator/sde_rotator_r3_debug.o<br>
+  CC      fs/notify/fanotify/fanotify.o<br>
+  CC      drivers/md/dm-verity-target.o<br>
+  CC      net/ipv6/udp_offload.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/amrnb_in.o<br>
+  LD      fs/notify/dnotify/built-in.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/g711mlaw_in.o<br>
+  CC      net/sched/act_api.o<br>
+  CC      drivers/mfd/wcd9xxx-core-resource.o<br>
+  CC      fs/notify/inotify/inotify_fsnotify.o<br>
+  CC      net/ipv4/netfilter/nf_conntrack_l3proto_ipv4_compat.o<br>
+  CC      drivers/media/platform/msm/camera_v2/isp/msm_isp_axi_util.o<br>
+  CC      net/rmnet_data/rmnet_map_data.o<br>
+  CC      net/rmnet_data/rmnet_map_command.o<br>
+  CC      fs/notify/fanotify/fanotify_user.o<br>
+  LD      drivers/media/platform/msm/sde/rotator/built-in.o<br>
+  LD      drivers/media/platform/msm/sde/built-in.o<br>
+  CC      net/rmnet_data/rmnet_data_stats.o<br>
+  CC      drivers/mfd/wcd9335-regmap.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/g711alaw_in.o<br>
+  CC      fs/notify/inotify/inotify_user.o<br>
+  CC      net/ipv6/exthdrs_offload.o<br>
+  CC      net/netfilter/nf_conntrack_proto_sctp.o<br>
+  CC      drivers/mfd/wcd9335-tables.o<br>
+  CC      drivers/mfd/wcd-gpio-ctrl.o<br>
+  CC      drivers/md/dm-req-crypt.o<br>
+  CC      drivers/misc/qseecom.o<br>
+  CC      net/ipv4/netfilter/nf_conntrack_l3proto_ipv4.o<br>
+  CC      drivers/misc/hdcp.o<br>
+  LD      fs/notify/fanotify/built-in.o<br>
+  CC      drivers/media/platform/msm/vidc/msm_vdec.o<br>
+  CC      drivers/media/platform/msm/vidc/msm_venc.o<br>
+  CC      drivers/media/platform/msm/camera_v2/ispif/msm_ispif.o<br>
+  LD      net/rmnet_data/rmnet_data.o<br>
+  LD      net/rmnet_data/built-in.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/audio_utils.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/audio_wma.o<br>
+  LD      fs/notify/inotify/built-in.o<br>
+  LD      fs/notify/built-in.o<br>
+  LD      drivers/mfd/built-in.o<br>
+  CC      net/netfilter/nf_conntrack_proto_udplite.o<br>
+  CC      net/ipv6/inet6_hashtables.o<br>
+  CC      net/sched/sch_fifo.o<br>
+  CC      net/ipv6/ip6_udp_tunnel.o<br>
+  CC      drivers/media/platform/msm/camera_v2/isp/msm_isp_stats_util.o<br>
+  CC      fs/proc/task_mmu.o<br>
+  CC      drivers/misc/compat_qseecom.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/audio_wmapro.o<br>
+  CC      net/ipv4/netfilter/nf_conntrack_proto_icmp.o<br>
+  LD      drivers/md/dm-mod.o<br>
+  LD      drivers/md/dm-verity.o<br>
+  CC      fs/proc/inode.o<br>
+  CC      drivers/media/platform/msm/camera_v2/isp/msm_isp48.o<br>
+  LD      drivers/md/built-in.o<br>
+  CC      drivers/mmc/card/block.o<br>
+  CC      net/netfilter/nf_conntrack_netlink.o<br>
+  LD      drivers/media/platform/msm/camera_v2/ispif/built-in.o<br>
+  CC      drivers/mmc/card/queue.o<br>
+  CC      drivers/misc/type-c-pericom.o<br>
+  CC      net/sched/sch_htb.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/audio_aac.o<br>
+  LD      net/ipv6/ipv6.o<br>
+  CC      net/unix/af_unix.o<br>
+  CC      drivers/mmc/core/core.o<br>
+  LD      net/ipv6/built-in.o<br>
+  CC      fs/proc/root.o<br>
+  CC      net/wireguard/main.o<br>
+  CC      net/unix/garbage.o<br>
+  CC      net/ipv4/netfilter/nf_nat_l3proto_ipv4.o<br>
+  CC      drivers/misc/fastchg.o<br>
+  CC      drivers/media/platform/msm/camera_v2/isp/msm_isp47.o<br>
+  CC      drivers/media/platform/msm/camera_v2/isp/msm_isp46.o<br>
+  CC      fs/proc/base.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/audio_multi_aac.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/audio_alac.o<br>
+  CC      drivers/media/platform/msm/vidc/msm_smem.o<br>
+  CC      net/wireguard/noise.o<br>
+  CC      net/unix/sysctl_net_unix.o<br>
+  CC      drivers/media/platform/msm/camera_v2/isp/msm_isp44.o<br>
+  CC      net/sched/sch_prio.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/audio_ape.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/audio_utils_aio.o<br>
+  CC      net/ipv4/netfilter/nf_nat_proto_icmp.o<br>
+  CC      net/netfilter/nf_conntrack_amanda.o<br>
+  CC      net/netfilter/nf_conntrack_ftp.o<br>
+  CC      drivers/media/platform/msm/vidc/msm_vidc_debug.o<br>
+  CC      drivers/media/platform/msm/vidc/msm_vidc_res_parse.o<br>
+  CC      net/unix/diag.o<br>
+  CC      drivers/mmc/core/bus.o<br>
+  CC      drivers/media/platform/msm/vidc/venus_hfi.o<br>
+  CC      drivers/media/platform/msm/camera_v2/isp/msm_isp40.o<br>
+  CC      net/ipv4/netfilter/nf_defrag_ipv4.o<br>
+  CC      net/wireguard/device.o<br>
+  CC      net/sched/cls_u32.o<br>
+  LD      drivers/mmc/card/mmc_block.o<br>
+  CC      fs/proc/generic.o<br>
+  CC      net/wireguard/peer.o<br>
+  LD      drivers/mmc/card/built-in.o<br>
+  CC      drivers/media/platform/msm/camera_v2/isp/msm_isp.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/q6audio_v2.o<br>
+  CC      net/netfilter/nf_conntrack_h323_main.o<br>
+  CC      net/wireless/core.o<br>
+  CC      drivers/mmc/core/host.o<br>
+  LD      net/unix/unix.o<br>
+  LD      net/unix/unix_diag.o<br>
+  LD      net/unix/built-in.o<br>
+  CC      net/wireless/sysfs.o<br>
+  CC      drivers/media/platform/msm/vidc/hfi_response_handler.o<br>
+  CC      net/netfilter/nf_conntrack_h323_asn1.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/q6audio_v2_aio.o<br>
+  CC      fs/proc/array.o<br>
+  CC      net/wireguard/timers.o<br>
+  CC      net/sched/cls_fw.o<br>
+  CC      net/wireguard/queueing.o<br>
+  CC      net/wireguard/send.o<br>
+  CC      net/ipv4/netfilter/nf_log_ipv4.o<br>
+  CC      drivers/media/platform/msm/vidc/hfi_packetization.o<br>
+  CC      net/netfilter/nf_conntrack_irc.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/audio_mp3.o<br>
+  CC      drivers/mmc/core/mmc.o<br>
+  LD      drivers/media/platform/msm/camera_v2/isp/built-in.o<br>
+  CC      drivers/media/platform/msm/camera_v2/jpeg_10/msm_jpeg_dev.o<br>
+  CC      fs/proc/fd.o<br>
+  CC      drivers/media/platform/msm/camera_v2/jpeg_10/msm_jpeg_sync.o<br>
+  CC      net/sched/cls_flow.o<br>
+  CC      net/sched/cls_cgroup.o<br>
+  CC      net/sched/ematch.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/audio_amrnb.o<br>
+  CC      drivers/media/platform/msm/camera_v2/msm_buf_mgr/msm_generic_buf_mgr.o<br>
+  CC      net/ipv4/netfilter/nf_reject_ipv4.o<br>
+  CC      net/wireless/radiotap.o<br>
+  CC      fs/proc/proc_tty.o<br>
+  CC      net/wireguard/receive.o<br>
+  CC      net/netfilter/nf_conntrack_broadcast.o<br>
+  CC      drivers/media/radio/radio-iris.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/audio_amrwb.o<br>
+  CC      drivers/media/radio/radio-iris-transport.o<br>
+  CC      net/xfrm/xfrm_policy.o<br>
+  CC      net/netfilter/nf_conntrack_netbios_ns.o<br>
+  CC      drivers/media/platform/msm/vidc/vidc_hfi.o<br>
+  CC      fs/proc/cmdline.o<br>
+  CC      fs/proc/consoles.o<br>
+  CC      net/sched/em_cmp.o<br>
+  LD      drivers/media/platform/msm/camera_v2/msm_buf_mgr/built-in.o<br>
+  CC      fs/proc/cpuinfo.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/audio_amrwbplus.o<br>
+  CC      drivers/mmc/core/mmc_ops.o<br>
+  CC      drivers/media/platform/msm/camera_v2/jpeg_10/msm_jpeg_core.o<br>
+  CC      net/wireless/util.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/audio_evrc.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/audio_qcelp.o<br>
+  CC      net/ipv4/netfilter/nf_nat_h323.o<br>
+  CC      drivers/media/platform/msm/vidc/venus_boot.o<br>
+  CC      net/wireguard/socket.o<br>
+  CC      fs/proc/devices.o<br>
+  CC      fs/proc/interrupts.o<br>
+  CC      net/netfilter/nf_conntrack_pptp.o<br>
+  CC      net/netfilter/nf_conntrack_sane.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/amrwb_in.o<br>
+  CC      net/sched/em_nbyte.o<br>
+  CC      net/sched/em_u32.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/audio_hwacc_effects.o<br>
+  CC      fs/proc/loadavg.o<br>
+  CC      fs/proc/meminfo.o<br>
+  CC      drivers/media/platform/msm/camera_v2/jpeg_10/msm_jpeg_hw.o<br>
+  CC      drivers/mmc/core/sd.o<br>
+  CC      drivers/media/platform/msm/vidc/msm_vidc_dcvs.o<br>
+  CC      fs/proc/stat.o<br>
+  CC      drivers/media/radio/silabs/radio-silabs.o<br>
+  CC      net/ipv4/netfilter/nf_nat_pptp.o<br>
+  CC      fs/proc/uptime.o<br>
+  CC      net/netfilter/nf_conntrack_tftp.o<br>
+  CC      net/sched/em_meta.o<br>
+  CC      net/sched/em_text.o<br>
+  CC      net/wireguard/peerlookup.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/ultrasound/usf.o<br>
+  CC      drivers/media/platform/msm/camera_v2/jpeg_10/msm_jpeg_platform.o<br>
+  CC      net/wireguard/allowedips.o<br>
+  CC      net/netfilter/nf_log_common.o<br>
+  CC      net/netfilter/nf_nat_core.o<br>
+  CC      fs/proc/version.o<br>
+  CC      drivers/mmc/core/sd_ops.o<br>
+  CC      drivers/media/platform/msm/vidc/governors/msm_vidc_dyn_gov.o<br>
+  CC      fs/proc/softirqs.o<br>
+  CC      net/ipv4/inet_diag.o<br>
+  CC      net/ipv4/netfilter/nf_nat_masquerade_ipv4.o<br>
+  CC      net/xfrm/xfrm_state.o<br>
+  CC      net/wireless/reg.o<br>
+  LD      drivers/media/platform/msm/camera_v2/jpeg_10/built-in.o<br>
+  CC      drivers/media/platform/msm/vidc/governors/msm_vidc_table_gov.o<br>
+  CC      drivers/mmc/core/sdio.o<br>
+  CC      drivers/media/platform/msm/camera_v2/msm_vb2/msm_vb2.o<br>
+  LD      net/sched/built-in.o<br>
+  CC      net/compat.o<br>
+  CC      net/sysctl_net.o<br>
+  CC      fs/proc/namespaces.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/ultrasound/usfcdev.o<br>
+  CC      net/wireguard/ratelimiter.o<br>
+  LD      drivers/media/radio/silabs/built-in.o<br>
+  LD      drivers/media/radio/built-in.o<br>
+  CC      drivers/misc/qcom/qdsp6v2/ultrasound/q6usm.o<br>
+  CC      net/netfilter/nf_nat_proto_unknown.o<br>
+  CC      net/netfilter/nf_nat_proto_common.o<br>
+  CC      fs/proc/self.o<br>
+  CC      net/netfilter/nf_nat_proto_udp.o<br>
+  LD      drivers/media/platform/msm/vidc/governors/built-in.o<br>
+  CC      net/ipv4/netfilter/nf_nat_proto_gre.o<br>
+  CC      net/activity_stats.o<br>
+  CC      drivers/media/platform/msm/vidc/vmem/vmem.o<br>
+  CC      drivers/mmc/core/sdio_ops.o<br>
+  LD      drivers/media/platform/msm/camera_v2/msm_vb2/built-in.o<br>
+  CC      drivers/media/platform/msm/vidc/vmem/vmem_debugfs.o<br>
+  CC      net/netfilter/nf_nat_proto_tcp.o<br>
+  CC      drivers/media/platform/msm/camera_v2/pproc/cpp/msm_cpp_soc.o<br>
+  CC      fs/proc/thread_self.o<br>
+  CC      drivers/media/platform/msm/camera_v2/pproc/cpp/msm_cpp.o<br>
+  CC      net/wireguard/cookie.o<br>
+  LD      drivers/misc/qcom/qdsp6v2/ultrasound/built-in.o<br>
+  LD      drivers/misc/qcom/qdsp6v2/built-in.o<br>
+  CC      net/wireguard/netlink.o<br>
+  LD      drivers/misc/qcom/built-in.o<br>
+  CC      net/wireguard/crypto/zinc/chacha20/chacha20.o<br>
+  LD      drivers/misc/built-in.o<br>
+  CC      drivers/mmc/core/sdio_bus.o<br>
+  CC      drivers/mmc/core/sdio_cis.o<br>
+  CC      fs/proc/proc_sysctl.o<br>
+  CC      fs/proc/proc_net.o<br>
+  LD      drivers/media/platform/msm/vidc/vmem/built-in.o<br>
+  LD      drivers/media/platform/msm/vidc/built-in.o<br>
+  CC      net/xfrm/xfrm_hash.o<br>
+  CC      net/xfrm/xfrm_input.o<br>
+  CC      net/wireless/scan.o<br>
+  CC      drivers/mmc/core/sdio_io.o<br>
+  CC      net/ipv4/netfilter/ip_tables.o<br>
+  CC      net/ipv4/netfilter/iptable_filter.o<br>
+  CC      net/netfilter/nf_nat_helper.o<br>
+  CC      net/netfilter/nf_nat_proto_dccp.o<br>
+  CC      net/xfrm/xfrm_output.o<br>
+  CC      drivers/mmc/core/sdio_irq.o<br>
+  CC      drivers/mmc/core/quirks.o<br>
+  CC      net/netfilter/nf_nat_proto_udplite.o<br>
+  CC      net/netfilter/nf_nat_proto_sctp.o<br>
+  CC      drivers/mmc/core/slot-gpio.o<br>
+  CC      net/netfilter/nf_nat_amanda.o<br>
+  CC      net/netfilter/nf_nat_ftp.o<br>
+  CC      fs/proc/kmsg.o<br>
+  CC      fs/proc/page.o<br>
+  CC      net/xfrm/xfrm_sysctl.o<br>
+  CC      net/ipv4/tcp_diag.o<br>
+  CC      net/netfilter/nf_nat_irc.o<br>
+  PERLASM net/wireguard/crypto/zinc/chacha20/chacha20-arm64.S<br>
+perl: warning: Setting locale failed.<br>
+perl: warning: Please check that your locale settings:<br>
+	LANGUAGE = (unset),<br>
+	LC_ALL = (unset),<br>
+	LC_CTYPE = "en_US.UTF-8",<br>
+	LC_COLLATE = "C",<br>
+	LC_MESSAGES = "en_US.UTF-8",<br>
+	LC_NUMERIC = "C",<br>
+	LANG = (unset)<br>
+    are supported and installed on your system.<br>
+perl: warning: Falling back to the standard locale ("C").<br>
+  CC      net/xfrm/xfrm_replay.o<br>
+  CC      net/xfrm/xfrm_proc.o<br>
+  CC      net/wireguard/crypto/zinc/poly1305/poly1305.o<br>
+  CC      net/xfrm/xfrm_algo.o<br>
+  CC      drivers/mmc/core/debugfs.o<br>
+  LD      fs/proc/proc.o<br>
+  CC      net/netfilter/nf_nat_tftp.o<br>
+  LD      fs/proc/built-in.o<br>
+  CC      net/netfilter/x_tables.o<br>
+  CC      drivers/net/macvlan.o<br>
+  LD      drivers/media/platform/msm/camera_v2/pproc/cpp/built-in.o<br>
+  LD      drivers/media/platform/msm/camera_v2/pproc/built-in.o<br>
+  CC      net/ipv4/netfilter/iptable_mangle.o<br>
+  CC      net/wireless/nl80211.o<br>
+  CC      fs/pstore/inode.o<br>
+  CC      drivers/mmc/host/sdhci.o<br>
+  CC      drivers/media/platform/msm/camera_v2/sensor/actuator/msm_actuator.o<br>
+  CC      drivers/media/platform/msm/camera_v2/sensor/cci/msm_cci.o<br>
+  CC      drivers/mmc/host/sdhci-pltfm.o<br>
+  CC      drivers/mmc/host/sdhci-msm.o<br>
+  LD      drivers/mmc/core/mmc_core.o<br>
+  LD      drivers/mmc/core/built-in.o<br>
+  CC      drivers/media/platform/msm/camera_v2/sensor/csid/msm_csid.o<br>
+  CC      drivers/media/platform/msm/camera_v2/sensor/csiphy/msm_csiphy.o<br>
+  CC      fs/pstore/platform.o<br>
+  CC      fs/pstore/ftrace.o<br>
+  CC      net/xfrm/xfrm_user.o<br>
+  PERLASM net/wireguard/crypto/zinc/poly1305/poly1305-arm64.S<br>
+  CC      net/ipv4/netfilter/iptable_nat.o<br>
+perl: warning: Setting locale failed.<br>
+perl: warning: Please check that your locale settings:<br>
+	LANGUAGE = (unset),<br>
+	LC_ALL = (unset),<br>
+	LC_CTYPE = "en_US.UTF-8",<br>
+	LC_COLLATE = "C",<br>
+	LC_MESSAGES = "en_US.UTF-8",<br>
+	LC_NUMERIC = "C",<br>
+	LANG = (unset)<br>
+    are supported and installed on your system.<br>
+perl: warning: Falling back to the standard locale ("C").<br>
+  CC      net/wireguard/crypto/zinc/chacha20poly1305.o<br>
+  CC      drivers/media/platform/msm/camera_v2/msm.o<br>
+  CC      net/wireless/mlme.o<br>
+  LD      drivers/media/platform/msm/camera_v2/sensor/actuator/built-in.o<br>
+  LD      drivers/media/platform/msm/camera_v2/sensor/cci/built-in.o<br>
+  CC      drivers/media/rc/rc-main.o<br>
+  CC      drivers/media/platform/msm/camera_v2/sensor/eeprom/msm_eeprom.o<br>
+  CC      fs/pstore/ram.o<br>
+  CC      drivers/media/rc/keymaps/rc-adstech-dvb-t-pci.o<br>
+  LD      drivers/media/platform/msm/camera_v2/sensor/csid/built-in.o<br>
+  CC      net/netfilter/xt_tcpudp.o<br>
+  CC      drivers/media/rc/keymaps/rc-alink-dtu-m.o<br>
+  CC      net/ipv4/netfilter/iptable_raw.o<br>
+  CC      drivers/net/mii.o<br>
+  LD      drivers/media/platform/msm/camera_v2/sensor/csiphy/built-in.o<br>
+  CC      drivers/media/rc/keymaps/rc-anysee.o<br>
+  CC      drivers/media/rc/keymaps/rc-apac-viewcomp.o<br>
+  CC      drivers/media/rc/keymaps/rc-asus-pc39.o<br>
+  CC      fs/pstore/ram_core.o<br>
+  CC      net/wireless/ibss.o<br>
+  CC      net/ipv4/netfilter/iptable_security.o<br>
+  CC      net/wireless/sme.o<br>
+  CC      drivers/nfc/nq-nci.o<br>
+  CC      drivers/media/rc/keymaps/rc-asus-ps3-100.o<br>
+  CC      net/netfilter/xt_mark.o<br>
+  CC      net/wireguard/crypto/zinc/blake2s/blake2s.o<br>
+  CC      net/netfilter/xt_connmark.o<br>
+  LD      drivers/media/platform/msm/camera_v2/sensor/eeprom/built-in.o<br>
+  CC      net/xfrm/xfrm_ipcomp.o<br>
+  CC      drivers/media/platform/msm/camera_v2/sensor/flash/msm_flash.o<br>
+  CC      drivers/net/Space.o<br>
+  LD      fs/pstore/pstore.o<br>
+  LD      fs/pstore/ramoops.o<br>
+  LD      fs/pstore/built-in.o<br>
+  CC      drivers/mmc/host/sdhci-msm-ice.o<br>
+  CC      fs/quota/dquot.o<br>
+  CC      drivers/media/tuners/tuner-xc2028.o<br>
+  CC      drivers/media/rc/keymaps/rc-ati-tv-wonder-hd-600.o<br>
+  CC      drivers/media/rc/keymaps/rc-ati-x10.o<br>
+  CC      drivers/media/rc/keymaps/rc-avermedia-a16d.o<br>
+  CC      net/ipv4/netfilter/ipt_ah.o<br>
+  LD      drivers/nfc/built-in.o<br>
+  CC      net/netfilter/xt_nat.o<br>
+  CC      drivers/net/loopback.o<br>
+  CC      drivers/mmc/host/cmdq_hci.o<br>
+  CC      drivers/media/rc/rc-ir-raw.o<br>
+  LD      drivers/media/platform/msm/camera_v2/sensor/flash/built-in.o<br>
+  CC      drivers/of/base.o<br>
+  CC      drivers/media/rc/keymaps/rc-avermedia.o<br>
+  CC      drivers/media/platform/msm/camera_v2/sensor/ir_cut/msm_ir_cut.o<br>
+  CC      drivers/media/platform/msm/camera_v2/sensor/ir_led/msm_ir_led.o<br>
+  CC      drivers/media/platform/msm/camera_v2/sensor/io/msm_camera_cci_i2c.o<br>
+  CC      net/ipv4/netfilter/ipt_MASQUERADE.o<br>
+  LD      net/xfrm/built-in.o<br>
+  CC      drivers/media/platform/msm/camera_v2/sensor/io/msm_camera_qup_i2c.o<br>
+  CC      net/netfilter/xt_CHECKSUM.o<br>
+  CC      drivers/media/rc/keymaps/rc-avermedia-cardbus.o<br>
+  CC      drivers/media/rc/lirc_dev.o<br>
+  CC      drivers/media/rc/ir-nec-decoder.o<br>
+  CC      drivers/media/tuners/tuner-simple.o<br>
+  LD      drivers/media/platform/msm/camera_v2/sensor/ir_led/built-in.o<br>
+  LD      drivers/media/platform/msm/camera_v2/sensor/ir_cut/built-in.o<br>
+  CC      fs/quota/quota.o<br>
+  CC      drivers/media/platform/msm/camera_v2/sensor/ois/msm_ois.o<br>
+  CC      drivers/media/platform/msm/camera_v2/sensor/io/msm_camera_spi.o<br>
+  CC      drivers/net/phy/phy.o<br>
+  CC      drivers/media/rc/keymaps/rc-avermedia-dvbt.o<br>
+  LD      drivers/mmc/host/built-in.o<br>
+  CC      net/ipv4/netfilter/ipt_NATTYPE.o<br>
+  LD      drivers/mmc/built-in.o<br>
+  CC      net/netfilter/xt_CLASSIFY.o<br>
+  CC      net/netfilter/xt_CONNSECMARK.o<br>
+  CC      net/ipv4/netfilter/ipt_REJECT.o<br>
+  CC      drivers/of/device.o<br>
+  CC      drivers/net/ppp/ppp_generic.o<br>
+  CC      net/wireguard/crypto/zinc/curve25519/curve25519.o<br>
+  CC      drivers/net/ethernet/msm/rndis_ipa.o<br>
+  CC      drivers/media/rc/keymaps/rc-avermedia-m135a.o<br>
+  CC      drivers/net/ppp/ppp_async.o<br>
+  CC      fs/quota/kqid.o<br>
+  CC      drivers/media/platform/msm/camera_v2/sensor/io/msm_camera_dt_util.o<br>
+  LD      drivers/media/platform/msm/camera_v2/sensor/ois/built-in.o<br>
+  CC      net/wireless/chan.o<br>
+  CC      drivers/media/tuners/tuner-types.o<br>
+  CC      net/wireless/ethtool.o<br>
+  CC      net/netfilter/xt_CT.o<br>
+  CC      drivers/media/rc/keymaps/rc-avermedia-m733a-rm-k6.o<br>
+  CC      drivers/of/platform.o<br>
+  CC      drivers/of/fdt.o<br>
+  CC      net/ipv4/netfilter/arp_tables.o<br>
+  CC      drivers/net/phy/phy_device.o<br>
+  LD      fs/quota/built-in.o<br>
+  CC      fs/ramfs/inode.o<br>
+  CC      drivers/media/rc/keymaps/rc-avermedia-rm-ks.o<br>
+  CC      drivers/media/tuners/mt20xx.o<br>
+  CC      drivers/media/tuners/tda8290.o<br>
+  CC      drivers/of/fdt_address.o<br>
+  CC      net/netfilter/xt_LOG.o<br>
+  CC      fs/ramfs/file-mmu.o<br>
+  CC      drivers/media/rc/keymaps/rc-avertv-303.o<br>
+  LD      drivers/media/platform/msm/camera_v2/sensor/io/built-in.o<br>
+  CC      drivers/media/platform/msm/camera_v2/sensor/msm_sensor_init.o<br>
+  CC      net/wireguard/compat/siphash/siphash.o<br>
+  CC      net/wireguard/compat/dst_cache/dst_cache.o<br>
+  LD      drivers/net/ethernet/msm/built-in.o<br>
+  CC      net/wireless/mesh.o<br>
+  CC      drivers/of/address.o<br>
+  LD      fs/ramfs/ramfs.o<br>
+  LD      fs/ramfs/built-in.o<br>
+  CC      fs/squashfs/block.o<br>
+  CC      drivers/net/ppp/bsd_comp.o<br>
+  CC      drivers/media/rc/keymaps/rc-azurewave-ad-tu700.o<br>
+  CC      drivers/media/rc/ir-rc5-decoder.o<br>
+  CC      net/ipv4/tcp_cubic.o<br>
+  CC      drivers/net/phy/mdio_bus.o<br>
+  CC      net/netfilter/xt_NETMAP.o<br>
+  CC      drivers/media/platform/msm/camera_v2/sensor/msm_sensor_driver.o<br>
+  CC      net/ipv4/netfilter/arpt_mangle.o<br>
+  LD      drivers/net/ethernet/built-in.o<br>
+  CC      drivers/media/tuners/tea5767.o<br>
+  CC      drivers/media/rc/ir-rc6-decoder.o<br>
+  CC      drivers/media/rc/keymaps/rc-behold.o<br>
+  CC      fs/squashfs/cache.o<br>
+  CC      drivers/media/rc/ir-jvc-decoder.o<br>
+  CC      drivers/net/ppp/ppp_deflate.o<br>
+  CC      drivers/net/ppp/ppp_mppe.o<br>
+  CC      drivers/of/irq.o<br>
+  AS      net/wireguard/crypto/zinc/chacha20/chacha20-arm64.o<br>
+  CC      drivers/media/rc/keymaps/rc-behold-columbus.o<br>
+  AS      net/wireguard/crypto/zinc/poly1305/poly1305-arm64.o<br>
+  CC      drivers/media/rc/keymaps/rc-budget-ci-old.o<br>
+  LD      net/wireguard/wireguard.o<br>
+  CC      drivers/media/rc/ir-sony-decoder.o<br>
+  LD      net/wireguard/built-in.o<br>
+  CC      drivers/media/tuners/tea5761.o<br>
+  CC      fs/squashfs/dir.o<br>
+  CC      net/netfilter/xt_NFLOG.o<br>
+  CC      drivers/net/slip/slhc.o<br>
+  CC      net/ipv4/netfilter/arptable_filter.o<br>
+  CC      drivers/media/platform/msm/camera_v2/sensor/msm_sensor.o<br>
+  LD      drivers/net/phy/libphy.o<br>
+  LD      drivers/net/phy/built-in.o<br>
+  CC      net/wireless/ap.o<br>
+  CC      drivers/media/tuners/tda9887.o<br>
+  LD      drivers/net/wireless/ath/built-in.o<br>
+  CC      drivers/net/ppp/ppp_synctty.o<br>
+  CC      drivers/media/tuners/tda827x.o<br>
+  CC      drivers/net/usb/asix_devices.o<br>
+  CC      drivers/pci/access.o<br>
+  CC      drivers/media/rc/keymaps/rc-cinergy-1400.o<br>
+  LD      drivers/net/wireless/ath/wil6210/built-in.o<br>
+  CC      fs/squashfs/export.o<br>
+  CC      drivers/net/wireless/cnss_crypto/cnss_secif.o<br>
+  CC      drivers/pci/bus.o<br>
+  CC      drivers/of/of_net.o<br>
+  CC      net/netfilter/xt_NFQUEUE.o<br>
+  CC      drivers/media/tuners/tda18271-maps.o<br>
+  CC      drivers/media/rc/keymaps/rc-cinergy.o<br>
+  LD      net/ipv4/netfilter/nf_conntrack_ipv4.o<br>
+  LD      net/ipv4/netfilter/nf_nat_ipv4.o<br>
+  LD      net/ipv4/netfilter/built-in.o<br>
+  CC      net/ipv4/tcp_highspeed.o<br>
+  CC      fs/squashfs/file.o<br>
+  LD      drivers/net/wireless/cnss_crypto/built-in.o<br>
+  CC      drivers/net/wireless/cnss_prealloc/cnss_prealloc.o<br>
+  CC      drivers/net/ppp/pppox.o<br>
+  CC      drivers/net/usb/asix_common.o<br>
+  CC      net/wireless/trace.o<br>
+  CC      drivers/media/rc/keymaps/rc-delock-61959.o<br>
+  CC      drivers/net/wireless/wcnss/wcnss_wlan.o<br>
+  CC      drivers/media/rc/keymaps/rc-dib0700-nec.o<br>
+  LD      drivers/media/platform/msm/camera_v2/sensor/built-in.o<br>
+  CC      drivers/media/rc/keymaps/rc-dib0700-rc5.o<br>
+  LD      drivers/media/platform/msm/camera_v2/built-in.o<br>
+  CC      drivers/pci/probe.o<br>
+  LD      drivers/media/platform/msm/built-in.o<br>
+  CC      drivers/media/tuners/tda18271-common.o<br>
+  CC      drivers/of/of_mdio.o<br>
+  LD      drivers/net/slip/built-in.o<br>
+  CC      drivers/of/of_pci.o<br>
+  CC      fs/squashfs/fragment.o<br>
+  CC      drivers/media/platform/soc_camera/soc_camera.o<br>
+  CC      net/netfilter/xt_REDIRECT.o<br>
+  CC      drivers/media/platform/soc_camera/soc_mediabus.o<br>
+  CC      drivers/net/tun.o<br>
+  LD      drivers/net/wireless/cnss_prealloc/built-in.o<br>
+  CC      drivers/media/platform/soc_camera/soc_camera_platform.o<br>
+  CC      net/ipv4/tcp_htcp.o<br>
+  CC      drivers/media/rc/keymaps/rc-digitalnow-tinytwin.o<br>
+  CC      fs/squashfs/id.o<br>
+  CC      drivers/media/tuners/tda18271-fe.o<br>
+  CC      drivers/net/ppp/pppoe.o<br>
+  CC      drivers/media/rc/keymaps/rc-digittrade.o<br>
+  CC      drivers/net/usb/ax88172a.o<br>
+  CC      drivers/of/of_pci_irq.o<br>
+  CC      fs/sysfs/file.o<br>
+  CC      fs/squashfs/inode.o<br>
+  CC      fs/sysfs/dir.o<br>
+  CC      net/netfilter/xt_SECMARK.o<br>
+  CC      fs/tracefs/inode.o<br>
+  CC      drivers/media/rc/keymaps/rc-dm1105-nec.o<br>
+  CC      drivers/pci/host-bridge.o<br>
+  CC      net/ipv4/tcp_vegas.o<br>
+  CC      drivers/media/rc/keymaps/rc-dntv-live-dvb-t.o<br>
+  CC      fs/squashfs/namei.o<br>
+  CC      drivers/of/of_spmi.o<br>
+  CC      drivers/net/usb/ax88179_178a.o<br>
+  CC      drivers/net/usb/cdc_ether.o<br>
+  CC      fs/sysfs/symlink.o<br>
+  LD      drivers/media/platform/soc_camera/built-in.o<br>
+  LD      drivers/media/platform/built-in.o<br>
+  CC      net/netfilter/xt_TPROXY.o<br>
+  LD      fs/tracefs/tracefs.o<br>
+  LD      fs/tracefs/built-in.o<br>
+  CC      drivers/net/usb/net1080.o<br>
+  CC      drivers/media/rc/keymaps/rc-dntv-live-dvbt-pro.o<br>
+  CC      drivers/net/wireless/wcnss/wcnss_vreg.o<br>
+  CC      drivers/pci/remove.o<br>
+  CC      fs/squashfs/super.o<br>
+  CC      drivers/net/ppp/pppolac.o<br>
+  CC      drivers/media/tuners/xc5000.o<br>
+  CC      drivers/media/tuners/xc4000.o<br>
+  CC      drivers/of/of_reserved_mem.o<br>
+  CC      fs/sysfs/mount.o<br>
+  CC      drivers/media/rc/keymaps/rc-dvbsky.o<br>
+  CC      net/ipv4/tcp_veno.o<br>
+  CC      fs/squashfs/symlink.o<br>
+  CC      drivers/pci/pci.o<br>
+  CC      fs/squashfs/decompressor.o<br>
+  LD      drivers/net/wireless/wcnss/wcnsscore.o<br>
+  CC      drivers/media/v4l2-core/v4l2-dev.o<br>
+  LD      drivers/net/wireless/wcnss/built-in.o<br>
+  LD      drivers/net/wireless/built-in.o<br>
+  CC      drivers/media/media-device.o<br>
+  CC      drivers/net/veth.o<br>
+  CC      net/netfilter/xt_TCPMSS.o<br>
+  CC      fs/sysfs/group.o<br>
+  CC      drivers/media/rc/keymaps/rc-em-terratec.o<br>
+  CC      drivers/net/usb/cdc_subset.o<br>
+  CC      drivers/net/ppp/pppopns.o<br>
+  CC      drivers/of/of_slimbus.o<br>
+  CC      fs/squashfs/file_cache.o<br>
+  CC      fs/squashfs/decompressor_single.o<br>
+  CC      net/ipv4/tcp_scalable.o<br>
+  CC      drivers/media/rc/keymaps/rc-encore-enltv2.o<br>
+  CC      drivers/media/rc/keymaps/rc-encore-enltv.o<br>
+  LD      fs/sysfs/built-in.o<br>
+  CC      drivers/pci/pci-driver.o<br>
+  CC      drivers/of/of_coresight.o<br>
+  CC      drivers/pci/search.o<br>
+  CC      drivers/media/v4l2-core/v4l2-ioctl.o<br>
+  CC      fs/squashfs/xz_wrapper.o<br>
+  CC      drivers/media/tuners/mc44s803.o<br>
+  CC      drivers/net/usb/zaurus.o<br>
+  CC      net/netfilter/xt_TEE.o<br>
+  CC      drivers/media/v4l2-core/v4l2-device.o<br>
+  CC      drivers/media/rc/keymaps/rc-encore-enltv-fm53.o<br>
+  CC      drivers/media/media-devnode.o<br>
+  CC      drivers/media/rc/ir-sanyo-decoder.o<br>
+  LD      drivers/net/ppp/built-in.o<br>
+  CC      drivers/media/rc/ir-sharp-decoder.o<br>
+  CC      net/ipv4/tcp_lp.o<br>
+  CC      drivers/of/of_batterydata.o<br>
+  CC      fs/squashfs/zlib_wrapper.o<br>
+  CC      drivers/media/rc/keymaps/rc-evga-indtube.o<br>
+  CC      drivers/media/rc/ir-lirc-codec.o<br>
+  CC      drivers/media/rc/ir-xmp-decoder.o<br>
+  CC      drivers/media/rc/pwm-ir.o<br>
+  LD      drivers/media/tuners/tda18271.o<br>
+  CC      drivers/net/usb/usbnet.o<br>
+  LD      drivers/media/tuners/built-in.o<br>
+  CC      drivers/media/media-entity.o<br>
+  CC      drivers/net/usb/cdc_ncm.o<br>
+  CC      drivers/media/v4l2-core/v4l2-fh.o<br>
+  CC      drivers/pci/pci-sysfs.o<br>
+  LD      fs/squashfs/squashfs.o<br>
+  CC      drivers/media/rc/keymaps/rc-eztv.o<br>
+  LD      fs/squashfs/built-in.o<br>
+  LD      drivers/of/built-in.o<br>
+  CC      net/netfilter/xt_TRACE.o<br>
+  CC      fs/eventpoll.o<br>
+  CC      drivers/media/v4l2-core/v4l2-event.o<br>
+  LD      drivers/media/rc/rc-core.o<br>
+  CC      net/wireless/wext-core.o<br>
+  CC      drivers/phy/phy-core.o<br>
+  CC      drivers/phy/phy-qcom-ufs.o<br>
+  CC      net/ipv4/tcp_yeah.o<br>
+  CC      drivers/media/rc/keymaps/rc-flydvb.o<br>
+  CC      drivers/pinctrl/core.o<br>
+  CC      net/ipv4/tcp_illinois.o<br>
+  CC      drivers/media/v4l2-core/v4l2-ctrls.o<br>
+  CC      net/netfilter/xt_IDLETIMER.o<br>
+  CC      drivers/pci/rom.o<br>
+  CC      drivers/media/rc/keymaps/rc-flyvideo.o<br>
+  CC      drivers/media/rc/keymaps/rc-fusionhdtv-mce.o<br>
+  CC      net/netfilter/xt_HARDIDLETIMER.o<br>
+  CC      drivers/media/v4l2-core/v4l2-subdev.o<br>
+  CC      drivers/phy/phy-qcom-ufs-qmp-20nm.o<br>
+  CC      fs/anon_inodes.o<br>
+  CC      drivers/phy/phy-qcom-ufs-qmp-14nm.o<br>
+  CC      drivers/phy/phy-qcom-ufs-qmp-v3.o<br>
+  LD      drivers/net/usb/asix.o<br>
+  CC      net/wireless/wext-proc.o<br>
+  CC      drivers/media/rc/keymaps/rc-gadmei-rm008z.o<br>
+  CC      net/ipv4/tcp_memcontrol.o<br>
+  CC      drivers/phy/phy-qcom-ufs-qrbtc-v2.o<br>
+  CC      drivers/pci/setup-res.o<br>
+  CC      net/ipv4/xfrm4_policy.o<br>
+  CC      net/netfilter/xt_comment.o<br>
+  CC      net/wireless/wext-spy.o<br>
+  CC      drivers/pinctrl/pinctrl-utils.o<br>
+  CC      fs/signalfd.o<br>
+  LD      drivers/net/usb/built-in.o<br>
+  LD      drivers/net/built-in.o<br>
+  CC      net/wireless/wext-priv.o<br>
+  CC      net/netfilter/xt_connlimit.o<br>
+  CC      net/netfilter/xt_conntrack.o<br>
+  CC      drivers/media/rc/keymaps/rc-genius-tvgo-a11mce.o<br>
+  CC      net/netfilter/xt_dscp.o<br>
+  LD      drivers/phy/built-in.o<br>
+  CC      fs/timerfd.o<br>
+  CC      drivers/platform/msm/ipa/ipa_clients/odu_bridge.o<br>
+  CC      drivers/platform/msm/ipa/ipa_clients/ipa_mhi_client.o<br>
+  CC      drivers/pci/irq.o<br>
+  CC      drivers/pinctrl/pinmux.o<br>
+  CC      drivers/media/rc/keymaps/rc-gotview7135.o<br>
+  CC      net/netfilter/xt_ecn.o<br>
+  CC      drivers/platform/msm/msm_11ad/msm_11ad.o<br>
+  CC      net/ipv4/xfrm4_state.o<br>
+  CC      net/ipv4/xfrm4_input.o<br>
+  CC      net/wireless/regdb.o<br>
+  CC      drivers/platform/msm/msm_bus/msm_bus_core.o<br>
+  CC      drivers/media/rc/keymaps/rc-imon-mce.o<br>
+  LD      drivers/media/media.o<br>
+  CC      drivers/media/v4l2-core/v4l2-clk.o<br>
+  CC      fs/eventfd.o<br>
+  CC      drivers/platform/msm/msm_bus/msm_bus_client_api.o<br>
+  CC      drivers/pinctrl/pinconf.o<br>
+  CC      drivers/pci/vpd.o<br>
+  CC      drivers/pinctrl/devicetree.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/ipa.o<br>
+  CC      drivers/media/rc/keymaps/rc-imon-pad.o<br>
+  CC      net/netfilter/xt_esp.o<br>
+  CC      net/netfilter/xt_hashlimit.o<br>
+  CC      net/netfilter/xt_helper.o<br>
+  CC      drivers/pci/setup-bus.o<br>
+  CC      drivers/platform/msm/msm_bus/msm_bus_of.o<br>
+  CC      drivers/pinctrl/pinconf-generic.o<br>
+  CC      drivers/power/power_supply_core.o<br>
+  LD      net/wireless/cfg80211.o<br>
+  CC      drivers/media/v4l2-core/v4l2-async.o<br>
+  LD      net/wireless/built-in.o<br>
+  CC      drivers/media/rc/keymaps/rc-iodata-bctv7e.o<br>
+  CC      fs/aio.o<br>
+  CC      drivers/power/power_supply_sysfs.o<br>
+  CC      drivers/power/power_supply_leds.o<br>
+  CC      drivers/platform/msm/ipa/ipa_clients/ipa_uc_offload.o<br>
+  CC      net/ipv4/xfrm4_output.o<br>
+  LD      drivers/platform/msm/msm_11ad/msm_11ad_proxy.o<br>
+  LD      drivers/platform/msm/msm_11ad/built-in.o<br>
+  CC      net/netfilter/xt_hl.o<br>
+  CC      drivers/pinctrl/qcom/pinctrl-msm.o<br>
+  CC      drivers/media/rc/keymaps/rc-it913x-v1.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/ipa_debugfs.o<br>
+  CC      drivers/pinctrl/qcom/pinctrl-msm8953.o<br>
+  CC      drivers/power/smb1351-charger.o<br>
+  CC      drivers/platform/msm/spmi/spmi.o<br>
+  CC      net/netfilter/xt_iprange.o<br>
+  CC      drivers/media/v4l2-core/v4l2-compat-ioctl32.o<br>
+  CC      drivers/platform/msm/msm_bus/msm_bus_rpm_smd.o<br>
+  CC      net/netfilter/xt_l2tp.o<br>
+  CC      drivers/media/rc/keymaps/rc-it913x-v2.o<br>
+  CC      drivers/platform/msm/spmi/spmi-resources.o<br>
+  CC      drivers/pci/vc.o<br>
+  CC      drivers/pci/proc.o<br>
+  LD      drivers/platform/msm/ipa/ipa_clients/built-in.o<br>
+  CC      net/ipv4/xfrm4_protocol.o<br>
+  CC      drivers/platform/msm/sps/bam.o<br>
+  CC      drivers/media/rc/keymaps/rc-kaiomy.o<br>
+  CC      drivers/platform/msm/msm_bus/msm_bus_fabric_adhoc.o<br>
+  LD      drivers/pinctrl/qcom/built-in.o<br>
+  LD      drivers/pinctrl/built-in.o<br>
+  CC      drivers/platform/msm/sps/sps_bam.o<br>
+  CC      drivers/platform/msm/sps/sps.o<br>
+  CC      drivers/platform/msm/spmi/spmi-pmic-arb.o<br>
+  CC      drivers/platform/msm/ipa/ipa_api.o<br>
+  CC      drivers/pwm/core.o<br>
+  CC      fs/locks.o<br>
+  CC      drivers/pci/slot.o<br>
+  CC      drivers/media/rc/keymaps/rc-kworld-315u.o<br>
+  CC      net/netfilter/xt_length.o<br>
+  CC      drivers/media/rc/keymaps/rc-kworld-pc150u.o<br>
+  CC      drivers/media/rc/keymaps/rc-kworld-plus-tv-analog.o<br>
+  CC      drivers/platform/msm/msm_bus/msm_bus_arb_adhoc.o<br>
+  CC      drivers/power/smb135x-charger.o<br>
+  CC      drivers/media/rc/keymaps/rc-leadtek-y04g0051.o<br>
+  LD      net/ipv4/built-in.o<br>
+  CC      drivers/pci/quirks.o<br>
+  CC      drivers/platform/msm/spmi/qpnp-int.o<br>
+  CC      drivers/pwm/sysfs.o<br>
+  CC      drivers/media/rc/keymaps/rc-lirc.o<br>
+  CC      drivers/media/v4l2-core/v4l2-of.o<br>
+  CC      net/netfilter/xt_limit.o<br>
+  CC      fs/compat.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/ipa_hdr.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/ipa_flt.o<br>
+  CC      drivers/media/rc/keymaps/rc-lme2510.o<br>
+  CC      drivers/pwm/pwm-qpnp.o<br>
+  CC      drivers/media/v4l2-core/v4l2-common.o<br>
+  CC      drivers/media/rc/keymaps/rc-manli.o<br>
+  CC      drivers/platform/msm/msm_bus/msm_bus_rules.o<br>
+  CC      net/netfilter/xt_mac.o<br>
+  CC      net/netfilter/xt_multiport.o<br>
+  CC      drivers/platform/msm/spmi/spmi-dbgfs.o<br>
+  CC      drivers/platform/msm/ipa/ipa_rm.o<br>
+  CC      drivers/media/rc/keymaps/rc-medion-x10.o<br>
+  CC      drivers/media/rc/keymaps/rc-medion-x10-digitainer.o<br>
+  CC      drivers/media/rc/keymaps/rc-medion-x10-or2x.o<br>
+  CC      fs/compat_ioctl.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/ipa_rt.o<br>
+  CC      drivers/power/qpnp-fg.o<br>
+  CC      drivers/media/v4l2-core/v4l2-dv-timings.o<br>
+  CC      net/netfilter/xt_pkttype.o<br>
+  LD      drivers/platform/msm/spmi/built-in.o<br>
+  CC      net/netfilter/xt_policy.o<br>
+  CC      drivers/pci/msi.o<br>
+  CC      drivers/pci/setup-irq.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/ipa_dp.o<br>
+  CC      drivers/pci/pci-label.o<br>
+  CC      drivers/platform/msm/msm_bus/msm_bus_bimc_adhoc.o<br>
+  CC      drivers/pci/syscall.o<br>
+  LD      drivers/pwm/built-in.o<br>
+  CC      drivers/platform/msm/ipa/ipa_rm_dependency_graph.o<br>
+  CC      drivers/media/rc/keymaps/rc-msi-digivox-ii.o<br>
+  CC      drivers/platform/msm/ipa/ipa_rm_peers_list.o<br>
+  CC      drivers/pci/of.o<br>
+  CC      drivers/media/v4l2-core/v4l2-mem2mem.o<br>
+  CC      drivers/media/rc/keymaps/rc-msi-digivox-iii.o<br>
+  CC      drivers/media/rc/keymaps/rc-msi-tvanywhere.o<br>
+  CC      drivers/media/v4l2-core/videobuf-core.o<br>
+  CC      drivers/media/v4l2-core/videobuf2-core.o<br>
+  CC      drivers/platform/msm/msm_bus/msm_bus_noc_adhoc.o<br>
+  CC      drivers/platform/msm/msm_bus/msm_bus_of_adhoc.o<br>
+  CC      net/netfilter/xt_qtaguid_print.o<br>
+  CC      drivers/platform/msm/ipa/ipa_rm_resource.o<br>
+  CC      drivers/media/rc/keymaps/rc-msi-tvanywhere-plus.o<br>
+  CC      fs/binfmt_script.o<br>
+  CC      drivers/pci/host/pci-msm.o<br>
+  CC      drivers/ras/ras.o<br>
+  CC      fs/binfmt_elf.o<br>
+  CC      net/netfilter/xt_qtaguid.o<br>
+  CC      fs/compat_binfmt_elf.o<br>
+  CC      drivers/platform/msm/msm_bus/msm_buspm_coresight_adhoc.o<br>
+  CC      drivers/media/rc/keymaps/rc-nebula.o<br>
+  CC      net/netfilter/xt_quota.o<br>
+  CC      drivers/media/rc/keymaps/rc-nec-terratec-cinergy-xs.o<br>
+  CC      fs/mbcache.o<br>
+  CC      drivers/media/v4l2-core/videobuf2-memops.o<br>
+  CC      drivers/platform/msm/ipa/ipa_rm_inactivity_timer.o<br>
+  CC      drivers/media/rc/keymaps/rc-norwood.o<br>
+  CC      drivers/media/rc/keymaps/rc-npgtech.o<br>
+  CC      drivers/platform/msm/msm_bus/msm_bus_dbg.o<br>
+  CC      drivers/ras/debugfs.o<br>
+  CC      net/netfilter/xt_quota2.o<br>
+  CC      drivers/media/rc/keymaps/rc-pctv-sedna.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/ipa_client.o<br>
+  CC      fs/posix_acl.o<br>
+  CC      drivers/media/v4l2-core/videobuf2-vmalloc.o<br>
+  CC      drivers/platform/msm/qpnp-power-on.o<br>
+  CC      drivers/platform/msm/qpnp-revid.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/ipa_utils.o<br>
+  LD      drivers/media/v4l2-core/videodev.o<br>
+  CC      drivers/platform/msm/sps/sps_dma.o<br>
+  CC      net/netfilter/xt_socket.o<br>
+  LD      drivers/ras/built-in.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/ipa_nat.o<br>
+  CC      drivers/power/qpnp-smbcharger.o<br>
+  CC      drivers/media/rc/keymaps/rc-pinnacle-color.o<br>
+  CC      drivers/platform/msm/sps/sps_map.o<br>
+  CC      drivers/platform/msm/qpnp-coincell.o<br>
+  CC      drivers/media/rc/keymaps/rc-pinnacle-grey.o<br>
+  LD      drivers/media/v4l2-core/built-in.o<br>
+  CC      drivers/media/rc/keymaps/rc-pinnacle-pctv-hd.o<br>
+  CC      drivers/platform/msm/qpnp-haptic.o<br>
+  CC      fs/coredump.o<br>
+  CC      fs/drop_caches.o<br>
+  CC      drivers/platform/msm/sps/sps_mem.o<br>
+  CC      drivers/platform/msm/sps/sps_rm.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/ipa_intf.o<br>
+../../../../../../kernel/xiaomi/msm8953/drivers/power/qpnp-fg.c:2590:12: warning: 'read_beat' defined but not used [-Wunused-function]<br>
+ static int read_beat(struct fg_chip *chip, u8 *beat_count)<br>
+            ^<br>
+cc1: warning: unrecognized command line option "-Wno-misleading-indentation"<br>
+  CC      drivers/power/pmic-voter.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/teth_bridge.o<br>
+  LD      drivers/platform/msm/msm_bus/built-in.o<br>
+  CC      drivers/media/rc/keymaps/rc-pixelview.o<br>
+  CC      drivers/media/rc/keymaps/rc-pixelview-mk12.o<br>
+  CC      drivers/platform/msm/usb_bam.o<br>
+  CC      drivers/media/rc/keymaps/rc-pixelview-002t.o<br>
+  CC      net/netfilter/xt_state.o<br>
+  CC      drivers/regulator/core.o<br>
+  CC      drivers/regulator/dummy.o<br>
+  CC      drivers/media/rc/keymaps/rc-pixelview-new.o<br>
+  CC      drivers/regulator/fixed-helper.o<br>
+  CC      drivers/media/rc/keymaps/rc-powercolor-real-angel.o<br>
+  CC      drivers/rtc/rtc-lib.o<br>
+  LD      drivers/platform/msm/sps/built-in.o<br>
+  CC      drivers/platform/msm/avtimer.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/ipa_interrupts.o<br>
+  CC      drivers/media/rc/keymaps/rc-proteus-2309.o<br>
+  CC      drivers/power/qpnp-typec.o<br>
+  CC      fs/fhandle.o<br>
+  CC      drivers/sensors/sensors_ssc.o<br>
+  CC      fs/dcookies.o<br>
+  CC      net/netfilter/xt_statistic.o<br>
+  CC      drivers/scsi/scsi.o<br>
+  CC      drivers/rtc/hctosys.o<br>
+  CC      drivers/slimbus/slimbus.o<br>
+  CC      drivers/media/rc/keymaps/rc-purpletv.o<br>
+  CC      drivers/slimbus/slim-msm.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/ipa_uc.o<br>
+  CC      drivers/rtc/systohc.o<br>
+  LD      drivers/sensors/built-in.o<br>
+  LD      drivers/platform/msm/ipa/ipa_common<br>
+  CC      drivers/slimbus/slim-msm-ngd.o<br>
+  CC      drivers/power/qns_system.o<br>
+  LD      fs/built-in.o<br>
+  CC      drivers/media/rc/keymaps/rc-pv951.o<br>
+  CC      net/netfilter/xt_string.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/ipa_uc_wdi.o<br>
+  CC      drivers/rtc/class.o<br>
+  AS      drivers/soc/qcom/idle-v8.o<br>
+  CC      drivers/soc/qcom/cpu_ops.o<br>
+../../../../../../kernel/xiaomi/msm8953/drivers/power/qpnp-smbcharger.c: In function 'aicl_done_handler':<br>
+../../../../../../kernel/xiaomi/msm8953/drivers/power/qpnp-smbcharger.c:6662:6: warning: unused variable 'aicl_level' [-Wunused-variable]<br>
+  int aicl_level = smbchg_get_aicl_level_ma(chip);<br>
+      ^<br>
+../../../../../../kernel/xiaomi/msm8953/drivers/power/qpnp-smbcharger.c: At top level:<br>
+cc1: warning: unrecognized command line option "-Wno-misleading-indentation"<br>
+  CC      drivers/power/battery_current_limit.o<br>
+  CC      drivers/media/rc/keymaps/rc-hauppauge.o<br>
+  CC      drivers/media/rc/keymaps/rc-rc6-mce.o<br>
+  CC      drivers/power/msm_bcl.o<br>
+  CC      drivers/power/bcl_peripheral.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/ipa_dma.o<br>
+  CC      drivers/soc/qcom/msm_rq_stats.o<br>
+  CC      net/netfilter/xt_time.o<br>
+  CC      net/netfilter/xt_u32.o<br>
+  CC      drivers/media/rc/keymaps/rc-real-audio-220-32-keys.o<br>
+  CC      drivers/rtc/interface.o<br>
+  CC      drivers/scsi/hosts.o<br>
+  CC      drivers/regulator/helpers.o<br>
+  CC      drivers/scsi/scsi_ioctl.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/ipa_uc_mhi.o<br>
+  LD      drivers/slimbus/built-in.o<br>
+  CC      drivers/soundwire/soundwire.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/ipa_mhi.o<br>
+  CC      drivers/media/rc/keymaps/rc-reddo.o<br>
+  CC      drivers/soc/qcom/cpuss_dump.o<br>
+  CC      drivers/media/rc/keymaps/rc-snapstream-firefly.o<br>
+  CC      drivers/media/rc/keymaps/rc-streamzap.o<br>
+  LD      net/netfilter/netfilter.o<br>
+  LD      net/netfilter/nfnetlink_queue.o<br>
+  LD      net/netfilter/nf_conntrack.o<br>
+  LD      net/netfilter/nf_conntrack_h323.o<br>
+  LD      net/netfilter/nf_nat.o<br>
+  CC      drivers/power/qcom/msm-pm.o<br>
+  LD      net/netfilter/built-in.o<br>
+  CC      drivers/regulator/devres.o<br>
+  CC      drivers/regulator/of_regulator.o<br>
+  LD      net/built-in.o<br>
+  CC      drivers/rtc/rtc-dev.o<br>
+  CC      drivers/soc/qcom/memory_dump_v2.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/ipa_uc_ntn.o<br>
+  CC      drivers/scsi/constants.o<br>
+  CC      drivers/media/rc/keymaps/rc-tbs-nec.o<br>
+  LD      drivers/power/power_supply.o<br>
+  CC      drivers/power/reset/msm-poweroff.o<br>
+  CC      drivers/regulator/fixed.o<br>
+  CC      drivers/soundwire/swr-wcd-ctrl.o<br>
+  CC      drivers/regulator/mem-acc-regulator.o<br>
+  CC      drivers/power/qcom/pm-data.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/rmnet_ipa.o<br>
+  LD      drivers/pci/host/built-in.o<br>
+  LD      drivers/pci/built-in.o<br>
+  CC      drivers/spi/spi.o<br>
+  CC      drivers/media/rc/keymaps/rc-technisat-usb2.o<br>
+  CC      drivers/media/rc/keymaps/rc-terratec-cinergy-xs.o<br>
+  CC      drivers/media/rc/keymaps/rc-terratec-slim.o<br>
+  CC      drivers/rtc/rtc-proc.o<br>
+  CC      drivers/soc/qcom/ddr-health.o<br>
+  CC      drivers/media/rc/keymaps/rc-terratec-slim-2.o<br>
+  CC      drivers/media/rc/keymaps/rc-tevii-nec.o<br>
+  LD      drivers/power/reset/built-in.o<br>
+  CC      drivers/power/qcom/lpm-stats.o<br>
+  CC      drivers/regulator/fan53555.o<br>
+  CC      drivers/regulator/msm_gfx_ldo.o<br>
+  CC      drivers/rtc/rtc-sysfs.o<br>
+  CC      drivers/media/rc/keymaps/rc-tivo.o<br>
+  CC      drivers/regulator/rpm-smd-regulator.o<br>
+  CC      drivers/spi/spidev.o<br>
+  CC      drivers/scsi/scsicam.o<br>
+  CC      drivers/rtc/qpnp-rtc.o<br>
+  CC      drivers/soc/qcom/watchdog_v2.o<br>
+  CC      drivers/soc/qcom/common_log.o<br>
+  CC      drivers/soc/qcom/cpu_pwr_ctl.o<br>
+  CC      drivers/scsi/scsi_error.o<br>
+  LD      drivers/rtc/rtc-core.o<br>
+  CC      drivers/media/rc/keymaps/rc-total-media-in-hand.o<br>
+  CC      drivers/regulator/qpnp-regulator.o<br>
+  LD      drivers/soundwire/built-in.o<br>
+  CC      drivers/staging/staging.o<br>
+  CC      drivers/switch/switch_class.o<br>
+  CC      drivers/soc/qcom/socinfo.o<br>
+  CC      drivers/spi/spi-qup.o<br>
+  CC      drivers/power/qcom/pm-boot.o<br>
+  CC      drivers/soc/qcom/boot_stats.o<br>
+  CC      drivers/soc/qcom/rpm-smd.o<br>
+  CC      drivers/media/rc/keymaps/rc-total-media-in-hand-02.o<br>
+  CC      drivers/scsi/scsi_lib.o<br>
+  LD      drivers/rtc/built-in.o<br>
+  CC      drivers/power/qcom/msm-core.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/ipa_qmi_service_v01.o<br>
+  CC      drivers/thermal/thermal_core.o<br>
+  CC      drivers/staging/android/ion/ion.o<br>
+  LD      drivers/switch/built-in.o<br>
+  CC      drivers/thermal/thermal_hwmon.o<br>
+  CC      drivers/staging/android/binder.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/ipa_qmi_service.o<br>
+  CC      drivers/spi/spi_qsd.o<br>
+  CC      drivers/staging/android/binder_alloc.o<br>
+  CC      drivers/media/rc/keymaps/rc-trekstor.o<br>
+  CC      drivers/regulator/spm-regulator.o<br>
+  CC      drivers/soc/qcom/event_timer.o<br>
+  CC      drivers/soc/qcom/rpm-smd-debug.o<br>
+  CC      drivers/media/rc/keymaps/rc-tt-1500.o<br>
+  CC      drivers/soc/qcom/spm.o<br>
+  CC      drivers/scsi/scsi_lib_dma.o<br>
+  CC      drivers/staging/android/ashmem.o<br>
+  CC      drivers/platform/msm/ipa/ipa_v2/rmnet_ipa_fd_ioctl.o<br>
+  CC      drivers/media/rc/keymaps/rc-twinhan1027.o<br>
+  CC      drivers/regulator/cpr-regulator.o<br>
+  CC      drivers/staging/snappy/csnappy_compress.o<br>
+  CC      drivers/regulator/cpr3-regulator.o<br>
+  CC      drivers/media/rc/keymaps/rc-videomate-m1f.o<br>
+  LD      drivers/staging/prima/built-in.o<br>
+  CC      drivers/power/qcom/debug_core.o<br>
+  CC      drivers/power/qcom/apm.o<br>
+  CC      drivers/thermal/of-thermal.o<br>
+  CC      drivers/soc/qcom/spm_devices.o<br>
+  CC      drivers/scsi/scsi_scan.o<br>
+  CC      drivers/staging/android/ion/ion_heap.o<br>
+  CC      drivers/soc/qcom/scm.o<br>
+  CC      drivers/soc/qcom/scm-boot.o<br>
+  CC      drivers/media/rc/keymaps/rc-videomate-s350.o<br>
+  LD      drivers/spi/built-in.o<br>
+  CC      drivers/staging/snappy/csnappy_decompress.o<br>
+  LD      drivers/platform/msm/ipa/ipa_v2/ipat.o<br>
+  CC      drivers/tty/tty_io.o<br>
+  LD      drivers/platform/msm/ipa/ipa_v2/built-in.o<br>
+  CC      drivers/thermal/step_wise.o<br>
+  LD      drivers/platform/msm/ipa/built-in.o<br>
+  LD      drivers/platform/msm/built-in.o<br>
+  LD      drivers/platform/built-in.o<br>
+  CC      drivers/tty/n_tty.o<br>
+  CC      drivers/media/rc/keymaps/rc-videomate-tv-pvr.o<br>
+  LD      drivers/power/qcom/built-in.o<br>
+  LD      drivers/power/built-in.o<br>
+  CC      drivers/uio/uio.o<br>
+  CC      drivers/tty/tty_ioctl.o<br>
+  CC      drivers/tty/tty_ldisc.o<br>
+  CC      drivers/staging/android/ion/ion_page_pool.o<br>
+  CC      drivers/tty/tty_buffer.o<br>
+  LD      drivers/staging/snappy/built-in.o<br>
+  CC      drivers/media/rc/keymaps/rc-winfast.o<br>
+  CC      drivers/thermal/msm-tsens.o<br>
+  CC      drivers/tty/tty_port.o<br>
+  CC      drivers/media/rc/keymaps/rc-winfast-usbii-deluxe.o<br>
+  CC      drivers/soc/qcom/mpm-of.o<br>
+  CC      drivers/soc/qcom/smem.o<br>
+  CC      drivers/staging/android/ion/ion_system_heap.o<br>
+  CC      drivers/scsi/scsi_sysfs.o<br>
+  CC      drivers/media/rc/keymaps/rc-su3000.o<br>
+  CC      drivers/staging/android/ion/ion_carveout_heap.o<br>
+  CC      drivers/uio/msm_sharedmem/msm_sharedmem.o<br>
+  CC      drivers/uio/msm_sharedmem/remote_filesystem_access_v01.o<br>
+  CC      drivers/soc/qcom/smem_debug.o<br>
+  CC      drivers/tty/tty_mutex.o<br>
+  CC      drivers/staging/android/logger.o<br>
+  CC      drivers/thermal/qpnp-temp-alarm.o<br>
+  LD      drivers/media/rc/keymaps/built-in.o<br>
+  CC      drivers/thermal/qpnp-adc-tm.o<br>
+  LD      drivers/media/rc/built-in.o<br>
+  CC      drivers/staging/android/ion/ion_chunk_heap.o<br>
+  LD      drivers/media/built-in.o<br>
+  CC      drivers/uio/msm_sharedmem/sharedmem_qmi.o<br>
+  CC      drivers/soc/qcom/smd.o<br>
+  CC      drivers/usb/class/cdc-acm.o<br>
+  CC      drivers/video/console/dummycon.o<br>
+  CC      drivers/tty/tty_ldsem.o<br>
+  CC      drivers/usb/common/common.o<br>
+  CC      drivers/thermal/msm_thermal.o<br>
+  CC      drivers/usb/core/usb.o<br>
+  CC      drivers/video/fbdev/core/fb_notify.o<br>
+  CC      drivers/usb/core/hub.o<br>
+  CC      drivers/video/fbdev/core/fb_cmdline.o<br>
+  CC      drivers/staging/android/ion/ion_system_secure_heap.o<br>
+  CC      drivers/scsi/scsi_devinfo.o<br>
+  LD      drivers/uio/msm_sharedmem/built-in.o<br>
+  CC      drivers/tty/pty.o<br>
+  LD      drivers/uio/built-in.o<br>
+  CC      drivers/tty/tty_audit.o<br>
+  LD      drivers/video/console/built-in.o<br>
+  CC      drivers/tty/sysrq.o<br>
+  CC      drivers/regulator/cpr3-util.o<br>
+  LD      drivers/usb/common/usb-common.o<br>
+  LD      drivers/usb/common/built-in.o<br>
+  CC      drivers/video/fbdev/core/fbmem.o<br>
+  CC      drivers/usb/dwc3/core.o<br>
+  CC      drivers/thermal/msm_thermal-dev.o<br>
+  CC      drivers/video/fbdev/core/fbmon.o<br>
+  CC      drivers/staging/android/ion/ion_cma_heap.o<br>
+  LD      drivers/usb/class/built-in.o<br>
+  CC      drivers/staging/android/timed_output.o<br>
+  CC      drivers/scsi/scsi_sysctl.o<br>
+  CC      drivers/usb/gadget/usbstring.o<br>
+  CC      drivers/usb/gadget/config.o<br>
+  CC      drivers/usb/gadget/epautoconf.o<br>
+  CC      drivers/usb/core/hcd.o<br>
+  CC      drivers/soc/qcom/smd_debug.o<br>
+  CC      drivers/regulator/cpr3-hmss-regulator.o<br>
+  CC      drivers/staging/android/ion/ion_cma_secure_heap.o<br>
+  CC      drivers/tty/serial/serial_core.o<br>
+  CC      drivers/scsi/scsi_proc.o<br>
+  CC      drivers/regulator/cpr3-mmss-regulator.o<br>
+  CC      drivers/tty/vt/vt_ioctl.o<br>
+  CC      drivers/scsi/scsi_trace.o<br>
+  CC      drivers/staging/android/timed_gpio.o<br>
+  CC      drivers/usb/gadget/composite.o<br>
+  CC      drivers/usb/gadget/functions.o<br>
+  CC      drivers/video/fbdev/core/fbcmap.o<br>
+  CC      drivers/usb/dwc3/debug.o<br>
+  CC      drivers/soc/qcom/smd_private.o<br>
+  CC      drivers/soc/qcom/smd_init_dt.o<br>
+  CC      drivers/scsi/scsi_pm.o<br>
+  CC      drivers/usb/core/urb.o<br>
+  CC      drivers/usb/dwc3/trace.o<br>
+  CC      drivers/staging/android/ion/compat_ion.o<br>
+  CC      drivers/soc/qcom/smsm_debug.o<br>
+  CC      drivers/usb/gadget/u_f.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/msm_dba/msm_dba.o<br>
+  CC      drivers/regulator/cpr4-apss-regulator.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp.o<br>
+  CC      drivers/video/fbdev/core/fbsysfs.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp_ctl.o<br>
+  CC      drivers/tty/vt/vc_screen.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp_pipe.o<br>
+  CC      drivers/staging/android/ion/msm/msm_ion.o<br>
+  CC      drivers/staging/android/ion/msm/compat_msm_ion.o<br>
+  CC      drivers/soc/qcom/glink.o<br>
+  CC      drivers/tty/serial/msm_serial_hs.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/msm_dba/msm_dba_init.o<br>
+  CC      drivers/scsi/ufs/ufs-qcom.o<br>
+  CC      drivers/usb/gadget/debug.o<br>
+  CC      drivers/usb/dwc3/host.o<br>
+  CC      drivers/usb/core/message.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/msm_dba/msm_dba_helpers.o<br>
+  CC      drivers/video/fbdev/core/modedb.o<br>
+  CC      drivers/tty/vt/selection.o<br>
+  CC      drivers/regulator/cprh-kbss-regulator.o<br>
+  CC      drivers/scsi/ufs/ufs-qcom-ice.o<br>
+  CC      drivers/thermal/lmh_interface.o<br>
+  CC      drivers/usb/dwc3/gadget.o<br>
+  CC      drivers/usb/gadget/function/f_acm.o<br>
+  LD      drivers/staging/android/ion/msm/built-in.o<br>
+  LD      drivers/staging/android/ion/built-in.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/msm_dba/msm_dba_debug.o<br>
+  CC      drivers/staging/android/sync.o<br>
+  CC      drivers/tty/vt/keyboard.o<br>
+  CC      drivers/scsi/ufs/ufshcd.o<br>
+  CC      drivers/video/fbdev/core/fbcvt.o<br>
+  CC      drivers/regulator/qpnp-labibb-regulator.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/msm_dba/adv7533.o<br>
+  CC      drivers/scsi/ufs/ufs_quirks.o<br>
+  CC      drivers/usb/core/driver.o<br>
+  CC      drivers/thermal/lmh_lite.o<br>
+  CC      drivers/usb/gadget/function/u_serial.o<br>
+  CC      drivers/usb/gadget/function/f_serial.o<br>
+  CC      drivers/video/fbdev/core/cfbfillrect.o<br>
+  CC      drivers/video/fbdev/core/cfbcopyarea.o<br>
+  CC      drivers/tty/serial/msm_smd_tty.o<br>
+  CC      drivers/staging/android/sw_sync.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp_util.o<br>
+  LD      drivers/video/fbdev/msm/../../msm/msm_dba/built-in.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/dsi_status_6g.o<br>
+  CC      drivers/tty/vt/consolemap.o<br>
+  CONMK   drivers/tty/vt/consolemap_deftbl.c<br>
+  CC      drivers/scsi/sd.o<br>
+  CC      drivers/regulator/stub-regulator.o<br>
+  CC      drivers/usb/dwc3/ep0.o<br>
+  CC      drivers/usb/core/config.o<br>
+  CC      drivers/usb/gadget/function/f_ncm.o<br>
+  CC      drivers/regulator/kryo-regulator.o<br>
+  CC      drivers/video/fbdev/core/cfbimgblt.o<br>
+  CC      drivers/staging/android/oneshot_sync.o<br>
+  CC      drivers/usb/host/pci-quirks.o<br>
+  LD      drivers/thermal/thermal_sys.o<br>
+  LD      drivers/thermal/built-in.o<br>
+  CC      drivers/soc/qcom/glink_debugfs.o<br>
+  CC      drivers/scsi/sg.o<br>
+  LD      drivers/tty/serial/built-in.o<br>
+  CC      drivers/usb/host/xhci-pci.o<br>
+  CC      drivers/soc/qcom/glink_ssr.o<br>
+  CC      drivers/usb/gadget/function/f_ecm.o<br>
+  CC      drivers/tty/vt/vt.o<br>
+  CC      drivers/usb/dwc3/debugfs.o<br>
+  CC      drivers/usb/core/file.o<br>
+  LD      drivers/video/fbdev/core/fb.o<br>
+  LD      drivers/video/fbdev/core/built-in.o<br>
+  LD      drivers/regulator/built-in.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp_pp.o<br>
+  CC      drivers/usb/gadget/function/f_mass_storage.o<br>
+  LD      drivers/staging/android/built-in.o<br>
+  LD      drivers/staging/built-in.o<br>
+  CC      drivers/usb/core/buffer.o<br>
+  CC      drivers/usb/gadget/function/storage_common.o<br>
+  CC      drivers/usb/dwc3/dwc3-pci.o<br>
+  CC      drivers/usb/dwc3/dwc3-msm.o<br>
+  CC      drivers/soc/qcom/glink_loopback_server.o<br>
+  CC      drivers/usb/host/xhci-plat.o<br>
+  CC      drivers/usb/host/ehci-hcd.o<br>
+  CC      drivers/usb/core/sysfs.o<br>
+  CC      drivers/usb/host/ehci-pci.o<br>
+  CC      drivers/usb/gadget/function/f_fs.o<br>
+  CC      drivers/usb/dwc3/dbm.o<br>
+  CC      drivers/usb/gadget/function/f_uac1.o<br>
+  CC      drivers/scsi/ch.o<br>
+  CC      drivers/soc/qcom/glink_smd_xprt.o<br>
+  CC      drivers/usb/host/ehci-msm.o<br>
+  CC      drivers/usb/host/xhci.o<br>
+  CC      drivers/soc/qcom/glink_smem_native_xprt.o<br>
+  CC      drivers/usb/host/xhci-mem.o<br>
+  LD      drivers/usb/dwc3/dwc3.o<br>
+  CC      drivers/soc/qcom/smem_log.o<br>
+  CC      drivers/usb/core/endpoint.o<br>
+  CC      drivers/usb/host/xhci-ring.o<br>
+  CC      drivers/usb/gadget/function/u_uac1.o<br>
+  CC      drivers/usb/gadget/function/f_uac2.o<br>
+  CC      drivers/usb/gadget/function/f_uvc.o<br>
+  CC      drivers/scsi/ufs/ufshcd-pltfrm.o<br>
+  CC      drivers/usb/core/devio.o<br>
+  CC      drivers/usb/core/notify.o<br>
+  LD      drivers/usb/dwc3/built-in.o<br>
+  CC      drivers/usb/gadget/function/uvc_queue.o<br>
+  CC      drivers/soc/qcom/smp2p.o<br>
+  SHIPPED drivers/tty/vt/defkeymap.c<br>
+  CC      drivers/tty/vt/consolemap_deftbl.o<br>
+  CC      drivers/tty/vt/defkeymap.o<br>
+  LD      drivers/tty/vt/built-in.o<br>
+  LD      drivers/tty/built-in.o<br>
+  CC      drivers/soc/qcom/smp2p_debug.o<br>
+  CC      drivers/soc/qcom/smp2p_sleepstate.o<br>
+  CC      drivers/usb/gadget/function/uvc_v4l2.o<br>
+  CC      drivers/usb/gadget/function/uvc_video.o<br>
+  CC      drivers/scsi/ufs/ufs-debugfs.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp_pp_debug.o<br>
+  CC      drivers/usb/gadget/function/f_audio_source.o<br>
+  CC      drivers/usb/gadget/function/f_hid.o<br>
+  CC      drivers/usb/host/xhci-hub.o<br>
+  CC      drivers/usb/host/xhci-dbg.o<br>
+  CC      drivers/usb/misc/ehset.o<br>
+  CC      drivers/usb/mon/mon_main.o<br>
+  CC      drivers/usb/host/xhci-trace.o<br>
+  CC      drivers/usb/core/generic.o<br>
+  CC      drivers/usb/core/quirks.o<br>
+  CC      drivers/usb/core/devices.o<br>
+  CC      drivers/soc/qcom/smp2p_loopback.o<br>
+  CC      drivers/soc/qcom/smp2p_test.o<br>
+  LD      drivers/usb/misc/built-in.o<br>
+  LD      drivers/usb/gadget/function/usb_f_acm.o<br>
+  LD      drivers/usb/gadget/function/usb_f_serial.o<br>
+  LD      drivers/usb/gadget/function/usb_f_ncm.o<br>
+  LD      drivers/usb/gadget/function/usb_f_ecm.o<br>
+  LD      drivers/usb/gadget/function/usb_f_mass_storage.o<br>
+  CC      drivers/usb/serial/usb-serial.o<br>
+  LD      drivers/usb/gadget/function/usb_f_fs.o<br>
+  LD      drivers/usb/host/xhci-plat-hcd.o<br>
+  LD      drivers/usb/gadget/function/usb_f_uac1.o<br>
+  CC      drivers/scsi/ufs/ufs-qcom-debugfs.o<br>
+  LD      drivers/usb/gadget/function/usb_f_uac2.o<br>
+  LD      drivers/usb/gadget/function/usb_f_uvc.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp_pp_cache_config.o<br>
+  CC      drivers/usb/phy/phy.o<br>
+  LD      drivers/usb/gadget/function/usb_f_audio_source.o<br>
+  CC      drivers/usb/core/port.o<br>
+  LD      drivers/usb/gadget/function/usb_f_hid.o<br>
+  LD      drivers/usb/gadget/function/built-in.o<br>
+  CC      drivers/usb/mon/mon_stat.o<br>
+  CC      drivers/usb/gadget/udc/udc-core.o<br>
+  CC      drivers/usb/serial/generic.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp_intf_video.o<br>
+  LD      drivers/scsi/scsi_mod.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp_intf_cmd.o<br>
+  CC      drivers/usb/gadget/android.o<br>
+  LD      drivers/usb/host/xhci-hcd.o<br>
+  CC      drivers/usb/core/hcd-pci.o<br>
+  CC      drivers/usb/gadget/ci13xxx_msm.o<br>
+  CC      drivers/soc/qcom/smp2p_spinlock_test.o<br>
+  CC      drivers/usb/mon/mon_text.o<br>
+  LD      drivers/scsi/ufs/built-in.o<br>
+  CC      drivers/usb/mon/mon_bin.o<br>
+  LD      drivers/scsi/sd_mod.o<br>
+  LD      drivers/scsi/built-in.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp_intf_writeback.o<br>
+  CC      drivers/usb/phy/of.o<br>
+  CC      drivers/usb/phy/class-dual-role.o<br>
+  LD      drivers/usb/host/built-in.o<br>
+  LD      drivers/usb/gadget/udc/built-in.o<br>
+  LD      drivers/usb/gadget/libcomposite.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_rotator.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp_overlay.o<br>
+  CC      drivers/usb/serial/bus.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp_layer.o<br>
+  CC      drivers/soc/qcom/qmi_interface.o<br>
+  CC      drivers/usb/storage/scsiglue.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp_splash_logo.o<br>
+  LD      drivers/usb/core/usbcore.o<br>
+  LD      drivers/usb/core/built-in.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp_cdm.o<br>
+  CC      drivers/usb/phy/phy-generic.o<br>
+  CC      drivers/soc/qcom/ipc_router_smd_xprt.o<br>
+  CC      drivers/usb/phy/phy-msm-usb.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_smmu.o<br>
+  LD      drivers/usb/mon/usbmon.o<br>
+  LD      drivers/usb/mon/built-in.o<br>
+  LD      drivers/usb/serial/usbserial.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp_wfd.o<br>
+  LD      drivers/usb/serial/built-in.o<br>
+  CC      drivers/soc/qcom/memshare/heap_mem_ext_v01.o<br>
+  CC      drivers/soc/qcom/memshare/msm_memshare.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp_pp_v1_7.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp_pp_v3.o<br>
+  CC      drivers/usb/storage/protocol.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp_pp_common.o<br>
+  CC      drivers/usb/phy/phy-msm-hsusb.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp_debug.o<br>
+  CC      drivers/soc/qcom/rpm_rbcpr_stats_v2.o<br>
+  CC      drivers/soc/qcom/qdsp6v2/apr.o<br>
+  CC      drivers/soc/qcom/qdsp6v2/apr_v2.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_debug.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_debug_xlog.o<br>
+  LD      drivers/soc/qcom/memshare/built-in.o<br>
+  CC      drivers/soc/qcom/cpaccess64.o<br>
+  CC      drivers/soc/qcom/qdsp6v2/apr_tal.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_dsi.o<br>
+  CC      drivers/usb/storage/transport.o<br>
+  CC      drivers/usb/storage/usb.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_dsi_host.o<br>
+  CC      drivers/soc/qcom/rpm_stats.o<br>
+  CC      drivers/usb/phy/phy-msm-ssusb-qmp.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_dsi_cmd.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_dsi_status.o<br>
+  CC      drivers/usb/storage/initializers.o<br>
+  CC      drivers/soc/qcom/qdsp6v2/voice_svc.o<br>
+  CC      drivers/soc/qcom/qdsp6v2/msm_audio_ion.o<br>
+  CC      drivers/soc/qcom/qdsp6v2/adsp-loader.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_dsi_panel.o<br>
+  CC      drivers/usb/phy/phy-msm-qusb.o<br>
+  CC      drivers/soc/qcom/rpm_master_stat.o<br>
+  CC      drivers/usb/storage/sierra_ms.o<br>
+  CC      drivers/usb/storage/option_ms.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/msm_mdss_io_8974.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_dsi_phy.o<br>
+  CC      drivers/usb/storage/usual-tables.o<br>
+  CC      drivers/soc/qcom/rpm_rail_stats.o<br>
+  CC      drivers/soc/qcom/system_stats.o<br>
+  CC      drivers/soc/qcom/perf_event_l2.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_dsi_clk.o<br>
+  CC      drivers/soc/qcom/rpm_log.o<br>
+  CC      drivers/usb/storage/alauda.o<br>
+  CC      drivers/usb/storage/cypress_atacb.o<br>
+  CC      drivers/soc/qcom/msm_tz_smmu.o<br>
+  CC      drivers/soc/qcom/peripheral-loader.o<br>
+  LD      drivers/soc/qcom/qdsp6v2/built-in.o<br>
+  CC      drivers/soc/qcom/subsys-pil-tz.o<br>
+  CC      drivers/usb/storage/datafab.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_panel.o<br>
+  LD      drivers/usb/phy/built-in.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_hdmi_util.o<br>
+  CC      drivers/usb/storage/freecom.o<br>
+  CC      drivers/usb/storage/isd200.o<br>
+  CC      drivers/usb/storage/jumpshot.o<br>
+  CC      drivers/usb/storage/karma.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_hdmi_edid.o<br>
+  CC      drivers/soc/qcom/pil-q6v5.o<br>
+  CC      drivers/soc/qcom/pil-msa.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_cec_core.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_dba_utils.o<br>
+  CC      drivers/usb/storage/sddr09.o<br>
+  CC      drivers/usb/storage/sddr55.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_io_util.o<br>
+  CC      drivers/soc/qcom/pil-q6v5-mss.o<br>
+  CC      drivers/usb/storage/shuttle_usbat.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_hdmi_tx.o<br>
+  LD      drivers/usb/storage/usb-storage.o<br>
+  LD      drivers/usb/storage/ums-alauda.o<br>
+  LD      drivers/usb/storage/ums-cypress.o<br>
+  LD      drivers/usb/storage/ums-datafab.o<br>
+  LD      drivers/usb/storage/ums-freecom.o<br>
+  LD      drivers/usb/storage/ums-isd200.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_hdmi_panel.o<br>
+  LD      drivers/usb/storage/ums-jumpshot.o<br>
+  LD      drivers/usb/storage/ums-karma.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_hdmi_hdcp.o<br>
+  CC      drivers/soc/qcom/msm_performance.o<br>
+  CC      drivers/soc/qcom/subsystem_notif.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_hdmi_hdcp2p2.o<br>
+  CC      drivers/soc/qcom/subsystem_restart.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_hdmi_cec.o<br>
+  CC      drivers/soc/qcom/ramdump.o<br>
+  CC      drivers/soc/qcom/sysmon.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_hdmi_audio.o<br>
+  LD      drivers/usb/storage/ums-sddr55.o<br>
+  CC      drivers/soc/qcom/sysmon-qmi.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_wb.o<br>
+  LD      drivers/usb/storage/ums-sddr09.o<br>
+  CC      drivers/soc/qcom/secure_buffer.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_fb.o<br>
+  LD      drivers/usb/storage/ums-usbat.o<br>
+  LD      drivers/usb/storage/built-in.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_util.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_compat_utils.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/mdss_mdp_kcal_ctrl.o<br>
+  CC      drivers/video/fbdev/msm/../../msm/mdss/lcd_notify.o<br>
+  CC      drivers/soc/qcom/icnss.o<br>
+  LD      drivers/video/fbdev/msm/../../msm/mdss/mdss-mdp.o<br>
+  LD      drivers/video/fbdev/msm/../../msm/mdss/mdss-dsi.o<br>
+  CC      drivers/soc/qcom/wlan_firmware_service_v01.o<br>
+  CC      drivers/soc/qcom/bam_dmux.o<br>
+  CC      drivers/soc/qcom/scm-xpu.o<br>
+  CC      drivers/soc/qcom/serial_num.o<br>
+  CC      drivers/soc/qcom/state_notifier.o<br>
+../../../../../../kernel/xiaomi/msm8953/drivers/soc/qcom/msm_performance.c: In function 'set_cpu_min_freq':<br>
+../../../../../../kernel/xiaomi/msm8953/drivers/soc/qcom/msm_performance.c:410:2: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]<br>
+  const char *reset = "0:0 2:0";<br>
+  ^<br>
+../../../../../../kernel/xiaomi/msm8953/drivers/soc/qcom/msm_performance.c: At top level:<br>
+cc1: warning: unrecognized command line option "-Wno-misleading-indentation"<br>
+  LD      drivers/video/fbdev/msm/../../msm/mdss/built-in.o<br>
+  LD      drivers/soc/qcom/built-in.o<br>
+  LD      drivers/soc/built-in.o<br>
+  LD      drivers/video/fbdev/msm/../../msm/built-in.o<br>
+  LD      drivers/video/fbdev/msm/built-in.o<br>
+  LD      drivers/video/fbdev/built-in.o<br>
+  LD      drivers/video/built-in.o<br>
+  LD      drivers/usb/gadget/g_android.o<br>
+  LD      drivers/usb/gadget/built-in.o<br>
+  LD      drivers/usb/built-in.o<br>
+  LD      drivers/built-in.o<br>
+  LINK    vmlinux<br>
+  LD      vmlinux.o<br>
+  MODPOST vmlinux.o<br>
+  GEN     .version<br>
+  CHK     include/generated/compile.h<br>
+  UPD     include/generated/compile.h<br>
+  CC      init/version.o<br>
+  LD      init/built-in.o<br>
+  KSYM    .tmp_kallsyms1.o<br>
+  KSYM    .tmp_kallsyms2.o<br>
+  LD      vmlinux<br>
+  SORTEX  vmlinux<br>
+  SYSMAP  System.map<br>
+  OBJCOPY arch/arm64/boot/Image<br>
+  DTC     arch/arm64/boot/dts/qcom/msm8953-qrd-sku3.dtb<br>
+  DTC     arch/arm64/boot/dts/qcom/msm8952-qrd-skum.dtb<br>
+  DTC     arch/arm64/boot/dts/qcom/msm8952-cdp.dtb<br>
+  DTC     arch/arm64/boot/dts/qcom/msm8952-ext-codec-cdp.dtb<br>
+  DTC     arch/arm64/boot/dts/qcom/msm8952-mtp.dtb<br>
+  GZIP    arch/arm64/boot/Image.gz<br>
+  CAT     arch/arm64/boot/Image.gz-dtb<br>
+make[1]: Leaving directory `/home/stalker/hadk/out/target/product/mido/obj/KERNEL_OBJ'<br>
+make: Leaving directory `/home/stalker/hadk/kernel/xiaomi/msm8953'<br>
+Building DTBs<br>
+make: Entering directory `/home/stalker/hadk/kernel/xiaomi/msm8953'<br>
+make[1]: Entering directory `/home/stalker/hadk/out/target/product/mido/obj/KERNEL_OBJ'<br>
+  CHK     include/config/kernel.release<br>
+  GEN     ./Makefile<br>
+  CHK     include/generated/uapi/linux/version.h<br>
+  CHK     include/generated/utsrelease.h<br>
+  Using /home/stalker/hadk/kernel/xiaomi/msm8953 as source for kernel<br>
+  CALL    /home/stalker/hadk/kernel/xiaomi/msm8953/scripts/checksyscalls.sh<br>
+make[1]: Leaving directory `/home/stalker/hadk/out/target/product/mido/obj/KERNEL_OBJ'<br>
+make: Leaving directory `/home/stalker/hadk/kernel/xiaomi/msm8953'<br>
+Building Kernel Modules<br>
+make: Entering directory `/home/stalker/hadk/kernel/xiaomi/msm8953'<br>
+make[1]: Entering directory `/home/stalker/hadk/out/target/product/mido/obj/KERNEL_OBJ'<br>
+  CHK     include/config/kernel.release<br>
+  GEN     ./Makefile<br>
+  CHK     include/generated/uapi/linux/version.h<br>
+  CHK     include/generated/utsrelease.h<br>
+  Using /home/stalker/hadk/kernel/xiaomi/msm8953 as source for kernel<br>
+  CALL    /home/stalker/hadk/kernel/xiaomi/msm8953/scripts/checksyscalls.sh<br>
+  CC [M]  fs/autofs4/init.o<br>
+  CC [M]  fs/autofs4/inode.o<br>
+  CC [M]  drivers/bluetooth/hci_ldisc.o<br>
+  CC [M]  fs/autofs4/root.o<br>
+  CC [M]  fs/autofs4/symlink.o<br>
+  CC [M]  drivers/bluetooth/hci_h4.o<br>
+  CC [M]  drivers/bluetooth/bluetooth-power.o<br>
+  CC [M]  fs/autofs4/waitq.o<br>
+  CC [M]  net/bluetooth/af_bluetooth.o<br>
+  CC [M]  fs/autofs4/expire.o<br>
+  CC [M]  net/bluetooth/hci_core.o<br>
+  CC [M]  net/bluetooth/hci_conn.o<br>
+  CC [M]  net/bluetooth/hci_event.o<br>
+  CC [M]  fs/autofs4/dev-ioctl.o<br>
+  CC [M]  net/bluetooth/mgmt.o<br>
+  CC [M]  net/bluetooth/hci_sock.o<br>
+  CC [M]  net/bluetooth/hci_sysfs.o<br>
+  CC [M]  net/bluetooth/l2cap_core.o<br>
+  CC [M]  fs/overlayfs/super.o<br>
+  CC [M]  net/bluetooth/l2cap_sock.o<br>
+  LD [M]  drivers/bluetooth/hci_uart.o<br>
+  CC [M]  fs/overlayfs/inode.o<br>
+  CC [M]  net/ipv4/tcp_bic.o<br>
+  CC [M]  net/ipv4/tcp_westwood.o<br>
+  LD [M]  fs/autofs4/autofs4.o<br>
+  CC [M]  fs/overlayfs/dir.o<br>
+  CC [M]  fs/overlayfs/readdir.o<br>
+  CC [M]  fs/overlayfs/copy_up.o<br>
+  CC [M]  net/bluetooth/smp.o<br>
+  CC [M]  net/bluetooth/sco.o<br>
+  CC [M]  net/bluetooth/lib.o<br>
+  CC [M]  net/bluetooth/a2mp.o<br>
+  LD [M]  fs/overlayfs/overlay.o<br>
+  CC [M]  net/bluetooth/amp.o<br>
+  CC [M]  net/netfilter/nfnetlink_acct.o<br>
+  CC [M]  net/netfilter/xt_nfacct.o<br>
+  CC [M]  net/bluetooth/bnep/core.o<br>
+  CC [M]  net/bluetooth/hidp/core.o<br>
+  CC [M]  net/bluetooth/hidp/sock.o<br>
+  CC [M]  net/bluetooth/bnep/sock.o<br>
+  CC [M]  net/bluetooth/rfcomm/core.o<br>
+  CC [M]  net/bluetooth/rfcomm/sock.o<br>
+  CC [M]  net/bluetooth/rfcomm/tty.o<br>
+  CC [M]  net/bluetooth/bnep/netdev.o<br>
+  CC [M]  drivers/net/wireless/ath/wil6210/main.o<br>
+  CC [M]  drivers/net/wireless/ath/wil6210/netdev.o<br>
+  CC [M]  drivers/net/wireless/ath/wil6210/cfg80211.o<br>
+  CC [M]  drivers/net/wireless/ath/wil6210/pcie_bus.o<br>
+  CC [M]  drivers/net/wireless/ath/wil6210/debugfs.o<br>
+  CC [M]  drivers/net/wireless/ath/wil6210/wmi.o<br>
+  LD [M]  net/bluetooth/hidp/hidp.o<br>
+  CC [M]  drivers/net/wireless/ath/wil6210/interrupt.o<br>
+  CC [M]  drivers/net/wireless/ath/wil6210/txrx.o<br>
+  CC [M]  drivers/net/wireless/ath/wil6210/debug.o<br>
+  LD [M]  net/bluetooth/bluetooth.o<br>
+  CC [M]  drivers/net/wireless/ath/wil6210/rx_reorder.o<br>
+  LD [M]  net/bluetooth/bnep/bnep.o<br>
+  CC [M]  drivers/net/wireless/ath/wil6210/ioctl.o<br>
+  CC [M]  drivers/net/wireless/ath/wil6210/fw.o<br>
+  CC [M]  drivers/net/wireless/ath/wil6210/pm.o<br>
+  CC [M]  drivers/net/wireless/ath/wil6210/pmc.o<br>
+  CC [M]  drivers/net/wireless/ath/wil6210/trace.o<br>
+  LD [M]  net/bluetooth/rfcomm/rfcomm.o<br>
+  CC [M]  drivers/net/wireless/ath/wil6210/wil_platform.o<br>
+  CC [M]  drivers/net/wireless/ath/wil6210/ethtool.o<br>
+  CC [M]  drivers/net/wireless/ath/wil6210/wil_crash_dump.o<br>
+  CC [M]  drivers/net/wireless/ath/wil6210/p2p.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/bapApiData.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/bapApiDebug.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/bapApiExt.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/bapApiHCBB.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/bapApiInfo.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/bapApiLinkCntl.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/bapApiLinkSupervision.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/bapApiStatus.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/bapApiTimer.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/bapModule.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/bapRsn8021xAuthFsm.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/bapRsn8021xPrf.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/bapRsn8021xSuppRsnFsm.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/bapRsnAsfPacket.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/bapRsnSsmAesKeyWrap.o<br>
+  LD [M]  drivers/net/wireless/ath/wil6210/wil6210.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/bapRsnSsmEapol.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/bapRsnSsmReplayCtr.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/bapRsnTxRx.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/btampFsm.o<br>
+  CC [M]  drivers/staging/prima/CORE/BAP/src/btampHCI.o<br>
+  CC [M]  drivers/staging/prima/CORE/DXE/src/wlan_qct_dxe.o<br>
+  CC [M]  drivers/staging/prima/CORE/DXE/src/wlan_qct_dxe_cfg_i.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/bap_hdd_main.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_assoc.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_cfg.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_debugfs.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_dev_pwr.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_dp_utils.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_early_suspend.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_ftm.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_hostapd.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_main.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_oemdata.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_mib.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_scan.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_softap_tx_rx.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_tx_rx.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_trace.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_wext.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_wmm.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_wowl.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_cfg80211.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_p2p.o<br>
+  CC [M]  drivers/staging/prima/CORE/HDD/src/wlan_hdd_tdls.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/cfg/cfgApi.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/cfg/cfgDebug.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/cfg/cfgParamName.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/cfg/cfgProcMsg.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/cfg/cfgSendMsg.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/dph/dphHashTable.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limAIDmgmt.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limAdmitControl.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limApi.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limAssocUtils.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limDebug.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limFT.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limIbssPeerMgmt.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limLinkMonitoringAlgo.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limLogDump.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limP2P.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limProcessActionFrame.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limProcessAssocReqFrame.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limProcessAssocRspFrame.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limProcessAuthFrame.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limProcessBeaconFrame.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limProcessCfgUpdates.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limProcessDeauthFrame.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limProcessDisassocFrame.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limProcessLmmMessages.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limProcessMessageQueue.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limProcessMlmReqMessages.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limProcessMlmRspMessages.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limProcessProbeReqFrame.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limProcessProbeRspFrame.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limProcessSmeReqMessages.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limPropExtsUtils.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limRMC.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limRoamingAlgo.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limScanResultUtils.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limSecurityUtils.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limSendManagementFrames.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limSendMessages.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limSendSmeRspMessages.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limSerDesUtils.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limSession.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limSessionUtils.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limSmeReqUtils.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limStaHashApi.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limTimerUtils.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limTrace.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limUtils.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/lim/limProcessTdls.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/pmm/pmmAP.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/pmm/pmmApi.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/pmm/pmmDebug.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/sch/schApi.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/sch/schBeaconGen.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/sch/schBeaconProcess.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/sch/schDebug.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/sch/schMessage.o<br>
+  CC [M]  drivers/staging/prima/CORE/MAC/src/pe/rrm/rrmApi.o<br>
+  CC [M]  drivers/staging/prima/CORE/SAP/src/sapApiLinkCntl.o<br>
+  CC [M]  drivers/staging/prima/CORE/SAP/src/sapChSelect.o<br>
+  CC [M]  drivers/staging/prima/CORE/SAP/src/sapFsm.o<br>
+  CC [M]  drivers/staging/prima/CORE/SAP/src/sapModule.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/btc/btcApi.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/ccm/ccmApi.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/ccm/ccmLogDump.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/sme_common/sme_Api.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/sme_common/sme_FTApi.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/sme_common/sme_Trace.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/csr/csrApiRoam.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/csr/csrApiScan.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/csr/csrCmdProcess.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/csr/csrLinkList.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/csr/csrLogDump.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/csr/csrNeighborRoam.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/csr/csrUtil.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/csr/csrTdlsProcess.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/oemData/oemDataApi.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/p2p/p2p_Api.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/pmc/pmcApi.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/pmc/pmc.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/pmc/pmcLogDump.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/QoS/sme_Qos.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/rrm/sme_rrm.o<br>
+  CC [M]  drivers/staging/prima/CORE/SME/src/nan/nan_Api.o<br>
+  CC [M]  drivers/staging/prima/CORE/SVC/src/btc/wlan_btc_svc.o<br>
+  CC [M]  drivers/staging/prima/CORE/SVC/src/nlink/wlan_nlink_srv.o<br>
+  CC [M]  drivers/staging/prima/CORE/SVC/src/ptt/wlan_ptt_sock_svc.o<br>
+  CC [M]  drivers/staging/prima/CORE/SVC/src/logging/wlan_logging_sock_svc.o<br>
+  CC [M]  drivers/staging/prima/CORE/SYS/common/src/wlan_qct_sys.o<br>
+  CC [M]  drivers/staging/prima/CORE/SYS/legacy/src/pal/src/palApiComm.o<br>
+  CC [M]  drivers/staging/prima/CORE/SYS/legacy/src/pal/src/palTimer.o<br>
+  CC [M]  drivers/staging/prima/CORE/SYS/legacy/src/platform/src/VossWrapper.o<br>
+  CC [M]  drivers/staging/prima/CORE/SYS/legacy/src/system/src/macInitApi.o<br>
+  CC [M]  drivers/staging/prima/CORE/SYS/legacy/src/system/src/sysEntryFunc.o<br>
+  CC [M]  drivers/staging/prima/CORE/SYS/legacy/src/utils/src/dot11f.o<br>
+  CC [M]  drivers/staging/prima/CORE/SYS/legacy/src/utils/src/logApi.o<br>
+  CC [M]  drivers/staging/prima/CORE/SYS/legacy/src/utils/src/logDump.o<br>
+  CC [M]  drivers/staging/prima/CORE/SYS/legacy/src/utils/src/macTrace.o<br>
+  CC [M]  drivers/staging/prima/CORE/SYS/legacy/src/utils/src/parserApi.o<br>
+  CC [M]  drivers/staging/prima/CORE/SYS/legacy/src/utils/src/utilsApi.o<br>
+  CC [M]  drivers/staging/prima/CORE/SYS/legacy/src/utils/src/utilsParser.o<br>
+  CC [M]  drivers/staging/prima/CORE/TL/src/wlan_qct_tl.o<br>
+  CC [M]  drivers/staging/prima/CORE/TL/src/wlan_qct_tl_ba.o<br>
+  CC [M]  drivers/staging/prima/CORE/TL/src/wlan_qct_tl_hosupport.o<br>
+  CC [M]  drivers/staging/prima/CORE/TL/src/wlan_qct_tl_trace.o<br>
+  CC [M]  drivers/staging/prima/CORE/VOSS/src/vos_api.o<br>
+  CC [M]  drivers/staging/prima/CORE/VOSS/src/vos_event.o<br>
+  CC [M]  drivers/staging/prima/CORE/VOSS/src/vos_getBin.o<br>
+  CC [M]  drivers/staging/prima/CORE/VOSS/src/vos_list.o<br>
+  CC [M]  drivers/staging/prima/CORE/VOSS/src/vos_lock.o<br>
+  CC [M]  drivers/staging/prima/CORE/VOSS/src/vos_memory.o<br>
+  CC [M]  drivers/staging/prima/CORE/VOSS/src/vos_mq.o<br>
+  CC [M]  drivers/staging/prima/CORE/VOSS/src/vos_nvitem.o<br>
+  CC [M]  drivers/staging/prima/CORE/VOSS/src/vos_packet.o<br>
+  CC [M]  drivers/staging/prima/CORE/VOSS/src/vos_sched.o<br>
+  CC [M]  drivers/staging/prima/CORE/VOSS/src/vos_threads.o<br>
+  CC [M]  drivers/staging/prima/CORE/VOSS/src/vos_timer.o<br>
+  CC [M]  drivers/staging/prima/CORE/VOSS/src/vos_trace.o<br>
+  CC [M]  drivers/staging/prima/CORE/VOSS/src/vos_types.o<br>
+  CC [M]  drivers/staging/prima/CORE/VOSS/src/vos_utils.o<br>
+  CC [M]  drivers/staging/prima/CORE/VOSS/src/wlan_nv_parser.o<br>
+  CC [M]  drivers/staging/prima/CORE/VOSS/src/wlan_nv_stream_read.o<br>
+  CC [M]  drivers/staging/prima/CORE/VOSS/src/wlan_nv_template_builtin.o<br>
+  CC [M]  drivers/staging/prima/CORE/VOSS/src/vos_diag.o<br>
+  CC [M]  drivers/staging/prima/CORE/WDA/src/wlan_qct_wda.o<br>
+  CC [M]  drivers/staging/prima/CORE/WDA/src/wlan_qct_wda_debug.o<br>
+  CC [M]  drivers/staging/prima/CORE/WDA/src/wlan_qct_wda_ds.o<br>
+  CC [M]  drivers/staging/prima/CORE/WDA/src/wlan_qct_wda_legacy.o<br>
+  CC [M]  drivers/staging/prima/CORE/WDA/src/wlan_nv.o<br>
+  CC [M]  drivers/staging/prima/CORE/WDI/CP/src/wlan_qct_wdi.o<br>
+  CC [M]  drivers/staging/prima/CORE/WDI/CP/src/wlan_qct_wdi_dp.o<br>
+  CC [M]  drivers/staging/prima/CORE/WDI/CP/src/wlan_qct_wdi_sta.o<br>
+  CC [M]  drivers/staging/prima/CORE/WDI/DP/src/wlan_qct_wdi_bd.o<br>
+  CC [M]  drivers/staging/prima/CORE/WDI/DP/src/wlan_qct_wdi_ds.o<br>
+  CC [M]  drivers/staging/prima/CORE/WDI/TRP/CTS/src/wlan_qct_wdi_cts.o<br>
+  CC [M]  drivers/staging/prima/CORE/WDI/TRP/DTS/src/wlan_qct_wdi_dts.o<br>
+  CC [M]  drivers/staging/prima/CORE/WDI/WPAL/src/wlan_qct_pal_api.o<br>
+  CC [M]  drivers/staging/prima/CORE/WDI/WPAL/src/wlan_qct_pal_device.o<br>
+  CC [M]  drivers/staging/prima/CORE/WDI/WPAL/src/wlan_qct_pal_msg.o<br>
+  CC [M]  drivers/staging/prima/CORE/WDI/WPAL/src/wlan_qct_pal_packet.o<br>
+  CC [M]  drivers/staging/prima/CORE/WDI/WPAL/src/wlan_qct_pal_sync.o<br>
+  CC [M]  drivers/staging/prima/CORE/WDI/WPAL/src/wlan_qct_pal_timer.o<br>
+  CC [M]  drivers/staging/prima/CORE/WDI/WPAL/src/wlan_qct_pal_trace.o<br>
+  LD [M]  drivers/staging/prima/wlan.o<br>
+  Building modules, stage 2.<br>
+  MODPOST 14 modules<br>
+  CC      drivers/bluetooth/bluetooth-power.mod.o<br>
+  CC      drivers/bluetooth/hci_uart.mod.o<br>
+  CC      drivers/net/wireless/ath/wil6210/wil6210.mod.o<br>
+  CC      drivers/staging/prima/wlan.mod.o<br>
+  CC      fs/autofs4/autofs4.mod.o<br>
+  CC      fs/overlayfs/overlay.mod.o<br>
+  CC      net/bluetooth/bluetooth.mod.o<br>
+  CC      net/bluetooth/bnep/bnep.mod.o<br>
+  CC      net/bluetooth/hidp/hidp.mod.o<br>
+  CC      net/bluetooth/rfcomm/rfcomm.mod.o<br>
+  CC      net/ipv4/tcp_bic.mod.o<br>
+  CC      net/ipv4/tcp_westwood.mod.o<br>
+  CC      net/netfilter/nfnetlink_acct.mod.o<br>
+  CC      net/netfilter/xt_nfacct.mod.o<br>
+  LD [M]  drivers/staging/prima/wlan.ko<br>
+  LD [M]  net/ipv4/tcp_westwood.ko<br>
+  LD [M]  drivers/bluetooth/bluetooth-power.ko<br>
+  LD [M]  net/netfilter/nfnetlink_acct.ko<br>
+  LD [M]  drivers/bluetooth/hci_uart.ko<br>
+  LD [M]  net/bluetooth/bluetooth.ko<br>
+  LD [M]  net/ipv4/tcp_bic.ko<br>
+  LD [M]  drivers/net/wireless/ath/wil6210/wil6210.ko<br>
+  LD [M]  net/netfilter/xt_nfacct.ko<br>
+  LD [M]  fs/autofs4/autofs4.ko<br>
+  LD [M]  fs/overlayfs/overlay.ko<br>
+  LD [M]  net/bluetooth/rfcomm/rfcomm.ko<br>
+  LD [M]  net/bluetooth/bnep/bnep.ko<br>
+  LD [M]  net/bluetooth/hidp/hidp.ko<br>
+make[1]: Leaving directory `/home/stalker/hadk/out/target/product/mido/obj/KERNEL_OBJ'<br>
+make: Leaving directory `/home/stalker/hadk/kernel/xiaomi/msm8953'<br>
+make: Entering directory `/home/stalker/hadk/kernel/xiaomi/msm8953'<br>
+make[1]: Entering directory `/home/stalker/hadk/out/target/product/mido/obj/KERNEL_OBJ'<br>
+  INSTALL drivers/bluetooth/bluetooth-power.ko<br>
+  INSTALL drivers/bluetooth/hci_uart.ko<br>
+  INSTALL drivers/net/wireless/ath/wil6210/wil6210.ko<br>
+  INSTALL drivers/staging/prima/wlan.ko<br>
+  INSTALL fs/autofs4/autofs4.ko<br>
+  INSTALL fs/overlayfs/overlay.ko<br>
+  INSTALL net/bluetooth/bluetooth.ko<br>
+  INSTALL net/bluetooth/bnep/bnep.ko<br>
+  INSTALL net/bluetooth/hidp/hidp.ko<br>
+  INSTALL net/bluetooth/rfcomm/rfcomm.ko<br>
+  INSTALL net/ipv4/tcp_bic.ko<br>
+  INSTALL net/ipv4/tcp_westwood.ko<br>
+  INSTALL net/netfilter/nfnetlink_acct.ko<br>
+  INSTALL net/netfilter/xt_nfacct.ko<br>
+  DEPMOD  3.18.105-ElectraBlue-11.0-mido<br>
+make[1]: Leaving directory `/home/stalker/hadk/out/target/product/mido/obj/KERNEL_OBJ'<br>
+make: Leaving directory `/home/stalker/hadk/kernel/xiaomi/msm8953'<br>
+[100% 17/17] Target boot image: /home/stalker/hadk/out/target/product/mido/boot.img<br>
+/home/stalker/hadk/out/target/product/mido/boot.img maxsize=68395008 blocksize=135168 total=12767232 reserve=811008<br>
+[100% 17/17] Install: /home/stalker/hadk/out/target/product/mido/hybris-recovery.img<br>
+<br>
+#### make completed successfully (03:25 (mm:ss)) ####<br>
+</details><br>
