@@ -39266,3 +39266,49 @@ download                           100%[========================================
 2019-07-10 18:55:34 (17,7 MB/s) - «download» сохранён [338892013/338892013]<br>
 </details><br>
 
+Распакуем скачанный архив, на выходе получим еще один архив
+```console
+HOST:~$ unzip download -d ~
+```
+<details>
+Archive:  download<br>
+  inflating: /home/stalker/sfe-mido-3.0.2.8-devel-20190329/sailfishos-mido-release-3.0.2.8-devel-20190329.zip<br>
+</details><br>
+
+Перезагружаемся в twrp и закидываем архив с zip-архив с Sailfish
+```console
+HOST:~$ adb push sfe-mido-3.0.2.8-devel-20190329/sailfishos-mido-release-3.0.2.8-devel-20190329.zip /sdcard
+```
+<details>
+sfe-mido-3.0.2.8-devel-20190329/sailfishos-mido-release-3.0.2.8-dev...20190329.zip: 1 file pushed. 25.2 MB/s (338794792 bytes in 12.841s)<br>
+</details><br>
+
+Подключаемся к телефону по adb и распаковываем zip-архив
+```console
+HOST:~$ adb shell
+adb shell:~ # mkdir -p /sdcard/sailfish_3.0.2.8_gitlab
+adb shell:~ # unzip /sdcard/sailfishos-mido-release-3.0.2.8-devel-20190329.zip -d /sdcard/sailfish_3.0.2.8_gitlab/
+```
+<details>
+Archive:  /sdcard/sailfishos-mido-release-3.0.2.8-devel-20190329.zip<br>
+  inflating: META-INF/com/google/android/update-binary<br>
+  inflating: META-INF/com/google/android/updater-script<br>
+  inflating: updater-unpack.sh<br>
+  inflating: hybris-boot.img<br>
+  inflating: sailfishos-mido-release-3.0.2.8-devel-20190329.tar.bz2<br>
+</details><br>
+
+Извлекаем содержимое Sailfish и прошиваем boot
+```console
+adb shell:~ # /sdcard/busybox_unzip/./busybox tar --numeric-owner -xjf /sdcard/sailfish_3.0.2.8_gitlab/sailfishos-mido-release-3.0.2.8-devel-20190329.tar.bz2  -C /data/.stowaways/sailfishos
+adb shell:~ # dd if=/sdcard/sailfish_3.0.2.8_gitlab/hybris-boot.img of=/dev/block/bootdevice/by-name/boot
+<details>
+23320+0 records in<br>
+23320+0 records out<br>
+11939840 bytes (11.4MB) copied, 0.810947 seconds, 14.0MB/s<br>
+</details><br>
+
+Перезагружаемся
+```console
+adb shell:~ # reboot
+```
