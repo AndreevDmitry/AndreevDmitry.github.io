@@ -61597,3 +61597,62 @@ make: Leaving directory `/home/stalker/hadk/kernel/xiaomi/msm8953'<br>
 <br>
 #### make completed successfully (03:25 (mm:ss)) ####<br>
 </details><br>
+
+
+Проверим, загрузится ли система с нашим собранным ядром, перезагрузимся в fastboot, проверим что устройство определилось
+```console
+HOST:~$ sudo fastboot devices
+```
+<details>
+[sudo] пароль для stalker:<br>
+6fcdaa929904	fastboot<br>
+</details><br>
+
+Прошьем boot
+```console
+stalker@stalkerPC:~$ sudo fastboot flash boot hadk/out/target/product/mido/hybris-boot.img
+```
+<details>
+target reported max download size of 536870912 bytes<br>
+sending 'boot' (11658 KB)...<br>
+OKAY [  0.351s]<br>
+writing 'boot'...<br>
+OKAY [  0.173s]<br>
+finished. total time: 0.525s<br>
+</details><br>
+
+Не вышло, разберемся почему наше ядро не работает позже...<br>
+
+Попробуем заменить наши конфигурации для сборки Sailfish на конфигурации от piggz, пересобрать, и использовать с рабочим ядром.<br>
+Сделаем резервную копию
+```console
+PlatformSDK:~/hadk$ mkdir backup
+PlatformSDK:~/hadk$ cp -r rpm ~/hadk/backup/rpm
+PlatformSDK:~/hadk/rpm$ git remote add piggz https://github.com/piggz/droid-hal-mido
+PlatformSDK:~/hadk/rpm$ git fetch --all
+```
+<details>
+Fetching droid-hal-mido<br>
+Fetching piggz<br>
+warning: no common commits<br>
+remote: Enumerating objects: 10, done.<br>
+remote: Total 10 (delta 0), reused 0 (delta 0), pack-reused 10<br>
+Unpacking objects: 100% (10/10), done.<br>
+From https://github.com/piggz/droid-hal-mido<br>
+ * [new branch]      master     -> piggz/master<br>
+</details><br>
+
+```console
+PlatformSDK:~/hadk/rpm$ git reset --hard piggz/master
+```
+<details>
+HEAD is now at f9fb090 Add user to media_rw for access to android_storage<br>
+</details><br>
+```console
+PlatformSDK:~/hadk/rpm$ git add .
+PlatformSDK:~/hadk/rpm$ git commit -m "Piggz repo"
+```
+<details>
+[master 8fd1eb2] Piggz repo<br>
+ 1 file changed, 1 insertion(+), 1 deletion(-)<br>
+</details><br>
