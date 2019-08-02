@@ -62581,3 +62581,49 @@ Info[07/29 11:14:26] : The new image can be found here:<br>
 <br>
 Info[07/29 11:14:27] : Finished.<br>
 </details><br>
+
+Кладем результат в смартфон
+```console
+HOST:~$  adb push hadk/sfe-mido-3.0.3.10-DmitryAndreev_with_Piggz_configs/sfe-mido-3.0.3.10-DmitryAndreev_with_Piggz_configs.tar.bz2 /sdcard
+```
+<details>
+hadk/sfe-mido-3.0.3.10-DmitryAndreev_with_Piggz_configs/sfe-mido-3...igs.tar.bz2: 1 file pushed. 24.9 MB/s (329295836 bytes in 12.608s)<br>
+</details><br>
+
+Итак зашиваем рабочее ядро с https://gitlab.com/sailfishos-porters-ci/mido-ci<br>
+Загружаем смартфон в TWRP и прошиваем boot
+```console
+HOST:~$ adb shell
+adb shell:~ # dd if=/sdcard/sailfish_3.0.2.8_gitlab/hybris-boot.img of=/dev/block/bootdevice/by-name/boot
+```
+<details>
+23320+0 records in<br>
+23320+0 records out<br>
+11939840 bytes (11.4MB) copied, 0.889686 seconds, 12.8MB/s<br>
+</details><br>
+
+Заливаем вновь собранную Sailfish 3.0.3.10 и перезагружаемся
+```console
+adb shell:~ # rm -rf /data/.stowaways/sailfishos
+adb shell:~ # mkdir -p /data/.stowaways/sailfishos
+adb shell:~ # /sdcard/busybox_unzip/./busybox tar --numeric-owner -xvjf /sdcard/sfe-mido-3.0.3.10-DmitryAndreev_with_Piggz_configs.tar.bz2  -C /da
+ta/.stowaways/sailfishos
+adb shell:~ # reboot
+```
+Ура, графика загрузилась, видим экран выбора языка, подключимся по telnet и снимем логи для сравнения
+```console
+HOST:~$ telnet 192.168.2.15 2323
+```
+<details>
+Trying 192.168.2.15...
+Connected to 192.168.2.15.
+Escape character is '^]'.
+
+Welcome to the Mer/SailfishOS Boat loader debug init system.
+
+Log so far is in /init.log
+
+To make post-switch_root halt before starting systemd, perform:
+  touch /init_enter_debug2
+(When run post-switch_root, telnet is on port 2323, not 23)
+</details>
