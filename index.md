@@ -39332,7 +39332,8 @@ To make post-switch_root halt before starting systemd, perform:<br>
 (When run post-switch_root, telnet is on port 2323, not 23)<br>
 </details><br>
 
-Соберем необходимую информацию для дальнейшего анализа
+Соберем необходимую информацию для дальнейшего анализа<br>
+Лог ядра рабочей Sailfish 3.0.2.8
 ```console
 sh-3.2# dmesg
 ```
@@ -40896,4 +40897,2730 @@ sh-3.2# dmesg
 [   50.708095] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister sit0<br>
 [   50.712410] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister lo<br>
 [   50.724098] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister lo<br>
+/details<br>
+
+Журнал рабочей Sailfish 3.0.2.8
+```console
+sh-3.2# journalctl
+```
+<details>
+-- Logs begin at Sat 1970-02-21 22:36:15 EET, end at Tue 2019-03-12 23:28:48 EET. --<br>
+Feb 21 22:36:15 Sailfish systemd-journal[686]: Runtime journal (/run/log/journal/) is currently using 4.0M.<br>
+                                               Maximum allowed usage is set to 8.0M.<br>
+                                               Leaving at least 210.6M free (of currently available 1.3G of space).<br>
+                                               Enforced usage limit is thus 8.0M.<br>
+Feb 21 22:36:15 Sailfish kernel: Initializing cgroup subsys cpuset<br>
+Feb 21 22:36:15 Sailfish kernel: Initializing cgroup subsys cpu<br>
+Feb 21 22:36:15 Sailfish kernel: Initializing cgroup subsys cpuacct<br>
+Feb 21 22:36:15 Sailfish kernel: Linux version 3.18.105-ElectraBlue-11.0-mido (piggz@linux-f1uu) (gcc version 4.9 20150123 (prerele<br>
+ase) (GCC) ) #3 SMP PREEMPT Fri Aug 24 19:52:43 UTC 2018<br>
+Feb 21 22:36:15 Sailfish kernel: CPU: AArch64 Processor [410fd034] revision 4<br>
+Feb 21 22:36:15 Sailfish kernel: alternatives: enabling workaround for ARM erratum 845719<br>
+Feb 21 22:36:15 Sailfish kernel: Machine: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3<br>
+Feb 21 22:36:15 Sailfish kernel: efi: Getting EFI parameters from FDT:<br>
+Feb 21 22:36:15 Sailfish kernel: efi: UEFI not found.<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: reserved region for node 'other_ext_region@0': base 0x0000000084a00000, size 30 MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: reserved region for node 'modem_region@0': base 0x0000000086c00000, size 106 MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: reserved region for node 'adsp_fw_region@0': base 0x000000008d600000, size 17 MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: reserved region for node 'wcnss_fw_region@0': base 0x000000008e700000, size 7 MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: reserved region for node 'dfps_data_mem@90000000': base 0x0000000090000000, size 0 MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: reserved region for node 'splash_region@0x90001000': base 0x0000000090001000, size 19 M<br>
+iB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: reserved region for node 'pstore_reserve_mem_region@0': base 0x000000009ff00000, size 1<br>
+ MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Removed memory: created DMA memory pool at 0x0000000084a00000, size 30 MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: initialized node other_ext_region@0, compatible id removed-dma-pool<br>
+Feb 21 22:36:15 Sailfish kernel: Removed memory: created DMA memory pool at 0x0000000086c00000, size 106 MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: initialized node modem_region@0, compatible id removed-dma-pool<br>
+Feb 21 22:36:15 Sailfish kernel: Removed memory: created DMA memory pool at 0x000000008d600000, size 17 MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: initialized node adsp_fw_region@0, compatible id removed-dma-pool<br>
+Feb 21 22:36:15 Sailfish kernel: Removed memory: created DMA memory pool at 0x000000008e700000, size 7 MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: initialized node wcnss_fw_region@0, compatible id removed-dma-pool<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: allocated memory for 'venus_region@0' node: base 0x000000008f800000, size 8 MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: created CMA memory pool at 0x000000008f800000, size 8 MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: initialized node venus_region@0, compatible id shared-dma-pool<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: allocated memory for 'secure_region@0' node: base 0x00000000f6800000, size 152 MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: created CMA memory pool at 0x00000000f6800000, size 152 MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: initialized node secure_region@0, compatible id shared-dma-pool<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: allocated memory for 'qseecom_region@0' node: base 0x00000000f5800000, size 16 MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: created CMA memory pool at 0x00000000f5800000, size 16 MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: initialized node qseecom_region@0, compatible id shared-dma-pool<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: allocated memory for 'adsp_region@0' node: base 0x00000000f5400000, size 4 MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: created CMA memory pool at 0x00000000f5400000, size 4 MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: initialized node adsp_region@0, compatible id shared-dma-pool<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: allocated memory for 'gpu_region@0' node: base 0x000000008f000000, size 8 MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: created CMA memory pool at 0x000000008f000000, size 8 MiB<br>
+Feb 21 22:36:15 Sailfish kernel: Reserved memory: initialized node gpu_region@0, compatible id shared-dma-pool<br>
+Feb 21 22:36:15 Sailfish kernel: cma: Reserved 16 MiB at 0x00000000f4400000<br>
+Feb 21 22:36:15 Sailfish kernel: On node 0 totalpages: 772608<br>
+Feb 21 22:36:15 Sailfish kernel:   DMA zone: 12288 pages used for memmap<br>
+Feb 21 22:36:15 Sailfish kernel:   DMA zone: 0 pages reserved<br>
+Feb 21 22:36:15 Sailfish kernel:   DMA zone: 772608 pages, LIFO batch:31<br>
+Feb 21 22:36:15 Sailfish kernel: psci: probing for conduit method from DT.<br>
+Feb 21 22:36:15 Sailfish kernel: psci: PSCIv1.0 detected in firmware.<br>
+Feb 21 22:36:15 Sailfish kernel: psci: Using standard PSCI v0.2 function IDs<br>
+Feb 21 22:36:15 Sailfish kernel: psci: Initializing psci_cpu_init<br>
+Feb 21 22:36:15 Sailfish kernel: psci: Initializing psci_cpu_init<br>
+Feb 21 22:36:15 Sailfish kernel: psci: Initializing psci_cpu_init<br>
+Feb 21 22:36:15 Sailfish kernel: psci: Initializing psci_cpu_init<br>
+Feb 21 22:36:15 Sailfish kernel: psci: Initializing psci_cpu_init<br>
+Feb 21 22:36:15 Sailfish kernel: psci: Initializing psci_cpu_init<br>
+Feb 21 22:36:15 Sailfish kernel: psci: Initializing psci_cpu_init<br>
+Feb 21 22:36:15 Sailfish kernel: PERCPU: Embedded 15 pages/cpu @ffffffc0b418e000 s22912 r8192 d30336 u61440<br>
+Feb 21 22:36:15 Sailfish kernel: pcpu-alloc: s22912 r8192 d30336 u61440 alloc=15*4096<br>
+Feb 21 22:36:15 Sailfish kernel: pcpu-alloc: [0] 0 [0] 1 [0] 2 [0] 3 [0] 4 [0] 5 [0] 6 [0] 7<br>
+Feb 21 22:36:15 Sailfish kernel: Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 760320<br>
+Feb 21 22:36:15 Sailfish kernel: Kernel command line: boot_cpus=0,1,2,3,4,5,6,7 sched_enable_hmp=1 sched_enable_power_aware=1 andro<br>
+idboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci earlycon=msm_h<br>
+sl_uart,0x78af000 androidboot.emmc=true androidboot.verifiedbootstate=orange androidboot.veritymode=enforcing androidboot.keymaster=1 and<br>
+roidboot.serialno=6fcdaa929904 androidboot.boot_reason= androidboot.secureboot=1 androidboot.baseband=msm mdss_mdp.panel=1:dsi:0:qcom,mds<br>
+s_dsi_nt35532_fhd_video:1:none:cfg:single_dsi<br>
+Feb 21 22:36:15 Sailfish kernel: zakk: booting_into_recovery=0<br>
+Feb 21 22:36:15 Sailfish kernel: PID hash table entries: 4096 (order: 3, 32768 bytes)<br>
+Feb 21 22:36:15 Sailfish kernel: Dentry cache hash table entries: 524288 (order: 10, 4194304 bytes)<br>
+Feb 21 22:36:15 Sailfish kernel: Inode-cache hash table entries: 262144 (order: 9, 2097152 bytes)<br>
+Feb 21 22:36:15 Sailfish kernel: Memory: 2665368K/3090432K available (13969K kernel code, 1848K rwdata, 6996K rodata, 892K init, 32<br>
+56K bss, 216168K reserved, 208896K cma-reserved)<br>
+Feb 21 22:36:15 Sailfish kernel: Virtual kernel memory layout:<br>
+                                     vmalloc : 0xffffff8000000000 - 0xffffffbdbfff0000   (   246 GB)<br>
+                                     vmemmap : 0xffffffbdc0000000 - 0xffffffbfc0000000   (     8 GB maximum)<br>
+                                               0xffffffbdc0000000 - 0xffffffbdc3000000   (    48 MB actual)<br>
+                                     PCI I/O : 0xffffffbffa000000 - 0xffffffbffb000000   (    16 MB)<br>
+                                     fixed   : 0xffffffbffbdfd000 - 0xffffffbffbdff000   (     8 KB)<br>
+                                     modules : 0xffffffbffc000000 - 0xffffffc000000000   (    64 MB)<br>
+                                     memory  : 0xffffffc000000000 - 0xffffffc0c0000000   (  3072 MB)<br>
+                                       .init : 0xffffffc0014fc000 - 0xffffffc0015db000   (   892 KB)<br>
+                                       .text : 0xffffffc000080000 - 0xffffffc0014fb474   ( 20974 KB)<br>
+                                       .data : 0xffffffc0015f9000 - 0xffffffc0017c7000   (  1848 KB)<br>
+Feb 21 22:36:15 Sailfish kernel: SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=8, Nodes=1<br>
+Feb 21 22:36:15 Sailfish kernel: HMP scheduling enabled.<br>
+Feb 21 22:36:15 Sailfish kernel: Preemptible hierarchical RCU implementation.<br>
+Feb 21 22:36:15 Sailfish kernel:         RCU dyntick-idle grace-period acceleration is enabled.<br>
+Feb 21 22:36:15 Sailfish kernel: NR_IRQS:64 nr_irqs:64 0<br>
+Feb 21 22:36:15 Sailfish kernel: mpm_init_irq_domain(): Cannot find irq controller for qcom,gpio-parent<br>
+Feb 21 22:36:15 Sailfish kernel: MPM 1 irq mapping errored -517<br>
+Feb 21 22:36:15 Sailfish kernel:         Offload RCU callbacks from all CPUs<br>
+Feb 21 22:36:15 Sailfish kernel:         Offload RCU callbacks from CPUs: 0-7.<br>
+Feb 21 22:36:15 Sailfish kernel: Architected cp15 and mmio timer(s) running at 19.20MHz (virt/virt).<br>
+Feb 21 22:36:15 Sailfish kernel: sched_clock: 56 bits at 19MHz, resolution 52ns, wraps every 3579139424256ns<br>
+Feb 21 22:36:15 Sailfish kernel: Switched to clocksource arch_sys_counter<br>
+Feb 21 22:36:15 Sailfish kernel: Console: colour dummy device 80x25<br>
+Feb 21 22:36:15 Sailfish kernel: console [tty0] enabled<br>
+Feb 21 22:36:15 Sailfish kernel: allocated 12582912 bytes of page_cgroup<br>
+Feb 21 22:36:15 Sailfish kernel: please try 'cgroup_disable=memory' option if you don't want memory cgroups<br>
+Feb 21 22:36:15 Sailfish kernel: Calibrating delay loop (skipped), value calculated using timer frequency.. 38.40 BogoMIPS (lpj=76800)<br>
+Feb 21 22:36:15 Sailfish kernel: pid_max: default: 32768 minimum: 301<br>
+Feb 21 22:36:15 Sailfish kernel: Security Framework initialized<br>
+Feb 21 22:36:15 Sailfish kernel: SELinux:  Initializing.<br>
+Feb 21 22:36:15 Sailfish kernel: SELinux:  Starting in permissive mode<br>
+Feb 21 22:36:15 Sailfish kernel: Mount-cache hash table entries: 8192 (order: 4, 65536 bytes)<br>
+Feb 21 22:36:15 Sailfish kernel: Mountpoint-cache hash table entries: 8192 (order: 4, 65536 bytes)<br>
+Feb 21 22:36:15 Sailfish kernel: Initializing cgroup subsys memory<br>
+Feb 21 22:36:15 Sailfish kernel: Initializing cgroup subsys devices<br>
+Feb 21 22:36:15 Sailfish kernel: Initializing cgroup subsys freezer<br>
+Feb 21 22:36:15 Sailfish kernel: Initializing cgroup subsys net_cls<br>
+Feb 21 22:36:15 Sailfish kernel: Initializing cgroup subsys blkio<br>
+Feb 21 22:36:15 Sailfish kernel: Initializing cgroup subsys perf_event<br>
+Feb 21 22:36:15 Sailfish kernel: ftrace: allocating 45612 entries in 179 pages<br>
+Feb 21 22:36:15 Sailfish kernel: /cpus/cpu@0: Missing clock-frequency property<br>
+Feb 21 22:36:15 Sailfish kernel: /cpus/cpu@1: Missing clock-frequency property<br>
+Feb 21 22:36:15 Sailfish kernel: /cpus/cpu@2: Missing clock-frequency property<br>
+Feb 21 22:36:15 Sailfish kernel: /cpus/cpu@3: Missing clock-frequency property<br>
+Feb 21 22:36:15 Sailfish kernel: /cpus/cpu@100: Missing clock-frequency property<br>
+Feb 21 22:36:15 Sailfish kernel: /cpus/cpu@101: Missing clock-frequency property<br>
+Feb 21 22:36:15 Sailfish kernel: /cpus/cpu@102: Missing clock-frequency property<br>
+Feb 21 22:36:15 Sailfish kernel: /cpus/cpu@103: Missing clock-frequency property<br>
+Feb 21 22:36:15 Sailfish kernel: hw perfevents: enabled with arm/armv8-pmuv3 PMU driver, 7 counters available<br>
+Feb 21 22:36:15 Sailfish kernel: EFI services will not be available.<br>
+Feb 21 22:36:15 Sailfish kernel: NOHZ: local_softirq_pending 02<br>
+Feb 21 22:36:15 Sailfish kernel: MSM Memory Dump base table set up<br>
+Feb 21 22:36:15 Sailfish kernel: MSM Memory Dump apps data table set up<br>
+Feb 21 22:36:15 Sailfish kernel: Configuring XPU violations to be fatal errors<br>
+Feb 21 22:36:15 Sailfish kernel: cpu_clock_pwr_init: Power clocks configured<br>
+Feb 21 22:36:15 Sailfish kernel: Hotplug policy switch err. Task swapper/0 pid=1<br>
+Feb 21 22:36:15 Sailfish kernel: Hotplug policy switch err. Task swapper/0 pid=1<br>
+Feb 21 22:36:15 Sailfish kernel: Hotplug policy switch err. Task swapper/0 pid=1<br>
+Feb 21 22:36:15 Sailfish kernel: Hotplug policy switch err. Task swapper/0 pid=1<br>
+Feb 21 22:36:15 Sailfish kernel: Hotplug policy switch err. Task swapper/0 pid=1<br>
+Feb 21 22:36:15 Sailfish kernel: Hotplug policy switch err. Task swapper/0 pid=1<br>
+Feb 21 22:36:15 Sailfish kernel: Hotplug policy switch err. Task swapper/0 pid=1<br>
+Feb 21 22:36:15 Sailfish kernel: Brought up 8 CPUs<br>
+Feb 21 22:36:15 Sailfish kernel: SMP: Total of 8 processors activated.<br>
+Feb 21 22:36:15 Sailfish kernel: alternatives: patching kernel code<br>
+Feb 21 22:36:15 Sailfish kernel: devtmpfs: initialized<br>
+Feb 21 22:36:15 Sailfish kernel: DMI not present or invalid.<br>
+Feb 21 22:36:15 Sailfish kernel: pinctrl core: initialized pinctrl subsystem<br>
+Feb 21 22:36:15 Sailfish kernel: regulator-dummy: no parameters<br>
+Feb 21 22:36:15 Sailfish kernel: NET: Registered protocol family 16<br>
+Feb 21 22:36:15 Sailfish kernel: ramoops: using module parameters<br>
+Feb 21 22:36:15 Sailfish kernel: persistent_ram: found existing invalid buffer, size 104399, start 104399<br>
+Feb 21 22:36:15 Sailfish kernel: console [pstore-1] enabled<br>
+Feb 21 22:36:15 Sailfish kernel: pstore: Registered ramoops as persistent store backend<br>
+Feb 21 22:36:15 Sailfish kernel: ramoops: attached 0x100000@0x9ff00000, ecc: 0/0<br>
+Feb 21 22:36:15 Sailfish kernel: ------------[ cut here ]------------<br>
+Feb 21 22:36:15 Sailfish kernel: WARNING: CPU: 2 PID: 1 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xiaomi<br>
+/msm8953/drivers/power/qcom/pm-boot.c:45 msm_pm_boot_init+0x90/0xd0()<br>
+Feb 21 22:36:15 Sailfish kernel: Modules linked in:<br>
+Feb 21 22:36:15 Sailfish kernel: CPU: 2 PID: 1 Comm: swapper/0 Not tainted 3.18.105-ElectraBlue-11.0-mido #3<br>
+Feb 21 22:36:15 Sailfish kernel: Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+Feb 21 22:36:15 Sailfish kernel: Call trace:<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000a69ac] warn_slowpath_null+0x38/0x44<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc001541ad4] msm_pm_boot_init+0x90/0xd0<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000082c10] do_one_initcall+0x194/0x1b0<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0014fcb98] kernel_init_freeable+0x1d0/0x284<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000e03928] kernel_init+0x20/0xe0<br>
+Feb 21 22:36:15 Sailfish kernel: ---[ end trace baf5d4897624fa07 ]---<br>
+Feb 21 22:36:15 Sailfish kernel: scm_call failed: func id 0x42000101, ret: -1, syscall returns: 0x0, 0x0, 0x0<br>
+Feb 21 22:36:15 Sailfish kernel: cpuidle: using governor ladder<br>
+Feb 21 22:36:15 Sailfish kernel: cpuidle: using governor menu<br>
+Feb 21 22:36:15 Sailfish kernel: cpuidle: using governor qcom<br>
+Feb 21 22:36:15 Sailfish kernel: vdso: 2 pages (1 code @ ffffffc001601000, 1 data @ ffffffc001600000)<br>
+Feb 21 22:36:15 Sailfish kernel: software IO TLB [mem 0xeec00000-0xef000000] (4MB) mapped at [ffffffc0aec00000-ffffffc0aeffffff]<br>
+Feb 21 22:36:15 Sailfish kernel: DMA: preallocated 256 KiB pool for atomic allocations<br>
+Feb 21 22:36:15 Sailfish kernel: __of_mpm_init(): MPM driver mapping exists<br>
+Feb 21 22:36:15 Sailfish kernel: platform soc:qcom,kgsl-hyp: assigned reserved memory node gpu_region@0<br>
+Feb 21 22:36:15 Sailfish kernel: msm_mpm_dev_probe(): Cannot get clk resource for XO: -517<br>
+Feb 21 22:36:15 Sailfish kernel: sps:sps is ready.<br>
+Feb 21 22:36:15 Sailfish kernel: msm_thermal:vdd_restriction_reg_init Defer regulator vdd-dig probe<br>
+Feb 21 22:36:15 Sailfish kernel: msm_thermal:probe_vdd_rstr Err regulator init. err:-517. KTM continues.<br>
+Feb 21 22:36:15 Sailfish kernel: msm-thermal soc:qcom,msm-thermal: probe_vdd_rstr:Failed reading node=/soc/qcom,msm-thermal, key=qcom,max<br>
+-freq-level. err=-517. KTM continues<br>
+Feb 21 22:36:15 Sailfish kernel: msm_thermal:msm_thermal_dev_probe Failed reading node=/soc/qcom,msm-thermal, key=qcom,online-hotpl<br>
+ug-core. err:-517<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b6000.i2c: probing driver i2c-msm-v2<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b6000.i2c: error on clk_get(core_clk):-517<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b6000.i2c: error probe() failed with err:-517<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b7000.i2c: probing driver i2c-msm-v2<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b7000.i2c: error on clk_get(core_clk):-517<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b7000.i2c: error probe() failed with err:-517<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 7af5000.i2c: probing driver i2c-msm-v2<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 7af5000.i2c: error on clk_get(core_clk):-517<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 7af5000.i2c: error probe() failed with err:-517<br>
+Feb 21 22:36:15 Sailfish kernel: cpu-clock-8953 b114000.qcom,cpu-clock-8953: Speed bin: 2 PVS Version: 0<br>
+Feb 21 22:36:15 Sailfish kernel: cpu-clock-8953 b114000.qcom,cpu-clock-8953: Get vdd-mx regulator!!!<br>
+Feb 21 22:36:15 Sailfish kernel: msm_rpm_glink_dt_parse: qcom,rpm-glink compatible not matches<br>
+Feb 21 22:36:15 Sailfish kernel: msm_rpm_dev_probe: APSS-RPM communication over SMD<br>
+Feb 21 22:36:15 Sailfish kernel: smd_channel_probe_now: allocation table not initialized<br>
+Feb 21 22:36:15 Sailfish kernel: smd_channel_probe_now: allocation table not initialized<br>
+Feb 21 22:36:15 Sailfish kernel: smd_channel_probe_now: allocation table not initialized<br>
+Feb 21 22:36:15 Sailfish kernel: msm_watchdog b017000.qcom,wdt: wdog absent resource not present<br>
+Feb 21 22:36:15 Sailfish kernel: msm_watchdog b017000.qcom,wdt: MSM Watchdog Initialized<br>
+Feb 21 22:36:15 Sailfish kernel: msm-sn-fuse a4128.snfuse: SN interface initialized<br>
+Feb 21 22:36:15 Sailfish kernel: platform soc:qcom,adsprpc-mem: assigned reserved memory node adsp_region@0<br>
+Feb 21 22:36:15 Sailfish kernel: spmi_pmic_arb 200f000.qcom,spmi: PMIC Arb Version-2 0x20010000<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_s5: 400 -- 1140 mV at 870 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_s5_avs_limit: 400 -- 1140 mV<br>
+Feb 21 22:36:15 Sailfish kernel: spm_regulator_probe: name=pm8953_s5, range=LV, voltage=870000 uV, mode=AUTO, step rate=1200 uV/us<br>
+Feb 21 22:36:15 Sailfish kernel: platform 4080000.qcom,mss: assigned reserved memory node modem_region@0<br>
+Feb 21 22:36:15 Sailfish kernel: platform c200000.qcom,lpass: assigned reserved memory node adsp_fw_region@0<br>
+Feb 21 22:36:15 Sailfish kernel: platform 1de0000.qcom,venus: assigned reserved memory node venus_region@0<br>
+Feb 21 22:36:15 Sailfish kernel: platform a21b000.qcom,pronto: assigned reserved memory node wcnss_fw_region@0<br>
+Feb 21 22:36:15 Sailfish kernel: apc_mem_acc_corner: 0 -- 0 mV<br>
+Feb 21 22:36:15 Sailfish kernel: cpr4_msm8953_apss_read_fuse_data: apc_corner: speed bin = 2<br>
+Feb 21 22:36:15 Sailfish kernel: cpr4_msm8953_apss_read_fuse_data: apc_corner: CPR fusing revision = 3<br>
+Feb 21 22:36:15 Sailfish kernel: cpr4_msm8953_apss_read_fuse_data: apc_corner: foundry id = 2<br>
+Feb 21 22:36:15 Sailfish kernel: cpr4_msm8953_apss_read_fuse_data: apc_corner: CPR misc fuse value = 0<br>
+Feb 21 22:36:15 Sailfish kernel: cpr4_msm8953_apss_read_fuse_data: apc_corner: Voltage boost fuse config = 0 boost = disable<br>
+Feb 21 22:36:15 Sailfish kernel: cpr4_msm8953_apss_calculate_open_loop_voltages: apc_corner: fused   LowSVS: open-loop= 625000 uV<br>
+Feb 21 22:36:15 Sailfish kernel: cpr4_msm8953_apss_calculate_open_loop_voltages: apc_corner: fused      SVS: open-loop= 690000 uV<br>
+Feb 21 22:36:15 Sailfish kernel: cpr4_msm8953_apss_calculate_open_loop_voltages: apc_corner: fused      NOM: open-loop= 805000 uV<br>
+Feb 21 22:36:15 Sailfish kernel: cpr4_msm8953_apss_calculate_open_loop_voltages: apc_corner: fused TURBO_L1: open-loop= 915000 uV<br>
+Feb 21 22:36:15 Sailfish kernel: cpr4_msm8953_apss_calculate_target_quotients: apc_corner: fused   LowSVS: quot[ 7]= 441<br>
+Feb 21 22:36:15 Sailfish kernel: cpr4_msm8953_apss_calculate_target_quotients: apc_corner: fused      SVS: quot[ 7]= 550, quot_offset[ 7]<br>
+= 105<br>
+Feb 21 22:36:15 Sailfish kernel: cpr4_msm8953_apss_calculate_target_quotients: apc_corner: fused      NOM: quot[ 7]= 788, quot_offset[ 7]<br>
+= 235<br>
+Feb 21 22:36:15 Sailfish kernel: cpr4_msm8953_apss_calculate_target_quotients: apc_corner: fused TURBO_L1: quot[ 7]=1009, quot_offset[ 7]<br>
+= 220<br>
+Feb 21 22:36:15 Sailfish kernel: cpr4_apss_init_aging: apc: sensor 6 aging init quotient diff = 5, aging RO scale = 2800 QUOT/V<br>
+Feb 21 22:36:15 Sailfish kernel: cpr3_regulator_init_ctrl: apc: Default CPR mode = HW closed-loop<br>
+Feb 21 22:36:15 Sailfish kernel: apc_corner: 0 -- 0 mV at 0 mV<br>
+Feb 21 22:36:15 Sailfish kernel: gfx_mem_acc_corner: 0 -- 0 mV<br>
+Feb 21 22:36:15 Sailfish kernel: GFX_LDO: msm_gfx_ldo_parse_dt: Unable to parse CX parameters rc=-517<br>
+Feb 21 22:36:15 Sailfish kernel: GFX_LDO: msm_gfx_ldo_probe: Unable to pasrse dt rc=-517<br>
+Feb 21 22:36:15 Sailfish kernel: msm_mpm_dev_probe(): Cannot get clk resource for XO: -517<br>
+Feb 21 22:36:15 Sailfish kernel: msm_thermal:sensor_mgr_init_threshold threshold id already initialized<br>
+Feb 21 22:36:15 Sailfish kernel: msm_thermal:vdd_restriction_reg_init Defer regulator vdd-dig probe<br>
+Feb 21 22:36:15 Sailfish kernel: msm_thermal:probe_vdd_rstr Err regulator init. err:-517. KTM continues.<br>
+Feb 21 22:36:15 Sailfish kernel: msm-thermal soc:qcom,msm-thermal: probe_vdd_rstr:Failed reading node=/soc/qcom,msm-thermal, key=qcom,max<br>
+-freq-level. err=-517. KTM continues<br>
+Feb 21 22:36:15 Sailfish kernel: msm_thermal:msm_thermal_dev_probe Failed reading node=/soc/qcom,msm-thermal, key=qcom,online-hotpl<br>
+ug-core. err:-517<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b6000.i2c: probing driver i2c-msm-v2<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b6000.i2c: error on clk_get(core_clk):-517<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b6000.i2c: error probe() failed with err:-517<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b7000.i2c: probing driver i2c-msm-v2<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b7000.i2c: error on clk_get(core_clk):-517<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b7000.i2c: error probe() failed with err:-517<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 7af5000.i2c: probing driver i2c-msm-v2<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 7af5000.i2c: error on clk_get(core_clk):-517<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 7af5000.i2c: error probe() failed with err:-517<br>
+Feb 21 22:36:15 Sailfish kernel: cpu-clock-8953 b114000.qcom,cpu-clock-8953: Speed bin: 2 PVS Version: 0<br>
+Feb 21 22:36:15 Sailfish kernel: cpu-clock-8953 b114000.qcom,cpu-clock-8953: Get vdd-mx regulator!!!<br>
+Feb 21 22:36:15 Sailfish kernel: msm_rpm_glink_dt_parse: qcom,rpm-glink compatible not matches<br>
+Feb 21 22:36:15 Sailfish kernel: msm_rpm_dev_probe: APSS-RPM communication over SMD<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_s1: 870 -- 1156 mV at 1000 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_s2_level: 0 -- 0 mV at 0 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_s2_floor_level: 0 -- 0 mV at 0 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_s2_level_ao: 0 -- 0 mV at 0 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_s3: 1225 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_s4: 1900 -- 2050 mV at 1900 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_s7_level: 0 -- 0 mV at 0 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_s7_level_ao: 0 -- 0 mV at 0 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_s7_level_so: 0 -- 0 mV at 0 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_l1: 1000 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_l2: 975 -- 1225 mV at 975 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_l3: 925 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_l5: 1800 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_l6: 1800 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_l7: 1800 -- 1900 mV at 1800 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_l7_ao: 1800 -- 1900 mV at 1800 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_l8: 2900 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_l9: 3000 -- 3300 mV at 3000 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_l10: 2850 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_l11: 2950 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_l12: 1800 -- 2950 mV at 1800 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_l13: 3125 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_l16: 1800 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_l17: 2850 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_l19: 1200 -- 1350 mV at 1200 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_l22: 2800 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: pm8953_l23: 975 -- 1225 mV at 975 mV normal idle<br>
+Feb 21 22:36:15 Sailfish kernel: GFX_LDO: msm_gfx_ldo_voltage_init: LDO corner 1: target-volt = 580000 uV<br>
+Feb 21 22:36:15 Sailfish kernel: GFX_LDO: msm_gfx_ldo_voltage_init: LDO corner 2: target-volt = 650000 uV<br>
+Feb 21 22:36:15 Sailfish kernel: GFX_LDO: msm_gfx_ldo_voltage_init: LDO corner 3: target-volt = 720000 uV<br>
+Feb 21 22:36:15 Sailfish kernel: GFX_LDO: msm_gfx_ldo_adjust_init_voltage: adjusted the open-loop voltage[1] 580000 - 615000<br>
+Feb 21 22:36:15 Sailfish kernel: GFX_LDO: msm_gfx_ldo_adjust_init_voltage: adjusted the open-loop voltage[2] 650000 - 675000<br>
+Feb 21 22:36:15 Sailfish kernel: GFX_LDO: msm_gfx_ldo_voltage_init: LDO-mode fuse disabled by default<br>
+Feb 21 22:36:15 Sailfish kernel: msm_gfx_ldo: 0 -- 0 mV at 0 mV<br>
+Feb 21 22:36:15 Sailfish kernel: msm_mpm_dev_probe(): Cannot get clk resource for XO: -517<br>
+Feb 21 22:36:15 Sailfish kernel: msm_thermal:sensor_mgr_init_threshold threshold id already initialized<br>
+Feb 21 22:36:15 Sailfish kernel: cpu cpu0: dev_pm_opp_get_opp_count: device OPP not found (-19)<br>
+Feb 21 22:36:15 Sailfish kernel: msm_thermal:get_cpu_freq_plan_len Error reading CPU0 freq table len. error:-19<br>
+Feb 21 22:36:15 Sailfish kernel: cpu cpu4: dev_pm_opp_get_opp_count: device OPP not found (-19)<br>
+Feb 21 22:36:15 Sailfish kernel: msm_thermal:get_cpu_freq_plan_len Error reading CPU4 freq table len. error:-19<br>
+Feb 21 22:36:15 Sailfish kernel: msm_thermal:vdd_restriction_reg_init Defer vdd rstr freq init.<br>
+Feb 21 22:36:15 Sailfish kernel: cpu cpu0: dev_pm_opp_get_opp_count: device OPP not found (-19)<br>
+Feb 21 22:36:15 Sailfish kernel: msm_thermal:get_cpu_freq_plan_len Error reading CPU0 freq table len. error:-19<br>
+Feb 21 22:36:15 Sailfish kernel: cpu cpu4: dev_pm_opp_get_opp_count: device OPP not found (-19)<br>
+Feb 21 22:36:15 Sailfish kernel: msm_thermal:get_cpu_freq_plan_len Error reading CPU4 freq table len. error:-19<br>
+Feb 21 22:36:15 Sailfish kernel: cpu cpu0: dev_pm_opp_get_opp_count: device OPP not found (-19)<br>
+Feb 21 22:36:15 Sailfish kernel: msm_thermal:get_cpu_freq_plan_len Error reading CPU0 freq table len. error:-19<br>
+Feb 21 22:36:15 Sailfish kernel: cpu cpu4: dev_pm_opp_get_opp_count: device OPP not found (-19)<br>
+Feb 21 22:36:15 Sailfish kernel: msm_thermal:get_cpu_freq_plan_len Error reading CPU4 freq table len. error:-19<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b6000.i2c: probing driver i2c-msm-v2<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b6000.i2c: error on clk_get(core_clk):-517<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b6000.i2c: error probe() failed with err:-517<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b7000.i2c: probing driver i2c-msm-v2<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b7000.i2c: error on clk_get(core_clk):-517<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b7000.i2c: error probe() failed with err:-517<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 7af5000.i2c: probing driver i2c-msm-v2<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 7af5000.i2c: error on clk_get(core_clk):-517<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 7af5000.i2c: error probe() failed with err:-517<br>
+Feb 21 22:36:15 Sailfish kernel: ------------[ cut here ]------------<br>
+Feb 21 22:36:15 Sailfish kernel: WARNING: CPU: 3 PID: 6 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xiaomi<br>
+/msm8953/drivers/clk/msm/clock-local2.c:1005 branch_clk_handoff+0x7c/0xc0()<br>
+Feb 21 22:36:15 Sailfish kernel: gcc_usb_phy_cfg_ahb_clk clock is enabled in HW even though ENABLE_BIT is not set<br>
+Feb 21 22:36:15 Sailfish kernel: Modules linked in:<br>
+Feb 21 22:36:15 Sailfish kernel: CPU: 3 PID: 6 Comm: kworker/u16:0 Tainted: G        W      3.18.105-ElectraBlue-11.0-mido #3<br>
+Feb 21 22:36:15 Sailfish kernel: Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+Feb 21 22:36:15 Sailfish kernel: Workqueue: deferwq deferred_probe_work_func<br>
+Feb 21 22:36:15 Sailfish kernel: Call trace:<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000a68a4] warn_slowpath_fmt+0x88/0xac<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000aefe1c] branch_clk_handoff+0x7c/0xc0<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000aec2ec] __handoff_clk+0xd0/0x2e4<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000aec684] msm_clock_register+0x184/0x248<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000aec7d8] of_msm_clock_register+0x90/0xa0<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000afceb4] msm_gcc_probe+0x120/0x214<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000651580] platform_drv_probe+0x44/0x90<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00064f628] driver_probe_device+0xe0/0x22c<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00064f7a8] __device_attach+0x34/0x54<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00064d7ec] bus_for_each_drv+0x98/0xc8<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00064f51c] device_attach+0x78/0xa4<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00064ea5c] bus_probe_device+0x38/0xac<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00064ef18] deferred_probe_work_func+0x7c/0xa8<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000bf69c] process_one_work+0x25c/0x438<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000c00c8] worker_thread+0x32c/0x448<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000c4aa8] kthread+0xf8/0x100<br>
+Feb 21 22:36:15 Sailfish kernel: ---[ end trace baf5d4897624fa08 ]---<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,gcc-8953 1800000.qcom,gcc: Registered GCC clocks<br>
+Feb 21 22:36:15 Sailfish kernel: cpu-clock-8953 b114000.qcom,cpu-clock-8953: Speed bin: 2 PVS Version: 0<br>
+Feb 21 22:36:15 Sailfish kernel: cpu-clock-8953 b114000.qcom,cpu-clock-8953: missing qcom,dfs-sid-c0<br>
+Feb 21 22:36:15 Sailfish kernel: cpu-clock-8953 b114000.qcom,cpu-clock-8953: No DFS SID tables found for Cluster-0<br>
+Feb 21 22:36:15 Sailfish kernel: cpu-clock-8953 b114000.qcom,cpu-clock-8953: missing qcom,link-sid-c0<br>
+Feb 21 22:36:15 Sailfish kernel: cpu-clock-8953 b114000.qcom,cpu-clock-8953: No Link SID tables found for Cluster-0<br>
+Feb 21 22:36:15 Sailfish kernel: cpu-clock-8953 b114000.qcom,cpu-clock-8953: missing qcom,lmh-sid-c0<br>
+Feb 21 22:36:15 Sailfish kernel: cpu-clock-8953 b114000.qcom,cpu-clock-8953: No LMH SID tables found for Cluster-0<br>
+Feb 21 22:36:15 Sailfish kernel: ramp_lmh_sid: Use Default LMH SID<br>
+Feb 21 22:36:15 Sailfish kernel: ramp_dfs_sid: Use Default DFS SID<br>
+Feb 21 22:36:15 Sailfish kernel: ramp_link_sid: Use Default Link SID<br>
+Feb 21 22:36:15 Sailfish kernel: cpu-clock-8953 b114000.qcom,cpu-clock-8953: missing qcom,dfs-sid-c1<br>
+Feb 21 22:36:15 Sailfish kernel: cpu-clock-8953 b114000.qcom,cpu-clock-8953: No DFS SID tables found for Cluster-1<br>
+Feb 21 22:36:15 Sailfish kernel: cpu-clock-8953 b114000.qcom,cpu-clock-8953: missing qcom,link-sid-c1<br>
+Feb 21 22:36:15 Sailfish kernel: cpu-clock-8953 b114000.qcom,cpu-clock-8953: No Link SID tables found for Cluster-1<br>
+Feb 21 22:36:15 Sailfish kernel: cpu-clock-8953 b114000.qcom,cpu-clock-8953: missing qcom,lmh-sid-c1<br>
+Feb 21 22:36:15 Sailfish kernel: cpu-clock-8953 b114000.qcom,cpu-clock-8953: No LMH SID tables found for Cluster-1<br>
+Feb 21 22:36:15 Sailfish kernel: ramp_lmh_sid: Use Default LMH SID<br>
+Feb 21 22:36:15 Sailfish kernel: ramp_dfs_sid: Use Default DFS SID<br>
+Feb 21 22:36:15 Sailfish kernel: ramp_link_sid: Use Default Link SID<br>
+Feb 21 22:36:15 Sailfish kernel: clock_rcgwr_init: RCGwR  Init Completed<br>
+Feb 21 22:36:15 Sailfish kernel: populate_opp_table: clock-cpu-8953: OPP tables populated (cpu 3 and 7)<br>
+Feb 21 22:36:15 Sailfish kernel: print_opp_table: clock_cpu: a53 C0: OPP voltage for 652800000: 1<br>
+Feb 21 22:36:15 Sailfish kernel: print_opp_table: clock_cpu: a53 C0: OPP voltage for 2016000000: 7<br>
+Feb 21 22:36:15 Sailfish kernel: print_opp_table: clock_cpu: a53 C1: OPP voltage for 652800000: 1<br>
+Feb 21 22:36:15 Sailfish kernel: print_opp_table: clock_cpu: a53 C2: OPP voltage for 2016000000: 7<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b6000.i2c: probing driver i2c-msm-v2<br>
+Feb 21 22:36:15 Sailfish kernel: AXI: msm_bus_scale_register_client(): msm_bus_scale_register_client: Bus driver not ready.<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b6000.i2c: msm_bus_scale_register_client(mstr-id:86):0 (not a problem)<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b7000.i2c: probing driver i2c-msm-v2<br>
+Feb 21 22:36:15 Sailfish kernel: AXI: msm_bus_scale_register_client(): msm_bus_scale_register_client: Bus driver not ready.<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b7000.i2c: msm_bus_scale_register_client(mstr-id:86):0 (not a problem)<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b7000.i2c: irq:176 when no active transfer<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 7af5000.i2c: probing driver i2c-msm-v2<br>
+Feb 21 22:36:15 Sailfish kernel: AXI: msm_bus_scale_register_client(): msm_bus_scale_register_client: Bus driver not ready.<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 7af5000.i2c: msm_bus_scale_register_client(mstr-id:84):0 (not a problem)<br>
+Feb 21 22:36:15 Sailfish kernel: gcc-gfx-8953 1800000.qcom,gcc-gfx: Registered GCC GFX clocks.<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,qpnp-pin qpnp-pin-17: qpnp_pin_probe: no device nodes specified in topology<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,qpnp-pin: probe of qpnp-pin-17 failed with error -22<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cpuss_dump soc:cpuss_dump: Couldn't get memory for dumping<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cpuss_dump soc:cpuss_dump: Couldn't get memory for dumping<br>
+Feb 21 22:36:15 Sailfish kernel: KPI: Bootloader start count = 28025<br>
+Feb 21 22:36:15 Sailfish kernel: KPI: Bootloader end count = 101763<br>
+Feb 21 22:36:15 Sailfish kernel: KPI: Bootloader display count = 72449<br>
+Feb 21 22:36:15 Sailfish kernel: KPI: Bootloader load kernel count = 1282<br>
+Feb 21 22:36:15 Sailfish kernel: KPI: Kernel MPM timestamp = 129004<br>
+Feb 21 22:36:15 Sailfish kernel: KPI: Kernel MPM Clock frequency = 32768<br>
+Feb 21 22:36:15 Sailfish kernel: socinfo_print: v0.10, id=293, ver=1.1, raw_id=70, raw_ver=1, hw_plat=11, hw_plat_ver=65536<br>
+                                  accessory_chip=0, hw_plat_subtype=0, pmic_model=65558, pmic_die_revision=65536 foundry_id=3 serial_numb<br>
+er=1599825137<br>
+Feb 21 22:36:15 Sailfish kernel: eldo2_8953: no parameters<br>
+Feb 21 22:36:15 Sailfish kernel: qpnp_pin_of_gpio_xlate: no such PMIC gpio 5 in device topology<br>
+Feb 21 22:36:15 Sailfish kernel: adv_vreg: no parameters<br>
+Feb 21 22:36:15 Sailfish kernel: vdd_vreg: no parameters<br>
+Feb 21 22:36:15 Sailfish kernel: vgaarb: loaded<br>
+Feb 21 22:36:15 Sailfish kernel: SCSI subsystem initialized<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver usbfs<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver hub<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new device driver usb<br>
+Feb 21 22:36:15 Sailfish kernel: media: Linux media interface: v0.10<br>
+Feb 21 22:36:15 Sailfish kernel: Linux video capture interface: v2.00<br>
+Feb 21 22:36:15 Sailfish kernel: EDAC MC: Ver: 3.0.0<br>
+Feb 21 22:36:15 Sailfish kernel: cpufreq: driver msm up and running<br>
+Feb 21 22:36:15 Sailfish kernel: platform soc:qcom,ion:qcom,ion-heap@8: assigned reserved memory node secure_region@0<br>
+Feb 21 22:36:15 Sailfish kernel: platform soc:qcom,ion:qcom,ion-heap@27: assigned reserved memory node qseecom_region@0<br>
+Feb 21 22:36:15 Sailfish kernel: ION heap system created<br>
+Feb 21 22:36:15 Sailfish kernel: ION heap mm created at 0x00000000f6800000 with size 9800000<br>
+Feb 21 22:36:15 Sailfish kernel: ION heap qsecom created at 0x00000000f5800000 with size 1000000<br>
+Feb 21 22:36:15 Sailfish kernel: msm_bus_fabric_init_driver<br>
+Feb 21 22:36:15 Sailfish kernel: msm_bus_device 580000.ad-hoc-bus: Coresight support absent for bus: 2048<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,qpnp-power-on qpnp-power-on-1: PMIC@SID0 Power-on reason: Triggered from Hard Reset and 'warm' boot<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,qpnp-power-on qpnp-power-on-1: PMIC@SID0: Power-off reason: Triggered from KPDPWR_N (Long Power Key<br>
+ hold)<br>
+Feb 21 22:36:15 Sailfish kernel: input: qpnp_pon as /devices/virtual/input/input0<br>
+Feb 21 22:36:15 Sailfish kernel: pon_spare_reg: no parameters<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,qpnp-power-on qpnp-power-on-14: No PON config. specified<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,qpnp-power-on qpnp-power-on-14: PMIC@SID2 Power-on reason: Triggered from PON1 (secondary PMIC) and<br>
+ 'warm' boot<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,qpnp-power-on qpnp-power-on-14: PMIC@SID2: Power-off reason: Triggered from PS_HOLD (PS_HOLD/MSM co<br>
+ntrolled shutdown)<br>
+Feb 21 22:36:15 Sailfish kernel: PMIC@SID0: (null) v1.0 options: 2, 2, 0, 0<br>
+Feb 21 22:36:15 Sailfish kernel: PMIC@SID2: PMI8950 v2.0 options: 0, 0, 0, 0<br>
+Feb 21 22:36:15 Sailfish kernel: ipa ipa2_uc_state_check:296 uC interface not initialized<br>
+Feb 21 22:36:15 Sailfish kernel: ipa ipa_sps_irq_control_all:938 EP (2) not allocated.<br>
+Feb 21 22:36:15 Sailfish kernel: ipa ipa_sps_irq_control_all:938 EP (5) not allocated.<br>
+Feb 21 22:36:15 Sailfish kernel: sps:BAM 0x0000000007904000 is registered.<br>
+Feb 21 22:36:15 Sailfish kernel: sps:BAM 0x0000000007904000 (va:0xffffff8001840000) enabled: ver:0x27, number of pipes:20<br>
+Feb 21 22:36:15 Sailfish kernel: IPA driver initialization was successful.<br>
+Feb 21 22:36:15 Sailfish kernel: gdsc_venus: no parameters<br>
+Feb 21 22:36:15 Sailfish kernel: gdsc_mdss: no parameters<br>
+Feb 21 22:36:15 Sailfish kernel: gdsc_jpeg: no parameters<br>
+Feb 21 22:36:15 Sailfish kernel: gdsc_vfe: no parameters<br>
+Feb 21 22:36:15 Sailfish kernel: gdsc_vfe1: no parameters<br>
+Feb 21 22:36:15 Sailfish kernel: gdsc_cpp: no parameters<br>
+Feb 21 22:36:15 Sailfish kernel: gdsc_oxili_gx: no parameters<br>
+Feb 21 22:36:15 Sailfish kernel: gdsc_oxili_gx: supplied by msm_gfx_ldo<br>
+Feb 21 22:36:15 Sailfish kernel: gdsc_venus_core0: fast normal<br>
+Feb 21 22:36:15 Sailfish kernel: gdsc_oxili_cx: no parameters<br>
+Feb 21 22:36:15 Sailfish kernel: gdsc_usb30: no parameters<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_pll_probe: MDSS pll label = MDSS DSI 0 PLL<br>
+Feb 21 22:36:15 Sailfish kernel: dsi_pll_clock_register_8996: Registered DSI PLL ndx=0 clocks successfully<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_pll_probe: MDSS pll label = MDSS DSI 1 PLL<br>
+Feb 21 22:36:15 Sailfish kernel: pll_is_pll_locked_8996: DSI PLL ndx=1 status=0 failed to Lock<br>
+Feb 21 22:36:15 Sailfish kernel: dsi_pll_clock_register_8996: Registered DSI PLL ndx=1 clocks successfully<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu 1e00000.qcom,iommu: device apps_iommu (model: 500) mapped at ffffff8001e00000, with 21 ctx ban<br>
+ks<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e20000.qcom,iommu-ctx: context adsp_elf using bank 0<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e21000.qcom,iommu-ctx: context adsp_sec_pixel using bank 1<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e22000.qcom,iommu-ctx: context mdp_1 using bank 2<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e23000.qcom,iommu-ctx: context venus_fw using bank 3<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e24000.qcom,iommu-ctx: context venus_sec_non_pixel using bank 4<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e25000.qcom,iommu-ctx: context venus_sec_bitstream using bank 5<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e26000.qcom,iommu-ctx: context venus_sec_pixel using bank 6<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e28000.qcom,iommu-ctx: context pronto_pil using bank 8<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e29000.qcom,iommu-ctx: context q6 using bank 9<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e2a000.qcom,iommu-ctx: context periph_rpm using bank 10<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e2b000.qcom,iommu-ctx: context lpass using bank 11<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e2f000.qcom,iommu-ctx: context adsp_io using bank 15<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e30000.qcom,iommu-ctx: context adsp_opendsp using bank 16<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e31000.qcom,iommu-ctx: context adsp_shared using bank 17<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e32000.qcom,iommu-ctx: context cpp using bank 18<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e33000.qcom,iommu-ctx: context jpeg_enc0 using bank 19<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e34000.qcom,iommu-ctx: context vfe using bank 20<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e35000.qcom,iommu-ctx: context mdp_0 using bank 21<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e36000.qcom,iommu-ctx: context venus_ns using bank 22<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e38000.qcom,iommu-ctx: context ipa using bank 24<br>
+Feb 21 22:36:15 Sailfish kernel: msm_iommu_ctx 1e37000.qcom,iommu-ctx: context access_control using bank 23<br>
+Feb 21 22:36:15 Sailfish kernel: /soc/qcom,cam_smmu/msm_cam_smmu_cb1: could not get #iommu-cells for /soc/qcom,iommu@1e00000<br>
+Feb 21 22:36:15 Sailfish kernel: /soc/qcom,cam_smmu/msm_cam_smmu_cb3: could not get #iommu-cells for /soc/qcom,iommu@1e00000<br>
+Feb 21 22:36:15 Sailfish kernel: /soc/qcom,cam_smmu/msm_cam_smmu_cb4: could not get #iommu-cells for /soc/qcom,iommu@1e00000<br>
+Feb 21 22:36:15 Sailfish kernel: adreno_idler: version 1.1 by arter97<br>
+Feb 21 22:36:15 Sailfish kernel: Advanced Linux Sound Architecture Driver Initialized.<br>
+Feb 21 22:36:15 Sailfish kernel: cfg80211: Calling CRDA to update world regulatory domain<br>
+Feb 21 22:36:15 Sailfish kernel: cfg80211: World regulatory domain updated:<br>
+Feb 21 22:36:15 Sailfish kernel: cfg80211:  DFS Master region: unset<br>
+Feb 21 22:36:15 Sailfish kernel: cfg80211:   (start_freq - end_freq @ bandwidth), (max_antenna_gain, max_eirp), (dfs_cac_time)<br>
+Feb 21 22:36:15 Sailfish kernel: cfg80211:   (2402000 KHz - 2472000 KHz @ 40000 KHz), (N/A, 2000 mBm), (N/A)<br>
+Feb 21 22:36:15 Sailfish kernel: cfg80211:   (2457000 KHz - 2482000 KHz @ 40000 KHz), (N/A, 2000 mBm), (N/A)<br>
+Feb 21 22:36:15 Sailfish kernel: cfg80211:   (2474000 KHz - 2494000 KHz @ 20000 KHz), (N/A, 2000 mBm), (N/A)<br>
+Feb 21 22:36:15 Sailfish kernel: cfg80211:   (5170000 KHz - 5250000 KHz @ 80000 KHz), (N/A, 2000 mBm), (N/A)<br>
+Feb 21 22:36:15 Sailfish kernel: cfg80211:   (5250000 KHz - 5330000 KHz @ 80000 KHz), (N/A, 2000 mBm), (N/A)<br>
+Feb 21 22:36:15 Sailfish kernel: cfg80211:   (5490000 KHz - 5710000 KHz @ 80000 KHz), (N/A, 2000 mBm), (N/A)<br>
+Feb 21 22:36:15 Sailfish kernel: cfg80211:   (5735000 KHz - 5835000 KHz @ 80000 KHz), (N/A, 2000 mBm), (N/A)<br>
+Feb 21 22:36:15 Sailfish kernel: cfg80211:   (57240000 KHz - 63720000 KHz @ 2160000 KHz), (N/A, 0 mBm), (N/A)<br>
+Feb 21 22:36:15 Sailfish kernel: pcie:pcie_init.<br>
+Feb 21 22:36:15 Sailfish kernel: ibb_reg: 4600 -- 6000 mV at 5500 mV<br>
+Feb 21 22:36:15 Sailfish kernel: lab_reg: 4600 -- 6000 mV at 5500 mV<br>
+Feb 21 22:36:15 Sailfish kernel: Switched to clocksource arch_sys_counter<br>
+Feb 21 22:36:15 Sailfish kernel: bcl_peripheral:bcl_perph_init BCL Initialized<br>
+Feb 21 22:36:15 Sailfish kernel: NET: Registered protocol family 2<br>
+Feb 21 22:36:15 Sailfish kernel: TCP established hash table entries: 32768 (order: 6, 262144 bytes)<br>
+Feb 21 22:36:15 Sailfish kernel: TCP bind hash table entries: 32768 (order: 7, 524288 bytes)<br>
+Feb 21 22:36:15 Sailfish kernel: TCP: Hash tables configured (established 32768 bind 32768)<br>
+Feb 21 22:36:15 Sailfish kernel: TCP: reno registered<br>
+Feb 21 22:36:15 Sailfish kernel: UDP hash table entries: 2048 (order: 4, 65536 bytes)<br>
+Feb 21 22:36:15 Sailfish kernel: UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes)<br>
+Feb 21 22:36:15 Sailfish kernel: NET: Registered protocol family 1<br>
+Feb 21 22:36:15 Sailfish kernel: PCI: CLS 0 bytes, default 64<br>
+Feb 21 22:36:15 Sailfish kernel: gcc-mdss-8953 1800000.qcom,gcc-mdss: Registered GCC MDSS clocks.<br>
+Feb 21 22:36:15 Sailfish kernel: Trying to unpack rootfs image as initramfs...<br>
+Feb 21 22:36:15 Sailfish kernel: Freeing initrd memory: 820K<br>
+Feb 21 22:36:15 Sailfish kernel: futex hash table entries: 2048 (order: 5, 131072 bytes)<br>
+Feb 21 22:36:15 Sailfish kernel: Initialise system trusted keyring<br>
+Feb 21 22:36:15 Sailfish kernel: audit: initializing netlink subsys (disabled)<br>
+Feb 21 22:36:15 Sailfish kernel: audit: type=2000 audit(0.683:1): initialized<br>
+Feb 21 22:36:15 Sailfish kernel: vmscan: error setting kswapd cpu affinity mask<br>
+Feb 21 22:36:15 Sailfish kernel: zbud: loaded<br>
+Feb 21 22:36:15 Sailfish kernel: VFS: Disk quotas dquot_6.5.2<br>
+Feb 21 22:36:15 Sailfish kernel: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)<br>
+Feb 21 22:36:15 Sailfish kernel: squashfs: version 4.0 (2009/01/31) Phillip Lougher<br>
+Feb 21 22:36:15 Sailfish kernel: exFAT: Version 1.2.9<br>
+Feb 21 22:36:15 Sailfish kernel: fuse init (API version 7.23)<br>
+Feb 21 22:36:15 Sailfish kernel: msgmni has been set to 5615<br>
+Feb 21 22:36:15 Sailfish kernel: SELinux:  Registering netfilter hooks<br>
+Feb 21 22:36:15 Sailfish kernel: Key type asymmetric registered<br>
+Feb 21 22:36:15 Sailfish kernel: Asymmetric key parser 'x509' registered<br>
+Feb 21 22:36:15 Sailfish kernel: Block layer SCSI generic (bsg) driver version 0.4 loaded (major 247)<br>
+Feb 21 22:36:15 Sailfish kernel: io scheduler noop registered<br>
+Feb 21 22:36:15 Sailfish kernel: io scheduler deadline registered<br>
+Feb 21 22:36:15 Sailfish kernel: io scheduler cfq registered<br>
+Feb 21 22:36:15 Sailfish kernel: io scheduler zen registered<br>
+Feb 21 22:36:15 Sailfish kernel: io scheduler fiops registered<br>
+Feb 21 22:36:15 Sailfish kernel: io scheduler sio registered<br>
+Feb 21 22:36:15 Sailfish kernel: io scheduler maple registered (default)<br>
+Feb 21 22:36:15 Sailfish kernel: io scheduler bfq registered<br>
+Feb 21 22:36:15 Sailfish kernel: BFQ I/O-scheduler: v7r8<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b6000.i2c: msm_bus_scale_register_client(mstr-id:86):0x2 (ok)<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b6000.i2c: NACK: slave not responding, ensure its powered: msgs(n:2 cur:0 tx) bc(rx:1<br>
+ tx:1) mode:FIFO slv_addr:0x39 MSTR_STS:0x0d1300c8 OPER:0x00000010<br>
+Feb 21 22:36:15 Sailfish kernel: msm_dba_helper_i2c_read: i2c read failed<br>
+Feb 21 22:36:15 Sailfish kernel: adv7533_read: read err: addr 0x39, reg 0x0, size 0x1<br>
+Feb 21 22:36:15 Sailfish kernel: adv7533_probe: Failed to read chip rev<br>
+Feb 21 22:36:15 Sailfish kernel: adv7533: probe of 2-0039 failed with error -5<br>
+Feb 21 22:36:15 Sailfish kernel: msm_dss_get_res_byname: 'vbif_nrt_phys' resource not found<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_mdp_probe+0x228/0x1108-msm_dss_ioremap_byname: 'vbif_nrt_phys' msm_dss_get_res_byname failed<br>
+<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_mdp_irq_clk_register: unable to get clk: lut_clk<br>
+Feb 21 22:36:15 Sailfish kernel: No change in context(0==0), skip<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_mdp_pipe_addr_setup: type:0 ftchid:-1 xinid:0 num:0 rect:0 ndx:0x1 prio:0<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_mdp_pipe_addr_setup: type:1 ftchid:-1 xinid:1 num:3 rect:0 ndx:0x8 prio:1<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_mdp_pipe_addr_setup: type:1 ftchid:-1 xinid:5 num:4 rect:0 ndx:0x10 prio:2<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_mdp_pipe_addr_setup: type:2 ftchid:-1 xinid:2 num:6 rect:0 ndx:0x40 prio:3<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_mdp_pipe_addr_setup: type:3 ftchid:-1 xinid:7 num:10 rect:0 ndx:0x400 prio:0<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_mdp_parse_dt_handler: Error from prop qcom,mdss-pipe-sw-reset-off : u32 array read<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_mdp_parse_dt_handler: Error from prop qcom,mdss-ib-factor-overlap : u32 array read<br>
+Feb 21 22:36:15 Sailfish kernel: xlog_status: enable:1, panic:1, dump:2<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_mdp_probe: mdss version = 0x10100000, bootloader display is on, num 1, intf_sel=0x00000100<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_smmu_util_parse_dt_clock: clocks are not defined<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_smmu_probe: iommu v2 domain[0] mapping and clk register successful!<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_smmu_util_parse_dt_clock: clocks are not defined<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_smmu_probe: iommu v2 domain[2] mapping and clk register successful!<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_dsi_ctrl_probe: DSI Ctrl name = MDSS DSI CTRL-0<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_dsi_find_panel_of_node: cmdline:0:qcom,mdss_dsi_nt35532_fhd_video:1:none:cfg:single_dsi panel_name:<br>
+qcom,mdss_dsi_nt35532_fhd_video<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_dsi_panel_init: Panel Name = nt35532 fhd video mode dsi panel<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_dsi_panel_timing_from_dt: found new timing "qcom,mdss_dsi_nt35532_fhd_video" (ffffffc0ae395000)<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_dsi_parse_dcs_cmds: failed, key=qcom,mdss-dsi-post-panel-on-command<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_dsi_parse_dcs_cmds: failed, key=qcom,mdss-dsi-timing-switch-command<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_dsi_panel_get_dsc_cfg_np: cannot find dsc config node:<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_dsi_parse_panel_features: ulps feature disabled<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_dsi_parse_panel_features: ulps during suspend feature disabled<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_dsi_parse_dms_config: dynamic switch feature enabled: 0<br>
+Feb 21 22:36:15 Sailfish kernel: No valid panel-status-check-mode string<br>
+Feb 21 22:36:15 Sailfish kernel: 1a94000.qcom,mdss_dsi_ctrl0 supply vdd not found, using dummy regulator<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_dsi_parse_ctrl_params:3947 Unable to read qcom,display-id, data=0000000000000000,len=20<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_dsi_parse_gpio_params: bklt_en gpio not specified<br>
+Feb 21 22:36:15 Sailfish kernel: msm_dss_get_res_byname: 'dsi_phy_regulator' resource not found<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_dsi_retrieve_ctrl_resources+0x178/0x1fc-msm_dss_ioremap_byname: 'dsi_phy_regulator' msm_dss_<br>
+get_res_byname failed<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_dsi_retrieve_ctrl_resources: ctrl_base=ffffff8001808000 ctrl_size=400 phy_base=ffffff800180a400 phy<br>
+_size=580<br>
+Feb 21 22:36:15 Sailfish kernel: dsi_panel_device_register: Using default BTA for ESD check<br>
+Feb 21 22:36:15 Sailfish kernel: dsi_panel_device_register: Continuous splash enabled<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_register_panel: adding framebuffer device 1a94000.qcom,mdss_dsi_ctrl0<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_dsi_ctrl_probe: Dsi Ctrl-0 initialized, DSI rev:0x10040002, PHY rev:0x2<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_dsi_status_init: DSI status check interval:2500<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_register_panel: adding framebuffer device soc:qcom,mdss_wb_panel<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_fb_probe: fb0: split_mode:0 left:0 right:0<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_fb_register: FrameBuffer[0] 1080x1920 registered successfully!<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_fb_probe: fb1: split_mode:0 left:0 right:0<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_fb_register: FrameBuffer[1] 640x640 registered successfully!<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_mdp_splash_parse_dt: splash mem child node is not present<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_mdp_kcal_store_fb0_ctl panel name nt35532 fhd video mode dsi panel<br>
+Feb 21 22:36:15 Sailfish kernel: mdss_mdp_kcal_store_fb0_ctl panel found...<br>
+Feb 21 22:36:15 Sailfish kernel: kcal_ctrl_init: registered<br>
+Feb 21 22:36:15 Sailfish kernel: IPC_RTR: msm_ipc_router_smd_driver_register Already driver registered IPCRTR<br>
+Feb 21 22:36:15 Sailfish kernel: IPC_RTR: msm_ipc_router_smd_driver_register Already driver registered IPCRTR<br>
+Feb 21 22:36:15 Sailfish kernel: In memshare_probe, Memshare probe success<br>
+Feb 21 22:36:15 Sailfish kernel: msm_rpm_log_probe: OK<br>
+Feb 21 22:36:15 Sailfish kernel: subsys-pil-tz soc:qcom,kgsl-hyp: for a506_zap segments only will be dumped.<br>
+Feb 21 22:36:15 Sailfish kernel: subsys-pil-tz 1de0000.qcom,venus: for venus segments only will be dumped.<br>
+Feb 21 22:36:15 Sailfish kernel: msm_serial_hs module loaded<br>
+Feb 21 22:36:15 Sailfish kernel: platform 1c40000.qcom,kgsl-iommu:gfx3d_secure: assigned reserved memory node secure_region@0<br>
+Feb 21 22:36:15 Sailfish kernel: Boeffla WL blocker: driver version 1.1.0 started<br>
+Feb 21 22:36:15 Sailfish kernel: brd: module loaded<br>
+Feb 21 22:36:15 Sailfish kernel: loop: module loaded<br>
+Feb 21 22:36:15 Sailfish kernel: zram: Added device: zram0<br>
+Feb 21 22:36:15 Sailfish kernel: QSEECOM: qseecom_probe: qseecom.qsee_version = 0x1000000<br>
+Feb 21 22:36:15 Sailfish kernel: QSEECOM: qseecom_retrieve_ce_data: Device does not support PFE<br>
+Feb 21 22:36:15 Sailfish kernel: QSEECOM: qseecom_probe: qseecom clocks handled by other subsystem<br>
+Feb 21 22:36:15 Sailfish kernel: QSEECOM: qseecom_probe: qsee reentrancy support phase is not defined, setting to default 0<br>
+Feb 21 22:36:15 Sailfish kernel: QSEECOM: qseecom_probe: qseecom.whitelist_support = 0<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-core: driver [tabla-i2c-core] using legacy suspend method<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-core: driver [tabla-i2c-core] using legacy resume method<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-core: driver [wcd9xxx-i2c-core] using legacy suspend method<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-core: driver [wcd9xxx-i2c-core] using legacy resume method<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-core: driver [tasha-i2c-core] using legacy suspend method<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-core: driver [tasha-i2c-core] using legacy resume method<br>
+Feb 21 22:36:15 Sailfish kernel: QCE50: __qce_get_device_tree_data: BAM Apps EE is not defined, setting to default 1<br>
+Feb 21 22:36:15 Sailfish kernel: qce 720000.qcedev: Qualcomm Crypto 5.3.3 device found @0x720000<br>
+Feb 21 22:36:15 Sailfish kernel: qce 720000.qcedev: CE device = 0x0<br>
+                                 , IO base, CE = 0xffffff8001f40000<br>
+                                 , Consumer (IN) PIPE 2,    Producer (OUT) PIPE 3<br>
+                                 IO base BAM = 0x          (null)<br>
+                                 BAM IRQ 193<br>
+                                 Engines Availability = 0x2010853<br>
+Feb 21 22:36:15 Sailfish kernel: sps:BAM 0x0000000000704000 is registered.<br>
+Feb 21 22:36:15 Sailfish kernel: sps:BAM 0x0000000000704000 (va:0xffffff8002100000) enabled: ver:0x27, number of pipes:8<br>
+Feb 21 22:36:15 Sailfish kernel: QCE50: qce_sps_init:  Qualcomm MSM CE-BAM at 0x0000000000704000 irq 193<br>
+Feb 21 22:36:15 Sailfish kernel: QCE50: __qce_get_device_tree_data: BAM Apps EE is not defined, setting to default 1<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: Qualcomm Crypto 5.3.3 device found @0x720000<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: CE device = 0x0<br>
+                                 , IO base, CE = 0xffffff8002140000<br>
+                                 , Consumer (IN) PIPE 4,    Producer (OUT) PIPE 5<br>
+                                 IO base BAM = 0x          (null)<br>
+                                 BAM IRQ 193<br>
+                                 Engines Availability = 0x2010853<br>
+Feb 21 22:36:15 Sailfish kernel: QCE50: qce_sps_init:  Qualcomm MSM CE-BAM at 0x0000000000704000 irq 193<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-ecb-aes<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-cbc-aes<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-ctr-aes<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-ecb-des<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-cbc-des<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-ecb-3des<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-cbc-3des<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-xts-aes<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-sha1<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-sha256<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-aead-hmac-sha1-cbc-aes<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-aead-hmac-sha1-cbc-des<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-aead-hmac-sha1-cbc-3des<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-aead-hmac-sha256-cbc-aes<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-aead-hmac-sha256-cbc-des<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-aead-hmac-sha256-cbc-3des<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-hmac-sha1<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-hmac-sha256<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-aes-ccm<br>
+Feb 21 22:36:15 Sailfish kernel: qcrypto 720000.qcrypto: qcrypto-rfc4309-aes-ccm<br>
+Feb 21 22:36:15 Sailfish kernel: qcom_ice_get_device_tree_data: No vdd-hba-supply regulator, assuming not needed<br>
+Feb 21 22:36:15 Sailfish kernel: ICE IRQ = 194<br>
+Feb 21 22:36:15 Sailfish kernel: SCSI Media Changer driver v0.25<br>
+Feb 21 22:36:15 Sailfish kernel: tun: Universal TUN/TAP device driver, 1.6<br>
+Feb 21 22:36:15 Sailfish kernel: tun: (C) 1999-2004 Max Krasnyansky maxk@qualcomm.com<br>
+Feb 21 22:36:15 Sailfish kernel: PPP generic driver version 2.4.2<br>
+Feb 21 22:36:15 Sailfish kernel: PPP BSD Compression module registered<br>
+Feb 21 22:36:15 Sailfish kernel: PPP Deflate Compression module registered<br>
+Feb 21 22:36:15 Sailfish kernel: PPP MPPE Compression module registered<br>
+Feb 21 22:36:15 Sailfish kernel: NET: Registered protocol family 24<br>
+Feb 21 22:36:15 Sailfish kernel: wcnss_wlan probed in built-in mode<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver asix<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver ax88179_178a<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver cdc_ether<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver net1080<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver cdc_subset<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver zaurus<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver cdc_ncm<br>
+Feb 21 22:36:15 Sailfish kernel: msm_sharedmem: sharedmem_register_qmi: qmi init successful<br>
+Feb 21 22:36:15 Sailfish kernel: scm_call failed: func id 0x42000c16, ret: -1, syscall returns: 0x0, 0x0, 0x0<br>
+Feb 21 22:36:15 Sailfish kernel: hyp_assign_table: Failed to assign memory protection, ret = -5<br>
+Feb 21 22:36:15 Sailfish kernel: msm_sharedmem: setup_shared_ram_perms: hyp_assign_phys failed IPA=0x0160x00000000f4900000 size=157<br>
+2864 err=-5<br>
+Feb 21 22:36:15 Sailfish kernel: msm_sharedmem: msm_sharedmem_probe: Device created for client 'rmtfs'<br>
+Feb 21 22:36:15 Sailfish kernel: msm-dwc3 7000000.ssusb: unable to get dbm device<br>
+Feb 21 22:36:15 Sailfish kernel: ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver<br>
+Feb 21 22:36:15 Sailfish kernel: ehci-pci: EHCI PCI platform driver<br>
+Feb 21 22:36:15 Sailfish kernel: ehci-msm: Qualcomm On-Chip EHCI Host Controller<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver cdc_acm<br>
+Feb 21 22:36:15 Sailfish kernel: cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver usb-storage<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver ums-alauda<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver ums-cypress<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver ums-datafab<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver ums-freecom<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver ums-isd200<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver ums-jumpshot<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver ums-karma<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver ums-sddr09<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver ums-sddr55<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver ums-usbat<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver usbserial<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver usb_ehset_test<br>
+Feb 21 22:36:15 Sailfish kernel: gbridge_init: gbridge_init successs.<br>
+Feb 21 22:36:15 Sailfish kernel: mousedev: PS/2 mouse device common for all mice<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver xpad<br>
+Feb 21 22:36:15 Sailfish kernel: tony_test:[ft5435_ts_init]<br>
+Feb 21 22:36:15 Sailfish kernel: ~~~~~ ft5435_ts_probe start<br>
+Feb 21 22:36:15 Sailfish kernel: [ft5435_ts_probe]CONFIG_FB is defined<br>
+Feb 21 22:36:15 Sailfish kernel: [ft5435_ts_probe]CONFIG_PM is defined<br>
+Feb 21 22:36:15 Sailfish kernel: [ft5435_get_dt_vkey]000<br>
+Feb 21 22:36:15 Sailfish kernel: [ft5435_get_dt_vkey]111<br>
+Feb 21 22:36:15 Sailfish kernel: [ft5435_get_dt_vkey]222<br>
+Feb 21 22:36:15 Sailfish kernel: [ft5435_get_dt_vkey]333<br>
+Feb 21 22:36:15 Sailfish kernel: [FTS]keycode = 172, x= 500, y=2040<br>
+Feb 21 22:36:15 Sailfish kernel: [FTS]keycode = 139, x= 200, y=2040<br>
+Feb 21 22:36:15 Sailfish kernel: [FTS]keycode = 158, x= 800, y=2040<br>
+Feb 21 22:36:15 Sailfish kernel: [ft5435_get_dt_vkey]5555<br>
+Feb 21 22:36:15 Sailfish kernel: input: ft5435_ts as /devices/soc/78b7000.i2c/i2c-3/3-0038/input/input1<br>
+Feb 21 22:36:15 Sailfish kernel: i2c-msm-v2 78b7000.i2c: msm_bus_scale_register_client(mstr-id:86):0xf (ok)<br>
+Feb 21 22:36:15 Sailfish kernel: ft5435_ts 3-0038: Device ID = 0x54<br>
+Feb 21 22:36:15 Sailfish kernel: sps: BAM device 0x0000000007884000 is not registered yet.<br>
+Feb 21 22:36:15 Sailfish kernel: sps:BAM 0x0000000007884000 is registered.<br>
+Feb 21 22:36:15 Sailfish kernel: sps:BAM 0x0000000007884000 (va:0xffffff8001e60000) enabled: ver:0x19, number of pipes:12<br>
+Feb 21 22:36:15 Sailfish kernel: ft5435_ts 3-0038: report rate = 110Hz<br>
+Feb 21 22:36:15 Sailfish kernel: ft5435_ts 3-0038: Firmware version = 10.0.0<br>
+Feb 21 22:36:15 Sailfish kernel: [Fu]fw_vendor_id=0x51<br>
+Feb 21 22:36:15 Sailfish kernel: upgrade,fts_fw_vendor_id=0x51<br>
+Feb 21 22:36:15 Sailfish kernel: ft5435_fw_upgrade_by_array_data, suspended=0<br>
+Feb 21 22:36:15 Sailfish kernel: ft5435_ts 3-0038: Current firmware: 0x0a.0.0<br>
+Feb 21 22:36:15 Sailfish kernel: ft5435_ts 3-0038: New firmware: 0x0a.0.0<br>
+Feb 21 22:36:15 Sailfish kernel: ft5435_ts 3-0038: Exiting fw upgrade...<br>
+Feb 21 22:36:15 Sailfish kernel: ft5435_fw_upgrade_by_array_data done<br>
+Feb 21 22:36:15 Sailfish kernel: ~~~~~ tp_glove_register enable!!!!!<br>
+Feb 21 22:36:15 Sailfish kernel: [fts]ft5435_fw_LockDownInfo_get_from_boot, fw_vendor_id=0x51<br>
+Feb 21 22:36:15 Sailfish kernel: ft5435_fw_LockDownInfo_get_from_boot, FTS_UPGRADE_LOOP ok is  i = 0<br>
+Feb 21 22:36:15 Sailfish kernel: ft5435_fw_LockDownInfo_get_from_boot: REG VAL = 0x34, j=0<br>
+Feb 21 22:36:15 Sailfish kernel: ft5435_fw_LockDownInfo_get_from_boot: REG VAL = 0x35, j=1<br>
+Feb 21 22:36:15 Sailfish kernel: ft5435_fw_LockDownInfo_get_from_boot: REG VAL = 0x32, j=2<br>
+Feb 21 22:36:15 Sailfish kernel: ft5435_fw_LockDownInfo_get_from_boot: REG VAL = 0x01, j=3<br>
+Feb 21 22:36:15 Sailfish kernel: ft5435_fw_LockDownInfo_get_from_boot: REG VAL = 0xc6, j=4<br>
+Feb 21 22:36:15 Sailfish kernel: ft5435_fw_LockDownInfo_get_from_boot: REG VAL = 0x01, j=5<br>
+Feb 21 22:36:15 Sailfish kernel: ft5435_fw_LockDownInfo_get_from_boot: REG VAL = 0x34, j=6<br>
+Feb 21 22:36:15 Sailfish kernel: ft5435_fw_LockDownInfo_get_from_boot: REG VAL = 0x01, j=7<br>
+Feb 21 22:36:15 Sailfish kernel: ft5435_fw_LockDownInfo_get_from_boot: reset the tp<br>
+Feb 21 22:36:15 Sailfish kernel: tpd_probe, ft5x46_ctpm_LockDownInfo_get_from_boot, tp_lockdown_info=34353201c6013401<br>
+Feb 21 22:36:15 Sailfish kernel: ft5435_ts 3-0038: Create proc entry success!<br>
+Feb 21 22:36:15 Sailfish kernel: ~~~~~ ft5435_ts_probe end<br>
+Feb 21 22:36:15 Sailfish kernel: [ TSP ] ist30xx_init()<br>
+Feb 21 22:36:15 Sailfish kernel: [ TSP ] ### IMAGIS probe(ver:3.0.0.0, addr:0x50) ###<br>
+Feb 21 22:36:15 Sailfish kernel: [ TSP ] ##### Device tree #####<br>
+Feb 21 22:36:15 Sailfish kernel: [ TSP ]  reset gpio: 64<br>
+Feb 21 22:36:15 Sailfish kernel: [ TSP ]  irq gpio: 65<br>
+Feb 21 22:36:15 Sailfish kernel: [ TSP ] ist30xx_request_gpio<br>
+Feb 21 22:36:15 Sailfish kernel: [ TSP ] unable to request reset gpio: 64<br>
+Feb 21 22:36:15 Sailfish kernel: [ TSP ] Error, ist30xx init driver<br>
+Feb 21 22:36:15 Sailfish kernel: input: s2w_pwrkey as /devices/virtual/input/input2<br>
+Feb 21 22:36:15 Sailfish kernel: [sweep2wake]: sweep2wake_init done<br>
+Feb 21 22:36:15 Sailfish kernel: --------gf_init start.--------<br>
+Feb 21 22:36:15 Sailfish kernel: msm8953-pinctrl 1000000.pinctrl: invalid group "gpio135" for function "blsp_spi6"<br>
+Feb 21 22:36:15 Sailfish kernel: msm8953-pinctrl 1000000.pinctrl: invalid group "gpio136" for function "blsp_spi6"<br>
+Feb 21 22:36:15 Sailfish kernel: msm8953-pinctrl 1000000.pinctrl: invalid group "gpio137" for function "blsp_spi6"<br>
+Feb 21 22:36:15 Sailfish kernel: msm8953-pinctrl 1000000.pinctrl: invalid group "gpio138" for function "blsp_spi6"<br>
+Feb 21 22:36:15 Sailfish kernel: --------gf_probe start.--------<br>
+Feb 21 22:36:15 Sailfish kernel: input: gf3208 as /devices/virtual/input/input3<br>
+Feb 21 22:36:15 Sailfish kernel: --------gf_probe end---OK.--------<br>
+Feb 21 22:36:15 Sailfish kernel:  status = 0x0<br>
+Feb 21 22:36:15 Sailfish kernel: --------gf_init end---OK.--------<br>
+Feb 21 22:36:15 Sailfish kernel: fpc1020 soc:fpc1020: fpc1020_probe: ok<br>
+Feb 21 22:36:15 Sailfish kernel: fpc1020_init OK<br>
+Feb 21 22:36:15 Sailfish kernel: input: hbtp_vm as /devices/virtual/input/input4<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,qpnp-rtc qpnp-rtc-8: rtc core: registered qpnp_rtc as rtc0<br>
+Feb 21 22:36:15 Sailfish kernel: i2c /dev entries driver<br>
+Feb 21 22:36:15 Sailfish kernel: lirc_dev: IR Remote Control driver registered, major 232<br>
+Feb 21 22:36:15 Sailfish kernel: IR NEC protocol handler initialized<br>
+Feb 21 22:36:15 Sailfish kernel: IR RC5(x/sz) protocol handler initialized<br>
+Feb 21 22:36:15 Sailfish kernel: IR RC6 protocol handler initialized<br>
+Feb 21 22:36:15 Sailfish kernel: IR JVC protocol handler initialized<br>
+Feb 21 22:36:15 Sailfish kernel: IR Sony protocol handler initialized<br>
+Feb 21 22:36:15 Sailfish kernel: IR SANYO protocol handler initialized<br>
+Feb 21 22:36:15 Sailfish kernel: IR Sharp protocol handler initialized<br>
+Feb 21 22:36:15 Sailfish kernel: IR LIRC bridge handler initialized<br>
+Feb 21 22:36:15 Sailfish kernel: IR XMP protocol handler initialized<br>
+Feb 21 22:36:15 Sailfish kernel: /soc/qcom,cam_smmu/msm_cam_smmu_cb1: could not get #iommu-cells for /soc/qcom,iommu@1e00000<br>
+Feb 21 22:36:15 Sailfish kernel: /soc/qcom,cam_smmu/msm_cam_smmu_cb3: could not get #iommu-cells for /soc/qcom,iommu@1e00000<br>
+Feb 21 22:36:15 Sailfish kernel: /soc/qcom,cam_smmu/msm_cam_smmu_cb4: could not get #iommu-cells for /soc/qcom,iommu@1e00000<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_get_dt_vreg_data:1115 number of entries is 0 or not present in dts<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_get_dt_vreg_data:1115 number of entries is 0 or not present in dts<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_get_dt_vreg_data:1115 number of entries is 0 or not present in dts<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_get_dt_vreg_data:1115 number of entries is 0 or not present in dts<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_get_dt_vreg_data:1115 number of entries is 0 or not present in dts<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_get_dt_vreg_data:1115 number of entries is 0 or not present in dts<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_get_dt_vreg_data:1115 number of entries is 0 or not present in dts<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_pinctrl_init:1277 Getting pinctrl handle failed<br>
+Feb 21 22:36:15 Sailfish kernel: msm_actuator_platform_probe:1976 ERR:msm_actuator_platform_probe: Error in reading actuator pinctr<br>
+l<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,actuator: probe of 1b0c000.qcom,cci:qcom,actuator@0 failed with error -22<br>
+Feb 21 22:36:15 Sailfish kernel: msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_config_single_vreg : can't find sub reg name<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_init:1426: hw_version = 0x10020005<br>
+Feb 21 22:36:15 Sailfish kernel: read_eeprom_memory 158<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_irq:1778 MASTER_0 error 0x10000000<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_i2c_read:955 read_words = 0, exp words = 1<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_i2c_read_bytes:1038 failed rc -22<br>
+Feb 21 22:36:15 Sailfish kernel: read_eeprom_memory 173 error<br>
+Feb 21 22:36:15 Sailfish kernel: msm_eeprom_platform_probe read_eeprom_memory failed<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_config_single_vreg : can't find sub reg name<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,eeprom: probe of 1b0c000.qcom,cci:qcom,eeprom@0 failed with error -22<br>
+Feb 21 22:36:15 Sailfish kernel: msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_config_single_vreg : can't find sub reg name<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_init:1426: hw_version = 0x10020005<br>
+Feb 21 22:36:15 Sailfish kernel: read_eeprom_memory 158<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_config_single_vreg : can't find sub reg name<br>
+Feb 21 22:36:15 Sailfish kernel: msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_config_single_vreg : can't find sub reg name<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_init:1426: hw_version = 0x10020005<br>
+Feb 21 22:36:15 Sailfish kernel: read_eeprom_memory 158<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_config_single_vreg : can't find sub reg name<br>
+Feb 21 22:36:15 Sailfish kernel: msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_init:1426: hw_version = 0x10020005<br>
+Feb 21 22:36:15 Sailfish kernel: read_eeprom_memory 158<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_irq:1784 MASTER_1 error 0x40000000<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_i2c_read:955 read_words = 0, exp words = 1<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_i2c_read_bytes:1038 failed rc -22<br>
+Feb 21 22:36:15 Sailfish kernel: read_eeprom_memory 173 error<br>
+Feb 21 22:36:15 Sailfish kernel: msm_eeprom_platform_probe read_eeprom_memory failed<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,eeprom: probe of 1b0c000.qcom,cci:qcom,eeprom@3 failed with error -22<br>
+Feb 21 22:36:15 Sailfish kernel: msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_init:1426: hw_version = 0x10020005<br>
+Feb 21 22:36:15 Sailfish kernel: read_eeprom_memory 158<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_irq:1784 MASTER_1 error 0x40000000<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_i2c_read:955 read_words = 0, exp words = 1<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_i2c_read_bytes:1038 failed rc -22<br>
+Feb 21 22:36:15 Sailfish kernel: read_eeprom_memory 173 error<br>
+Feb 21 22:36:15 Sailfish kernel: msm_eeprom_platform_probe read_eeprom_memory failed<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,eeprom: probe of 1b0c000.qcom,cci:qcom,eeprom@4 failed with error -22<br>
+Feb 21 22:36:15 Sailfish kernel: msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_init:1426: hw_version = 0x10020005<br>
+Feb 21 22:36:15 Sailfish kernel: read_eeprom_memory 158<br>
+Feb 21 22:36:15 Sailfish kernel: msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_config_single_vreg : can't find sub reg name<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_init:1426: hw_version = 0x10020005<br>
+Feb 21 22:36:15 Sailfish kernel: read_eeprom_memory 158<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_config_single_vreg : can't find sub reg name<br>
+Feb 21 22:36:15 Sailfish kernel: msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_config_single_vreg : can't find sub reg name<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_init:1426: hw_version = 0x10020005<br>
+Feb 21 22:36:15 Sailfish kernel: read_eeprom_memory 158<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_irq:1778 MASTER_0 error 0x10000000<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_i2c_read:955 read_words = 0, exp words = 1<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_i2c_read_bytes:1038 failed rc -22<br>
+Feb 21 22:36:15 Sailfish kernel: read_eeprom_memory 173 error<br>
+Feb 21 22:36:15 Sailfish kernel: msm_eeprom_platform_probe read_eeprom_memory failed<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_config_single_vreg : can't find sub reg name<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,eeprom: probe of 1b0c000.qcom,cci:qcom,eeprom@7 failed with error -22<br>
+Feb 21 22:36:15 Sailfish kernel: msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_config_single_vreg : can't find sub reg name<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_init:1426: hw_version = 0x10020005<br>
+Feb 21 22:36:15 Sailfish kernel: read_eeprom_memory 158<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,slave-addr = 0xB0<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_config_single_vreg : can't find sub reg name<br>
+Feb 21 22:36:15 Sailfish kernel: msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_config_single_vreg : can't find sub reg name<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_init:1426: hw_version = 0x10020005<br>
+Feb 21 22:36:15 Sailfish kernel: read_eeprom_memory 158<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_irq:1778 MASTER_0 error 0x10000000<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_i2c_read:955 read_words = 0, exp words = 1<br>
+Feb 21 22:36:15 Sailfish kernel: msm_cci_i2c_read_bytes:1038 failed rc -22<br>
+Feb 21 22:36:15 Sailfish kernel: read_eeprom_memory 173 error<br>
+Feb 21 22:36:15 Sailfish kernel: msm_eeprom_platform_probe read_eeprom_memory failed<br>
+Feb 21 22:36:15 Sailfish kernel: msm_camera_config_single_vreg : can't find sub reg name<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,eeprom: probe of 1b0c000.qcom,cci:qcom,eeprom@9 failed with error -22<br>
+Feb 21 22:36:15 Sailfish kernel: MSM-CPP cpp_init_hardware:869 CPP HW Version: 0x40030003<br>
+Feb 21 22:36:15 Sailfish kernel: MSM-CPP cpp_init_hardware:887 stream_cnt:0<br>
+Feb 21 22:36:15 Sailfish kernel: __msm_jpeg_init:1537] Jpeg Device id 0<br>
+Feb 21 22:36:15 Sailfish kernel: FG: fg_probe: FG Probe success - FG Revision DIG:3.1 ANA:1.2 PMIC subtype=17<br>
+Feb 21 22:36:15 Sailfish kernel: thermal thermal_zone1: failed to read out thermal zone 1<br>
+Feb 21 22:36:15 Sailfish kernel: thermal thermal_zone2: failed to read out thermal zone 2<br>
+Feb 21 22:36:15 Sailfish kernel: thermal thermal_zone3: failed to read out thermal zone 3<br>
+Feb 21 22:36:15 Sailfish kernel: qpnp_vadc_read: no vadc_chg_vote found<br>
+Feb 21 22:36:15 Sailfish kernel: qpnp_vadc_get_temp: VADC read error with -22<br>
+Feb 21 22:36:15 Sailfish kernel: thermal thermal_zone4: failed to read out thermal zone 4<br>
+Feb 21 22:36:15 Sailfish kernel: device-mapper: uevent: version 1.0.3<br>
+Feb 21 22:36:15 Sailfish kernel: device-mapper: ioctl: 4.28.0-ioctl (2014-09-17) initialised: dm-devel@redhat.com<br>
+Feb 21 22:36:15 Sailfish kernel: device-mapper: req-crypt: dm-req-crypt successfully initalized.<br>
+Feb 21 22:36:15 Sailfish kernel: ------------[ cut here ]------------<br>
+Feb 21 22:36:15 Sailfish kernel: WARNING: CPU: 7 PID: 1 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xiaomi<br>
+/msm8953/fs/sysfs/dir.c:31 sysfs_warn_dup+0x70/0x88()<br>
+Feb 21 22:36:15 Sailfish kernel: sysfs: cannot create duplicate filename '/devices/system/cpu/cpu0/cpufreq/stats'<br>
+Feb 21 22:36:15 Sailfish kernel: Modules linked in:<br>
+Feb 21 22:36:15 Sailfish kernel: CPU: 7 PID: 1 Comm: swapper/0 Tainted: G        W      3.18.105-ElectraBlue-11.0-mido #3<br>
+Feb 21 22:36:15 Sailfish kernel: Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+Feb 21 22:36:15 Sailfish kernel: Call trace:<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000a68a4] warn_slowpath_fmt+0x88/0xac<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000256774] sysfs_warn_dup+0x70/0x88<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000256f10] internal_create_group+0xc8/0x1f4<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000257068] sysfs_create_group+0x2c/0x38<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0009b3ac0] __cpufreq_stats_create_table.part.3+0x78/0x1ac<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc001544404] cpufreq_stats_init+0x180/0x2bc<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000082c10] do_one_initcall+0x194/0x1b0<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0014fcb98] kernel_init_freeable+0x1d0/0x284<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000e03928] kernel_init+0x20/0xe0<br>
+Feb 21 22:36:15 Sailfish kernel: ---[ end trace baf5d4897624fa09 ]---<br>
+Feb 21 22:36:15 Sailfish kernel: ------------[ cut here ]------------<br>
+Feb 21 22:36:15 Sailfish kernel: WARNING: CPU: 7 PID: 1 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xiaomi<br>
+/msm8953/fs/sysfs/dir.c:31 sysfs_warn_dup+0x70/0x88()<br>
+Feb 21 22:36:15 Sailfish kernel: sysfs: cannot create duplicate filename '/devices/system/cpu/cpu0/cpufreq/stats'<br>
+Feb 21 22:36:15 Sailfish kernel: Modules linked in:<br>
+Feb 21 22:36:15 Sailfish kernel: CPU: 7 PID: 1 Comm: swapper/0 Tainted: G        W      3.18.105-ElectraBlue-11.0-mido #3<br>
+Feb 21 22:36:15 Sailfish kernel: Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+Feb 21 22:36:15 Sailfish kernel: Call trace:<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000a68a4] warn_slowpath_fmt+0x88/0xac<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000256774] sysfs_warn_dup+0x70/0x88<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000256f10] internal_create_group+0xc8/0x1f4<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000257068] sysfs_create_group+0x2c/0x38<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0009b3ac0] __cpufreq_stats_create_table.part.3+0x78/0x1ac<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc001544404] cpufreq_stats_init+0x180/0x2bc<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000082c10] do_one_initcall+0x194/0x1b0<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0014fcb98] kernel_init_freeable+0x1d0/0x284<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000e03928] kernel_init+0x20/0xe0<br>
+Feb 21 22:36:15 Sailfish kernel: ---[ end trace baf5d4897624fa0a ]---<br>
+Feb 21 22:36:15 Sailfish kernel: ------------[ cut here ]------------<br>
+Feb 21 22:36:15 Sailfish kernel: WARNING: CPU: 7 PID: 1 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xiaomi<br>
+/msm8953/fs/sysfs/dir.c:31 sysfs_warn_dup+0x70/0x88()<br>
+Feb 21 22:36:15 Sailfish kernel: sysfs: cannot create duplicate filename '/devices/system/cpu/cpu0/cpufreq/stats'<br>
+Feb 21 22:36:15 Sailfish kernel: Modules linked in:<br>
+Feb 21 22:36:15 Sailfish kernel: CPU: 7 PID: 1 Comm: swapper/0 Tainted: G        W      3.18.105-ElectraBlue-11.0-mido #3<br>
+Feb 21 22:36:15 Sailfish kernel: Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+Feb 21 22:36:15 Sailfish kernel: Call trace:<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000a68a4] warn_slowpath_fmt+0x88/0xac<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000256774] sysfs_warn_dup+0x70/0x88<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000256f10] internal_create_group+0xc8/0x1f4<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000257068] sysfs_create_group+0x2c/0x38<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0009b3ac0] __cpufreq_stats_create_table.part.3+0x78/0x1ac<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc001544404] cpufreq_stats_init+0x180/0x2bc<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000082c10] do_one_initcall+0x194/0x1b0<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0014fcb98] kernel_init_freeable+0x1d0/0x284<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000e03928] kernel_init+0x20/0xe0<br>
+Feb 21 22:36:15 Sailfish kernel: ---[ end trace baf5d4897624fa0b ]---<br>
+Feb 21 22:36:15 Sailfish kernel: ------------[ cut here ]------------<br>
+Feb 21 22:36:15 Sailfish kernel: WARNING: CPU: 7 PID: 1 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xiaomi<br>
+/msm8953/fs/sysfs/dir.c:31 sysfs_warn_dup+0x70/0x88()<br>
+Feb 21 22:36:15 Sailfish kernel: sysfs: cannot create duplicate filename '/devices/system/cpu/cpu0/cpufreq/stats'<br>
+Feb 21 22:36:15 Sailfish kernel: Modules linked in:<br>
+Feb 21 22:36:15 Sailfish kernel: CPU: 7 PID: 1 Comm: swapper/0 Tainted: G        W      3.18.105-ElectraBlue-11.0-mido #3<br>
+Feb 21 22:36:15 Sailfish kernel: Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+Feb 21 22:36:15 Sailfish kernel: Call trace:<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000a68a4] warn_slowpath_fmt+0x88/0xac<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000256774] sysfs_warn_dup+0x70/0x88<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000256f10] internal_create_group+0xc8/0x1f4<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000257068] sysfs_create_group+0x2c/0x38<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0009b3ac0] __cpufreq_stats_create_table.part.3+0x78/0x1ac<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc001544404] cpufreq_stats_init+0x180/0x2bc<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000082c10] do_one_initcall+0x194/0x1b0<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0014fcb98] kernel_init_freeable+0x1d0/0x284<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000e03928] kernel_init+0x20/0xe0<br>
+Feb 21 22:36:15 Sailfish kernel: ---[ end trace baf5d4897624fa0c ]---<br>
+Feb 21 22:36:15 Sailfish kernel: ------------[ cut here ]------------<br>
+Feb 21 22:36:15 Sailfish kernel: WARNING: CPU: 7 PID: 1 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xiaomi<br>
+/msm8953/fs/sysfs/dir.c:31 sysfs_warn_dup+0x70/0x88()<br>
+Feb 21 22:36:15 Sailfish kernel: sysfs: cannot create duplicate filename '/devices/system/cpu/cpu0/cpufreq/stats'<br>
+Feb 21 22:36:15 Sailfish kernel: Modules linked in:<br>
+Feb 21 22:36:15 Sailfish kernel: CPU: 7 PID: 1 Comm: swapper/0 Tainted: G        W      3.18.105-ElectraBlue-11.0-mido #3<br>
+Feb 21 22:36:15 Sailfish kernel: Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+Feb 21 22:36:15 Sailfish kernel: Call trace:<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000a68a4] warn_slowpath_fmt+0x88/0xac<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000256774] sysfs_warn_dup+0x70/0x88<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000256f10] internal_create_group+0xc8/0x1f4<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000257068] sysfs_create_group+0x2c/0x38<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0009b3ac0] __cpufreq_stats_create_table.part.3+0x78/0x1ac<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc001544404] cpufreq_stats_init+0x180/0x2bc<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000082c10] do_one_initcall+0x194/0x1b0<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0014fcb98] kernel_init_freeable+0x1d0/0x284<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000e03928] kernel_init+0x20/0xe0<br>
+Feb 21 22:36:15 Sailfish kernel: ---[ end trace baf5d4897624fa0d ]---<br>
+Feb 21 22:36:15 Sailfish kernel: ------------[ cut here ]------------<br>
+Feb 21 22:36:15 Sailfish kernel: WARNING: CPU: 7 PID: 1 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xiaomi<br>
+/msm8953/fs/sysfs/dir.c:31 sysfs_warn_dup+0x70/0x88()<br>
+Feb 21 22:36:15 Sailfish kernel: sysfs: cannot create duplicate filename '/devices/system/cpu/cpu0/cpufreq/stats'<br>
+Feb 21 22:36:15 Sailfish kernel: Modules linked in:<br>
+Feb 21 22:36:15 Sailfish kernel: CPU: 7 PID: 1 Comm: swapper/0 Tainted: G        W      3.18.105-ElectraBlue-11.0-mido #3<br>
+Feb 21 22:36:15 Sailfish kernel: Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+Feb 21 22:36:15 Sailfish kernel: Call trace:<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000a68a4] warn_slowpath_fmt+0x88/0xac<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000256774] sysfs_warn_dup+0x70/0x88<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000256f10] internal_create_group+0xc8/0x1f4<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000257068] sysfs_create_group+0x2c/0x38<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0009b3ac0] __cpufreq_stats_create_table.part.3+0x78/0x1ac<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc001544404] cpufreq_stats_init+0x180/0x2bc<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000082c10] do_one_initcall+0x194/0x1b0<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0014fcb98] kernel_init_freeable+0x1d0/0x284<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000e03928] kernel_init+0x20/0xe0<br>
+Feb 21 22:36:15 Sailfish kernel: ---[ end trace baf5d4897624fa0e ]---<br>
+Feb 21 22:36:15 Sailfish kernel: ------------[ cut here ]------------<br>
+Feb 21 22:36:15 Sailfish kernel: WARNING: CPU: 7 PID: 1 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xiaomi<br>
+/msm8953/fs/sysfs/dir.c:31 sysfs_warn_dup+0x70/0x88()<br>
+Feb 21 22:36:15 Sailfish kernel: sysfs: cannot create duplicate filename '/devices/system/cpu/cpu0/cpufreq/stats'<br>
+Feb 21 22:36:15 Sailfish kernel: Modules linked in:<br>
+Feb 21 22:36:15 Sailfish kernel: CPU: 7 PID: 1 Comm: swapper/0 Tainted: G        W      3.18.105-ElectraBlue-11.0-mido #3<br>
+Feb 21 22:36:15 Sailfish kernel: Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+Feb 21 22:36:15 Sailfish kernel: Call trace:<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0000a68a4] warn_slowpath_fmt+0x88/0xac<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000256774] sysfs_warn_dup+0x70/0x88<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000256f10] internal_create_group+0xc8/0x1f4<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000257068] sysfs_create_group+0x2c/0x38<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0009b3ac0] __cpufreq_stats_create_table.part.3+0x78/0x1ac<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc001544404] cpufreq_stats_init+0x180/0x2bc<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000082c10] do_one_initcall+0x194/0x1b0<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc0014fcb98] kernel_init_freeable+0x1d0/0x284<br>
+Feb 21 22:36:15 Sailfish kernel: [ffffffc000e03928] kernel_init+0x20/0xe0<br>
+Feb 21 22:36:15 Sailfish kernel: ---[ end trace baf5d4897624fa0f ]---<br>
+Feb 21 22:36:15 Sailfish kernel: sdhci: Secure Digital Host Controller Interface driver<br>
+Feb 21 22:36:15 Sailfish kernel: sdhci: Copyright(c) Pierre Ossman<br>
+Feb 21 22:36:15 Sailfish kernel: sdhci-pltfm: SDHCI platform and OF driver helper<br>
+Feb 21 22:36:15 Sailfish kernel: qcom_ice_get_pdevice: found ice device ffffffc0ae094200<br>
+Feb 21 22:36:15 Sailfish kernel: qcom_ice_get_pdevice: matching platform device ffffffc0af3ed800<br>
+Feb 21 22:36:15 Sailfish kernel: qcom_ice 7803000.sdcc1ice: QC ICE 2.1.44 device found @0xffffff8001d70000<br>
+Feb 21 22:36:15 Sailfish kernel: sdhci_msm 7824900.sdhci: No vmmc regulator found<br>
+Feb 21 22:36:15 Sailfish kernel: sdhci_msm 7824900.sdhci: No vqmmc regulator found<br>
+Feb 21 22:36:15 Sailfish kernel: mmc0: SDHCI controller on 7824900.sdhci [7824900.sdhci] using 64-bit ADMA in CMDQ mode<br>
+Feb 21 22:36:15 Sailfish kernel: sdhci_msm 7864900.sdhci: sdhci_msm_probe: ICE device is not enabled<br>
+Feb 21 22:36:15 Sailfish kernel: sdhci_msm 7864900.sdhci: No vmmc regulator found<br>
+Feb 21 22:36:15 Sailfish kernel: sdhci_msm 7864900.sdhci: No vqmmc regulator found<br>
+Feb 21 22:36:15 Sailfish kernel: mmc1: SDHCI controller on 7864900.sdhci [7864900.sdhci] using 64-bit ADMA in legacy mode<br>
+Feb 21 22:36:15 Sailfish kernel: mmc0: Out-of-interrupt timeout is 50[ms]<br>
+Feb 21 22:36:15 Sailfish kernel: mmc0: BKOPS_EN equals 0x2<br>
+Feb 21 22:36:15 Sailfish kernel: mmc0: eMMC FW version: 0x07<br>
+Feb 21 22:36:15 Sailfish kernel: mmc0: CMDQ supported: depth: 16<br>
+Feb 21 22:36:15 Sailfish kernel: mmc0: cache barrier support 0 flush policy 0<br>
+Feb 21 22:36:15 Sailfish kernel: cmdq_host_alloc_tdl: desc_size: 768 data_sz: 253952 slot-sz: 24<br>
+Feb 21 22:36:15 Sailfish kernel: mmc0: CMDQ enabled on card<br>
+Feb 21 22:36:15 Sailfish kernel: mmc0: new HS400 MMC card at address 0001<br>
+Feb 21 22:36:15 Sailfish kernel: sdhci_msm_pm_qos_cpu_init (): voted for group #0 (mask=0xf) latency=2<br>
+Feb 21 22:36:15 Sailfish kernel: sdhci_msm_pm_qos_cpu_init (): voted for group #1 (mask=0xf0) latency=2<br>
+Feb 21 22:36:15 Sailfish kernel: mmcblk0: mmc0:0001 RX1BMB 29.1 GiB<br>
+Feb 21 22:36:15 Sailfish kernel: mmcblk0rpmb: mmc0:0001 RX1BMB partition 3 4.00 MiB<br>
+Feb 21 22:36:15 Sailfish kernel:  mmcblk0: p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 p11 p12 p13 p14 p15 p16 p17 p18 p19 p20 p21 p22 p23 p24 p25 p26<br>
+ p27 p28 p29 p30 p31 p32 p33 p34 p35 p36 p37 p38 p39 p40 p41 p42 p43 p44 p45 p46 p47 p48 p49<br>
+Feb 21 22:36:15 Sailfish kernel: qcom,leds-qpnp: probe of leds-qpnp-21 failed with error -10<br>
+Feb 21 22:36:15 Sailfish kernel: tz_log 8600720.tz-log: Hyp log service is not supported<br>
+Feb 21 22:36:15 Sailfish kernel: hidraw: raw HID events driver (C) Jiri Kosina<br>
+Feb 21 22:36:15 Sailfish kernel: usbcore: registered new interface driver usbhid<br>
+Feb 21 22:36:15 Sailfish kernel: usbhid: USB HID core driver<br>
+Feb 21 22:36:15 Sailfish kernel: ashmem: initialized<br>
+Feb 21 22:36:15 Sailfish kernel: logger: created 256K log 'log_main'<br>
+Feb 21 22:36:15 Sailfish kernel: logger: created 256K log 'log_events'<br>
+Feb 21 22:36:15 Sailfish kernel: logger: created 256K log 'log_radio'<br>
+Feb 21 22:36:15 Sailfish kernel: logger: created 256K log 'log_system'<br>
+Feb 21 22:36:15 Sailfish kernel: qpnp_coincell_charger_show_state: enabled=Y, voltage=3200 mV, resistance=2100 ohm<br>
+Feb 21 22:36:15 Sailfish kernel: bimc-bwmon 408000.qcom,cpu-bwmon: BW HWmon governor registered.<br>
+Feb 21 22:36:15 Sailfish kernel: devfreq soc:qcom,cpubw: Couldn't update frequency transition information.<br>
+Feb 21 22:36:15 Sailfish kernel: devfreq soc:qcom,mincpubw: Couldn't update frequency transition information.<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-fuse a601c.fuse: Fuse initialized<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 6010000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 6011000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 6012000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 6013000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 6014000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 6015000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 6016000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 6017000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 6018000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 6019000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 601a000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 601b000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 601c000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 601d000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 601e000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 601f000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 6198000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 6199000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 619a000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 619b000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 61b8000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 61b9000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 61ba000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 61bb000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 6128000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 6124000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 6134000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 6139000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 613c000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-cti: probe of 610c000.cti failed with error -1<br>
+Feb 21 22:36:15 Sailfish kernel: coresight-csr 6001000.csr: CSR initialized<br>
+Feb 21 22:36:16 Sailfish kernel: coresight-tmc: probe of 6028000.tmc failed with error -1<br>
+Feb 21 22:36:16 Sailfish kernel: coresight-tmc 6027000.tmc: failed to get flush cti<br>
+Feb 21 22:36:16 Sailfish kernel: coresight-tmc 6027000.tmc: failed to get reset cti<br>
+Feb 21 22:36:16 Sailfish kernel: coresight-tmc 6027000.tmc: TMC initialized<br>
+Feb 21 22:36:16 Sailfish kernel: nidnt boot config: 2<br>
+Feb 21 22:36:16 Sailfish kernel: NIDnT disabled, only sd mode supported.<br>
+Feb 21 22:36:16 Sailfish kernel: coresight-tpiu 6020000.tpiu: NIDnT hw support disabled<br>
+Feb 21 22:36:16 Sailfish kernel: coresight-tpiu 6020000.tpiu: NIDnT on SDCARD only mode<br>
+Feb 21 22:36:16 Sailfish kernel: coresight-tpiu 6020000.tpiu: TPIU initialized<br>
+Feb 21 22:36:16 Sailfish kernel: coresight-replicator 6026000.replicator: REPLICATOR initialized<br>
+Feb 21 22:36:16 Sailfish kernel: coresight-stm: probe of 6002000.stm failed with error -1<br>
+Feb 21 22:36:16 Sailfish kernel: coresight-hwevent 6101000.hwevent: Hardware Event driver initialized<br>
+Feb 21 22:36:16 Sailfish kernel: usbcore: registered new interface driver snd-usb-audio<br>
+Feb 21 22:36:16 Sailfish kernel: msm-pcm-lpa soc:qcom,msm-pcm-lpa: msm_pcm_probe: dev name soc:qcom,msm-pcm-lpa<br>
+Feb 21 22:36:16 Sailfish kernel: u32 classifier<br>
+Feb 21 22:36:16 Sailfish kernel:     Actions configured<br>
+Feb 21 22:36:16 Sailfish kernel: Netfilter messages via NETLINK v0.30.<br>
+Feb 21 22:36:16 Sailfish kernel: nf_conntrack version 0.5.0 (16384 buckets, 65536 max)<br>
+Feb 21 22:36:16 Sailfish kernel: ctnetlink v0.93: registering with nfnetlink.<br>
+Feb 21 22:36:16 Sailfish kernel: xt_time: kernel timezone is -0000<br>
+Feb 21 22:36:16 Sailfish kernel: wireguard: WireGuard 0.0.20180809 loaded. See www.wireguard.com for information.<br>
+Feb 21 22:36:16 Sailfish kernel: wireguard: Copyright (C) 2015-2018 Jason A. Donenfeld Jason@zx2c4.com. All Rights Reserved.<br>
+Feb 21 22:36:16 Sailfish kernel: ip_tables: (C) 2000-2006 Netfilter Core Team<br>
+Feb 21 22:36:16 Sailfish kernel: arp_tables: (C) 2002 David S. Miller<br>
+Feb 21 22:36:16 Sailfish kernel: TCP: cubic registered<br>
+Feb 21 22:36:16 Sailfish kernel: TCP: highspeed registered<br>
+Feb 21 22:36:16 Sailfish kernel: TCP: htcp registered<br>
+Feb 21 22:36:16 Sailfish kernel: TCP: vegas registered<br>
+Feb 21 22:36:16 Sailfish kernel: TCP: veno registered<br>
+Feb 21 22:36:16 Sailfish kernel: TCP: scalable registered<br>
+Feb 21 22:36:16 Sailfish kernel: TCP: lp registered<br>
+Feb 21 22:36:16 Sailfish kernel: TCP: yeah registered<br>
+Feb 21 22:36:16 Sailfish kernel: TCP: illinois registered<br>
+Feb 21 22:36:16 Sailfish kernel: Initializing XFRM netlink socket<br>
+Feb 21 22:36:16 Sailfish kernel: NET: Registered protocol family 10<br>
+Feb 21 22:36:16 Sailfish kernel: mip6: Mobile IPv6<br>
+Feb 21 22:36:16 Sailfish kernel: ip6_tables: (C) 2000-2006 Netfilter Core Team<br>
+Feb 21 22:36:16 Sailfish kernel: sit: IPv6 over IPv4 tunneling driver<br>
+Feb 21 22:36:16 Sailfish kernel: NET: Registered protocol family 17<br>
+Feb 21 22:36:16 Sailfish kernel: NET: Registered protocol family 15<br>
+Feb 21 22:36:16 Sailfish kernel: bridge: automatic filtering via arp/ip/ip6tables has been deprecated. Update your scripts to load br_net<br>
+filter if you need this.<br>
+Feb 21 22:36:16 Sailfish kernel: Bridge firewalling registered<br>
+Feb 21 22:36:16 Sailfish kernel: Ebtables v2.0 registered<br>
+Feb 21 22:36:16 Sailfish kernel: l2tp_core: L2TP core driver, V2.0<br>
+Feb 21 22:36:16 Sailfish kernel: l2tp_ppp: PPPoL2TP kernel driver, V2.0<br>
+Feb 21 22:36:16 Sailfish kernel: l2tp_ip: L2TP IP encapsulation support (L2TPv3)<br>
+Feb 21 22:36:16 Sailfish kernel: l2tp_netlink: L2TP netlink interface<br>
+Feb 21 22:36:16 Sailfish kernel: l2tp_eth: L2TP ethernet pseudowire support (L2TPv3)<br>
+Feb 21 22:36:16 Sailfish kernel: l2tp_debugfs: L2TP debugfs support<br>
+Feb 21 22:36:16 Sailfish kernel: l2tp_ip6: L2TP IP encapsulation support for IPv6 (L2TPv3)<br>
+Feb 21 22:36:16 Sailfish kernel: 8021q: 802.1Q VLAN Support v1.8<br>
+Feb 21 22:36:16 Sailfish kernel: NET: Registered protocol family 27<br>
+Feb 21 22:36:16 Sailfish kernel: subsys-pil-tz a21b000.qcom,pronto: for wcnss segments only will be dumped.<br>
+Feb 21 22:36:16 Sailfish kernel: pil-q6v5-mss 4080000.qcom,mss: for modem segments only will be dumped.<br>
+Feb 21 22:36:16 Sailfish kernel: sps:BAM 0x0000000007104000 is registered.<br>
+Feb 21 22:36:16 Sailfish kernel: qpnp-smbcharger qpnp-smbcharger-18: node /soc/qcom,spmi@200f000/qcom,pmi8950@2/qcom,qpnp-smbcharge<br>
+r IO resource absent!<br>
+Feb 21 22:36:16 Sailfish kernel: smbcharger_charger_otg: no parameters<br>
+Feb 21 22:36:16 Sailfish kernel: SMBCHG: smbchg_hvdcp_enable_cb: smbchg_hvdcp_enable_cb  enable 0 last_enable 0<br>
+Feb 21 22:36:16 Sailfish kernel: smbchg_hw_init:read OTG_CFG=78<br>
+Feb 21 22:36:16 Sailfish kernel: SMBCHG: wait_for_usbin_uv: usbin uv didnt go to a lowered state, still at high, tries = 2, rc = 0<br>
+<br>
+Feb 21 22:36:16 Sailfish kernel: SMBCHG: rerun_apsd: wait for usbin uv failed rc = -22<br>
+Feb 21 22:36:16 Sailfish kernel: ------------[ cut here ]------------<br>
+Feb 21 22:36:16 Sailfish kernel: WARNING: CPU: 0 PID: 79 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xiaom<br>
+i/msm8953/drivers/usb/dwc3/dwc3-msm.c:3590 dwc3_otg_sm_work+0x268/0x610()<br>
+Feb 21 22:36:16 Sailfish kernel: Modules linked in:<br>
+Feb 21 22:36:16 Sailfish kernel: CPU: 0 PID: 79 Comm: kworker/0:1 Tainted: G        W      3.18.105-ElectraBlue-11.0-mido #3<br>
+Feb 21 22:36:16 Sailfish kernel: Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+Feb 21 22:36:16 Sailfish kernel: Workqueue: events dwc3_otg_sm_work<br>
+Feb 21 22:36:16 Sailfish kernel: Call trace:<br>
+Feb 21 22:36:16 Sailfish kernel: [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+Feb 21 22:36:16 Sailfish kernel: [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+Feb 21 22:36:16 Sailfish kernel: [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+Feb 21 22:36:16 Sailfish kernel: [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+Feb 21 22:36:16 Sailfish kernel: [ffffffc0000a69ac] warn_slowpath_null+0x38/0x44<br>
+Feb 21 22:36:16 Sailfish kernel: [ffffffc000774b58] dwc3_otg_sm_work+0x268/0x610<br>
+Feb 21 22:36:16 Sailfish kernel: [ffffffc0000bf69c] process_one_work+0x25c/0x438<br>
+Feb 21 22:36:16 Sailfish kernel: [ffffffc0000c00c8] worker_thread+0x32c/0x448<br>
+Feb 21 22:36:16 Sailfish kernel: [ffffffc0000c4aa8] kthread+0xf8/0x100<br>
+Feb 21 22:36:16 Sailfish kernel: ---[ end trace baf5d4897624fa10 ]---<br>
+Feb 21 22:36:16 Sailfish kernel: qpnp-smbcharger qpnp-smbcharger-18: node /soc/qcom,spmi@200f000/qcom,pmi8950@2/qcom,qpnp-smbcharge<br>
+r IO resource absent!<br>
+Feb 21 22:36:16 Sailfish kernel: ------------[ cut here ]------------<br>
+Feb 21 22:36:16 Sailfish kernel: WARNING: CPU: 0 PID: 79 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xiaom<br>
+i/msm8953/drivers/usb/dwc3/dwc3-msm.c:3590 dwc3_otg_sm_work+0x268/0x610()<br>
+Feb 21 22:36:16 Sailfish kernel: Modules linked in:<br>
+Feb 21 22:36:16 Sailfish kernel: CPU: 0 PID: 79 Comm: kworker/0:1 Tainted: G        W      3.18.105-ElectraBlue-11.0-mido #3<br>
+Feb 21 22:36:16 Sailfish kernel: Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+Feb 21 22:36:16 Sailfish kernel: Workqueue: events dwc3_otg_sm_work<br>
+Feb 21 22:36:16 Sailfish kernel: Call trace:<br>
+Feb 21 22:36:16 Sailfish kernel: [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+Feb 21 22:36:16 Sailfish kernel: [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+Feb 21 22:36:16 Sailfish kernel: [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+Feb 21 22:36:16 Sailfish kernel: [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+Feb 21 22:36:16 Sailfish kernel: [ffffffc0000a69ac] warn_slowpath_null+0x38/0x44<br>
+Feb 21 22:36:16 Sailfish kernel: [ffffffc000774b58] dwc3_otg_sm_work+0x268/0x610<br>
+Feb 21 22:36:16 Sailfish kernel: [ffffffc0000bf69c] process_one_work+0x25c/0x438<br>
+Feb 21 22:36:16 Sailfish kernel: [ffffffc0000c00c8] worker_thread+0x32c/0x448<br>
+Feb 21 22:36:16 Sailfish kernel: [ffffffc0000c4aa8] kthread+0xf8/0x100<br>
+Feb 21 22:36:16 Sailfish kernel: ---[ end trace baf5d4897624fa11 ]---<br>
+Feb 21 22:36:16 Sailfish kernel: set_usb_charge_mode_par off = 2<br>
+Feb 21 22:36:16 Sailfish kernel: qpnp-smbcharger qpnp-smbcharger-18: SMBCHG successfully probe Charger version=SCHG_LITE Revision DIG:0.0<br>
+ ANA:0.1 batt=1 dc=0 usb=0<br>
+Feb 21 22:36:16 Sailfish kernel: EDAC DEVICE0: Giving out device to module soc:arm64-cpu-erp controller cache: DEV soc:arm64-cpu-erp (INT<br>
+ERRUPT)<br>
+Feb 21 22:36:16 Sailfish kernel: ARM64 CPU ERP: Could not find cci-irq IRQ property. Proceeding anyway.<br>
+Feb 21 22:36:16 Sailfish kernel: ARM64 CPU ERP: SBE detection is disabled.<br>
+Feb 21 22:36:16 Sailfish kernel: Registered cp15_barrier emulation handler<br>
+Feb 21 22:36:16 Sailfish kernel: Registered setend emulation handler<br>
+Feb 21 22:36:16 Sailfish kernel: Loading compiled-in X.509 certificates<br>
+Feb 21 22:36:16 Sailfish kernel: Key type encrypted registered<br>
+Feb 21 22:36:16 Sailfish kernel: msm-dwc3 7000000.ssusb: DWC3 in low power mode<br>
+Feb 21 22:36:16 Sailfish kernel: fastrpc soc:qcom,adsprpc-mem: for adsp_rh segments only will be dumped.<br>
+Feb 21 22:36:16 Sailfish kernel: RNDIS_IPA module is loaded.<br>
+Feb 21 22:36:16 Sailfish kernel: file system registered<br>
+Feb 21 22:36:16 Sailfish kernel: mbim_init: initialize 1 instances<br>
+Feb 21 22:36:16 Sailfish kernel: mbim_init: Initialized 1 ports<br>
+Feb 21 22:36:16 Sailfish kernel: rndis_qc_init: initialize rndis QC instance<br>
+Feb 21 22:36:16 Sailfish kernel: Number of LUNs=8<br>
+Feb 21 22:36:16 Sailfish kernel: Mass Storage Function, version: 2009/09/11<br>
+Feb 21 22:36:16 Sailfish kernel: LUN: removable file: (no medium)<br>
+Feb 21 22:36:16 Sailfish kernel: Number of LUNs=1<br>
+Feb 21 22:36:16 Sailfish kernel: LUN: removable file: (no medium)<br>
+Feb 21 22:36:16 Sailfish kernel: Number of LUNs=1<br>
+Feb 21 22:36:16 Sailfish kernel: android_usb gadget: android_usb ready<br>
+Feb 21 22:36:16 Sailfish kernel: input: gpio-keys as /devices/soc/soc:gpio_keys/input/input5<br>
+Feb 21 22:36:16 Sailfish kernel: qcom,qpnp-rtc qpnp-rtc-8: setting system clock to 1970-02-21 20:36:09 UTC (4480569)<br>
+Feb 21 22:36:16 Sailfish kernel: pwm-ir soc:pwm_ir: reg-id = vdd, low-active = 0, use-timer = 0<br>
+Feb 21 22:36:16 Sailfish kernel: Registered IR keymap rc-lirc<br>
+Feb 21 22:36:16 Sailfish kernel: input: pwm-ir as /devices/soc/soc:pwm_ir/rc/rc0/input6<br>
+Feb 21 22:36:16 Sailfish kernel: rc0: pwm-ir as /devices/soc/soc:pwm_ir/rc/rc0<br>
+Feb 21 22:36:16 Sailfish kernel: rc rc0: lirc_dev: driver ir-lirc-codec (pwm-ir) registered at minor = 0<br>
+Feb 21 22:36:16 Sailfish kernel: msm-core initialized without polling period<br>
+Feb 21 22:36:16 Sailfish kernel: parse_cpu_levels: idx 1 276<br>
+Feb 21 22:36:16 Sailfish kernel: calculate_residency: residency  0 for LPM<br>
+Feb 21 22:36:16 Sailfish kernel: parse_cpu_levels: idx 1 286<br>
+Feb 21 22:36:16 Sailfish kernel: calculate_residency: residency  0 for LPM<br>
+Feb 21 22:36:16 Sailfish kernel: qcom,qpnp-flash-led qpnp-flash-led-25: Unable to acquire pinctrl<br>
+Feb 21 22:36:16 Sailfish kernel: rmnet_ipa started initialization<br>
+Feb 21 22:36:16 Sailfish kernel: IPA SSR support = True<br>
+Feb 21 22:36:16 Sailfish kernel: IPA ipa-loaduC = True<br>
+Feb 21 22:36:16 Sailfish kernel: IPA SG support = True<br>
+Feb 21 22:36:16 Sailfish kernel: ipa ipa_sps_irq_control_all:938 EP (5) not allocated.<br>
+Feb 21 22:36:16 Sailfish kernel: ipa ipa2_uc_state_check:301 uC is not loaded<br>
+Feb 21 22:36:16 Sailfish kernel: rmnet_ipa completed initialization<br>
+Feb 21 22:36:16 Sailfish kernel: qcom,cc-debug-8953 1874000.qcom,cc-debug: Registered Debug Mux successfully<br>
+Feb 21 22:36:16 Sailfish kernel: msm8x16_wcd_spmi_probe(6272):slave ID = 0x1<br>
+Feb 21 22:36:16 Sailfish kernel: msm8x16_wcd_spmi_probe(6272):slave ID = 0x1<br>
+Feb 21 22:36:16 Sailfish kernel: msm8952-asoc-wcd c051000.sound: default codec configured<br>
+Feb 21 22:36:16 Sailfish kernel: msm8952-asoc-wcd c051000.sound: ASoC: platform (null) not registered<br>
+Feb 21 22:36:16 Sailfish kernel: msm8952-asoc-wcd c051000.sound: snd_soc_register_card failed (-517)<br>
+Feb 21 22:36:16 Sailfish kernel: apc_mem_acc_corner: disabling<br>
+Feb 21 22:36:16 Sailfish kernel: gfx_mem_acc_corner: disabling<br>
+Feb 21 22:36:16 Sailfish kernel: adv_vreg: disabling<br>
+Feb 21 22:36:16 Sailfish kernel: vdd_vreg: disabling<br>
+Feb 21 22:36:16 Sailfish kernel: clock_late_init: Removing enables held for handed-off clocks<br>
+Feb 21 22:36:16 Sailfish kernel: ALSA device list:<br>
+Feb 21 22:36:16 Sailfish kernel:   No soundcards found.<br>
+Feb 21 22:36:16 Sailfish kernel: Freeing unused kernel memory: 892K<br>
+Feb 21 22:36:16 Sailfish kernel: Freeing alternatives memory: 84K<br>
+Feb 21 22:36:16 Sailfish kernel: EXT3-fs (mmcblk0p49): error: couldn't mount because of unsupported optional features (40)<br>
+Feb 21 22:36:16 Sailfish kernel: EXT2-fs (mmcblk0p49): error: couldn't mount because of unsupported optional features (40)<br>
+Feb 21 22:36:16 Sailfish kernel: EXT4-fs (mmcblk0p49): warning: maximal mount count reached, running e2fsck is recommended<br>
+Feb 21 22:36:16 Sailfish kernel: EXT4-fs (mmcblk0p49): mounted filesystem with ordered data mode. Opts: (null)<br>
+Feb 21 22:36:16 Sailfish kernel: enable_store: android_usb: already disabled<br>
+Feb 21 22:36:16 Sailfish kernel: dwc3 7000000.dwc3: ep0out: Unable to dequeue while in LPM<br>
+Feb 21 22:36:16 Sailfish kernel: rndis_function_bind_config: rndis_function_bind_config MAC: 00:00:00:00:00:00<br>
+Feb 21 22:36:16 Sailfish kernel: android_usb gadget: using random self ethernet address<br>
+Feb 21 22:36:16 Sailfish kernel: android_usb gadget: using random host ethernet address<br>
+Feb 21 22:36:16 Sailfish kernel: rndis0: MAC d2:15:58:dd:84:20<br>
+Feb 21 22:36:16 Sailfish kernel: rndis0: HOST MAC ee:60:50:97:8f:8c<br>
+Feb 21 22:36:16 Sailfish kernel: hid keyboard<br>
+Feb 21 22:36:16 Sailfish kernel: hidg_bind: creating device ffffffc0ac33c600<br>
+Feb 21 22:36:16 Sailfish kernel: hid mouse<br>
+Feb 21 22:36:16 Sailfish kernel: hidg_bind: creating device ffffffc0ac33c800<br>
+Feb 21 22:36:16 Sailfish kernel: IPv6: ADDRCONF(NETDEV_UP): rndis0: link is not ready<br>
+Feb 21 22:36:16 Sailfish kernel: of_batterydata_get_best_profile: qrd_msm8953_sunwoda_atl_4100mah found<br>
+Feb 21 22:36:16 Sailfish kernel: FG: fg_batt_profile_init: Battery SOC: 100, V: 4211553uV<br>
+Feb 21 22:36:16 Sailfish kernel: of_batterydata_get_best_profile: qrd_msm8953_sunwoda_atl_4100mah found<br>
+Feb 21 22:36:16 Sailfish kernel: dwc3 7000000.dwc3: ep0out: Unable to dequeue while in LPM<br>
+Feb 21 22:36:16 Sailfish kernel: hidg_unbind: destroying device ffffffc0ac33c600<br>
+Feb 21 22:36:16 Sailfish kernel: hidg_unbind: destroying device ffffffc0ac33c800<br>
+Feb 21 22:36:16 Sailfish kernel: [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+Feb 21 22:36:16 Sailfish kernel: [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+Feb 21 22:36:16 Sailfish kernel: rndis_function_bind_config: rndis_function_bind_config MAC: EE:60:50:97:8F:8C<br>
+Feb 21 22:36:16 Sailfish kernel: android_usb gadget: using random self ethernet address<br>
+Feb 21 22:36:16 Sailfish kernel: android_usb gadget: using previous host ethernet address<br>
+Feb 21 22:36:16 Sailfish kernel: rndis0: MAC 6a:af:46:1c:92:cd<br>
+Feb 21 22:36:16 Sailfish kernel: rndis0: HOST MAC ee:60:50:97:8f:8c<br>
+Feb 21 22:36:16 Sailfish kernel: hid keyboard<br>
+Feb 21 22:36:16 Sailfish kernel: hidg_bind: creating device ffffffc0af5e2e00<br>
+Feb 21 22:36:16 Sailfish kernel: hid mouse<br>
+Feb 21 22:36:16 Sailfish kernel: hidg_bind: creating device ffffffc0af5e2a00<br>
+Feb 21 22:36:16 Sailfish kernel: dwc3 7000000.dwc3: ep0out: Unable to dequeue while in LPM<br>
+Feb 21 22:36:16 Sailfish kernel: hidg_unbind: destroying device ffffffc0af5e2e00<br>
+Feb 21 22:36:16 Sailfish kernel: hidg_unbind: destroying device ffffffc0af5e2a00<br>
+Feb 21 22:36:16 Sailfish kernel: [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+Feb 21 22:36:16 Sailfish kernel: [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+Feb 21 22:36:16 Sailfish kernel: rndis_function_bind_config: rndis_function_bind_config MAC: EE:60:50:97:8F:8C<br>
+Feb 21 22:36:16 Sailfish kernel: android_usb gadget: using random self ethernet address<br>
+Feb 21 22:36:16 Sailfish kernel: android_usb gadget: using previous host ethernet address<br>
+Feb 21 22:36:16 Sailfish kernel: rndis0: MAC 0a:91:b7:c6:ca:2d<br>
+Feb 21 22:36:16 Sailfish kernel: rndis0: HOST MAC ee:60:50:97:8f:8c<br>
+Feb 21 22:36:16 Sailfish kernel: hid keyboard<br>
+Feb 21 22:36:16 Sailfish kernel: hidg_bind: creating device ffffffc0ac33cc00<br>
+Feb 21 22:36:16 Sailfish kernel: hid mouse<br>
+Feb 21 22:36:16 Sailfish kernel: hidg_bind: creating device ffffffc0ac33ce00<br>
+Feb 21 22:36:16 Sailfish kernel: random: nonblocking pool is initialized<br>
+Feb 21 22:36:16 Sailfish kernel: dwc3 7000000.dwc3: ep0out: Unable to dequeue while in LPM<br>
+Feb 21 22:36:16 Sailfish kernel: hidg_unbind: destroying device ffffffc0ac33cc00<br>
+Feb 21 22:36:16 Sailfish kernel: hidg_unbind: destroying device ffffffc0ac33ce00<br>
+Feb 21 22:36:16 Sailfish kernel: [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+Feb 21 22:36:16 Sailfish kernel: [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+Feb 21 22:36:16 Sailfish kernel: rndis_function_bind_config: rndis_function_bind_config MAC: EE:60:50:97:8F:8C<br>
+Feb 21 22:36:16 Sailfish kernel: android_usb gadget: using random self ethernet address<br>
+Feb 21 22:36:16 Sailfish kernel: android_usb gadget: using previous host ethernet address<br>
+Feb 21 22:36:16 Sailfish kernel: rndis0: MAC 56:82:1f:8c:57:89<br>
+Feb 21 22:36:16 Sailfish kernel: rndis0: HOST MAC ee:60:50:97:8f:8c<br>
+Feb 21 22:36:16 Sailfish kernel: hid keyboard<br>
+Feb 21 22:36:16 Sailfish kernel: hidg_bind: creating device ffffffc0af5e2e00<br>
+Feb 21 22:36:16 Sailfish kernel: hid mouse<br>
+Feb 21 22:36:16 Sailfish kernel: hidg_bind: creating device ffffffc0af5e3200<br>
+Feb 21 22:36:16 Sailfish kernel: dwc3 7000000.dwc3: ep0out: Unable to dequeue while in LPM<br>
+Feb 21 22:36:16 Sailfish kernel: hidg_unbind: destroying device ffffffc0af5e2e00<br>
+Feb 21 22:36:16 Sailfish kernel: hidg_unbind: destroying device ffffffc0af5e3200<br>
+Feb 21 22:36:16 Sailfish kernel: [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+Feb 21 22:36:16 Sailfish kernel: [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+Feb 21 22:36:16 Sailfish kernel: rndis_function_bind_config: rndis_function_bind_config MAC: EE:60:50:97:8F:8C<br>
+Feb 21 22:36:16 Sailfish kernel: android_usb gadget: using random self ethernet address<br>
+Feb 21 22:36:16 Sailfish kernel: android_usb gadget: using previous host ethernet address<br>
+Feb 21 22:36:16 Sailfish kernel: rndis0: MAC 86:1a:51:93:c0:33<br>
+Feb 21 22:36:16 Sailfish kernel: rndis0: HOST MAC ee:60:50:97:8f:8c<br>
+Feb 21 22:36:16 Sailfish kernel: hid keyboard<br>
+Feb 21 22:36:16 Sailfish kernel: hidg_bind: creating device ffffffc0ae9b9600<br>
+Feb 21 22:36:16 Sailfish kernel: hid mouse<br>
+Feb 21 22:36:16 Sailfish kernel: hidg_bind: creating device ffffffc0ae9b9800<br>
+Feb 21 22:36:16 Sailfish kernel: IPv6: ADDRCONF(NETDEV_UP): rndis0: link is not ready<br>
+Feb 21 22:36:16 Sailfish kernel: EXT4-fs (mmcblk0p49): re-mounted. Opts: (null)<br>
+Feb 21 22:36:16 Sailfish preinit: (15.85) Welcome to Sailfish OS 3.0.2.8 (Oulanka)<br>
+Feb 21 22:36:16 Sailfish preinit: (15.86) is_erase_needed: No : 0<br>
+Feb 21 22:36:16 Sailfish preinit: (15.88) get_bootstate: USER : 0<br>
+Feb 21 22:36:16 Sailfish preinit: (15.88) BOOTSTATE = USER<br>
+Feb 21 22:36:16 Sailfish preinit: (15.88) Booting to default.target<br>
+Feb 21 22:36:16 Sailfish systemd[1]: systemd 225 running in system mode. (+PAM -AUDIT -SELINUX +IMA -APPARMOR +SMACK -SYSVINIT +UTMP -LIB<br>
+CRYPTSETUP +GCRYPT -GNUTLS +ACL +XZ -LZ4 -SECCOMP +BLKID -ELFUTILS +KMOD -IDN)<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Detected architecture arm64.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Set hostname to Sailfish.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Initializing machine ID from random generator.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: [/lib/systemd/system/camera-hal.service:8] Executable path is not absolute, ignoring: setprop<br>
+persist.camera.HAL3.enabled 0<br>
+Feb 21 22:36:16 Sailfish systemd[1]: camera-hal.service: Service lacks both ExecStart= and ExecStop= setting. Refusing.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: sys-fs-pstore.mount: Cannot create mount unit for API file system /sys/fs/pstore. Refusing.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: sys-fs-pstore.mount: Cannot add dependency job, ignoring: Unit sys-fs-pstore.mount failed to l<br>
+oad: Invalid argument. See system logs and 'systemctl status sys-fs-pstore.mount' for details.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: camera-hal.service: Cannot add dependency job, ignoring: Unit camera-hal.service failed to loa<br>
+d: Invalid argument. See system logs and 'systemctl status camera-hal.service' for details.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Started Dispatch Password Requests to Console Directory Watch.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Started Forward Password Requests to Wall Directory Watch.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Reached target Swap.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Reached target Login Prompts.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Created slice Root Slice.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Listening on udev Kernel Socket.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Listening on Journal Audit Socket.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Listening on udev Control Socket.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Listening on Journal Socket (/dev/log).<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Listening on /dev/initctl Compatibility Named Pipe.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Created slice User and Session Slice.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Listening on Journal Socket.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Created slice System Slice.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Reached target Slices.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Mounting Droid mount for /dev/cpuset...<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Mounting Debug File System...<br>
+Feb 21 22:36:16 Sailfish kernel: cgroup: new mount options do not match the existing superblock, will be ignored<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Mounting Temporary Directory...<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Starting Remount Root and Kernel File Systems...<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Mounting FFS mount...<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Starting Create list of required static device nodes for the current kernel...<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Starting Journal Service...<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Starting Setup Virtual Console...<br>
+Feb 21 22:36:16 Sailfish kernel: EXT4-fs (mmcblk0p49): re-mounted. Opts: (null)<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Mounted Debug File System.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Mounted FFS mount.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Mounted Temporary Directory.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Mounted Droid mount for /dev/cpuset.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Started Create list of required static device nodes for the current kernel.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Started Setup Virtual Console.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Started Remount Root and Kernel File Systems.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Starting Create System Users...<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Starting Rebuild Dynamic Linker Cache...<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Starting Rebuild Hardware Database...<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Starting Clean RPM db region files at each reboot...<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Starting Load/Save Random Seed...<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Started Create System Users.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Started Clean RPM db region files at each reboot.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Started Load/Save Random Seed.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Starting Create Static Device Nodes in /dev...<br>
+Feb 21 22:36:16 Sailfish systemd-journal[686]: Journal started<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Started Journal Service.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Starting Flush Journal to Persistent Storage...<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Started Create Static Device Nodes in /dev.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Reached target Local File Systems (Pre).<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Mounting Droid mount for /mnt...<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Mounting Droid mount for /config...<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Starting udev Kernel Device Manager...<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Mounted Droid mount for /mnt.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Mounted Droid mount for /config.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Started Flush Journal to Persistent Storage.<br>
+Feb 21 22:36:16 Sailfish systemd-udevd[712]: unknown key 'DEVLINKS' in /lib/udev/rules.d/999-android-system.rules:741<br>
+Feb 21 22:36:16 Sailfish systemd-udevd[712]: invalid rule '/lib/udev/rules.d/999-android-system.rules:741'<br>
+Feb 21 22:36:16 Sailfish systemd-udevd[712]: unknown key 'DEVLINKS' in /lib/udev/rules.d/999-android-system.rules:746<br>
+Feb 21 22:36:16 Sailfish systemd-udevd[712]: invalid rule '/lib/udev/rules.d/999-android-system.rules:746'<br>
+Feb 21 22:36:16 Sailfish systemd-udevd[712]: unknown key 'DEVLINKS' in /lib/udev/rules.d/999-android-system.rules:751<br>
+Feb 21 22:36:16 Sailfish systemd-udevd[712]: invalid rule '/lib/udev/rules.d/999-android-system.rules:751'<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Started udev Kernel Device Manager.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Started Rebuild Dynamic Linker Cache.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Started Rebuild Hardware Database.<br>
+Feb 21 22:36:16 Sailfish systemd[1]: Starting udev Coldplug all Devices...<br>
+Feb 21 22:36:16 Sailfish systemd-udevd[712]: unknown key 'DEVLINKS' in /lib/udev/rules.d/999-android-system.rules:741<br>
+Feb 21 22:36:16 Sailfish systemd-udevd[712]: invalid rule '/lib/udev/rules.d/999-android-system.rules:741'<br>
+Feb 21 22:36:16 Sailfish systemd-udevd[712]: unknown key 'DEVLINKS' in /lib/udev/rules.d/999-android-system.rules:746<br>
+Feb 21 22:36:16 Sailfish systemd-udevd[712]: invalid rule '/lib/udev/rules.d/999-android-system.rules:746'<br>
+Feb 21 22:36:16 Sailfish systemd-udevd[712]: unknown key 'DEVLINKS' in /lib/udev/rules.d/999-android-system.rules:751<br>
+Feb 21 22:36:16 Sailfish systemd-udevd[712]: invalid rule '/lib/udev/rules.d/999-android-system.rules:751'<br>
+Feb 21 22:36:17 Sailfish vgchange[1330]: /dev/mmcblk0rpmb: read failed after 0 of 4096 at 0: Input/output error<br>
+Feb 21 22:36:17 Sailfish vgchange[1330]: /dev/mmcblk0rpmb: read failed after 0 of 4096 at 4128768: Input/output error<br>
+Feb 21 22:36:17 Sailfish vgchange[1330]: /dev/mmcblk0rpmb: read failed after 0 of 4096 at 4186112: Input/output error<br>
+Feb 21 22:36:17 Sailfish vgchange[1330]: /dev/mmcblk0rpmb: read failed after 0 of 4096 at 4096: Input/output error<br>
+Feb 21 22:36:17 Sailfish systemd[1]: Started udev Coldplug all Devices.<br>
+Feb 21 22:36:17 Sailfish systemd[1]: Starting udev Wait for Complete Device Initialization...<br>
+Feb 21 22:36:17 Sailfish systemd[1]: Found device /dev/mmcblk0p12.<br>
+Feb 21 22:36:17 Sailfish systemd[1]: Mounting Droid mount for /dsp...<br>
+Feb 21 22:36:17 Sailfish systemd[1]: Found device /dev/mmcblk0p1.<br>
+Feb 21 22:36:17 Sailfish systemd[1]: Found device /dev/mmcblk0p26.<br>
+Feb 21 22:36:17 Sailfish kernel: EXT4-fs (mmcblk0p12): mounted filesystem with ordered data mode. Opts: (null)<br>
+Feb 21 22:36:17 Sailfish systemd[1]: Mounted Droid mount for /dsp.<br>
+Feb 21 22:36:17 Sailfish systemd[1]: Found device /dev/mmcblk0p24.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Mounting Droid mount for /system...<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Mounting Droid mount for /persist...<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Mounting Droid mount for /firmware...<br>
+Feb 21 22:36:18 Sailfish kernel: EXT4-fs (mmcblk0p26): mounted filesystem with ordered data mode. Opts: (null)<br>
+Feb 21 22:36:18 Sailfish kernel: EXT4-fs (mmcblk0p24): mounted filesystem with ordered data mode. Opts: barrier=1<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Mounted Droid mount for /system.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Mounted Droid mount for /persist.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Mounted Droid mount for /firmware.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Reached target Local File Systems.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting Rebuild Journal Catalog...<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting Create Volatile Files and Directories...<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Listening on D-Bus System Message Bus Socket.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting StateFS FUSE filesystem, system-wide...<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting D-Bus System Message Bus...<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting Enable Bluetooth HCI over SMD...<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Listening on Nemo device lock socket.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting Create sshd host keys...<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting Mode Control Entity (MCE)...<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Mounting Configuration File System...<br>
+Feb 21 22:36:18 Sailfish sshd-hostkeys[2272]: Generating ed25519 key: /etc/ssh/ssh_host_ed25519_key<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Mounting FUSE Control File System...<br>
+Feb 21 22:36:18 Sailfish sshd-hostkeys[2272]: Generating rsa key: /etc/ssh/ssh_host_rsa_key<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting Apply Kernel Variables...<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Mounted Configuration File System.<br>
+Feb 21 22:36:18 Sailfish kernel: Loading modules backported from Linux version next-20160324-0-g6f30d29<br>
+Feb 21 22:36:18 Sailfish kernel: Backport generated by backports.git backports-20160324-0-g7dba139<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Mounted FUSE Control File System.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Started Rebuild Journal Catalog.<br>
+Feb 21 22:36:18 Sailfish mce[2275]: mce.c: main(): MCE 1.99.8 (release) starting up<br>
+Feb 21 22:36:18 Sailfish systemd-sysctl[2358]: Couldn't write 'fq_codel' to 'net/core/default_qdisc', ignoring: No such file or directory<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Started Create Volatile Files and Directories.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Started StateFS FUSE filesystem, system-wide.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Started D-Bus System Message Bus.<br>
+Feb 21 22:36:18 Sailfish kernel: Bluetooth: Core ver 2.21<br>
+Feb 21 22:36:18 Sailfish kernel: NET: Registered protocol family 31<br>
+Feb 21 22:36:18 Sailfish kernel: Bluetooth: HCI device and connection manager initialized<br>
+Feb 21 22:36:18 Sailfish kernel: Bluetooth: HCI socket layer initialized<br>
+Feb 21 22:36:18 Sailfish kernel: Bluetooth: L2CAP socket layer initialized<br>
+Feb 21 22:36:18 Sailfish kernel: Bluetooth: SCO socket layer initialized<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Started udev Wait for Complete Device Initialization.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Started Apply Kernel Variables.<br>
+Feb 21 22:36:18 Sailfish sh[2583]: could not set property<br>
+Feb 21 22:36:18 Sailfish sh[2583]: could not set property<br>
+Feb 21 22:36:18 Sailfish sh[2583]: could not set property<br>
+Feb 21 22:36:18 Sailfish rfkill[2589]: unblock set for all<br>
+Feb 21 22:36:18 Sailfish kernel: hcismd_set_enable 0<br>
+Feb 21 22:36:18 Sailfish kernel: Bluetooth: Cannot open the command channel<br>
+Feb 21 22:36:18 Sailfish mce[2275]: modules/display.c: g_module_check_init(): display state req: ON<br>
+Feb 21 22:36:18 Sailfish mce[2275]: modules/display.c: mdy_display_state_leave(): current display state = POWER_UP<br>
+Feb 21 22:36:18 Sailfish mce[2275]: modules/display.c: mdy_stm_step(): forced brightness sync to: 254<br>
+Feb 21 22:36:18 Sailfish mce[2275]: modules/display.c: mdy_stm_set_compositor_availability_changed(): compositor availability chang<br>
+e: handled<br>
+Feb 21 22:36:18 Sailfish mce[2275]: modules/proximity.c: report_proximity(): state: OPEN - CLOSED<br>
+Feb 21 22:36:18 Sailfish mce[2275]: powerkey.c: xngf_create_client(): can't use ngfd - service not running<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Started Mode Control Entity (MCE).<br>
+Feb 21 22:36:18 Sailfish mce[2275]: modules/battery-udev.c: mcebat_update(): charger_state: undefined - off<br>
+Feb 21 22:36:18 Sailfish mce[2275]: modules/battery-udev.c: mcebat_update(): battery_status: undefined - ok<br>
+Feb 21 22:36:18 Sailfish mce[2275]: modules/display.c: mdy_display_state_enter(): current display state = ON<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting usb-moded USB gadget controller...<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting ohm daemon for resource policy management...<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting droid-hal-init...<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting Get initial bootstate...<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting Update UTMP about System Boot/Shutdown...<br>
+Feb 21 22:36:18 Sailfish usb_moded[2592]: usb_moded 0.86.0+mer30 starting<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting Update is Completed...<br>
+Feb 21 22:36:18 Sailfish get-initial-bootstate[2595]: Initial BOOTSTATE=USER<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: init first stage started!<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: init second stage started!<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Started Get initial bootstate.<br>
+Feb 21 22:36:18 Sailfish usb_moded[2592]: CONFIGFS not detected<br>
+Feb 21 22:36:18 Sailfish usb_moded[2592]: ANDROID0 detected<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Started Update is Completed.<br>
+Feb 21 22:36:18 Sailfish kernel: dwc3 7000000.dwc3: ep0out: Unable to dequeue while in LPM<br>
+Feb 21 22:36:18 Sailfish kernel: hidg_unbind: destroying device ffffffc0ae9b9600<br>
+Feb 21 22:36:18 Sailfish kernel: hidg_unbind: destroying device ffffffc0ae9b9800<br>
+Feb 21 22:36:18 Sailfish kernel: [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: Failed to initialize property area<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: Running restorecon...<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: waitpid failed: No child processes<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Loading properties from /default.prop took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /init.environ.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: /init.qcom.rc: 636: invalid keyword 'system'<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: init.target.rc: 176: invalid keyword 'load_all_props'<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing init.target.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /init.qcom.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /init.usb.configfs.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /init.zygote64_32.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /init.cm.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /init.rc took 0.01s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: Waiting for /dev/.coldboot_done...<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: Waiting for /dev/.coldboot_done took 0.00s.<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: /dev/hw_random not found<br>
+Feb 21 22:36:18 Sailfish kernel: keychord: using input dev qpnp_pon for fevent<br>
+Feb 21 22:36:18 Sailfish kernel: keychord: using input dev ft5435_ts for fevent<br>
+Feb 21 22:36:18 Sailfish kernel: keychord: using input dev s2w_pwrkey for fevent<br>
+Feb 21 22:36:18 Sailfish kernel: keychord: using input dev gf3208 for fevent<br>
+Feb 21 22:36:18 Sailfish kernel: keychord: using input dev gpio-keys for fevent<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: loglevel: invalid log level'64'<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/kernel/hung_task_timeout_secs': No such file or dire<br>
+ctorye--<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: write_file: Unable to open '/dev/cpuset/foreground/cpus': Permission denied<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: write_file: Unable to open '/dev/cpuset/foreground/mems': Permission denied<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: write_file: Unable to open '/dev/cpuset/foreground/boost/cpus': Permission denied<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: write_file: Unable to open '/dev/cpuset/foreground/boost/mems': Permission denied<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: write_file: Unable to open '/dev/cpuset/background/cpus': Permission denied<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: write_file: Unable to open '/dev/cpuset/background/mems': Permission denied<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: write_file: Unable to open '/dev/cpuset/system-background/cpus': Permission denied<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: write_file: Unable to open '/dev/cpuset/system-background/mems': Permission denied<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: write_file: Unable to open '/dev/cpuset/top-app/cpus': Permission denied<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: write_file: Unable to open '/dev/cpuset/top-app/mems': Permission denied<br>
+Feb 21 22:36:18 Sailfish kernel: Registered swp emulation handler<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: /dev/hw_random not found<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: Starting service 'droid_init_done'...<br>
+Feb 21 22:36:18 Sailfish fs_mgr: Cannot open file fstab.qcom<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: fs_mgr_mount_all returned an error<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Started Update UTMP about System Boot/Shutdown.<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/atrace.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/bootanim.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish kernel: [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/bootstat.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/debuggerd.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/drmserver.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/dumpstate.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/gatekeeperd.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/init-debug.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/installd.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/logcatd.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/logd.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/mediacodec.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/mediadrmserver.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/mediaextractor.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/mtpd.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/perfprofd.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/racoon.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/rild.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/servicemanager.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: Could not import file '/usr/libexec/droid-hybris/system/etc/init/superuser.rc'<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/uncrypt.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/vdc.rc took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Reached target System Initialization.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Listening on OpenSSH Server Socket.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Reached target Sockets.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Started Wayland path watcher.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Reached target Paths.<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: fs_mgr_mount_all returned unexpected error 255<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: Starting service 'logd'...<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: couldn't write 2616 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Started Daily Cleanup of Temporary Directories.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Reached target Timers.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting DSME...<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Loading properties from /system/build.prop took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Loading properties from /vendor/build.prop took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: (Loading properties from /factory/factory.prop took 0.00s.)<br>
+Feb 21 22:36:18 Sailfish fs_mgr: Cannot open file /fstab.qcom<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: unable to read fstab /fstab.qcom: No such file or directory<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: Starting service 'debuggerd'...<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: do_start: Service debuggerd64 not found<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: do_start: Service vold not found<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: couldn't write 2618 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Feb 21 22:36:18 Sailfish dsme[2617]: DSME 0.79.3 starting up<br>
+Feb 21 22:36:18 Sailfish droid-hal-init: Not bootcharting.<br>
+Feb 21 22:36:18 Sailfish dsme[2617]: dsme wdd: Could not open any watchdog filesdsme wdd: no WD's opened; WD kicking disabled<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Started usb-moded USB gadget controller.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: droid-hal-init.service: Supervising process 2600 which is not our child. We'll most likely not<br>
+ notice when it exits.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Started droid-hal-init.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Reached target Basic System.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Started droid-late-start.<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting Disk Manager...<br>
+Feb 21 22:36:18 Sailfish DSME[2619]: state: new state: USER<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting Link Android folder to home...<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting Login Service...<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting Load wifi module...<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting Indicate boot is done...<br>
+Feb 21 22:36:18 Sailfish systemd[1]: Starting Nemo device lock daemon...<br>
+Feb 21 22:36:18 Sailfish kernel: wcnss_wlan triggered by userspace<br>
+Feb 21 22:36:18 Sailfish kernel: wcnss_pm_qos_add_request: add request<br>
+Feb 21 22:36:18 Sailfish kernel: wcnss_pm_qos_update_request: update request 100<br>
+Feb 21 22:36:18 Sailfish kernel: wcnss_notif_cb: wcnss notification event: 2<br>
+Mar 12 23:24:24 Sailfish DSME[2619]: IPHB: rtc delta to 1547945286<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Starting Telephony service...<br>
+Mar 12 23:24:24 Sailfish udisksd[2629]: udisks daemon version 2.8.1 starting<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Started Link Android folder to home.<br>
+Mar 12 23:24:24 Sailfish android-links.sh[2630]: /usr/bin/droid/android-links.sh: line 2: [: missing `]'<br>
+Mar 12 23:24:24 Sailfish kernel: subsys-pil-tz a21b000.qcom,pronto: wcnss: loading from 0x000000008e700000 to 0x000000008ed42000<br>
+Mar 12 23:24:24 Sailfish kernel: wcnss_notif_cb: wcnss notification event: 6<br>
+Mar 12 23:24:24 Sailfish kernel: wcnss: IRIS Reg: 04000004<br>
+Mar 12 23:24:24 Sailfish audit: CONFIG_CHANGE audit_pid=2616 old=0 auid=4294967295 ses=4294967295 subj=kernel res=1<br>
+Mar 12 23:24:24 Sailfish audit: CONFIG_CHANGE audit_rate_limit=20 old=0 auid=4294967295 ses=4294967295 subj=kernel res=1<br>
+Mar 12 23:24:24 Sailfish kernel: audit: type=1305 audit(1552425864.019:2): audit_pid=2616 old=0 auid=4294967295 ses=4294967295 subj<br>
+=kernel res=1<br>
+Mar 12 23:24:24 Sailfish logd.auditd: start<br>
+Mar 12 23:24:24 Sailfish logd.klogd: 19140765095<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: oFono version 1.21<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Started Login Service.<br>
+Mar 12 23:24:24 Sailfish ohmd[2593]: E: accessories: failed to open device '/dev/input/event7'<br>
+Mar 12 23:24:24 Sailfish systemd-logind[2632]: New seat seat0.<br>
+Mar 12 23:24:24 Sailfish dbus[2443]: [system] Activating via systemd: service name='org.freedesktop.PolicyKit1' unit='dbus-org.free<br>
+desktop.PolicyKit1.service'<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding udev hardware detection<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding Novatel modem driver<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding Sierra modem driver<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding ZTE modem driver<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding Icera modem driver<br>
+Mar 12 23:24:24 Sailfish systemd[1]: sys-fs-pstore.mount: Cannot add dependency job, ignoring: Unit sys-fs-pstore.mount failed to l<br>
+oad: Invalid argument. See system logs and 'systemctl status sys-fs-pstore.mount' for details.<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding Huawei modem driver<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding Calypso modem driver<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding MBM modem driver<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding Telit modem driver<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding HSO modem driver<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding Infineon modem driver<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding STE modem driver<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding Dialup modem driver<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding Hands-Free Profile Driver<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding SpeedUp modem driver<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Started Telephony service.<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding Phone Simulator driver<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding CDMA AT modem driver<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding External Hands-Free Profile Plugin<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding Dial-up Networking Profile Plugins<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Excluding CDMA provisioning Plugin<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Starting Authorization Manager...<br>
+Mar 12 23:24:24 Sailfish audit[2658]: ANOM_ABEND auid=4294967295 uid=0 gid=0 ses=4294967295 subj=kernel pid=2658 comm="vdc" exe="/system/<br>
+bin/vdc" sig=6<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'exec 1 (/system/bin/tzdatacheck)'...<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Invalid dataCallFormat config value (13)<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: Invalid dataCallFormat config value (13)<br>
+Mar 12 23:24:24 Sailfish polkitd[2659]: started daemon version 0.105 using authority implementation `local' version `0.105'<br>
+Mar 12 23:24:24 Sailfish kernel: capability: warning: `ofonod' uses 32-bit capabilities (legacy support in use)<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Service 'exec 1 (/system/bin/tzdatacheck)' (pid 2663) exited with status 0<br>
+Mar 12 23:24:24 Sailfish dbus[2443]: [system] Successfully activated service 'org.freedesktop.PolicyKit1'<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: [grilio-socket] ERROR! Can't connect to RILD: No such file or directory<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Started Authorization Manager.<br>
+Mar 12 23:24:24 Sailfish ofonod[2637]: [grilio-socket] ERROR! Can't connect to RILD: No such file or directory<br>
+Mar 12 23:24:24 Sailfish unknown: type=1305 audit(1552425864.019:3): audit_rate_limit=20 old=0 auid=4294967295 ses=4294967295 subj=<br>
+kernel res=1<br>
+Mar 12 23:24:24 Sailfish unknown: type=1701 audit(1552425864.055:4): auid=4294967295 uid=0 gid=0 ses=4294967295 subj=kernel pid=265<br>
+8 comm="vdc" exe="/system/bin/vdc" sig=6<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'perfd'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2670 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/sys/block/dm-0/queue/read_ahead_kb': No such file or director<br>
+y<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/sys/block/dm-1/queue/read_ahead_kb': No such file or director<br>
+y<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'sysinit'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: (Loading properties from /data/local.prop took 0.00s.)<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Started Nemo device lock daemon.<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'logd-reinit'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2708 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish kernel: subsys-pil-tz c200000.qcom,lpass: adsp: loading from 0x000000008d600000 to 0x000000008e700000<br>
+Mar 12 23:24:24 Sailfish logd.daemon: reinit<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Started DSME.<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Starting Oneshot stuff for root...<br>
+Mar 12 23:24:24 Sailfish kernel: subsys-pil-tz a21b000.qcom,pronto: wcnss: Brought out of reset<br>
+Mar 12 23:24:24 Sailfish DSME[2619]: thermal sensor generic: No thermal config files found<br>
+Mar 12 23:24:24 Sailfish oneshot[2715]: oneshot: /etc/oneshot.d/0/dconf-update - OK<br>
+Mar 12 23:24:24 Sailfish oneshot[2715]: oneshot: /etc/oneshot.d/0/msyncd-storage-perm - OK<br>
+Mar 12 23:24:24 Sailfish oneshot[2715]: oneshot: /etc/oneshot.d/0/signon-storage-perm - OK<br>
+Mar 12 23:24:24 Sailfish dbus[2443]: [system] Activating via systemd: service name='org.nemo.ssu' unit='dbus-org.nemo.ssu.service'<br>
+<br>
+Mar 12 23:24:24 Sailfish systemd[1]: sys-fs-pstore.mount: Cannot add dependency job, ignoring: Unit sys-fs-pstore.mount failed to l<br>
+oad: Invalid argument. See system logs and 'systemctl status sys-fs-pstore.mount' for details.<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Starting SSU service...<br>
+Mar 12 23:24:24 Sailfish dbus[2443]: [system] Successfully activated service 'org.nemo.ssu'<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Started SSU service.<br>
+Mar 12 23:24:24 Sailfish oneshot[2715]: oneshot: /etc/oneshot.d/0/ssu-update-repos - OK<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Started Oneshot stuff for root.<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Started ohm daemon for resource policy management.<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Starting Connection service...<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Starting Sensor daemon for sensor framework...<br>
+Mar 12 23:24:24 Sailfish kernel: subsys-pil-tz c200000.qcom,lpass: adsp: Brought out of reset<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Starting Permit User Sessions...<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Started Permit User Sessions.<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Starting Start User Session...<br>
+Mar 12 23:24:24 Sailfish connmand[2806]: Connection Manager version 1.32+git61<br>
+Mar 12 23:24:24 Sailfish start-autologin[2810]: Starting autologin for 100000<br>
+Mar 12 23:24:24 Sailfish connmand[2806]: Cannot restore table security, file /var/lib/connman/iptables/security.v4 not found<br>
+Mar 12 23:24:24 Sailfish connmand[2806]: Cannot restore table raw, file /var/lib/connman/iptables/raw.v4 not found<br>
+Mar 12 23:24:24 Sailfish connmand[2806]: Cannot restore table nat, file /var/lib/connman/iptables/nat.v4 not found<br>
+Mar 12 23:24:24 Sailfish connmand[2806]: Cannot restore table mangle, file /var/lib/connman/iptables/mangle.v4 not found<br>
+Mar 12 23:24:24 Sailfish connmand[2806]: Cannot restore table filter, file /var/lib/connman/iptables/filter.v4 not found<br>
+Mar 12 23:24:24 Sailfish audit: NETFILTER_CFG table=filter family=2 entries=4<br>
+Mar 12 23:24:24 Sailfish audit[2806]: SYSCALL arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=0 a2=40 a3=2e5868 items=0 ppid=1 pid=2<br>
+806 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="connmand" exe="/usr/sbin/conn<br>
+mand" subj=kernel key=(null)<br>
+Mar 12 23:24:24 Sailfish audit: AUDIT1327 proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E6C3830323131002D2D6E6F6261636B747<br>
+2616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Started Sensor daemon for sensor framework.<br>
+Mar 12 23:24:24 Sailfish unknown: type=1325 audit(1552425864.555:5): table=filter family=2 entries=4<br>
+Mar 12 23:24:24 Sailfish unknown: type=1300 audit(1552425864.555:5): arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=0 a2=40 a<br>
+3=2e5868 items=0 ppid=1 pid=2806 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="<br>
+connmand" exe="/usr/sbin/connmand" subj=kernel key=(null)<br>
+Mar 12 23:24:24 Sailfish unknown: type=1327 audit(1552425864.555:5): proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E<br>
+6C3830323131002D2D6E6F6261636B7472616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+Mar 12 23:24:24 Sailfish unknown: type=1320 audit(1552425864.555:5):<br>
+Mar 12 23:24:24 Sailfish audit: NETFILTER_CFG table=mangle family=2 entries=6<br>
+Mar 12 23:24:24 Sailfish audit[2806]: SYSCALL arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=0 a2=40 a3=2e5b18 items=0 ppid=1 pid=2<br>
+806 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="connmand" exe="/usr/sbin/conn<br>
+mand" subj=kernel key=(null)<br>
+Mar 12 23:24:24 Sailfish audit: AUDIT1327 proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E6C3830323131002D2D6E6F6261636B747<br>
+2616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+Mar 12 23:24:24 Sailfish unknown: type=1325 audit(1552425864.559:6): table=mangle family=2 entries=6<br>
+Mar 12 23:24:24 Sailfish unknown: type=1300 audit(1552425864.559:6): arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=0 a2=40 a<br>
+3=2e5b18 items=0 ppid=1 pid=2806 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="<br>
+connmand" exe="/usr/sbin/connmand" subj=kernel key=(null)<br>
+Mar 12 23:24:24 Sailfish unknown: type=1327 audit(1552425864.559:6): proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E<br>
+6C3830323131002D2D6E6F6261636B7472616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+Mar 12 23:24:24 Sailfish unknown: type=1320 audit(1552425864.559:6):<br>
+Mar 12 23:24:24 Sailfish systemd[1]: sys-fs-pstore.mount: Cannot add dependency job, ignoring: Unit sys-fs-pstore.mount failed to l<br>
+oad: Invalid argument. See system logs and 'systemctl status sys-fs-pstore.mount' for details.<br>
+Mar 12 23:24:24 Sailfish kernel: subsys-pil-tz c200000.qcom,lpass: Subsystem error monitoring/handling services are up<br>
+Mar 12 23:24:24 Sailfish kernel: subsys-pil-tz c200000.qcom,lpass: adsp: Power/Clock ready interrupt received<br>
+Mar 12 23:24:24 Sailfish kernel: L-Notify: Generel: 7<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Service 'sysinit' (pid 2671) exited with status 0<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Service 'logd-reinit' (pid 2708) exited with status 0<br>
+Mar 12 23:24:24 Sailfish kernel: sensors-ssc soc:qcom,msm-ssc-sensors: slpi_loader_do: pil get failed,<br>
+Mar 12 23:24:24 Sailfish kernel: sensors-ssc soc:qcom,msm-ssc-sensors: slpi_loader_do: SLPI image loading failed<br>
+Mar 12 23:24:24 Sailfish kernel: diag: In diag_send_feature_mask_update, control channel is not open, p: 1, 0000000000000000<br>
+Mar 12 23:24:24 Sailfish kernel: msm8x16_wcd_spmi_probe(6272):slave ID = 0x1<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'irsc_util'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'rmt_storage'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'tftp_server'...<br>
+Mar 12 23:24:24 Sailfish unknown: type=1325 audit(1552425864.567:7): table=nat family=2 entries=5<br>
+Mar 12 23:24:24 Sailfish audit: NETFILTER_CFG table=nat family=2 entries=5<br>
+Mar 12 23:24:24 Sailfish audit[2806]: SYSCALL arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=0 a2=40 a3=2e59c0 items=0 ppid=1 pid=2<br>
+806 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="connmand" exe="/usr/sbin/conn<br>
+mand" subj=kernel key=(null)<br>
+Mar 12 23:24:24 Sailfish audit: AUDIT1327 proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E6C3830323131002D2D6E6F6261636B747<br>
+2616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Created slice system-autologin.slice.<br>
+Mar 12 23:24:24 Sailfish kernel: msm8x16_wcd_spmi_probe(6272):slave ID = 0x1<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'config_bt_addr'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'config_bluetooth'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'sensors'...<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Started Autologin user 100000.<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'gx_fpd'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'per_mgr'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'servicemanager'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2841 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'cnd'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'netmgrd'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2835 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'qti'...<br>
+Mar 12 23:24:24 Sailfish start-autologin[2810]: autologin\@100000.service started<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2834 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'ril-daemon2'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2842 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2840 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'thermal-engine'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'wcnss-service'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'imsqmidaemon'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2845 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'adsprpcd'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'hvdcp_opti'...<br>
+Mar 12 23:24:24 Sailfish unknown: type=1300 audit(1552425864.567:7): arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=0 a2=40 a<br>
+3=2e59c0 items=0 ppid=1 pid=2806 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="<br>
+connmand" exe="/usr/sbin/connmand" subj=kernel key=(null)<br>
+Mar 12 23:24:24 Sailfish unknown: type=1327 audit(1552425864.567:7): proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E<br>
+6C3830323131002D2D6E6F6261636B7472616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'energy-awareness'...<br>
+Mar 12 23:24:24 Sailfish unknown: type=1320 audit(1552425864.567:7):<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2855 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'drm'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'installd'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2859 to /dev/cpuset/foreground/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish unknown: type=1325 audit(1552425864.587:8): table=filter family=10 entries=4<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2847 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2846 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2848 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish audit: NETFILTER_CFG table=filter family=10 entries=4<br>
+Mar 12 23:24:24 Sailfish audit[2806]: SYSCALL arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=29 a2=40 a3=2e5a28 items=0 ppid=1 pid=<br>
+2806 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="connmand" exe="/usr/sbin/con<br>
+nmand" subj=kernel key=(null)<br>
+Mar 12 23:24:24 Sailfish audit: AUDIT1327 proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E6C3830323131002D2D6E6F6261636B747<br>
+2616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+Mar 12 23:24:24 Sailfish kernel: msm8952-asoc-wcd c051000.sound: default codec configured<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2853 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish unknown: type=1300 audit(1552425864.587:8): arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=29 a2=40<br>
+a3=2e5a28 items=0 ppid=1 pid=2806 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm=<br>
+"connmand" exe="/usr/sbin/connmand" subj=kernel key=(null)<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'mediacodec'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'mediadrm'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'mediaextractor'...<br>
+Mar 12 23:24:24 Sailfish kernel: msm8952-asoc-wcd c051000.sound: ASoC: platform (null) not registered<br>
+Mar 12 23:24:24 Sailfish kernel: msm8952-asoc-wcd c051000.sound: snd_soc_register_card failed (-517)<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'ril-daemon'...<br>
+Mar 12 23:24:24 Sailfish unknown: type=1327 audit(1552425864.587:8): proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E<br>
+6C3830323131002D2D6E6F6261636B7472616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+Mar 12 23:24:24 Sailfish unknown: type=1320 audit(1552425864.587:8):<br>
+Mar 12 23:24:24 Sailfish kernel: msm8952-asoc-wcd c051000.sound: default codec configured<br>
+Mar 12 23:24:24 Sailfish kernel: wcd-spmi-core msm8x16_wcd_codec-11: Error: regulator not found:cdc-vdd-spkdrv<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2867 to /dev/cpuset/foreground/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2866 to /dev/cpuset/foreground/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2865 to /dev/cpuset/foreground/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'minimedia'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'minisf'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'miniaf'...<br>
+Mar 12 23:24:24 Sailfish audit: NETFILTER_CFG table=mangle family=10 entries=6<br>
+Mar 12 23:24:24 Sailfish audit[2806]: SYSCALL arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=29 a2=40 a3=2e5dc0 items=0 ppid=1 pid=<br>
+2806 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="connmand" exe="/usr/sbin/con<br>
+nmand" subj=kernel key=(null)<br>
+Mar 12 23:24:24 Sailfish audit: AUDIT1327 proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E6C3830323131002D2D6E6F6261636B747<br>
+2616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+Mar 12 23:24:24 Sailfish unknown: type=1325 audit(1552425864.643:9): table=mangle family=10 entries=6<br>
+Mar 12 23:24:24 Sailfish unknown: type=1300 audit(1552425864.643:9): arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=29 a2=40<br>
+a3=2e5dc0 items=0 ppid=1 pid=2806 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm=<br>
+"connmand" exe="/usr/sbin/connmand" subj=kernel key=(null)<br>
+Mar 12 23:24:24 Sailfish unknown: type=1327 audit(1552425864.643:9): proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E<br>
+6C3830323131002D2D6E6F6261636B7472616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+Mar 12 23:24:24 Sailfish unknown: type=1320 audit(1552425864.643:9):<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Service 'irsc_util' (pid 2832) exited with status 0<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Service 'config_bt_addr' (pid 2836) exited with status 0<br>
+Mar 12 23:24:24 Sailfish wait-session-to-start[2852]: In wait loop (0) - state: unknown<br>
+Mar 12 23:24:24 Sailfish systemd[2844]: pam_unix(autologin:account): account nemo has password changed in future<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet0/accept_ra': No such file or dir<br>
+ectory<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: no dapm match for MM_DL5 -- MultiMedia5 -- TERT_<br>
+MI2S_RX Audio Mixer<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to add route MM_DL5 - MultiMedia5 - TERT_<br>
+MI2S_RX Audio Mixer<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: no dapm match for MM_DL8 -- MultiMedia8 -- TERT_<br>
+MI2S_RX Audio Mixer<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to add route MM_DL8 - MultiMedia8 - TERT_<br>
+MI2S_RX Audio Mixer<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet1/accept_ra': No such file or dir<br>
+ectory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet2/accept_ra': No such file or dir<br>
+ectory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet3/accept_ra': No such file or dir<br>
+ectory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet4/accept_ra': No such file or dir<br>
+ectory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet5/accept_ra': No such file or dir<br>
+ectory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet6/accept_ra': No such file or dir<br>
+ectory<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: no dapm match for INT_FM_TX -- INTERNAL_FM_TX --<br>
+ SEC_MI2S_RX Port Mixer<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to add route INT_FM_TX - INTERNAL_FM_TX -<br>
+ SEC_MI2S_RX Port Mixer<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet7/accept_ra': No such file or dir<br>
+ectory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_sdio0/accept_ra': No such file o<br>
+r directory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_sdio1/accept_ra': No such file o<br>
+r directory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_sdio2/accept_ra': No such file o<br>
+r directory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_sdio3/accept_ra': No such file o<br>
+r directory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_sdio4/accept_ra': No such file o<br>
+r directory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_sdio5/accept_ra': No such file o<br>
+r directory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_sdio6/accept_ra': No such file o<br>
+r directory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_sdio7/accept_ra': No such file o<br>
+r directory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_usb0/accept_ra': No such file or<br>
+ directory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_usb1/accept_ra': No such file or<br>
+ directory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_usb2/accept_ra': No such file or<br>
+ directory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_usb3/accept_ra': No such file or<br>
+ directory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: sanitize_path: Failed to locate path /dev/block/bootdevice/by-name/rawdump: No such file o<br>
+r directory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: do_chown: sanitize_path failed for path: /dev/block/bootdevice/by-name/rawdump prefix:/dev<br>
+/block/<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: sanitize_path: Failed to locate path /dev/block/bootdevice/by-name/rawdump: No such file o<br>
+r directory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: do_chmod: failed for /dev/block/bootdevice/by-name/rawdump..prefix(/dev/block/) match err<br>
+<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/dev/cpuset/top-app/cpus': Permission denied<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/dev/cpuset/top-app/boost/cpus': No such file or directory<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/dev/cpuset/foreground/cpus': Permission denied<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/dev/cpuset/foreground/boost/cpus': Permission denied<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: no dapm match for VOICEMMODE1_DL -- VoiceMMode1 -<br>
+- SEC_MI2S_RX_Voice Mixer<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to add route VOICEMMODE1_DL - VoiceMMode1<br>
+- SEC_MI2S_RX_Voice Mixer<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: no dapm match for VOICEMMODE2_DL -- VoiceMMode2 -<br>
+- SEC_MI2S_RX_Voice Mixer<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to add route VOICEMMODE2_DL - VoiceMMode2<br>
+- SEC_MI2S_RX_Voice Mixer<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: no source widget found for AUDIO_REF_EC_UL3 MUX<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to add route AUDIO_REF_EC_UL3 MUX - direct<br>
+ - MM_UL3<br>
+Mar 12 23:24:24 Sailfish unknown: type=1006 audit(1552425864.675:10): pid=2844 uid=0 subj=kernel old-auid=4294967295 auid=100000 ol<br>
+d-ses=4294967295 ses=1 res=1<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: no dapm match for SEC_MI2S_TX -- SEC_MI2S_TX --<br>
+SLIMBUS_0_RX Port Mixer<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to add route SEC_MI2S_TX - SEC_MI2S_TX -<br>
+SLIMBUS_0_RX Port Mixer<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/dev/cpuset/background/cpus': Permission denied<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/dev/cpuset/system-background/cpus': Permission denied<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: no dapm match for VOICE2_STUB_DL -- Voice2 Stub -<br>
+- INTERNAL_BT_SCO_RX_Voice Mixer<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to add route VOICE2_STUB_DL - Voice2 Stub<br>
+- INTERNAL_BT_SCO_RX_Voice Mixer<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/dev/cpuset/camera-daemon/cpus': Permission denied<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: write_file: Unable to open '/dev/cpuset/camera-daemon/mems': Permission denied<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: no sink widget found for SENARY_MI2S_TX<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to add route BE_IN - direct - SENARY_MI2S<br>
+_TX<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'dpmd'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'loc_launcher'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'qcom-sh'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'qseeproxydaemon'...<br>
+Mar 12 23:24:24 Sailfish kernel: sysmon-qmi: sysmon_clnt_svc_arrive: Connection established between QMI handle and adsp's SSCTL service<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'qcamerasvr'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2931 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Started Create sshd host keys.<br>
+Mar 12 23:24:24 Sailfish systemd[2844]: pam_systemd(autologin:session): Using 600s D-Bus method call timeout<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2924 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'audiod'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'gatekeeperd'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2925 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2930 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'perfprofd'...<br>
+Mar 12 23:24:24 Sailfish unknown: type=1325 audit(1552425864.727:11): table=filter family=10 entries=4<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'console'...<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'imsdatadaemon'...<br>
+Mar 12 23:24:24 Sailfish audit: NETFILTER_CFG table=filter family=10 entries=4<br>
+Mar 12 23:24:24 Sailfish audit[2806]: SYSCALL arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=29 a2=40 a3=2e6dd0 items=0 ppid=1 pid=<br>
+2806 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="connmand" exe="/usr/sbin/con<br>
+nmand" subj=kernel key=(null)<br>
+Mar 12 23:24:24 Sailfish audit: AUDIT1327 proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E6C3830323131002D2D6E6F6261636B747<br>
+2616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'per_proxy'...<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Created slice user-100000.slice.<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2946 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2953 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2954 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: couldn't write 2951 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:24 Sailfish systemd[1]: sys-fs-pstore.mount: Cannot add dependency job, ignoring: Unit sys-fs-pstore.mount failed to l<br>
+oad: Invalid argument. See system logs and 'systemctl status sys-fs-pstore.mount' for details.<br>
+Mar 12 23:24:24 Sailfish unknown: type=1300 audit(1552425864.727:11): arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=29 a2=40<br>
+ a3=2e6dd0 items=0 ppid=1 pid=2806 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm<br>
+="connmand" exe="/usr/sbin/connmand" subj=kernel key=(null)<br>
+Mar 12 23:24:24 Sailfish unknown: type=1327 audit(1552425864.727:11): proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006<br>
+E6C3830323131002D2D6E6F6261636B7472616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+Mar 12 23:24:24 Sailfish unknown: type=1320 audit(1552425864.727:11):<br>
+Mar 12 23:24:24 Sailfish kernel: subsys-pil-tz a21b000.qcom,pronto: wcnss: Power/Clock ready interrupt received<br>
+Mar 12 23:24:24 Sailfish kernel: wcnss_notif_cb: wcnss notification event: 7<br>
+Mar 12 23:24:24 Sailfish audit: NETFILTER_CFG table=filter family=10 entries=8<br>
+Mar 12 23:24:24 Sailfish audit[2806]: SYSCALL arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=29 a2=40 a3=2e7308 items=0 ppid=1 pid=<br>
+2806 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="connmand" exe="/usr/sbin/con<br>
+nmand" subj=kernel key=(null)<br>
+Mar 12 23:24:24 Sailfish audit: AUDIT1327 proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E6C3830323131002D2D6E6F6261636B747<br>
+2616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+Mar 12 23:24:24 Sailfish unknown: type=1325 audit(1552425864.767:12): table=filter family=10 entries=8<br>
+Mar 12 23:24:24 Sailfish unknown: type=1300 audit(1552425864.767:12): arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=29 a2=40<br>
+ a3=2e7308 items=0 ppid=1 pid=2806 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm<br>
+="connmand" exe="/usr/sbin/connmand" subj=kernel key=(null)<br>
+Mar 12 23:24:24 Sailfish unknown: type=1327 audit(1552425864.767:12): proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006<br>
+E6C3830323131002D2D6E6F6261636B7472616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+Mar 12 23:24:24 Sailfish unknown: type=1320 audit(1552425864.767:12):<br>
+Mar 12 23:24:24 Sailfish kernel: subsys-pil-tz a21b000.qcom,pronto: Subsystem error monitoring/handling services are up<br>
+Mar 12 23:24:24 Sailfish kernel: wcnss_notif_cb: wcnss notification event: 3<br>
+Mar 12 23:24:24 Sailfish kernel: wcnss_pm_qos_update_request: update request -1<br>
+Mar 12 23:24:24 Sailfish kernel: wcnss_pm_qos_remove_request: remove request<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to create SEC_MI2S_RX Port Mixer debugfs fi<br>
+le<br>
+Mar 12 23:24:24 Sailfish kernel: hcismd_set_enable 1<br>
+Mar 12 23:24:24 Sailfish kernel: Bluetooth: Cannot open the command channel<br>
+Mar 12 23:24:24 Sailfish kernel: apr_tal:Q6 Is Up<br>
+Mar 12 23:24:24 Sailfish kernel: 'opened /dev/adsprpc-smd c 227 0'<br>
+Mar 12 23:24:24 Sailfish unknown: type=1325 audit(1552425864.795:13): table=filter family=2 entries=4<br>
+Mar 12 23:24:24 Sailfish rfkill[2917]: unblock set for all<br>
+Mar 12 23:24:24 Sailfish audit: NETFILTER_CFG table=filter family=2 entries=4<br>
+Mar 12 23:24:24 Sailfish audit[2806]: SYSCALL arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=0 a2=40 a3=2e6b00 items=0 ppid=1 pid=2<br>
+806 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="connmand" exe="/usr/sbin/conn<br>
+mand" subj=kernel key=(null)<br>
+Mar 12 23:24:24 Sailfish audit: AUDIT1327 proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E6C3830323131002D2D6E6F6261636B747<br>
+2616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+Mar 12 23:24:24 Sailfish kernel: diag: In diag_send_feature_mask_update, control channel is not open, p: 2, 0000000000000000<br>
+Mar 12 23:24:24 Sailfish unknown: type=1300 audit(1552425864.795:13): arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=0 a2=40<br>
+a3=2e6b00 items=0 ppid=1 pid=2806 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm=<br>
+"connmand" exe="/usr/sbin/connmand" subj=kernel key=(null)<br>
+Mar 12 23:24:24 Sailfish unknown: type=1327 audit(1552425864.795:13): proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006<br>
+E6C3830323131002D2D6E6F6261636B7472616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+Mar 12 23:24:24 Sailfish unknown: type=1320 audit(1552425864.795:13):<br>
+Mar 12 23:24:24 Sailfish audit: NETFILTER_CFG table=filter family=2 entries=8<br>
+Mar 12 23:24:24 Sailfish audit[2806]: SYSCALL arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=0 a2=40 a3=2e6f60 items=0 ppid=1 pid=2<br>
+806 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="connmand" exe="/usr/sbin/conn<br>
+mand" subj=kernel key=(null)<br>
+Mar 12 23:24:24 Sailfish audit: AUDIT1327 proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E6C3830323131002D2D6E6F6261636B747<br>
+2616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+Mar 12 23:24:24 Sailfish unknown: type=1325 audit(1552425864.831:14): table=filter family=2 entries=8<br>
+Mar 12 23:24:24 Sailfish unknown: type=1300 audit(1552425864.831:14): arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=0 a2=40<br>
+a3=2e6f60 items=0 ppid=1 pid=2806 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm=<br>
+"connmand" exe="/usr/sbin/connmand" subj=kernel key=(null)<br>
+Mar 12 23:24:24 Sailfish unknown: type=1327 audit(1552425864.831:14): proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006<br>
+E6C3830323131002D2D6E6F6261636B7472616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+Mar 12 23:24:24 Sailfish unknown: type=1320 audit(1552425864.831:14):<br>
+Mar 12 23:24:24 Sailfish kernel: msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: mux SLIM_0_RX AANC MUX has no paths<br>
+Mar 12 23:24:24 Sailfish kernel: wcd-spmi-core msm8x16_wcd_codec-11: ASoC: mux RX3 MIX1 INP3 has no paths<br>
+Mar 12 23:24:24 Sailfish kernel: wcd-spmi-core msm8x16_wcd_codec-11: ASoC: mux RX2 MIX1 INP3 has no paths<br>
+Mar 12 23:24:24 Sailfish kernel: msm_thermal:set_enabled enabled = 0<br>
+Mar 12 23:24:24 Sailfish kernel: audit: audit_lost=1 audit_rate_limit=20 audit_backlog_limit=64<br>
+Mar 12 23:24:24 Sailfish kernel: audit: rate limit exceeded<br>
+Mar 12 23:24:24 Sailfish unknown: type=1325 audit(1552425864.859:15): table=filter family=10 entries=9<br>
+Mar 12 23:24:24 Sailfish audit: NETFILTER_CFG table=filter family=10 entries=9<br>
+Mar 12 23:24:24 Sailfish systemd[1]: Started Load wifi module.<br>
+Mar 12 23:24:24 Sailfish kernel: subsys-restart: __subsystem_get(): Changing subsys fw_name to modem<br>
+Mar 12 23:24:24 Sailfish kernel: IPA received MPSS BEFORE_POWERUP<br>
+Mar 12 23:24:24 Sailfish kernel: ipa ipa2_uc_state_check:301 uC is not loaded<br>
+Mar 12 23:24:24 Sailfish kernel: ipa ipa_sps_irq_control_all:938 EP (5) not allocated.<br>
+Mar 12 23:24:24 Sailfish kernel: IPA BEFORE_POWERUP handling is complete<br>
+Mar 12 23:24:24 Sailfish kernel: msm8952-asoc-wcd c051000.sound: control 3:0:0:IEC958 Playback PCM Stream:0 is already present<br>
+Mar 12 23:24:24 Sailfish kernel: msm-hdmi-dba-codec-rx soc:qcom,msm-hdmi-dba-codec-rx: ASoC: Failed to add IEC958 Playback PCM Stre<br>
+am: -16<br>
+Mar 12 23:24:24 Sailfish kernel: msm_dba_get_probed_device: Device not found (adv7533, 0)<br>
+Mar 12 23:24:24 Sailfish kernel: msm_dba_register_client: Device not found (adv7533, 0)<br>
+Mar 12 23:24:24 Sailfish kernel: msm_hdmi_dba_codec_rx_init_dba: error in registering audio client 0<br>
+Mar 12 23:24:24 Sailfish kernel: wcnss_wlan_ctrl_probe: SMD ctrl channel up<br>
+Mar 12 23:24:24 Sailfish kernel: wcnss: version 01050102<br>
+Mar 12 23:24:24 Sailfish kernel: wcnss: schedule dnld work for pronto<br>
+Mar 12 23:24:24 Sailfish kernel: wcnss: build version CNSS-PR-4-0-00328<br>
+Mar 12 23:24:24 Sailfish droid-hal-init: Starting service 'msm_irqbalance'...<br>
+Mar 12 23:24:25 Sailfish kernel: wlan: module is from the staging directory, the quality is unknown, you have been warned.<br>
+Mar 12 23:24:25 Sailfish kernel: pil-q6v5-mss 4080000.qcom,mss: modem: loading from 0x0000000086c00000 to 0x000000008c200000<br>
+Mar 12 23:24:25 Sailfish systemd-logind[2632]: New session 1 of user nemo.<br>
+Mar 12 23:24:25 Sailfish kernel: input: msm8953-snd-card-mtp Headset Jack as /devices/soc/c051000.sound/sound/card0/input7<br>
+Mar 12 23:24:25 Sailfish kernel: input: msm8953-snd-card-mtp Button Jack as /devices/soc/c051000.sound/sound/card0/input8<br>
+Mar 12 23:24:25 Sailfish udisksd[2629]: Acquired the name org.freedesktop.UDisks2 on the system message bus<br>
+Mar 12 23:24:25 Sailfish systemd[1]: Started Disk Manager.<br>
+Mar 12 23:24:25 Sailfish systemd-udevd[712]: unknown key 'DEVLINKS' in /lib/udev/rules.d/999-android-system.rules:741<br>
+Mar 12 23:24:25 Sailfish kernel: wlan: loading driver v3.0.11.66<br>
+Mar 12 23:24:25 Sailfish systemd-udevd[712]: invalid rule '/lib/udev/rules.d/999-android-system.rules:741'<br>
+Mar 12 23:24:25 Sailfish systemd-udevd[712]: unknown key 'DEVLINKS' in /lib/udev/rules.d/999-android-system.rules:746<br>
+Mar 12 23:24:25 Sailfish systemd-udevd[712]: invalid rule '/lib/udev/rules.d/999-android-system.rules:746'<br>
+Mar 12 23:24:25 Sailfish systemd-udevd[712]: unknown key 'DEVLINKS' in /lib/udev/rules.d/999-android-system.rules:751<br>
+Mar 12 23:24:25 Sailfish systemd-udevd[712]: invalid rule '/lib/udev/rules.d/999-android-system.rules:751'<br>
+Mar 12 23:24:25 Sailfish systemd[1]: Reached target Sound Card.<br>
+Mar 12 23:24:25 Sailfish systemd[1]: Started Session 1 of user nemo.<br>
+Mar 12 23:24:25 Sailfish systemd[1]: Starting User Manager for UID 100000...<br>
+Mar 12 23:24:25 Sailfish droid-hal-init: Service 'droid_init_done' (pid 2611) exited with status 0<br>
+Mar 12 23:24:25 Sailfish droid-hal-init: Service 'config_bluetooth' (pid 2837) exited with status 0<br>
+Mar 12 23:24:25 Sailfish systemd[3245]: pam_unix(systemd-user:account): account nemo has password changed in future<br>
+Mar 12 23:24:25 Sailfish systemd[3245]: pam_unix(systemd-user:session): session opened for user nemo by (uid=0)<br>
+Mar 12 23:24:25 Sailfish validate-user[3245]: /usr/lib/startup/validate-user checking  100000<br>
+Mar 12 23:24:25 Sailfish connmand[2806]: Creation of /var/lib/connman/global_proxy watch failed<br>
+Mar 12 23:24:25 Sailfish dbus[2443]: [system] Activating via systemd: service name='net.connman.vpn' unit='connman-vpn.service'<br>
+Mar 12 23:24:25 Sailfish systemd[3266]: pam_unix(systemd-user:session): session closed for user nemo<br>
+Mar 12 23:24:25 Sailfish systemd[1]: sys-fs-pstore.mount: Cannot add dependency job, ignoring: Unit sys-fs-pstore.mount failed to l<br>
+oad: Invalid argument. See system logs and 'systemctl status sys-fs-pstore.mount' for details.<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: pam_unix(systemd-user:account): account nemo has password changed in future<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: pam_unix(systemd-user:session): session opened for user nemo by (uid=0)<br>
+Mar 12 23:24:25 Sailfish droid-hal-init: Service 'energy-awareness' (pid 2858) exited with status 0<br>
+Mar 12 23:24:25 Sailfish dbus[2443]: [system] Activating via systemd: service name='org.freedesktop.hostname1' unit='dbus-org.freed<br>
+esktop.hostname1.service'<br>
+Mar 12 23:24:25 Sailfish systemd[1]: Started Connection service.<br>
+Mar 12 23:24:25 Sailfish dbus[2443]: [system] Activating via systemd: service name='fi.w1.wpa_supplicant1' unit='wpa_supplicant.ser<br>
+vice'<br>
+Mar 12 23:24:25 Sailfish systemd[1]: sys-fs-pstore.mount: Cannot add dependency job, ignoring: Unit sys-fs-pstore.mount failed to l<br>
+oad: Invalid argument. See system logs and 'systemctl status sys-fs-pstore.mount' for details.<br>
+Mar 12 23:24:25 Sailfish systemd[1]: sys-fs-pstore.mount: Cannot add dependency job, ignoring: Unit sys-fs-pstore.mount failed to l<br>
+oad: Invalid argument. See system logs and 'systemctl status sys-fs-pstore.mount' for details.<br>
+Mar 12 23:24:25 Sailfish systemd[1]: Starting WPA Supplicant daemon...<br>
+Mar 12 23:24:25 Sailfish systemd[1]: Starting Hostname Service...<br>
+Mar 12 23:24:25 Sailfish systemd[1]: Starting ConnMan VPN service...<br>
+Mar 12 23:24:25 Sailfish systemd[1]: Starting Bluetooth service...<br>
+Mar 12 23:24:25 Sailfish kernel: pil-q6v5-mss 4080000.qcom,mss: Debug policy not present - msadp. Continue.<br>
+Mar 12 23:24:25 Sailfish kernel: pil-q6v5-mss 4080000.qcom,mss: Loading MBA and DP (if present) from 0x00000000f4b00000 to 0x00000000f4c0<br>
+0000 size 100000<br>
+Mar 12 23:24:25 Sailfish sensorfwd[2807]: HYBRIS CTL setActive23=ORIENTATION, true) - -1=Unknown error -1<br>
+Mar 12 23:24:25 Sailfish dbus[2443]: [system] Successfully activated service 'fi.w1.wpa_supplicant1'<br>
+Mar 12 23:24:25 Sailfish systemd[1]: Started WPA Supplicant daemon.<br>
+Mar 12 23:24:25 Sailfish wpa_supplicant[3398]: Successfully initialized wpa_supplicant<br>
+Mar 12 23:24:25 Sailfish connman-vpnd[3406]: Connection Manager VPN daemon version 1.32+git61<br>
+Mar 12 23:24:25 Sailfish dbus[2443]: [system] Successfully activated service 'net.connman.vpn'<br>
+Mar 12 23:24:25 Sailfish systemd[1]: Started ConnMan VPN service.<br>
+Mar 12 23:24:25 Sailfish dbus[2443]: [system] Successfully activated service 'org.freedesktop.hostname1'<br>
+Mar 12 23:24:25 Sailfish systemd[1]: Started Hostname Service.<br>
+Mar 12 23:24:25 Sailfish bluetoothd[3421]: bluetoothd[3421]: Bluetooth daemon 5.47<br>
+Mar 12 23:24:25 Sailfish bluetoothd[3421]: Bluetooth daemon 5.47<br>
+Mar 12 23:24:25 Sailfish ofonod[2637]: Register Profile interface failed: /bluetooth/profile/hfp_ag<br>
+Mar 12 23:24:25 Sailfish bluetoothd[3421]: Starting SDP server<br>
+Mar 12 23:24:25 Sailfish systemd[1]: Started Bluetooth service.<br>
+Mar 12 23:24:25 Sailfish systemd[1]: Reached target Network.<br>
+Mar 12 23:24:25 Sailfish bluetoothd[3421]: bluetoothd[3421]: Starting SDP server<br>
+Mar 12 23:24:25 Sailfish kernel: Bluetooth: BNEP (Ethernet Emulation) ver 1.3<br>
+Mar 12 23:24:25 Sailfish kernel: Bluetooth: BNEP filters: protocol multicast<br>
+Mar 12 23:24:25 Sailfish kernel: Bluetooth: BNEP socket layer initialized<br>
+Mar 12 23:24:25 Sailfish bluetoothd[3421]: Bluetooth management interface 1.12 initialized<br>
+Mar 12 23:24:25 Sailfish bluetoothd[3421]: bluetoothd[3421]: Bluetooth management interface 1.12 initialized<br>
+Mar 12 23:24:25 Sailfish kernel: pil-q6v5-mss 4080000.qcom,mss: MBA boot done<br>
+Mar 12 23:24:25 Sailfish connmand[2806]: Method "ListAdapters" with signature "" on interface "org.bluez.Manager" doesn't exist<br>
+Mar 12 23:24:25 Sailfish wait-session-to-start[2852]: In wait loop (1) - state: activating<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Reached target Sockets.<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Reached target Timers.<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Started Session root process booster socket path.<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Reached target Paths.<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Reached target Basic System.<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Reached target Booster session.<br>
+Mar 12 23:24:25 Sailfish systemd[2844]: pam_unix(autologin:session): session opened for user nemo by (uid=0)<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Startup finished in 395ms.<br>
+Mar 12 23:24:25 Sailfish systemd[2844]: pam_systemd(autologin:session): Using 60s D-Bus method call timeout<br>
+Mar 12 23:24:25 Sailfish systemd[1]: Started User Manager for UID 100000.<br>
+Mar 12 23:24:25 Sailfish systemd[2844]: pam_systemd(autologin:session): Cannot create session: Already running in a session<br>
+Mar 12 23:24:25 Sailfish rfkill[3527]: unblock set for all<br>
+Mar 12 23:24:25 Sailfish kernel: hcismd_set_enable 1<br>
+Mar 12 23:24:25 Sailfish kernel: Bluetooth: Cannot open the command channel<br>
+Mar 12 23:24:25 Sailfish /usr/libexec/mapplauncherd/booster-silica-session[2844]: Daemon: Boot mode set.<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Started OS update timer.<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Created slice -.slice.<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Starting Oneshot stuff for user...<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Starting StateFS FUSE filesystem...<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Listening on D-Bus Session Message Bus Socket.<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Starting OHM Session Agent...<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Starting Generic application launch booster...<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Starting Runs basic setup for the Jolla user before the rest of the user session is started...<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Starting Load initial part of start-up wizard before user session begins...<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Started D-Bus Session Message Bus.<br>
+Mar 12 23:24:25 Sailfish kernel: QSEECOM: qseecom_load_app: App (goodixfp) does'nt exist, loading apps for first time<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Started OHM Session Agent.<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Starting Time Daemon...<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Starting Application launch booster for Qt5...<br>
+Mar 12 23:24:25 Sailfish ofonod[2637]: [grilio-socket] ERROR! Can't connect to RILD: Connection refused<br>
+Mar 12 23:24:25 Sailfish ofonod[2637]: [grilio-socket] ERROR! Can't connect to RILD: Connection refused<br>
+Mar 12 23:24:25 Sailfish dbus-daemon[3547]: Activating via systemd: service name='com.nokia.profiled' unit='profiled.service'<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Started Generic application launch booster.<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Started StateFS FUSE filesystem.<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Starting Profile Daemon...<br>
+Mar 12 23:24:25 Sailfish dbus-daemon[3547]: Activating service name='ca.desrt.dconf'<br>
+Mar 12 23:24:25 Sailfish dbus-daemon[3547]: Successfully activated service 'ca.desrt.dconf'<br>
+Mar 12 23:24:25 Sailfish /usr/libexec/mapplauncherd/booster-qt5[3558]: Daemon: Boot mode set.<br>
+Mar 12 23:24:25 Sailfish audit: NETFILTER_CFG table=mangle family=2 entries=14<br>
+Mar 12 23:24:25 Sailfish audit[3581]: SYSCALL arch=c00000b7 syscall=208 success=yes exit=0 a0=b a1=0 a2=40 a3=7fa4814800 items=0 ppid=284<br>
+7 pid=3581 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/system<br>
+/bin/iptables" subj=kernel key=(null)<br>
+Mar 12 23:24:25 Sailfish audit: AUDIT1327 proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D74006D616E676C65002D4E0071636F6D5F7<br>
+16F735F72657365745F504F5354524F5554494E47<br>
+Mar 12 23:24:25 Sailfish kernel: QSEECOM: qseecom_load_app: App with id 5 (goodixfp) now loaded<br>
+Mar 12 23:24:25 Sailfish kernel: --------driver_init_partial start.--------<br>
+Mar 12 23:24:25 Sailfish kernel: --------gf_parse_dts start.--------<br>
+Mar 12 23:24:25 Sailfish kernel: goodix_fp soc:goodix_fp: goodix,gpio_reset 140<br>
+Mar 12 23:24:25 Sailfish kernel: goodix_fp soc:goodix_fp: goodix,gpio_irq 48<br>
+Mar 12 23:24:25 Sailfish kernel: msm8953-pinctrl 1000000.pinctrl: invalid group "gpio135" for function "blsp_spi6"<br>
+Mar 12 23:24:25 Sailfish kernel: msm8953-pinctrl 1000000.pinctrl: invalid group "gpio136" for function "blsp_spi6"<br>
+Mar 12 23:24:25 Sailfish kernel: msm8953-pinctrl 1000000.pinctrl: invalid group "gpio137" for function "blsp_spi6"<br>
+Mar 12 23:24:25 Sailfish kernel: msm8953-pinctrl 1000000.pinctrl: invalid group "gpio138" for function "blsp_spi6"<br>
+Mar 12 23:24:25 Sailfish kernel: found pin control goodixfp_reset_reset<br>
+Mar 12 23:24:25 Sailfish kernel: found pin control goodixfp_reset_active<br>
+Mar 12 23:24:25 Sailfish kernel: found pin control goodixfp_irq_active<br>
+Mar 12 23:24:25 Sailfish kernel: goodix_fp soc:goodix_fp: Selected 'goodixfp_reset_active'<br>
+Mar 12 23:24:25 Sailfish kernel: goodix_fp soc:goodix_fp: Selected 'goodixfp_irq_active'<br>
+Mar 12 23:24:25 Sailfish kernel: --------gf_parse_dts end---OK.--------<br>
+Mar 12 23:24:25 Sailfish kernel: ------------[ cut here ]------------<br>
+Mar 12 23:24:25 Sailfish kernel: WARNING: CPU: 7 PID: 2841 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xia<br>
+omi/msm8953/kernel/irq/manage.c:448 __enable_irq+0x4c/0x90()<br>
+Mar 12 23:24:25 Sailfish kernel: Unbalanced enable for IRQ 55<br>
+Mar 12 23:24:25 Sailfish kernel: Modules linked in: bnep(O) wlan(C+) hci_smd(O) bluetooth(O) compat(O) skcipher(O) autofs4<br>
+Mar 12 23:24:25 Sailfish kernel: CPU: 7 PID: 2841 Comm: gx_fpd Tainted: G        WC O   3.18.105-ElectraBlue-11.0-mido #3<br>
+Mar 12 23:24:25 Sailfish kernel: Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+Mar 12 23:24:25 Sailfish kernel: Call trace:<br>
+Mar 12 23:24:25 Sailfish kernel: [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+Mar 12 23:24:25 Sailfish kernel: [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+Mar 12 23:24:25 Sailfish kernel: [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+Mar 12 23:24:25 Sailfish kernel: [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+Mar 12 23:24:25 Sailfish kernel: [ffffffc0000a68a4] warn_slowpath_fmt+0x88/0xac<br>
+Mar 12 23:24:25 Sailfish kernel: [ffffffc000102a18] __enable_irq+0x4c/0x90<br>
+Mar 12 23:24:25 Sailfish kernel: [ffffffc000102ae0] enable_irq+0x84/0xac<br>
+Mar 12 23:24:25 Sailfish kernel: [ffffffc00082eaa4] gf_ioctl+0x268/0x4e8<br>
+Mar 12 23:24:25 Sailfish kernel: [ffffffc0001f2368] do_vfs_ioctl+0x4ec/0x5e0<br>
+Mar 12 23:24:25 Sailfish kernel: [ffffffc0001f24c8] SyS_ioctl+0x6c/0x94<br>
+Mar 12 23:24:25 Sailfish kernel: ---[ end trace baf5d4897624fa13 ]---<br>
+Mar 12 23:24:25 Sailfish kernel: goodix_fp soc:goodix_fp: Selected 'goodixfp_reset_reset'<br>
+Mar 12 23:24:25 Sailfish unknown: type=1325 audit(1552425865.959:47): table=mangle family=2 entries=14<br>
+Mar 12 23:24:25 Sailfish unknown: type=1300 audit(1552425865.959:47): arch=c00000b7 syscall=208 success=yes exit=0 a0=b a1=0 a2=40<br>
+a3=7fa4814800 items=0 ppid=2847 pid=3581 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=429496729<br>
+5 comm="iptables" exe="/system/bin/iptables" subj=kernel key=(null)<br>
+Mar 12 23:24:25 Sailfish unknown: type=1327 audit(1552425865.959:47): proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D7<br>
+4006D616E676C65002D4E0071636F6D5F716F735F72657365745F504F5354524F5554494E47<br>
+Mar 12 23:24:25 Sailfish unknown: type=1320 audit(1552425865.959:47):<br>
+Mar 12 23:24:25 Sailfish kernel: goodix_fp soc:goodix_fp: Selected 'goodixfp_reset_active'<br>
+Mar 12 23:24:25 Sailfish kernel: goodix_fp soc:goodix_fp: IRQ after reset 0<br>
+Mar 12 23:24:25 Sailfish unknown: type=1325 audit(1552425865.971:48): table=mangle family=2 entries=16<br>
+Mar 12 23:24:25 Sailfish unknown: type=1300 audit(1552425865.971:48): arch=c00000b7 syscall=208 success=yes exit=0 a0=b a1=0 a2=40<br>
+a3=7fa6e15400 items=0 ppid=2847 pid=3590 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=429496729<br>
+5 comm="iptables" exe="/system/bin/iptables" subj=kernel key=(null)<br>
+Mar 12 23:24:25 Sailfish unknown: type=1327 audit(1552425865.971:48): proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D7<br>
+4006D616E676C65002D4100504F5354524F5554494E47002D6A0071636F6D5F716F735F72657365745F504F5354524F5554494E47<br>
+Mar 12 23:24:25 Sailfish unknown: type=1320 audit(1552425865.971:48):<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Started Application launch booster for Qt5.<br>
+Mar 12 23:24:25 Sailfish audit: NETFILTER_CFG table=mangle family=2 entries=16<br>
+Mar 12 23:24:25 Sailfish audit[3590]: SYSCALL arch=c00000b7 syscall=208 success=yes exit=0 a0=b a1=0 a2=40 a3=7fa6e15400 items=0 ppid=284<br>
+7 pid=3590 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/system<br>
+/bin/iptables" subj=kernel key=(null)<br>
+Mar 12 23:24:25 Sailfish audit: AUDIT1327 proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D74006D616E676C65002D4100504F5354524<br>
+F5554494E47002D6A0071636F6D5F716F735F72657365745F504F5354524F5554494E47<br>
+Mar 12 23:24:25 Sailfish systemd[3344]: Started Runs basic setup for the Jolla user before the rest of the user session is started.<br>
+Mar 12 23:24:25 Sailfish audit: NETFILTER_CFG table=mangle family=10 entries=6<br>
+Mar 12 23:24:25 Sailfish audit[3598]: SYSCALL arch=c00000b7 syscall=208 success=yes exit=0 a0=b a1=29 a2=40 a3=7f8fe3f000 items=0 ppid=28<br>
+47 pid=3598 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="ip6tables" exe="/syst<br>
+em/bin/ip6tables" subj=kernel key=(null)<br>
+Mar 12 23:24:25 Sailfish audit: AUDIT1327 proctitle=2F73797374656D2F62696E2F6970367461626C6573002D77002D74006D616E676C65002D4E0071636F6D5<br>
+F716F735F72657365745F504F5354524F5554494E47<br>
+Mar 12 23:24:25 Sailfish unknown: type=1325 audit(1552425865.987:49): table=mangle family=10 entries=6<br>
+Mar 12 23:24:25 Sailfish unknown: type=1300 audit(1552425865.987:49): arch=c00000b7 syscall=208 success=yes exit=0 a0=b a1=29 a2=40<br>
+ a3=7f8fe3f000 items=0 ppid=2847 pid=3598 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=42949672<br>
+95 comm="ip6tables" exe="/system/bin/ip6tables" subj=kernel key=(null)<br>
+Mar 12 23:24:25 Sailfish unknown: type=1327 audit(1552425865.987:49): proctitle=2F73797374656D2F62696E2F6970367461626C6573002D77002<br>
+D74006D616E676C65002D4E0071636F6D5F716F735F72657365745F504F5354524F5554494E47<br>
+Mar 12 23:24:25 Sailfish unknown: type=1320 audit(1552425865.987:49):<br>
+Mar 12 23:24:26 Sailfish audit: NETFILTER_CFG table=mangle family=10 entries=8<br>
+Mar 12 23:24:26 Sailfish audit[3602]: SYSCALL arch=c00000b7 syscall=208 success=yes exit=0 a0=b a1=29 a2=40 a3=7f88847000 items=0 ppid=28<br>
+47 pid=3602 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="ip6tables" exe="/syst<br>
+em/bin/ip6tables" subj=kernel key=(null)<br>
+Mar 12 23:24:26 Sailfish audit: AUDIT1327 proctitle=2F73797374656D2F62696E2F6970367461626C6573002D77002D74006D616E676C65002D4100504F53545<br>
+24F5554494E47002D6A0071636F6D5F716F735F72657365745F504F5354524F5554494E47<br>
+Mar 12 23:24:26 Sailfish dbus-daemon[3547]: Successfully activated service 'com.nokia.profiled'<br>
+Mar 12 23:24:26 Sailfish systemd[3344]: Started Profile Daemon.<br>
+Mar 12 23:24:26 Sailfish unknown: type=1325 audit(1552425866.007:50): table=mangle family=10 entries=8<br>
+Mar 12 23:24:26 Sailfish unknown: type=1300 audit(1552425866.007:50): arch=c00000b7 syscall=208 success=yes exit=0 a0=b a1=29 a2=40<br>
+ a3=7f88847000 items=0 ppid=2847 pid=3602 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=42949672<br>
+95 comm="ip6tables" exe="/system/bin/ip6tables" subj=kernel key=(null)<br>
+Mar 12 23:24:26 Sailfish unknown: type=1327 audit(1552425866.007:50): proctitle=2F73797374656D2F62696E2F6970367461626C6573002D77002<br>
+D74006D616E676C65002D4100504F5354524F5554494E47002D6A0071636F6D5F716F735F72657365745F504F5354524F5554494E47<br>
+Mar 12 23:24:26 Sailfish unknown: type=1320 audit(1552425866.007:50):<br>
+Mar 12 23:24:26 Sailfish audit: NETFILTER_CFG table=mangle family=2 entries=17<br>
+Mar 12 23:24:26 Sailfish audit[3609]: SYSCALL arch=c00000b7 syscall=208 success=yes exit=0 a0=b a1=0 a2=40 a3=7f9943b000 items=0 ppid=284<br>
+7 pid=3609 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/system<br>
+/bin/iptables" subj=kernel key=(null)<br>
+Mar 12 23:24:26 Sailfish audit: AUDIT1327 proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D74006D616E676C65002D4E0071636F6D5F7<br>
+16F735F66696C7465725F504F5354524F5554494E47<br>
+Mar 12 23:24:26 Sailfish unknown: type=1325 audit(1552425866.019:51): table=mangle family=2 entries=17<br>
+Mar 12 23:24:26 Sailfish unknown: type=1300 audit(1552425866.019:51): arch=c00000b7 syscall=208 success=yes exit=0 a0=b a1=0 a2=40<br>
+a3=7f9943b000 items=0 ppid=2847 pid=3609 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=429496729<br>
+5 comm="iptables" exe="/system/bin/iptables" subj=kernel key=(null)<br>
+Mar 12 23:24:26 Sailfish unknown: type=1327 audit(1552425866.019:51): proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D7<br>
+4006D616E676C65002D4E0071636F6D5F716F735F66696C7465725F504F5354524F5554494E47<br>
+Mar 12 23:24:26 Sailfish unknown: type=1320 audit(1552425866.019:51):<br>
+Mar 12 23:24:26 Sailfish kernel: audit: audit_lost=136 audit_rate_limit=20 audit_backlog_limit=64<br>
+Mar 12 23:24:26 Sailfish kernel: audit: rate limit exceeded<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: library "libgui.so" wasn't loaded and RTLD_NOLOAD prevented it<br>
+Mar 12 23:24:26 Sailfish systemd[3344]: Started Time Daemon.<br>
+Mar 12 23:24:26 Sailfish DSME[2619]: IPHB: alarm state from timed: powerup=0, resume=0<br>
+Mar 12 23:24:26 Sailfish kernel: msm_pm_qos_add_request: add request<br>
+Mar 12 23:24:26 Sailfish kernel: msm_cci_init:1426: hw_version = 0x10020005<br>
+Mar 12 23:24:26 Sailfish kernel: s5k5e8_ofilm probe succeeded<br>
+Mar 12 23:24:26 Sailfish kernel: msm_cci_init:1426: hw_version = 0x10020005<br>
+Mar 12 23:24:26 Sailfish kernel: s5k3l8_ofilm probe succeeded<br>
+Mar 12 23:24:26 Sailfish kernel: msm_csid_init: CSID_VERSION = 0x30050001<br>
+Mar 12 23:24:26 Sailfish kernel: msm_csid_irq CSID2_IRQ_STATUS_ADDR = 0x800<br>
+Mar 12 23:24:26 Sailfish kernel: msm_csid_init: CSID_VERSION = 0x30050001<br>
+Mar 12 23:24:26 Sailfish kernel: msm_csid_irq CSID0_IRQ_STATUS_ADDR = 0x800<br>
+Mar 12 23:24:26 Sailfish kernel: pil-q6v5-mss 4080000.qcom,mss: modem: Brought out of reset<br>
+Mar 12 23:24:26 Sailfish kernel: Doesn't support control clock.<br>
+Mar 12 23:24:26 Sailfish kernel: This kernel doesn't support control clk in AP<br>
+Mar 12 23:24:26 Sailfish droid-hal-init: Service 'qcom-sh' (pid 2927) exited with status 0<br>
+Mar 12 23:24:26 Sailfish kernel: pil-q6v5-mss 4080000.qcom,mss: modem: Power/Clock ready interrupt received<br>
+Mar 12 23:24:26 Sailfish kernel: pil-q6v5-mss 4080000.qcom,mss: Subsystem error monitoring/handling services are up<br>
+Mar 12 23:24:26 Sailfish kernel: IPA received MPSS AFTER_POWERUP<br>
+Mar 12 23:24:26 Sailfish kernel: IPA AFTER_POWERUP handling is complete<br>
+Mar 12 23:24:26 Sailfish kernel: M-Notify: General: 7<br>
+Mar 12 23:24:26 Sailfish kernel: IRQ has been disabled.<br>
+Mar 12 23:24:26 Sailfish kernel: goodix_fp soc:goodix_fp: Selected 'goodixfp_reset_reset'<br>
+Mar 12 23:24:26 Sailfish kernel: goodix_fp soc:goodix_fp: Selected 'goodixfp_reset_active'<br>
+Mar 12 23:24:26 Sailfish kernel: goodix_fp soc:goodix_fp: IRQ after reset 0<br>
+Mar 12 23:24:26 Sailfish kernel: QSEECOM: qseecom_unload_app: App id 5 now unloaded<br>
+Mar 12 23:24:26 Sailfish kernel: gf:[info]  entergf_cleanup<br>
+Mar 12 23:24:26 Sailfish kernel: gf:remove irq_gpio success<br>
+Mar 12 23:24:26 Sailfish kernel: gf:remove reset_gpio success<br>
+Mar 12 23:24:26 Sailfish kernel: gf:gx  fingerprint_pinctrl  release success<br>
+Mar 12 23:24:26 Sailfish kernel: ---- power off ----<br>
+Mar 12 23:24:26 Sailfish droid-hal-init: Service 'gx_fpd' is being killed...<br>
+Mar 12 23:24:26 Sailfish droid-hal-init: Starting service 'fingerprintd'...<br>
+Mar 12 23:24:26 Sailfish droid-hal-init: couldn't write 3701 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:26 Sailfish droid-hal-init: Service 'gx_fpd' (pid 2841) killed by signal 9<br>
+Mar 12 23:24:26 Sailfish droid-hal-init: Service 'gx_fpd' (pid 2841) killing any children in process group<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: == hwcomposer module ==<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: * Address: 0xed7ce004<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: * Module API Version: 2<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: * HAL API Version: 0<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: * Identifier: hwcomposer<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: * Name: QTI Hardware Composer Module<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: * Author: CodeAurora Forum<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: == hwcomposer module ==<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: library "libsdmextension.so" not found<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: library "libsdmextension.so" not found<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: library "libsdm-color.so" not found<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: library "libsdmextension.so" not found<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: library "libsdmextension.so" not found<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: library "libsdm-diag.so" not found<br>
+Mar 12 23:24:26 Sailfish kernel: [info] goodix_fb_state_chg_callback go to the goodix_fb_state_chg_callback value = 16<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: [D] unknown:0 - EGLFS: Screen Info<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: [D] unknown:0 -  - Physical size: QSizeF(69.0982, 122.226)<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: [D] unknown:0 -  - Screen size: QSize(1080, 1920)<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: [D] unknown:0 -  - Screen depth: 32<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: == hwcomposer device ==<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: * Version: 1050001 (interpreted as 1050001)<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: * Module: 0xed7ce004<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: == hwcomposer device ==<br>
+Mar 12 23:24:26 Sailfish kernel: sysmon-qmi: sysmon_clnt_svc_arrive: Connection established between QMI handle and modem's SSCTL service<br>
+Mar 12 23:24:26 Sailfish oneshot[3531]: Could not stat() file '/proc/3706', Error when getting information for file ?/proc/3706?: No such<br>
+ file or directoryCould not stat() file '/proc/3708', Error when getting information for file ?/proc/3708?: No such file or directoryFoun<br>
+d 0 PIDs?<br>
+Mar 12 23:24:26 Sailfish kernel: subsys-pil-tz soc:qcom,kgsl-hyp: a506_zap: loading from 0x000000008f000000 to 0x000000008f002000<br>
+Mar 12 23:24:26 Sailfish oneshot[3531]: Setting database locations<br>
+Mar 12 23:24:26 Sailfish oneshot[3531]: Checking database directories exist<br>
+Mar 12 23:24:26 Sailfish oneshot[3531]: Checking database version<br>
+Mar 12 23:24:26 Sailfish oneshot[3531]: Could not find database version file:'/home/nemo/.cache/tracker/db-version.txt'<br>
+Mar 12 23:24:26 Sailfish oneshot[3531]: Current databases are either old or no databases are set up yet<br>
+Mar 12 23:24:26 Sailfish oneshot[3531]: A reindex will be forced<br>
+Mar 12 23:24:26 Sailfish oneshot[3531]: Creating version file '/home/nemo/.cache/tracker/db-version.txt'<br>
+Mar 12 23:24:26 Sailfish oneshot[3531]: Checking database files exist<br>
+Mar 12 23:24:26 Sailfish oneshot[3531]: Removing all database/storage files<br>
+Mar 12 23:24:26 Sailfish oneshot[3531]: Removing database:'/home/nemo/.cache/tracker/meta.db'<br>
+Mar 12 23:24:26 Sailfish oneshot[3531]: Removing db-locale file:'/home/nemo/.cache/tracker/db-locale.txt'<br>
+Mar 12 23:24:26 Sailfish kernel: MSM-CPP cpp_init_hardware:869 CPP HW Version: 0x40030003<br>
+Mar 12 23:24:26 Sailfish kernel: MSM-CPP cpp_init_hardware:887 stream_cnt:0<br>
+Mar 12 23:24:26 Sailfish oneshot[3531]: oneshot: /etc/oneshot.d/100000/tracker-configs.sh - OK<br>
+Mar 12 23:24:26 Sailfish kernel: subsys-pil-tz soc:qcom,kgsl-hyp: a506_zap: Brought out of reset<br>
+Mar 12 23:24:26 Sailfish oneshot[3531]: Not initializing tracker index on device<br>
+Mar 12 23:24:26 Sailfish kernel: devfreq soc:qcom,kgsl-busmon: Couldn't update frequency transition information.<br>
+Mar 12 23:24:26 Sailfish oneshot[3531]: oneshot: /etc/oneshot.d/100000/zz-initialize-tracker-index - OK<br>
+Mar 12 23:24:26 Sailfish systemd[3344]: Started Oneshot stuff for user.<br>
+Mar 12 23:24:26 Sailfish jolla-startupwizard-pre-user-session[3542]: [W] unknown:0 - QEglScreen 0x2321f0<br>
+Mar 12 23:24:26 Sailfish kernel: apr_tal:Modem Is Up<br>
+Mar 12 23:24:26 Sailfish mce[2275]: modules/proximity.c: report_proximity(): state: CLOSED - OPEN<br>
+Mar 12 23:24:26 Sailfish kernel: diag: In diag_send_feature_mask_update, control channel is not open, p: 0, 0000000000000000<br>
+Mar 12 23:24:26 Sailfish kernel: Sending QMI_IPA_INIT_MODEM_DRIVER_REQ_V01<br>
+Mar 12 23:24:26 Sailfish kernel: ipa-wan handle_indication_req:133 not send indication<br>
+Mar 12 23:24:26 Sailfish kernel: ipa ipa_uc_response_hdlr:461 IPA uC loaded<br>
+Mar 12 23:24:26 Sailfish kernel: ipa ipa_sps_irq_control_all:938 EP (5) not allocated.<br>
+Mar 12 23:24:26 Sailfish kernel: QMI_IPA_INIT_MODEM_DRIVER_REQ_V01 response received<br>
+Mar 12 23:24:26 Sailfish kernel: ipa ipa_sps_irq_control_all:938 EP (5) not allocated.<br>
+Mar 12 23:24:26 Sailfish kernel: ipa ipa_uc_wdi_event_log_info_handler:322 WDI feature missing 0x1<br>
+Mar 12 23:24:26 Sailfish kernel: ipa ipa_uc_ntn_event_log_info_handler:39 NTN feature missing 0x1<br>
+Mar 12 23:24:26 Sailfish kernel: ipa ipa_sps_irq_control_all:938 EP (5) not allocated.<br>
+Mar 12 23:24:26 Sailfish kernel: msm_pm_qos_update_request: update request 100<br>
+Mar 12 23:24:26 Sailfish kernel: msm_csid_init: CSID_VERSION = 0x30050001<br>
+Mar 12 23:24:26 Sailfish kernel: msm_csid_irq CSID0_IRQ_STATUS_ADDR = 0x800<br>
+Mar 12 23:24:26 Sailfish kernel: MSM-CPP cpp_init_hardware:869 CPP HW Version: 0x40030003<br>
+Mar 12 23:24:26 Sailfish kernel: MSM-CPP cpp_init_hardware:887 stream_cnt:0<br>
+Mar 12 23:24:26 Sailfish kernel: msm_cci_init:1426: hw_version = 0x10020005<br>
+Mar 12 23:24:26 Sailfish wait-session-to-start[2852]: In wait loop (2) - state: active<br>
+Mar 12 23:24:26 Sailfish wait-session-to-start[2852]: user@100000.service started<br>
+Mar 12 23:24:26 Sailfish systemd[1]: Started Start User Session.<br>
+Mar 12 23:24:26 Sailfish systemd[1]: Starting Inform dsme about runlevel change...<br>
+Mar 12 23:24:26 Sailfish runlevel-change-done[3859]: Reached new runlevel USER<br>
+Mar 12 23:24:26 Sailfish systemd[1]: Started Inform dsme about runlevel change.<br>
+Mar 12 23:24:26 Sailfish rfkill[3868]: unblock set for all<br>
+Mar 12 23:24:26 Sailfish kernel: msm_pm_qos_update_request: update request -1<br>
+Mar 12 23:24:26 Sailfish kernel: hcismd_set_enable 1<br>
+Mar 12 23:24:26 Sailfish kernel: Bluetooth: Cannot open the command channel<br>
+Mar 12 23:24:27 Sailfish kernel: scm_call failed: func id 0x42000c16, ret: -1, syscall returns: 0x0, 0x0, 0x0<br>
+Mar 12 23:24:27 Sailfish kernel: hyp_assign_table: Failed to assign memory protection, ret = -5<br>
+Mar 12 23:24:27 Sailfish kernel: memshare: hyp_assign_phys failed size=2097152 err=-5<br>
+Mar 12 23:24:27 Sailfish droid-hal-init: Starting service 'ims_rtp_daemon'...<br>
+Mar 12 23:24:27 Sailfish droid-hal-init: Starting service 'imscmservice'...<br>
+Mar 12 23:24:27 Sailfish droid-hal-init: couldn't write 3996 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:27 Sailfish droid-hal-init: couldn't write 3997 to /dev/cpuset/system-background/tasks: No space left on device<br>
+Mar 12 23:24:27 Sailfish kernel: wcnss: NV download<br>
+Mar 12 23:24:27 Sailfish kernel: wcnss: NV bin size: 31719, total_fragments: 11<br>
+Mar 12 23:24:27 Sailfish kernel: wcnss: no space available for smd frame<br>
+Mar 12 23:24:27 Sailfish kernel: wcnss: no space available for smd frame<br>
+Mar 12 23:24:27 Sailfish kernel: wcnss: no space available for smd frame<br>
+Mar 12 23:24:27 Sailfish kernel: wcnss: no space available for smd frame<br>
+Mar 12 23:24:27 Sailfish rfkill[4126]: unblock set for all<br>
+Mar 12 23:24:27 Sailfish kernel: hcismd_set_enable 1<br>
+Mar 12 23:24:27 Sailfish kernel: Bluetooth: opening HCI-SMD channel :APPS_RIVA_BT_ACL<br>
+Mar 12 23:24:27 Sailfish kernel: Bluetooth: opening HCI-SMD channel :APPS_RIVA_BT_CMD<br>
+Mar 12 23:24:27 Sailfish kernel: Bluetooth: HCI device registration is starting<br>
+Mar 12 23:24:27 Sailfish systemd[1]: Reached target Bluetooth.<br>
+Mar 12 23:24:27 Sailfish kernel: msm_pm_qos_update_request: update request 100<br>
+Mar 12 23:24:27 Sailfish kernel: msm_csid_init: CSID_VERSION = 0x30050001<br>
+Mar 12 23:24:27 Sailfish kernel: msm_csid_irq CSID2_IRQ_STATUS_ADDR = 0x800<br>
+Mar 12 23:24:27 Sailfish kernel: MSM-CPP cpp_init_hardware:869 CPP HW Version: 0x40030003<br>
+Mar 12 23:24:27 Sailfish kernel: MSM-CPP cpp_init_hardware:887 stream_cnt:0<br>
+Mar 12 23:24:27 Sailfish ofonod[2637]: RIL version 13<br>
+Mar 12 23:24:27 Sailfish kernel: msm_pm_qos_update_request: update request -1<br>
+Mar 12 23:24:27 Sailfish kernel: msm_cci_init:1426: hw_version = 0x10020005<br>
+Mar 12 23:24:27 Sailfish kernel: ipa ipa_sps_irq_control_all:938 EP (5) not allocated.<br>
+Mar 12 23:24:27 Sailfish kernel: ipa ipa_sps_irq_control_all:938 EP (5) not allocated.<br>
+Mar 12 23:24:27 Sailfish kernel: ipa-wan ipa_wwan_ioctl:1542 get AGG size 8192 count 10<br>
+Mar 12 23:24:27 Sailfish kernel: ipa ipa_sps_irq_control_all:938 EP (5) not allocated.<br>
+Mar 12 23:24:27 Sailfish kernel: ipa ipa_assign_policy:3112 get close-by 8192<br>
+Mar 12 23:24:27 Sailfish kernel: ipa ipa_assign_policy:3118 set rx_buff_sz 7808<br>
+Mar 12 23:24:27 Sailfish kernel: ipa ipa_assign_policy:3141 set aggr_limit 6<br>
+Mar 12 23:24:27 Sailfish kernel: ipa-wan ipa_wwan_ioctl:1443 dev(rmnet_data0) register to IPA<br>
+Mar 12 23:24:27 Sailfish audit: NETFILTER_CFG table=mangle family=2 entries=20<br>
+Mar 12 23:24:27 Sailfish audit[4206]: SYSCALL arch=c00000b7 syscall=208 success=yes exit=0 a0=c a1=0 a2=40 a3=7f8d839e00 items=0 ppid=284<br>
+7 pid=4206 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/system<br>
+/bin/iptables" subj=kernel key=(null)<br>
+Mar 12 23:24:27 Sailfish audit: AUDIT1327 proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D74006D616E676C65002D4100505245524F5<br>
+554494E47002D6D00736F636B6574002D2D6E6F77696C6463617264002D2D726573746F72652D736B6D61726B002D6A00414343455054<br>
+Mar 12 23:24:27 Sailfish unknown: type=1325 audit(1552425867.991:55): table=mangle family=2 entries=20<br>
+Mar 12 23:24:27 Sailfish unknown: type=1300 audit(1552425867.991:55): arch=c00000b7 syscall=208 success=yes exit=0 a0=c a1=0 a2=40<br>
+a3=7f8d839e00 items=0 ppid=2847 pid=4206 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=429496729<br>
+5 comm="iptables" exe="/system/bin/iptables" subj=kernel key=(null)<br>
+Mar 12 23:24:28 Sailfish unknown: type=1327 audit(1552425867.991:55): proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D7<br>
+4006D616E676C65002D4100505245524F5554494E47002D6D00736F636B6574002D2D6E6F77696C6463617264002D2D726573746F72652D736B6D61726B002D6A00414343<br>
+455054<br>
+Mar 12 23:24:28 Sailfish unknown: type=1320 audit(1552425867.991:55):<br>
+Mar 12 23:24:28 Sailfish droid-hal-init: property_set("ro.ril.svlte1x", "false") failed<br>
+Mar 12 23:24:28 Sailfish droid-hal-init: property_set("ro.ril.svdo", "false") failed<br>
+Mar 12 23:24:28 Sailfish audit: NETFILTER_CFG table=mangle family=2 entries=21<br>
+Mar 12 23:24:28 Sailfish audit[4207]: SYSCALL arch=c00000b7 syscall=208 success=yes exit=0 a0=c a1=0 a2=40 a3=7fb5c39e00 items=0 ppid=284<br>
+7 pid=4207 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/system<br>
+/bin/iptables" subj=kernel key=(null)<br>
+Mar 12 23:24:28 Sailfish audit: AUDIT1327 proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D74006D616E676C65002D4400505245524F5<br>
+554494E47002D6D00736F636B6574002D2D6E6F77696C6463617264002D2D726573746F72652D736B6D61726B002D6A00414343455054<br>
+Mar 12 23:24:28 Sailfish unknown: type=1325 audit(1552425868.003:56): table=mangle family=2 entries=21<br>
+Mar 12 23:24:28 Sailfish unknown: type=1300 audit(1552425868.003:56): arch=c00000b7 syscall=208 success=yes exit=0 a0=c a1=0 a2=40<br>
+a3=7fb5c39e00 items=0 ppid=2847 pid=4207 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=429496729<br>
+5 comm="iptables" exe="/system/bin/iptables" subj=kernel key=(null)<br>
+Mar 12 23:24:28 Sailfish unknown: type=1327 audit(1552425868.003:56): proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D7<br>
+4006D616E676C65002D4400505245524F5554494E47002D6D00736F636B6574002D2D6E6F77696C6463617264002D2D726573746F72652D736B6D61726B002D6A00414343<br>
+455054<br>
+Mar 12 23:24:28 Sailfish unknown: type=1320 audit(1552425868.003:56):<br>
+Mar 12 23:24:28 Sailfish kernel: IPC_RTR: msm_ipc_router_bind: slim_daemon Do not have permissions<br>
+Mar 12 23:24:28 Sailfish audit: NETFILTER_CFG table=raw family=2 entries=3<br>
+Mar 12 23:24:28 Sailfish audit[4212]: SYSCALL arch=c00000b7 syscall=208 success=yes exit=0 a0=c a1=0 a2=40 a3=7fa7640000 items=0 ppid=284<br>
+7 pid=4212 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/system<br>
+/bin/iptables" subj=kernel key=(null)<br>
+Mar 12 23:24:28 Sailfish kernel: ipa-wan ipa_wwan_ioctl:1443 dev(rmnet_data1) register to IPA<br>
+Mar 12 23:24:28 Sailfish unknown: type=1325 audit(1552425868.015:57): table=raw family=2 entries=3<br>
+Mar 12 23:24:28 Sailfish unknown: type=1300 audit(1552425868.015:57): arch=c00000b7 syscall=208 success=yes exit=0 a0=c a1=0 a2=40<br>
+a3=7fa7640000 items=0 ppid=2847 pid=4212 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=429496729<br>
+5 comm="iptables" exe="/system/bin/iptables" subj=kernel key=(null)<br>
+Mar 12 23:24:28 Sailfish audit: AUDIT1327 proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D7400726177002D4E006E6D5F6D646D70727<br>
+8795F7261775F707265<br>
+Mar 12 23:24:28 Sailfish unknown: type=1327 audit(1552425868.015:57): proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D7<br>
+400726177002D4E006E6D5F6D646D707278795F7261775F707265<br>
+Mar 12 23:24:28 Sailfish unknown: type=1320 audit(1552425868.015:57):<br>
+Mar 12 23:24:28 Sailfish audit: NETFILTER_CFG table=mangle family=2 entries=20<br>
+Mar 12 23:24:28 Sailfish audit[4226]: SYSCALL arch=c00000b7 syscall=208 success=yes exit=0 a0=c a1=0 a2=40 a3=7f7961d000 items=0 ppid=284<br>
+7 pid=4226 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/system<br>
+/bin/iptables" subj=kernel key=(null)<br>
+Mar 12 23:24:28 Sailfish audit: AUDIT1327 proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D74006D616E676C65002D4E006E6D5F6D646<br>
+D707278795F6D6E676C5F706F7374<br>
+Mar 12 23:24:28 Sailfish unknown: type=1325 audit(1552425868.027:58): table=mangle family=2 entries=20<br>
+Mar 12 23:24:28 Sailfish unknown: type=1300 audit(1552425868.027:58): arch=c00000b7 syscall=208 success=yes exit=0 a0=c a1=0 a2=40<br>
+a3=7f7961d000 items=0 ppid=2847 pid=4226 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=429496729<br>
+5 comm="iptables" exe="/system/bin/iptables" subj=kernel key=(null)<br>
+Mar 12 23:24:28 Sailfish unknown: type=1327 audit(1552425868.027:58): proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D7<br>
+4006D616E676C65002D4E006E6D5F6D646D707278795F6D6E676C5F706F7374<br>
+Mar 12 23:24:28 Sailfish unknown: type=1320 audit(1552425868.027:58):<br>
+Mar 12 23:24:28 Sailfish audit: NETFILTER_CFG table=mangle family=2 entries=22<br>
+Mar 12 23:24:28 Sailfish audit[4228]: SYSCALL arch=c00000b7 syscall=208 success=yes exit=0 a0=c a1=0 a2=40 a3=7f8301d000 items=0 ppid=284<br>
+7 pid=4228 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/system<br>
+/bin/iptables" subj=kernel key=(null)<br>
+Mar 12 23:24:28 Sailfish audit: AUDIT1327 proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D74006D616E676C65002D4E006E6D5F6D646<br>
+D707278795F6D6E676C5F7072655F737069<br>
+Mar 12 23:24:28 Sailfish unknown: type=1325 audit(1552425868.039:59): table=mangle family=2 entries=22<br>
+Mar 12 23:24:28 Sailfish unknown: type=1300 audit(1552425868.039:59): arch=c00000b7 syscall=208 success=yes exit=0 a0=c a1=0 a2=40<br>
+a3=7f8301d000 items=0 ppid=2847 pid=4228 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=429496729<br>
+5 comm="iptables" exe="/system/bin/iptables" subj=kernel key=(null)<br>
+Mar 12 23:24:28 Sailfish unknown: type=1327 audit(1552425868.039:59): proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D7<br>
+4006D616E676C65002D4E006E6D5F6D646D707278795F6D6E676C5F7072655F737069<br>
+Mar 12 23:24:28 Sailfish unknown: type=1320 audit(1552425868.039:59):<br>
+Mar 12 23:24:28 Sailfish kernel: audit: audit_lost=148 audit_rate_limit=20 audit_backlog_limit=64<br>
+Mar 12 23:24:28 Sailfish kernel: audit: rate limit exceeded<br>
+Mar 12 23:24:28 Sailfish ofonod[2637]: RIL version 13<br>
+Mar 12 23:24:28 Sailfish kernel: ipa-wan ipa_wwan_ioctl:1443 dev(rmnet_data2) register to IPA<br>
+Mar 12 23:24:28 Sailfish kernel: ipa-wan ipa_wwan_ioctl:1443 dev(rmnet_data3) register to IPA<br>
+Mar 12 23:24:28 Sailfish kernel: ipa-wan ipa_wwan_ioctl:1443 dev(rmnet_data4) register to IPA<br>
+Mar 12 23:24:28 Sailfish kernel: ipa-wan ipa_wwan_ioctl:1443 dev(rmnet_data5) register to IPA<br>
+Mar 12 23:24:28 Sailfish kernel: ipa-wan ipa_wwan_ioctl:1443 dev(rmnet_data6) register to IPA<br>
+Mar 12 23:24:28 Sailfish kernel: ipa-wan ipa_wwan_ioctl:1443 dev(rmnet_data7) register to IPA<br>
+Mar 12 23:24:28 Sailfish mce[2275]: tklock.c: tklock_dbus_notification_beg_cb(): notification begin from name=:1.37 owner=:1.37 pid<br>
+=3542 uid=100000 gid=100000 priv=0 cmd=/usr/bin/jolla-startupwizard-pre-user-session -plugin evdevtou<br>
+Mar 12 23:24:28 Sailfish mce[2275]: tklock.c: tklock_datapipe_uiexception_type_cb(): uiexception_type = none - notif<br>
+Mar 12 23:24:28 Sailfish jolla-startupwizard-pre-user-session[3542]: [W] unknown:0 - StartupWizardManager: cannot load translation<br>
+file "startupwizard" for locale ""<br>
+Mar 12 23:24:28 Sailfish jolla-startupwizard-pre-user-session[3542]: [D] _createMdmDialog:102 - Not loading MDM terms: file:///usr/share/<br>
+jolla-startupwizard-pre-user-session/MdmTermsOfUseDialog.qml:4 module "Sailfish.Mdm" is not installed<br>
+Mar 12 23:24:28 Sailfish jolla-startupwizard-pre-user-session[3542]: [W] unknown:738 - file:///usr/lib/qt5/qml/Sailfish/Silica/Page<br>
+Stack.qml:738:17: Unable to assign [undefined] to QObject*<br>
+Mar 12 23:24:28 Sailfish mce[2275]: modules/display.c: mdy_stm_set_compositor_availability_changed(): compositor availability chang<br>
+e: pending<br>
+Mar 12 23:24:28 Sailfish mce[2275]: modules/display.c: mdy_stm_step(): forced brightness sync to: 81<br>
+Mar 12 23:24:28 Sailfish mce[2275]: modules/display.c: mdy_stm_set_compositor_availability_changed(): compositor availability chang<br>
+e: handled<br>
+Mar 12 23:24:28 Sailfish dbus-daemon[3547]: Activating via systemd: service name='org.maliit.server' unit='maliit-server.service'<br>
+Mar 12 23:24:28 Sailfish jolla-startupwizard-pre-user-session[3542]: [D] unknown:0 - unsleepDisplay<br>
+Mar 12 23:24:28 Sailfish jolla-startupwizard-pre-user-session[3542]: [W] unknown:0 - QEglWindow 0x269000: 0x2583a8 0x0<br>
+Mar 12 23:24:28 Sailfish systemd[3344]: Starting Runs basic setup for the Jolla user before the rest of the user session is started...<br>
+Mar 12 23:24:28 Sailfish rfkill[4392]: unblock set for all<br>
+Mar 12 23:24:28 Sailfish rfkill[4393]: unblock set for all<br>
+Mar 12 23:24:28 Sailfish sh[2583]: /usr/bin/droid/droid-hcismd-up.sh: line 19: hciconfig: command not found<br>
+Mar 12 23:24:28 Sailfish systemd[3344]: Started Runs basic setup for the Jolla user before the rest of the user session is started.<br>
+Mar 12 23:24:28 Sailfish kernel: hcismd_set_enable 1<br>
+Mar 12 23:24:28 Sailfish kernel: hcismd_set_enable 1<br>
+Mar 12 23:24:28 Sailfish kernel: Bluetooth: HCI device un-registration going on<br>
+Mar 12 23:24:28 Sailfish kernel: Bluetooth: Frame for unknown HCI device (hdev=NULL)<br>
+Mar 12 23:24:28 Sailfish kernel: Bluetooth: Frame for unknown HCI device (hdev=NULL)<br>
+Mar 12 23:24:28 Sailfish sh[2583]: grep: invalid option -- 'P'<br>
+Mar 12 23:24:28 Sailfish sh[2583]: BusyBox v1.29.3 (2019-03-03 16:24:36 EST) multi-call binary.<br>
+Mar 12 23:24:28 Sailfish sh[2583]: Usage: grep [-HhnlLoqvsriwFEz] [-m N] [-A/B/C N] PATTERN/-e PATTERN.../-f FILE [FILE]...<br>
+Mar 12 23:24:28 Sailfish sh[2583]: Search for PATTERN in FILEs (or stdin)<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -H        Add 'filename:' prefix<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -h        Do not add 'filename:' prefix<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -n        Add 'line_no:' prefix<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -l        Show only names of files that match<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -L        Show only names of files that don't match<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -c        Show only count of matching lines<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -o        Show only the matching part of line<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -q        Quiet. Return 0 if PATTERN is found, 1 otherwise<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -v        Select non-matching lines<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -s        Suppress open and read errors<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -r        Recurse<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -i        Ignore case<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -w        Match whole words only<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -x        Match whole lines only<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -F        PATTERN is a literal (not regexp)<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -E        PATTERN is an extended regexp<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -z        Input is NUL terminated<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -m N        Match up to N times per file<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -A N        Print N lines of trailing context<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -B N        Print N lines of leading context<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -C N        Same as '-A N -B N'<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -e PTRN        Pattern to match<br>
+Mar 12 23:24:28 Sailfish sh[2583]: -f FILE        Read pattern from file<br>
+Mar 12 23:24:28 Sailfish systemd[1]: bluetooth.target: Unit not needed anymore. Stopping.<br>
+Mar 12 23:24:28 Sailfish systemd[1]: Stopped target Bluetooth.<br>
+Mar 12 23:24:28 Sailfish mce[2275]: modules/display.c: mdy_topmost_window_pid_reply_cb(): error reply: org.freedesktop.DBus.Error.U<br>
+nknownMethod: No such method 'privateTopmostWindowProcessId' in interface 'org.nemomobile.compositor' at object path '/' (signature '')<br>
+<br>
+Mar 12 23:24:28 Sailfish mce[2275]: modules/display.c: mdy_display_state_enter(): current display state = ON<br>
+Mar 12 23:24:28 Sailfish sh[2583]: BT MAC:<br>
+Mar 12 23:24:28 Sailfish kernel: hcismd_set_enable 0<br>
+Mar 12 23:24:28 Sailfish kernel: Bluetooth: opening HCI-SMD channel :APPS_RIVA_BT_ACL<br>
+Mar 12 23:24:28 Sailfish kernel: Bluetooth: opening HCI-SMD channel :APPS_RIVA_BT_CMD<br>
+Mar 12 23:24:28 Sailfish kernel: Bluetooth: HCI device registration is starting<br>
+Mar 12 23:24:28 Sailfish systemd[1]: Started Enable Bluetooth HCI over SMD.<br>
+Mar 12 23:24:28 Sailfish systemd[1]: Starting Enable FM Radio...<br>
+Mar 12 23:24:28 Sailfish systemd[1]: Started Enable FM Radio.<br>
+Mar 12 23:24:28 Sailfish systemd[1]: Reached target Bluetooth.<br>
+Mar 12 23:24:29 Sailfish kernel: HTB: quantum of class 10001 is big. Consider r2q change.<br>
+Mar 12 23:24:29 Sailfish kernel: HTB: quantum of class 10010 is big. Consider r2q change.<br>
+Mar 12 23:24:29 Sailfish kernel: NOHZ: local_softirq_pending 08<br>
+Mar 12 23:24:30 Sailfish kernel: NOHZ: local_softirq_pending 08<br>
+Mar 12 23:24:31 Sailfish kernel: NOHZ: local_softirq_pending 08<br>
+Mar 12 23:24:32 Sailfish kernel: NOHZ: local_softirq_pending 08<br>
+Mar 12 23:24:37 Sailfish kernel: wlan: WCNSS WLAN version 1.5.1.2<br>
+Mar 12 23:24:37 Sailfish kernel: wlan: WCNSS software version CNSS-PR-4-0-00328<br>
+Mar 12 23:24:37 Sailfish kernel: wlan: WCNSS hardware version WCN v2.0 RadioPhy vIris_TSMC_4.0 with 48MHz XO<br>
+Mar 12 23:24:37 Sailfish kernel: DefaultCountry is 00<br>
+Mar 12 23:24:37 Sailfish kernel: wlan_logging_sock_activate_svc: Initalizing FEConsoleLog = 1 NumBuff = 32<br>
+Mar 12 23:24:37 Sailfish kernel: wlan_logging_sock_activate_svc: Initalizing Pkt stats pkt_stats_buff = 16<br>
+Mar 12 23:24:37 Sailfish kernel: send_filled_buffers_to_user: Send Failed -3 drop_count = 0<br>
+Mar 12 23:24:37 Sailfish kernel: wlan: driver loaded<br>
+Mar 12 23:24:37 Sailfish kernel: SMBCHG: wait_for_src_detect: src detect didnt go to a lowered state, still at high, tries = 2, rc<br>
+= 0<br>
+Mar 12 23:24:37 Sailfish kernel: SMBCHG: rerun_apsd: wait for src detect failed rc = -22<br>
+Mar 12 23:24:37 Sailfish kernel: msm-dwc3 7000000.ssusb: DWC3 exited from low power mode<br>
+Mar 12 23:24:37 Sailfish mce[2275]: modules/battery-udev.c: mcebat_update(): charger_state: off - on<br>
+Mar 12 23:24:37 Sailfish kernel: enable_store: android_usb: already disabled<br>
+Mar 12 23:24:37 Sailfish kernel: rndis_function_bind_config: rndis_function_bind_config MAC: E6:EE:29:A5:FA:BA<br>
+Mar 12 23:24:37 Sailfish kernel: android_usb gadget: using random self ethernet address<br>
+Mar 12 23:24:37 Sailfish kernel: android_usb gadget: using previous host ethernet address<br>
+Mar 12 23:24:37 Sailfish kernel: rndis0: MAC 06:c1:22:62:de:3a<br>
+Mar 12 23:24:37 Sailfish kernel: rndis0: HOST MAC ee:60:50:97:8f:8c<br>
+Mar 12 23:24:37 Sailfish kernel: hid keyboard<br>
+Mar 12 23:24:37 Sailfish kernel: hidg_bind: creating device ffffffc0840d1200<br>
+Mar 12 23:24:37 Sailfish kernel: hid mouse<br>
+Mar 12 23:24:37 Sailfish kernel: hidg_bind: creating device ffffffc0840d0a00<br>
+Mar 12 23:24:37 Sailfish kernel: IPv6: ADDRCONF(NETDEV_UP): rndis0: link is not ready<br>
+Mar 12 23:24:37 Sailfish usb_moded[2592]: EXEC ifconfig rndis0 192.168.2.15 255.255.255.0<br>
+                                          ; exit code is 256<br>
+Mar 12 23:24:37 Sailfish kernel: IPv6: ADDRCONF(NETDEV_UP): rndis0: link is not ready<br>
+Mar 12 23:24:37 Sailfish kernel: [21:24:37.606528] [0000000029510524] [VosMC]  wlan: [E :HDD] Ptt Socket error sending message to t<br>
+he app!!<br>
+Mar 12 23:24:37 Sailfish kernel: [21:24:37.606651] [0000000029510E51] [VosMC]  wlan: [E :HDD] Ptt Socket error sending message to t<br>
+he app!!<br>
+Mar 12 23:24:37 Sailfish kernel: [21:24:37.607666] [0000000029515A6F] [VosMC]  wlan: [E :HDD] Ptt Socket error sending message to t<br>
+he app!!<br>
+Mar 12 23:24:37 Sailfish kernel: [21:24:37.806518] [00000000298B9C54] [VosMC]  wlan: [E :HDD] Ptt Socket error sending message to t<br>
+he app!!<br>
+Mar 12 23:24:37 Sailfish kernel: android_work: android_work: sent uevent USB_STATE=CONNECTED<br>
+Mar 12 23:24:37 Sailfish kernel: android_work: android_work: sent uevent USB_STATE=DISCONNECTED<br>
+Mar 12 23:24:37 Sailfish systemd[1]: Started udhcpcd DHCP server.<br>
+Mar 12 23:24:37 Sailfish udhcpd[4562]: udhcpd: started, v1.29.3<br>
+Mar 12 23:24:37 Sailfish udhcpd[4562]: udhcpd: can't open '/var/lib/misc/udhcpd.leases': No such file or directory<br>
+Mar 12 23:24:38 Sailfish kernel: android_work: android_work: sent uevent USB_STATE=CONNECTED<br>
+Mar 12 23:24:38 Sailfish kernel: android_usb gadget: high-speed config #1: 86000c8.android_usb<br>
+Mar 12 23:24:38 Sailfish kernel: msm-dwc3 7000000.ssusb: Avail curr from USB = 500<br>
+Mar 12 23:24:38 Sailfish kernel: IPv6: ADDRCONF(NETDEV_CHANGE): rndis0: link becomes ready<br>
+Mar 12 23:24:38 Sailfish kernel: android_work: android_work: sent uevent USB_STATE=CONFIGURED<br>
+Mar 12 23:24:38 Sailfish kernel: tz_get_target_freq ADRENO jumping level = 5 last_level = 6 total=12304 busy=12335 original busy_time=123<br>
+35<br>
+Mar 12 23:24:38 Sailfish jolla-startupwizard-pre-user-session[3542]: [W] unknown:206 - file:///usr/lib/qt5/qml/Sailfish/Silica/Dial<br>
+ogHeader.qml:206:13: QML Binding: Property 'forwardIndicatorHighlighted' does not exist on QtObject.<br>
+Mar 12 23:24:38 Sailfish jolla-startupwizard-pre-user-session[3542]: [W] unknown:153 - file:///usr/lib/qt5/qml/Sailfish/Silica/Dial<br>
+ogHeader.qml:153:13: QML Binding: Property 'backIndicatorHighlighted' does not exist on QtObject.<br>
+Mar 12 23:24:39 Sailfish kernel: tz_get_target_freq ADRENO jumping level = 6 last_level = 5 total=27313 busy=6314 original busy_time=6314<br>
+<br>
+Mar 12 23:24:39 Sailfish kernel: tz_get_target_freq ADRENO jumping level = 5 last_level = 6 total=16484 busy=10116 original busy_time=101<br>
+16<br>
+Mar 12 23:24:39 Sailfish jolla-startupwizard-pre-user-session[3542]: [W] unknown:206 - file:///usr/lib/qt5/qml/Sailfish/Silica/Dial<br>
+ogHeader.qml:206:13: QML Binding: Property 'forwardIndicatorHighlighted' does not exist on QtObject.<br>
+Mar 12 23:24:39 Sailfish jolla-startupwizard-pre-user-session[3542]: [W] unknown:153 - file:///usr/lib/qt5/qml/Sailfish/Silica/Dial<br>
+ogHeader.qml:153:13: QML Binding: Property 'backIndicatorHighlighted' does not exist on QtObject.<br>
+Mar 12 23:24:40 Sailfish udhcpd[4562]: udhcpd: sending OFFER of 192.168.2.1<br>
+Mar 12 23:24:40 Sailfish udhcpd[4562]: udhcpd: sending ACK to 192.168.2.1<br>
+Mar 12 23:24:48 Sailfish mce[2275]: tklock.c: tklock_dbus_notification_beg_cb(): notification begin from name=:1.37 owner=:1.37 pid<br>
+=3542 uid=100000 gid=100000 priv=0 cmd=/usr/bin/jolla-startupwizard-pre-user-session -plugin evdevtou<br>
+Mar 12 23:24:55 Sailfish kernel: [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister sit0<br>
+Mar 12 23:24:55 Sailfish kernel: [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister sit0<br>
+Mar 12 23:24:55 Sailfish kernel: [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister lo<br>
+Mar 12 23:24:55 Sailfish kernel: [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister lo<br>
+Mar 12 23:24:59 Sailfish usb_moded[2592]: unexpected change '/sys/class/android_usb/android0/functions' : 'rndis' - 'rndis,hid'<br>
+Mar 12 23:25:08 Sailfish mce[2275]: tklock.c: tklock_dbus_notification_beg_cb(): notification begin from name=:1.37 owner=:1.37 pid<br>
+=3542 uid=100000 gid=100000 priv=0 cmd=/usr/bin/jolla-startupwizard-pre-user-session -plugin evdevtou<br>
+Mar 12 23:25:28 Sailfish mce[2275]: tklock.c: tklock_dbus_notification_beg_cb(): notification begin from name=:1.37 owner=:1.37 pid<br>
+=3542 uid=100000 gid=100000 priv=0 cmd=/usr/bin/jolla-startupwizard-pre-user-session -plugin evdevtou<br>
+Mar 12 23:25:48 Sailfish mce[2275]: tklock.c: tklock_dbus_notification_beg_cb(): notification begin from name=:1.37 owner=:1.37 pid<br>
+=3542 uid=100000 gid=100000 priv=0 cmd=/usr/bin/jolla-startupwizard-pre-user-session -plugin evdevtou<br>
+Mar 12 23:26:08 Sailfish mce[2275]: tklock.c: tklock_dbus_notification_beg_cb(): notification begin from name=:1.37 owner=:1.37 pid<br>
+=3542 uid=100000 gid=100000 priv=0 cmd=/usr/bin/jolla-startupwizard-pre-user-session -plugin evdevtou<br>
+Mar 12 23:26:28 Sailfish dbus-daemon[3547]: Failed to activate service 'org.maliit.server': timed out<br>
+Mar 12 23:26:28 Sailfish mce[2275]: tklock.c: tklock_dbus_notification_beg_cb(): notification begin from name=:1.37 owner=:1.37 pid<br>
+=3542 uid=100000 gid=100000 priv=0 cmd=/usr/bin/jolla-startupwizard-pre-user-session -plugin evdevtou<br>
+Mar 12 23:26:32 Sailfish dbus-daemon[3547]: Activating via systemd: service name='org.maliit.server' unit='maliit-server.service'<br>
+Mar 12 23:26:32 Sailfish systemd[3344]: Starting Runs basic setup for the Jolla user before the rest of the user session is started...<br>
+Mar 12 23:26:32 Sailfish systemd[3344]: Started Runs basic setup for the Jolla user before the rest of the user session is started.<br>
+Mar 12 23:26:48 Sailfish mce[2275]: tklock.c: tklock_dbus_notification_beg_cb(): notification begin from name=:1.37 owner=:1.37 pid<br>
+=3542 uid=100000 gid=100000 priv=0 cmd=/usr/bin/jolla-startupwizard-pre-user-session -plugin evdevtou<br>
+Mar 12 23:27:08 Sailfish mce[2275]: tklock.c: tklock_dbus_notification_beg_cb(): notification begin from name=:1.37 owner=:1.37 pid<br>
+=3542 uid=100000 gid=100000 priv=0 cmd=/usr/bin/jolla-startupwizard-pre-user-session -plugin evdevtou<br>
+Mar 12 23:27:28 Sailfish mce[2275]: tklock.c: tklock_dbus_notification_beg_cb(): notification begin from name=:1.37 owner=:1.37 pid<br>
+=3542 uid=100000 gid=100000 priv=0 cmd=/usr/bin/jolla-startupwizard-pre-user-session -plugin evdevtou<br>
+Mar 12 23:27:48 Sailfish mce[2275]: tklock.c: tklock_dbus_notification_beg_cb(): notification begin from name=:1.37 owner=:1.37 pid<br>
+=3542 uid=100000 gid=100000 priv=0 cmd=/usr/bin/jolla-startupwizard-pre-user-session -plugin evdevtou<br>
+Mar 12 23:28:08 Sailfish mce[2275]: tklock.c: tklock_dbus_notification_beg_cb(): notification begin from name=:1.37 owner=:1.37 pid<br>
+=3542 uid=100000 gid=100000 priv=0 cmd=/usr/bin/jolla-startupwizard-pre-user-session -plugin evdevtou<br>
+Mar 12 23:28:28 Sailfish mce[2275]: tklock.c: tklock_dbus_notification_beg_cb(): notification begin from name=:1.37 owner=:1.37 pid<br>
+=3542 uid=100000 gid=100000 priv=0 cmd=/usr/bin/jolla-startupwizard-pre-user-session -plugin evdevtou<br>
+Mar 12 23:28:32 Sailfish dbus-daemon[3547]: Failed to activate service 'org.maliit.server': timed out<br>
+Mar 12 23:28:36 Sailfish dbus-daemon[3547]: Activating via systemd: service name='org.maliit.server' unit='maliit-server.service'<br>
+Mar 12 23:28:36 Sailfish systemd[3344]: Starting Runs basic setup for the Jolla user before the rest of the user session is started...<br>
+Mar 12 23:28:36 Sailfish systemd[3344]: Started Runs basic setup for the Jolla user before the rest of the user session is started.<br>
+Mar 12 23:28:48 Sailfish mce[2275]: tklock.c: tklock_dbus_notification_beg_cb(): notification begin from name=:1.37 owner=:1.37 pid<br>
+=3542 uid=100000 gid=100000 priv=0 cmd=/usr/bin/jolla-startupwizard-pre-user-session -plugin evdevtou<br>
+Mar 12 23:29:08 Sailfish mce[2275]: tklock.c: tklock_dbus_notification_beg_cb(): notification begin from name=:1.37 owner=:1.37 pid<br>
+=3542 uid=100000 gid=100000 priv=0 cmd=/usr/bin/jolla-startupwizard-pre-user-session -plugin evdevtou<br>
 /details<br>
