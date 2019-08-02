@@ -57684,7 +57684,7 @@ mido_sf_defconfig                                                               
 
 Скомпилируем ядро
 ```console
-HABUILD_SDK [mido] stalker@stalkerPC:~/hadk$ source build/envsetup.sh
+HABUILD_SDK [mido]:~/hadk$ source build/envsetup.sh
 ```
 <details>
 including vendor/cm/vendorsetup.sh<br>
@@ -57693,8 +57693,8 @@ including vendor/cm/bash_completion/repo.bash<br>
 </details><br>
 
 ```console
-HABUILD_SDK [mido] stalker@stalkerPC:~/hadk$ export USE_CCACHE=1
-HABUILD_SDK [mido] stalker@stalkerPC:~/hadk$ breakfast $DEVICE
+HABUILD_SDK [mido]:~/hadk$ export USE_CCACHE=1
+HABUILD_SDK [mido]:~/hadk$ breakfast $DEVICE
 ```
 <details>
 including vendor/cm/vendorsetup.sh<br>
@@ -57727,7 +57727,9 @@ OUT_DIR=/home/stalker/hadk/out<br>
 ============================================<br>
 </details><br>
 
-HABUILD_SDK [mido] stalker@stalkerPC:~/hadk$ make -j$(nproc --all) hybris-hal
+```console
+HABUILD_SDK [mido]:~/hadk$ make -j$(nproc --all) hybris-hal
+```
 <details>
 ============================================<br>
 PLATFORM_VERSION_CODENAME=REL<br>
@@ -61610,7 +61612,7 @@ HOST:~$ sudo fastboot devices
 
 Прошьем boot
 ```console
-stalker@stalkerPC:~$ sudo fastboot flash boot hadk/out/target/product/mido/hybris-boot.img
+HOST:~$ sudo fastboot flash boot hadk/out/target/product/mido/hybris-boot.img
 ```
 <details>
 target reported max download size of 536870912 bytes<br>
