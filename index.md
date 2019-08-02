@@ -62615,15 +62615,15 @@ adb shell:~ # reboot
 HOST:~$ telnet 192.168.2.15 2323
 ```
 <details>
-Trying 192.168.2.15...
-Connected to 192.168.2.15.
-Escape character is '^]'.
-
-Welcome to the Mer/SailfishOS Boat loader debug init system.
-
-Log so far is in /init.log
-
-To make post-switch_root halt before starting systemd, perform:
-  touch /init_enter_debug2
-(When run post-switch_root, telnet is on port 2323, not 23)
-</details>
+Trying 192.168.2.15...<br>
+Connected to 192.168.2.15.<br>
+Escape character is '^]'.<br>
+<br>
+Welcome to the Mer/SailfishOS Boat loader debug init system.<br>
+<br>
+Log so far is in /init.log<br>
+<br>
+To make post-switch_root halt before starting systemd, perform:<br>
+  touch /init_enter_debug2<br>
+(When run post-switch_root, telnet is on port 2323, not 23)<br>
+</details><br>
