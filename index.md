@@ -40897,7 +40897,7 @@ sh-3.2# dmesg
 [   50.708095] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister sit0<br>
 [   50.712410] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister lo<br>
 [   50.724098] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister lo<br>
-/details<br>
+</details><br>
 
 Журнал рабочей Sailfish 3.0.2.8
 ```console
@@ -43623,4 +43623,4 @@ Mar 12 23:28:48 Sailfish mce[2275]: tklock.c: tklock_dbus_notification_beg_cb():
 =3542 uid=100000 gid=100000 priv=0 cmd=/usr/bin/jolla-startupwizard-pre-user-session -plugin evdevtou<br>
 Mar 12 23:29:08 Sailfish mce[2275]: tklock.c: tklock_dbus_notification_beg_cb(): notification begin from name=:1.37 owner=:1.37 pid<br>
 =3542 uid=100000 gid=100000 priv=0 cmd=/usr/bin/jolla-startupwizard-pre-user-session -plugin evdevtou<br>
-/details<br>
+</details><br>
