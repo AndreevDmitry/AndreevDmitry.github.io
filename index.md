@@ -66962,3 +66962,240 @@ May 22 08:47:51 Sailfish systemd[2944]: Started Runs basic setup for the Jolla u
 May 22 08:47:55 Sailfish mce[2235]: tklock.c: tklock_dbus_notification_beg_cb(): notification begin from name=:1.38 owner=:1.38 pi<br>
 d=3498 uid=100000 gid=100000 priv=0 cmd=/usr/bin/jolla-startupwizard-pre-user-session -plugin evdevtou<br>
 </details><br>
+
+```console
+sh-3.2#   systemctl
+```
+<details>
+UNIT                                                                                   LOAD   ACTIVE     SUB       JOB   DESCRIPTION<br>
+sys-devices-soc-7000000.ssusb-7000000.dwc3-gadget-net-rndis0.device                    loaded active     plugged         /sys/devices/soc/7000000.ssusb/7000000.dwc3/gadget/net/rndis0<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p1.device   loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p1<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p10.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p10<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p11.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p11<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p12.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p12<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p13.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p13<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p14.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p14<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p15.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p15<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p16.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p16<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p17.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p17<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p18.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p18<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p19.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p19<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p2.device   loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p2<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p20.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p20<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p21.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p21<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p22.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p22<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p23.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p23<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p24.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p24<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p25.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p25<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p26.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p26<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p27.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p27<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p28.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p28<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p29.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p29<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p3.device   loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p3<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p30.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p30<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p31.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p31<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p32.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p32<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p33.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p33<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p34.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p34<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p35.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p35<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p36.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p36<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p37.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p37<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p38.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p38<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p39.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p39<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p4.device   loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p4<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p40.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p40<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p41.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p41<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p42.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p42<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p43.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p43<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p44.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p44<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p45.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p45<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p46.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p46<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p47.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p47<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p48.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p48<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p49.device  loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p49<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p5.device   loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p5<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p6.device   loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p6<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p7.device   loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p7<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p8.device   loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p8<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0p9.device   loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0p9<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0-mmcblk0rpmb.device loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0/mmcblk0rpmb<br>
+sys-devices-soc-7824900.sdhci-mmc_host-mmc0-mmc0:0001-block-mmcblk0.device             loaded active     plugged         /sys/devices/soc/7824900.sdhci/mmc_host/mmc0/mmc0:0001/block/mmcblk0<br>
+sys-devices-soc-a000000.qcom\x2cwcnss\x2dwlan-ieee80211-phy0-rfkill2.device            loaded active     plugged         /sys/devices/soc/a000000.qcom,wcnss-wlan/ieee80211/phy0/rfkill2<br>
+sys-devices-soc-a000000.qcom\x2cwcnss\x2dwlan-net-p2p0.device                          loaded active     plugged         /sys/devices/soc/a000000.qcom,wcnss-wlan/net/p2p0<br>
+sys-devices-soc-a000000.qcom\x2cwcnss\x2dwlan-net-wlan0.device                         loaded active     plugged         /sys/devices/soc/a000000.qcom,wcnss-wlan/net/wlan0<br>
+sys-devices-soc-c051000.sound-sound-card0.device                                       loaded active     plugged         /sys/devices/soc/c051000.sound/sound/card0<br>
+sys-devices-virtual-block-ram0.device                                                  loaded active     plugged         /sys/devices/virtual/block/ram0<br>
+sys-devices-virtual-block-ram1.device                                                  loaded active     plugged         /sys/devices/virtual/block/ram1<br>
+sys-devices-virtual-block-ram10.device                                                 loaded active     plugged         /sys/devices/virtual/block/ram10<br>
+sys-devices-virtual-block-ram11.device                                                 loaded active     plugged         /sys/devices/virtual/block/ram11<br>
+sys-devices-virtual-block-ram12.device                                                 loaded active     plugged         /sys/devices/virtual/block/ram12<br>
+sys-devices-virtual-block-ram13.device                                                 loaded active     plugged         /sys/devices/virtual/block/ram13<br>
+sys-devices-virtual-block-ram14.device                                                 loaded active     plugged         /sys/devices/virtual/block/ram14<br>
+sys-devices-virtual-block-ram15.device                                                 loaded active     plugged         /sys/devices/virtual/block/ram15<br>
+sys-devices-virtual-block-ram2.device                                                  loaded active     plugged         /sys/devices/virtual/block/ram2<br>
+sys-devices-virtual-block-ram3.device                                                  loaded active     plugged         /sys/devices/virtual/block/ram3<br>
+sys-devices-virtual-block-ram4.device                                                  loaded active     plugged         /sys/devices/virtual/block/ram4<br>
+sys-devices-virtual-block-ram5.device                                                  loaded active     plugged         /sys/devices/virtual/block/ram5<br>
+sys-devices-virtual-block-ram6.device                                                  loaded active     plugged         /sys/devices/virtual/block/ram6<br>
+sys-devices-virtual-block-ram7.device                                                  loaded active     plugged         /sys/devices/virtual/block/ram7<br>
+sys-devices-virtual-block-ram8.device                                                  loaded active     plugged         /sys/devices/virtual/block/ram8<br>
+sys-devices-virtual-block-ram9.device                                                  loaded active     plugged         /sys/devices/virtual/block/ram9<br>
+sys-devices-virtual-block-zram0.device                                                 loaded active     plugged         /sys/devices/virtual/block/zram0<br>
+sys-devices-virtual-bluetooth-hci0.device                                              loaded active     plugged         /sys/devices/virtual/bluetooth/hci0<br>
+sys-devices-virtual-net-r_rmnet_data0.device                                           loaded active     plugged         /sys/devices/virtual/net/r_rmnet_data0<br>
+sys-devices-virtual-net-r_rmnet_data1.device                                           loaded active     plugged         /sys/devices/virtual/net/r_rmnet_data1<br>
+sys-devices-virtual-net-r_rmnet_data2.device                                           loaded active     plugged         /sys/devices/virtual/net/r_rmnet_data2<br>
+sys-devices-virtual-net-r_rmnet_data3.device                                           loaded active     plugged         /sys/devices/virtual/net/r_rmnet_data3<br>
+sys-devices-virtual-net-r_rmnet_data4.device                                           loaded active     plugged         /sys/devices/virtual/net/r_rmnet_data4<br>
+sys-devices-virtual-net-r_rmnet_data5.device                                           loaded active     plugged         /sys/devices/virtual/net/r_rmnet_data5<br>
+sys-devices-virtual-net-r_rmnet_data6.device                                           loaded active     plugged         /sys/devices/virtual/net/r_rmnet_data6<br>
+sys-devices-virtual-net-r_rmnet_data7.device                                           loaded active     plugged         /sys/devices/virtual/net/r_rmnet_data7<br>
+sys-devices-virtual-net-r_rmnet_data8.device                                           loaded active     plugged         /sys/devices/virtual/net/r_rmnet_data8<br>
+sys-devices-virtual-net-rmnet_data0.device                                             loaded active     plugged         /sys/devices/virtual/net/rmnet_data0<br>
+sys-devices-virtual-net-rmnet_data1.device                                             loaded active     plugged         /sys/devices/virtual/net/rmnet_data1<br>
+sys-devices-virtual-net-rmnet_data2.device                                             loaded active     plugged         /sys/devices/virtual/net/rmnet_data2<br>
+sys-devices-virtual-net-rmnet_data3.device                                             loaded active     plugged         /sys/devices/virtual/net/rmnet_data3<br>
+sys-devices-virtual-net-rmnet_data4.device                                             loaded active     plugged         /sys/devices/virtual/net/rmnet_data4<br>
+sys-devices-virtual-net-rmnet_data5.device                                             loaded active     plugged         /sys/devices/virtual/net/rmnet_data5<br>
+sys-devices-virtual-net-rmnet_data6.device                                             loaded active     plugged         /sys/devices/virtual/net/rmnet_data6<br>
+sys-devices-virtual-net-rmnet_data7.device                                             loaded active     plugged         /sys/devices/virtual/net/rmnet_data7<br>
+sys-devices-virtual-net-rmnet_ipa0.device                                              loaded active     plugged         /sys/devices/virtual/net/rmnet_ipa0<br>
+sys-devices-virtual-net-sit0.device                                                    loaded active     plugged         /sys/devices/virtual/net/sit0<br>
+sys-module-configfs.device                                                             loaded active     plugged         /sys/module/configfs<br>
+sys-module-fuse.device                                                                 loaded active     plugged         /sys/module/fuse<br>
+sys-subsystem-bluetooth-devices-hci0.device                                            loaded active     plugged         /sys/subsystem/bluetooth/devices/hci0<br>
+sys-subsystem-net-devices-p2p0.device                                                  loaded active     plugged         /sys/subsystem/net/devices/p2p0<br>
+sys-subsystem-net-devices-r_rmnet_data0.device                                         loaded active     plugged         /sys/subsystem/net/devices/r_rmnet_data0<br>
+sys-subsystem-net-devices-r_rmnet_data1.device                                         loaded active     plugged         /sys/subsystem/net/devices/r_rmnet_data1<br>
+sys-subsystem-net-devices-r_rmnet_data2.device                                         loaded active     plugged         /sys/subsystem/net/devices/r_rmnet_data2<br>
+sys-subsystem-net-devices-r_rmnet_data3.device                                         loaded active     plugged         /sys/subsystem/net/devices/r_rmnet_data3<br>
+sys-subsystem-net-devices-r_rmnet_data4.device                                         loaded active     plugged         /sys/subsystem/net/devices/r_rmnet_data4<br>
+sys-subsystem-net-devices-r_rmnet_data5.device                                         loaded active     plugged         /sys/subsystem/net/devices/r_rmnet_data5<br>
+sys-subsystem-net-devices-r_rmnet_data6.device                                         loaded active     plugged         /sys/subsystem/net/devices/r_rmnet_data6<br>
+sys-subsystem-net-devices-r_rmnet_data7.device                                         loaded active     plugged         /sys/subsystem/net/devices/r_rmnet_data7<br>
+sys-subsystem-net-devices-r_rmnet_data8.device                                         loaded active     plugged         /sys/subsystem/net/devices/r_rmnet_data8<br>
+sys-subsystem-net-devices-rmnet_data0.device                                           loaded active     plugged         /sys/subsystem/net/devices/rmnet_data0<br>
+sys-subsystem-net-devices-rmnet_data1.device                                           loaded active     plugged         /sys/subsystem/net/devices/rmnet_data1<br>
+sys-subsystem-net-devices-rmnet_data2.device                                           loaded active     plugged         /sys/subsystem/net/devices/rmnet_data2<br>
+sys-subsystem-net-devices-rmnet_data3.device                                           loaded active     plugged         /sys/subsystem/net/devices/rmnet_data3<br>
+sys-subsystem-net-devices-rmnet_data4.device                                           loaded active     plugged         /sys/subsystem/net/devices/rmnet_data4<br>
+sys-subsystem-net-devices-rmnet_data5.device                                           loaded active     plugged         /sys/subsystem/net/devices/rmnet_data5<br>
+sys-subsystem-net-devices-rmnet_data6.device                                           loaded active     plugged         /sys/subsystem/net/devices/rmnet_data6<br>
+sys-subsystem-net-devices-rmnet_data7.device                                           loaded active     plugged         /sys/subsystem/net/devices/rmnet_data7<br>
+sys-subsystem-net-devices-rmnet_ipa0.device                                            loaded active     plugged         /sys/subsystem/net/devices/rmnet_ipa0<br>
+sys-subsystem-net-devices-rndis0.device                                                loaded active     plugged         /sys/subsystem/net/devices/rndis0<br>
+sys-subsystem-net-devices-sit0.device                                                  loaded active     plugged         /sys/subsystem/net/devices/sit0<br>
+sys-subsystem-net-devices-wlan0.device                                                 loaded active     plugged         /sys/subsystem/net/devices/wlan0<br>
+sys-subsystem-rfkill-devices-rfkill2.device                                            loaded active     plugged         /sys/subsystem/rfkill/devices/rfkill2<br>
+-.mount                                                                                loaded active     mounted         /<br>
+config.mount                                                                           loaded active     mounted         Droid mount for /config<br>
+data.mount                                                                             loaded active     mounted         /data<br>
+dev-cpuset.mount                                                                       loaded active     mounted         Droid mount for /dev/cpuset<br>
+dev-mtp.mount                                                                          loaded active     mounted         FFS mount<br>
+dsp.mount                                                                              loaded active     mounted         Droid mount for /dsp<br>
+firmware.mount                                                                         loaded active     mounted         Droid mount for /firmware<br>
+mnt.mount                                                                              loaded active     mounted         Droid mount for /mnt<br>
+persist.mount                                                                          loaded active     mounted         Droid mount for /persist<br>
+run-state.mount                                                                        loaded active     mounted         /run/state<br>
+run-user-100000-state.mount                                                            loaded active     mounted         /run/user/100000/state<br>
+run-user-100000.mount                                                                  loaded active     mounted         /run/user/100000<br>
+sys-fs-fuse-connections.mount                                                          loaded active     mounted         FUSE Control File System<br>
+sys-kernel-config.mount                                                                loaded active     mounted         Configuration File System<br>
+sys-kernel-debug-tracing.mount                                                         loaded active     mounted         /sys/kernel/debug/tracing<br>
+sys-kernel-debug.mount                                                                 loaded active     mounted         Debug File System<br>
+system.mount                                                                           loaded active     mounted         Droid mount for /system<br>
+tmp.mount                                                                              loaded active     mounted         Temporary Directory<br>
+systemd-ask-password-console.path                                                      loaded active     waiting         Dispatch Password Requests to Console Directory Watch<br>
+systemd-ask-password-wall.path                                                         loaded active     waiting         Forward Password Requests to Wall Directory Watch<br>
+wayland.path                                                                           loaded active     waiting         Wayland path watcher<br>
+session-1.scope                                                                        loaded active     running         Session 1 of user nemo<br>
+android-links.service                                                                  loaded active     exited          Link Android folder to home<br>
+autologin@100000.service                                                               loaded active     running         Autologin user 100000<br>
+bluetooth.service                                                                      loaded active     running         Bluetooth service<br>
+connman-vpn.service                                                                    loaded active     running         ConnMan VPN service<br>
+connman.service                                                                        loaded active     running         Connection service<br>
+dbus-org.freedesktop.PolicyKit1.service                                                loaded active     running         Authorization Manager<br>
+dbus.service                                                                           loaded active     running         D-Bus System Message Bus<br>
+droid-fm-up.service                                                                    loaded active     exited          Enable FM Radio<br>
+droid-hal-init.service                                                                 loaded active     running         droid-hal-init<br>
+droid-hcismd-up.service                                                                loaded active     exited          Enable Bluetooth HCI over SMD<br>
+dsme.service                                                                           loaded active     running         DSME<br>
+init-done.service                                                                      loaded activating start-pre start Indicate boot is done<br>
+initial-bootstate.service                                                              loaded active     exited          Get initial bootstate<br>
+jolla-devicelock-encsfa.service                                                        loaded active     running         Nemo device lock daemon<br>
+kmod-static-nodes.service                                                              loaded active     exited          Create list of required static device nodes for the current kernel<br>
+ldconfig.service                                                                       loaded active     exited          Rebuild Dynamic Linker Cache<br>
+mce.service                                                                            loaded active     running         Mode Control Entity (MCE)<br>
+ofono.service                                                                          loaded active     running         Telephony service<br>
+ohmd.service                                                                           loaded active     running         ohm daemon for resource policy management<br>
+oneshot-root-late.service                                                              loaded inactive   dead      start Oneshot stuff for root (late run)<br>
+oneshot-root.service                                                                   loaded active     exited          Oneshot stuff for root<br>
+policies-setup.service                                                                 loaded inactive   dead      start Setup policies<br>
+rescue-password-off.service                                                            loaded inactive   dead      start Turn rescue passwords off<br>
+sensorfwd.service                                                                      loaded active     running         Sensor daemon for sensor framework<br>
+sshd-keys.service                                                                      loaded active     exited          Create sshd host keys<br>
+statefs.service                                                                        loaded active     running         StateFS FUSE filesystem, system-wide<br>
+systemd-hwdb-update.service                                                            loaded active     exited          Rebuild Hardware Database<br>
+systemd-journal-catalog-update.service                                                 loaded active     exited          Rebuild Journal Catalog<br>
+systemd-journal-flush.service                                                          loaded active     exited          Flush Journal to Persistent Storage<br>
+systemd-journald.service                                                               loaded active     running         Journal Service<br>
+systemd-logind.service                                                                 loaded active     running         Login Service<br>
+systemd-random-seed.service                                                            loaded active     exited          Load/Save Random Seed<br>
+systemd-remount-fs.service                                                             loaded active     exited          Remount Root and Kernel File Systems<br>
+systemd-sysctl.service                                                                 loaded active     exited          Apply Kernel Variables<br>
+systemd-sysusers.service                                                               loaded active     exited          Create System Users<br>
+systemd-tmpfiles-setup-dev.service                                                     loaded active     exited          Create Static Device Nodes in /dev<br>
+systemd-tmpfiles-setup.service                                                         loaded active     exited          Create Volatile Files and Directories<br>
+systemd-udev-settle.service                                                            loaded active     exited          udev Wait for Complete Device Initialization<br>
+systemd-udev-trigger.service                                                           loaded active     exited          udev Coldplug all Devices<br>
+systemd-udevd.service                                                                  loaded active     running         udev Kernel Device Manager<br>
+systemd-update-done.service                                                            loaded active     exited          Update is Completed<br>
+systemd-update-utmp.service                                                            loaded active     exited          Update UTMP about System Boot/Shutdown<br>
+systemd-user-sessions.service                                                          loaded active     exited          Permit User Sessions<br>
+systemd-vconsole-setup.service                                                         loaded active     exited          Setup Virtual Console<br>
+udhcpd.service                                                                         loaded active     running         udhcpcd DHCP server<br>
+udisks2.service                                                                        loaded active     running         Disk Manager<br>
+usb-moded.service                                                                      loaded active     running         usb-moded USB gadget controller<br>
+user@100000.service                                                                    loaded active     running         User Manager for UID 100000<br>
+wlan-module-load.service                                                               loaded active     exited          Load wifi module<br>
+wpa_supplicant.service                                                                 loaded active     running         WPA Supplicant daemon<br>
+-.slice                                                                                loaded active     active          Root Slice<br>
+system-autologin.slice                                                                 loaded active     active          system-autologin.slice<br>
+system.slice                                                                           loaded active     active          System Slice<br>
+user-100000.slice                                                                      loaded active     active          user-100000.slice<br>
+user.slice                                                                             loaded active     active          User and Session Slice<br>
+dbus.socket                                                                            loaded active     running         D-Bus System Message Bus Socket<br>
+nemo-devicelock.socket                                                                 loaded active     running         Nemo device lock socket<br>
+sshd.socket                                                                            loaded active     listening       OpenSSH Server Socket<br>
+systemd-initctl.socket                                                                 loaded active     listening       /dev/initctl Compatibility Named Pipe<br>
+systemd-journald-audit.socket                                                          loaded active     running         Journal Audit Socket<br>
+systemd-journald-dev-log.socket                                                        loaded active     running         Journal Socket (/dev/log)<br>
+systemd-journald.socket                                                                loaded active     running         Journal Socket<br>
+systemd-udevd-control.socket                                                           loaded active     running         udev Control Socket<br>
+systemd-udevd-kernel.socket                                                            loaded active     running         udev Kernel Socket<br>
+basic.target                                                                           loaded active     active          Basic System<br>
+bluetooth.target                                                                       loaded active     active          Bluetooth<br>
+cryptsetup.target                                                                      loaded active     active          Encrypted Volumes<br>
+getty.target                                                                           loaded active     active          Login Prompts<br>
+graphical.target                                                                       loaded inactive   dead      start Graphical Interface<br>
+local-fs-pre.target                                                                    loaded active     active          Local File Systems (Pre)<br>
+local-fs.target                                                                        loaded active     active          Local File Systems<br>
+multi-user.target                                                                      loaded inactive   dead      start Multi-User System<br>
+network.target                                                                         loaded active     active          Network<br>
+paths.target                                                                           loaded active     active          Paths<br>
+slices.target                                                                          loaded active     active          Slices<br>
+sockets.target                                                                         loaded active     active          Sockets<br>
+sound.target                                                                           loaded active     active          Sound Card<br>
+swap.target                                                                            loaded active     active          Swap<br>
+sysinit.target                                                                         loaded active     active          System Initialization<br>
+timers.target                                                                          loaded active     active          Timers<br>
+systemd-tmpfiles-clean.timer                                                           loaded active     waiting         Daily Cleanup of Temporary Directories<br>
+<br>
+LOAD   = Reflects whether the unit definition was properly loaded.<br>
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.<br>
+SUB    = The low-level unit activation state, values depend on unit type.<br>
+JOB    = Pending job for the unit.<br>
+<br>
+222 loaded units listed. Pass --all to see loaded but inactive units, too.<br>
+To show all installed unit files use 'systemctl list-unit-files'.<br>
+</details><br>
