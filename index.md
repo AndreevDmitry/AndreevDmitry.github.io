@@ -62627,3 +62627,1575 @@ To make post-switch_root halt before starting systemd, perform:<br>
   touch /init_enter_debug2<br>
 (When run post-switch_root, telnet is on port 2323, not 23)<br>
 </details><br>
+
+Снимем логи ядра, журнал и логи systemd с нашей рабочей Sailfish 3.0.3.10
+```console
+sh-3.2# dmesg
+```
+<details>
+[    0.624391] input: qpnp_pon as /devices/virtual/input/input0<br>
+[    0.625207] pon_spare_reg: no parameters<br>
+[    0.625311] qcom,qpnp-power-on qpnp-power-on-14: No PON config. specified<br>
+[    0.625367] qcom,qpnp-power-on qpnp-power-on-14: PMIC@SID2 Power-on reason: Triggered from PON1 (secondary PMIC) and 'warm' boot<br>
+[    0.625394] qcom,qpnp-power-on qpnp-power-on-14: PMIC@SID2: Power-off reason: Triggered from PS_HOLD (PS_HOLD/MSM controlled shutdown)<br>
+[    0.625576] PMIC@SID0: (null) v1.0 options: 2, 2, 0, 0<br>
+[    0.625678] PMIC@SID2: PMI8950 v2.0 options: 0, 0, 0, 0<br>
+[    0.626250] ipa ipa2_uc_state_check:296 uC interface not initialized<br>
+[    0.626264] ipa ipa_sps_irq_control_all:938 EP (2) not allocated.<br>
+[    0.626275] ipa ipa_sps_irq_control_all:938 EP (5) not allocated.<br>
+[    0.627658] sps:BAM 0x0000000007904000 is registered.<br>
+[    0.628143] sps:BAM 0x0000000007904000 (va:0xffffff8001840000) enabled: ver:0x27, number of pipes:20<br>
+[    0.631200] IPA driver initialization was successful.<br>
+[    0.632156] gdsc_venus: no parameters<br>
+[    0.632449] gdsc_mdss: no parameters<br>
+[    0.632701] gdsc_jpeg: no parameters<br>
+[    0.633140] gdsc_vfe: no parameters<br>
+[    0.633568] gdsc_vfe1: no parameters<br>
+[    0.633835] gdsc_cpp: no parameters<br>
+[    0.634043] gdsc_oxili_gx: no parameters<br>
+[    0.634132] gdsc_oxili_gx: supplied by msm_gfx_ldo<br>
+[    0.634377] gdsc_venus_core0: fast normal<br>
+[    0.634580] gdsc_oxili_cx: no parameters<br>
+[    0.634774] gdsc_usb30: no parameters<br>
+[    0.635710] mdss_pll_probe: MDSS pll label = MDSS DSI 0 PLL<br>
+[    0.636423] dsi_pll_clock_register_8996: Registered DSI PLL ndx=0 clocks successfully<br>
+[    0.636457] mdss_pll_probe: MDSS pll label = MDSS DSI 1 PLL<br>
+[    0.637601] pll_is_pll_locked_8996: DSI PLL ndx=1 status=0 failed to Lock<br>
+[    0.638072] dsi_pll_clock_register_8996: Registered DSI PLL ndx=1 clocks successfully<br>
+[    0.638522] msm_iommu 1e00000.qcom,iommu: device apps_iommu (model: 500) mapped at ffffff8001e00000, with 21 ctx banks<br>
+[    0.644354] msm_iommu_ctx 1e20000.qcom,iommu-ctx: context adsp_elf using bank 0<br>
+[    0.644510] msm_iommu_ctx 1e21000.qcom,iommu-ctx: context adsp_sec_pixel using bank 1<br>
+[    0.644663] msm_iommu_ctx 1e22000.qcom,iommu-ctx: context mdp_1 using bank 2<br>
+[    0.644814] msm_iommu_ctx 1e23000.qcom,iommu-ctx: context venus_fw using bank 3<br>
+[    0.644965] msm_iommu_ctx 1e24000.qcom,iommu-ctx: context venus_sec_non_pixel using bank 4<br>
+[    0.645122] msm_iommu_ctx 1e25000.qcom,iommu-ctx: context venus_sec_bitstream using bank 5<br>
+[    0.645277] msm_iommu_ctx 1e26000.qcom,iommu-ctx: context venus_sec_pixel using bank 6<br>
+[    0.645454] msm_iommu_ctx 1e28000.qcom,iommu-ctx: context pronto_pil using bank 8<br>
+[    0.645633] msm_iommu_ctx 1e29000.qcom,iommu-ctx: context q6 using bank 9<br>
+[    0.645807] msm_iommu_ctx 1e2a000.qcom,iommu-ctx: context periph_rpm using bank 10<br>
+[    0.645985] msm_iommu_ctx 1e2b000.qcom,iommu-ctx: context lpass using bank 11<br>
+[    0.646163] msm_iommu_ctx 1e2f000.qcom,iommu-ctx: context adsp_io using bank 15<br>
+[    0.646343] msm_iommu_ctx 1e30000.qcom,iommu-ctx: context adsp_opendsp using bank 16<br>
+[    0.646523] msm_iommu_ctx 1e31000.qcom,iommu-ctx: context adsp_shared using bank 17<br>
+[    0.646700] msm_iommu_ctx 1e32000.qcom,iommu-ctx: context cpp using bank 18<br>
+[    0.646879] msm_iommu_ctx 1e33000.qcom,iommu-ctx: context jpeg_enc0 using bank 19<br>
+[    0.647056] msm_iommu_ctx 1e34000.qcom,iommu-ctx: context vfe using bank 20<br>
+[    0.647230] msm_iommu_ctx 1e35000.qcom,iommu-ctx: context mdp_0 using bank 21<br>
+[    0.647410] msm_iommu_ctx 1e36000.qcom,iommu-ctx: context venus_ns using bank 22<br>
+[    0.647587] msm_iommu_ctx 1e38000.qcom,iommu-ctx: context ipa using bank 24<br>
+[    0.647766] msm_iommu_ctx 1e37000.qcom,iommu-ctx: context access_control using bank 23<br>
+[    0.649876] /soc/qcom,cam_smmu/msm_cam_smmu_cb1: could not get #iommu-cells for /soc/qcom,iommu@1e00000<br>
+[    0.649918] /soc/qcom,cam_smmu/msm_cam_smmu_cb3: could not get #iommu-cells for /soc/qcom,iommu@1e00000<br>
+[    0.649949] /soc/qcom,cam_smmu/msm_cam_smmu_cb4: could not get #iommu-cells for /soc/qcom,iommu@1e00000<br>
+[    0.651951] adreno_idler: version 1.1 by arter97<br>
+[    0.652049] Advanced Linux Sound Architecture Driver Initialized.<br>
+[    0.653215] cfg80211: Calling CRDA to update world regulatory domain<br>
+[    0.653240] cfg80211: World regulatory domain updated:<br>
+[    0.653250] cfg80211:  DFS Master region: unset<br>
+[    0.653259] cfg80211:   (start_freq - end_freq @ bandwidth), (max_antenna_gain, max_eirp), (dfs_cac_time)<br>
+[    0.653277] cfg80211:   (2402000 KHz - 2472000 KHz @ 40000 KHz), (N/A, 2000 mBm), (N/A)<br>
+[    0.653291] cfg80211:   (2457000 KHz - 2482000 KHz @ 40000 KHz), (N/A, 2000 mBm), (N/A)<br>
+[    0.653305] cfg80211:   (2474000 KHz - 2494000 KHz @ 20000 KHz), (N/A, 2000 mBm), (N/A)<br>
+[    0.653318] cfg80211:   (5170000 KHz - 5250000 KHz @ 80000 KHz), (N/A, 2000 mBm), (N/A)<br>
+[    0.653332] cfg80211:   (5250000 KHz - 5330000 KHz @ 80000 KHz), (N/A, 2000 mBm), (N/A)<br>
+[    0.653345] cfg80211:   (5490000 KHz - 5710000 KHz @ 80000 KHz), (N/A, 2000 mBm), (N/A)<br>
+[    0.653359] cfg80211:   (5735000 KHz - 5835000 KHz @ 80000 KHz), (N/A, 2000 mBm), (N/A)<br>
+[    0.653373] cfg80211:   (57240000 KHz - 63720000 KHz @ 2160000 KHz), (N/A, 0 mBm), (N/A)<br>
+[    0.653542] pcie:pcie_init.<br>
+[    0.655024] ibb_reg: 4600 -- 6000 mV at 5500 mV<br>
+[    0.655297] lab_reg: 4600 -- 6000 mV at 5500 mV<br>
+[    0.655905] Switched to clocksource arch_sys_counter<br>
+[    0.700901] bcl_peripheral:bcl_perph_init BCL Initialized<br>
+[    0.702754] NET: Registered protocol family 2<br>
+[    0.703155] TCP established hash table entries: 32768 (order: 6, 262144 bytes)<br>
+[    0.703323] TCP bind hash table entries: 32768 (order: 7, 524288 bytes)<br>
+[    0.703649] TCP: Hash tables configured (established 32768 bind 32768)<br>
+[    0.703697] TCP: reno registered<br>
+[    0.703710] UDP hash table entries: 2048 (order: 4, 65536 bytes)<br>
+[    0.703765] UDP-Lite hash table entries: 2048 (order: 4, 65536 bytes)<br>
+[    0.703940] NET: Registered protocol family 1<br>
+[    0.703974] PCI: CLS 0 bytes, default 64<br>
+[    0.706203] gcc-mdss-8953 1800000.qcom,gcc-mdss: Registered GCC MDSS clocks.<br>
+[    0.706625] Trying to unpack rootfs image as initramfs...<br>
+[    0.726436] Freeing initrd memory: 820K<br>
+[    0.730559] futex hash table entries: 2048 (order: 5, 131072 bytes)<br>
+[    0.730664] Initialise system trusted keyring<br>
+[    0.730755] audit: initializing netlink subsys (disabled)<br>
+[    0.730807] audit: type=2000 audit(0.727:1): initialized<br>
+[    0.731178] vmscan: error setting kswapd cpu affinity mask<br>
+[    0.735376] zbud: loaded<br>
+[    0.735967] VFS: Disk quotas dquot_6.5.2<br>
+[    0.736088] Dquot-cache hash table entries: 512 (order 0, 4096 bytes)<br>
+[    0.737008] squashfs: version 4.0 (2009/01/31) Phillip Lougher<br>
+[    0.737162] exFAT: Version 1.2.9<br>
+[    0.737989] fuse init (API version 7.23)<br>
+[    0.738479] msgmni has been set to 5615<br>
+[    0.738524] SELinux:  Registering netfilter hooks<br>
+[    0.740617] Key type asymmetric registered<br>
+[    0.740630] Asymmetric key parser 'x509' registered<br>
+[    0.740744] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 247)<br>
+[    0.740762] io scheduler noop registered<br>
+[    0.740774] io scheduler deadline registered<br>
+[    0.740796] io scheduler cfq registered<br>
+[    0.740809] io scheduler zen registered<br>
+[    0.740826] io scheduler fiops registered<br>
+[    0.740838] io scheduler sio registered<br>
+[    0.740850] io scheduler maple registered (default)<br>
+[    0.740941] io scheduler bfq registered<br>
+[    0.740950] BFQ I/O-scheduler: v7r8<br>
+[    0.745185] i2c-msm-v2 78b6000.i2c: msm_bus_scale_register_client(mstr-id:86):0x2 (ok)<br>
+[    0.745322] i2c-msm-v2 78b6000.i2c: NACK: slave not responding, ensure its powered: msgs(n:2 cur:0 tx) bc(rx:1 tx:1) mode:FIFO slv_addr:0x39 MSTR_STS:0x0d1300c8 OPER:0x00000010<br>
+[    0.745370] msm_dba_helper_i2c_read: i2c read failed<br>
+[    0.745384] adv7533_read: read err: addr 0x39, reg 0x0, size 0x1<br>
+[    0.745394] adv7533_probe: Failed to read chip rev<br>
+[    0.745452] adv7533: probe of 2-0039 failed with error -5<br>
+[    0.745786] msm_dss_get_res_byname: 'vbif_nrt_phys' resource not found<br>
+[    0.745803] mdss_mdp_probe+0x228/0x1108-msm_dss_ioremap_byname: 'vbif_nrt_phys' msm_dss_get_res_byname failed<br>
+[    0.746226] mdss_mdp_irq_clk_register: unable to get clk: lut_clk<br>
+[    0.746781] No change in context(0==0), skip<br>
+[    0.747464] mdss_mdp_pipe_addr_setup: type:0 ftchid:-1 xinid:0 num:0 rect:0 ndx:0x1 prio:0<br>
+[    0.747491] mdss_mdp_pipe_addr_setup: type:1 ftchid:-1 xinid:1 num:3 rect:0 ndx:0x8 prio:1<br>
+[    0.747506] mdss_mdp_pipe_addr_setup: type:1 ftchid:-1 xinid:5 num:4 rect:0 ndx:0x10 prio:2<br>
+[    0.747528] mdss_mdp_pipe_addr_setup: type:2 ftchid:-1 xinid:2 num:6 rect:0 ndx:0x40 prio:3<br>
+[    0.747551] mdss_mdp_pipe_addr_setup: type:3 ftchid:-1 xinid:7 num:10 rect:0 ndx:0x400 prio:0<br>
+[    0.747570] mdss_mdp_parse_dt_handler: Error from prop qcom,mdss-pipe-sw-reset-off : u32 array read<br>
+[    0.747668] mdss_mdp_parse_dt_handler: Error from prop qcom,mdss-ib-factor-overlap : u32 array read<br>
+[    0.747946] xlog_status: enable:1, panic:1, dump:2<br>
+[    0.748619] mdss_mdp_probe: mdss version = 0x10100000, bootloader display is on, num 1, intf_sel=0x00000100<br>
+[    0.750399] mdss_smmu_util_parse_dt_clock: clocks are not defined<br>
+[    0.750452] mdss_smmu_probe: iommu v2 domain[0] mapping and clk register successful!<br>
+[    0.750484] mdss_smmu_util_parse_dt_clock: clocks are not defined<br>
+[    0.750523] mdss_smmu_probe: iommu v2 domain[2] mapping and clk register successful!<br>
+[    0.752417] mdss_dsi_ctrl_probe: DSI Ctrl name = MDSS DSI CTRL-0<br>
+[    0.752913] mdss_dsi_find_panel_of_node: cmdline:0:qcom,mdss_dsi_nt35532_fhd_video:1:none:cfg:single_dsi panel_name:qcom,mdss_dsi_nt35532_fhd_video<br>
+[    0.752982] mdss_dsi_panel_init: Panel Name = nt35532 fhd video mode dsi panel<br>
+[    0.753134] mdss_dsi_panel_timing_from_dt: found new timing "qcom,mdss_dsi_nt35532_fhd_video" (ffffffc0ae3c4000)<br>
+[    0.753162] mdss_dsi_parse_dcs_cmds: failed, key=qcom,mdss-dsi-post-panel-on-command<br>
+[    0.753178] mdss_dsi_parse_dcs_cmds: failed, key=qcom,mdss-dsi-timing-switch-command<br>
+[    0.753191] mdss_dsi_panel_get_dsc_cfg_np: cannot find dsc config node:<br>
+[    0.753308] mdss_dsi_parse_panel_features: ulps feature disabled<br>
+[    0.753322] mdss_dsi_parse_panel_features: ulps during suspend feature disabled<br>
+[    0.753336] mdss_dsi_parse_dms_config: dynamic switch feature enabled: 0<br>
+[    0.753362] No valid panel-status-check-mode string<br>
+[    0.753472] 1a94000.qcom,mdss_dsi_ctrl0 supply vdd not found, using dummy regulator<br>
+[    0.753700] mdss_dsi_parse_ctrl_params:3947 Unable to read qcom,display-id, data=0000000000000000,len=20<br>
+[    0.753721] mdss_dsi_parse_gpio_params: bklt_en gpio not specified<br>
+[    0.753785] msm_dss_get_res_byname: 'dsi_phy_regulator' resource not found<br>
+[    0.753801] mdss_dsi_retrieve_ctrl_resources+0x178/0x1fc-msm_dss_ioremap_byname: 'dsi_phy_regulator' msm_dss_get_res_byname failed<br>
+[    0.753819] mdss_dsi_retrieve_ctrl_resources: ctrl_base=ffffff8001808000 ctrl_size=400 phy_base=ffffff800180a400 phy_size=580<br>
+[    0.753837] dsi_panel_device_register: Using default BTA for ESD check<br>
+[    0.753920] dsi_panel_device_register: Continuous splash enabled<br>
+[    0.754184] mdss_register_panel: adding framebuffer device 1a94000.qcom,mdss_dsi_ctrl0<br>
+[    0.755479] mdss_dsi_ctrl_probe: Dsi Ctrl-0 initialized, DSI rev:0x10040002, PHY rev:0x2<br>
+[    0.755624] mdss_dsi_status_init: DSI status check interval:2500<br>
+[    0.756540] mdss_register_panel: adding framebuffer device soc:qcom,mdss_wb_panel<br>
+[    0.757081] mdss_fb_probe: fb0: split_mode:0 left:0 right:0<br>
+[    0.757775] mdss_fb_register: FrameBuffer[0] 1080x1920 registered successfully!<br>
+[    0.758103] mdss_fb_probe: fb1: split_mode:0 left:0 right:0<br>
+[    0.758238] mdss_fb_register: FrameBuffer[1] 640x640 registered successfully!<br>
+[    0.758319] mdss_mdp_splash_parse_dt: splash mem child node is not present<br>
+[    0.758583] mdss_mdp_kcal_store_fb0_ctl panel name nt35532 fhd video mode dsi panel<br>
+[    0.758597] mdss_mdp_kcal_store_fb0_ctl panel found...<br>
+[    0.758642] kcal_ctrl_init: registered<br>
+[    0.761230] IPC_RTR: msm_ipc_router_smd_driver_register Already driver registered IPCRTR<br>
+[    0.761266] IPC_RTR: msm_ipc_router_smd_driver_register Already driver registered IPCRTR<br>
+[    0.765082] In memshare_probe, Memshare probe success<br>
+[    0.766965] msm_rpm_log_probe: OK<br>
+[    0.768164] subsys-pil-tz soc:qcom,kgsl-hyp: for a506_zap segments only will be dumped.<br>
+[    0.770052] subsys-pil-tz 1de0000.qcom,venus: for venus segments only will be dumped.<br>
+[    0.773177] msm_serial_hs module loaded<br>
+[    0.783811] platform 1c40000.qcom,kgsl-iommu:gfx3d_secure: assigned reserved memory node secure_region@0<br>
+[    0.786486] Boeffla WL blocker: driver version 1.1.0 started<br>
+[    0.790492] brd: module loaded<br>
+[    0.792586] loop: module loaded<br>
+[    0.792915] zram: Added device: zram0<br>
+[    0.793371] QSEECOM: qseecom_probe: qseecom.qsee_version = 0x1000000<br>
+[    0.793405] QSEECOM: qseecom_retrieve_ce_data: Device does not support PFE<br>
+[    0.793420] QSEECOM: qseecom_probe: qseecom clocks handled by other subsystem<br>
+[    0.793436] QSEECOM: qseecom_probe: qsee reentrancy support phase is not defined, setting to default 0<br>
+[    0.793988] QSEECOM: qseecom_probe: qseecom.whitelist_support = 0<br>
+[    0.796147] i2c-core: driver [tabla-i2c-core] using legacy suspend method<br>
+[    0.796159] i2c-core: driver [tabla-i2c-core] using legacy resume method<br>
+[    0.796242] i2c-core: driver [wcd9xxx-i2c-core] using legacy suspend method<br>
+[    0.796253] i2c-core: driver [wcd9xxx-i2c-core] using legacy resume method<br>
+[    0.796335] i2c-core: driver [tasha-i2c-core] using legacy suspend method<br>
+[    0.796347] i2c-core: driver [tasha-i2c-core] using legacy resume method<br>
+[    0.797045] QCE50: __qce_get_device_tree_data: BAM Apps EE is not defined, setting to default 1<br>
+[    0.797615] qce 720000.qcedev: Qualcomm Crypto 5.3.3 device found @0x720000<br>
+[    0.797631] qce 720000.qcedev: CE device = 0x0<br>
+               , IO base, CE = 0xffffff8001f40000<br>
+               , Consumer (IN) PIPE 2,    Producer (OUT) PIPE 3<br>
+               IO base BAM = 0x          (null)<br>
+               BAM IRQ 193<br>
+               Engines Availability = 0x2010853<br>
+[    0.797867] sps:BAM 0x0000000000704000 is registered.<br>
+[    0.798050] sps:BAM 0x0000000000704000 (va:0xffffff8002100000) enabled: ver:0x27, number of pipes:8<br>
+[    0.798267] QCE50: qce_sps_init:  Qualcomm MSM CE-BAM at 0x0000000000704000 irq 193<br>
+[    0.801303] QCE50: __qce_get_device_tree_data: BAM Apps EE is not defined, setting to default 1<br>
+[    0.802145] qcrypto 720000.qcrypto: Qualcomm Crypto 5.3.3 device found @0x720000<br>
+[    0.802162] qcrypto 720000.qcrypto: CE device = 0x0<br>
+               , IO base, CE = 0xffffff8002140000<br>
+               , Consumer (IN) PIPE 4,    Producer (OUT) PIPE 5<br>
+               IO base BAM = 0x          (null)<br>
+               BAM IRQ 193<br>
+               Engines Availability = 0x2010853<br>
+[    0.802448] QCE50: qce_sps_init:  Qualcomm MSM CE-BAM at 0x0000000000704000 irq 193<br>
+[    0.804739] qcrypto 720000.qcrypto: qcrypto-ecb-aes<br>
+[    0.804833] qcrypto 720000.qcrypto: qcrypto-cbc-aes<br>
+[    0.804917] qcrypto 720000.qcrypto: qcrypto-ctr-aes<br>
+[    0.805000] qcrypto 720000.qcrypto: qcrypto-ecb-des<br>
+[    0.805086] qcrypto 720000.qcrypto: qcrypto-cbc-des<br>
+[    0.805172] qcrypto 720000.qcrypto: qcrypto-ecb-3des<br>
+[    0.805256] qcrypto 720000.qcrypto: qcrypto-cbc-3des<br>
+[    0.805340] qcrypto 720000.qcrypto: qcrypto-xts-aes<br>
+[    0.805424] qcrypto 720000.qcrypto: qcrypto-sha1<br>
+[    0.805507] qcrypto 720000.qcrypto: qcrypto-sha256<br>
+[    0.805592] qcrypto 720000.qcrypto: qcrypto-aead-hmac-sha1-cbc-aes<br>
+[    0.805681] qcrypto 720000.qcrypto: qcrypto-aead-hmac-sha1-cbc-des<br>
+[    0.805765] qcrypto 720000.qcrypto: qcrypto-aead-hmac-sha1-cbc-3des<br>
+[    0.805851] qcrypto 720000.qcrypto: qcrypto-aead-hmac-sha256-cbc-aes<br>
+[    0.805938] qcrypto 720000.qcrypto: qcrypto-aead-hmac-sha256-cbc-des<br>
+[    0.806023] qcrypto 720000.qcrypto: qcrypto-aead-hmac-sha256-cbc-3des<br>
+[    0.806108] qcrypto 720000.qcrypto: qcrypto-hmac-sha1<br>
+[    0.806195] qcrypto 720000.qcrypto: qcrypto-hmac-sha256<br>
+[    0.806278] qcrypto 720000.qcrypto: qcrypto-aes-ccm<br>
+[    0.806363] qcrypto 720000.qcrypto: qcrypto-rfc4309-aes-ccm<br>
+[    0.807277] qcom_ice_get_device_tree_data: No vdd-hba-supply regulator, assuming not needed<br>
+[    0.807419] ICE IRQ = 194<br>
+[    0.808368] SCSI Media Changer driver v0.25<br>
+[    0.809424] tun: Universal TUN/TAP device driver, 1.6<br>
+[    0.809434] tun: (C) 1999-2004 Max Krasnyansky maxk@qualcomm.com<br>
+[    0.809573] PPP generic driver version 2.4.2<br>
+[    0.809693] PPP BSD Compression module registered<br>
+[    0.809707] PPP Deflate Compression module registered<br>
+[    0.809729] PPP MPPE Compression module registered<br>
+[    0.809748] NET: Registered protocol family 24<br>
+[    0.810348] wcnss_wlan probed in built-in mode<br>
+[    0.811061] usbcore: registered new interface driver asix<br>
+[    0.811146] usbcore: registered new interface driver ax88179_178a<br>
+[    0.811188] usbcore: registered new interface driver cdc_ether<br>
+[    0.811230] usbcore: registered new interface driver net1080<br>
+[    0.811272] usbcore: registered new interface driver cdc_subset<br>
+[    0.811313] usbcore: registered new interface driver zaurus<br>
+[    0.811475] usbcore: registered new interface driver cdc_ncm<br>
+[    0.811927] msm_sharedmem: sharedmem_register_qmi: qmi init successful<br>
+[    0.812440] scm_call failed: func id 0x42000c16, ret: -1, syscall returns: 0x0, 0x0, 0x0<br>
+[    0.812456] hyp_assign_table: Failed to assign memory protection, ret = -5<br>
+[    0.812469] msm_sharedmem: setup_shared_ram_perms: hyp_assign_phys failed IPA=0x0160x00000000f4900000 size=1572864 err=-5<br>
+[    0.812614] msm_sharedmem: msm_sharedmem_probe: Device created for client 'rmtfs'<br>
+[    0.817982] msm-dwc3 7000000.ssusb: unable to get dbm device<br>
+[    0.819386] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver<br>
+[    0.819685] ehci-pci: EHCI PCI platform driver<br>
+[    0.819730] ehci-msm: Qualcomm On-Chip EHCI Host Controller<br>
+[    0.820080] usbcore: registered new interface driver cdc_acm<br>
+[    0.820091] cdc_acm: USB Abstract Control Model driver for USB modems and ISDN adapters<br>
+[    0.820148] usbcore: registered new interface driver usb-storage<br>
+[    0.820185] usbcore: registered new interface driver ums-alauda<br>
+[    0.820223] usbcore: registered new interface driver ums-cypress<br>
+[    0.820261] usbcore: registered new interface driver ums-datafab<br>
+[    0.820298] usbcore: registered new interface driver ums-freecom<br>
+[    0.820336] usbcore: registered new interface driver ums-isd200<br>
+[    0.820376] usbcore: registered new interface driver ums-jumpshot<br>
+[    0.820417] usbcore: registered new interface driver ums-karma<br>
+[    0.820454] usbcore: registered new interface driver ums-sddr09<br>
+[    0.820493] usbcore: registered new interface driver ums-sddr55<br>
+[    0.820531] usbcore: registered new interface driver ums-usbat<br>
+[    0.820618] usbcore: registered new interface driver usbserial<br>
+[    0.820664] usbcore: registered new interface driver usb_ehset_test<br>
+[    0.821273] gbridge_init: gbridge_init successs.<br>
+[    0.821634] mousedev: PS/2 mouse device common for all mice<br>
+[    0.821837] usbcore: registered new interface driver xpad<br>
+[    0.821852] tony_test:[ft5435_ts_init]<br>
+[    0.822280] ~~~~~ ft5435_ts_probe start<br>
+[    0.822290] [ft5435_ts_probe]CONFIG_FB is defined<br>
+[    0.822299] [ft5435_ts_probe]CONFIG_PM is defined<br>
+[    0.822343] [ft5435_get_dt_vkey]000<br>
+[    0.822352] [ft5435_get_dt_vkey]111<br>
+[    0.822359] [ft5435_get_dt_vkey]222<br>
+[    0.822367] [ft5435_get_dt_vkey]333<br>
+[    0.822377] [FTS]keycode = 172, x= 500, y=2040<br>
+[    0.822388] [FTS]keycode = 139, x= 200, y=2040<br>
+[    0.822398] [FTS]keycode = 158, x= 800, y=2040<br>
+[    0.822407] [ft5435_get_dt_vkey]5555<br>
+[    0.822544] input: ft5435_ts as /devices/soc/78b7000.i2c/i2c-3/3-0038/input/input1<br>
+[    1.040251] i2c-msm-v2 78b7000.i2c: msm_bus_scale_register_client(mstr-id:86):0xf (ok)<br>
+[    1.040457] ft5435_ts 3-0038: Device ID = 0x54<br>
+[    1.040900] sps: BAM device 0x0000000007884000 is not registered yet.<br>
+[    1.041106] sps:BAM 0x0000000007884000 is registered.<br>
+[    1.041227] sps:BAM 0x0000000007884000 (va:0xffffff8001e60000) enabled: ver:0x19, number of pipes:12<br>
+[    1.043128] ft5435_ts 3-0038: report rate = 110Hz<br>
+[    1.043705] ft5435_ts 3-0038: Firmware version = 10.0.0<br>
+[    1.043856] [Fu]fw_vendor_id=0x51<br>
+[    1.043865] upgrade,fts_fw_vendor_id=0x51<br>
+[    1.043875] ft5435_fw_upgrade_by_array_data, suspended=0<br>
+[    1.043887] ft5435_ts 3-0038: Current firmware: 0x0a.0.0<br>
+[    1.043898] ft5435_ts 3-0038: New firmware: 0x0a.0.0<br>
+[    1.043909] ft5435_ts 3-0038: Exiting fw upgrade...<br>
+[    1.043918] ft5435_fw_upgrade_by_array_data done<br>
+[    1.043991] ~~~~~ tp_glove_register enable!!!!!<br>
+[    1.044001] [fts]ft5435_fw_LockDownInfo_get_from_boot, fw_vendor_id=0x51<br>
+[    1.424274] ft5435_fw_LockDownInfo_get_from_boot, FTS_UPGRADE_LOOP ok is  i = 0<br>
+[    1.456292] ft5435_fw_LockDownInfo_get_from_boot: REG VAL = 0x34, j=0<br>
+[    1.456304] ft5435_fw_LockDownInfo_get_from_boot: REG VAL = 0x35, j=1<br>
+[    1.456315] ft5435_fw_LockDownInfo_get_from_boot: REG VAL = 0x32, j=2<br>
+[    1.456326] ft5435_fw_LockDownInfo_get_from_boot: REG VAL = 0x01, j=3<br>
+[    1.456337] ft5435_fw_LockDownInfo_get_from_boot: REG VAL = 0xc6, j=4<br>
+[    1.456347] ft5435_fw_LockDownInfo_get_from_boot: REG VAL = 0x01, j=5<br>
+[    1.456358] ft5435_fw_LockDownInfo_get_from_boot: REG VAL = 0x34, j=6<br>
+[    1.456368] ft5435_fw_LockDownInfo_get_from_boot: REG VAL = 0x01, j=7<br>
+[    1.456380] ft5435_fw_LockDownInfo_get_from_boot: reset the tp<br>
+[    1.760041] tpd_probe, ft5x46_ctpm_LockDownInfo_get_from_boot, tp_lockdown_info=34353201c6013401<br>
+[    1.760078] ft5435_ts 3-0038: Create proc entry success!<br>
+[    1.760237] ~~~~~ ft5435_ts_probe end<br>
+[    1.760286] [ TSP ] ist30xx_init()<br>
+[    1.760573] [ TSP ] ### IMAGIS probe(ver:3.0.0.0, addr:0x50) ###<br>
+[    1.760594] [ TSP ] ##### Device tree #####<br>
+[    1.760604] [ TSP ]  reset gpio: 64<br>
+[    1.760612] [ TSP ]  irq gpio: 65<br>
+[    1.760620] [ TSP ] ist30xx_request_gpio<br>
+[    1.760630] [ TSP ] unable to request reset gpio: 64<br>
+[    1.760640] [ TSP ] Error, ist30xx init driver<br>
+[    1.760787] input: s2w_pwrkey as /devices/virtual/input/input2<br>
+[    1.761077] [sweep2wake]: sweep2wake_init done<br>
+[    1.761211] --------gf_init start.--------<br>
+[    1.761818] msm8953-pinctrl 1000000.pinctrl: invalid group "gpio135" for function "blsp_spi6"<br>
+[    1.761838] msm8953-pinctrl 1000000.pinctrl: invalid group "gpio136" for function "blsp_spi6"<br>
+[    1.761855] msm8953-pinctrl 1000000.pinctrl: invalid group "gpio137" for function "blsp_spi6"<br>
+[    1.761873] msm8953-pinctrl 1000000.pinctrl: invalid group "gpio138" for function "blsp_spi6"<br>
+[    1.761979] --------gf_probe start.--------<br>
+[    1.762189] input: gf3208 as /devices/virtual/input/input3<br>
+[    1.762297] --------gf_probe end---OK.--------<br>
+[    1.762480]  status = 0x0<br>
+[    1.762488] --------gf_init end---OK.--------<br>
+[    1.763100] fpc1020 soc:fpc1020: fpc1020_probe: ok<br>
+[    1.763199] fpc1020_init OK<br>
+[    1.763910] input: hbtp_vm as /devices/virtual/input/input4<br>
+[    1.764844] qcom,qpnp-rtc qpnp-rtc-8: rtc core: registered qpnp_rtc as rtc0<br>
+[    1.765009] i2c /dev entries driver<br>
+[    1.765734] lirc_dev: IR Remote Control driver registered, major 232<br>
+[    1.765750] IR NEC protocol handler initialized<br>
+[    1.765763] IR RC5(x/sz) protocol handler initialized<br>
+[    1.765776] IR RC6 protocol handler initialized<br>
+[    1.765789] IR JVC protocol handler initialized<br>
+[    1.765801] IR Sony protocol handler initialized<br>
+[    1.765814] IR SANYO protocol handler initialized<br>
+[    1.765827] IR Sharp protocol handler initialized<br>
+[    1.765840] IR LIRC bridge handler initialized<br>
+[    1.765852] IR XMP protocol handler initialized<br>
+[    1.770606] /soc/qcom,cam_smmu/msm_cam_smmu_cb1: could not get #iommu-cells for /soc/qcom,iommu@1e00000<br>
+[    1.770875] /soc/qcom,cam_smmu/msm_cam_smmu_cb3: could not get #iommu-cells for /soc/qcom,iommu@1e00000<br>
+[    1.771121] /soc/qcom,cam_smmu/msm_cam_smmu_cb4: could not get #iommu-cells for /soc/qcom,iommu@1e00000<br>
+[    1.773416] msm_camera_get_dt_vreg_data:1115 number of entries is 0 or not present in dts<br>
+[    1.776834] msm_camera_get_dt_vreg_data:1115 number of entries is 0 or not present in dts<br>
+[    1.777617] msm_camera_get_dt_vreg_data:1115 number of entries is 0 or not present in dts<br>
+[    1.778320] msm_camera_get_dt_vreg_data:1115 number of entries is 0 or not present in dts<br>
+[    1.780367] msm_camera_get_dt_vreg_data:1115 number of entries is 0 or not present in dts<br>
+[    1.781605] msm_camera_get_dt_vreg_data:1115 number of entries is 0 or not present in dts<br>
+[    1.782838] msm_camera_get_dt_vreg_data:1115 number of entries is 0 or not present in dts<br>
+[    1.783491] msm_camera_pinctrl_init:1277 Getting pinctrl handle failed<br>
+[    1.783504] msm_actuator_platform_probe:1976 ERR:msm_actuator_platform_probe: Error in reading actuator pinctrl<br>
+[    1.783625] qcom,actuator: probe of 1b0c000.qcom,cci:qcom,actuator@0 failed with error -22<br>
+[    1.784389] msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+[    1.789859] msm_camera_config_single_vreg : can't find sub reg name<br>
+[    1.798851] msm_cci_init:1426: hw_version = 0x10020005<br>
+[    1.798886] read_eeprom_memory 158<br>
+[    1.799328] msm_cci_irq:1778 MASTER_0 error 0x10000000<br>
+[    1.799361] msm_cci_i2c_read:955 read_words = 0, exp words = 1<br>
+[    1.799372] msm_cci_i2c_read_bytes:1038 failed rc -22<br>
+[    1.799382] read_eeprom_memory 173 error<br>
+[    1.799391] msm_eeprom_platform_probe read_eeprom_memory failed<br>
+[    1.807664] msm_camera_config_single_vreg : can't find sub reg name<br>
+[    1.811882] qcom,eeprom: probe of 1b0c000.qcom,cci:qcom,eeprom@0 failed with error -22<br>
+[    1.812355] msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+[    1.818739] msm_camera_config_single_vreg : can't find sub reg name<br>
+[    1.827824] msm_cci_init:1426: hw_version = 0x10020005<br>
+[    1.827857] read_eeprom_memory 158<br>
+[    1.828448] qcom,slave-addr = 0xB0<br>
+[    1.828944] qcom,slave-addr = 0xB0<br>
+[    1.829439] qcom,slave-addr = 0xB0<br>
+[    1.830115] qcom,slave-addr = 0xB0<br>
+[    1.830970] qcom,slave-addr = 0xB0<br>
+[    1.831465] qcom,slave-addr = 0xB0<br>
+[    1.832412] qcom,slave-addr = 0xB0<br>
+[    1.833357] qcom,slave-addr = 0xB0<br>
+[    2.051355] qcom,slave-addr = 0xB0<br>
+[    2.170865] msm_camera_config_single_vreg : can't find sub reg name<br>
+[    2.175636] msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+[    2.182000] msm_camera_config_single_vreg : can't find sub reg name<br>
+[    2.191088] msm_cci_init:1426: hw_version = 0x10020005<br>
+[    2.191121] read_eeprom_memory 158<br>
+[    2.191711] qcom,slave-addr = 0xB0<br>
+[    2.192299] qcom,slave-addr = 0xB0<br>
+[    2.192975] qcom,slave-addr = 0xB0<br>
+[    2.193831] qcom,slave-addr = 0xB0<br>
+[    2.194867] qcom,slave-addr = 0xB0<br>
+[    2.412874] qcom,slave-addr = 0xB0<br>
+[    2.523582] qcom,slave-addr = 0xB0<br>
+[    2.532478] msm_camera_config_single_vreg : can't find sub reg name<br>
+[    2.537290] msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+[    2.558272] msm_cci_init:1426: hw_version = 0x10020005<br>
+[    2.558303] read_eeprom_memory 158<br>
+[    2.558745] msm_cci_irq:1784 MASTER_1 error 0x40000000<br>
+[    2.558778] msm_cci_i2c_read:955 read_words = 0, exp words = 1<br>
+[    2.558789] msm_cci_i2c_read_bytes:1038 failed rc -22<br>
+[    2.558799] read_eeprom_memory 173 error<br>
+[    2.558808] msm_eeprom_platform_probe read_eeprom_memory failed<br>
+[    2.578190] qcom,eeprom: probe of 1b0c000.qcom,cci:qcom,eeprom@3 failed with error -22<br>
+[    2.578654] msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+[    2.600300] msm_cci_init:1426: hw_version = 0x10020005<br>
+[    2.600331] read_eeprom_memory 158<br>
+[    2.600777] msm_cci_irq:1784 MASTER_1 error 0x40000000<br>
+[    2.600810] msm_cci_i2c_read:955 read_words = 0, exp words = 1<br>
+[    2.600821] msm_cci_i2c_read_bytes:1038 failed rc -22<br>
+[    2.600831] read_eeprom_memory 173 error<br>
+[    2.600840] msm_eeprom_platform_probe read_eeprom_memory failed<br>
+[    2.620229] qcom,eeprom: probe of 1b0c000.qcom,cci:qcom,eeprom@4 failed with error -22<br>
+[    2.620693] msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+[    2.642340] msm_cci_init:1426: hw_version = 0x10020005<br>
+[    2.642371] read_eeprom_memory 158<br>
+[    2.780944] msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+[    2.787325] msm_camera_config_single_vreg : can't find sub reg name<br>
+[    2.796409] msm_cci_init:1426: hw_version = 0x10020005<br>
+[    2.796443] read_eeprom_memory 158<br>
+[    2.797033] qcom,slave-addr = 0xB0<br>
+[    2.923375] qcom,slave-addr = 0xB0<br>
+[    3.049712] qcom,slave-addr = 0xB0<br>
+[    3.176035] qcom,slave-addr = 0xB0<br>
+[    3.302355] qcom,slave-addr = 0xB0<br>
+[    3.428679] qcom,slave-addr = 0xB0<br>
+[    3.555011] qcom,slave-addr = 0xB0<br>
+[    3.681342] qcom,slave-addr = 0xB0<br>
+[    3.815893] msm_camera_config_single_vreg : can't find sub reg name<br>
+[    3.820685] msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+[    3.827069] msm_camera_config_single_vreg : can't find sub reg name<br>
+[    3.836171] msm_cci_init:1426: hw_version = 0x10020005<br>
+[    3.836205] read_eeprom_memory 158<br>
+[    3.836646] msm_cci_irq:1778 MASTER_0 error 0x10000000<br>
+[    3.836679] msm_cci_i2c_read:955 read_words = 0, exp words = 1<br>
+[    3.836691] msm_cci_i2c_read_bytes:1038 failed rc -22<br>
+[    3.836701] read_eeprom_memory 173 error<br>
+[    3.836710] msm_eeprom_platform_probe read_eeprom_memory failed<br>
+[    3.844929] msm_camera_config_single_vreg : can't find sub reg name<br>
+[    3.849152] qcom,eeprom: probe of 1b0c000.qcom,cci:qcom,eeprom@7 failed with error -22<br>
+[    3.849582] msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+[    3.855950] msm_camera_config_single_vreg : can't find sub reg name<br>
+[    3.865045] msm_cci_init:1426: hw_version = 0x10020005<br>
+[    3.865078] read_eeprom_memory 158<br>
+[    3.865668] qcom,slave-addr = 0xB0<br>
+[    3.992011] qcom,slave-addr = 0xB0<br>
+[    4.118344] qcom,slave-addr = 0xB0<br>
+[    4.244669] qcom,slave-addr = 0xB0<br>
+[    4.370990] qcom,slave-addr = 0xB0<br>
+[    4.497313] qcom,slave-addr = 0xB0<br>
+[    4.623634] qcom,slave-addr = 0xB0<br>
+[    4.749959] qcom,slave-addr = 0xB0<br>
+[    4.884521] msm_camera_config_single_vreg : can't find sub reg name<br>
+[    4.889313] msm_eeprom_platform_probe qcom,i2c-freq-mode read fail. Setting to 0 -22<br>
+[    4.895696] msm_camera_config_single_vreg : can't find sub reg name<br>
+[    4.904787] msm_cci_init:1426: hw_version = 0x10020005<br>
+[    4.904820] read_eeprom_memory 158<br>
+[    4.905261] msm_cci_irq:1778 MASTER_0 error 0x10000000<br>
+[    4.905294] msm_cci_i2c_read:955 read_words = 0, exp words = 1<br>
+[    4.905305] msm_cci_i2c_read_bytes:1038 failed rc -22<br>
+[    4.905315] read_eeprom_memory 173 error<br>
+[    4.905324] msm_eeprom_platform_probe read_eeprom_memory failed<br>
+[    4.913544] msm_camera_config_single_vreg : can't find sub reg name<br>
+[    4.917764] qcom,eeprom: probe of 1b0c000.qcom,cci:qcom,eeprom@9 failed with error -22<br>
+[    4.925505] MSM-CPP cpp_init_hardware:869 CPP HW Version: 0x40030003<br>
+[    4.925529] MSM-CPP cpp_init_hardware:887 stream_cnt:0<br>
+[    4.937420] __msm_jpeg_init:1537] Jpeg Device id 0<br>
+[    4.942658] FG: fg_probe: FG Probe success - FG Revision DIG:3.1 ANA:1.2 PMIC subtype=17<br>
+[    4.944630] thermal thermal_zone1: failed to read out thermal zone 1<br>
+[    4.944865] thermal thermal_zone2: failed to read out thermal zone 2<br>
+[    4.945221] thermal thermal_zone3: failed to read out thermal zone 3<br>
+[    4.945722] qpnp_vadc_read: no vadc_chg_vote found<br>
+[    4.945734] qpnp_vadc_get_temp: VADC read error with -22<br>
+[    4.945746] thermal thermal_zone4: failed to read out thermal zone 4<br>
+[    4.968246] device-mapper: uevent: version 1.0.3<br>
+[    4.968535] device-mapper: ioctl: 4.28.0-ioctl (2014-09-17) initialised: dm-devel@redhat.com<br>
+[    4.968634] device-mapper: req-crypt: dm-req-crypt successfully initalized.<br>
+<br>
+[    4.968695] ------------[ cut here ]------------<br>
+[    4.968711] WARNING: CPU: 6 PID: 1 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xiaomi/msm8953/fs/sysfs/dir.c:31 sysfs_warn_dup+0x70/0x88()<br>
+[    4.968730] sysfs: cannot create duplicate filename '/devices/system/cpu/cpu0/cpufreq/stats'<br>
+[    4.968744] Modules linked in:<br>
+[    4.968758] CPU: 6 PID: 1 Comm: swapper/0 Tainted: G        W      3.18.105-ElectraBlue-11.0-mido #3<br>
+[    4.968772] Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+[    4.968786] Call trace:<br>
+[    4.968797] [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+[    4.968809] [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+[    4.968822] [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+[    4.968834] [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+[    4.968845] [ffffffc0000a68a4] warn_slowpath_fmt+0x88/0xac<br>
+[    4.968856] [ffffffc000256774] sysfs_warn_dup+0x70/0x88<br>
+[    4.968868] [ffffffc000256f10] internal_create_group+0xc8/0x1f4<br>
+[    4.968879] [ffffffc000257068] sysfs_create_group+0x2c/0x38<br>
+[    4.968893] [ffffffc0009b3ac0] __cpufreq_stats_create_table.part.3+0x78/0x1ac<br>
+[    4.968906] [ffffffc001544404] cpufreq_stats_init+0x180/0x2bc<br>
+[    4.968918] [ffffffc000082c10] do_one_initcall+0x194/0x1b0<br>
+[    4.968931] [ffffffc0014fcb98] kernel_init_freeable+0x1d0/0x284<br>
+[    4.968943] [ffffffc000e03928] kernel_init+0x20/0xe0<br>
+[    4.968953] ---[ end trace 95939fc9f79b8dd0 ]---<br>
+[    4.968975] ------------[ cut here ]------------<br>
+[    4.968988] WARNING: CPU: 6 PID: 1 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xiaomi/msm8953/fs/sysfs/dir.c:31 sysfs_warn_dup+0x70/0x88()<br>
+[    4.969007] sysfs: cannot create duplicate filename '/devices/system/cpu/cpu0/cpufreq/stats'<br>
+[    4.969019] Modules linked in:<br>
+[    4.969031] CPU: 6 PID: 1 Comm: swapper/0 Tainted: G        W      3.18.105-ElectraBlue-11.0-mido #3<br>
+[    4.969044] Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+[    4.969056] Call trace:<br>
+[    4.969066] [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+[    4.969077] [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+[    4.969088] [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+[    4.969098] [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+[    4.969110] [ffffffc0000a68a4] warn_slowpath_fmt+0x88/0xac<br>
+[    4.969121] [ffffffc000256774] sysfs_warn_dup+0x70/0x88<br>
+[    4.969132] [ffffffc000256f10] internal_create_group+0xc8/0x1f4<br>
+[    4.969144] [ffffffc000257068] sysfs_create_group+0x2c/0x38<br>
+[    4.969156] [ffffffc0009b3ac0] __cpufreq_stats_create_table.part.3+0x78/0x1ac<br>
+[    4.969169] [ffffffc001544404] cpufreq_stats_init+0x180/0x2bc<br>
+[    4.969180] [ffffffc000082c10] do_one_initcall+0x194/0x1b0<br>
+[    4.969192] [ffffffc0014fcb98] kernel_init_freeable+0x1d0/0x284<br>
+[    4.969203] [ffffffc000e03928] kernel_init+0x20/0xe0<br>
+[    4.969213] ---[ end trace 95939fc9f79b8dd1 ]---<br>
+[    4.969235] ------------[ cut here ]------------<br>
+[    4.969247] WARNING: CPU: 6 PID: 1 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xiaomi/msm8953/fs/sysfs/dir.c:31 sysfs_warn_dup+0x70/0x88()<br>
+[    4.969266] sysfs: cannot create duplicate filename '/devices/system/cpu/cpu0/cpufreq/stats'<br>
+[    4.969278] Modules linked in:<br>
+[    4.969290] CPU: 6 PID: 1 Comm: swapper/0 Tainted: G        W      3.18.105-ElectraBlue-11.0-mido #3<br>
+[    4.969303] Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+[    4.969315] Call trace:<br>
+[    4.969324] [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+[    4.969336] [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+[    4.969347] [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+[    4.969357] [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+[    4.969368] [ffffffc0000a68a4] warn_slowpath_fmt+0x88/0xac<br>
+[    4.969380] [ffffffc000256774] sysfs_warn_dup+0x70/0x88<br>
+[    4.969391] [ffffffc000256f10] internal_create_group+0xc8/0x1f4<br>
+[    4.969403] [ffffffc000257068] sysfs_create_group+0x2c/0x38<br>
+[    4.969415] [ffffffc0009b3ac0] __cpufreq_stats_create_table.part.3+0x78/0x1ac<br>
+[    4.969428] [ffffffc001544404] cpufreq_stats_init+0x180/0x2bc<br>
+[    4.969439] [ffffffc000082c10] do_one_initcall+0x194/0x1b0<br>
+[    4.969451] [ffffffc0014fcb98] kernel_init_freeable+0x1d0/0x284<br>
+[    4.969462] [ffffffc000e03928] kernel_init+0x20/0xe0<br>
+[    4.969471] ---[ end trace 95939fc9f79b8dd2 ]---<br>
+[    4.969493] ------------[ cut here ]------------<br>
+[    4.969505] WARNING: CPU: 6 PID: 1 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xiaomi/msm8953/fs/sysfs/dir.c:31 sysfs_warn_dup+0x70/0x88()<br>
+[    4.969524] sysfs: cannot create duplicate filename '/devices/system/cpu/cpu0/cpufreq/stats'<br>
+[    4.969536] Modules linked in:<br>
+[    4.969548] CPU: 6 PID: 1 Comm: swapper/0 Tainted: G        W      3.18.105-ElectraBlue-11.0-mido #3<br>
+[    4.969562] Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+[    4.969574] Call trace:<br>
+[    4.969582] [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+[    4.969594] [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+[    4.969605] [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+[    4.969615] [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+[    4.969626] [ffffffc0000a68a4] warn_slowpath_fmt+0x88/0xac<br>
+[    4.969638] [ffffffc000256774] sysfs_warn_dup+0x70/0x88<br>
+[    4.969649] [ffffffc000256f10] internal_create_group+0xc8/0x1f4<br>
+[    4.969660] [ffffffc000257068] sysfs_create_group+0x2c/0x38<br>
+[    4.969672] [ffffffc0009b3ac0] __cpufreq_stats_create_table.part.3+0x78/0x1ac<br>
+[    4.969685] [ffffffc001544404] cpufreq_stats_init+0x180/0x2bc<br>
+[    4.969696] [ffffffc000082c10] do_one_initcall+0x194/0x1b0<br>
+[    4.969708] [ffffffc0014fcb98] kernel_init_freeable+0x1d0/0x284<br>
+[    4.969719] [ffffffc000e03928] kernel_init+0x20/0xe0<br>
+[    4.969729] ---[ end trace 95939fc9f79b8dd3 ]---<br>
+[    4.969750] ------------[ cut here ]------------<br>
+[    4.969762] WARNING: CPU: 6 PID: 1 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xiaomi/msm8953/fs/sysfs/dir.c:31 sysfs_warn_dup+0x70/0x88()<br>
+[    4.969781] sysfs: cannot create duplicate filename '/devices/system/cpu/cpu0/cpufreq/stats'<br>
+[    4.969793] Modules linked in:<br>
+[    4.969805] CPU: 6 PID: 1 Comm: swapper/0 Tainted: G        W      3.18.105-ElectraBlue-11.0-mido #3<br>
+[    4.969818] Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+[    4.969830] Call trace:<br>
+[    4.969840] [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+[    4.969851] [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+[    4.969862] [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+[    4.969873] [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+[    4.969884] [ffffffc0000a68a4] warn_slowpath_fmt+0x88/0xac<br>
+[    4.969895] [ffffffc000256774] sysfs_warn_dup+0x70/0x88<br>
+[    4.969906] [ffffffc000256f10] internal_create_group+0xc8/0x1f4<br>
+[    4.969918] [ffffffc000257068] sysfs_create_group+0x2c/0x38<br>
+[    4.969930] [ffffffc0009b3ac0] __cpufreq_stats_create_table.part.3+0x78/0x1ac<br>
+[    4.969943] [ffffffc001544404] cpufreq_stats_init+0x180/0x2bc<br>
+[    4.969955] [ffffffc000082c10] do_one_initcall+0x194/0x1b0<br>
+[    4.969966] [ffffffc0014fcb98] kernel_init_freeable+0x1d0/0x284<br>
+[    4.969978] [ffffffc000e03928] kernel_init+0x20/0xe0<br>
+[    4.969987] ---[ end trace 95939fc9f79b8dd4 ]---<br>
+[    4.970010] ------------[ cut here ]------------<br>
+[    4.970022] WARNING: CPU: 6 PID: 1 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xiaomi/msm8953/fs/sysfs/dir.c:31 sysfs_warn_dup+0x70/0x88()<br>
+[    4.970041] sysfs: cannot create duplicate filename '/devices/system/cpu/cpu0/cpufreq/stats'<br>
+[    4.970053] Modules linked in:<br>
+[    4.970065] CPU: 6 PID: 1 Comm: swapper/0 Tainted: G        W      3.18.105-ElectraBlue-11.0-mido #3<br>
+[    4.970079] Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+[    4.970090] Call trace:<br>
+[    4.970099] [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+[    4.970111] [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+[    4.970122] [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+[    4.970132] [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+[    4.970144] [ffffffc0000a68a4] warn_slowpath_fmt+0x88/0xac<br>
+[    4.970155] [ffffffc000256774] sysfs_warn_dup+0x70/0x88<br>
+[    4.970166] [ffffffc000256f10] internal_create_group+0xc8/0x1f4<br>
+[    4.970178] [ffffffc000257068] sysfs_create_group+0x2c/0x38<br>
+[    4.970190] [ffffffc0009b3ac0] __cpufreq_stats_create_table.part.3+0x78/0x1ac<br>
+[    4.970203] [ffffffc001544404] cpufreq_stats_init+0x180/0x2bc<br>
+[    4.970215] [ffffffc000082c10] do_one_initcall+0x194/0x1b0<br>
+[    4.970226] [ffffffc0014fcb98] kernel_init_freeable+0x1d0/0x284<br>
+[    4.970238] [ffffffc000e03928] kernel_init+0x20/0xe0<br>
+[    4.970247] ---[ end trace 95939fc9f79b8dd5 ]---<br>
+[    4.970268] ------------[ cut here ]------------<br>
+[    4.970280] WARNING: CPU: 6 PID: 1 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xiaomi/msm8953/fs/sysfs/dir.c:31 sysfs_warn_dup+0x70/0x88()<br>
+[    4.970299] sysfs: cannot create duplicate filename '/devices/system/cpu/cpu0/cpufreq/stats'<br>
+[    4.970311] Modules linked in:<br>
+[    4.970323] CPU: 6 PID: 1 Comm: swapper/0 Tainted: G        W      3.18.105-ElectraBlue-11.0-mido #3<br>
+[    4.970337] Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+[    4.970349] Call trace:<br>
+[    4.970358] [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+[    4.970369] [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+[    4.970380] [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+[    4.970390] [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+[    4.970401] [ffffffc0000a68a4] warn_slowpath_fmt+0x88/0xac<br>
+[    4.970413] [ffffffc000256774] sysfs_warn_dup+0x70/0x88<br>
+[    4.970424] [ffffffc000256f10] internal_create_group+0xc8/0x1f4<br>
+[    4.970435] [ffffffc000257068] sysfs_create_group+0x2c/0x38<br>
+[    4.970447] [ffffffc0009b3ac0] __cpufreq_stats_create_table.part.3+0x78/0x1ac<br>
+[    4.970460] [ffffffc001544404] cpufreq_stats_init+0x180/0x2bc<br>
+[    4.970472] [ffffffc000082c10] do_one_initcall+0x194/0x1b0<br>
+[    4.970483] [ffffffc0014fcb98] kernel_init_freeable+0x1d0/0x284<br>
+[    4.970495] [ffffffc000e03928] kernel_init+0x20/0xe0<br>
+[    4.970504] ---[ end trace 95939fc9f79b8dd6 ]---<br>
+[    4.970827] sdhci: Secure Digital Host Controller Interface driver<br>
+[    4.970839] sdhci: Copyright(c) Pierre Ossman<br>
+[    4.970851] sdhci-pltfm: SDHCI platform and OF driver helper<br>
+[    4.971556] qcom_ice_get_pdevice: found ice device ffffffc0ad1ac600<br>
+[    4.971568] qcom_ice_get_pdevice: matching platform device ffffffc0af3ecc00<br>
+[    4.975551] qcom_ice 7803000.sdcc1ice: QC ICE 2.1.44 device found @0xffffff8001d70000<br>
+[    4.975987] sdhci_msm 7824900.sdhci: No vmmc regulator found<br>
+[    4.976000] sdhci_msm 7824900.sdhci: No vqmmc regulator found<br>
+[    4.976309] mmc0: SDHCI controller on 7824900.sdhci [7824900.sdhci] using 64-bit ADMA in CMDQ mode<br>
+[    5.012606] sdhci_msm 7864900.sdhci: sdhci_msm_probe: ICE device is not enabled<br>
+[    5.027154] sdhci_msm 7864900.sdhci: No vmmc regulator found<br>
+[    5.027175] sdhci_msm 7864900.sdhci: No vqmmc regulator found<br>
+[    5.027518] mmc1: SDHCI controller on 7864900.sdhci [7864900.sdhci] using 64-bit ADMA in legacy mode<br>
+[    5.052786] mmc0: Out-of-interrupt timeout is 50[ms]<br>
+[    5.052797] mmc0: BKOPS_EN equals 0x2<br>
+[    5.052806] mmc0: eMMC FW version: 0x07<br>
+[    5.052814] mmc0: CMDQ supported: depth: 16<br>
+[    5.052823] mmc0: cache barrier support 0 flush policy 0<br>
+[    5.062138] cmdq_host_alloc_tdl: desc_size: 768 data_sz: 253952 slot-sz: 24<br>
+[    5.062327] mmc0: CMDQ enabled on card<br>
+[    5.062342] mmc0: new HS400 MMC card at address 0001<br>
+[    5.062638] sdhci_msm_pm_qos_cpu_init (): voted for group #0 (mask=0xf) latency=2<br>
+[    5.062654] sdhci_msm_pm_qos_cpu_init (): voted for group #1 (mask=0xf0) latency=2<br>
+[    5.062768] mmcblk0: mmc0:0001 RX1BMB 29.1 GiB<br>
+[    5.062865] mmcblk0rpmb: mmc0:0001 RX1BMB partition 3 4.00 MiB<br>
+[    5.064424]  mmcblk0: p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 p11 p12 p13 p14 p15 p16 p17 p18 p19 p20 p21 p22 p23 p24 p25 p26 p27 p28 p29 p30 p31 p32 p33 p34 p35 p36 p37 p38 p39 p40 p41 p42 p43 p44 p45 p46 p47 p48 p49<br>
+[    5.065082] qcom,leds-qpnp: probe of leds-qpnp-21 failed with error -10<br>
+[    5.068749] tz_log 8600720.tz-log: Hyp log service is not supported<br>
+[    5.070061] hidraw: raw HID events driver (C) Jiri Kosina<br>
+[    5.070525] usbcore: registered new interface driver usbhid<br>
+[    5.070537] usbhid: USB HID core driver<br>
+[    5.071023] ashmem: initialized<br>
+[    5.071145] logger: created 256K log 'log_main'<br>
+[    5.071255] logger: created 256K log 'log_events'<br>
+[    5.071366] logger: created 256K log 'log_radio'<br>
+[    5.071481] logger: created 256K log 'log_system'<br>
+[    5.072045] qpnp_coincell_charger_show_state: enabled=Y, voltage=3200 mV, resistance=2100 ohm<br>
+[    5.076558] bimc-bwmon 408000.qcom,cpu-bwmon: BW HWmon governor registered.<br>
+[    5.078994] devfreq soc:qcom,cpubw: Couldn't update frequency transition information.<br>
+[    5.079164] devfreq soc:qcom,mincpubw: Couldn't update frequency transition information.<br>
+[    5.083503] coresight-fuse a601c.fuse: Fuse initialized<br>
+[    5.083869] coresight-cti: probe of 6010000.cti failed with error -1<br>
+[    5.083902] coresight-cti: probe of 6011000.cti failed with error -1<br>
+[    5.083934] coresight-cti: probe of 6012000.cti failed with error -1<br>
+[    5.083965] coresight-cti: probe of 6013000.cti failed with error -1<br>
+[    5.083997] coresight-cti: probe of 6014000.cti failed with error -1<br>
+[    5.084053] coresight-cti: probe of 6015000.cti failed with error -1<br>
+[    5.084086] coresight-cti: probe of 6016000.cti failed with error -1<br>
+[    5.084119] coresight-cti: probe of 6017000.cti failed with error -1<br>
+[    5.084151] coresight-cti: probe of 6018000.cti failed with error -1<br>
+[    5.084183] coresight-cti: probe of 6019000.cti failed with error -1<br>
+[    5.084215] coresight-cti: probe of 601a000.cti failed with error -1<br>
+[    5.084246] coresight-cti: probe of 601b000.cti failed with error -1<br>
+[    5.084278] coresight-cti: probe of 601c000.cti failed with error -1<br>
+[    5.084309] coresight-cti: probe of 601d000.cti failed with error -1<br>
+[    5.084341] coresight-cti: probe of 601e000.cti failed with error -1<br>
+[    5.084373] coresight-cti: probe of 601f000.cti failed with error -1<br>
+[    5.084405] coresight-cti: probe of 6198000.cti failed with error -1<br>
+[    5.084437] coresight-cti: probe of 6199000.cti failed with error -1<br>
+[    5.084469] coresight-cti: probe of 619a000.cti failed with error -1<br>
+[    5.084501] coresight-cti: probe of 619b000.cti failed with error -1<br>
+[    5.084533] coresight-cti: probe of 61b8000.cti failed with error -1<br>
+[    5.084565] coresight-cti: probe of 61b9000.cti failed with error -1<br>
+[    5.084597] coresight-cti: probe of 61ba000.cti failed with error -1<br>
+[    5.084630] coresight-cti: probe of 61bb000.cti failed with error -1<br>
+[    5.084661] coresight-cti: probe of 6128000.cti failed with error -1<br>
+[    5.084693] coresight-cti: probe of 6124000.cti failed with error -1<br>
+[    5.084725] coresight-cti: probe of 6134000.cti failed with error -1<br>
+[    5.084756] coresight-cti: probe of 6139000.cti failed with error -1<br>
+[    5.084788] coresight-cti: probe of 613c000.cti failed with error -1<br>
+[    5.084819] coresight-cti: probe of 610c000.cti failed with error -1<br>
+[    5.085190] coresight-csr 6001000.csr: CSR initialized<br>
+[    5.085546] coresight-tmc: probe of 6028000.tmc failed with error -1<br>
+[    5.085686] coresight-tmc 6027000.tmc: failed to get flush cti<br>
+[    5.085699] coresight-tmc 6027000.tmc: failed to get reset cti<br>
+[    5.085863] coresight-tmc 6027000.tmc: TMC initialized<br>
+[    5.087403] nidnt boot config: 2<br>
+[    5.087412] NIDnT disabled, only sd mode supported.<br>
+[    5.087424] coresight-tpiu 6020000.tpiu: NIDnT hw support disabled<br>
+[    5.087436] coresight-tpiu 6020000.tpiu: NIDnT on SDCARD only mode<br>
+[    5.087504] coresight-tpiu 6020000.tpiu: TPIU initialized<br>
+[    5.089106] coresight-replicator 6026000.replicator: REPLICATOR initialized<br>
+[    5.089519] coresight-stm: probe of 6002000.stm failed with error -1<br>
+[    5.089942] coresight-hwevent 6101000.hwevent: Hardware Event driver initialized<br>
+[    5.090861] usbcore: registered new interface driver snd-usb-audio<br>
+[    5.104330] msm-pcm-lpa soc:qcom,msm-pcm-lpa: msm_pcm_probe: dev name soc:qcom,msm-pcm-lpa<br>
+[    5.109478] u32 classifier<br>
+[    5.109492]     Actions configured<br>
+[    5.109539] Netfilter messages via NETLINK v0.30.<br>
+[    5.109591] nf_conntrack version 0.5.0 (16384 buckets, 65536 max)<br>
+[    5.109877] ctnetlink v0.93: registering with nfnetlink.<br>
+[    5.110462] xt_time: kernel timezone is -0000<br>
+[    5.110516] wireguard: WireGuard 0.0.20180809 loaded. See www.wireguard.com for information.<br>
+[    5.110529] wireguard: Copyright (C) 2015-2018 Jason A. Donenfeld Jason@zx2c4.com. All Rights Reserved.<br>
+[    5.110724] ip_tables: (C) 2000-2006 Netfilter Core Team<br>
+[    5.110880] arp_tables: (C) 2002 David S. Miller<br>
+[    5.110929] TCP: cubic registered<br>
+[    5.110940] TCP: highspeed registered<br>
+[    5.110952] TCP: htcp registered<br>
+[    5.110963] TCP: vegas registered<br>
+[    5.110974] TCP: veno registered<br>
+[    5.110986] TCP: scalable registered<br>
+[    5.110997] TCP: lp registered<br>
+[    5.111009] TCP: yeah registered<br>
+[    5.111020] TCP: illinois registered<br>
+[    5.111039] Initializing XFRM netlink socket<br>
+[    5.111410] NET: Registered protocol family 10<br>
+[    5.112199] mip6: Mobile IPv6<br>
+[    5.112227] ip6_tables: (C) 2000-2006 Netfilter Core Team<br>
+[    5.112367] sit: IPv6 over IPv4 tunneling driver<br>
+[    5.112718] NET: Registered protocol family 17<br>
+[    5.112749] NET: Registered protocol family 15<br>
+[    5.112790] bridge: automatic filtering via arp/ip/ip6tables has been deprecated. Update your scripts to load br_netfilter if you need this.<br>
+[    5.112820] Bridge firewalling registered<br>
+[    5.112833] Ebtables v2.0 registered<br>
+[    5.112951] l2tp_core: L2TP core driver, V2.0<br>
+[    5.112972] l2tp_ppp: PPPoL2TP kernel driver, V2.0<br>
+[    5.112985] l2tp_ip: L2TP IP encapsulation support (L2TPv3)<br>
+[    5.113010] l2tp_netlink: L2TP netlink interface<br>
+[    5.113039] l2tp_eth: L2TP ethernet pseudowire support (L2TPv3)<br>
+[    5.113071] l2tp_debugfs: L2TP debugfs support<br>
+[    5.113084] l2tp_ip6: L2TP IP encapsulation support for IPv6 (L2TPv3)<br>
+[    5.113107] 8021q: 802.1Q VLAN Support v1.8<br>
+[    5.113887] NET: Registered protocol family 27<br>
+[    5.119179] subsys-pil-tz a21b000.qcom,pronto: for wcnss segments only will be dumped.<br>
+[    5.121466] pil-q6v5-mss 4080000.qcom,mss: for modem segments only will be dumped.<br>
+[    5.125190] sps:BAM 0x0000000007104000 is registered.<br>
+[    5.128169] qpnp-smbcharger qpnp-smbcharger-18: node /soc/qcom,spmi@200f000/qcom,pmi8950@2/qcom,qpnp-smbcharger IO resource absent!<br>
+[    5.128348] smbcharger_charger_otg: no parameters<br>
+[    5.128450] SMBCHG: smbchg_hvdcp_enable_cb: smbchg_hvdcp_enable_cb  enable 0 last_enable 0<br>
+[    5.129224] smbchg_hw_init:read OTG_CFG=78<br>
+[    6.628058] SMBCHG: wait_for_usbin_uv: usbin uv didnt go to a risen state, still at low, tries = 2, rc = 0<br>
+[    6.628078] SMBCHG: rerun_apsd: wait for usbin uv failed rc = -22<br>
+[    6.631661] qpnp-smbcharger qpnp-smbcharger-18: node /soc/qcom,spmi@200f000/qcom,pmi8950@2/qcom,qpnp-smbcharger IO resource absent!<br>
+[    6.661961] qpnp-smbcharger qpnp-smbcharger-18: SMBCHG successfully probe Charger version=SCHG_LITE Revision DIG:0.0 ANA:0.1 batt=1 dc=0 usb=1<br>
+[    6.663403] EDAC DEVICE0: Giving out device to module soc:arm64-cpu-erp controller cache: DEV soc:arm64-cpu-erp (INTERRUPT)<br>
+[    6.663830] ARM64 CPU ERP: Could not find cci-irq IRQ property. Proceeding anyway.<br>
+[    6.663843] ARM64 CPU ERP: SBE detection is disabled.<br>
+[    6.665113] Registered cp15_barrier emulation handler<br>
+[    6.665137] Registered setend emulation handler<br>
+[    6.665794] Loading compiled-in X.509 certificates<br>
+[    6.667314] Key type encrypted registered<br>
+[    6.749986] fastrpc soc:qcom,adsprpc-mem: for adsp_rh segments only will be dumped.<br>
+[    6.752355] RNDIS_IPA module is loaded.<br>
+[    6.752759] file system registered<br>
+[    6.752817] mbim_init: initialize 1 instances<br>
+[    6.752915] mbim_init: Initialized 1 ports<br>
+[    6.754428] rndis_qc_init: initialize rndis QC instance<br>
+[    6.754662] Number of LUNs=8<br>
+[    6.754674] Mass Storage Function, version: 2009/09/11<br>
+[    6.754686] LUN: removable file: (no medium)<br>
+[    6.754704] Number of LUNs=1<br>
+[    6.754750] LUN: removable file: (no medium)<br>
+[    6.754760] Number of LUNs=1<br>
+[    6.755077] android_usb gadget: android_usb ready<br>
+[    6.756451] input: gpio-keys as /devices/soc/soc:gpio_keys/input/input5<br>
+[    6.756839] qcom,qpnp-rtc qpnp-rtc-8: setting system clock to 1970-03-12 22:26:38 UTC (6128798)<br>
+[    6.757242] pwm-ir soc:pwm_ir: reg-id = vdd, low-active = 0, use-timer = 0<br>
+[    6.757525] Registered IR keymap rc-lirc<br>
+[    6.757688] input: pwm-ir as /devices/soc/soc:pwm_ir/rc/rc0/input6<br>
+[    6.757797] rc0: pwm-ir as /devices/soc/soc:pwm_ir/rc/rc0<br>
+[    6.757971] rc rc0: lirc_dev: driver ir-lirc-codec (pwm-ir) registered at minor = 0<br>
+[    6.761421] msm-core initialized without polling period<br>
+[    6.764878] parse_cpu_levels: idx 1 276<br>
+[    6.764902] calculate_residency: residency  0 for LPM<br>
+[    6.765063] parse_cpu_levels: idx 1 286<br>
+[    6.765078] calculate_residency: residency  0 for LPM<br>
+[    6.768767] qcom,qpnp-flash-led qpnp-flash-led-25: Unable to acquire pinctrl<br>
+[    6.770825] rmnet_ipa started initialization<br>
+[    6.770840] IPA SSR support = True<br>
+[    6.770849] IPA ipa-loaduC = True<br>
+[    6.770858] IPA SG support = True<br>
+[    6.772917] ipa ipa_sps_irq_control_all:938 EP (5) not allocated.<br>
+[    6.772932] ipa ipa2_uc_state_check:301 uC is not loaded<br>
+[    6.773927] rmnet_ipa completed initialization<br>
+[    6.778751] qcom,cc-debug-8953 1874000.qcom,cc-debug: Registered Debug Mux successfully<br>
+[    6.779283] msm8x16_wcd_spmi_probe(6272):slave ID = 0x1<br>
+[    6.779320] msm8x16_wcd_spmi_probe(6272):slave ID = 0x1<br>
+[    6.790009] msm8952-asoc-wcd c051000.sound: default codec configured<br>
+[    6.793545] msm8952-asoc-wcd c051000.sound: ASoC: platform (null) not registered<br>
+[    6.793596] msm8952-asoc-wcd c051000.sound: snd_soc_register_card failed (-517)<br>
+[    6.794665] apc_mem_acc_corner: disabling<br>
+[    6.794678] gfx_mem_acc_corner: disabling<br>
+[    6.794720] adv_vreg: disabling<br>
+[    6.794729] vdd_vreg: disabling<br>
+[    6.794775] clock_late_init: Removing enables held for handed-off clocks<br>
+[    6.798599] ALSA device list:<br>
+[    6.798608]   No soundcards found.<br>
+[    6.799088] Freeing unused kernel memory: 892K<br>
+[    6.799129] Freeing alternatives memory: 84K<br>
+[    8.944176] of_batterydata_get_best_profile: qrd_msm8953_sunwoda_atl_4100mah found<br>
+[    8.950435] FG: fg_batt_profile_init: Battery SOC: 92, V: 4262517uV<br>
+[    8.950797] of_batterydata_get_best_profile: qrd_msm8953_sunwoda_atl_4100mah found<br>
+[    9.205064] EXT3-fs (mmcblk0p49): error: couldn't mount because of unsupported optional features (40)<br>
+[    9.205371] EXT2-fs (mmcblk0p49): error: couldn't mount because of unsupported optional features (40)<br>
+[    9.207505] EXT4-fs (mmcblk0p49): warning: maximal mount count reached, running e2fsck is recommended<br>
+[    9.208543] EXT4-fs (mmcblk0p49): mounted filesystem with ordered data mode. Opts: (null)<br>
+[    9.249244] enable_store: android_usb: already disabled<br>
+[    9.621513] composite_setup:config is not active. send stall<br>
+[    9.621623] android_work: android_work: sent uevent USB_STATE=CONNECTED<br>
+[    9.623534] composite_setup:config is not active. send stall<br>
+[    9.625520] composite_setup:config is not active. send stall<br>
+[    9.630139] android_work: android_work: sent uevent USB_STATE=DISCONNECTED<br>
+[    9.751986] dwc3 7000000.dwc3: request ffffffc0ac4f7200 was not queued to ep0out<br>
+[    9.752799] rndis_function_bind_config: rndis_function_bind_config MAC: 00:00:00:00:00:00<br>
+[    9.752844] android_usb gadget: using random self ethernet address<br>
+[    9.752863] android_usb gadget: using random host ethernet address<br>
+[    9.753340] rndis0: MAC a6:e4:1b:fa:8e:07<br>
+[    9.753352] rndis0: HOST MAC 2a:a4:82:c2:9c:d2<br>
+[    9.753539] hid keyboard<br>
+[    9.753551] hidg_bind: creating device ffffffc0acfe1800<br>
+[    9.753697] hid mouse<br>
+[    9.753707] hidg_bind: creating device ffffffc0acfe1a00<br>
+[    9.794078] IPv6: ADDRCONF(NETDEV_UP): rndis0: link is not ready<br>
+[    9.897317] dwc3_gadget_suspend_interrupt(): state:0. Ignore SUSPEND.<br>
+[    9.936376] android_work: android_work: did not send uevent (0 0 0000000000000000)<br>
+[   10.315780] android_work: android_work: did not send uevent (0 0 0000000000000000)<br>
+[   10.440695] android_work: android_work: sent uevent USB_STATE=CONNECTED<br>
+[   10.447706] android_work: android_work: sent uevent USB_STATE=DISCONNECTED<br>
+[   10.592685] android_work: android_work: sent uevent USB_STATE=CONNECTED<br>
+[   10.627599] android_usb gadget: high-speed config #1: 86000c8.android_usb<br>
+[   10.627776] msm-dwc3 7000000.ssusb: Avail curr from USB = 500<br>
+[   10.627834] IPv6: ADDRCONF(NETDEV_CHANGE): rndis0: link becomes ready<br>
+[   10.684071] android_work: android_work: sent uevent USB_STATE=CONFIGURED<br>
+[   10.853117] dwc3 7000000.dwc3: request ffffffc0ac4f7200 was not queued to ep0out<br>
+[   10.853385] hidg_unbind: destroying device ffffffc0acfe1800<br>
+[   10.853554] hidg_unbind: destroying device ffffffc0acfe1a00<br>
+[   10.858204] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+[   10.876088] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+[   10.876453] rndis_function_bind_config: rndis_function_bind_config MAC: 2A:A4:82:C2:9C:D2<br>
+[   10.876498] android_usb gadget: using random self ethernet address<br>
+[   10.876511] android_usb gadget: using previous host ethernet address<br>
+[   10.876954] rndis0: MAC 26:7e:78:53:04:8a<br>
+[   10.876966] rndis0: HOST MAC 2a:a4:82:c2:9c:d2<br>
+[   10.877034] hid keyboard<br>
+[   10.877045] hidg_bind: creating device ffffffc0ac47f800<br>
+[   10.877186] hid mouse<br>
+[   10.877197] hidg_bind: creating device ffffffc0ac47fa00<br>
+[   11.021335] dwc3_gadget_suspend_interrupt(): state:0. Ignore SUSPEND.<br>
+[   11.284082] msm-dwc3 7000000.ssusb: Avail curr from USB = 0<br>
+[   11.284353] android_work: android_work: sent uevent USB_STATE=DISCONNECTED<br>
+[   11.413791] android_work: android_work: sent uevent USB_STATE=CONNECTED<br>
+[   11.417933] dwc3 7000000.dwc3: request ffffffc0ac4f7200 was not queued to ep0out<br>
+[   11.417957] hidg_unbind: destroying device ffffffc0ac47f800<br>
+[   11.418094] hidg_unbind: destroying device ffffffc0ac47fa00<br>
+[   11.418700] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+[   11.420356] android_work: android_work: sent uevent USB_STATE=DISCONNECTED<br>
+[   11.432112] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+[   11.432986] rndis_function_bind_config: rndis_function_bind_config MAC: 2A:A4:82:C2:9C:D2<br>
+[   11.433030] android_usb gadget: using random self ethernet address<br>
+[   11.433043] android_usb gadget: using previous host ethernet address<br>
+[   11.433486] rndis0: MAC 5e:b3:9e:bb:c3:63<br>
+[   11.433497] rndis0: HOST MAC 2a:a4:82:c2:9c:d2<br>
+[   11.433557] hid keyboard<br>
+[   11.433568] hidg_bind: creating device ffffffc0ac47f600<br>
+[   11.433708] hid mouse<br>
+[   11.433718] hidg_bind: creating device ffffffc0ac47fc00<br>
+[   11.503787] random: nonblocking pool is initialized<br>
+[   11.598047] dwc3 7000000.dwc3: request ffffffc0ac4f7200 was not queued to ep0out<br>
+[   11.598085] hidg_unbind: destroying device ffffffc0ac47f600<br>
+[   11.598236] hidg_unbind: destroying device ffffffc0ac47fc00<br>
+[   11.598803] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+[   11.612109] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+[   11.612561] rndis_function_bind_config: rndis_function_bind_config MAC: 2A:A4:82:C2:9C:D2<br>
+[   11.612605] android_usb gadget: using random self ethernet address<br>
+[   11.612617] android_usb gadget: using previous host ethernet address<br>
+[   11.613020] rndis0: MAC de:33:50:e1:8f:cd<br>
+[   11.613030] rndis0: HOST MAC 2a:a4:82:c2:9c:d2<br>
+[   11.613087] hid keyboard<br>
+[   11.613098] hidg_bind: creating device ffffffc0ac47f800<br>
+[   11.613224] hid mouse<br>
+[   11.613234] hidg_bind: creating device ffffffc0ac47fe00<br>
+[   11.653933] dwc3 7000000.dwc3: request ffffffc0ac4f7200 was not queued to ep0out<br>
+[   11.653971] hidg_unbind: destroying device ffffffc0ac47f800<br>
+[   11.654119] hidg_unbind: destroying device ffffffc0ac47fe00<br>
+[   11.654691] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+[   11.672085] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+[   11.673190] rndis_function_bind_config: rndis_function_bind_config MAC: 2A:A4:82:C2:9C:D2<br>
+[   11.673248] android_usb gadget: using random self ethernet address<br>
+[   11.673261] android_usb gadget: using previous host ethernet address<br>
+[   11.673650] rndis0: MAC 6e:31:ca:1f:7a:2b<br>
+[   11.673660] rndis0: HOST MAC 2a:a4:82:c2:9c:d2<br>
+[   11.673718] hid keyboard<br>
+[   11.673729] hidg_bind: creating device ffffffc0af5e2a00<br>
+[   11.673858] hid mouse<br>
+[   11.673868] hidg_bind: creating device ffffffc0af5e2c00<br>
+[   11.712287] IPv6: ADDRCONF(NETDEV_UP): rndis0: link is not ready<br>
+[   12.256877] android_work: android_work: sent uevent USB_STATE=CONNECTED<br>
+[   12.290795] android_usb gadget: high-speed config #1: 86000c8.android_usb<br>
+[   12.290931] msm-dwc3 7000000.ssusb: Avail curr from USB = 500<br>
+[   12.290982] IPv6: ADDRCONF(NETDEV_CHANGE): rndis0: link becomes ready<br>
+[   12.344047] android_work: android_work: sent uevent USB_STATE=CONFIGURED<br>
+[   12.766980] EXT4-fs (mmcblk0p49): re-mounted. Opts: (null)<br>
+[   12.784851] preinit: (12.78) Welcome to Sailfish OS 3.0.3.10 (Hossa)<br>
+[   12.795582] preinit: (12.79) is_erase_needed: No : 0<br>
+[   12.816615] preinit: (12.81) get_bootstate: USER : 0<br>
+[   12.816992] preinit: (12.81) BOOTSTATE = USER<br>
+[   12.818143] preinit: (12.81) Booting to default.target<br>
+[   12.883834] systemd[1]: systemd 225 running in system mode. (+PAM -AUDIT -SELINUX +IMA -APPARMOR +SMACK -SYSVINIT +UTMP +LIBCRYPTSETUP +GCRYPT -GNUTLS +ACL +XZ -LZ4 -SECCOMP +BLKID -ELFUTILS +KMOD -IDN)<br>
+[   12.884147] systemd[1]: Detected architecture arm64.<br>
+[   12.884883] systemd[1]: Set hostname to Sailfish.<br>
+[   12.886176] systemd[1]: Initializing machine ID from random generator.<br>
+[   13.088361] systemd[1]: [/lib/systemd/system/camera-hal.service:8] Executable path is not absolute, ignoring: setprop persist.camera.HAL3.enabled 0<br>
+[   13.088653] systemd[1]: camera-hal.service: Service lacks both ExecStart= and ExecStop= setting. Refusing.<br>
+[   13.116168] systemd[1]: sys-fs-pstore.mount: Cannot create mount unit for API file system /sys/fs/pstore. Refusing.<br>
+[   13.124996] systemd[1]: data.mount: Unit is bound to inactive unit dev-mmcblk0p49.device. Stopping, too.<br>
+[   13.126511] systemd[1]: sys-fs-pstore.mount: Cannot add dependency job, ignoring: Unit sys-fs-pstore.mount failed to load: Invalid argument. See system logs and 'systemctl status sys-fs-pstore.mount' for details.<br>
+[   13.127369] systemd[1]: camera-hal.service: Cannot add dependency job, ignoring: Unit camera-hal.service failed to load: Invalid argument. See system logs and 'systemctl status camera-hal.service' for details.<br>
+[   13.130421] systemd[1]: Reached target Encrypted Volumes.<br>
+[   13.130910] systemd[1]: Started Forward Password Requests to Wall Directory Watch.<br>
+[   13.131088] systemd[1]: Reached target Login Prompts.<br>
+[   13.131242] systemd[1]: Reached target Swap.<br>
+[   13.131505] systemd[1]: Started Dispatch Password Requests to Console Directory Watch.<br>
+[   13.132350] systemd[1]: Created slice Root Slice.<br>
+[   13.132834] systemd[1]: Created slice User and Session Slice.<br>
+[   13.133089] systemd[1]: Listening on udev Control Socket.<br>
+[   13.133316] systemd[1]: Listening on /dev/initctl Compatibility Named Pipe.<br>
+[   13.133642] systemd[1]: Listening on Journal Audit Socket.<br>
+[   13.133921] systemd[1]: Listening on Journal Socket.<br>
+[   13.134202] systemd[1]: Listening on Journal Socket (/dev/log).<br>
+[   13.134678] systemd[1]: Created slice System Slice.<br>
+[   13.136477] systemd[1]: Starting Create list of required static device nodes for the current kernel...<br>
+[   13.137911] systemd[1]: Mounting FFS mount...<br>
+[   13.138273] systemd[1]: tmp.mount: Directory /tmp to mount over is not empty, mounting anyway.<br>
+[   13.139525] systemd[1]: Mounting Temporary Directory...<br>
+[   13.141226] systemd[1]: Mounting Droid mount for /dev/cpuset...<br>
+[   13.144490] cgroup: new mount options do not match the existing superblock, will be ignored<br>
+[   13.144838] systemd[1]: Starting Remount Root and Kernel File Systems...<br>
+[   13.145109] systemd[1]: Reached target Slices.<br>
+[   13.146899] systemd[1]: Starting Setup Virtual Console...<br>
+[   13.148582] systemd[1]: Starting Journal Service...<br>
+[   13.150301] systemd[1]: Mounting Debug File System...<br>
+[   13.150644] systemd[1]: Listening on udev Kernel Socket.<br>
+[   13.155174] EXT4-fs (mmcblk0p49): re-mounted. Opts: (null)<br>
+[   13.155731] systemd[1]: Mounted Debug File System.<br>
+[   13.156262] systemd[1]: Mounted FFS mount.<br>
+[   13.156458] systemd[1]: Mounted Temporary Directory.<br>
+[   13.156638] systemd[1]: Mounted Droid mount for /dev/cpuset.<br>
+[   13.159172] systemd[1]: Started Create list of required static device nodes for the current kernel.<br>
+[   13.162047] systemd[1]: Started Setup Virtual Console.<br>
+[   13.196065] systemd[1]: Started Remount Root and Kernel File Systems.<br>
+[   13.265043] systemd[1]: Starting Create System Users...<br>
+[   13.266690] systemd[1]: Starting Load/Save Random Seed...<br>
+[   13.268327] systemd[1]: Starting Rebuild Dynamic Linker Cache...<br>
+[   13.270625] systemd[1]: Starting Rebuild Hardware Database...<br>
+[   13.272481] systemd[1]: Starting Clean RPM db region files at each reboot...<br>
+[   13.275640] systemd[1]: Started Create System Users.<br>
+[   13.276940] systemd[1]: Started Load/Save Random Seed.<br>
+[   13.287703] systemd[1]: Started Clean RPM db region files at each reboot.<br>
+[   13.322157] systemd[1]: Starting Create Static Device Nodes in /dev...<br>
+[   13.340779] systemd[1]: Started Journal Service.<br>
+[   13.408710] systemd-journald[704]: Received request to flush runtime journal from PID 1<br>
+[   15.260884] EXT4-fs (mmcblk0p12): mounted filesystem with ordered data mode. Opts: (null)<br>
+[   15.444727] EXT4-fs (mmcblk0p26): mounted filesystem with ordered data mode. Opts: (null)<br>
+[   15.466572] EXT4-fs (mmcblk0p24): mounted filesystem with ordered data mode. Opts: barrier=1<br>
+[   15.622479] Loading modules backported from Linux version next-20160324-0-g6f30d29<br>
+[   15.622517] Backport generated by backports.git backports-20160324-0-g7dba139<br>
+[   15.692350] Bluetooth: Core ver 2.21<br>
+[   15.692444] NET: Registered protocol family 31<br>
+[   15.692457] Bluetooth: HCI device and connection manager initialized<br>
+[   15.692499] Bluetooth: HCI socket layer initialized<br>
+[   15.692515] Bluetooth: L2CAP socket layer initialized<br>
+[   15.692554] Bluetooth: SCO socket layer initialized<br>
+[   15.919753] hcismd_set_enable 0<br>
+[   15.919788] Bluetooth: Cannot open the command channel<br>
+[   15.948332] [info] goodix_fb_state_chg_callback go to the goodix_fb_state_chg_callback value = 16<br>
+[   16.095326] droid-hal-init: init first stage started!<br>
+[   16.096989] droid-hal-init: init second stage started!<br>
+[   16.098049] dwc3 7000000.dwc3: request ffffffc0ac4f7200 was not queued to ep0out<br>
+[   16.098768] hidg_unbind: destroying device ffffffc0af5e2a00<br>
+[   16.099150] hidg_unbind: destroying device ffffffc0af5e2c00<br>
+[   16.104759] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+[   16.107222] droid-hal-init: Failed to initialize property area<br>
+[   16.107666] droid-hal-init: Running restorecon...<br>
+[   16.107760] droid-hal-init: waitpid failed: No child processes<br>
+[   16.108530] droid-hal-init: (Loading properties from /default.prop took 0.00s.)<br>
+[   16.113719] droid-hal-init: (Parsing /init.environ.rc took 0.00s.)<br>
+[   16.116344] droid-hal-init: /init.qcom.rc: 636: invalid keyword 'system'<br>
+[   16.117138] droid-hal-init: init.target.rc: 176: invalid keyword 'load_all_props'<br>
+[   16.117254] droid-hal-init: (Parsing init.target.rc took 0.00s.)<br>
+[   16.117275] droid-hal-init: (Parsing /init.qcom.rc took 0.00s.)<br>
+[   16.118408] droid-hal-init: (Parsing /init.usb.configfs.rc took 0.00s.)<br>
+[   16.118940] droid-hal-init: (Parsing /init.zygote64_32.rc took 0.00s.)<br>
+[   16.120158] droid-hal-init: (Parsing /init.cm.rc took 0.00s.)<br>
+[   16.120179] droid-hal-init: (Parsing /init.rc took 0.01s.)<br>
+[   16.120678] droid-hal-init: Waiting for /dev/.coldboot_done...<br>
+[   16.120708] droid-hal-init: Waiting for /dev/.coldboot_done took 0.00s.<br>
+[   16.120746] droid-hal-init: /dev/hw_random not found<br>
+[   16.120801] keychord: using input dev qpnp_pon for fevent<br>
+[   16.120814] keychord: using input dev ft5435_ts for fevent<br>
+[   16.120826] keychord: using input dev s2w_pwrkey for fevent<br>
+[   16.120838] keychord: using input dev gf3208 for fevent<br>
+[   16.120855] keychord: using input dev gpio-keys for fevent<br>
+[   16.121297] droid-hal-init: loglevel: invalid log level'64'<br>
+[   16.122175] droid-hal-init: write_file: Unable to open '/proc/sys/kernel/hung_task_timeout_secs': No such file or directory<br>
+[   16.123446] droid-hal-init: write_file: Unable to open '/dev/cpuset/foreground/cpus': Permission denied<br>
+[   16.123489] droid-hal-init: write_file: Unable to open '/dev/cpuset/foreground/mems': Permission denied<br>
+[   16.123618] droid-hal-init: write_file: Unable to open '/dev/cpuset/foreground/boost/cpus': Permission denied<br>
+[   16.123660] droid-hal-init: write_file: Unable to open '/dev/cpuset/foreground/boost/mems': Permission denied<br>
+[   16.123793] droid-hal-init: write_file: Unable to open '/dev/cpuset/background/cpus': Permission denied<br>
+[   16.123834] droid-hal-init: write_file: Unable to open '/dev/cpuset/background/mems': Permission denied<br>
+[   16.123960] droid-hal-init: write_file: Unable to open '/dev/cpuset/system-background/cpus': Permission denied<br>
+[   16.124002] droid-hal-init: write_file: Unable to open '/dev/cpuset/system-background/mems': Permission denied<br>
+[   16.124166] droid-hal-init: write_file: Unable to open '/dev/cpuset/top-app/cpus': Permission denied<br>
+[   16.124207] droid-hal-init: write_file: Unable to open '/dev/cpuset/top-app/mems': Permission denied<br>
+[   16.124983] Registered swp emulation handler<br>
+[   16.125759] droid-hal-init: /dev/hw_random not found<br>
+[   16.125843] droid-hal-init: Starting service 'droid_init_done'...<br>
+[   16.126688] fs_mgr: Cannot open file fstab.qcom<br>
+[   16.126721] droid-hal-init: fs_mgr_mount_all returned an error<br>
+[   16.140354] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister rndis0<br>
+[   16.150173] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/atrace.rc took 0.01s.)<br>
+[   16.150834] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/bootanim.rc took 0.00s.)<br>
+[   16.152839] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/bootstat.rc took 0.00s.)<br>
+[   16.154494] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/debuggerd.rc took 0.00s.)<br>
+[   16.155105] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/drmserver.rc took 0.00s.)<br>
+[   16.156746] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/dumpstate.rc took 0.00s.)<br>
+[   16.157920] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/gatekeeperd.rc took 0.00s.)<br>
+[   16.158895] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/init-debug.rc took 0.00s.)<br>
+[   16.159675] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/installd.rc took 0.00s.)<br>
+[   16.160760] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/logcatd.rc took 0.00s.)<br>
+[   16.161903] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/logd.rc took 0.00s.)<br>
+[   16.162693] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/mediacodec.rc took 0.00s.)<br>
+[   16.163489] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/mediadrmserver.rc took 0.00s.)<br>
+[   16.164331] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/mediaextractor.rc took 0.00s.)<br>
+[   16.165049] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/mtpd.rc took 0.00s.)<br>
+[   16.165505] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/perfprofd.rc took 0.00s.)<br>
+[   16.165957] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/racoon.rc took 0.00s.)<br>
+[   16.166495] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/rild.rc took 0.00s.)<br>
+[   16.167205] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/servicemanager.rc took 0.00s.)<br>
+[   16.167266] droid-hal-init: Could not import file '/usr/libexec/droid-hybris/system/etc/init/superuser.rc'<br>
+[   16.167682] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/uncrypt.rc took 0.00s.)<br>
+[   16.168201] droid-hal-init: (Parsing /usr/libexec/droid-hybris/system/etc/init/vdc.rc took 0.00s.)<br>
+[   16.168795] droid-hal-init: fs_mgr_mount_all returned unexpected error 255<br>
+[   16.169293] droid-hal-init: Starting service 'logd'...<br>
+[   16.170436] droid-hal-init: couldn't write 2644 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   16.173367] droid-hal-init: (Loading properties from /system/build.prop took 0.00s.)<br>
+[   16.173438] droid-hal-init: (Loading properties from /vendor/build.prop took 0.00s.)<br>
+[   16.173478] droid-hal-init: (Loading properties from /factory/factory.prop took 0.00s.)<br>
+[   16.173745] fs_mgr: Cannot open file /fstab.qcom<br>
+[   16.173765] droid-hal-init: unable to read fstab /fstab.qcom: No such file or directory<br>
+[   16.173983] droid-hal-init: Starting service 'debuggerd'...<br>
+[   16.174494] droid-hal-init: do_start: Service debuggerd64 not found<br>
+[   16.174511] droid-hal-init: couldn't write 2645 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   16.174521] droid-hal-init: do_start: Service vold not found<br>
+[   16.179094] droid-hal-init: Not bootcharting.<br>
+[   16.216495] wcnss_wlan triggered by userspace<br>
+[   16.217088] wcnss_pm_qos_add_request: add request<br>
+[   16.217118] wcnss_pm_qos_update_request: update request 100<br>
+[   16.217627] wcnss_notif_cb: wcnss notification event: 2<br>
+[   16.233481] subsys-pil-tz a21b000.qcom,pronto: wcnss: loading from 0x000000008e700000 to 0x000000008ed42000<br>
+[   16.233639] wcnss_notif_cb: wcnss notification event: 6<br>
+[   16.239035] wcnss: IRIS Reg: 04000004<br>
+[   16.257820] rndis_function_bind_config: rndis_function_bind_config MAC: 4A:54:43:D1:4C:2B<br>
+[   16.257915] android_usb gadget: using random self ethernet address<br>
+[   16.257929] android_usb gadget: using previous host ethernet address<br>
+[   16.258477] rndis0: MAC 8e:df:b9:10:9e:a0<br>
+[   16.258502] rndis0: HOST MAC 2a:a4:82:c2:9c:d2<br>
+[   16.258577] hid keyboard<br>
+[   16.258591] hidg_bind: creating device ffffffc0ab5a5000<br>
+[   16.259141] hid mouse<br>
+[   16.259173] hidg_bind: creating device ffffffc0a496ac00<br>
+[   16.279821] audit: type=1701 audit(1558503571.123:2): auid=4294967295 uid=0 gid=0 ses=4294967295 subj=kernel pid=2670 comm="vdc" exe="/system/bin/vdc" sig=6<br>
+[   16.282748] IPv6: ADDRCONF(NETDEV_UP): rndis0: link is not ready<br>
+[   16.286382] droid-hal-init: Starting service 'exec 1 (/system/bin/tzdatacheck)'...<br>
+[   16.292595] capability: warning: `ofonod' uses 32-bit capabilities (legacy support in use)<br>
+[   16.297990] droid-hal-init: Service 'exec 1 (/system/bin/tzdatacheck)' (pid 2675) exited with status 0<br>
+[   16.320500] audit: type=1305 audit(1558503571.167:3): audit_pid=2644 old=0 auid=4294967295 ses=4294967295 subj=kernel res=1<br>
+[   16.320615] logd.auditd: start<br>
+[   16.320679] logd.klogd: 16320639731<br>
+[   16.322981] droid-hal-init: Starting service 'perfd'...<br>
+[   16.324773] droid-hal-init: couldn't write 2684 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   16.341629] droid-hal-init: write_file: Unable to open '/sys/block/dm-0/queue/read_ahead_kb': No such file or directory<br>
+[   16.341691] droid-hal-init: write_file: Unable to open '/sys/block/dm-1/queue/read_ahead_kb': No such file or directory<br>
+[   16.348447] droid-hal-init: Starting service 'sysinit'...<br>
+[   16.349779] droid-hal-init: (Loading properties from /data/local.prop took 0.00s.)<br>
+[   16.369508] dwc3_gadget_suspend_interrupt(): state:0. Ignore SUSPEND.<br>
+[   16.528531] msm-dwc3 7000000.ssusb: Avail curr from USB = 0<br>
+[   16.529592] android_work: android_work: sent uevent USB_STATE=DISCONNECTED<br>
+[   16.531843] subsys-pil-tz a21b000.qcom,pronto: wcnss: Brought out of reset<br>
+[   16.657391] android_work: android_work: sent uevent USB_STATE=CONNECTED<br>
+[   16.663939] android_work: android_work: sent uevent USB_STATE=DISCONNECTED<br>
+[   16.677362] droid-hal-init: Service 'sysinit' (pid 2689) exited with status 0<br>
+[   16.677471] droid-hal-init: Starting service 'logd-reinit'...<br>
+[   16.678075] droid-hal-init: couldn't write 2811 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   16.681886] subsys-pil-tz c200000.qcom,lpass: adsp: loading from 0x000000008d600000 to 0x000000008e700000<br>
+[   16.689223] logd.daemon: reinit<br>
+[   16.808492] android_work: android_work: sent uevent USB_STATE=CONNECTED<br>
+[   16.811955] type=1325 audit(1558503571.655:5): table=filter family=2 entries=4<br>
+[   16.812619] type=1300 audit(1558503571.655:5): arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=0 a2=40 a3=4f8ad0 items=0 ppid=1 pid=2831 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="connmand" exe="/usr/sbin/connmand" subj=kernel key=(null)<br>
+[   16.815395] type=1327 audit(1558503571.655:5): proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E6C3830323131002D2D6E6F6261636B7472616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+[   16.816009] type=1320 audit(1558503571.655:5):<br>
+[   16.817355] type=1325 audit(1558503571.663:6): table=mangle family=2 entries=6<br>
+[   16.817764] type=1300 audit(1558503571.663:6): arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=0 a2=40 a3=4f8de0 items=0 ppid=1 pid=2831 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="connmand" exe="/usr/sbin/connmand" subj=kernel key=(null)<br>
+[   16.817905] type=1327 audit(1558503571.663:6): proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E6C3830323131002D2D6E6F6261636B7472616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+[   16.818081] type=1320 audit(1558503571.663:6):<br>
+[   16.823340] type=1325 audit(1558503571.667:7): table=nat family=2 entries=5<br>
+[   16.823642] type=1300 audit(1558503571.667:7): arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=0 a2=40 a3=4f8ca8 items=0 ppid=1 pid=2831 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="connmand" exe="/usr/sbin/connmand" subj=kernel key=(null)<br>
+[   16.823785] type=1327 audit(1558503571.667:7): proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E6C3830323131002D2D6E6F6261636B7472616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+[   16.823970] type=1320 audit(1558503571.667:7):<br>
+[   16.829716] type=1325 audit(1558503571.675:8): table=filter family=10 entries=4<br>
+[   16.830010] type=1300 audit(1558503571.675:8): arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=29 a2=40 a3=4f8d98 items=0 ppid=1 pid=2831 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="connmand" exe="/usr/sbin/connmand" subj=kernel key=(null)<br>
+[   16.830156] type=1327 audit(1558503571.675:8): proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E6C3830323131002D2D6E6F6261636B7472616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+[   16.830357] type=1320 audit(1558503571.675:8):<br>
+[   16.836082] type=1325 audit(1558503571.679:9): table=mangle family=10 entries=6<br>
+[   16.836335] type=1300 audit(1558503571.679:9): arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=29 a2=40 a3=4f90e8 items=0 ppid=1 pid=2831 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="connmand" exe="/usr/sbin/connmand" subj=kernel key=(null)<br>
+[   16.836570] type=1327 audit(1558503571.679:9): proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E6C3830323131002D2D6E6F6261636B7472616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+[   16.836791] type=1320 audit(1558503571.679:9):<br>
+[   16.841301] android_usb gadget: high-speed config #1: 86000c8.android_usb<br>
+[   16.841502] msm-dwc3 7000000.ssusb: Avail curr from USB = 500<br>
+[   16.841665] IPv6: ADDRCONF(NETDEV_CHANGE): rndis0: link becomes ready<br>
+[   16.856735] type=1325 audit(1558503571.699:10): table=filter family=10 entries=4<br>
+[   16.857026] type=1300 audit(1558503571.699:10): arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=29 a2=40 a3=4f9fc0 items=0 ppid=1 pid=2831 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="connmand" exe="/usr/sbin/connmand" subj=kernel key=(null)<br>
+[   16.857130] type=1327 audit(1558503571.699:10): proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E6C3830323131002D2D6E6F6261636B7472616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+[   16.857283] type=1320 audit(1558503571.699:10):<br>
+[   16.862466] type=1325 audit(1558503571.707:11): table=filter family=10 entries=8<br>
+[   16.862855] type=1300 audit(1558503571.707:11): arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=29 a2=40 a3=4fa5a8 items=0 ppid=1 pid=2831 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="connmand" exe="/usr/sbin/connmand" subj=kernel key=(null)<br>
+[   16.863231] type=1327 audit(1558503571.707:11): proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E6C3830323131002D2D6E6F6261636B7472616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+[   16.863584] type=1320 audit(1558503571.707:11):<br>
+[   16.870442] type=1325 audit(1558503571.715:12): table=filter family=2 entries=4<br>
+[   16.870727] type=1300 audit(1558503571.715:12): arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=0 a2=40 a3=4f9dd0 items=0 ppid=1 pid=2831 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="connmand" exe="/usr/sbin/connmand" subj=kernel key=(null)<br>
+[   16.870867] type=1327 audit(1558503571.715:12): proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E6C3830323131002D2D6E6F6261636B7472616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+[   16.871048] type=1320 audit(1558503571.715:12):<br>
+[   16.875769] type=1325 audit(1558503571.719:13): table=filter family=2 entries=8<br>
+[   16.876153] type=1300 audit(1558503571.719:13): arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=0 a2=40 a3=4fa2f0 items=0 ppid=1 pid=2831 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="connmand" exe="/usr/sbin/connmand" subj=kernel key=(null)<br>
+[   16.876371] type=1327 audit(1558503571.719:13): proctitle=2F7573722F7362696E2F636F6E6E6D616E64002D6E002D57006E6C3830323131002D2D6E6F6261636B7472616365002D2D73797374656D64002D2D6E6F706C7567696E3D77696669<br>
+[   16.876598] type=1320 audit(1558503571.719:13):<br>
+[   16.877836] type=1006 audit(1558503571.723:14): pid=2875 uid=0 subj=kernel old-auid=4294967295 auid=100000 old-ses=4294967295 ses=1 res=1<br>
+[   16.880178] audit: audit_lost=1 audit_rate_limit=20 audit_backlog_limit=64<br>
+[   16.880210] audit: rate limit exceeded<br>
+[   16.880971] type=1325 audit(1558503571.723:15): table=filter family=10 entries=9<br>
+[   16.881291] type=1300 audit(1558503571.723:15): arch=40000028 syscall=294 success=yes exit=0 a0=9 a1=29 a2=40 a3=4fa978 items=0 ppid=1 pid=2831 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="connmand" exe="/usr/sbin/connmand" subj=kernel key=(null)<br>
+[   16.896143] android_work: android_work: sent uevent USB_STATE=CONFIGURED<br>
+[   16.936776] subsys-pil-tz c200000.qcom,lpass: adsp: Brought out of reset<br>
+[   16.974276] subsys-pil-tz c200000.qcom,lpass: adsp: Power/Clock ready interrupt received<br>
+[   16.974279] subsys-pil-tz c200000.qcom,lpass: Subsystem error monitoring/handling services are up<br>
+[   16.974393] L-Notify: Generel: 7<br>
+[   16.974619] sensors-ssc soc:qcom,msm-ssc-sensors: slpi_loader_do: pil get failed,<br>
+[   16.974637] sensors-ssc soc:qcom,msm-ssc-sensors: slpi_loader_do: SLPI image loading failed<br>
+[   16.974796] droid-hal-init: Service 'logd-reinit' (pid 2811) exited with status 0<br>
+[   16.977379] droid-hal-init: Starting service 'irsc_util'...<br>
+[   16.977904] droid-hal-init: Starting service 'rmt_storage'...<br>
+[   16.978366] droid-hal-init: Starting service 'tftp_server'...<br>
+[   16.978565] droid-hal-init: couldn't write 2966 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   16.978791] droid-hal-init: Starting service 'config_bt_addr'...<br>
+[   16.979111] droid-hal-init: couldn't write 2967 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   16.979237] droid-hal-init: Starting service 'config_bluetooth'...<br>
+[   16.979860] droid-hal-init: Starting service 'sensors'...<br>
+[   16.980476] droid-hal-init: Starting service 'gx_fpd'...<br>
+[   16.980907] droid-hal-init: Starting service 'per_mgr'...<br>
+[   16.981379] droid-hal-init: Starting service 'servicemanager'...<br>
+[   16.981967] droid-hal-init: Starting service 'cnd'...<br>
+[   16.982391] droid-hal-init: Starting service 'netmgrd'...<br>
+[   16.982804] droid-hal-init: Starting service 'qti'...<br>
+[   16.982847] droid-hal-init: couldn't write 2974 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   16.983279] droid-hal-init: Starting service 'ril-daemon2'...<br>
+[   16.983689] droid-hal-init: Starting service 'thermal-engine'...<br>
+[   16.984009] droid-hal-init: couldn't write 2977 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   16.984285] droid-hal-init: couldn't write 2973 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   16.984588] droid-hal-init: Starting service 'wcnss-service'...<br>
+[   16.985131] droid-hal-init: Starting service 'imsqmidaemon'...<br>
+[   16.985575] droid-hal-init: couldn't write 2976 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   16.985579] droid-hal-init: Starting service 'adsprpcd'...<br>
+[   16.985924] droid-hal-init: couldn't write 2979 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   16.985979] droid-hal-init: Starting service 'hvdcp_opti'...<br>
+[   16.986421] droid-hal-init: Starting service 'energy-awareness'...<br>
+[   16.986867] droid-hal-init: Starting service 'drm'...<br>
+[   16.987336] droid-hal-init: Starting service 'installd'...<br>
+[   16.987722] droid-hal-init: Starting service 'mediacodec'...<br>
+[   16.987981] droid-hal-init: couldn't write 2975 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   16.988343] droid-hal-init: couldn't write 2972 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   16.988713] droid-hal-init: couldn't write 2970 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   16.989261] droid-hal-init: couldn't write 2985 to /dev/cpuset/foreground/tasks: No space left on device<br>
+[   16.989656] droid-hal-init: couldn't write 2987 to /dev/cpuset/foreground/tasks: No space left on device<br>
+[   16.989898] droid-hal-init: couldn't write 2981 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   16.989950] droid-hal-init: Starting service 'mediadrm'...<br>
+[   16.991195] droid-hal-init: Starting service 'mediaextractor'...<br>
+[   16.991777] droid-hal-init: Starting service 'ril-daemon'...<br>
+[   16.992346] droid-hal-init: couldn't write 2989 to /dev/cpuset/foreground/tasks: No space left on device<br>
+[   16.992362] droid-hal-init: couldn't write 2988 to /dev/cpuset/foreground/tasks: No space left on device<br>
+[   16.994430] subsys-pil-tz a21b000.qcom,pronto: wcnss: Power/Clock ready interrupt received<br>
+[   16.994511] wcnss_notif_cb: wcnss notification event: 7<br>
+[   17.002893] droid-hal-init: Starting service 'minimedia'...<br>
+[   17.003489] droid-hal-init: Starting service 'minisf'...<br>
+[   17.004109] droid-hal-init: Starting service 'miniaf'...<br>
+[   17.010370] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet0/accept_ra': No such file or directory<br>
+[   17.010440] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet1/accept_ra': No such file or directory<br>
+[   17.010486] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet2/accept_ra': No such file or directory<br>
+[   17.010532] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet3/accept_ra': No such file or directory<br>
+[   17.010578] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet4/accept_ra': No such file or directory<br>
+[   17.010628] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet5/accept_ra': No such file or directory<br>
+[   17.010673] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet6/accept_ra': No such file or directory<br>
+[   17.010721] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet7/accept_ra': No such file or directory<br>
+[   17.010768] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_sdio0/accept_ra': No such file or directory<br>
+[   17.010814] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_sdio1/accept_ra': No such file or directory<br>
+[   17.010860] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_sdio2/accept_ra': No such file or directory<br>
+[   17.010907] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_sdio3/accept_ra': No such file or directory<br>
+[   17.010955] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_sdio4/accept_ra': No such file or directory<br>
+[   17.011001] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_sdio5/accept_ra': No such file or directory<br>
+[   17.011046] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_sdio6/accept_ra': No such file or directory<br>
+[   17.011092] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_sdio7/accept_ra': No such file or directory<br>
+[   17.011138] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_usb0/accept_ra': No such file or directory<br>
+[   17.011185] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_usb1/accept_ra': No such file or directory<br>
+[   17.011232] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_usb2/accept_ra': No such file or directory<br>
+[   17.011278] droid-hal-init: write_file: Unable to open '/proc/sys/net/ipv6/conf/rmnet_usb3/accept_ra': No such file or directory<br>
+[   17.014530] subsys-pil-tz a21b000.qcom,pronto: Subsystem error monitoring/handling services are up<br>
+[   17.015438] droid-hal-init: sanitize_path: Failed to locate path /dev/block/bootdevice/by-name/rawdump: No such file or directory<br>
+[   17.015486] droid-hal-init: do_chown: sanitize_path failed for path: /dev/block/bootdevice/by-name/rawdump prefix:/dev/block/<br>
+[   17.015534] droid-hal-init: sanitize_path: Failed to locate path /dev/block/bootdevice/by-name/rawdump: No such file or directory<br>
+[   17.015559] droid-hal-init: do_chmod: failed for /dev/block/bootdevice/by-name/rawdump..prefix(/dev/block/) match err<br>
+[   17.015664] droid-hal-init: write_file: Unable to open '/dev/cpuset/top-app/cpus': Permission denied<br>
+[   17.015705] droid-hal-init: write_file: Unable to open '/dev/cpuset/top-app/boost/cpus': No such file or directory<br>
+[   17.015753] droid-hal-init: write_file: Unable to open '/dev/cpuset/foreground/cpus': Permission denied<br>
+[   17.015777] wcnss_notif_cb: wcnss notification event: 3<br>
+[   17.015799] droid-hal-init: write_file: Unable to open '/dev/cpuset/foreground/boost/cpus': Permission denied<br>
+[   17.015804] wcnss_pm_qos_update_request: update request -1<br>
+[   17.015818] wcnss_pm_qos_remove_request: remove request<br>
+[   17.015849] droid-hal-init: write_file: Unable to open '/dev/cpuset/background/cpus': Permission denied<br>
+[   17.015897] droid-hal-init: write_file: Unable to open '/dev/cpuset/system-background/cpus': Permission denied<br>
+[   17.016801] hcismd_set_enable 1<br>
+[   17.016845] Bluetooth: Cannot open the command channel<br>
+[   17.016884] msm8x16_wcd_spmi_probe(6272):slave ID = 0x1<br>
+[   17.019552] msm8x16_wcd_spmi_probe(6272):slave ID = 0x1<br>
+[   17.020589] diag: In diag_send_feature_mask_update, control channel is not open, p: 2, 0000000000000000<br>
+[   17.025169] 'opened /dev/adsprpc-smd c 227 0'<br>
+[   17.025598] diag: In diag_send_feature_mask_update, control channel is not open, p: 1, 0000000000000000<br>
+[   17.032820] droid-hal-init: Service 'irsc_util' (pid 2965) exited with status 0<br>
+[   17.032962] droid-hal-init: write_file: Unable to open '/dev/cpuset/camera-daemon/cpus': Permission denied<br>
+[   17.033013] droid-hal-init: write_file: Unable to open '/dev/cpuset/camera-daemon/mems': Permission denied<br>
+[   17.035620] droid-hal-init: Starting service 'dpmd'...<br>
+[   17.041875] sysmon-qmi: sysmon_clnt_svc_arrive: Connection established between QMI handle and adsp's SSCTL service<br>
+[   17.047943] apr_tal:Q6 Is Up<br>
+[   17.051705] msm8952-asoc-wcd c051000.sound: default codec configured<br>
+[   17.064851] msm8952-asoc-wcd c051000.sound: ASoC: platform (null) not registered<br>
+[   17.064925] msm8952-asoc-wcd c051000.sound: snd_soc_register_card failed (-517)<br>
+[   17.068104] droid-hal-init: couldn't write 3017 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   17.068515] droid-hal-init: Starting service 'loc_launcher'...<br>
+[   17.069050] droid-hal-init: Starting service 'qcom-sh'...<br>
+[   17.069609] droid-hal-init: Starting service 'qseeproxydaemon'...<br>
+[   17.070158] droid-hal-init: Starting service 'qcamerasvr'...<br>
+[   17.070648] droid-hal-init: Starting service 'audiod'...<br>
+[   17.071145] droid-hal-init: Starting service 'gatekeeperd'...<br>
+[   17.076726] droid-hal-init: couldn't write 3072 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   17.080312] droid-hal-init: couldn't write 3067 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   17.081887] droid-hal-init: couldn't write 3066 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   17.089032] msm8952-asoc-wcd c051000.sound: default codec configured<br>
+[   17.091183] droid-hal-init: couldn't write 3062 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   17.092194] droid-hal-init: Starting service 'perfprofd'...<br>
+[   17.093085] droid-hal-init: Service 'config_bt_addr' (pid 2968) exited with status 0<br>
+[   17.093691] droid-hal-init: Starting service 'console'...<br>
+[   17.094437] droid-hal-init: Starting service 'per_proxy'...<br>
+[   17.095775] wcd-spmi-core msm8x16_wcd_codec-11: Error: regulator not found:cdc-vdd-spkdrv<br>
+[   17.098060] droid-hal-init: couldn't write 3098 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   17.100617] droid-hal-init: Starting service 'imsdatadaemon'...<br>
+[   17.113121] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: no dapm match for MM_DL5 -- MultiMedia5 -- TERT_MI2S_RX Audio Mixer<br>
+[   17.113181] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to add route MM_DL5 - MultiMedia5 - TERT_MI2S_RX Audio Mixer<br>
+[   17.113252] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: no dapm match for MM_DL8 -- MultiMedia8 -- TERT_MI2S_RX Audio Mixer<br>
+[   17.113273] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to add route MM_DL8 - MultiMedia8 - TERT_MI2S_RX Audio Mixer<br>
+[   17.113277] droid-hal-init: couldn't write 3110 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   17.113676] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: no dapm match for INT_FM_TX -- INTERNAL_FM_TX -- SEC_MI2S_RX Port Mixer<br>
+[   17.113709] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to add route INT_FM_TX - INTERNAL_FM_TX - SEC_MI2S_RX Port Mixer<br>
+[   17.115223] droid-hal-init: couldn't write 3096 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   17.124650] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: no dapm match for VOICEMMODE1_DL -- VoiceMMode1 -- SEC_MI2S_RX_Voice Mixer<br>
+[   17.124694] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to add route VOICEMMODE1_DL - VoiceMMode1 - SEC_MI2S_RX_Voice Mixer<br>
+[   17.124726] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: no dapm match for VOICEMMODE2_DL -- VoiceMMode2 -- SEC_MI2S_RX_Voice Mixer<br>
+[   17.124746] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to add route VOICEMMODE2_DL - VoiceMMode2 - SEC_MI2S_RX_Voice Mixer<br>
+[   17.127484] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: no source widget found for AUDIO_REF_EC_UL3 MUX<br>
+[   17.127526] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to add route AUDIO_REF_EC_UL3 MUX - direct - MM_UL3<br>
+[   17.136422] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: no dapm match for SEC_MI2S_TX -- SEC_MI2S_TX -- SLIMBUS_0_RX Port Mixer<br>
+[   17.136468] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to add route SEC_MI2S_TX - SEC_MI2S_TX - SLIMBUS_0_RX Port Mixer<br>
+[   17.137022] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: no dapm match for VOICE2_STUB_DL -- Voice2 Stub -- INTERNAL_BT_SCO_RX_Voice Mixer<br>
+[   17.137053] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to add route VOICE2_STUB_DL - Voice2 Stub - INTERNAL_BT_SCO_RX_Voice Mixer<br>
+[   17.138459] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: no sink widget found for SENARY_MI2S_TX<br>
+[   17.138498] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to add route BE_IN - direct - SENARY_MI2S_TX<br>
+[   17.141300] wlan: module is from the staging directory, the quality is unknown, you have been warned.<br>
+[   17.160260] msm_thermal:set_enabled enabled = 0<br>
+[   17.177309] wcnss_wlan_ctrl_probe: SMD ctrl channel up<br>
+[   17.177684] wcnss: version 01050102<br>
+[   17.177703] wcnss: schedule dnld work for pronto<br>
+[   17.177968] wcnss: build version CNSS-PR-4-0-00328<br>
+[   17.212766] subsys-restart: __subsystem_get(): Changing subsys fw_name to modem<br>
+[   17.213730] IPA received MPSS BEFORE_POWERUP<br>
+[   17.214210] ipa ipa2_uc_state_check:301 uC is not loaded<br>
+[   17.214255] ipa ipa_sps_irq_control_all:938 EP (5) not allocated.<br>
+[   17.215724] IPA BEFORE_POWERUP handling is complete<br>
+[   17.227655] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: Failed to create SEC_MI2S_RX Port Mixer debugfs file<br>
+[   17.247727] droid-hal-init: Service 'droid_init_done' (pid 2638) exited with status 0<br>
+[   17.296620] msm-pcm-routing soc:qcom,msm-pcm-routing: ASoC: mux SLIM_0_RX AANC MUX has no paths<br>
+[   17.315174] wcd-spmi-core msm8x16_wcd_codec-11: ASoC: mux RX3 MIX1 INP3 has no paths<br>
+[   17.315683] wcd-spmi-core msm8x16_wcd_codec-11: ASoC: mux RX2 MIX1 INP3 has no paths<br>
+[   17.332016] wlan: loading driver v3.0.11.66<br>
+[   17.334777] droid-hal-init: Starting service 'msm_irqbalance'...<br>
+[   17.399572] msm8952-asoc-wcd c051000.sound: control 3:0:0:IEC958 Playback PCM Stream:0 is already present<br>
+[   17.399613] msm-hdmi-dba-codec-rx soc:qcom,msm-hdmi-dba-codec-rx: ASoC: Failed to add IEC958 Playback PCM Stream: -16<br>
+[   17.399631] msm_dba_get_probed_device: Device not found (adv7533, 0)<br>
+[   17.399642] msm_dba_register_client: Device not found (adv7533, 0)<br>
+[   17.399654] msm_hdmi_dba_codec_rx_init_dba: error in registering audio client 0<br>
+[   17.463129] pil-q6v5-mss 4080000.qcom,mss: modem: loading from 0x0000000086c00000 to 0x000000008c200000<br>
+[   17.484871] input: msm8953-snd-card-mtp Headset Jack as /devices/soc/c051000.sound/sound/card0/input7<br>
+[   17.485137] input: msm8953-snd-card-mtp Button Jack as /devices/soc/c051000.sound/sound/card0/input8<br>
+[   17.579458] droid-hal-init: Service 'config_bluetooth' (pid 2969) exited with status 0<br>
+[   17.585193] hidp: disagrees about version of symbol l2cap_unregister_user<br>
+[   17.585203] hidp: Unknown symbol l2cap_unregister_user (err -22)<br>
+[   17.585346] hidp: disagrees about version of symbol l2cap_conn_get<br>
+[   17.585350] hidp: Unknown symbol l2cap_conn_get (err -22)<br>
+[   17.585385] hidp: disagrees about version of symbol l2cap_register_user<br>
+[   17.585389] hidp: Unknown symbol l2cap_register_user (err -22)<br>
+[   17.585499] hidp: disagrees about version of symbol l2cap_conn_put<br>
+[   17.585503] hidp: Unknown symbol l2cap_conn_put (err -22)<br>
+[   17.590089] droid-hal-init: Service 'energy-awareness' (pid 2984) exited with status 0<br>
+[   17.603139] Bluetooth: BNEP (Ethernet Emulation) ver 1.3<br>
+[   17.603150] Bluetooth: BNEP filters: protocol multicast<br>
+[   17.603183] Bluetooth: BNEP socket layer initialized<br>
+[   17.773413] pil-q6v5-mss 4080000.qcom,mss: Debug policy not present - msadp. Continue.<br>
+[   17.777601] pil-q6v5-mss 4080000.qcom,mss: Loading MBA and DP (if present) from 0x00000000f4b00000 to 0x00000000f4c00000 size 100000<br>
+[   17.916467] pil-q6v5-mss 4080000.qcom,mss: MBA boot done<br>
+[   18.028725] hcismd_set_enable 1<br>
+[   18.028768] Bluetooth: Cannot open the command channel<br>
+[   18.175236] QSEECOM: qseecom_load_app: App (goodixfp) does'nt exist, loading apps for first time<br>
+[   18.276214] QSEECOM: qseecom_load_app: App with id 5 (goodixfp) now loaded<br>
+[   18.278168] --------driver_init_partial start.--------<br>
+[   18.278197] --------gf_parse_dts start.--------<br>
+[   18.278245] goodix_fp soc:goodix_fp: goodix,gpio_reset 140<br>
+[   18.278270] goodix_fp soc:goodix_fp: goodix,gpio_irq 48<br>
+[   18.278534] msm8953-pinctrl 1000000.pinctrl: invalid group "gpio135" for function "blsp_spi6"<br>
+[   18.278555] msm8953-pinctrl 1000000.pinctrl: invalid group "gpio136" for function "blsp_spi6"<br>
+[   18.278574] msm8953-pinctrl 1000000.pinctrl: invalid group "gpio137" for function "blsp_spi6"<br>
+[   18.278592] msm8953-pinctrl 1000000.pinctrl: invalid group "gpio138" for function "blsp_spi6"<br>
+[   18.278684] found pin control goodixfp_reset_reset<br>
+[   18.278688] found pin control goodixfp_reset_active<br>
+[   18.278691] found pin control goodixfp_irq_active<br>
+[   18.278707] goodix_fp soc:goodix_fp: Selected 'goodixfp_reset_active'<br>
+[   18.278726] goodix_fp soc:goodix_fp: Selected 'goodixfp_irq_active'<br>
+[   18.278737] --------gf_parse_dts end---OK.--------<br>
+[   18.279090] ------------[ cut here ]------------<br>
+[   18.279118] WARNING: CPU: 1 PID: 2972 at /parentroot/parentroot/data/piggz/mer/android/droid.mido14/kernel/xiaomi/msm8953/kernel/irq/manage.c:448 __enable_irq+0x4c/0x90()<br>
+[   18.279138] Unbalanced enable for IRQ 55<br>
+[   18.279147] Modules linked in: bnep(O) wlan(C+) hci_smd(O) bluetooth(O) compat(O) skcipher(O) autofs4<br>
+[   18.279169] CPU: 1 PID: 2972 Comm: gx_fpd Tainted: G        WC O   3.18.105-ElectraBlue-11.0-mido #3<br>
+[   18.279173] Hardware name: Qualcomm Technologies, Inc. MSM8953 + PMI8950 QRD SKU3 (DT)<br>
+[   18.279177] Call trace:<br>
+[   18.279191] [ffffffc00008a058] dump_backtrace+0x0/0x24c<br>
+[   18.279196] [ffffffc00008a2c4] show_stack+0x20/0x28<br>
+[   18.279204] [ffffffc000e0a2a0] dump_stack+0x80/0xa4<br>
+[   18.279209] [ffffffc0000a67f8] warn_slowpath_common+0x94/0xb8<br>
+[   18.279214] [ffffffc0000a68a4] warn_slowpath_fmt+0x88/0xac<br>
+[   18.279219] [ffffffc000102a18] __enable_irq+0x4c/0x90<br>
+[   18.279223] [ffffffc000102ae0] enable_irq+0x84/0xac<br>
+[   18.279231] [ffffffc00082eaa4] gf_ioctl+0x268/0x4e8<br>
+[   18.279238] [ffffffc0001f2368] do_vfs_ioctl+0x4ec/0x5e0<br>
+[   18.279242] [ffffffc0001f24c8] SyS_ioctl+0x6c/0x94<br>
+[   18.279246] ---[ end trace 95939fc9f79b8dd8 ]---<br>
+[   18.279270] goodix_fp soc:goodix_fp: Selected 'goodixfp_reset_reset'<br>
+[   18.282304] goodix_fp soc:goodix_fp: Selected 'goodixfp_reset_active'<br>
+[   18.282340] goodix_fp soc:goodix_fp: IRQ after reset 0<br>
+[   18.322506] type=1325 audit(1558503573.167:47): table=mangle family=2 entries=14<br>
+[   18.322881] type=1300 audit(1558503573.167:47): arch=c00000b7 syscall=208 success=yes exit=0 a0=b a1=0 a2=40 a3=7f9e614800 items=0 ppid=2976 pid=3670 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/system/bin/iptables" subj=kernel key=(null)<br>
+[   18.323414] type=1327 audit(1558503573.167:47): proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D74006D616E676C65002D4E0071636F6D5F716F735F72657365745F504F5354524F5554494E47<br>
+[   18.323636] type=1320 audit(1558503573.167:47):<br>
+[   18.335455] type=1325 audit(1558503573.179:48): table=mangle family=2 entries=16<br>
+[   18.335725] type=1300 audit(1558503573.179:48): arch=c00000b7 syscall=208 success=yes exit=0 a0=b a1=0 a2=40 a3=7f97a15400 items=0 ppid=2976 pid=3673 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/system/bin/iptables" subj=kernel key=(null)<br>
+[   18.336167] type=1327 audit(1558503573.179:48): proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D74006D616E676C65002D4100504F5354524F5554494E47002D6A0071636F6D5F716F735F72657365745F504F5354524F5554494E47<br>
+[   18.336362] type=1320 audit(1558503573.179:48):<br>
+[   18.350631] type=1325 audit(1558503573.191:49): table=mangle family=10 entries=6<br>
+[   18.351052] type=1300 audit(1558503573.191:49): arch=c00000b7 syscall=208 success=yes exit=0 a0=b a1=29 a2=40 a3=7fb423f000 items=0 ppid=2976 pid=3675 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="ip6tables" exe="/system/bin/ip6tables" subj=kernel key=(null)<br>
+[   18.354349] type=1327 audit(1558503573.191:49): proctitle=2F73797374656D2F62696E2F6970367461626C6573002D77002D74006D616E676C65002D4E0071636F6D5F716F735F72657365745F504F5354524F5554494E47<br>
+[   18.354893] type=1320 audit(1558503573.191:49):<br>
+[   18.361373] type=1325 audit(1558503573.207:50): table=mangle family=10 entries=8<br>
+[   18.361618] type=1300 audit(1558503573.207:50): arch=c00000b7 syscall=208 success=yes exit=0 a0=b a1=29 a2=40 a3=7f95a47000 items=0 ppid=2976 pid=3680 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="ip6tables" exe="/system/bin/ip6tables" subj=kernel key=(null)<br>
+[   18.361929] type=1327 audit(1558503573.207:50): proctitle=2F73797374656D2F62696E2F6970367461626C6573002D77002D74006D616E676C65002D4100504F5354524F5554494E47002D6A0071636F6D5F716F735F72657365745F504F5354524F5554494E47<br>
+[   18.362126] type=1320 audit(1558503573.207:50):<br>
+[   18.377487] type=1325 audit(1558503573.223:51): table=mangle family=2 entries=17<br>
+[   18.377752] type=1300 audit(1558503573.223:51): arch=c00000b7 syscall=208 success=yes exit=0 a0=b a1=0 a2=40 a3=7f8023b000 items=0 ppid=2976 pid=3685 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/system/bin/iptables" subj=kernel key=(null)<br>
+[   18.378057] type=1327 audit(1558503573.223:51): proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D74006D616E676C65002D4E0071636F6D5F716F735F66696C7465725F504F5354524F5554494E47<br>
+[   18.378362] type=1320 audit(1558503573.223:51):<br>
+[   18.388633] audit: audit_lost=135 audit_rate_limit=20 audit_backlog_limit=64<br>
+[   18.388672] audit: rate limit exceeded<br>
+[   18.412370] msm_pm_qos_add_request: add request<br>
+[   18.485561] msm_cci_init:1426: hw_version = 0x10020005<br>
+[   18.485814] s5k5e8_ofilm probe succeeded<br>
+[   18.514275] msm_cci_init:1426: hw_version = 0x10020005<br>
+[   18.514504] s5k3l8_ofilm probe succeeded<br>
+[   18.533186] msm_csid_init: CSID_VERSION = 0x30050001<br>
+[   18.533892] msm_csid_irq CSID2_IRQ_STATUS_ADDR = 0x800<br>
+[   18.534728] msm_csid_init: CSID_VERSION = 0x30050001<br>
+[   18.535284] msm_csid_irq CSID0_IRQ_STATUS_ADDR = 0x800<br>
+[   18.607161] pil-q6v5-mss 4080000.qcom,mss: modem: Brought out of reset<br>
+[   18.608485] [info] goodix_fb_state_chg_callback go to the goodix_fb_state_chg_callback value = 16<br>
+[   18.636529] subsys-pil-tz soc:qcom,kgsl-hyp: a506_zap: loading from 0x000000008f000000 to 0x000000008f002000<br>
+[   18.642602] Doesn't support control clock.<br>
+[   18.642614] This kernel doesn't support control clk in AP<br>
+[   18.649958] IRQ has been disabled.<br>
+[   18.650013] goodix_fp soc:goodix_fp: Selected 'goodixfp_reset_reset'<br>
+[   18.653044] goodix_fp soc:goodix_fp: Selected 'goodixfp_reset_active'<br>
+[   18.653071] goodix_fp soc:goodix_fp: IRQ after reset 0<br>
+[   18.663772] subsys-pil-tz soc:qcom,kgsl-hyp: a506_zap: Brought out of reset<br>
+[   18.664607] QSEECOM: qseecom_unload_app: App id 5 now unloaded<br>
+[   18.665497] devfreq soc:qcom,kgsl-busmon: Couldn't update frequency transition information.<br>
+[   18.669218] gf:[info]  entergf_cleanup<br>
+[   18.669252] gf:remove irq_gpio success<br>
+[   18.669265] gf:remove reset_gpio success<br>
+[   18.669318] gf:gx  fingerprint_pinctrl  release success<br>
+[   18.669491] ---- power off ----<br>
+[   18.670095] droid-hal-init: Service 'gx_fpd' is being killed...<br>
+[   18.670255] droid-hal-init: Starting service 'fingerprintd'...<br>
+[   18.670895] droid-hal-init: couldn't write 3737 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   18.672085] droid-hal-init: Service 'gx_fpd' (pid 2972) killed by signal 9<br>
+[   18.672118] droid-hal-init: Service 'gx_fpd' (pid 2972) killing any children in process group<br>
+[   18.689220] pil-q6v5-mss 4080000.qcom,mss: Subsystem error monitoring/handling services are up<br>
+[   18.689252] pil-q6v5-mss 4080000.qcom,mss: modem: Power/Clock ready interrupt received<br>
+[   18.689937] IPA received MPSS AFTER_POWERUP<br>
+[   18.689944] IPA AFTER_POWERUP handling is complete<br>
+[   18.690875] M-Notify: General: 7<br>
+[   18.718176] MSM-CPP cpp_init_hardware:869 CPP HW Version: 0x40030003<br>
+[   18.718188] MSM-CPP cpp_init_hardware:887 stream_cnt:0<br>
+[   18.785454] droid-hal-init: Service 'qcom-sh' (pid 3065) exited with status 0<br>
+[   18.793478] sysmon-qmi: sysmon_clnt_svc_arrive: Connection established between QMI handle and modem's SSCTL service<br>
+[   18.894012] apr_tal:Modem Is Up<br>
+[   18.907594] diag: In diag_send_feature_mask_update, control channel is not open, p: 0, 0000000000000000<br>
+[   18.933288] msm_pm_qos_update_request: update request 100<br>
+[   18.940525] msm_csid_init: CSID_VERSION = 0x30050001<br>
+[   18.941327] msm_csid_irq CSID0_IRQ_STATUS_ADDR = 0x800<br>
+[   18.941456] Sending QMI_IPA_INIT_MODEM_DRIVER_REQ_V01<br>
+[   18.941932] ipa-wan handle_indication_req:133 not send indication<br>
+[   18.944765] QMI_IPA_INIT_MODEM_DRIVER_REQ_V01 response received<br>
+[   18.944833] ipa ipa_uc_wdi_event_log_info_handler:322 WDI feature missing 0x1<br>
+[   18.944871] ipa ipa_uc_ntn_event_log_info_handler:39 NTN feature missing 0x1<br>
+[   18.944895] ipa ipa_uc_response_hdlr:461 IPA uC loaded<br>
+[   18.944938] ipa ipa_sps_irq_control_all:938 EP (5) not allocated.<br>
+[   18.945870] MSM-CPP cpp_init_hardware:869 CPP HW Version: 0x40030003<br>
+[   18.945880] MSM-CPP cpp_init_hardware:887 stream_cnt:0<br>
+[   18.948653] ipa ipa_sps_irq_control_all:938 EP (5) not allocated.<br>
+[   18.950677] ipa ipa_sps_irq_control_all:938 EP (5) not allocated.<br>
+[   18.964072] msm_cci_init:1426: hw_version = 0x10020005<br>
+[   18.975091] msm_pm_qos_update_request: update request -1<br>
+[   19.033845] hcismd_set_enable 1<br>
+[   19.033881] Bluetooth: Cannot open the command channel<br>
+[   19.353031] scm_call failed: func id 0x42000c16, ret: -1, syscall returns: 0x0, 0x0, 0x0<br>
+[   19.353078] hyp_assign_table: Failed to assign memory protection, ret = -5<br>
+[   19.353083] memshare: hyp_assign_phys failed size=2097152 err=-5<br>
+[   19.465994] droid-hal-init: Starting service 'ims_rtp_daemon'...<br>
+[   19.466772] droid-hal-init: Starting service 'imscmservice'...<br>
+[   19.468420] droid-hal-init: couldn't write 4008 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   19.468790] droid-hal-init: couldn't write 4010 to /dev/cpuset/system-background/tasks: No space left on device<br>
+[   19.696141] wcnss: NV download<br>
+[   19.701650] wcnss: NV bin size: 31719, total_fragments: 11<br>
+[   19.701713] wcnss: no space available for smd frame<br>
+[   19.724108] wcnss: no space available for smd frame<br>
+[   19.748105] wcnss: no space available for smd frame<br>
+[   19.772104] wcnss: no space available for smd frame<br>
+[   20.038490] hcismd_set_enable 1<br>
+[   20.038635] Bluetooth: opening HCI-SMD channel :APPS_RIVA_BT_ACL<br>
+[   20.038666] Bluetooth: opening HCI-SMD channel :APPS_RIVA_BT_CMD<br>
+[   20.038714] Bluetooth: HCI device registration is starting<br>
+[   20.243473] IPC_RTR: msm_ipc_router_bind: slim_daemon Do not have permissions<br>
+[   20.281111] ipa ipa_sps_irq_control_all:938 EP (5) not allocated.<br>
+[   20.282716] ipa ipa_sps_irq_control_all:938 EP (5) not allocated.<br>
+[   20.285199] ipa-wan ipa_wwan_ioctl:1542 get AGG size 8192 count 10<br>
+[   20.285676] ipa ipa_sps_irq_control_all:938 EP (5) not allocated.<br>
+[   20.288865] ipa ipa_assign_policy:3112 get close-by 8192<br>
+[   20.288877] ipa ipa_assign_policy:3118 set rx_buff_sz 7808<br>
+[   20.288888] ipa ipa_assign_policy:3141 set aggr_limit 6<br>
+[   20.295280] ipa-wan ipa_wwan_ioctl:1443 dev(rmnet_data0) register to IPA<br>
+[   20.316552] type=1325 audit(1558503575.159:55): table=mangle family=2 entries=20<br>
+[   20.316817] type=1300 audit(1558503575.159:55): arch=c00000b7 syscall=208 success=yes exit=0 a0=c a1=0 a2=40 a3=7f98e39e00 items=0 ppid=2976 pid=4203 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/system/bin/iptables" subj=kernel key=(null)<br>
+[   20.317154] type=1327 audit(1558503575.159:55): proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D74006D616E676C65002D4100505245524F5554494E47002D6D00736F636B6574002D2D6E6F77696C6463617264002D2D726573746F72652D736B6D61726B002D6A00414343455054<br>
+[   20.317772] type=1320 audit(1558503575.159:55):<br>
+[   20.328365] type=1325 audit(1558503575.171:56): table=mangle family=2 entries=21<br>
+[   20.328623] type=1300 audit(1558503575.171:56): arch=c00000b7 syscall=208 success=yes exit=0 a0=c a1=0 a2=40 a3=7f92039e00 items=0 ppid=2976 pid=4213 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/system/bin/iptables" subj=kernel key=(null)<br>
+[   20.328861] type=1327 audit(1558503575.171:56): proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D74006D616E676C65002D4400505245524F5554494E47002D6D00736F636B6574002D2D6E6F77696C6463617264002D2D726573746F72652D736B6D61726B002D6A00414343455054<br>
+[   20.329175] type=1320 audit(1558503575.171:56):<br>
+[   20.336386] droid-hal-init: property_set("ro.ril.svlte1x", "false") failed<br>
+[   20.336570] droid-hal-init: property_set("ro.ril.svdo", "false") failed<br>
+[   20.338528] ipa-wan ipa_wwan_ioctl:1443 dev(rmnet_data1) register to IPA<br>
+[   20.340483] type=1325 audit(1558503575.183:57): table=raw family=2 entries=3<br>
+[   20.340703] type=1300 audit(1558503575.183:57): arch=c00000b7 syscall=208 success=yes exit=0 a0=c a1=0 a2=40 a3=7f7d040000 items=0 ppid=2976 pid=4214 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/system/bin/iptables" subj=kernel key=(null)<br>
+[   20.341011] type=1327 audit(1558503575.183:57): proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D7400726177002D4E006E6D5F6D646D707278795F7261775F707265<br>
+[   20.341162] type=1320 audit(1558503575.183:57):<br>
+[   20.352611] type=1325 audit(1558503575.195:58): table=mangle family=2 entries=20<br>
+[   20.352886] type=1300 audit(1558503575.195:58): arch=c00000b7 syscall=208 success=yes exit=0 a0=c a1=0 a2=40 a3=7f9c41d000 items=0 ppid=2976 pid=4222 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/system/bin/iptables" subj=kernel key=(null)<br>
+[   20.353109] type=1327 audit(1558503575.195:58): proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D74006D616E676C65002D4E006E6D5F6D646D707278795F6D6E676C5F706F7374<br>
+[   20.353266] type=1320 audit(1558503575.195:58):<br>
+[   20.363090] type=1325 audit(1558503575.207:59): table=mangle family=2 entries=22<br>
+[   20.363325] type=1300 audit(1558503575.207:59): arch=c00000b7 syscall=208 success=yes exit=0 a0=c a1=0 a2=40 a3=7f7921d000 items=0 ppid=2976 pid=4223 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/system/bin/iptables" subj=kernel key=(null)<br>
+[   20.363622] type=1327 audit(1558503575.207:59): proctitle=2F73797374656D2F62696E2F69707461626C6573002D77002D74006D616E676C65002D4E006E6D5F6D646D707278795F6D6E676C5F7072655F737069<br>
+[   20.363813] type=1320 audit(1558503575.207:59):<br>
+[   20.374060] audit: audit_lost=147 audit_rate_limit=20 audit_backlog_limit=64<br>
+[   20.374091] audit: rate limit exceeded<br>
+[   20.407783] ipa-wan ipa_wwan_ioctl:1443 dev(rmnet_data2) register to IPA<br>
+[   20.461558] ipa-wan ipa_wwan_ioctl:1443 dev(rmnet_data3) register to IPA<br>
+[   20.516113] ipa-wan ipa_wwan_ioctl:1443 dev(rmnet_data4) register to IPA<br>
+[   20.582494] ipa-wan ipa_wwan_ioctl:1443 dev(rmnet_data5) register to IPA<br>
+[   20.649345] ipa-wan ipa_wwan_ioctl:1443 dev(rmnet_data6) register to IPA<br>
+[   20.715197] ipa-wan ipa_wwan_ioctl:1443 dev(rmnet_data7) register to IPA<br>
+[   20.780891] msm_pm_qos_update_request: update request 100<br>
+[   20.786316] msm_csid_init: CSID_VERSION = 0x30050001<br>
+[   20.787179] msm_csid_irq CSID2_IRQ_STATUS_ADDR = 0x800<br>
+[   20.791414] MSM-CPP cpp_init_hardware:869 CPP HW Version: 0x40030003<br>
+[   20.791429] MSM-CPP cpp_init_hardware:887 stream_cnt:0<br>
+[   20.808982] msm_pm_qos_update_request: update request -1<br>
+[   20.843212] msm_cci_init:1426: hw_version = 0x10020005<br>
+[   21.044169] hcismd_set_enable 1<br>
+[   21.048225] hcismd_set_enable 1<br>
+[   21.048261] Bluetooth: HCI device un-registration going on<br>
+[   21.049132] Bluetooth: Frame for unknown HCI device (hdev=NULL)<br>
+[   21.049166] Bluetooth: Frame for unknown HCI device (hdev=NULL)<br>
+[   21.202804] hcismd_set_enable 0<br>
+[   21.203170] Bluetooth: opening HCI-SMD channel :APPS_RIVA_BT_ACL<br>
+[   21.203203] Bluetooth: opening HCI-SMD channel :APPS_RIVA_BT_CMD<br>
+[   21.203283] Bluetooth: HCI device registration is starting<br>
+[   21.670955] HTB: quantum of class 10001 is big. Consider r2q change.<br>
+[   21.683896] HTB: quantum of class 10010 is big. Consider r2q change.<br>
+[   21.825601] NOHZ: local_softirq_pending 08<br>
+[   22.282683] NOHZ: local_softirq_pending 08<br>
+[   22.574253] NOHZ: local_softirq_pending 08<br>
+[   23.752487] NOHZ: local_softirq_pending 08<br>
+[   25.212471] NOHZ: local_softirq_pending 08<br>
+[   28.544277] wlan: WCNSS WLAN version 1.5.1.2<br>
+[   28.544286] wlan: WCNSS software version CNSS-PR-4-0-00328<br>
+[   28.544291] wlan: WCNSS hardware version WCN v2.0 RadioPhy vIris_TSMC_4.0 with 48MHz XO<br>
+[   28.544323] DefaultCountry is 00<br>
+[   28.559589] wlan_logging_sock_activate_svc: Initalizing FEConsoleLog = 1 NumBuff = 32<br>
+[   28.559667] wlan_logging_sock_activate_svc: Initalizing Pkt stats pkt_stats_buff = 16<br>
+[   28.560084] send_filled_buffers_to_user: Send Failed -3 drop_count = 0<br>
+[   28.560649] wlan: driver loaded<br>
+[   28.756102] [05:39:43.604479] [0000000024C1BD09] [VosMC]  wlan: [E :HDD] Ptt Socket error sending message to the app!!<br>
+[   28.756223] [05:39:43.604603] [0000000024C1C656] [VosMC]  wlan: [E :HDD] Ptt Socket error sending message to the app!!<br>
+[   28.757289] [05:39:43.605669] [0000000024C21645] [VosMC]  wlan: [E :HDD] Ptt Socket error sending message to the app!!<br>
+[   28.956093] [05:39:43.804470] [0000000024FC5467] [VosMC]  wlan: [E :HDD] Ptt Socket error sending message to the app!!<br>
+[   31.447856] tz_get_target_freq ADRENO jumping level = 5 last_level = 6 total=16643 busy=11052 original busy_time=11052<br>
+[   31.747284] tz_get_target_freq ADRENO jumping level = 6 last_level = 5 total=16575 busy=6203 original busy_time=6203<br>
+[   31.765634] tz_get_target_freq ADRENO jumping level = 5 last_level = 6 total=18348 busy=9864 original busy_time=9864<br>
+[   47.736285] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister sit0<br>
+[   47.760087] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister sit0<br>
+[   47.764430] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister lo<br>
+[   47.780096] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister lo<br>
+</details><br>
