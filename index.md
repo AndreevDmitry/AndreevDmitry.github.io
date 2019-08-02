@@ -61623,9 +61623,9 @@ OKAY [  0.173s]<br>
 finished. total time: 0.525s<br>
 </details><br>
 
-Не вышло, разберемся почему наше ядро не работает позже...<br>
+Не вышло, графика не запускается, разберемся почему наше ядро не работает позже...<br>
 
-Попробуем заменить наши конфигурации для сборки Sailfish на конфигурации от piggz, пересобрать, и использовать с рабочим ядром.<br>
+Попробуем заменить наши конфигурации для сборки Sailfish на конфигурации от piggz, пересобрать, и использовать с рабочим ядром Electrablue.<br>
 Сделаем резервную копию
 ```console
 PlatformSDK:~/hadk$ mkdir backup
@@ -61658,3 +61658,99 @@ PlatformSDK:~/hadk/rpm$ git commit -m "Piggz repo"
 [master 8fd1eb2] Piggz repo<br>
  1 file changed, 1 insertion(+), 1 deletion(-)<br>
 </details><br>
+
+```console
+PlatformSDK:~/hadk/rpm$ git push --force droid-hal-mido master
+```
+<details>
+Username for 'https://github.com': AndreevDmitry<br>
+Password for 'https://AndreevDmitry@github.com':<br>
+Counting objects: 12, done.<br>
+Delta compression using up to 16 threads.<br>
+Compressing objects: 100% (12/12), done.<br>
+Writing objects: 100% (12/12), 1.42 KiB | 0 bytes/s, done.<br>
+Total 12 (delta 3), reused 0 (delta 0)<br>
+remote: Resolving deltas: 100% (3/3), done.<br>
+To https://github.com/AndreevDmitry/droid-hal-mido.git<br>
+ + 8be11af...8fd1eb2 master -> master (forced update)<br>
+</details><br>
+
+```console
+PlatformSDK:~/hadk$ mkdir -p backup/hybris
+PlatformSDK:~/hadk$ cp -r hybris/droid-configs ~/hadk/backup/hybris/droid-configs
+PlatformSDK:~/hadk/hybris/droid-configs$ git remote add piggz https://github.com/piggz/droid-config-mido
+PlatformSDK:~/hadk/hybris/droid-configs$ git fetch --all
+```
+<details>
+Fetching dcm<br>
+Fetching piggz<br>
+warning: no common commits<br>
+remote: Enumerating objects: 1, done.<br>
+remote: Counting objects: 100% (1/1), done.<br>
+remote: Total 478 (delta 0), reused 1 (delta 0), pack-reused 477<br>
+Receiving objects: 100% (478/478), 76.75 KiB | 0 bytes/s, done.<br>
+Resolving deltas: 100% (134/134), done.<br>
+From https://github.com/piggz/droid-config-mido<br>
+ * [new branch]      master     -> piggz/master<br>
+ * [new tag]         0.4.0      -> 0.4.0<br>
+From https://github.com/piggz/droid-config-mido<br>
+ * [new tag]         0.0.5      -> 0.0.5<br>
+ * [new tag]         0.0.6      -> 0.0.6<br>
+ * [new tag]         0.0.7      -> 0.0.7<br>
+ * [new tag]         0.0.8      -> 0.0.8<br>
+ * [new tag]         0.0.9      -> 0.0.9<br>
+ * [new tag]         0.1.0      -> 0.1.0<br>
+ * [new tag]         0.1.1      -> 0.1.1<br>
+ * [new tag]         0.1.2      -> 0.1.2<br>
+ * [new tag]         0.1.3      -> 0.1.3<br>
+ * [new tag]         0.1.4      -> 0.1.4<br>
+ * [new tag]         0.1.5      -> 0.1.5<br>
+ * [new tag]         0.2.0      -> 0.2.0<br>
+ * [new tag]         0.2.1      -> 0.2.1<br>
+ * [new tag]         0.2.2      -> 0.2.2<br>
+ * [new tag]         0.2.3      -> 0.2.3<br>
+ * [new tag]         0.2.4      -> 0.2.4<br>
+ * [new tag]         0.2.5      -> 0.2.5<br>
+ * [new tag]         0.2.6      -> 0.2.6<br>
+ * [new tag]         0.2.7      -> 0.2.7<br>
+ * [new tag]         0.2.8      -> 0.2.8<br>
+ * [new tag]         0.2.9      -> 0.2.9<br>
+ * [new tag]         0.3.0      -> 0.3.0<br>
+ * [new tag]         0.3.1      -> 0.3.1<br>
+ * [new tag]         0.3.2      -> 0.3.2<br>
+ * [new tag]         0.3.3      -> 0.3.3<br>
+ * [new tag]         0.3.4      -> 0.3.4<br>
+ * [new tag]         0.3.5      -> 0.3.5<br>
+ * [new tag]         0.3.6      -> 0.3.6<br>
+ * [new tag]         0.3.7      -> 0.3.7<br>
+ * [new tag]         v0.1       -> v0.1<br>
+ * [new tag]         v0.2       -> v0.2<br>
+ * [new tag]         v0.3       -> v0.3<br>
+ * [new tag]         v0.4       -> v0.4<br>
+ </details><br>
+
+```console
+PlatformSDK:~/hadk/hybris/droid-configs$ git reset --hard piggz/master
+```
+ <details>
+ HEAD is now at c68d9d1 Update submodule<br>
+ </details><br>
+```console
+PlatformSDK:~/hadk/hybris/droid-configs$ git add .
+PlatformSDK:~/hadk/hybris/droid-configs$ git commit -m "Piggz repo"
+```
+ <details>
+ [master 8834edf] Piggz repo<br>
+  11 files changed, 286 insertions(+)<br>
+  create mode 100644 documentation.list<br>
+  create mode 100644 installroot/usr/share/kickstarts/Jolla-@RELEASE@-mido-@ARCH@.ks<br>
+  create mode 100644 tmp/bluez4.files<br>
+  create mode 100644 tmp/bluez5.files<br>
+  create mode 100644 tmp/droid-config.files<br>
+  create mode 100644 tmp/flashing.files<br>
+  create mode 100644 tmp/kickstart-configuration.files<br>
+  create mode 100644 tmp/policy-settings.files<br>
+  create mode 100644 tmp/pulseaudio-settings.files<br>
+  create mode 100644 tmp/sailfish-settings.files<br>
+  create mode 100644 tmp/ssu-kickstarts.files<br>
+ </details><br>
