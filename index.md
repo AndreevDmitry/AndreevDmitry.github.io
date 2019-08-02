@@ -104,12 +104,9 @@ HOST:~$ echo '[ -d /etc/bash_completion.d ] && for i in /etc/bash_completion.d/*
 ```console
 HOST:~$ cat .mersdk.profile
 ```
-
 <details>
-```console
-PS1="PlatformSDK $PS1"
-[ -d /etc/bash_completion.d ] && for i in /etc/bash_completion.d/*;do . $i;done
-```
+PS1="PlatformSDK $PS1"<br>
+[ -d /etc/bash_completion.d ] && for i in /etc/bash_completion.d/*;do . $i;done<br>
 </details><br>
 
 
