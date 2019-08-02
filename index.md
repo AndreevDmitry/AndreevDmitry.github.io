@@ -61928,3 +61928,177 @@ remote: Resolving deltas: 100% (2/2), completed with 2 local objects.<br>
 To https://github.com/AndreevDmitry/droid-hal-mido.git<br>
    8fd1eb2..3cd9994  master -> master<br>
 </details><br>
+
+Снова запустим сборщик пакетов
+```console
+PlatformSDK:~/hadk$ rpm/dhd/helpers/build_packages.sh
+```
+<details>
+* Building rpm/droid-hal-mido.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of droid-hal-mido finished successfully<br>
+* Building rpm/droid-config-mido.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of droid-configs finished successfully<br>
+Changing domain from sales to sales<br>
+DBus unavailable, falling back to libssu<br>
+Forcing raw metadata refresh<br>
+Retrieving repository 'adaptation-community-common' metadata ......................................................................[done]<br>
+Forcing building of repository cache<br>
+Building repository 'adaptation-community-common' cache ...........................................................................[done]<br>
+Forcing raw metadata refresh<br>
+Retrieving repository 'hotfixes' metadata .........................................................................................[done]<br>
+Forcing building of repository cache<br>
+Building repository 'hotfixes' cache ..............................................................................................[done]<br>
+Forcing raw metadata refresh<br>
+Retrieving repository 'jolla' metadata ............................................................................................[done]<br>
+Forcing building of repository cache<br>
+Building repository 'jolla' cache .................................................................................................[done]<br>
+Forcing raw metadata refresh<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Forcing building of repository cache<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+Loading repository data...<br>
+Reading installed packages...<br>
+Resolving package dependencies...<br>
+<br>
+The following package is going to be upgraded:<br>
+  droid-hal-mido-devel<br>
+<br>
+1 package to upgrade.<br>
+Overall download size: 890.8 KiB. Already cached: 0 B. No additional space will be used or freed after the operation.<br>
+Continue? [y/n/...? shows all options] (y): y<br>
+Retrieving package droid-hal-mido-devel-0.0.6-201907291135.armv7hl                                  (1/1), 890.8 KiB (  7.0 MiB unpacked)<br>
+Checking for file conflicts: ......................................................................................................[done]<br>
+(1/1) Installing: droid-hal-mido-devel-0.0.6-201907291135.armv7hl .................................................................[done]<br>
+There are some running programs that might use files deleted by recent upgrade. You may wish to check and restart some of them. Run 'zypper ps -s' to list these programs.<br>
+Build libhybris? [Y/n/all]all<br>
+* pulling updates...<br>
+* enabling debugging in libhybris...<br>
+* No spec file for package building specified, building all I can find.<br>
+* Building rpm/libhybris.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of libhybris finished successfully<br>
+* pulling updates...<br>
+* Building rpm/pulseaudio-modules-droid.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of pulseaudio-modules-droid finished successfully<br>
+* pulling updates...<br>
+* No spec file for package building specified, building all I can find.<br>
+* Building rpm/mce-plugin-libhybris.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of mce-plugin-libhybris finished successfully<br>
+* pulling updates...<br>
+* Building rpm/ngfd-plugin-native-vibrator.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of ngfd-plugin-droid-vibrator finished successfully<br>
+* pulling updates...<br>
+* Building rpm/qt5-feedback-haptics-native-vibrator.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of qt5-feedback-haptics-droid-vibrator finished successfully<br>
+* pulling updates...<br>
+* No spec file for package building specified, building all I can find.<br>
+* Building rpm/qt5-qpa-hwcomposer-plugin.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of qt5-qpa-hwcomposer-plugin finished successfully<br>
+* pulling updates...<br>
+* No spec file for package building specified, building all I can find.<br>
+* Building rpm/qt5-qpa-surfaceflinger-plugin.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of qt5-qpa-surfaceflinger-plugin finished successfully<br>
+* pulling updates...<br>
+* Building rpm/qtscenegraph-adaptation-droid.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of qtscenegraph-adaptation finished successfully<br>
+* pulling updates...<br>
+* Building rpm/sensorfw-qt5-hybris.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of sensorfw finished successfully<br>
+* pulling updates...<br>
+* Building rpm/geoclue-providers-hybris.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of geoclue-providers-hybris finished successfully<br>
+* Building rpm/droid-hal-version-mido.spec<br>
+* Building successful, adding packages to repo<br>
+Repository 'adaptation-community-common' is up to date.<br>
+Repository 'hotfixes' is up to date.<br>
+Repository 'jolla' is up to date.<br>
+Retrieving repository 'local-mido-hal' metadata ...................................................................................[done]<br>
+Building repository 'local-mido-hal' cache ........................................................................................[done]<br>
+All repositories have been refreshed.<br>
+* Building of droid-hal-version-mido finished successfully<br>
+----------------------DONE! Now proceed on creating the rootfs------------------<br>
+</details><br>
