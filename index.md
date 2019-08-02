@@ -48639,3 +48639,73 @@ CONFIG_QMI_ENCDEC=y<br>
 # CONFIG_QMI_ENCDEC_DEBUG is not set<br>
 # CONFIG_STRICT_MEMORY_RWX is not set<br>
 </details><br>
+
+
+Исходные коды данного ядра найдены в https://github.com/lordarcadius/electrablue_mido_nougat<br>
+Возьмем его
+```console
+HABUILD_SDK [mido]:~/hadk$ mv kernel/xiaomi/msm8953/ kernel/xiaomi/msm8953_orig
+HABUILD_SDK [mido]:~/hadk$ git clone https://github.com/lordarcadius/electrablue_mido_nougat.git kernel/xiaomi/msm8953
+```
+<details>
+Cloning into 'kernel/xiaomi/msm8953'...<br>
+remote: Enumerating objects: 4122385, done.<br>
+remote: Total 4122385 (delta 0), reused 0 (delta 0), pack-reused 4122385<br>
+Receiving objects: 100% (4122385/4122385), 742.81 MiB | 8.33 MiB/s, done.<br>
+Resolving deltas: 100% (3455693/3455693), done.<br>
+Checking out files: 100% (51997/51997), done.<br>
+</details><br>
+
+Скопируем со смартфона рабочую конфигурацию ядра по нужному адресу для последующей сборки
+```console
+sh-3.2# scp mido_sf_defconfig stalker@192.168.2.1:/home/stalker/hadk/kernel/xiaomi/msm8953/arch/arm64/configs
+```
+<details>
+stalker@192.168.2.1's password:<br>
+mido_sf_defconfig                                                                              100%  122KB  14.6MB/s   00:00<br>
+</details><br>
+
+Скомпилируем ядро
+```console
+HABUILD_SDK [mido] stalker@stalkerPC:~/hadk$ source build/envsetup.sh
+```
+<details>
+including vendor/cm/vendorsetup.sh<br>
+including vendor/cm/bash_completion/git.bash<br>
+including vendor/cm/bash_completion/repo.bash<br>
+</details><br>
+
+```console
+HABUILD_SDK [mido] stalker@stalkerPC:~/hadk$ export USE_CCACHE=1
+HABUILD_SDK [mido] stalker@stalkerPC:~/hadk$ breakfast $DEVICE
+```
+<details>
+including vendor/cm/vendorsetup.sh<br>
+Trying dependencies-only mode on a non-existing device tree?<br>
+<br>
+============================================<br>
+PLATFORM_VERSION_CODENAME=REL<br>
+PLATFORM_VERSION=7.1.2<br>
+LINEAGE_VERSION=14.1-20190710-UNOFFICIAL-mido<br>
+TARGET_PRODUCT=lineage_mido<br>
+TARGET_BUILD_VARIANT=userdebug<br>
+TARGET_BUILD_TYPE=release<br>
+TARGET_BUILD_APPS=<br>
+TARGET_ARCH=arm64<br>
+TARGET_ARCH_VARIANT=armv8-a<br>
+TARGET_CPU_VARIANT=generic<br>
+TARGET_2ND_ARCH=arm<br>
+TARGET_2ND_ARCH_VARIANT=armv7-a-neon<br>
+TARGET_2ND_CPU_VARIANT=cortex-a53<br>
+HOST_ARCH=x86_64<br>
+HOST_2ND_ARCH=x86<br>
+HOST_OS=linux<br>
+HOST_OS_EXTRA=Linux-4.15.0-54-generic-x86_64-with-Ubuntu-14.04-trusty<br>
+HOST_CROSS_OS=windows<br>
+HOST_CROSS_ARCH=x86<br>
+HOST_CROSS_2ND_ARCH=x86_64<br>
+HOST_BUILD_TYPE=release<br>
+BUILD_ID=NJH47F<br>
+OUT_DIR=/home/stalker/hadk/out<br>
+============================================<br>
+</details><br>
