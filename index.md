@@ -35747,10 +35747,10 @@ adb shell:~ # /sdcard/busybox_unzip/./busybox tar --numeric-owner -xvjf /sdcard/
 adb shell:~ # dd if=/sdcard/sailfish_unzip/hybris-boot.img of=/dev/block/bootdevice/by-name/boot
 ```
 <details>
-24500+0 records in
-24500+0 records out
-12544000 bytes (12.0MB) copied, 0.928418 seconds, 12.9MB/s
-</details>
+24500+0 records in<br>
+24500+0 records out<br>
+12544000 bytes (12.0MB) copied, 0.928418 seconds, 12.9MB/s<br>
+</details><br>
 
 Перезагружаемся...
 ```console
