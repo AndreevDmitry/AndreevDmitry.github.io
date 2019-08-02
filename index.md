@@ -64200,8 +64200,9 @@ sh-3.2# dmesg
 [   47.780096] [RMNET:HI] rmnet_config_notify_cb(): Kernel is trying to unregister lo<br>
 </details><br>
 
-
+```console
 sh-3.2# journalctl
+```
 <details>
 -- Logs begin at Fri 1970-03-13 00:26:44 EET, end at Wed 2019-05-22 08:47:55 EEST. --<br>
 Mar 13 00:26:44 Sailfish systemd-journal[704]: Runtime journal (/run/log/journal/) is currently using 4.0M.<br>
