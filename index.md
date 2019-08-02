@@ -35745,10 +35745,39 @@ adb shell:~ # /sdcard/busybox_unzip/./busybox tar --numeric-owner -xvjf /sdcard/
 Распаковалось удачно, зальем образ boot
 ```console
 adb shell:~ # dd if=/sdcard/sailfish_unzip/hybris-boot.img of=/dev/block/bootdevice/by-name/boot
+```
+<details>
 24500+0 records in
 24500+0 records out
 12544000 bytes (12.0MB) copied, 0.928418 seconds, 12.9MB/s
+</details>
+
+Перезагружаемся...
+```console
 adb shell:~ # reboot
 ```
 
-Перезагружаемся и видим только логотим MI и горящий индикатор(((
+ и видим только логотим MI и горящий индикатор(((
+
+Попробуем подключиться к системе по telnet
+```console
+HOST:~$ telnet 192.168.2.15 2323
+```
+<details>
+Trying 192.168.2.15...<br>
+Connected to 192.168.2.15.<br>
+Escape character is '^]'.<br>
+<br>
+Welcome to the Mer/SailfishOS Boat loader debug init system.<br>
+<br>
+Log so far is in /init.log<br>
+<br>
+To make post-switch_root halt before starting systemd, perform:<br>
+  touch /init_enter_debug2<br>
+(When run post-switch_root, telnet is on port 2323, not 23)<br>
+<br>
+sh-3.2#<br>
+</details><br>
+
+Удачно, процесс загрузки ОС прошел, но графика по каким-то причинам не запустилась.
+Соберем логи для дальнейшего анализа
