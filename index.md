@@ -109,14 +109,11 @@ PS1="PlatformSDK $PS1"<br>
 [ -d /etc/bash_completion.d ] && for i in /etc/bash_completion.d/*;do . $i;done<br>
 </details><br>
 
-
 Заходим в песочницу,
 ```console
 HOST:~$ sfossdk
 ```
-
 <details>
-```console
 SDK targets location '/srv/mer/targets' does not exist - about to create it.<br>
 Continue, abort? [c/a] (c)<br>
 SDK toolings location '/srv/mer/toolings' does not exist - about to create it.<br>
@@ -131,7 +128,6 @@ Mounting home directory: /home/stalker<br>
 Initializing machine ID from random generator.<br>
 Entering chroot as stalker<br>
 PlatformSDK:~$<br>
-```
 </details><br>
 
 Соответственно видим, что все вводимые команды выполнятся из окружения Platform SDK (и как следствие имеем набор команд и параметров который предустановлен в данной песочнице), но находимся мы в домашнем каталоге.
@@ -153,7 +149,6 @@ EOF
 ```console
 HOST:~$ tail -n2 .mersdk.profile
 ```
-
 <details>
 function hadk() { source $HOME/.hadk.env; echo "Env setup for $DEVICE"; }<br>
 hadk<br>
@@ -163,7 +158,6 @@ hadk<br>
 ```console
 HOST:~$ sfossdk
 ```
-
 <details>
 Mounting system directories...<br>
 Mounting /srv/mer/targets as /srv/mer/targets<br>
@@ -179,7 +173,6 @@ Env setup for mido<br>
 ```console
 PlatformSDK:~$ sudo zypper ref
 ```
-
 <details>
 Retrieving repository 'adaptation0' metadata .....................................................................................[error]<br>
 Repository 'adaptation0' is invalid.<br>
@@ -208,11 +201,9 @@ HOST:~$ sudo rm -rf /srv
 ```
 
 Скачиваем версию 2.0 для сборки Sailfish 3.0.2.8
-
 ```console
 HOST:~$ curl -k -O  http://releases.sailfishos.org/sdk/installers/2.0/Sailfish_OS-3.0.2.8-Platform_SDK_Chroot-i486.tar.bz2
 ```
-
 <details>
 % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current<br>
                                Dload  Upload   Total   Spent    Left  Speed<br>
@@ -305,21 +296,6 @@ Loading repository data...<br>
 Reading installed packages...<br>
 <br>
 Nothing to do.
-</details><br>
-
-Проверяем, что используем версию 3.0.3.10 Platform SDK
-```console
-PlatformSDK:~$** cat /etc/os-release
-```
-<details>
-NAME="Sailfish OS"<br>
-ID=sailfishos<br>
-VERSION="3.0.3.10 (Hossa)"<br>
-VERSION_ID=3.0.3.10<br>
-PRETTY_NAME="Sailfish OS 3.0.3.10 (Hossa)"<br>
-SAILFISH_BUILD=10<br>
-SAILFISH_FLAVOUR=release<br>
-HOME_URL="https://sailfishos.org/"
 </details><br>
 
 Устанавливаем необходимые утилиты для работы с Android SDK (далее):
