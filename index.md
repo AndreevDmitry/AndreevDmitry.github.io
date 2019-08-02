@@ -39008,7 +39008,7 @@ May 23 03:42:21 Sailfish kernel: binder: 2670:2670 transaction failed 29189, siz
 ```console
 sh-3.2#   systemctl
 ```
-<details><br>
+<details>
   UNIT                                               LOAD   ACTIVE     SUB       JOB   DESCRIPTION<br>
   sys-devices-soc-7000000.ssusb-7000000.dwc3-gadget-net-rndis0.device loaded active     plugged         /sys/devices/soc/7000000.ssusb/70<br>
 00000.dwc3/gadget<br>
@@ -39244,4 +39244,25 @@ JOB    = Pending job for the unit.<br>
 To show all installed unit files use 'systemctl list-unit-files'.<br>
 </details><br>
 
+К счастью для сравнения на https://gitlab.com/sailfishos-porters-ci/mido-ci/-/jobs есть сборка для версии 3.0.2.8. Скачаем ее
+```console
+HOST:~$ wget https://gitlab.com/sailfishos-porters-ci/mido-ci/-/jobs/187131001/artifacts/download
+```
+<details>
+--2019-07-10 18:55:14--  https://gitlab.com/sailfishos-porters-ci/mido-ci/-/jobs/187131001/artifacts/download<br>
+Распознаётся gitlab.com (gitlab.com)… 35.231.145.151<br>
+Подключение к gitlab.com (gitlab.com)|35.231.145.151|:443... соединение установлено.<br>
+HTTP-запрос отправлен. Ожидание ответа… 302 Found<br>
+Адрес: https://storage.googleapis.com/gitlab-gprd-artifacts/2b/37/2b37dab3e5dc662fd745e6804ab3c55b6a5d9cae6ded9f7c165ce28394cf03ba/2019_03_29/187131001/191801863/artifacts.zip?response-content-disposition=attachment%3B%20filename%3D%22artifacts.zip%22%3B%20filename%2A%3DUTF-8%27%27artifacts.zip&response-content-type=application%2Fzip&GoogleAccessId=gitlab-object-storage-prd@gitlab-production.iam.gserviceaccount.com&Signature=e6eAMyGl%2FiOPcJrKeepl7aKAKIj7yyt3B54FLhzVTJt0jcAbgeIzkLFlubuw%0AZscrPzz33It7KMca4vZQG78LxJJ1Y1u76AMBgI6yqJEyiLbR4Pn%2B8Qg7luFL%0A%2FqO9T8Iui5T3M8GKefgi8fLHQBL%2FobO8dsBRLf5tnIAEsP06mjRtH4QZ%2B3Zg%0ADM0dHJpBK6YnwYxQ4GmrHvwScDUZNeZ7KLAw4%2Fi51CLy09oHv8T3BnsfMyBT%0A7M4pw0%2Bd5Y2%2FvaAfxa561w2yKBVKmoulCixvhdEiH8ZX0FHdkTcF3xyaz4Or%0Aw%2BYrOBRXVvhzKg1uuTt7tFwiwQl3xu%2FEmBE4%2FPV0fw%3D%3D&Expires=1562767515 [переход]<br>
+--2019-07-10 18:55:15--  https://storage.googleapis.com/gitlab-gprd-artifacts/2b/37/2b37dab3e5dc662fd745e6804ab3c55b6a5d9cae6ded9f7c165ce28394cf03ba/2019_03_29/187131001/191801863/artifacts.zip?response-content-disposition=attachment%3B%20filename%3D%22artifacts.zip%22%3B%20filename%2A%3DUTF-8%27%27artifacts.zip&response-content-type=application%2Fzip&GoogleAccessId=gitlab-object-storage-prd@gitlab-production.iam.gserviceaccount.com&Signature=e6eAMyGl%2FiOPcJrKeepl7aKAKIj7yyt3B54FLhzVTJt0jcAbgeIzkLFlubuw%0AZscrPzz33It7KMca4vZQG78LxJJ1Y1u76AMBgI6yqJEyiLbR4Pn%2B8Qg7luFL%0A%2FqO9T8Iui5T3M8GKefgi8fLHQBL%2FobO8dsBRLf5tnIAEsP06mjRtH4QZ%2B3Zg%0ADM0dHJpBK6YnwYxQ4GmrHvwScDUZNeZ7KLAw4%2Fi51CLy09oHv8T3BnsfMyBT%0A7M4pw0%2Bd5Y2%2FvaAfxa561w2yKBVKmoulCixvhdEiH8ZX0FHdkTcF3xyaz4Or%0Aw%2BYrOBRXVvhzKg1uuTt7tFwiwQl3xu%2FEmBE4%2FPV0fw%3D%3D&Expires=1562767515<br>
+Распознаётся storage.googleapis.com (storage.googleapis.com)… 64.233.163.128, 2a00:1450:4010:c06::80<br>
+Подключение к storage.googleapis.com (storage.googleapis.com)|64.233.163.128|:443... соединение установлено.<br>
+HTTP-запрос отправлен. Ожидание ответа… 200 OK<br>
+Длина: 338892013 (323M) [binary/octet-stream]<br>
+Сохранение в: «download»<br>
+<br>
+download                           100%[=============================================================>] 323,19M  17,6MB/s    за 18s<br>
+<br>
+2019-07-10 18:55:34 (17,7 MB/s) - «download» сохранён [338892013/338892013]<br>
+</details><br>
 
