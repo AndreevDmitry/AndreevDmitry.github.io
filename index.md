@@ -9,6 +9,8 @@
 - adb
 - fastboot
 
+1. [Установка среды для сборки](https://github.com/AndreevDmitry/AndreevDmitry.github.io/blob/master/sailfish_porting_mido_1.md)
+
 # Установка переменных окружения
 ```console
 HOST:~$ cat <<'EOF' > $HOME/.hadk.env
