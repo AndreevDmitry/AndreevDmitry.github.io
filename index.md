@@ -9,7 +9,7 @@
 - adb
 - fastboot
 
-1. [Установка среды для сборки](sailfish_porting/sailfish_porting_mido_1.md "Установка среды для сборки")
+1. [Установка среды для сборки](sailfish_porting/sailfish_porting_mido_1.md)
 
 # Установка переменных окружения
 ```console
