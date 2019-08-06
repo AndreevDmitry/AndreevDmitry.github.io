@@ -67177,4 +67177,4 @@ JOB    = Pending job for the unit.<br>
 To show all installed unit files use 'systemctl list-unit-files'.<br>
 </details><br>
 
-![Image of about](https://github.com/AndreevDmitry/AndreevDmitry.github.io/blob/master/3.0.3.10.jpg)
+![Image of about](images/3.0.3.10.jpg "Image of about")
