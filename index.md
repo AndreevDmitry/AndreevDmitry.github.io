@@ -12,7 +12,7 @@
 1. [Установка среды для сборки](sailfish_porting/sailfish_porting_mido_1.md)
 2. [Сборка ядра](sailfish_porting/sailfish_porting_mido_2.md)
 3. [Сборка пакетов Sailfish](sailfish_porting/sailfish_porting_mido_3.md)
-4. [Создание образа и установка Sailfish]((sailfish_porting/sailfish_porting_mido_4.md))
+4. [Создание образа и установка Sailfish](sailfish_porting/sailfish_porting_mido_4.md)
 
 
 
